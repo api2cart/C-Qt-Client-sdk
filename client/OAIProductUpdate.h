@@ -439,6 +439,11 @@ public:
     bool is_auto_renew_Set() const;
     bool is_auto_renew_Valid() const;
 
+    bool isOnSale() const;
+    void setOnSale(const bool &on_sale);
+    bool is_on_sale_Set() const;
+    bool is_on_sale_Valid() const;
+
     virtual bool isSet() const override;
     virtual bool isValid() const override;
 
@@ -760,6 +765,10 @@ private:
     bool m_auto_renew;
     bool m_auto_renew_isSet;
     bool m_auto_renew_isValid;
+
+    bool m_on_sale;
+    bool m_on_sale_isSet;
+    bool m_on_sale_isValid;
 };
 
 } // namespace OpenAPI

@@ -270,6 +270,9 @@ void OAIProductUpdate::initializeModel() {
 
     m_auto_renew_isSet = false;
     m_auto_renew_isValid = false;
+
+    m_on_sale_isSet = false;
+    m_on_sale_isValid = false;
 }
 
 void OAIProductUpdate::fromJson(QString jsonString) {
@@ -517,6 +520,9 @@ void OAIProductUpdate::fromJsonObject(QJsonObject json) {
 
     m_auto_renew_isValid = ::OpenAPI::fromJsonValue(m_auto_renew, json[QString("auto_renew")]);
     m_auto_renew_isSet = !json[QString("auto_renew")].isNull() && m_auto_renew_isValid;
+
+    m_on_sale_isValid = ::OpenAPI::fromJsonValue(m_on_sale, json[QString("on_sale")]);
+    m_on_sale_isSet = !json[QString("on_sale")].isNull() && m_on_sale_isValid;
 }
 
 QString OAIProductUpdate::asJson() const {
@@ -764,6 +770,9 @@ QJsonObject OAIProductUpdate::asJsonObject() const {
     }
     if (m_auto_renew_isSet) {
         obj.insert(QString("auto_renew"), ::OpenAPI::toJsonValue(m_auto_renew));
+    }
+    if (m_on_sale_isSet) {
+        obj.insert(QString("on_sale"), ::OpenAPI::toJsonValue(m_on_sale));
     }
     return obj;
 }
@@ -2032,6 +2041,22 @@ bool OAIProductUpdate::is_auto_renew_Valid() const{
     return m_auto_renew_isValid;
 }
 
+bool OAIProductUpdate::isOnSale() const {
+    return m_on_sale;
+}
+void OAIProductUpdate::setOnSale(const bool &on_sale) {
+    m_on_sale = on_sale;
+    m_on_sale_isSet = true;
+}
+
+bool OAIProductUpdate::is_on_sale_Set() const{
+    return m_on_sale_isSet;
+}
+
+bool OAIProductUpdate::is_on_sale_Valid() const{
+    return m_on_sale_isValid;
+}
+
 bool OAIProductUpdate::isSet() const {
     bool isObjectUpdated = false;
     do {
@@ -2426,6 +2451,11 @@ bool OAIProductUpdate::isSet() const {
         }
 
         if (m_auto_renew_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_on_sale_isSet) {
             isObjectUpdated = true;
             break;
         }

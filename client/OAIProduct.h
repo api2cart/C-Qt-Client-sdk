@@ -211,6 +211,11 @@ public:
     bool is_in_stock_Set() const;
     bool is_in_stock_Valid() const;
 
+    bool isOnSale() const;
+    void setOnSale(const bool &on_sale);
+    bool is_on_sale_Set() const;
+    bool is_on_sale_Valid() const;
+
     QString getBackorders() const;
     void setBackorders(const QString &backorders);
     bool is_backorders_Set() const;
@@ -466,6 +471,10 @@ private:
     bool m_in_stock;
     bool m_in_stock_isSet;
     bool m_in_stock_isValid;
+
+    bool m_on_sale;
+    bool m_on_sale_isSet;
+    bool m_on_sale_isValid;
 
     QString m_backorders;
     bool m_backorders_isSet;
