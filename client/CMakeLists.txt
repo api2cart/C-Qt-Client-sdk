@@ -281,6 +281,7 @@ add_library(${PROJECT_NAME}
   OAIProductAdd_certifications_inner_images_inner.h
   OAIProductAdd_files_inner.h
   OAIProductAdd_group_prices_inner.h
+  OAIProductAdd_logistic_info_inner.h
   OAIProductAdd_manufacturer_info.h
   OAIProductAdd_package_details.h
   OAIProductAdd_sales_tax.h
@@ -740,6 +741,7 @@ add_library(${PROJECT_NAME}
   OAIProductAdd_certifications_inner_images_inner.cpp
   OAIProductAdd_files_inner.cpp
   OAIProductAdd_group_prices_inner.cpp
+  OAIProductAdd_logistic_info_inner.cpp
   OAIProductAdd_manufacturer_info.cpp
   OAIProductAdd_package_details.cpp
   OAIProductAdd_sales_tax.cpp

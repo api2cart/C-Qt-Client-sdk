@@ -272,6 +272,7 @@ HEADERS += \
     $${PWD}/OAIProductAdd_certifications_inner_images_inner.h \
     $${PWD}/OAIProductAdd_files_inner.h \
     $${PWD}/OAIProductAdd_group_prices_inner.h \
+    $${PWD}/OAIProductAdd_logistic_info_inner.h \
     $${PWD}/OAIProductAdd_manufacturer_info.h \
     $${PWD}/OAIProductAdd_package_details.h \
     $${PWD}/OAIProductAdd_sales_tax.h \
@@ -736,6 +737,7 @@ SOURCES += \
     $${PWD}/OAIProductAdd_certifications_inner_images_inner.cpp \
     $${PWD}/OAIProductAdd_files_inner.cpp \
     $${PWD}/OAIProductAdd_group_prices_inner.cpp \
+    $${PWD}/OAIProductAdd_logistic_info_inner.cpp \
     $${PWD}/OAIProductAdd_manufacturer_info.cpp \
     $${PWD}/OAIProductAdd_package_details.cpp \
     $${PWD}/OAIProductAdd_sales_tax.cpp \

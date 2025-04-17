@@ -238,6 +238,9 @@ void OAIProductAdd::initializeModel() {
     m_image_name_isSet = false;
     m_image_name_isValid = false;
 
+    m_additional_image_urls_isSet = false;
+    m_additional_image_urls_isValid = false;
+
     m_reserve_price_isSet = false;
     m_reserve_price_isValid = false;
 
@@ -249,6 +252,9 @@ void OAIProductAdd::initializeModel() {
 
     m_auction_confidentiality_level_isSet = false;
     m_auction_confidentiality_level_isValid = false;
+
+    m_logistic_info_isSet = false;
+    m_logistic_info_isValid = false;
 
     m_avail_from_isSet = false;
     m_avail_from_isValid = false;
@@ -578,6 +584,9 @@ void OAIProductAdd::fromJsonObject(QJsonObject json) {
     m_image_name_isValid = ::OpenAPI::fromJsonValue(m_image_name, json[QString("image_name")]);
     m_image_name_isSet = !json[QString("image_name")].isNull() && m_image_name_isValid;
 
+    m_additional_image_urls_isValid = ::OpenAPI::fromJsonValue(m_additional_image_urls, json[QString("additional_image_urls")]);
+    m_additional_image_urls_isSet = !json[QString("additional_image_urls")].isNull() && m_additional_image_urls_isValid;
+
     m_reserve_price_isValid = ::OpenAPI::fromJsonValue(m_reserve_price, json[QString("reserve_price")]);
     m_reserve_price_isSet = !json[QString("reserve_price")].isNull() && m_reserve_price_isValid;
 
@@ -589,6 +598,9 @@ void OAIProductAdd::fromJsonObject(QJsonObject json) {
 
     m_auction_confidentiality_level_isValid = ::OpenAPI::fromJsonValue(m_auction_confidentiality_level, json[QString("auction_confidentiality_level")]);
     m_auction_confidentiality_level_isSet = !json[QString("auction_confidentiality_level")].isNull() && m_auction_confidentiality_level_isValid;
+
+    m_logistic_info_isValid = ::OpenAPI::fromJsonValue(m_logistic_info, json[QString("logistic_info")]);
+    m_logistic_info_isSet = !json[QString("logistic_info")].isNull() && m_logistic_info_isValid;
 
     m_avail_from_isValid = ::OpenAPI::fromJsonValue(m_avail_from, json[QString("avail_from")]);
     m_avail_from_isSet = !json[QString("avail_from")].isNull() && m_avail_from_isValid;
@@ -918,6 +930,9 @@ QJsonObject OAIProductAdd::asJsonObject() const {
     if (m_image_name_isSet) {
         obj.insert(QString("image_name"), ::OpenAPI::toJsonValue(m_image_name));
     }
+    if (m_additional_image_urls.size() > 0) {
+        obj.insert(QString("additional_image_urls"), ::OpenAPI::toJsonValue(m_additional_image_urls));
+    }
     if (m_reserve_price_isSet) {
         obj.insert(QString("reserve_price"), ::OpenAPI::toJsonValue(m_reserve_price));
     }
@@ -929,6 +944,9 @@ QJsonObject OAIProductAdd::asJsonObject() const {
     }
     if (m_auction_confidentiality_level_isSet) {
         obj.insert(QString("auction_confidentiality_level"), ::OpenAPI::toJsonValue(m_auction_confidentiality_level));
+    }
+    if (m_logistic_info.size() > 0) {
+        obj.insert(QString("logistic_info"), ::OpenAPI::toJsonValue(m_logistic_info));
     }
     if (m_avail_from_isSet) {
         obj.insert(QString("avail_from"), ::OpenAPI::toJsonValue(m_avail_from));
@@ -2135,6 +2153,22 @@ bool OAIProductAdd::is_image_name_Valid() const{
     return m_image_name_isValid;
 }
 
+QList<QString> OAIProductAdd::getAdditionalImageUrls() const {
+    return m_additional_image_urls;
+}
+void OAIProductAdd::setAdditionalImageUrls(const QList<QString> &additional_image_urls) {
+    m_additional_image_urls = additional_image_urls;
+    m_additional_image_urls_isSet = true;
+}
+
+bool OAIProductAdd::is_additional_image_urls_Set() const{
+    return m_additional_image_urls_isSet;
+}
+
+bool OAIProductAdd::is_additional_image_urls_Valid() const{
+    return m_additional_image_urls_isValid;
+}
+
 double OAIProductAdd::getReservePrice() const {
     return m_reserve_price;
 }
@@ -2197,6 +2231,22 @@ bool OAIProductAdd::is_auction_confidentiality_level_Set() const{
 
 bool OAIProductAdd::is_auction_confidentiality_level_Valid() const{
     return m_auction_confidentiality_level_isValid;
+}
+
+QList<OAIProductAdd_logistic_info_inner> OAIProductAdd::getLogisticInfo() const {
+    return m_logistic_info;
+}
+void OAIProductAdd::setLogisticInfo(const QList<OAIProductAdd_logistic_info_inner> &logistic_info) {
+    m_logistic_info = logistic_info;
+    m_logistic_info_isSet = true;
+}
+
+bool OAIProductAdd::is_logistic_info_Set() const{
+    return m_logistic_info_isSet;
+}
+
+bool OAIProductAdd::is_logistic_info_Valid() const{
+    return m_logistic_info_isValid;
 }
 
 QString OAIProductAdd::getAvailFrom() const {
@@ -3150,6 +3200,11 @@ bool OAIProductAdd::isSet() const {
             break;
         }
 
+        if (m_additional_image_urls.size() > 0) {
+            isObjectUpdated = true;
+            break;
+        }
+
         if (m_reserve_price_isSet) {
             isObjectUpdated = true;
             break;
@@ -3166,6 +3221,11 @@ bool OAIProductAdd::isSet() const {
         }
 
         if (m_auction_confidentiality_level_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_logistic_info.size() > 0) {
             isObjectUpdated = true;
             break;
         }

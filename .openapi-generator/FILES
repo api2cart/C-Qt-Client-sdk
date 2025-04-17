@@ -572,6 +572,8 @@ client/OAIProductAdd_files_inner.cpp
 client/OAIProductAdd_files_inner.h
 client/OAIProductAdd_group_prices_inner.cpp
 client/OAIProductAdd_group_prices_inner.h
+client/OAIProductAdd_logistic_info_inner.cpp
+client/OAIProductAdd_logistic_info_inner.h
 client/OAIProductAdd_manufacturer_info.cpp
 client/OAIProductAdd_manufacturer_info.h
 client/OAIProductAdd_package_details.cpp

@@ -25,6 +25,7 @@
 #include "OAIProductAdd_certifications_inner.h"
 #include "OAIProductAdd_files_inner.h"
 #include "OAIProductAdd_group_prices_inner.h"
+#include "OAIProductAdd_logistic_info_inner.h"
 #include "OAIProductAdd_manufacturer_info.h"
 #include "OAIProductAdd_package_details.h"
 #include "OAIProductAdd_sales_tax.h"
@@ -48,6 +49,7 @@ class OAIProductAdd_package_details;
 class OAIProductAdd_best_offer;
 class OAIProductAdd_sales_tax;
 class OAIProductAdd_specifics_inner;
+class OAIProductAdd_logistic_info_inner;
 class OAIProductAdd_files_inner;
 class OAIProductAdd_size_chart;
 class OAIProductAdd_certifications_inner;
@@ -404,6 +406,11 @@ public:
     bool is_image_name_Set() const;
     bool is_image_name_Valid() const;
 
+    QList<QString> getAdditionalImageUrls() const;
+    void setAdditionalImageUrls(const QList<QString> &additional_image_urls);
+    bool is_additional_image_urls_Set() const;
+    bool is_additional_image_urls_Valid() const;
+
     double getReservePrice() const;
     void setReservePrice(const double &reserve_price);
     bool is_reserve_price_Set() const;
@@ -423,6 +430,11 @@ public:
     void setAuctionConfidentialityLevel(const QString &auction_confidentiality_level);
     bool is_auction_confidentiality_level_Set() const;
     bool is_auction_confidentiality_level_Valid() const;
+
+    QList<OAIProductAdd_logistic_info_inner> getLogisticInfo() const;
+    void setLogisticInfo(const QList<OAIProductAdd_logistic_info_inner> &logistic_info);
+    bool is_logistic_info_Set() const;
+    bool is_logistic_info_Valid() const;
 
     QString getAvailFrom() const;
     void setAvailFrom(const QString &avail_from);
@@ -892,6 +904,10 @@ private:
     bool m_image_name_isSet;
     bool m_image_name_isValid;
 
+    QList<QString> m_additional_image_urls;
+    bool m_additional_image_urls_isSet;
+    bool m_additional_image_urls_isValid;
+
     double m_reserve_price;
     bool m_reserve_price_isSet;
     bool m_reserve_price_isValid;
@@ -907,6 +923,10 @@ private:
     QString m_auction_confidentiality_level;
     bool m_auction_confidentiality_level_isSet;
     bool m_auction_confidentiality_level_isValid;
+
+    QList<OAIProductAdd_logistic_info_inner> m_logistic_info;
+    bool m_logistic_info_isSet;
+    bool m_logistic_info_isValid;
 
     QString m_avail_from;
     bool m_avail_from_isSet;

@@ -1147,7 +1147,7 @@ void OAIProductApi::productAttributeValueUnsetCallback(OAIHttpRequestWorker *wor
     }
 }
 
-void OAIProductApi::productBrandList(const ::OpenAPI::OptionalParam<qint32> &start, const ::OpenAPI::OptionalParam<qint32> &count, const ::OpenAPI::OptionalParam<QString> &page_cursor, const ::OpenAPI::OptionalParam<QString> &params, const ::OpenAPI::OptionalParam<QString> &brand_ids, const ::OpenAPI::OptionalParam<QString> &exclude, const ::OpenAPI::OptionalParam<QString> &store_id, const ::OpenAPI::OptionalParam<QString> &lang_id, const ::OpenAPI::OptionalParam<QString> &created_from, const ::OpenAPI::OptionalParam<QString> &created_to, const ::OpenAPI::OptionalParam<QString> &modified_from, const ::OpenAPI::OptionalParam<QString> &modified_to, const ::OpenAPI::OptionalParam<QString> &parent_id, const ::OpenAPI::OptionalParam<QString> &response_fields, const ::OpenAPI::OptionalParam<QString> &find_where, const ::OpenAPI::OptionalParam<QString> &find_value) {
+void OAIProductApi::productBrandList(const ::OpenAPI::OptionalParam<qint32> &start, const ::OpenAPI::OptionalParam<qint32> &count, const ::OpenAPI::OptionalParam<QString> &page_cursor, const ::OpenAPI::OptionalParam<QString> &params, const ::OpenAPI::OptionalParam<QString> &brand_ids, const ::OpenAPI::OptionalParam<QString> &exclude, const ::OpenAPI::OptionalParam<QString> &category_id, const ::OpenAPI::OptionalParam<QString> &store_id, const ::OpenAPI::OptionalParam<QString> &lang_id, const ::OpenAPI::OptionalParam<QString> &created_from, const ::OpenAPI::OptionalParam<QString> &created_to, const ::OpenAPI::OptionalParam<QString> &modified_from, const ::OpenAPI::OptionalParam<QString> &modified_to, const ::OpenAPI::OptionalParam<QString> &parent_id, const ::OpenAPI::OptionalParam<QString> &response_fields, const ::OpenAPI::OptionalParam<QString> &find_where, const ::OpenAPI::OptionalParam<QString> &find_value) {
     QString fullPath = QString(_serverConfigs["productBrandList"][_serverIndices.value("productBrandList")].URL()+"/product.brand.list.json");
     
     if (_apiKeys.contains("StoreKeyAuth")) {
@@ -1248,6 +1248,21 @@ void OAIProductApi::productBrandList(const ::OpenAPI::OptionalParam<qint32> &sta
             fullPath.append("?");
 
         fullPath.append(QUrl::toPercentEncoding("exclude")).append(querySuffix).append(QUrl::toPercentEncoding(::OpenAPI::toStringValue(exclude.stringValue())));
+    }
+    if (category_id.hasValue())
+    {
+        queryStyle = "form";
+        if (queryStyle == "")
+            queryStyle = "form";
+        queryPrefix = getParamStylePrefix(queryStyle);
+        querySuffix = getParamStyleSuffix(queryStyle);
+        queryDelimiter = getParamStyleDelimiter(queryStyle, "category_id", true);
+        if (fullPath.indexOf("?") > 0)
+            fullPath.append(queryPrefix);
+        else
+            fullPath.append("?");
+
+        fullPath.append(QUrl::toPercentEncoding("category_id")).append(querySuffix).append(QUrl::toPercentEncoding(::OpenAPI::toStringValue(category_id.stringValue())));
     }
     if (store_id.hasValue())
     {
