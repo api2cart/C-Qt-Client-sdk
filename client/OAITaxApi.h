@@ -62,25 +62,25 @@ public:
     * @param[in]  tax_class_id QString [required]
     * @param[in]  store_id QString [optional]
     * @param[in]  lang_id QString [optional]
-    * @param[in]  params QString [optional]
     * @param[in]  response_fields QString [optional]
+    * @param[in]  params QString [optional]
     * @param[in]  exclude QString [optional]
     */
-    virtual void taxClassInfo(const QString &tax_class_id, const ::OpenAPI::OptionalParam<QString> &store_id = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &lang_id = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &params = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &response_fields = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &exclude = ::OpenAPI::OptionalParam<QString>());
+    virtual void taxClassInfo(const QString &tax_class_id, const ::OpenAPI::OptionalParam<QString> &store_id = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &lang_id = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &response_fields = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &params = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &exclude = ::OpenAPI::OptionalParam<QString>());
 
     /**
+    * @param[in]  count qint32 [optional]
+    * @param[in]  page_cursor QString [optional]
+    * @param[in]  store_id QString [optional]
+    * @param[in]  find_value QString [optional]
+    * @param[in]  find_where QString [optional]
     * @param[in]  created_to QString [optional]
     * @param[in]  created_from QString [optional]
     * @param[in]  modified_to QString [optional]
     * @param[in]  modified_from QString [optional]
-    * @param[in]  find_value QString [optional]
-    * @param[in]  find_where QString [optional]
-    * @param[in]  store_id QString [optional]
-    * @param[in]  count qint32 [optional]
-    * @param[in]  page_cursor QString [optional]
     * @param[in]  response_fields QString [optional]
     */
-    virtual void taxClassList(const ::OpenAPI::OptionalParam<QString> &created_to = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &created_from = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &modified_to = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &modified_from = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &find_value = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &find_where = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &store_id = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<qint32> &count = ::OpenAPI::OptionalParam<qint32>(), const ::OpenAPI::OptionalParam<QString> &page_cursor = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &response_fields = ::OpenAPI::OptionalParam<QString>());
+    virtual void taxClassList(const ::OpenAPI::OptionalParam<qint32> &count = ::OpenAPI::OptionalParam<qint32>(), const ::OpenAPI::OptionalParam<QString> &page_cursor = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &store_id = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &find_value = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &find_where = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &created_to = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &created_from = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &modified_to = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &modified_from = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &response_fields = ::OpenAPI::OptionalParam<QString>());
 
 
 private:

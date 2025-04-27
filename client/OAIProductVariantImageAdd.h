@@ -49,6 +49,11 @@ public:
     bool is_product_variant_id_Set() const;
     bool is_product_variant_id_Valid() const;
 
+    QString getStoreId() const;
+    void setStoreId(const QString &store_id);
+    bool is_store_id_Set() const;
+    bool is_store_id_Valid() const;
+
     QString getImageName() const;
     void setImageName(const QString &image_name);
     bool is_image_name_Set() const;
@@ -84,11 +89,6 @@ public:
     bool is_position_Set() const;
     bool is_position_Valid() const;
 
-    QString getStoreId() const;
-    void setStoreId(const QString &store_id);
-    bool is_store_id_Set() const;
-    bool is_store_id_Valid() const;
-
     QString getOptionId() const;
     void setOptionId(const QString &option_id);
     bool is_option_id_Set() const;
@@ -107,6 +107,10 @@ private:
     QString m_product_variant_id;
     bool m_product_variant_id_isSet;
     bool m_product_variant_id_isValid;
+
+    QString m_store_id;
+    bool m_store_id_isSet;
+    bool m_store_id_isValid;
 
     QString m_image_name;
     bool m_image_name_isSet;
@@ -135,10 +139,6 @@ private:
     qint32 m_position;
     bool m_position_isSet;
     bool m_position_isValid;
-
-    QString m_store_id;
-    bool m_store_id_isSet;
-    bool m_store_id_isValid;
 
     QString m_option_id;
     bool m_option_id_isSet;

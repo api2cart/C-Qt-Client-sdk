@@ -264,21 +264,6 @@ void OAIAttributeApi::attributeAdd(const QString &type, const QString &name, con
 
         fullPath.append(QUrl::toPercentEncoding("type")).append(querySuffix).append(QUrl::toPercentEncoding(::OpenAPI::toStringValue(type)));
     }
-    if (code.hasValue())
-    {
-        queryStyle = "form";
-        if (queryStyle == "")
-            queryStyle = "form";
-        queryPrefix = getParamStylePrefix(queryStyle);
-        querySuffix = getParamStyleSuffix(queryStyle);
-        queryDelimiter = getParamStyleDelimiter(queryStyle, "code", true);
-        if (fullPath.indexOf("?") > 0)
-            fullPath.append(queryPrefix);
-        else
-            fullPath.append("?");
-
-        fullPath.append(QUrl::toPercentEncoding("code")).append(querySuffix).append(QUrl::toPercentEncoding(::OpenAPI::toStringValue(code.stringValue())));
-    }
     
     {
         queryStyle = "form";
@@ -293,6 +278,21 @@ void OAIAttributeApi::attributeAdd(const QString &type, const QString &name, con
             fullPath.append("?");
 
         fullPath.append(QUrl::toPercentEncoding("name")).append(querySuffix).append(QUrl::toPercentEncoding(::OpenAPI::toStringValue(name)));
+    }
+    if (code.hasValue())
+    {
+        queryStyle = "form";
+        if (queryStyle == "")
+            queryStyle = "form";
+        queryPrefix = getParamStylePrefix(queryStyle);
+        querySuffix = getParamStyleSuffix(queryStyle);
+        queryDelimiter = getParamStyleDelimiter(queryStyle, "code", true);
+        if (fullPath.indexOf("?") > 0)
+            fullPath.append(queryPrefix);
+        else
+            fullPath.append("?");
+
+        fullPath.append(QUrl::toPercentEncoding("code")).append(querySuffix).append(QUrl::toPercentEncoding(::OpenAPI::toStringValue(code.stringValue())));
     }
     if (store_id.hasValue())
     {
@@ -879,7 +879,7 @@ void OAIAttributeApi::attributeAssignSetCallback(OAIHttpRequestWorker *worker) {
     }
 }
 
-void OAIAttributeApi::attributeAttributesetList(const ::OpenAPI::OptionalParam<qint32> &start, const ::OpenAPI::OptionalParam<qint32> &count, const ::OpenAPI::OptionalParam<QString> &params, const ::OpenAPI::OptionalParam<QString> &exclude, const ::OpenAPI::OptionalParam<QString> &response_fields) {
+void OAIAttributeApi::attributeAttributesetList(const ::OpenAPI::OptionalParam<qint32> &start, const ::OpenAPI::OptionalParam<qint32> &count, const ::OpenAPI::OptionalParam<QString> &response_fields, const ::OpenAPI::OptionalParam<QString> &params, const ::OpenAPI::OptionalParam<QString> &exclude) {
     QString fullPath = QString(_serverConfigs["attributeAttributesetList"][_serverIndices.value("attributeAttributesetList")].URL()+"/attribute.attributeset.list.json");
     
     if (_apiKeys.contains("StoreKeyAuth")) {
@@ -921,6 +921,21 @@ void OAIAttributeApi::attributeAttributesetList(const ::OpenAPI::OptionalParam<q
 
         fullPath.append(QUrl::toPercentEncoding("count")).append(querySuffix).append(QUrl::toPercentEncoding(::OpenAPI::toStringValue(count.stringValue())));
     }
+    if (response_fields.hasValue())
+    {
+        queryStyle = "form";
+        if (queryStyle == "")
+            queryStyle = "form";
+        queryPrefix = getParamStylePrefix(queryStyle);
+        querySuffix = getParamStyleSuffix(queryStyle);
+        queryDelimiter = getParamStyleDelimiter(queryStyle, "response_fields", true);
+        if (fullPath.indexOf("?") > 0)
+            fullPath.append(queryPrefix);
+        else
+            fullPath.append("?");
+
+        fullPath.append(QUrl::toPercentEncoding("response_fields")).append(querySuffix).append(QUrl::toPercentEncoding(::OpenAPI::toStringValue(response_fields.stringValue())));
+    }
     if (params.hasValue())
     {
         queryStyle = "form";
@@ -950,21 +965,6 @@ void OAIAttributeApi::attributeAttributesetList(const ::OpenAPI::OptionalParam<q
             fullPath.append("?");
 
         fullPath.append(QUrl::toPercentEncoding("exclude")).append(querySuffix).append(QUrl::toPercentEncoding(::OpenAPI::toStringValue(exclude.stringValue())));
-    }
-    if (response_fields.hasValue())
-    {
-        queryStyle = "form";
-        if (queryStyle == "")
-            queryStyle = "form";
-        queryPrefix = getParamStylePrefix(queryStyle);
-        querySuffix = getParamStyleSuffix(queryStyle);
-        queryDelimiter = getParamStyleDelimiter(queryStyle, "response_fields", true);
-        if (fullPath.indexOf("?") > 0)
-            fullPath.append(queryPrefix);
-        else
-            fullPath.append("?");
-
-        fullPath.append(QUrl::toPercentEncoding("response_fields")).append(querySuffix).append(QUrl::toPercentEncoding(::OpenAPI::toStringValue(response_fields.stringValue())));
     }
     OAIHttpRequestWorker *worker = new OAIHttpRequestWorker(this, _manager);
     worker->setTimeOut(_timeOut);
@@ -1229,21 +1229,6 @@ void OAIAttributeApi::attributeDelete(const QString &id, const ::OpenAPI::Option
     }
     
     QString queryPrefix, querySuffix, queryDelimiter, queryStyle;
-    if (store_id.hasValue())
-    {
-        queryStyle = "form";
-        if (queryStyle == "")
-            queryStyle = "form";
-        queryPrefix = getParamStylePrefix(queryStyle);
-        querySuffix = getParamStyleSuffix(queryStyle);
-        queryDelimiter = getParamStyleDelimiter(queryStyle, "store_id", true);
-        if (fullPath.indexOf("?") > 0)
-            fullPath.append(queryPrefix);
-        else
-            fullPath.append("?");
-
-        fullPath.append(QUrl::toPercentEncoding("store_id")).append(querySuffix).append(QUrl::toPercentEncoding(::OpenAPI::toStringValue(store_id.stringValue())));
-    }
     
     {
         queryStyle = "form";
@@ -1258,6 +1243,21 @@ void OAIAttributeApi::attributeDelete(const QString &id, const ::OpenAPI::Option
             fullPath.append("?");
 
         fullPath.append(QUrl::toPercentEncoding("id")).append(querySuffix).append(QUrl::toPercentEncoding(::OpenAPI::toStringValue(id)));
+    }
+    if (store_id.hasValue())
+    {
+        queryStyle = "form";
+        if (queryStyle == "")
+            queryStyle = "form";
+        queryPrefix = getParamStylePrefix(queryStyle);
+        querySuffix = getParamStyleSuffix(queryStyle);
+        queryDelimiter = getParamStyleDelimiter(queryStyle, "store_id", true);
+        if (fullPath.indexOf("?") > 0)
+            fullPath.append(queryPrefix);
+        else
+            fullPath.append("?");
+
+        fullPath.append(QUrl::toPercentEncoding("store_id")).append(querySuffix).append(QUrl::toPercentEncoding(::OpenAPI::toStringValue(store_id.stringValue())));
     }
     OAIHttpRequestWorker *worker = new OAIHttpRequestWorker(this, _manager);
     worker->setTimeOut(_timeOut);
@@ -1326,7 +1326,7 @@ void OAIAttributeApi::attributeDeleteCallback(OAIHttpRequestWorker *worker) {
     }
 }
 
-void OAIAttributeApi::attributeGroupList(const ::OpenAPI::OptionalParam<qint32> &start, const ::OpenAPI::OptionalParam<qint32> &count, const ::OpenAPI::OptionalParam<QString> &lang_id, const ::OpenAPI::OptionalParam<QString> &params, const ::OpenAPI::OptionalParam<QString> &exclude, const ::OpenAPI::OptionalParam<QString> &response_fields, const ::OpenAPI::OptionalParam<QString> &attribute_set_id) {
+void OAIAttributeApi::attributeGroupList(const ::OpenAPI::OptionalParam<qint32> &start, const ::OpenAPI::OptionalParam<qint32> &count, const ::OpenAPI::OptionalParam<QString> &attribute_set_id, const ::OpenAPI::OptionalParam<QString> &lang_id, const ::OpenAPI::OptionalParam<QString> &response_fields, const ::OpenAPI::OptionalParam<QString> &params, const ::OpenAPI::OptionalParam<QString> &exclude) {
     QString fullPath = QString(_serverConfigs["attributeGroupList"][_serverIndices.value("attributeGroupList")].URL()+"/attribute.group.list.json");
     
     if (_apiKeys.contains("StoreKeyAuth")) {
@@ -1368,6 +1368,21 @@ void OAIAttributeApi::attributeGroupList(const ::OpenAPI::OptionalParam<qint32> 
 
         fullPath.append(QUrl::toPercentEncoding("count")).append(querySuffix).append(QUrl::toPercentEncoding(::OpenAPI::toStringValue(count.stringValue())));
     }
+    if (attribute_set_id.hasValue())
+    {
+        queryStyle = "form";
+        if (queryStyle == "")
+            queryStyle = "form";
+        queryPrefix = getParamStylePrefix(queryStyle);
+        querySuffix = getParamStyleSuffix(queryStyle);
+        queryDelimiter = getParamStyleDelimiter(queryStyle, "attribute_set_id", true);
+        if (fullPath.indexOf("?") > 0)
+            fullPath.append(queryPrefix);
+        else
+            fullPath.append("?");
+
+        fullPath.append(QUrl::toPercentEncoding("attribute_set_id")).append(querySuffix).append(QUrl::toPercentEncoding(::OpenAPI::toStringValue(attribute_set_id.stringValue())));
+    }
     if (lang_id.hasValue())
     {
         queryStyle = "form";
@@ -1382,6 +1397,21 @@ void OAIAttributeApi::attributeGroupList(const ::OpenAPI::OptionalParam<qint32> 
             fullPath.append("?");
 
         fullPath.append(QUrl::toPercentEncoding("lang_id")).append(querySuffix).append(QUrl::toPercentEncoding(::OpenAPI::toStringValue(lang_id.stringValue())));
+    }
+    if (response_fields.hasValue())
+    {
+        queryStyle = "form";
+        if (queryStyle == "")
+            queryStyle = "form";
+        queryPrefix = getParamStylePrefix(queryStyle);
+        querySuffix = getParamStyleSuffix(queryStyle);
+        queryDelimiter = getParamStyleDelimiter(queryStyle, "response_fields", true);
+        if (fullPath.indexOf("?") > 0)
+            fullPath.append(queryPrefix);
+        else
+            fullPath.append("?");
+
+        fullPath.append(QUrl::toPercentEncoding("response_fields")).append(querySuffix).append(QUrl::toPercentEncoding(::OpenAPI::toStringValue(response_fields.stringValue())));
     }
     if (params.hasValue())
     {
@@ -1412,36 +1442,6 @@ void OAIAttributeApi::attributeGroupList(const ::OpenAPI::OptionalParam<qint32> 
             fullPath.append("?");
 
         fullPath.append(QUrl::toPercentEncoding("exclude")).append(querySuffix).append(QUrl::toPercentEncoding(::OpenAPI::toStringValue(exclude.stringValue())));
-    }
-    if (response_fields.hasValue())
-    {
-        queryStyle = "form";
-        if (queryStyle == "")
-            queryStyle = "form";
-        queryPrefix = getParamStylePrefix(queryStyle);
-        querySuffix = getParamStyleSuffix(queryStyle);
-        queryDelimiter = getParamStyleDelimiter(queryStyle, "response_fields", true);
-        if (fullPath.indexOf("?") > 0)
-            fullPath.append(queryPrefix);
-        else
-            fullPath.append("?");
-
-        fullPath.append(QUrl::toPercentEncoding("response_fields")).append(querySuffix).append(QUrl::toPercentEncoding(::OpenAPI::toStringValue(response_fields.stringValue())));
-    }
-    if (attribute_set_id.hasValue())
-    {
-        queryStyle = "form";
-        if (queryStyle == "")
-            queryStyle = "form";
-        queryPrefix = getParamStylePrefix(queryStyle);
-        querySuffix = getParamStyleSuffix(queryStyle);
-        queryDelimiter = getParamStyleDelimiter(queryStyle, "attribute_set_id", true);
-        if (fullPath.indexOf("?") > 0)
-            fullPath.append(queryPrefix);
-        else
-            fullPath.append("?");
-
-        fullPath.append(QUrl::toPercentEncoding("attribute_set_id")).append(querySuffix).append(QUrl::toPercentEncoding(::OpenAPI::toStringValue(attribute_set_id.stringValue())));
     }
     OAIHttpRequestWorker *worker = new OAIHttpRequestWorker(this, _manager);
     worker->setTimeOut(_timeOut);
@@ -1510,7 +1510,7 @@ void OAIAttributeApi::attributeGroupListCallback(OAIHttpRequestWorker *worker) {
     }
 }
 
-void OAIAttributeApi::attributeInfo(const QString &id, const ::OpenAPI::OptionalParam<QString> &attribute_set_id, const ::OpenAPI::OptionalParam<QString> &store_id, const ::OpenAPI::OptionalParam<QString> &lang_id, const ::OpenAPI::OptionalParam<QString> &params, const ::OpenAPI::OptionalParam<QString> &exclude, const ::OpenAPI::OptionalParam<QString> &response_fields) {
+void OAIAttributeApi::attributeInfo(const QString &id, const ::OpenAPI::OptionalParam<QString> &attribute_set_id, const ::OpenAPI::OptionalParam<QString> &store_id, const ::OpenAPI::OptionalParam<QString> &lang_id, const ::OpenAPI::OptionalParam<QString> &response_fields, const ::OpenAPI::OptionalParam<QString> &params, const ::OpenAPI::OptionalParam<QString> &exclude) {
     QString fullPath = QString(_serverConfigs["attributeInfo"][_serverIndices.value("attributeInfo")].URL()+"/attribute.info.json");
     
     if (_apiKeys.contains("StoreKeyAuth")) {
@@ -1582,6 +1582,21 @@ void OAIAttributeApi::attributeInfo(const QString &id, const ::OpenAPI::Optional
 
         fullPath.append(QUrl::toPercentEncoding("lang_id")).append(querySuffix).append(QUrl::toPercentEncoding(::OpenAPI::toStringValue(lang_id.stringValue())));
     }
+    if (response_fields.hasValue())
+    {
+        queryStyle = "form";
+        if (queryStyle == "")
+            queryStyle = "form";
+        queryPrefix = getParamStylePrefix(queryStyle);
+        querySuffix = getParamStyleSuffix(queryStyle);
+        queryDelimiter = getParamStyleDelimiter(queryStyle, "response_fields", true);
+        if (fullPath.indexOf("?") > 0)
+            fullPath.append(queryPrefix);
+        else
+            fullPath.append("?");
+
+        fullPath.append(QUrl::toPercentEncoding("response_fields")).append(querySuffix).append(QUrl::toPercentEncoding(::OpenAPI::toStringValue(response_fields.stringValue())));
+    }
     if (params.hasValue())
     {
         queryStyle = "form";
@@ -1611,21 +1626,6 @@ void OAIAttributeApi::attributeInfo(const QString &id, const ::OpenAPI::Optional
             fullPath.append("?");
 
         fullPath.append(QUrl::toPercentEncoding("exclude")).append(querySuffix).append(QUrl::toPercentEncoding(::OpenAPI::toStringValue(exclude.stringValue())));
-    }
-    if (response_fields.hasValue())
-    {
-        queryStyle = "form";
-        if (queryStyle == "")
-            queryStyle = "form";
-        queryPrefix = getParamStylePrefix(queryStyle);
-        querySuffix = getParamStyleSuffix(queryStyle);
-        queryDelimiter = getParamStyleDelimiter(queryStyle, "response_fields", true);
-        if (fullPath.indexOf("?") > 0)
-            fullPath.append(queryPrefix);
-        else
-            fullPath.append("?");
-
-        fullPath.append(QUrl::toPercentEncoding("response_fields")).append(querySuffix).append(QUrl::toPercentEncoding(::OpenAPI::toStringValue(response_fields.stringValue())));
     }
     OAIHttpRequestWorker *worker = new OAIHttpRequestWorker(this, _manager);
     worker->setTimeOut(_timeOut);
@@ -1694,7 +1694,7 @@ void OAIAttributeApi::attributeInfoCallback(OAIHttpRequestWorker *worker) {
     }
 }
 
-void OAIAttributeApi::attributeList(const ::OpenAPI::OptionalParam<qint32> &start, const ::OpenAPI::OptionalParam<qint32> &count, const ::OpenAPI::OptionalParam<QString> &type, const ::OpenAPI::OptionalParam<QString> &attribute_ids, const ::OpenAPI::OptionalParam<QString> &attribute_set_id, const ::OpenAPI::OptionalParam<QString> &store_id, const ::OpenAPI::OptionalParam<QString> &lang_id, const ::OpenAPI::OptionalParam<QString> &params, const ::OpenAPI::OptionalParam<QString> &exclude, const ::OpenAPI::OptionalParam<QString> &response_fields, const ::OpenAPI::OptionalParam<bool> &visible, const ::OpenAPI::OptionalParam<bool> &required, const ::OpenAPI::OptionalParam<bool> &system) {
+void OAIAttributeApi::attributeList(const ::OpenAPI::OptionalParam<qint32> &start, const ::OpenAPI::OptionalParam<qint32> &count, const ::OpenAPI::OptionalParam<QString> &attribute_ids, const ::OpenAPI::OptionalParam<QString> &attribute_set_id, const ::OpenAPI::OptionalParam<QString> &store_id, const ::OpenAPI::OptionalParam<QString> &lang_id, const ::OpenAPI::OptionalParam<QString> &type, const ::OpenAPI::OptionalParam<bool> &visible, const ::OpenAPI::OptionalParam<bool> &required, const ::OpenAPI::OptionalParam<bool> &system, const ::OpenAPI::OptionalParam<QString> &response_fields, const ::OpenAPI::OptionalParam<QString> &params, const ::OpenAPI::OptionalParam<QString> &exclude) {
     QString fullPath = QString(_serverConfigs["attributeList"][_serverIndices.value("attributeList")].URL()+"/attribute.list.json");
     
     if (_apiKeys.contains("StoreKeyAuth")) {
@@ -1735,21 +1735,6 @@ void OAIAttributeApi::attributeList(const ::OpenAPI::OptionalParam<qint32> &star
             fullPath.append("?");
 
         fullPath.append(QUrl::toPercentEncoding("count")).append(querySuffix).append(QUrl::toPercentEncoding(::OpenAPI::toStringValue(count.stringValue())));
-    }
-    if (type.hasValue())
-    {
-        queryStyle = "form";
-        if (queryStyle == "")
-            queryStyle = "form";
-        queryPrefix = getParamStylePrefix(queryStyle);
-        querySuffix = getParamStyleSuffix(queryStyle);
-        queryDelimiter = getParamStyleDelimiter(queryStyle, "type", true);
-        if (fullPath.indexOf("?") > 0)
-            fullPath.append(queryPrefix);
-        else
-            fullPath.append("?");
-
-        fullPath.append(QUrl::toPercentEncoding("type")).append(querySuffix).append(QUrl::toPercentEncoding(::OpenAPI::toStringValue(type.stringValue())));
     }
     if (attribute_ids.hasValue())
     {
@@ -1811,50 +1796,20 @@ void OAIAttributeApi::attributeList(const ::OpenAPI::OptionalParam<qint32> &star
 
         fullPath.append(QUrl::toPercentEncoding("lang_id")).append(querySuffix).append(QUrl::toPercentEncoding(::OpenAPI::toStringValue(lang_id.stringValue())));
     }
-    if (params.hasValue())
+    if (type.hasValue())
     {
         queryStyle = "form";
         if (queryStyle == "")
             queryStyle = "form";
         queryPrefix = getParamStylePrefix(queryStyle);
         querySuffix = getParamStyleSuffix(queryStyle);
-        queryDelimiter = getParamStyleDelimiter(queryStyle, "params", true);
+        queryDelimiter = getParamStyleDelimiter(queryStyle, "type", true);
         if (fullPath.indexOf("?") > 0)
             fullPath.append(queryPrefix);
         else
             fullPath.append("?");
 
-        fullPath.append(QUrl::toPercentEncoding("params")).append(querySuffix).append(QUrl::toPercentEncoding(::OpenAPI::toStringValue(params.stringValue())));
-    }
-    if (exclude.hasValue())
-    {
-        queryStyle = "form";
-        if (queryStyle == "")
-            queryStyle = "form";
-        queryPrefix = getParamStylePrefix(queryStyle);
-        querySuffix = getParamStyleSuffix(queryStyle);
-        queryDelimiter = getParamStyleDelimiter(queryStyle, "exclude", true);
-        if (fullPath.indexOf("?") > 0)
-            fullPath.append(queryPrefix);
-        else
-            fullPath.append("?");
-
-        fullPath.append(QUrl::toPercentEncoding("exclude")).append(querySuffix).append(QUrl::toPercentEncoding(::OpenAPI::toStringValue(exclude.stringValue())));
-    }
-    if (response_fields.hasValue())
-    {
-        queryStyle = "form";
-        if (queryStyle == "")
-            queryStyle = "form";
-        queryPrefix = getParamStylePrefix(queryStyle);
-        querySuffix = getParamStyleSuffix(queryStyle);
-        queryDelimiter = getParamStyleDelimiter(queryStyle, "response_fields", true);
-        if (fullPath.indexOf("?") > 0)
-            fullPath.append(queryPrefix);
-        else
-            fullPath.append("?");
-
-        fullPath.append(QUrl::toPercentEncoding("response_fields")).append(querySuffix).append(QUrl::toPercentEncoding(::OpenAPI::toStringValue(response_fields.stringValue())));
+        fullPath.append(QUrl::toPercentEncoding("type")).append(querySuffix).append(QUrl::toPercentEncoding(::OpenAPI::toStringValue(type.stringValue())));
     }
     if (visible.hasValue())
     {
@@ -1900,6 +1855,51 @@ void OAIAttributeApi::attributeList(const ::OpenAPI::OptionalParam<qint32> &star
             fullPath.append("?");
 
         fullPath.append(QUrl::toPercentEncoding("system")).append(querySuffix).append(QUrl::toPercentEncoding(::OpenAPI::toStringValue(system.stringValue())));
+    }
+    if (response_fields.hasValue())
+    {
+        queryStyle = "form";
+        if (queryStyle == "")
+            queryStyle = "form";
+        queryPrefix = getParamStylePrefix(queryStyle);
+        querySuffix = getParamStyleSuffix(queryStyle);
+        queryDelimiter = getParamStyleDelimiter(queryStyle, "response_fields", true);
+        if (fullPath.indexOf("?") > 0)
+            fullPath.append(queryPrefix);
+        else
+            fullPath.append("?");
+
+        fullPath.append(QUrl::toPercentEncoding("response_fields")).append(querySuffix).append(QUrl::toPercentEncoding(::OpenAPI::toStringValue(response_fields.stringValue())));
+    }
+    if (params.hasValue())
+    {
+        queryStyle = "form";
+        if (queryStyle == "")
+            queryStyle = "form";
+        queryPrefix = getParamStylePrefix(queryStyle);
+        querySuffix = getParamStyleSuffix(queryStyle);
+        queryDelimiter = getParamStyleDelimiter(queryStyle, "params", true);
+        if (fullPath.indexOf("?") > 0)
+            fullPath.append(queryPrefix);
+        else
+            fullPath.append("?");
+
+        fullPath.append(QUrl::toPercentEncoding("params")).append(querySuffix).append(QUrl::toPercentEncoding(::OpenAPI::toStringValue(params.stringValue())));
+    }
+    if (exclude.hasValue())
+    {
+        queryStyle = "form";
+        if (queryStyle == "")
+            queryStyle = "form";
+        queryPrefix = getParamStylePrefix(queryStyle);
+        querySuffix = getParamStyleSuffix(queryStyle);
+        queryDelimiter = getParamStyleDelimiter(queryStyle, "exclude", true);
+        if (fullPath.indexOf("?") > 0)
+            fullPath.append(queryPrefix);
+        else
+            fullPath.append("?");
+
+        fullPath.append(QUrl::toPercentEncoding("exclude")).append(querySuffix).append(QUrl::toPercentEncoding(::OpenAPI::toStringValue(exclude.stringValue())));
     }
     OAIHttpRequestWorker *worker = new OAIHttpRequestWorker(this, _manager);
     worker->setTimeOut(_timeOut);

@@ -34,17 +34,8 @@ OAICartCouponAdd::~OAICartCouponAdd() {}
 
 void OAICartCouponAdd::initializeModel() {
 
-    m_store_id_isSet = false;
-    m_store_id_isValid = false;
-
     m_code_isSet = false;
     m_code_isValid = false;
-
-    m_name_isSet = false;
-    m_name_isValid = false;
-
-    m_codes_isSet = false;
-    m_codes_isValid = false;
 
     m_action_type_isSet = false;
     m_action_type_isValid = false;
@@ -57,6 +48,12 @@ void OAICartCouponAdd::initializeModel() {
 
     m_action_amount_isSet = false;
     m_action_amount_isValid = false;
+
+    m_codes_isSet = false;
+    m_codes_isValid = false;
+
+    m_name_isSet = false;
+    m_name_isValid = false;
 
     m_date_start_isSet = false;
     m_date_start_isValid = false;
@@ -84,6 +81,9 @@ void OAICartCouponAdd::initializeModel() {
 
     m_include_tax_isSet = false;
     m_include_tax_isValid = false;
+
+    m_store_id_isSet = false;
+    m_store_id_isValid = false;
 }
 
 void OAICartCouponAdd::fromJson(QString jsonString) {
@@ -95,17 +95,8 @@ void OAICartCouponAdd::fromJson(QString jsonString) {
 
 void OAICartCouponAdd::fromJsonObject(QJsonObject json) {
 
-    m_store_id_isValid = ::OpenAPI::fromJsonValue(m_store_id, json[QString("store_id")]);
-    m_store_id_isSet = !json[QString("store_id")].isNull() && m_store_id_isValid;
-
     m_code_isValid = ::OpenAPI::fromJsonValue(m_code, json[QString("code")]);
     m_code_isSet = !json[QString("code")].isNull() && m_code_isValid;
-
-    m_name_isValid = ::OpenAPI::fromJsonValue(m_name, json[QString("name")]);
-    m_name_isSet = !json[QString("name")].isNull() && m_name_isValid;
-
-    m_codes_isValid = ::OpenAPI::fromJsonValue(m_codes, json[QString("codes")]);
-    m_codes_isSet = !json[QString("codes")].isNull() && m_codes_isValid;
 
     m_action_type_isValid = ::OpenAPI::fromJsonValue(m_action_type, json[QString("action_type")]);
     m_action_type_isSet = !json[QString("action_type")].isNull() && m_action_type_isValid;
@@ -118,6 +109,12 @@ void OAICartCouponAdd::fromJsonObject(QJsonObject json) {
 
     m_action_amount_isValid = ::OpenAPI::fromJsonValue(m_action_amount, json[QString("action_amount")]);
     m_action_amount_isSet = !json[QString("action_amount")].isNull() && m_action_amount_isValid;
+
+    m_codes_isValid = ::OpenAPI::fromJsonValue(m_codes, json[QString("codes")]);
+    m_codes_isSet = !json[QString("codes")].isNull() && m_codes_isValid;
+
+    m_name_isValid = ::OpenAPI::fromJsonValue(m_name, json[QString("name")]);
+    m_name_isSet = !json[QString("name")].isNull() && m_name_isValid;
 
     m_date_start_isValid = ::OpenAPI::fromJsonValue(m_date_start, json[QString("date_start")]);
     m_date_start_isSet = !json[QString("date_start")].isNull() && m_date_start_isValid;
@@ -145,6 +142,9 @@ void OAICartCouponAdd::fromJsonObject(QJsonObject json) {
 
     m_include_tax_isValid = ::OpenAPI::fromJsonValue(m_include_tax, json[QString("include_tax")]);
     m_include_tax_isSet = !json[QString("include_tax")].isNull() && m_include_tax_isValid;
+
+    m_store_id_isValid = ::OpenAPI::fromJsonValue(m_store_id, json[QString("store_id")]);
+    m_store_id_isSet = !json[QString("store_id")].isNull() && m_store_id_isValid;
 }
 
 QString OAICartCouponAdd::asJson() const {
@@ -156,17 +156,8 @@ QString OAICartCouponAdd::asJson() const {
 
 QJsonObject OAICartCouponAdd::asJsonObject() const {
     QJsonObject obj;
-    if (m_store_id_isSet) {
-        obj.insert(QString("store_id"), ::OpenAPI::toJsonValue(m_store_id));
-    }
     if (m_code_isSet) {
         obj.insert(QString("code"), ::OpenAPI::toJsonValue(m_code));
-    }
-    if (m_name_isSet) {
-        obj.insert(QString("name"), ::OpenAPI::toJsonValue(m_name));
-    }
-    if (m_codes.size() > 0) {
-        obj.insert(QString("codes"), ::OpenAPI::toJsonValue(m_codes));
     }
     if (m_action_type_isSet) {
         obj.insert(QString("action_type"), ::OpenAPI::toJsonValue(m_action_type));
@@ -179,6 +170,12 @@ QJsonObject OAICartCouponAdd::asJsonObject() const {
     }
     if (m_action_amount_isSet) {
         obj.insert(QString("action_amount"), ::OpenAPI::toJsonValue(m_action_amount));
+    }
+    if (m_codes.size() > 0) {
+        obj.insert(QString("codes"), ::OpenAPI::toJsonValue(m_codes));
+    }
+    if (m_name_isSet) {
+        obj.insert(QString("name"), ::OpenAPI::toJsonValue(m_name));
     }
     if (m_date_start_isSet) {
         obj.insert(QString("date_start"), ::OpenAPI::toJsonValue(m_date_start));
@@ -207,23 +204,10 @@ QJsonObject OAICartCouponAdd::asJsonObject() const {
     if (m_include_tax_isSet) {
         obj.insert(QString("include_tax"), ::OpenAPI::toJsonValue(m_include_tax));
     }
+    if (m_store_id_isSet) {
+        obj.insert(QString("store_id"), ::OpenAPI::toJsonValue(m_store_id));
+    }
     return obj;
-}
-
-QString OAICartCouponAdd::getStoreId() const {
-    return m_store_id;
-}
-void OAICartCouponAdd::setStoreId(const QString &store_id) {
-    m_store_id = store_id;
-    m_store_id_isSet = true;
-}
-
-bool OAICartCouponAdd::is_store_id_Set() const{
-    return m_store_id_isSet;
-}
-
-bool OAICartCouponAdd::is_store_id_Valid() const{
-    return m_store_id_isValid;
 }
 
 QString OAICartCouponAdd::getCode() const {
@@ -240,38 +224,6 @@ bool OAICartCouponAdd::is_code_Set() const{
 
 bool OAICartCouponAdd::is_code_Valid() const{
     return m_code_isValid;
-}
-
-QString OAICartCouponAdd::getName() const {
-    return m_name;
-}
-void OAICartCouponAdd::setName(const QString &name) {
-    m_name = name;
-    m_name_isSet = true;
-}
-
-bool OAICartCouponAdd::is_name_Set() const{
-    return m_name_isSet;
-}
-
-bool OAICartCouponAdd::is_name_Valid() const{
-    return m_name_isValid;
-}
-
-QList<QString> OAICartCouponAdd::getCodes() const {
-    return m_codes;
-}
-void OAICartCouponAdd::setCodes(const QList<QString> &codes) {
-    m_codes = codes;
-    m_codes_isSet = true;
-}
-
-bool OAICartCouponAdd::is_codes_Set() const{
-    return m_codes_isSet;
-}
-
-bool OAICartCouponAdd::is_codes_Valid() const{
-    return m_codes_isValid;
 }
 
 QString OAICartCouponAdd::getActionType() const {
@@ -336,6 +288,38 @@ bool OAICartCouponAdd::is_action_amount_Set() const{
 
 bool OAICartCouponAdd::is_action_amount_Valid() const{
     return m_action_amount_isValid;
+}
+
+QList<QString> OAICartCouponAdd::getCodes() const {
+    return m_codes;
+}
+void OAICartCouponAdd::setCodes(const QList<QString> &codes) {
+    m_codes = codes;
+    m_codes_isSet = true;
+}
+
+bool OAICartCouponAdd::is_codes_Set() const{
+    return m_codes_isSet;
+}
+
+bool OAICartCouponAdd::is_codes_Valid() const{
+    return m_codes_isValid;
+}
+
+QString OAICartCouponAdd::getName() const {
+    return m_name;
+}
+void OAICartCouponAdd::setName(const QString &name) {
+    m_name = name;
+    m_name_isSet = true;
+}
+
+bool OAICartCouponAdd::is_name_Set() const{
+    return m_name_isSet;
+}
+
+bool OAICartCouponAdd::is_name_Valid() const{
+    return m_name_isValid;
 }
 
 QString OAICartCouponAdd::getDateStart() const {
@@ -482,25 +466,26 @@ bool OAICartCouponAdd::is_include_tax_Valid() const{
     return m_include_tax_isValid;
 }
 
+QString OAICartCouponAdd::getStoreId() const {
+    return m_store_id;
+}
+void OAICartCouponAdd::setStoreId(const QString &store_id) {
+    m_store_id = store_id;
+    m_store_id_isSet = true;
+}
+
+bool OAICartCouponAdd::is_store_id_Set() const{
+    return m_store_id_isSet;
+}
+
+bool OAICartCouponAdd::is_store_id_Valid() const{
+    return m_store_id_isValid;
+}
+
 bool OAICartCouponAdd::isSet() const {
     bool isObjectUpdated = false;
     do {
-        if (m_store_id_isSet) {
-            isObjectUpdated = true;
-            break;
-        }
-
         if (m_code_isSet) {
-            isObjectUpdated = true;
-            break;
-        }
-
-        if (m_name_isSet) {
-            isObjectUpdated = true;
-            break;
-        }
-
-        if (m_codes.size() > 0) {
             isObjectUpdated = true;
             break;
         }
@@ -521,6 +506,16 @@ bool OAICartCouponAdd::isSet() const {
         }
 
         if (m_action_amount_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_codes.size() > 0) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_name_isSet) {
             isObjectUpdated = true;
             break;
         }
@@ -566,6 +561,11 @@ bool OAICartCouponAdd::isSet() const {
         }
 
         if (m_include_tax_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_store_id_isSet) {
             isObjectUpdated = true;
             break;
         }

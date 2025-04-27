@@ -93,15 +93,15 @@ public:
     virtual void cartCatalogPriceRulesCount();
 
     /**
-    * @param[in]  page_cursor QString [optional]
     * @param[in]  start qint32 [optional]
     * @param[in]  count qint32 [optional]
+    * @param[in]  page_cursor QString [optional]
     * @param[in]  ids QString [optional]
-    * @param[in]  params QString [optional]
     * @param[in]  response_fields QString [optional]
+    * @param[in]  params QString [optional]
     * @param[in]  exclude QString [optional]
     */
-    virtual void cartCatalogPriceRulesList(const ::OpenAPI::OptionalParam<QString> &page_cursor = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<qint32> &start = ::OpenAPI::OptionalParam<qint32>(), const ::OpenAPI::OptionalParam<qint32> &count = ::OpenAPI::OptionalParam<qint32>(), const ::OpenAPI::OptionalParam<QString> &ids = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &params = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &response_fields = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &exclude = ::OpenAPI::OptionalParam<QString>());
+    virtual void cartCatalogPriceRulesList(const ::OpenAPI::OptionalParam<qint32> &start = ::OpenAPI::OptionalParam<qint32>(), const ::OpenAPI::OptionalParam<qint32> &count = ::OpenAPI::OptionalParam<qint32>(), const ::OpenAPI::OptionalParam<QString> &page_cursor = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &ids = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &response_fields = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &params = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &exclude = ::OpenAPI::OptionalParam<QString>());
 
     /**
     * @param[in]  cache_type QString [required]
@@ -130,22 +130,22 @@ public:
     * @param[in]  key QString [required]
     * @param[in]  r_operator QString [required]
     * @param[in]  value QString [required]
-    * @param[in]  store_id QString [optional]
     * @param[in]  target QString [optional]
     * @param[in]  include_tax bool [optional]
     * @param[in]  include_shipping bool [optional]
+    * @param[in]  store_id QString [optional]
     */
-    virtual void cartCouponConditionAdd(const QString &coupon_id, const QString &entity, const QString &key, const QString &r_operator, const QString &value, const ::OpenAPI::OptionalParam<QString> &store_id = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &target = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<bool> &include_tax = ::OpenAPI::OptionalParam<bool>(), const ::OpenAPI::OptionalParam<bool> &include_shipping = ::OpenAPI::OptionalParam<bool>());
+    virtual void cartCouponConditionAdd(const QString &coupon_id, const QString &entity, const QString &key, const QString &r_operator, const QString &value, const ::OpenAPI::OptionalParam<QString> &target = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<bool> &include_tax = ::OpenAPI::OptionalParam<bool>(), const ::OpenAPI::OptionalParam<bool> &include_shipping = ::OpenAPI::OptionalParam<bool>(), const ::OpenAPI::OptionalParam<QString> &store_id = ::OpenAPI::OptionalParam<QString>());
 
     /**
     * @param[in]  store_id QString [optional]
+    * @param[in]  avail bool [optional]
     * @param[in]  date_start_from QString [optional]
     * @param[in]  date_start_to QString [optional]
     * @param[in]  date_end_from QString [optional]
     * @param[in]  date_end_to QString [optional]
-    * @param[in]  avail bool [optional]
     */
-    virtual void cartCouponCount(const ::OpenAPI::OptionalParam<QString> &store_id = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &date_start_from = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &date_start_to = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &date_end_from = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &date_end_to = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<bool> &avail = ::OpenAPI::OptionalParam<bool>());
+    virtual void cartCouponCount(const ::OpenAPI::OptionalParam<QString> &store_id = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<bool> &avail = ::OpenAPI::OptionalParam<bool>(), const ::OpenAPI::OptionalParam<QString> &date_start_from = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &date_start_to = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &date_end_from = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &date_end_to = ::OpenAPI::OptionalParam<QString>());
 
     /**
     * @param[in]  id QString [required]
@@ -154,22 +154,22 @@ public:
     virtual void cartCouponDelete(const QString &id, const ::OpenAPI::OptionalParam<QString> &store_id = ::OpenAPI::OptionalParam<QString>());
 
     /**
-    * @param[in]  page_cursor QString [optional]
     * @param[in]  start qint32 [optional]
     * @param[in]  count qint32 [optional]
+    * @param[in]  page_cursor QString [optional]
     * @param[in]  coupons_ids QString [optional]
     * @param[in]  store_id QString [optional]
+    * @param[in]  lang_id QString [optional]
+    * @param[in]  avail bool [optional]
     * @param[in]  date_start_from QString [optional]
     * @param[in]  date_start_to QString [optional]
     * @param[in]  date_end_from QString [optional]
     * @param[in]  date_end_to QString [optional]
-    * @param[in]  avail bool [optional]
-    * @param[in]  lang_id QString [optional]
-    * @param[in]  params QString [optional]
     * @param[in]  response_fields QString [optional]
+    * @param[in]  params QString [optional]
     * @param[in]  exclude QString [optional]
     */
-    virtual void cartCouponList(const ::OpenAPI::OptionalParam<QString> &page_cursor = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<qint32> &start = ::OpenAPI::OptionalParam<qint32>(), const ::OpenAPI::OptionalParam<qint32> &count = ::OpenAPI::OptionalParam<qint32>(), const ::OpenAPI::OptionalParam<QString> &coupons_ids = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &store_id = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &date_start_from = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &date_start_to = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &date_end_from = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &date_end_to = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<bool> &avail = ::OpenAPI::OptionalParam<bool>(), const ::OpenAPI::OptionalParam<QString> &lang_id = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &params = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &response_fields = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &exclude = ::OpenAPI::OptionalParam<QString>());
+    virtual void cartCouponList(const ::OpenAPI::OptionalParam<qint32> &start = ::OpenAPI::OptionalParam<qint32>(), const ::OpenAPI::OptionalParam<qint32> &count = ::OpenAPI::OptionalParam<qint32>(), const ::OpenAPI::OptionalParam<QString> &page_cursor = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &coupons_ids = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &store_id = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &lang_id = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<bool> &avail = ::OpenAPI::OptionalParam<bool>(), const ::OpenAPI::OptionalParam<QString> &date_start_from = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &date_start_to = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &date_end_from = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &date_end_to = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &response_fields = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &params = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &exclude = ::OpenAPI::OptionalParam<QString>());
 
     /**
     * @param[in]  oai_cart_create OAICartCreate [required]
@@ -207,40 +207,40 @@ public:
     virtual void cartGiftcardDelete(const QString &id);
 
     /**
-    * @param[in]  page_cursor QString [optional]
     * @param[in]  start qint32 [optional]
     * @param[in]  count qint32 [optional]
+    * @param[in]  page_cursor QString [optional]
     * @param[in]  store_id QString [optional]
-    * @param[in]  params QString [optional]
     * @param[in]  response_fields QString [optional]
+    * @param[in]  params QString [optional]
     * @param[in]  exclude QString [optional]
     */
-    virtual void cartGiftcardList(const ::OpenAPI::OptionalParam<QString> &page_cursor = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<qint32> &start = ::OpenAPI::OptionalParam<qint32>(), const ::OpenAPI::OptionalParam<qint32> &count = ::OpenAPI::OptionalParam<qint32>(), const ::OpenAPI::OptionalParam<QString> &store_id = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &params = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &response_fields = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &exclude = ::OpenAPI::OptionalParam<QString>());
+    virtual void cartGiftcardList(const ::OpenAPI::OptionalParam<qint32> &start = ::OpenAPI::OptionalParam<qint32>(), const ::OpenAPI::OptionalParam<qint32> &count = ::OpenAPI::OptionalParam<qint32>(), const ::OpenAPI::OptionalParam<QString> &page_cursor = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &store_id = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &response_fields = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &params = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &exclude = ::OpenAPI::OptionalParam<QString>());
 
     /**
-    * @param[in]  params QString [optional]
-    * @param[in]  response_fields QString [optional]
-    * @param[in]  exclude QString [optional]
     * @param[in]  store_id QString [optional]
+    * @param[in]  response_fields QString [optional]
+    * @param[in]  params QString [optional]
+    * @param[in]  exclude QString [optional]
     */
-    virtual void cartInfo(const ::OpenAPI::OptionalParam<QString> &params = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &response_fields = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &exclude = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &store_id = ::OpenAPI::OptionalParam<QString>());
+    virtual void cartInfo(const ::OpenAPI::OptionalParam<QString> &store_id = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &response_fields = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &params = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &exclude = ::OpenAPI::OptionalParam<QString>());
 
 
     Q_DECL_DEPRECATED virtual void cartList();
 
     /**
     * @param[in]  entity_id QString [required]
+    * @param[in]  count qint32 [optional]
+    * @param[in]  page_cursor QString [optional]
     * @param[in]  entity QString [optional]
     * @param[in]  store_id QString [optional]
     * @param[in]  lang_id QString [optional]
     * @param[in]  key QString [optional]
-    * @param[in]  count qint32 [optional]
-    * @param[in]  page_cursor QString [optional]
-    * @param[in]  params QString [optional]
     * @param[in]  response_fields QString [optional]
+    * @param[in]  params QString [optional]
     * @param[in]  exclude QString [optional]
     */
-    virtual void cartMetaDataList(const QString &entity_id, const ::OpenAPI::OptionalParam<QString> &entity = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &store_id = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &lang_id = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &key = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<qint32> &count = ::OpenAPI::OptionalParam<qint32>(), const ::OpenAPI::OptionalParam<QString> &page_cursor = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &params = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &response_fields = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &exclude = ::OpenAPI::OptionalParam<QString>());
+    virtual void cartMetaDataList(const QString &entity_id, const ::OpenAPI::OptionalParam<qint32> &count = ::OpenAPI::OptionalParam<qint32>(), const ::OpenAPI::OptionalParam<QString> &page_cursor = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &entity = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &store_id = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &lang_id = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &key = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &response_fields = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &params = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &exclude = ::OpenAPI::OptionalParam<QString>());
 
     /**
     * @param[in]  entity_id QString [required]
@@ -266,11 +266,11 @@ public:
     virtual void cartMethods();
 
     /**
-    * @param[in]  store_id QString [optional]
     * @param[in]  start qint32 [optional]
     * @param[in]  count qint32 [optional]
+    * @param[in]  store_id QString [optional]
     */
-    virtual void cartPluginList(const ::OpenAPI::OptionalParam<QString> &store_id = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<qint32> &start = ::OpenAPI::OptionalParam<qint32>(), const ::OpenAPI::OptionalParam<qint32> &count = ::OpenAPI::OptionalParam<qint32>());
+    virtual void cartPluginList(const ::OpenAPI::OptionalParam<qint32> &start = ::OpenAPI::OptionalParam<qint32>(), const ::OpenAPI::OptionalParam<qint32> &count = ::OpenAPI::OptionalParam<qint32>(), const ::OpenAPI::OptionalParam<QString> &store_id = ::OpenAPI::OptionalParam<QString>());
 
     /**
     * @param[in]  name QString [optional]
@@ -291,30 +291,30 @@ public:
     virtual void cartScriptDelete(const QString &id, const ::OpenAPI::OptionalParam<QString> &store_id = ::OpenAPI::OptionalParam<QString>());
 
     /**
-    * @param[in]  page_cursor QString [optional]
     * @param[in]  start qint32 [optional]
     * @param[in]  count qint32 [optional]
+    * @param[in]  page_cursor QString [optional]
+    * @param[in]  script_ids QString [optional]
+    * @param[in]  store_id QString [optional]
     * @param[in]  created_from QString [optional]
     * @param[in]  created_to QString [optional]
     * @param[in]  modified_from QString [optional]
     * @param[in]  modified_to QString [optional]
-    * @param[in]  script_ids QString [optional]
-    * @param[in]  store_id QString [optional]
-    * @param[in]  params QString [optional]
     * @param[in]  response_fields QString [optional]
+    * @param[in]  params QString [optional]
     * @param[in]  exclude QString [optional]
     */
-    virtual void cartScriptList(const ::OpenAPI::OptionalParam<QString> &page_cursor = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<qint32> &start = ::OpenAPI::OptionalParam<qint32>(), const ::OpenAPI::OptionalParam<qint32> &count = ::OpenAPI::OptionalParam<qint32>(), const ::OpenAPI::OptionalParam<QString> &created_from = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &created_to = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &modified_from = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &modified_to = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &script_ids = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &store_id = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &params = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &response_fields = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &exclude = ::OpenAPI::OptionalParam<QString>());
+    virtual void cartScriptList(const ::OpenAPI::OptionalParam<qint32> &start = ::OpenAPI::OptionalParam<qint32>(), const ::OpenAPI::OptionalParam<qint32> &count = ::OpenAPI::OptionalParam<qint32>(), const ::OpenAPI::OptionalParam<QString> &page_cursor = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &script_ids = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &store_id = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &created_from = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &created_to = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &modified_from = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &modified_to = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &response_fields = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &params = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &exclude = ::OpenAPI::OptionalParam<QString>());
 
     /**
-    * @param[in]  store_id QString [optional]
     * @param[in]  start qint32 [optional]
     * @param[in]  count qint32 [optional]
-    * @param[in]  params QString [optional]
+    * @param[in]  store_id QString [optional]
     * @param[in]  response_fields QString [optional]
+    * @param[in]  params QString [optional]
     * @param[in]  exclude QString [optional]
     */
-    virtual void cartShippingZonesList(const ::OpenAPI::OptionalParam<QString> &store_id = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<qint32> &start = ::OpenAPI::OptionalParam<qint32>(), const ::OpenAPI::OptionalParam<qint32> &count = ::OpenAPI::OptionalParam<qint32>(), const ::OpenAPI::OptionalParam<QString> &params = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &response_fields = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &exclude = ::OpenAPI::OptionalParam<QString>());
+    virtual void cartShippingZonesList(const ::OpenAPI::OptionalParam<qint32> &start = ::OpenAPI::OptionalParam<qint32>(), const ::OpenAPI::OptionalParam<qint32> &count = ::OpenAPI::OptionalParam<qint32>(), const ::OpenAPI::OptionalParam<QString> &store_id = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &response_fields = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &params = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &exclude = ::OpenAPI::OptionalParam<QString>());
 
     /**
     * @param[in]  validate_version bool [optional]

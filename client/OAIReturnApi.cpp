@@ -539,7 +539,7 @@ void OAIReturnApi::returnCountCallback(OAIHttpRequestWorker *worker) {
     }
 }
 
-void OAIReturnApi::returnInfo(const QString &id, const ::OpenAPI::OptionalParam<QString> &order_id, const ::OpenAPI::OptionalParam<QString> &store_id, const ::OpenAPI::OptionalParam<QString> &params, const ::OpenAPI::OptionalParam<QString> &exclude, const ::OpenAPI::OptionalParam<QString> &response_fields) {
+void OAIReturnApi::returnInfo(const QString &id, const ::OpenAPI::OptionalParam<QString> &order_id, const ::OpenAPI::OptionalParam<QString> &store_id, const ::OpenAPI::OptionalParam<QString> &response_fields, const ::OpenAPI::OptionalParam<QString> &params, const ::OpenAPI::OptionalParam<QString> &exclude) {
     QString fullPath = QString(_serverConfigs["returnInfo"][_serverIndices.value("returnInfo")].URL()+"/return.info.json");
     
     if (_apiKeys.contains("StoreKeyAuth")) {
@@ -596,6 +596,21 @@ void OAIReturnApi::returnInfo(const QString &id, const ::OpenAPI::OptionalParam<
 
         fullPath.append(QUrl::toPercentEncoding("store_id")).append(querySuffix).append(QUrl::toPercentEncoding(::OpenAPI::toStringValue(store_id.stringValue())));
     }
+    if (response_fields.hasValue())
+    {
+        queryStyle = "form";
+        if (queryStyle == "")
+            queryStyle = "form";
+        queryPrefix = getParamStylePrefix(queryStyle);
+        querySuffix = getParamStyleSuffix(queryStyle);
+        queryDelimiter = getParamStyleDelimiter(queryStyle, "response_fields", true);
+        if (fullPath.indexOf("?") > 0)
+            fullPath.append(queryPrefix);
+        else
+            fullPath.append("?");
+
+        fullPath.append(QUrl::toPercentEncoding("response_fields")).append(querySuffix).append(QUrl::toPercentEncoding(::OpenAPI::toStringValue(response_fields.stringValue())));
+    }
     if (params.hasValue())
     {
         queryStyle = "form";
@@ -625,21 +640,6 @@ void OAIReturnApi::returnInfo(const QString &id, const ::OpenAPI::OptionalParam<
             fullPath.append("?");
 
         fullPath.append(QUrl::toPercentEncoding("exclude")).append(querySuffix).append(QUrl::toPercentEncoding(::OpenAPI::toStringValue(exclude.stringValue())));
-    }
-    if (response_fields.hasValue())
-    {
-        queryStyle = "form";
-        if (queryStyle == "")
-            queryStyle = "form";
-        queryPrefix = getParamStylePrefix(queryStyle);
-        querySuffix = getParamStyleSuffix(queryStyle);
-        queryDelimiter = getParamStyleDelimiter(queryStyle, "response_fields", true);
-        if (fullPath.indexOf("?") > 0)
-            fullPath.append(queryPrefix);
-        else
-            fullPath.append("?");
-
-        fullPath.append(QUrl::toPercentEncoding("response_fields")).append(querySuffix).append(QUrl::toPercentEncoding(::OpenAPI::toStringValue(response_fields.stringValue())));
     }
     OAIHttpRequestWorker *worker = new OAIHttpRequestWorker(this, _manager);
     worker->setTimeOut(_timeOut);
@@ -708,7 +708,7 @@ void OAIReturnApi::returnInfoCallback(OAIHttpRequestWorker *worker) {
     }
 }
 
-void OAIReturnApi::returnList(const ::OpenAPI::OptionalParam<qint32> &start, const ::OpenAPI::OptionalParam<qint32> &count, const ::OpenAPI::OptionalParam<QString> &page_cursor, const ::OpenAPI::OptionalParam<QString> &params, const ::OpenAPI::OptionalParam<QString> &exclude, const ::OpenAPI::OptionalParam<QString> &response_fields, const ::OpenAPI::OptionalParam<QString> &order_id, const ::OpenAPI::OptionalParam<QString> &order_ids, const ::OpenAPI::OptionalParam<QString> &customer_id, const ::OpenAPI::OptionalParam<QString> &store_id, const ::OpenAPI::OptionalParam<QString> &status, const ::OpenAPI::OptionalParam<QString> &return_type, const ::OpenAPI::OptionalParam<QString> &created_from, const ::OpenAPI::OptionalParam<QString> &created_to, const ::OpenAPI::OptionalParam<QString> &modified_from, const ::OpenAPI::OptionalParam<QString> &modified_to, const ::OpenAPI::OptionalParam<QString> &report_request_id, const ::OpenAPI::OptionalParam<bool> &disable_report_cache) {
+void OAIReturnApi::returnList(const ::OpenAPI::OptionalParam<qint32> &start, const ::OpenAPI::OptionalParam<qint32> &count, const ::OpenAPI::OptionalParam<QString> &page_cursor, const ::OpenAPI::OptionalParam<QString> &order_id, const ::OpenAPI::OptionalParam<QString> &order_ids, const ::OpenAPI::OptionalParam<QString> &customer_id, const ::OpenAPI::OptionalParam<QString> &store_id, const ::OpenAPI::OptionalParam<QString> &status, const ::OpenAPI::OptionalParam<QString> &return_type, const ::OpenAPI::OptionalParam<QString> &created_from, const ::OpenAPI::OptionalParam<QString> &created_to, const ::OpenAPI::OptionalParam<QString> &modified_from, const ::OpenAPI::OptionalParam<QString> &modified_to, const ::OpenAPI::OptionalParam<QString> &response_fields, const ::OpenAPI::OptionalParam<QString> &params, const ::OpenAPI::OptionalParam<QString> &exclude, const ::OpenAPI::OptionalParam<QString> &report_request_id, const ::OpenAPI::OptionalParam<bool> &disable_report_cache) {
     QString fullPath = QString(_serverConfigs["returnList"][_serverIndices.value("returnList")].URL()+"/return.list.json");
     
     if (_apiKeys.contains("StoreKeyAuth")) {
@@ -764,51 +764,6 @@ void OAIReturnApi::returnList(const ::OpenAPI::OptionalParam<qint32> &start, con
             fullPath.append("?");
 
         fullPath.append(QUrl::toPercentEncoding("page_cursor")).append(querySuffix).append(QUrl::toPercentEncoding(::OpenAPI::toStringValue(page_cursor.stringValue())));
-    }
-    if (params.hasValue())
-    {
-        queryStyle = "form";
-        if (queryStyle == "")
-            queryStyle = "form";
-        queryPrefix = getParamStylePrefix(queryStyle);
-        querySuffix = getParamStyleSuffix(queryStyle);
-        queryDelimiter = getParamStyleDelimiter(queryStyle, "params", true);
-        if (fullPath.indexOf("?") > 0)
-            fullPath.append(queryPrefix);
-        else
-            fullPath.append("?");
-
-        fullPath.append(QUrl::toPercentEncoding("params")).append(querySuffix).append(QUrl::toPercentEncoding(::OpenAPI::toStringValue(params.stringValue())));
-    }
-    if (exclude.hasValue())
-    {
-        queryStyle = "form";
-        if (queryStyle == "")
-            queryStyle = "form";
-        queryPrefix = getParamStylePrefix(queryStyle);
-        querySuffix = getParamStyleSuffix(queryStyle);
-        queryDelimiter = getParamStyleDelimiter(queryStyle, "exclude", true);
-        if (fullPath.indexOf("?") > 0)
-            fullPath.append(queryPrefix);
-        else
-            fullPath.append("?");
-
-        fullPath.append(QUrl::toPercentEncoding("exclude")).append(querySuffix).append(QUrl::toPercentEncoding(::OpenAPI::toStringValue(exclude.stringValue())));
-    }
-    if (response_fields.hasValue())
-    {
-        queryStyle = "form";
-        if (queryStyle == "")
-            queryStyle = "form";
-        queryPrefix = getParamStylePrefix(queryStyle);
-        querySuffix = getParamStyleSuffix(queryStyle);
-        queryDelimiter = getParamStyleDelimiter(queryStyle, "response_fields", true);
-        if (fullPath.indexOf("?") > 0)
-            fullPath.append(queryPrefix);
-        else
-            fullPath.append("?");
-
-        fullPath.append(QUrl::toPercentEncoding("response_fields")).append(querySuffix).append(QUrl::toPercentEncoding(::OpenAPI::toStringValue(response_fields.stringValue())));
     }
     if (order_id.hasValue())
     {
@@ -959,6 +914,51 @@ void OAIReturnApi::returnList(const ::OpenAPI::OptionalParam<qint32> &start, con
             fullPath.append("?");
 
         fullPath.append(QUrl::toPercentEncoding("modified_to")).append(querySuffix).append(QUrl::toPercentEncoding(::OpenAPI::toStringValue(modified_to.stringValue())));
+    }
+    if (response_fields.hasValue())
+    {
+        queryStyle = "form";
+        if (queryStyle == "")
+            queryStyle = "form";
+        queryPrefix = getParamStylePrefix(queryStyle);
+        querySuffix = getParamStyleSuffix(queryStyle);
+        queryDelimiter = getParamStyleDelimiter(queryStyle, "response_fields", true);
+        if (fullPath.indexOf("?") > 0)
+            fullPath.append(queryPrefix);
+        else
+            fullPath.append("?");
+
+        fullPath.append(QUrl::toPercentEncoding("response_fields")).append(querySuffix).append(QUrl::toPercentEncoding(::OpenAPI::toStringValue(response_fields.stringValue())));
+    }
+    if (params.hasValue())
+    {
+        queryStyle = "form";
+        if (queryStyle == "")
+            queryStyle = "form";
+        queryPrefix = getParamStylePrefix(queryStyle);
+        querySuffix = getParamStyleSuffix(queryStyle);
+        queryDelimiter = getParamStyleDelimiter(queryStyle, "params", true);
+        if (fullPath.indexOf("?") > 0)
+            fullPath.append(queryPrefix);
+        else
+            fullPath.append("?");
+
+        fullPath.append(QUrl::toPercentEncoding("params")).append(querySuffix).append(QUrl::toPercentEncoding(::OpenAPI::toStringValue(params.stringValue())));
+    }
+    if (exclude.hasValue())
+    {
+        queryStyle = "form";
+        if (queryStyle == "")
+            queryStyle = "form";
+        queryPrefix = getParamStylePrefix(queryStyle);
+        querySuffix = getParamStyleSuffix(queryStyle);
+        queryDelimiter = getParamStyleDelimiter(queryStyle, "exclude", true);
+        if (fullPath.indexOf("?") > 0)
+            fullPath.append(queryPrefix);
+        else
+            fullPath.append("?");
+
+        fullPath.append(QUrl::toPercentEncoding("exclude")).append(querySuffix).append(QUrl::toPercentEncoding(::OpenAPI::toStringValue(exclude.stringValue())));
     }
     if (report_request_id.hasValue())
     {

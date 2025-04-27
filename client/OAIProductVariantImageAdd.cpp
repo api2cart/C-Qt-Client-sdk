@@ -40,6 +40,9 @@ void OAIProductVariantImageAdd::initializeModel() {
     m_product_variant_id_isSet = false;
     m_product_variant_id_isValid = false;
 
+    m_store_id_isSet = false;
+    m_store_id_isValid = false;
+
     m_image_name_isSet = false;
     m_image_name_isValid = false;
 
@@ -61,9 +64,6 @@ void OAIProductVariantImageAdd::initializeModel() {
     m_position_isSet = false;
     m_position_isValid = false;
 
-    m_store_id_isSet = false;
-    m_store_id_isValid = false;
-
     m_option_id_isSet = false;
     m_option_id_isValid = false;
 }
@@ -82,6 +82,9 @@ void OAIProductVariantImageAdd::fromJsonObject(QJsonObject json) {
 
     m_product_variant_id_isValid = ::OpenAPI::fromJsonValue(m_product_variant_id, json[QString("product_variant_id")]);
     m_product_variant_id_isSet = !json[QString("product_variant_id")].isNull() && m_product_variant_id_isValid;
+
+    m_store_id_isValid = ::OpenAPI::fromJsonValue(m_store_id, json[QString("store_id")]);
+    m_store_id_isSet = !json[QString("store_id")].isNull() && m_store_id_isValid;
 
     m_image_name_isValid = ::OpenAPI::fromJsonValue(m_image_name, json[QString("image_name")]);
     m_image_name_isSet = !json[QString("image_name")].isNull() && m_image_name_isValid;
@@ -104,9 +107,6 @@ void OAIProductVariantImageAdd::fromJsonObject(QJsonObject json) {
     m_position_isValid = ::OpenAPI::fromJsonValue(m_position, json[QString("position")]);
     m_position_isSet = !json[QString("position")].isNull() && m_position_isValid;
 
-    m_store_id_isValid = ::OpenAPI::fromJsonValue(m_store_id, json[QString("store_id")]);
-    m_store_id_isSet = !json[QString("store_id")].isNull() && m_store_id_isValid;
-
     m_option_id_isValid = ::OpenAPI::fromJsonValue(m_option_id, json[QString("option_id")]);
     m_option_id_isSet = !json[QString("option_id")].isNull() && m_option_id_isValid;
 }
@@ -125,6 +125,9 @@ QJsonObject OAIProductVariantImageAdd::asJsonObject() const {
     }
     if (m_product_variant_id_isSet) {
         obj.insert(QString("product_variant_id"), ::OpenAPI::toJsonValue(m_product_variant_id));
+    }
+    if (m_store_id_isSet) {
+        obj.insert(QString("store_id"), ::OpenAPI::toJsonValue(m_store_id));
     }
     if (m_image_name_isSet) {
         obj.insert(QString("image_name"), ::OpenAPI::toJsonValue(m_image_name));
@@ -146,9 +149,6 @@ QJsonObject OAIProductVariantImageAdd::asJsonObject() const {
     }
     if (m_position_isSet) {
         obj.insert(QString("position"), ::OpenAPI::toJsonValue(m_position));
-    }
-    if (m_store_id_isSet) {
-        obj.insert(QString("store_id"), ::OpenAPI::toJsonValue(m_store_id));
     }
     if (m_option_id_isSet) {
         obj.insert(QString("option_id"), ::OpenAPI::toJsonValue(m_option_id));
@@ -186,6 +186,22 @@ bool OAIProductVariantImageAdd::is_product_variant_id_Set() const{
 
 bool OAIProductVariantImageAdd::is_product_variant_id_Valid() const{
     return m_product_variant_id_isValid;
+}
+
+QString OAIProductVariantImageAdd::getStoreId() const {
+    return m_store_id;
+}
+void OAIProductVariantImageAdd::setStoreId(const QString &store_id) {
+    m_store_id = store_id;
+    m_store_id_isSet = true;
+}
+
+bool OAIProductVariantImageAdd::is_store_id_Set() const{
+    return m_store_id_isSet;
+}
+
+bool OAIProductVariantImageAdd::is_store_id_Valid() const{
+    return m_store_id_isValid;
 }
 
 QString OAIProductVariantImageAdd::getImageName() const {
@@ -300,22 +316,6 @@ bool OAIProductVariantImageAdd::is_position_Valid() const{
     return m_position_isValid;
 }
 
-QString OAIProductVariantImageAdd::getStoreId() const {
-    return m_store_id;
-}
-void OAIProductVariantImageAdd::setStoreId(const QString &store_id) {
-    m_store_id = store_id;
-    m_store_id_isSet = true;
-}
-
-bool OAIProductVariantImageAdd::is_store_id_Set() const{
-    return m_store_id_isSet;
-}
-
-bool OAIProductVariantImageAdd::is_store_id_Valid() const{
-    return m_store_id_isValid;
-}
-
 QString OAIProductVariantImageAdd::getOptionId() const {
     return m_option_id;
 }
@@ -341,6 +341,11 @@ bool OAIProductVariantImageAdd::isSet() const {
         }
 
         if (m_product_variant_id_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_store_id_isSet) {
             isObjectUpdated = true;
             break;
         }
@@ -376,11 +381,6 @@ bool OAIProductVariantImageAdd::isSet() const {
         }
 
         if (m_position_isSet) {
-            isObjectUpdated = true;
-            break;
-        }
-
-        if (m_store_id_isSet) {
             isObjectUpdated = true;
             break;
         }

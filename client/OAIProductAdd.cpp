@@ -40,41 +40,47 @@ void OAIProductAdd::initializeModel() {
     m_model_isSet = false;
     m_model_isValid = false;
 
-    m_sku_isSet = false;
-    m_sku_isValid = false;
-
     m_description_isSet = false;
     m_description_isValid = false;
 
     m_price_isSet = false;
     m_price_isValid = false;
 
-    m_old_price_isSet = false;
-    m_old_price_isValid = false;
+    m_sku_isSet = false;
+    m_sku_isValid = false;
 
-    m_special_price_isSet = false;
-    m_special_price_isValid = false;
+    m_short_description_isSet = false;
+    m_short_description_isValid = false;
 
-    m_cost_price_isSet = false;
-    m_cost_price_isValid = false;
+    m_type_isSet = false;
+    m_type_isValid = false;
 
-    m_fixed_cost_shipping_price_isSet = false;
-    m_fixed_cost_shipping_price_isValid = false;
+    m_status_isSet = false;
+    m_status_isValid = false;
 
-    m_sprice_create_isSet = false;
-    m_sprice_create_isValid = false;
+    m_visible_isSet = false;
+    m_visible_isValid = false;
 
-    m_sprice_modified_isSet = false;
-    m_sprice_modified_isValid = false;
+    m_category_id_isSet = false;
+    m_category_id_isValid = false;
 
-    m_sprice_expire_isSet = false;
-    m_sprice_expire_isValid = false;
+    m_categories_ids_isSet = false;
+    m_categories_ids_isValid = false;
 
-    m_tier_prices_isSet = false;
-    m_tier_prices_isValid = false;
+    m_product_class_isSet = false;
+    m_product_class_isValid = false;
 
-    m_group_prices_isSet = false;
-    m_group_prices_isValid = false;
+    m_product_type_isSet = false;
+    m_product_type_isValid = false;
+
+    m_is_virtual_isSet = false;
+    m_is_virtual_isValid = false;
+
+    m_downloadable_isSet = false;
+    m_downloadable_isValid = false;
+
+    m_is_supply_isSet = false;
+    m_is_supply_isValid = false;
 
     m_available_for_view_isSet = false;
     m_available_for_view_isValid = false;
@@ -82,8 +88,68 @@ void OAIProductAdd::initializeModel() {
     m_available_for_sale_isSet = false;
     m_available_for_sale_isValid = false;
 
+    m_store_id_isSet = false;
+    m_store_id_isValid = false;
+
+    m_stores_ids_isSet = false;
+    m_stores_ids_isValid = false;
+
+    m_lang_id_isSet = false;
+    m_lang_id_isValid = false;
+
+    m_old_price_isSet = false;
+    m_old_price_isValid = false;
+
+    m_special_price_isSet = false;
+    m_special_price_isValid = false;
+
+    m_wholesale_price_isSet = false;
+    m_wholesale_price_isValid = false;
+
+    m_cost_price_isSet = false;
+    m_cost_price_isValid = false;
+
+    m_fixed_cost_shipping_price_isSet = false;
+    m_fixed_cost_shipping_price_isValid = false;
+
+    m_tier_prices_isSet = false;
+    m_tier_prices_isValid = false;
+
+    m_group_prices_isSet = false;
+    m_group_prices_isValid = false;
+
+    m_buyitnow_price_isSet = false;
+    m_buyitnow_price_isValid = false;
+
+    m_reserve_price_isSet = false;
+    m_reserve_price_isValid = false;
+
+    m_quantity_isSet = false;
+    m_quantity_isValid = false;
+
+    m_in_stock_isSet = false;
+    m_in_stock_isValid = false;
+
+    m_manage_stock_isSet = false;
+    m_manage_stock_isValid = false;
+
+    m_warehouse_id_isSet = false;
+    m_warehouse_id_isValid = false;
+
+    m_backorder_status_isSet = false;
+    m_backorder_status_isValid = false;
+
+    m_min_order_quantity_isSet = false;
+    m_min_order_quantity_isValid = false;
+
+    m_max_order_quantity_isSet = false;
+    m_max_order_quantity_isValid = false;
+
     m_weight_isSet = false;
     m_weight_isValid = false;
+
+    m_weight_unit_isSet = false;
+    m_weight_unit_isValid = false;
 
     m_width_isSet = false;
     m_width_isValid = false;
@@ -94,128 +160,8 @@ void OAIProductAdd::initializeModel() {
     m_length_isSet = false;
     m_length_isValid = false;
 
-    m_weight_unit_isSet = false;
-    m_weight_unit_isValid = false;
-
     m_dimensions_unit_isSet = false;
     m_dimensions_unit_isValid = false;
-
-    m_short_description_isSet = false;
-    m_short_description_isValid = false;
-
-    m_warehouse_id_isSet = false;
-    m_warehouse_id_isValid = false;
-
-    m_backorder_status_isSet = false;
-    m_backorder_status_isValid = false;
-
-    m_quantity_isSet = false;
-    m_quantity_isValid = false;
-
-    m_downloadable_isSet = false;
-    m_downloadable_isValid = false;
-
-    m_wholesale_price_isSet = false;
-    m_wholesale_price_isValid = false;
-
-    m_created_at_isSet = false;
-    m_created_at_isValid = false;
-
-    m_manufacturer_isSet = false;
-    m_manufacturer_isValid = false;
-
-    m_manufacturer_id_isSet = false;
-    m_manufacturer_id_isValid = false;
-
-    m_categories_ids_isSet = false;
-    m_categories_ids_isValid = false;
-
-    m_related_products_ids_isSet = false;
-    m_related_products_ids_isValid = false;
-
-    m_up_sell_products_ids_isSet = false;
-    m_up_sell_products_ids_isValid = false;
-
-    m_cross_sell_products_ids_isSet = false;
-    m_cross_sell_products_ids_isValid = false;
-
-    m_tax_class_id_isSet = false;
-    m_tax_class_id_isValid = false;
-
-    m_type_isSet = false;
-    m_type_isValid = false;
-
-    m_meta_title_isSet = false;
-    m_meta_title_isValid = false;
-
-    m_meta_keywords_isSet = false;
-    m_meta_keywords_isValid = false;
-
-    m_meta_description_isSet = false;
-    m_meta_description_isValid = false;
-
-    m_url_isSet = false;
-    m_url_isValid = false;
-
-    m_lang_id_isSet = false;
-    m_lang_id_isValid = false;
-
-    m_stores_ids_isSet = false;
-    m_stores_ids_isValid = false;
-
-    m_category_id_isSet = false;
-    m_category_id_isValid = false;
-
-    m_viewed_count_isSet = false;
-    m_viewed_count_isValid = false;
-
-    m_ordered_count_isSet = false;
-    m_ordered_count_isValid = false;
-
-    m_attribute_set_name_isSet = false;
-    m_attribute_set_name_isValid = false;
-
-    m_attribute_name_isSet = false;
-    m_attribute_name_isValid = false;
-
-    m_shipping_template_id_isSet = false;
-    m_shipping_template_id_isValid = false;
-
-    m_production_partner_ids_isSet = false;
-    m_production_partner_ids_isValid = false;
-
-    m_condition_isSet = false;
-    m_condition_isValid = false;
-
-    m_listing_duration_isSet = false;
-    m_listing_duration_isValid = false;
-
-    m_listing_type_isSet = false;
-    m_listing_type_isValid = false;
-
-    m_payment_methods_isSet = false;
-    m_payment_methods_isValid = false;
-
-    m_return_accepted_isSet = false;
-    m_return_accepted_isValid = false;
-
-    m_shipping_details_isSet = false;
-    m_shipping_details_isValid = false;
-
-    m_paypal_email_isSet = false;
-    m_paypal_email_isValid = false;
-
-    m_seller_profiles_isSet = false;
-    m_seller_profiles_isValid = false;
-
-    m_package_details_isSet = false;
-    m_package_details_isValid = false;
-
-    m_best_offer_isSet = false;
-    m_best_offer_isValid = false;
-
-    m_sales_tax_isSet = false;
-    m_sales_tax_isValid = false;
 
     m_barcode_isSet = false;
     m_barcode_isValid = false;
@@ -229,8 +175,35 @@ void OAIProductAdd::initializeModel() {
     m_isbn_isSet = false;
     m_isbn_isValid = false;
 
-    m_specifics_isSet = false;
-    m_specifics_isValid = false;
+    m_gtin_isSet = false;
+    m_gtin_isValid = false;
+
+    m_mpn_isSet = false;
+    m_mpn_isValid = false;
+
+    m_asin_isSet = false;
+    m_asin_isValid = false;
+
+    m_product_reference_isSet = false;
+    m_product_reference_isValid = false;
+
+    m_harmonized_system_code_isSet = false;
+    m_harmonized_system_code_isValid = false;
+
+    m_country_of_origin_isSet = false;
+    m_country_of_origin_isValid = false;
+
+    m_manufacturer_isSet = false;
+    m_manufacturer_isValid = false;
+
+    m_manufacturer_id_isSet = false;
+    m_manufacturer_id_isValid = false;
+
+    m_manufacturer_info_isSet = false;
+    m_manufacturer_info_isValid = false;
+
+    m_brand_name_isSet = false;
+    m_brand_name_isValid = false;
 
     m_image_url_isSet = false;
     m_image_url_isValid = false;
@@ -241,95 +214,113 @@ void OAIProductAdd::initializeModel() {
     m_additional_image_urls_isSet = false;
     m_additional_image_urls_isValid = false;
 
-    m_reserve_price_isSet = false;
-    m_reserve_price_isValid = false;
-
-    m_buyitnow_price_isSet = false;
-    m_buyitnow_price_isValid = false;
-
-    m_condition_description_isSet = false;
-    m_condition_description_isValid = false;
-
-    m_auction_confidentiality_level_isSet = false;
-    m_auction_confidentiality_level_isValid = false;
-
-    m_logistic_info_isSet = false;
-    m_logistic_info_isValid = false;
-
-    m_avail_from_isSet = false;
-    m_avail_from_isValid = false;
-
-    m_tags_isSet = false;
-    m_tags_isValid = false;
-
-    m_clear_cache_isSet = false;
-    m_clear_cache_isValid = false;
-
-    m_asin_isSet = false;
-    m_asin_isValid = false;
-
-    m_gtin_isSet = false;
-    m_gtin_isValid = false;
-
-    m_mpn_isSet = false;
-    m_mpn_isValid = false;
-
-    m_taxable_isSet = false;
-    m_taxable_isValid = false;
-
-    m_visible_isSet = false;
-    m_visible_isValid = false;
-
-    m_status_isSet = false;
-    m_status_isValid = false;
-
-    m_seo_url_isSet = false;
-    m_seo_url_isValid = false;
-
-    m_product_class_isSet = false;
-    m_product_class_isValid = false;
-
-    m_product_type_isSet = false;
-    m_product_type_isValid = false;
-
-    m_marketplace_item_properties_isSet = false;
-    m_marketplace_item_properties_isValid = false;
-
-    m_manage_stock_isSet = false;
-    m_manage_stock_isValid = false;
-
-    m_harmonized_system_code_isSet = false;
-    m_harmonized_system_code_isValid = false;
-
-    m_country_of_origin_isSet = false;
-    m_country_of_origin_isValid = false;
-
     m_files_isSet = false;
     m_files_isValid = false;
+
+    m_size_chart_isSet = false;
+    m_size_chart_isValid = false;
+
+    m_related_products_ids_isSet = false;
+    m_related_products_ids_isValid = false;
+
+    m_up_sell_products_ids_isSet = false;
+    m_up_sell_products_ids_isValid = false;
+
+    m_cross_sell_products_ids_isSet = false;
+    m_cross_sell_products_ids_isValid = false;
+
+    m_attribute_set_name_isSet = false;
+    m_attribute_set_name_isValid = false;
+
+    m_attribute_name_isSet = false;
+    m_attribute_name_isValid = false;
 
     m_search_keywords_isSet = false;
     m_search_keywords_isValid = false;
 
-    m_store_id_isSet = false;
-    m_store_id_isValid = false;
+    m_tags_isSet = false;
+    m_tags_isValid = false;
 
-    m_brand_name_isSet = false;
-    m_brand_name_isValid = false;
+    m_materials_isSet = false;
+    m_materials_isValid = false;
 
-    m_is_virtual_isSet = false;
-    m_is_virtual_isValid = false;
+    m_certifications_isSet = false;
+    m_certifications_isValid = false;
+
+    m_specifics_isSet = false;
+    m_specifics_isValid = false;
+
+    m_avail_from_isSet = false;
+    m_avail_from_isValid = false;
+
+    m_sprice_create_isSet = false;
+    m_sprice_create_isValid = false;
+
+    m_sprice_modified_isSet = false;
+    m_sprice_modified_isValid = false;
+
+    m_sprice_expire_isSet = false;
+    m_sprice_expire_isValid = false;
+
+    m_created_at_isSet = false;
+    m_created_at_isValid = false;
+
+    m_auto_renew_isSet = false;
+    m_auto_renew_isValid = false;
+
+    m_when_made_isSet = false;
+    m_when_made_isValid = false;
+
+    m_meta_title_isSet = false;
+    m_meta_title_isValid = false;
+
+    m_meta_keywords_isSet = false;
+    m_meta_keywords_isValid = false;
+
+    m_meta_description_isSet = false;
+    m_meta_description_isValid = false;
+
+    m_url_isSet = false;
+    m_url_isValid = false;
+
+    m_seo_url_isSet = false;
+    m_seo_url_isValid = false;
+
+    m_tax_class_id_isSet = false;
+    m_tax_class_id_isValid = false;
+
+    m_taxable_isSet = false;
+    m_taxable_isValid = false;
+
+    m_sales_tax_isSet = false;
+    m_sales_tax_isValid = false;
+
+    m_condition_isSet = false;
+    m_condition_isValid = false;
+
+    m_condition_description_isSet = false;
+    m_condition_description_isValid = false;
+
+    m_allow_display_condition_isSet = false;
+    m_allow_display_condition_isValid = false;
+
+    m_payment_methods_isSet = false;
+    m_payment_methods_isValid = false;
+
+    m_paypal_email_isSet = false;
+    m_paypal_email_isValid = false;
+
+    m_shipping_template_id_isSet = false;
+    m_shipping_template_id_isValid = false;
+
+    m_shipping_details_isSet = false;
+    m_shipping_details_isValid = false;
 
     m_is_free_shipping_isSet = false;
     m_is_free_shipping_isValid = false;
 
-    m_in_stock_isSet = false;
-    m_in_stock_isValid = false;
-
     m_delivery_code_isSet = false;
     m_delivery_code_isValid = false;
-
-    m_product_reference_isSet = false;
-    m_product_reference_isValid = false;
 
     m_delivery_type_isSet = false;
     m_delivery_type_isValid = false;
@@ -337,38 +328,47 @@ void OAIProductAdd::initializeModel() {
     m_delivery_time_isSet = false;
     m_delivery_time_isValid = false;
 
-    m_size_chart_isSet = false;
-    m_size_chart_isValid = false;
-
-    m_certifications_isSet = false;
-    m_certifications_isValid = false;
-
     m_delivery_option_ids_isSet = false;
     m_delivery_option_ids_isValid = false;
 
-    m_manufacturer_info_isSet = false;
-    m_manufacturer_info_isValid = false;
+    m_package_details_isSet = false;
+    m_package_details_isValid = false;
 
-    m_when_made_isSet = false;
-    m_when_made_isValid = false;
+    m_logistic_info_isSet = false;
+    m_logistic_info_isValid = false;
 
-    m_is_supply_isSet = false;
-    m_is_supply_isValid = false;
+    m_listing_duration_isSet = false;
+    m_listing_duration_isValid = false;
 
-    m_materials_isSet = false;
-    m_materials_isValid = false;
+    m_listing_type_isSet = false;
+    m_listing_type_isValid = false;
 
-    m_auto_renew_isSet = false;
-    m_auto_renew_isValid = false;
+    m_return_accepted_isSet = false;
+    m_return_accepted_isValid = false;
 
-    m_allow_display_condition_isSet = false;
-    m_allow_display_condition_isValid = false;
+    m_seller_profiles_isSet = false;
+    m_seller_profiles_isValid = false;
 
-    m_min_order_quantity_isSet = false;
-    m_min_order_quantity_isValid = false;
+    m_auction_confidentiality_level_isSet = false;
+    m_auction_confidentiality_level_isValid = false;
 
-    m_max_order_quantity_isSet = false;
-    m_max_order_quantity_isValid = false;
+    m_best_offer_isSet = false;
+    m_best_offer_isValid = false;
+
+    m_production_partner_ids_isSet = false;
+    m_production_partner_ids_isValid = false;
+
+    m_marketplace_item_properties_isSet = false;
+    m_marketplace_item_properties_isValid = false;
+
+    m_clear_cache_isSet = false;
+    m_clear_cache_isValid = false;
+
+    m_viewed_count_isSet = false;
+    m_viewed_count_isValid = false;
+
+    m_ordered_count_isSet = false;
+    m_ordered_count_isValid = false;
 }
 
 void OAIProductAdd::fromJson(QString jsonString) {
@@ -386,41 +386,47 @@ void OAIProductAdd::fromJsonObject(QJsonObject json) {
     m_model_isValid = ::OpenAPI::fromJsonValue(m_model, json[QString("model")]);
     m_model_isSet = !json[QString("model")].isNull() && m_model_isValid;
 
-    m_sku_isValid = ::OpenAPI::fromJsonValue(m_sku, json[QString("sku")]);
-    m_sku_isSet = !json[QString("sku")].isNull() && m_sku_isValid;
-
     m_description_isValid = ::OpenAPI::fromJsonValue(m_description, json[QString("description")]);
     m_description_isSet = !json[QString("description")].isNull() && m_description_isValid;
 
     m_price_isValid = ::OpenAPI::fromJsonValue(m_price, json[QString("price")]);
     m_price_isSet = !json[QString("price")].isNull() && m_price_isValid;
 
-    m_old_price_isValid = ::OpenAPI::fromJsonValue(m_old_price, json[QString("old_price")]);
-    m_old_price_isSet = !json[QString("old_price")].isNull() && m_old_price_isValid;
+    m_sku_isValid = ::OpenAPI::fromJsonValue(m_sku, json[QString("sku")]);
+    m_sku_isSet = !json[QString("sku")].isNull() && m_sku_isValid;
 
-    m_special_price_isValid = ::OpenAPI::fromJsonValue(m_special_price, json[QString("special_price")]);
-    m_special_price_isSet = !json[QString("special_price")].isNull() && m_special_price_isValid;
+    m_short_description_isValid = ::OpenAPI::fromJsonValue(m_short_description, json[QString("short_description")]);
+    m_short_description_isSet = !json[QString("short_description")].isNull() && m_short_description_isValid;
 
-    m_cost_price_isValid = ::OpenAPI::fromJsonValue(m_cost_price, json[QString("cost_price")]);
-    m_cost_price_isSet = !json[QString("cost_price")].isNull() && m_cost_price_isValid;
+    m_type_isValid = ::OpenAPI::fromJsonValue(m_type, json[QString("type")]);
+    m_type_isSet = !json[QString("type")].isNull() && m_type_isValid;
 
-    m_fixed_cost_shipping_price_isValid = ::OpenAPI::fromJsonValue(m_fixed_cost_shipping_price, json[QString("fixed_cost_shipping_price")]);
-    m_fixed_cost_shipping_price_isSet = !json[QString("fixed_cost_shipping_price")].isNull() && m_fixed_cost_shipping_price_isValid;
+    m_status_isValid = ::OpenAPI::fromJsonValue(m_status, json[QString("status")]);
+    m_status_isSet = !json[QString("status")].isNull() && m_status_isValid;
 
-    m_sprice_create_isValid = ::OpenAPI::fromJsonValue(m_sprice_create, json[QString("sprice_create")]);
-    m_sprice_create_isSet = !json[QString("sprice_create")].isNull() && m_sprice_create_isValid;
+    m_visible_isValid = ::OpenAPI::fromJsonValue(m_visible, json[QString("visible")]);
+    m_visible_isSet = !json[QString("visible")].isNull() && m_visible_isValid;
 
-    m_sprice_modified_isValid = ::OpenAPI::fromJsonValue(m_sprice_modified, json[QString("sprice_modified")]);
-    m_sprice_modified_isSet = !json[QString("sprice_modified")].isNull() && m_sprice_modified_isValid;
+    m_category_id_isValid = ::OpenAPI::fromJsonValue(m_category_id, json[QString("category_id")]);
+    m_category_id_isSet = !json[QString("category_id")].isNull() && m_category_id_isValid;
 
-    m_sprice_expire_isValid = ::OpenAPI::fromJsonValue(m_sprice_expire, json[QString("sprice_expire")]);
-    m_sprice_expire_isSet = !json[QString("sprice_expire")].isNull() && m_sprice_expire_isValid;
+    m_categories_ids_isValid = ::OpenAPI::fromJsonValue(m_categories_ids, json[QString("categories_ids")]);
+    m_categories_ids_isSet = !json[QString("categories_ids")].isNull() && m_categories_ids_isValid;
 
-    m_tier_prices_isValid = ::OpenAPI::fromJsonValue(m_tier_prices, json[QString("tier_prices")]);
-    m_tier_prices_isSet = !json[QString("tier_prices")].isNull() && m_tier_prices_isValid;
+    m_product_class_isValid = ::OpenAPI::fromJsonValue(m_product_class, json[QString("product_class")]);
+    m_product_class_isSet = !json[QString("product_class")].isNull() && m_product_class_isValid;
 
-    m_group_prices_isValid = ::OpenAPI::fromJsonValue(m_group_prices, json[QString("group_prices")]);
-    m_group_prices_isSet = !json[QString("group_prices")].isNull() && m_group_prices_isValid;
+    m_product_type_isValid = ::OpenAPI::fromJsonValue(m_product_type, json[QString("product_type")]);
+    m_product_type_isSet = !json[QString("product_type")].isNull() && m_product_type_isValid;
+
+    m_is_virtual_isValid = ::OpenAPI::fromJsonValue(m_is_virtual, json[QString("is_virtual")]);
+    m_is_virtual_isSet = !json[QString("is_virtual")].isNull() && m_is_virtual_isValid;
+
+    m_downloadable_isValid = ::OpenAPI::fromJsonValue(m_downloadable, json[QString("downloadable")]);
+    m_downloadable_isSet = !json[QString("downloadable")].isNull() && m_downloadable_isValid;
+
+    m_is_supply_isValid = ::OpenAPI::fromJsonValue(m_is_supply, json[QString("is_supply")]);
+    m_is_supply_isSet = !json[QString("is_supply")].isNull() && m_is_supply_isValid;
 
     m_available_for_view_isValid = ::OpenAPI::fromJsonValue(m_available_for_view, json[QString("available_for_view")]);
     m_available_for_view_isSet = !json[QString("available_for_view")].isNull() && m_available_for_view_isValid;
@@ -428,8 +434,68 @@ void OAIProductAdd::fromJsonObject(QJsonObject json) {
     m_available_for_sale_isValid = ::OpenAPI::fromJsonValue(m_available_for_sale, json[QString("available_for_sale")]);
     m_available_for_sale_isSet = !json[QString("available_for_sale")].isNull() && m_available_for_sale_isValid;
 
+    m_store_id_isValid = ::OpenAPI::fromJsonValue(m_store_id, json[QString("store_id")]);
+    m_store_id_isSet = !json[QString("store_id")].isNull() && m_store_id_isValid;
+
+    m_stores_ids_isValid = ::OpenAPI::fromJsonValue(m_stores_ids, json[QString("stores_ids")]);
+    m_stores_ids_isSet = !json[QString("stores_ids")].isNull() && m_stores_ids_isValid;
+
+    m_lang_id_isValid = ::OpenAPI::fromJsonValue(m_lang_id, json[QString("lang_id")]);
+    m_lang_id_isSet = !json[QString("lang_id")].isNull() && m_lang_id_isValid;
+
+    m_old_price_isValid = ::OpenAPI::fromJsonValue(m_old_price, json[QString("old_price")]);
+    m_old_price_isSet = !json[QString("old_price")].isNull() && m_old_price_isValid;
+
+    m_special_price_isValid = ::OpenAPI::fromJsonValue(m_special_price, json[QString("special_price")]);
+    m_special_price_isSet = !json[QString("special_price")].isNull() && m_special_price_isValid;
+
+    m_wholesale_price_isValid = ::OpenAPI::fromJsonValue(m_wholesale_price, json[QString("wholesale_price")]);
+    m_wholesale_price_isSet = !json[QString("wholesale_price")].isNull() && m_wholesale_price_isValid;
+
+    m_cost_price_isValid = ::OpenAPI::fromJsonValue(m_cost_price, json[QString("cost_price")]);
+    m_cost_price_isSet = !json[QString("cost_price")].isNull() && m_cost_price_isValid;
+
+    m_fixed_cost_shipping_price_isValid = ::OpenAPI::fromJsonValue(m_fixed_cost_shipping_price, json[QString("fixed_cost_shipping_price")]);
+    m_fixed_cost_shipping_price_isSet = !json[QString("fixed_cost_shipping_price")].isNull() && m_fixed_cost_shipping_price_isValid;
+
+    m_tier_prices_isValid = ::OpenAPI::fromJsonValue(m_tier_prices, json[QString("tier_prices")]);
+    m_tier_prices_isSet = !json[QString("tier_prices")].isNull() && m_tier_prices_isValid;
+
+    m_group_prices_isValid = ::OpenAPI::fromJsonValue(m_group_prices, json[QString("group_prices")]);
+    m_group_prices_isSet = !json[QString("group_prices")].isNull() && m_group_prices_isValid;
+
+    m_buyitnow_price_isValid = ::OpenAPI::fromJsonValue(m_buyitnow_price, json[QString("buyitnow_price")]);
+    m_buyitnow_price_isSet = !json[QString("buyitnow_price")].isNull() && m_buyitnow_price_isValid;
+
+    m_reserve_price_isValid = ::OpenAPI::fromJsonValue(m_reserve_price, json[QString("reserve_price")]);
+    m_reserve_price_isSet = !json[QString("reserve_price")].isNull() && m_reserve_price_isValid;
+
+    m_quantity_isValid = ::OpenAPI::fromJsonValue(m_quantity, json[QString("quantity")]);
+    m_quantity_isSet = !json[QString("quantity")].isNull() && m_quantity_isValid;
+
+    m_in_stock_isValid = ::OpenAPI::fromJsonValue(m_in_stock, json[QString("in_stock")]);
+    m_in_stock_isSet = !json[QString("in_stock")].isNull() && m_in_stock_isValid;
+
+    m_manage_stock_isValid = ::OpenAPI::fromJsonValue(m_manage_stock, json[QString("manage_stock")]);
+    m_manage_stock_isSet = !json[QString("manage_stock")].isNull() && m_manage_stock_isValid;
+
+    m_warehouse_id_isValid = ::OpenAPI::fromJsonValue(m_warehouse_id, json[QString("warehouse_id")]);
+    m_warehouse_id_isSet = !json[QString("warehouse_id")].isNull() && m_warehouse_id_isValid;
+
+    m_backorder_status_isValid = ::OpenAPI::fromJsonValue(m_backorder_status, json[QString("backorder_status")]);
+    m_backorder_status_isSet = !json[QString("backorder_status")].isNull() && m_backorder_status_isValid;
+
+    m_min_order_quantity_isValid = ::OpenAPI::fromJsonValue(m_min_order_quantity, json[QString("min_order_quantity")]);
+    m_min_order_quantity_isSet = !json[QString("min_order_quantity")].isNull() && m_min_order_quantity_isValid;
+
+    m_max_order_quantity_isValid = ::OpenAPI::fromJsonValue(m_max_order_quantity, json[QString("max_order_quantity")]);
+    m_max_order_quantity_isSet = !json[QString("max_order_quantity")].isNull() && m_max_order_quantity_isValid;
+
     m_weight_isValid = ::OpenAPI::fromJsonValue(m_weight, json[QString("weight")]);
     m_weight_isSet = !json[QString("weight")].isNull() && m_weight_isValid;
+
+    m_weight_unit_isValid = ::OpenAPI::fromJsonValue(m_weight_unit, json[QString("weight_unit")]);
+    m_weight_unit_isSet = !json[QString("weight_unit")].isNull() && m_weight_unit_isValid;
 
     m_width_isValid = ::OpenAPI::fromJsonValue(m_width, json[QString("width")]);
     m_width_isSet = !json[QString("width")].isNull() && m_width_isValid;
@@ -440,128 +506,8 @@ void OAIProductAdd::fromJsonObject(QJsonObject json) {
     m_length_isValid = ::OpenAPI::fromJsonValue(m_length, json[QString("length")]);
     m_length_isSet = !json[QString("length")].isNull() && m_length_isValid;
 
-    m_weight_unit_isValid = ::OpenAPI::fromJsonValue(m_weight_unit, json[QString("weight_unit")]);
-    m_weight_unit_isSet = !json[QString("weight_unit")].isNull() && m_weight_unit_isValid;
-
     m_dimensions_unit_isValid = ::OpenAPI::fromJsonValue(m_dimensions_unit, json[QString("dimensions_unit")]);
     m_dimensions_unit_isSet = !json[QString("dimensions_unit")].isNull() && m_dimensions_unit_isValid;
-
-    m_short_description_isValid = ::OpenAPI::fromJsonValue(m_short_description, json[QString("short_description")]);
-    m_short_description_isSet = !json[QString("short_description")].isNull() && m_short_description_isValid;
-
-    m_warehouse_id_isValid = ::OpenAPI::fromJsonValue(m_warehouse_id, json[QString("warehouse_id")]);
-    m_warehouse_id_isSet = !json[QString("warehouse_id")].isNull() && m_warehouse_id_isValid;
-
-    m_backorder_status_isValid = ::OpenAPI::fromJsonValue(m_backorder_status, json[QString("backorder_status")]);
-    m_backorder_status_isSet = !json[QString("backorder_status")].isNull() && m_backorder_status_isValid;
-
-    m_quantity_isValid = ::OpenAPI::fromJsonValue(m_quantity, json[QString("quantity")]);
-    m_quantity_isSet = !json[QString("quantity")].isNull() && m_quantity_isValid;
-
-    m_downloadable_isValid = ::OpenAPI::fromJsonValue(m_downloadable, json[QString("downloadable")]);
-    m_downloadable_isSet = !json[QString("downloadable")].isNull() && m_downloadable_isValid;
-
-    m_wholesale_price_isValid = ::OpenAPI::fromJsonValue(m_wholesale_price, json[QString("wholesale_price")]);
-    m_wholesale_price_isSet = !json[QString("wholesale_price")].isNull() && m_wholesale_price_isValid;
-
-    m_created_at_isValid = ::OpenAPI::fromJsonValue(m_created_at, json[QString("created_at")]);
-    m_created_at_isSet = !json[QString("created_at")].isNull() && m_created_at_isValid;
-
-    m_manufacturer_isValid = ::OpenAPI::fromJsonValue(m_manufacturer, json[QString("manufacturer")]);
-    m_manufacturer_isSet = !json[QString("manufacturer")].isNull() && m_manufacturer_isValid;
-
-    m_manufacturer_id_isValid = ::OpenAPI::fromJsonValue(m_manufacturer_id, json[QString("manufacturer_id")]);
-    m_manufacturer_id_isSet = !json[QString("manufacturer_id")].isNull() && m_manufacturer_id_isValid;
-
-    m_categories_ids_isValid = ::OpenAPI::fromJsonValue(m_categories_ids, json[QString("categories_ids")]);
-    m_categories_ids_isSet = !json[QString("categories_ids")].isNull() && m_categories_ids_isValid;
-
-    m_related_products_ids_isValid = ::OpenAPI::fromJsonValue(m_related_products_ids, json[QString("related_products_ids")]);
-    m_related_products_ids_isSet = !json[QString("related_products_ids")].isNull() && m_related_products_ids_isValid;
-
-    m_up_sell_products_ids_isValid = ::OpenAPI::fromJsonValue(m_up_sell_products_ids, json[QString("up_sell_products_ids")]);
-    m_up_sell_products_ids_isSet = !json[QString("up_sell_products_ids")].isNull() && m_up_sell_products_ids_isValid;
-
-    m_cross_sell_products_ids_isValid = ::OpenAPI::fromJsonValue(m_cross_sell_products_ids, json[QString("cross_sell_products_ids")]);
-    m_cross_sell_products_ids_isSet = !json[QString("cross_sell_products_ids")].isNull() && m_cross_sell_products_ids_isValid;
-
-    m_tax_class_id_isValid = ::OpenAPI::fromJsonValue(m_tax_class_id, json[QString("tax_class_id")]);
-    m_tax_class_id_isSet = !json[QString("tax_class_id")].isNull() && m_tax_class_id_isValid;
-
-    m_type_isValid = ::OpenAPI::fromJsonValue(m_type, json[QString("type")]);
-    m_type_isSet = !json[QString("type")].isNull() && m_type_isValid;
-
-    m_meta_title_isValid = ::OpenAPI::fromJsonValue(m_meta_title, json[QString("meta_title")]);
-    m_meta_title_isSet = !json[QString("meta_title")].isNull() && m_meta_title_isValid;
-
-    m_meta_keywords_isValid = ::OpenAPI::fromJsonValue(m_meta_keywords, json[QString("meta_keywords")]);
-    m_meta_keywords_isSet = !json[QString("meta_keywords")].isNull() && m_meta_keywords_isValid;
-
-    m_meta_description_isValid = ::OpenAPI::fromJsonValue(m_meta_description, json[QString("meta_description")]);
-    m_meta_description_isSet = !json[QString("meta_description")].isNull() && m_meta_description_isValid;
-
-    m_url_isValid = ::OpenAPI::fromJsonValue(m_url, json[QString("url")]);
-    m_url_isSet = !json[QString("url")].isNull() && m_url_isValid;
-
-    m_lang_id_isValid = ::OpenAPI::fromJsonValue(m_lang_id, json[QString("lang_id")]);
-    m_lang_id_isSet = !json[QString("lang_id")].isNull() && m_lang_id_isValid;
-
-    m_stores_ids_isValid = ::OpenAPI::fromJsonValue(m_stores_ids, json[QString("stores_ids")]);
-    m_stores_ids_isSet = !json[QString("stores_ids")].isNull() && m_stores_ids_isValid;
-
-    m_category_id_isValid = ::OpenAPI::fromJsonValue(m_category_id, json[QString("category_id")]);
-    m_category_id_isSet = !json[QString("category_id")].isNull() && m_category_id_isValid;
-
-    m_viewed_count_isValid = ::OpenAPI::fromJsonValue(m_viewed_count, json[QString("viewed_count")]);
-    m_viewed_count_isSet = !json[QString("viewed_count")].isNull() && m_viewed_count_isValid;
-
-    m_ordered_count_isValid = ::OpenAPI::fromJsonValue(m_ordered_count, json[QString("ordered_count")]);
-    m_ordered_count_isSet = !json[QString("ordered_count")].isNull() && m_ordered_count_isValid;
-
-    m_attribute_set_name_isValid = ::OpenAPI::fromJsonValue(m_attribute_set_name, json[QString("attribute_set_name")]);
-    m_attribute_set_name_isSet = !json[QString("attribute_set_name")].isNull() && m_attribute_set_name_isValid;
-
-    m_attribute_name_isValid = ::OpenAPI::fromJsonValue(m_attribute_name, json[QString("attribute_name")]);
-    m_attribute_name_isSet = !json[QString("attribute_name")].isNull() && m_attribute_name_isValid;
-
-    m_shipping_template_id_isValid = ::OpenAPI::fromJsonValue(m_shipping_template_id, json[QString("shipping_template_id")]);
-    m_shipping_template_id_isSet = !json[QString("shipping_template_id")].isNull() && m_shipping_template_id_isValid;
-
-    m_production_partner_ids_isValid = ::OpenAPI::fromJsonValue(m_production_partner_ids, json[QString("production_partner_ids")]);
-    m_production_partner_ids_isSet = !json[QString("production_partner_ids")].isNull() && m_production_partner_ids_isValid;
-
-    m_condition_isValid = ::OpenAPI::fromJsonValue(m_condition, json[QString("condition")]);
-    m_condition_isSet = !json[QString("condition")].isNull() && m_condition_isValid;
-
-    m_listing_duration_isValid = ::OpenAPI::fromJsonValue(m_listing_duration, json[QString("listing_duration")]);
-    m_listing_duration_isSet = !json[QString("listing_duration")].isNull() && m_listing_duration_isValid;
-
-    m_listing_type_isValid = ::OpenAPI::fromJsonValue(m_listing_type, json[QString("listing_type")]);
-    m_listing_type_isSet = !json[QString("listing_type")].isNull() && m_listing_type_isValid;
-
-    m_payment_methods_isValid = ::OpenAPI::fromJsonValue(m_payment_methods, json[QString("payment_methods")]);
-    m_payment_methods_isSet = !json[QString("payment_methods")].isNull() && m_payment_methods_isValid;
-
-    m_return_accepted_isValid = ::OpenAPI::fromJsonValue(m_return_accepted, json[QString("return_accepted")]);
-    m_return_accepted_isSet = !json[QString("return_accepted")].isNull() && m_return_accepted_isValid;
-
-    m_shipping_details_isValid = ::OpenAPI::fromJsonValue(m_shipping_details, json[QString("shipping_details")]);
-    m_shipping_details_isSet = !json[QString("shipping_details")].isNull() && m_shipping_details_isValid;
-
-    m_paypal_email_isValid = ::OpenAPI::fromJsonValue(m_paypal_email, json[QString("paypal_email")]);
-    m_paypal_email_isSet = !json[QString("paypal_email")].isNull() && m_paypal_email_isValid;
-
-    m_seller_profiles_isValid = ::OpenAPI::fromJsonValue(m_seller_profiles, json[QString("seller_profiles")]);
-    m_seller_profiles_isSet = !json[QString("seller_profiles")].isNull() && m_seller_profiles_isValid;
-
-    m_package_details_isValid = ::OpenAPI::fromJsonValue(m_package_details, json[QString("package_details")]);
-    m_package_details_isSet = !json[QString("package_details")].isNull() && m_package_details_isValid;
-
-    m_best_offer_isValid = ::OpenAPI::fromJsonValue(m_best_offer, json[QString("best_offer")]);
-    m_best_offer_isSet = !json[QString("best_offer")].isNull() && m_best_offer_isValid;
-
-    m_sales_tax_isValid = ::OpenAPI::fromJsonValue(m_sales_tax, json[QString("sales_tax")]);
-    m_sales_tax_isSet = !json[QString("sales_tax")].isNull() && m_sales_tax_isValid;
 
     m_barcode_isValid = ::OpenAPI::fromJsonValue(m_barcode, json[QString("barcode")]);
     m_barcode_isSet = !json[QString("barcode")].isNull() && m_barcode_isValid;
@@ -575,8 +521,35 @@ void OAIProductAdd::fromJsonObject(QJsonObject json) {
     m_isbn_isValid = ::OpenAPI::fromJsonValue(m_isbn, json[QString("isbn")]);
     m_isbn_isSet = !json[QString("isbn")].isNull() && m_isbn_isValid;
 
-    m_specifics_isValid = ::OpenAPI::fromJsonValue(m_specifics, json[QString("specifics")]);
-    m_specifics_isSet = !json[QString("specifics")].isNull() && m_specifics_isValid;
+    m_gtin_isValid = ::OpenAPI::fromJsonValue(m_gtin, json[QString("gtin")]);
+    m_gtin_isSet = !json[QString("gtin")].isNull() && m_gtin_isValid;
+
+    m_mpn_isValid = ::OpenAPI::fromJsonValue(m_mpn, json[QString("mpn")]);
+    m_mpn_isSet = !json[QString("mpn")].isNull() && m_mpn_isValid;
+
+    m_asin_isValid = ::OpenAPI::fromJsonValue(m_asin, json[QString("asin")]);
+    m_asin_isSet = !json[QString("asin")].isNull() && m_asin_isValid;
+
+    m_product_reference_isValid = ::OpenAPI::fromJsonValue(m_product_reference, json[QString("product_reference")]);
+    m_product_reference_isSet = !json[QString("product_reference")].isNull() && m_product_reference_isValid;
+
+    m_harmonized_system_code_isValid = ::OpenAPI::fromJsonValue(m_harmonized_system_code, json[QString("harmonized_system_code")]);
+    m_harmonized_system_code_isSet = !json[QString("harmonized_system_code")].isNull() && m_harmonized_system_code_isValid;
+
+    m_country_of_origin_isValid = ::OpenAPI::fromJsonValue(m_country_of_origin, json[QString("country_of_origin")]);
+    m_country_of_origin_isSet = !json[QString("country_of_origin")].isNull() && m_country_of_origin_isValid;
+
+    m_manufacturer_isValid = ::OpenAPI::fromJsonValue(m_manufacturer, json[QString("manufacturer")]);
+    m_manufacturer_isSet = !json[QString("manufacturer")].isNull() && m_manufacturer_isValid;
+
+    m_manufacturer_id_isValid = ::OpenAPI::fromJsonValue(m_manufacturer_id, json[QString("manufacturer_id")]);
+    m_manufacturer_id_isSet = !json[QString("manufacturer_id")].isNull() && m_manufacturer_id_isValid;
+
+    m_manufacturer_info_isValid = ::OpenAPI::fromJsonValue(m_manufacturer_info, json[QString("manufacturer_info")]);
+    m_manufacturer_info_isSet = !json[QString("manufacturer_info")].isNull() && m_manufacturer_info_isValid;
+
+    m_brand_name_isValid = ::OpenAPI::fromJsonValue(m_brand_name, json[QString("brand_name")]);
+    m_brand_name_isSet = !json[QString("brand_name")].isNull() && m_brand_name_isValid;
 
     m_image_url_isValid = ::OpenAPI::fromJsonValue(m_image_url, json[QString("image_url")]);
     m_image_url_isSet = !json[QString("image_url")].isNull() && m_image_url_isValid;
@@ -587,95 +560,113 @@ void OAIProductAdd::fromJsonObject(QJsonObject json) {
     m_additional_image_urls_isValid = ::OpenAPI::fromJsonValue(m_additional_image_urls, json[QString("additional_image_urls")]);
     m_additional_image_urls_isSet = !json[QString("additional_image_urls")].isNull() && m_additional_image_urls_isValid;
 
-    m_reserve_price_isValid = ::OpenAPI::fromJsonValue(m_reserve_price, json[QString("reserve_price")]);
-    m_reserve_price_isSet = !json[QString("reserve_price")].isNull() && m_reserve_price_isValid;
-
-    m_buyitnow_price_isValid = ::OpenAPI::fromJsonValue(m_buyitnow_price, json[QString("buyitnow_price")]);
-    m_buyitnow_price_isSet = !json[QString("buyitnow_price")].isNull() && m_buyitnow_price_isValid;
-
-    m_condition_description_isValid = ::OpenAPI::fromJsonValue(m_condition_description, json[QString("condition_description")]);
-    m_condition_description_isSet = !json[QString("condition_description")].isNull() && m_condition_description_isValid;
-
-    m_auction_confidentiality_level_isValid = ::OpenAPI::fromJsonValue(m_auction_confidentiality_level, json[QString("auction_confidentiality_level")]);
-    m_auction_confidentiality_level_isSet = !json[QString("auction_confidentiality_level")].isNull() && m_auction_confidentiality_level_isValid;
-
-    m_logistic_info_isValid = ::OpenAPI::fromJsonValue(m_logistic_info, json[QString("logistic_info")]);
-    m_logistic_info_isSet = !json[QString("logistic_info")].isNull() && m_logistic_info_isValid;
-
-    m_avail_from_isValid = ::OpenAPI::fromJsonValue(m_avail_from, json[QString("avail_from")]);
-    m_avail_from_isSet = !json[QString("avail_from")].isNull() && m_avail_from_isValid;
-
-    m_tags_isValid = ::OpenAPI::fromJsonValue(m_tags, json[QString("tags")]);
-    m_tags_isSet = !json[QString("tags")].isNull() && m_tags_isValid;
-
-    m_clear_cache_isValid = ::OpenAPI::fromJsonValue(m_clear_cache, json[QString("clear_cache")]);
-    m_clear_cache_isSet = !json[QString("clear_cache")].isNull() && m_clear_cache_isValid;
-
-    m_asin_isValid = ::OpenAPI::fromJsonValue(m_asin, json[QString("asin")]);
-    m_asin_isSet = !json[QString("asin")].isNull() && m_asin_isValid;
-
-    m_gtin_isValid = ::OpenAPI::fromJsonValue(m_gtin, json[QString("gtin")]);
-    m_gtin_isSet = !json[QString("gtin")].isNull() && m_gtin_isValid;
-
-    m_mpn_isValid = ::OpenAPI::fromJsonValue(m_mpn, json[QString("mpn")]);
-    m_mpn_isSet = !json[QString("mpn")].isNull() && m_mpn_isValid;
-
-    m_taxable_isValid = ::OpenAPI::fromJsonValue(m_taxable, json[QString("taxable")]);
-    m_taxable_isSet = !json[QString("taxable")].isNull() && m_taxable_isValid;
-
-    m_visible_isValid = ::OpenAPI::fromJsonValue(m_visible, json[QString("visible")]);
-    m_visible_isSet = !json[QString("visible")].isNull() && m_visible_isValid;
-
-    m_status_isValid = ::OpenAPI::fromJsonValue(m_status, json[QString("status")]);
-    m_status_isSet = !json[QString("status")].isNull() && m_status_isValid;
-
-    m_seo_url_isValid = ::OpenAPI::fromJsonValue(m_seo_url, json[QString("seo_url")]);
-    m_seo_url_isSet = !json[QString("seo_url")].isNull() && m_seo_url_isValid;
-
-    m_product_class_isValid = ::OpenAPI::fromJsonValue(m_product_class, json[QString("product_class")]);
-    m_product_class_isSet = !json[QString("product_class")].isNull() && m_product_class_isValid;
-
-    m_product_type_isValid = ::OpenAPI::fromJsonValue(m_product_type, json[QString("product_type")]);
-    m_product_type_isSet = !json[QString("product_type")].isNull() && m_product_type_isValid;
-
-    m_marketplace_item_properties_isValid = ::OpenAPI::fromJsonValue(m_marketplace_item_properties, json[QString("marketplace_item_properties")]);
-    m_marketplace_item_properties_isSet = !json[QString("marketplace_item_properties")].isNull() && m_marketplace_item_properties_isValid;
-
-    m_manage_stock_isValid = ::OpenAPI::fromJsonValue(m_manage_stock, json[QString("manage_stock")]);
-    m_manage_stock_isSet = !json[QString("manage_stock")].isNull() && m_manage_stock_isValid;
-
-    m_harmonized_system_code_isValid = ::OpenAPI::fromJsonValue(m_harmonized_system_code, json[QString("harmonized_system_code")]);
-    m_harmonized_system_code_isSet = !json[QString("harmonized_system_code")].isNull() && m_harmonized_system_code_isValid;
-
-    m_country_of_origin_isValid = ::OpenAPI::fromJsonValue(m_country_of_origin, json[QString("country_of_origin")]);
-    m_country_of_origin_isSet = !json[QString("country_of_origin")].isNull() && m_country_of_origin_isValid;
-
     m_files_isValid = ::OpenAPI::fromJsonValue(m_files, json[QString("files")]);
     m_files_isSet = !json[QString("files")].isNull() && m_files_isValid;
+
+    m_size_chart_isValid = ::OpenAPI::fromJsonValue(m_size_chart, json[QString("size_chart")]);
+    m_size_chart_isSet = !json[QString("size_chart")].isNull() && m_size_chart_isValid;
+
+    m_related_products_ids_isValid = ::OpenAPI::fromJsonValue(m_related_products_ids, json[QString("related_products_ids")]);
+    m_related_products_ids_isSet = !json[QString("related_products_ids")].isNull() && m_related_products_ids_isValid;
+
+    m_up_sell_products_ids_isValid = ::OpenAPI::fromJsonValue(m_up_sell_products_ids, json[QString("up_sell_products_ids")]);
+    m_up_sell_products_ids_isSet = !json[QString("up_sell_products_ids")].isNull() && m_up_sell_products_ids_isValid;
+
+    m_cross_sell_products_ids_isValid = ::OpenAPI::fromJsonValue(m_cross_sell_products_ids, json[QString("cross_sell_products_ids")]);
+    m_cross_sell_products_ids_isSet = !json[QString("cross_sell_products_ids")].isNull() && m_cross_sell_products_ids_isValid;
+
+    m_attribute_set_name_isValid = ::OpenAPI::fromJsonValue(m_attribute_set_name, json[QString("attribute_set_name")]);
+    m_attribute_set_name_isSet = !json[QString("attribute_set_name")].isNull() && m_attribute_set_name_isValid;
+
+    m_attribute_name_isValid = ::OpenAPI::fromJsonValue(m_attribute_name, json[QString("attribute_name")]);
+    m_attribute_name_isSet = !json[QString("attribute_name")].isNull() && m_attribute_name_isValid;
 
     m_search_keywords_isValid = ::OpenAPI::fromJsonValue(m_search_keywords, json[QString("search_keywords")]);
     m_search_keywords_isSet = !json[QString("search_keywords")].isNull() && m_search_keywords_isValid;
 
-    m_store_id_isValid = ::OpenAPI::fromJsonValue(m_store_id, json[QString("store_id")]);
-    m_store_id_isSet = !json[QString("store_id")].isNull() && m_store_id_isValid;
+    m_tags_isValid = ::OpenAPI::fromJsonValue(m_tags, json[QString("tags")]);
+    m_tags_isSet = !json[QString("tags")].isNull() && m_tags_isValid;
 
-    m_brand_name_isValid = ::OpenAPI::fromJsonValue(m_brand_name, json[QString("brand_name")]);
-    m_brand_name_isSet = !json[QString("brand_name")].isNull() && m_brand_name_isValid;
+    m_materials_isValid = ::OpenAPI::fromJsonValue(m_materials, json[QString("materials")]);
+    m_materials_isSet = !json[QString("materials")].isNull() && m_materials_isValid;
 
-    m_is_virtual_isValid = ::OpenAPI::fromJsonValue(m_is_virtual, json[QString("is_virtual")]);
-    m_is_virtual_isSet = !json[QString("is_virtual")].isNull() && m_is_virtual_isValid;
+    m_certifications_isValid = ::OpenAPI::fromJsonValue(m_certifications, json[QString("certifications")]);
+    m_certifications_isSet = !json[QString("certifications")].isNull() && m_certifications_isValid;
+
+    m_specifics_isValid = ::OpenAPI::fromJsonValue(m_specifics, json[QString("specifics")]);
+    m_specifics_isSet = !json[QString("specifics")].isNull() && m_specifics_isValid;
+
+    m_avail_from_isValid = ::OpenAPI::fromJsonValue(m_avail_from, json[QString("avail_from")]);
+    m_avail_from_isSet = !json[QString("avail_from")].isNull() && m_avail_from_isValid;
+
+    m_sprice_create_isValid = ::OpenAPI::fromJsonValue(m_sprice_create, json[QString("sprice_create")]);
+    m_sprice_create_isSet = !json[QString("sprice_create")].isNull() && m_sprice_create_isValid;
+
+    m_sprice_modified_isValid = ::OpenAPI::fromJsonValue(m_sprice_modified, json[QString("sprice_modified")]);
+    m_sprice_modified_isSet = !json[QString("sprice_modified")].isNull() && m_sprice_modified_isValid;
+
+    m_sprice_expire_isValid = ::OpenAPI::fromJsonValue(m_sprice_expire, json[QString("sprice_expire")]);
+    m_sprice_expire_isSet = !json[QString("sprice_expire")].isNull() && m_sprice_expire_isValid;
+
+    m_created_at_isValid = ::OpenAPI::fromJsonValue(m_created_at, json[QString("created_at")]);
+    m_created_at_isSet = !json[QString("created_at")].isNull() && m_created_at_isValid;
+
+    m_auto_renew_isValid = ::OpenAPI::fromJsonValue(m_auto_renew, json[QString("auto_renew")]);
+    m_auto_renew_isSet = !json[QString("auto_renew")].isNull() && m_auto_renew_isValid;
+
+    m_when_made_isValid = ::OpenAPI::fromJsonValue(m_when_made, json[QString("when_made")]);
+    m_when_made_isSet = !json[QString("when_made")].isNull() && m_when_made_isValid;
+
+    m_meta_title_isValid = ::OpenAPI::fromJsonValue(m_meta_title, json[QString("meta_title")]);
+    m_meta_title_isSet = !json[QString("meta_title")].isNull() && m_meta_title_isValid;
+
+    m_meta_keywords_isValid = ::OpenAPI::fromJsonValue(m_meta_keywords, json[QString("meta_keywords")]);
+    m_meta_keywords_isSet = !json[QString("meta_keywords")].isNull() && m_meta_keywords_isValid;
+
+    m_meta_description_isValid = ::OpenAPI::fromJsonValue(m_meta_description, json[QString("meta_description")]);
+    m_meta_description_isSet = !json[QString("meta_description")].isNull() && m_meta_description_isValid;
+
+    m_url_isValid = ::OpenAPI::fromJsonValue(m_url, json[QString("url")]);
+    m_url_isSet = !json[QString("url")].isNull() && m_url_isValid;
+
+    m_seo_url_isValid = ::OpenAPI::fromJsonValue(m_seo_url, json[QString("seo_url")]);
+    m_seo_url_isSet = !json[QString("seo_url")].isNull() && m_seo_url_isValid;
+
+    m_tax_class_id_isValid = ::OpenAPI::fromJsonValue(m_tax_class_id, json[QString("tax_class_id")]);
+    m_tax_class_id_isSet = !json[QString("tax_class_id")].isNull() && m_tax_class_id_isValid;
+
+    m_taxable_isValid = ::OpenAPI::fromJsonValue(m_taxable, json[QString("taxable")]);
+    m_taxable_isSet = !json[QString("taxable")].isNull() && m_taxable_isValid;
+
+    m_sales_tax_isValid = ::OpenAPI::fromJsonValue(m_sales_tax, json[QString("sales_tax")]);
+    m_sales_tax_isSet = !json[QString("sales_tax")].isNull() && m_sales_tax_isValid;
+
+    m_condition_isValid = ::OpenAPI::fromJsonValue(m_condition, json[QString("condition")]);
+    m_condition_isSet = !json[QString("condition")].isNull() && m_condition_isValid;
+
+    m_condition_description_isValid = ::OpenAPI::fromJsonValue(m_condition_description, json[QString("condition_description")]);
+    m_condition_description_isSet = !json[QString("condition_description")].isNull() && m_condition_description_isValid;
+
+    m_allow_display_condition_isValid = ::OpenAPI::fromJsonValue(m_allow_display_condition, json[QString("allow_display_condition")]);
+    m_allow_display_condition_isSet = !json[QString("allow_display_condition")].isNull() && m_allow_display_condition_isValid;
+
+    m_payment_methods_isValid = ::OpenAPI::fromJsonValue(m_payment_methods, json[QString("payment_methods")]);
+    m_payment_methods_isSet = !json[QString("payment_methods")].isNull() && m_payment_methods_isValid;
+
+    m_paypal_email_isValid = ::OpenAPI::fromJsonValue(m_paypal_email, json[QString("paypal_email")]);
+    m_paypal_email_isSet = !json[QString("paypal_email")].isNull() && m_paypal_email_isValid;
+
+    m_shipping_template_id_isValid = ::OpenAPI::fromJsonValue(m_shipping_template_id, json[QString("shipping_template_id")]);
+    m_shipping_template_id_isSet = !json[QString("shipping_template_id")].isNull() && m_shipping_template_id_isValid;
+
+    m_shipping_details_isValid = ::OpenAPI::fromJsonValue(m_shipping_details, json[QString("shipping_details")]);
+    m_shipping_details_isSet = !json[QString("shipping_details")].isNull() && m_shipping_details_isValid;
 
     m_is_free_shipping_isValid = ::OpenAPI::fromJsonValue(m_is_free_shipping, json[QString("is_free_shipping")]);
     m_is_free_shipping_isSet = !json[QString("is_free_shipping")].isNull() && m_is_free_shipping_isValid;
 
-    m_in_stock_isValid = ::OpenAPI::fromJsonValue(m_in_stock, json[QString("in_stock")]);
-    m_in_stock_isSet = !json[QString("in_stock")].isNull() && m_in_stock_isValid;
-
     m_delivery_code_isValid = ::OpenAPI::fromJsonValue(m_delivery_code, json[QString("delivery_code")]);
     m_delivery_code_isSet = !json[QString("delivery_code")].isNull() && m_delivery_code_isValid;
-
-    m_product_reference_isValid = ::OpenAPI::fromJsonValue(m_product_reference, json[QString("product_reference")]);
-    m_product_reference_isSet = !json[QString("product_reference")].isNull() && m_product_reference_isValid;
 
     m_delivery_type_isValid = ::OpenAPI::fromJsonValue(m_delivery_type, json[QString("delivery_type")]);
     m_delivery_type_isSet = !json[QString("delivery_type")].isNull() && m_delivery_type_isValid;
@@ -683,38 +674,47 @@ void OAIProductAdd::fromJsonObject(QJsonObject json) {
     m_delivery_time_isValid = ::OpenAPI::fromJsonValue(m_delivery_time, json[QString("delivery_time")]);
     m_delivery_time_isSet = !json[QString("delivery_time")].isNull() && m_delivery_time_isValid;
 
-    m_size_chart_isValid = ::OpenAPI::fromJsonValue(m_size_chart, json[QString("size_chart")]);
-    m_size_chart_isSet = !json[QString("size_chart")].isNull() && m_size_chart_isValid;
-
-    m_certifications_isValid = ::OpenAPI::fromJsonValue(m_certifications, json[QString("certifications")]);
-    m_certifications_isSet = !json[QString("certifications")].isNull() && m_certifications_isValid;
-
     m_delivery_option_ids_isValid = ::OpenAPI::fromJsonValue(m_delivery_option_ids, json[QString("delivery_option_ids")]);
     m_delivery_option_ids_isSet = !json[QString("delivery_option_ids")].isNull() && m_delivery_option_ids_isValid;
 
-    m_manufacturer_info_isValid = ::OpenAPI::fromJsonValue(m_manufacturer_info, json[QString("manufacturer_info")]);
-    m_manufacturer_info_isSet = !json[QString("manufacturer_info")].isNull() && m_manufacturer_info_isValid;
+    m_package_details_isValid = ::OpenAPI::fromJsonValue(m_package_details, json[QString("package_details")]);
+    m_package_details_isSet = !json[QString("package_details")].isNull() && m_package_details_isValid;
 
-    m_when_made_isValid = ::OpenAPI::fromJsonValue(m_when_made, json[QString("when_made")]);
-    m_when_made_isSet = !json[QString("when_made")].isNull() && m_when_made_isValid;
+    m_logistic_info_isValid = ::OpenAPI::fromJsonValue(m_logistic_info, json[QString("logistic_info")]);
+    m_logistic_info_isSet = !json[QString("logistic_info")].isNull() && m_logistic_info_isValid;
 
-    m_is_supply_isValid = ::OpenAPI::fromJsonValue(m_is_supply, json[QString("is_supply")]);
-    m_is_supply_isSet = !json[QString("is_supply")].isNull() && m_is_supply_isValid;
+    m_listing_duration_isValid = ::OpenAPI::fromJsonValue(m_listing_duration, json[QString("listing_duration")]);
+    m_listing_duration_isSet = !json[QString("listing_duration")].isNull() && m_listing_duration_isValid;
 
-    m_materials_isValid = ::OpenAPI::fromJsonValue(m_materials, json[QString("materials")]);
-    m_materials_isSet = !json[QString("materials")].isNull() && m_materials_isValid;
+    m_listing_type_isValid = ::OpenAPI::fromJsonValue(m_listing_type, json[QString("listing_type")]);
+    m_listing_type_isSet = !json[QString("listing_type")].isNull() && m_listing_type_isValid;
 
-    m_auto_renew_isValid = ::OpenAPI::fromJsonValue(m_auto_renew, json[QString("auto_renew")]);
-    m_auto_renew_isSet = !json[QString("auto_renew")].isNull() && m_auto_renew_isValid;
+    m_return_accepted_isValid = ::OpenAPI::fromJsonValue(m_return_accepted, json[QString("return_accepted")]);
+    m_return_accepted_isSet = !json[QString("return_accepted")].isNull() && m_return_accepted_isValid;
 
-    m_allow_display_condition_isValid = ::OpenAPI::fromJsonValue(m_allow_display_condition, json[QString("allow_display_condition")]);
-    m_allow_display_condition_isSet = !json[QString("allow_display_condition")].isNull() && m_allow_display_condition_isValid;
+    m_seller_profiles_isValid = ::OpenAPI::fromJsonValue(m_seller_profiles, json[QString("seller_profiles")]);
+    m_seller_profiles_isSet = !json[QString("seller_profiles")].isNull() && m_seller_profiles_isValid;
 
-    m_min_order_quantity_isValid = ::OpenAPI::fromJsonValue(m_min_order_quantity, json[QString("min_order_quantity")]);
-    m_min_order_quantity_isSet = !json[QString("min_order_quantity")].isNull() && m_min_order_quantity_isValid;
+    m_auction_confidentiality_level_isValid = ::OpenAPI::fromJsonValue(m_auction_confidentiality_level, json[QString("auction_confidentiality_level")]);
+    m_auction_confidentiality_level_isSet = !json[QString("auction_confidentiality_level")].isNull() && m_auction_confidentiality_level_isValid;
 
-    m_max_order_quantity_isValid = ::OpenAPI::fromJsonValue(m_max_order_quantity, json[QString("max_order_quantity")]);
-    m_max_order_quantity_isSet = !json[QString("max_order_quantity")].isNull() && m_max_order_quantity_isValid;
+    m_best_offer_isValid = ::OpenAPI::fromJsonValue(m_best_offer, json[QString("best_offer")]);
+    m_best_offer_isSet = !json[QString("best_offer")].isNull() && m_best_offer_isValid;
+
+    m_production_partner_ids_isValid = ::OpenAPI::fromJsonValue(m_production_partner_ids, json[QString("production_partner_ids")]);
+    m_production_partner_ids_isSet = !json[QString("production_partner_ids")].isNull() && m_production_partner_ids_isValid;
+
+    m_marketplace_item_properties_isValid = ::OpenAPI::fromJsonValue(m_marketplace_item_properties, json[QString("marketplace_item_properties")]);
+    m_marketplace_item_properties_isSet = !json[QString("marketplace_item_properties")].isNull() && m_marketplace_item_properties_isValid;
+
+    m_clear_cache_isValid = ::OpenAPI::fromJsonValue(m_clear_cache, json[QString("clear_cache")]);
+    m_clear_cache_isSet = !json[QString("clear_cache")].isNull() && m_clear_cache_isValid;
+
+    m_viewed_count_isValid = ::OpenAPI::fromJsonValue(m_viewed_count, json[QString("viewed_count")]);
+    m_viewed_count_isSet = !json[QString("viewed_count")].isNull() && m_viewed_count_isValid;
+
+    m_ordered_count_isValid = ::OpenAPI::fromJsonValue(m_ordered_count, json[QString("ordered_count")]);
+    m_ordered_count_isSet = !json[QString("ordered_count")].isNull() && m_ordered_count_isValid;
 }
 
 QString OAIProductAdd::asJson() const {
@@ -732,41 +732,47 @@ QJsonObject OAIProductAdd::asJsonObject() const {
     if (m_model_isSet) {
         obj.insert(QString("model"), ::OpenAPI::toJsonValue(m_model));
     }
-    if (m_sku_isSet) {
-        obj.insert(QString("sku"), ::OpenAPI::toJsonValue(m_sku));
-    }
     if (m_description_isSet) {
         obj.insert(QString("description"), ::OpenAPI::toJsonValue(m_description));
     }
     if (m_price_isSet) {
         obj.insert(QString("price"), ::OpenAPI::toJsonValue(m_price));
     }
-    if (m_old_price_isSet) {
-        obj.insert(QString("old_price"), ::OpenAPI::toJsonValue(m_old_price));
+    if (m_sku_isSet) {
+        obj.insert(QString("sku"), ::OpenAPI::toJsonValue(m_sku));
     }
-    if (m_special_price_isSet) {
-        obj.insert(QString("special_price"), ::OpenAPI::toJsonValue(m_special_price));
+    if (m_short_description_isSet) {
+        obj.insert(QString("short_description"), ::OpenAPI::toJsonValue(m_short_description));
     }
-    if (m_cost_price_isSet) {
-        obj.insert(QString("cost_price"), ::OpenAPI::toJsonValue(m_cost_price));
+    if (m_type_isSet) {
+        obj.insert(QString("type"), ::OpenAPI::toJsonValue(m_type));
     }
-    if (m_fixed_cost_shipping_price_isSet) {
-        obj.insert(QString("fixed_cost_shipping_price"), ::OpenAPI::toJsonValue(m_fixed_cost_shipping_price));
+    if (m_status_isSet) {
+        obj.insert(QString("status"), ::OpenAPI::toJsonValue(m_status));
     }
-    if (m_sprice_create_isSet) {
-        obj.insert(QString("sprice_create"), ::OpenAPI::toJsonValue(m_sprice_create));
+    if (m_visible_isSet) {
+        obj.insert(QString("visible"), ::OpenAPI::toJsonValue(m_visible));
     }
-    if (m_sprice_modified_isSet) {
-        obj.insert(QString("sprice_modified"), ::OpenAPI::toJsonValue(m_sprice_modified));
+    if (m_category_id_isSet) {
+        obj.insert(QString("category_id"), ::OpenAPI::toJsonValue(m_category_id));
     }
-    if (m_sprice_expire_isSet) {
-        obj.insert(QString("sprice_expire"), ::OpenAPI::toJsonValue(m_sprice_expire));
+    if (m_categories_ids_isSet) {
+        obj.insert(QString("categories_ids"), ::OpenAPI::toJsonValue(m_categories_ids));
     }
-    if (m_tier_prices.size() > 0) {
-        obj.insert(QString("tier_prices"), ::OpenAPI::toJsonValue(m_tier_prices));
+    if (m_product_class_isSet) {
+        obj.insert(QString("product_class"), ::OpenAPI::toJsonValue(m_product_class));
     }
-    if (m_group_prices.size() > 0) {
-        obj.insert(QString("group_prices"), ::OpenAPI::toJsonValue(m_group_prices));
+    if (m_product_type_isSet) {
+        obj.insert(QString("product_type"), ::OpenAPI::toJsonValue(m_product_type));
+    }
+    if (m_is_virtual_isSet) {
+        obj.insert(QString("is_virtual"), ::OpenAPI::toJsonValue(m_is_virtual));
+    }
+    if (m_downloadable_isSet) {
+        obj.insert(QString("downloadable"), ::OpenAPI::toJsonValue(m_downloadable));
+    }
+    if (m_is_supply_isSet) {
+        obj.insert(QString("is_supply"), ::OpenAPI::toJsonValue(m_is_supply));
     }
     if (m_available_for_view_isSet) {
         obj.insert(QString("available_for_view"), ::OpenAPI::toJsonValue(m_available_for_view));
@@ -774,8 +780,68 @@ QJsonObject OAIProductAdd::asJsonObject() const {
     if (m_available_for_sale_isSet) {
         obj.insert(QString("available_for_sale"), ::OpenAPI::toJsonValue(m_available_for_sale));
     }
+    if (m_store_id_isSet) {
+        obj.insert(QString("store_id"), ::OpenAPI::toJsonValue(m_store_id));
+    }
+    if (m_stores_ids_isSet) {
+        obj.insert(QString("stores_ids"), ::OpenAPI::toJsonValue(m_stores_ids));
+    }
+    if (m_lang_id_isSet) {
+        obj.insert(QString("lang_id"), ::OpenAPI::toJsonValue(m_lang_id));
+    }
+    if (m_old_price_isSet) {
+        obj.insert(QString("old_price"), ::OpenAPI::toJsonValue(m_old_price));
+    }
+    if (m_special_price_isSet) {
+        obj.insert(QString("special_price"), ::OpenAPI::toJsonValue(m_special_price));
+    }
+    if (m_wholesale_price_isSet) {
+        obj.insert(QString("wholesale_price"), ::OpenAPI::toJsonValue(m_wholesale_price));
+    }
+    if (m_cost_price_isSet) {
+        obj.insert(QString("cost_price"), ::OpenAPI::toJsonValue(m_cost_price));
+    }
+    if (m_fixed_cost_shipping_price_isSet) {
+        obj.insert(QString("fixed_cost_shipping_price"), ::OpenAPI::toJsonValue(m_fixed_cost_shipping_price));
+    }
+    if (m_tier_prices.size() > 0) {
+        obj.insert(QString("tier_prices"), ::OpenAPI::toJsonValue(m_tier_prices));
+    }
+    if (m_group_prices.size() > 0) {
+        obj.insert(QString("group_prices"), ::OpenAPI::toJsonValue(m_group_prices));
+    }
+    if (m_buyitnow_price_isSet) {
+        obj.insert(QString("buyitnow_price"), ::OpenAPI::toJsonValue(m_buyitnow_price));
+    }
+    if (m_reserve_price_isSet) {
+        obj.insert(QString("reserve_price"), ::OpenAPI::toJsonValue(m_reserve_price));
+    }
+    if (m_quantity_isSet) {
+        obj.insert(QString("quantity"), ::OpenAPI::toJsonValue(m_quantity));
+    }
+    if (m_in_stock_isSet) {
+        obj.insert(QString("in_stock"), ::OpenAPI::toJsonValue(m_in_stock));
+    }
+    if (m_manage_stock_isSet) {
+        obj.insert(QString("manage_stock"), ::OpenAPI::toJsonValue(m_manage_stock));
+    }
+    if (m_warehouse_id_isSet) {
+        obj.insert(QString("warehouse_id"), ::OpenAPI::toJsonValue(m_warehouse_id));
+    }
+    if (m_backorder_status_isSet) {
+        obj.insert(QString("backorder_status"), ::OpenAPI::toJsonValue(m_backorder_status));
+    }
+    if (m_min_order_quantity_isSet) {
+        obj.insert(QString("min_order_quantity"), ::OpenAPI::toJsonValue(m_min_order_quantity));
+    }
+    if (m_max_order_quantity_isSet) {
+        obj.insert(QString("max_order_quantity"), ::OpenAPI::toJsonValue(m_max_order_quantity));
+    }
     if (m_weight_isSet) {
         obj.insert(QString("weight"), ::OpenAPI::toJsonValue(m_weight));
+    }
+    if (m_weight_unit_isSet) {
+        obj.insert(QString("weight_unit"), ::OpenAPI::toJsonValue(m_weight_unit));
     }
     if (m_width_isSet) {
         obj.insert(QString("width"), ::OpenAPI::toJsonValue(m_width));
@@ -786,128 +852,8 @@ QJsonObject OAIProductAdd::asJsonObject() const {
     if (m_length_isSet) {
         obj.insert(QString("length"), ::OpenAPI::toJsonValue(m_length));
     }
-    if (m_weight_unit_isSet) {
-        obj.insert(QString("weight_unit"), ::OpenAPI::toJsonValue(m_weight_unit));
-    }
     if (m_dimensions_unit_isSet) {
         obj.insert(QString("dimensions_unit"), ::OpenAPI::toJsonValue(m_dimensions_unit));
-    }
-    if (m_short_description_isSet) {
-        obj.insert(QString("short_description"), ::OpenAPI::toJsonValue(m_short_description));
-    }
-    if (m_warehouse_id_isSet) {
-        obj.insert(QString("warehouse_id"), ::OpenAPI::toJsonValue(m_warehouse_id));
-    }
-    if (m_backorder_status_isSet) {
-        obj.insert(QString("backorder_status"), ::OpenAPI::toJsonValue(m_backorder_status));
-    }
-    if (m_quantity_isSet) {
-        obj.insert(QString("quantity"), ::OpenAPI::toJsonValue(m_quantity));
-    }
-    if (m_downloadable_isSet) {
-        obj.insert(QString("downloadable"), ::OpenAPI::toJsonValue(m_downloadable));
-    }
-    if (m_wholesale_price_isSet) {
-        obj.insert(QString("wholesale_price"), ::OpenAPI::toJsonValue(m_wholesale_price));
-    }
-    if (m_created_at_isSet) {
-        obj.insert(QString("created_at"), ::OpenAPI::toJsonValue(m_created_at));
-    }
-    if (m_manufacturer_isSet) {
-        obj.insert(QString("manufacturer"), ::OpenAPI::toJsonValue(m_manufacturer));
-    }
-    if (m_manufacturer_id_isSet) {
-        obj.insert(QString("manufacturer_id"), ::OpenAPI::toJsonValue(m_manufacturer_id));
-    }
-    if (m_categories_ids_isSet) {
-        obj.insert(QString("categories_ids"), ::OpenAPI::toJsonValue(m_categories_ids));
-    }
-    if (m_related_products_ids_isSet) {
-        obj.insert(QString("related_products_ids"), ::OpenAPI::toJsonValue(m_related_products_ids));
-    }
-    if (m_up_sell_products_ids_isSet) {
-        obj.insert(QString("up_sell_products_ids"), ::OpenAPI::toJsonValue(m_up_sell_products_ids));
-    }
-    if (m_cross_sell_products_ids_isSet) {
-        obj.insert(QString("cross_sell_products_ids"), ::OpenAPI::toJsonValue(m_cross_sell_products_ids));
-    }
-    if (m_tax_class_id_isSet) {
-        obj.insert(QString("tax_class_id"), ::OpenAPI::toJsonValue(m_tax_class_id));
-    }
-    if (m_type_isSet) {
-        obj.insert(QString("type"), ::OpenAPI::toJsonValue(m_type));
-    }
-    if (m_meta_title_isSet) {
-        obj.insert(QString("meta_title"), ::OpenAPI::toJsonValue(m_meta_title));
-    }
-    if (m_meta_keywords_isSet) {
-        obj.insert(QString("meta_keywords"), ::OpenAPI::toJsonValue(m_meta_keywords));
-    }
-    if (m_meta_description_isSet) {
-        obj.insert(QString("meta_description"), ::OpenAPI::toJsonValue(m_meta_description));
-    }
-    if (m_url_isSet) {
-        obj.insert(QString("url"), ::OpenAPI::toJsonValue(m_url));
-    }
-    if (m_lang_id_isSet) {
-        obj.insert(QString("lang_id"), ::OpenAPI::toJsonValue(m_lang_id));
-    }
-    if (m_stores_ids_isSet) {
-        obj.insert(QString("stores_ids"), ::OpenAPI::toJsonValue(m_stores_ids));
-    }
-    if (m_category_id_isSet) {
-        obj.insert(QString("category_id"), ::OpenAPI::toJsonValue(m_category_id));
-    }
-    if (m_viewed_count_isSet) {
-        obj.insert(QString("viewed_count"), ::OpenAPI::toJsonValue(m_viewed_count));
-    }
-    if (m_ordered_count_isSet) {
-        obj.insert(QString("ordered_count"), ::OpenAPI::toJsonValue(m_ordered_count));
-    }
-    if (m_attribute_set_name_isSet) {
-        obj.insert(QString("attribute_set_name"), ::OpenAPI::toJsonValue(m_attribute_set_name));
-    }
-    if (m_attribute_name_isSet) {
-        obj.insert(QString("attribute_name"), ::OpenAPI::toJsonValue(m_attribute_name));
-    }
-    if (m_shipping_template_id_isSet) {
-        obj.insert(QString("shipping_template_id"), ::OpenAPI::toJsonValue(m_shipping_template_id));
-    }
-    if (m_production_partner_ids_isSet) {
-        obj.insert(QString("production_partner_ids"), ::OpenAPI::toJsonValue(m_production_partner_ids));
-    }
-    if (m_condition_isSet) {
-        obj.insert(QString("condition"), ::OpenAPI::toJsonValue(m_condition));
-    }
-    if (m_listing_duration_isSet) {
-        obj.insert(QString("listing_duration"), ::OpenAPI::toJsonValue(m_listing_duration));
-    }
-    if (m_listing_type_isSet) {
-        obj.insert(QString("listing_type"), ::OpenAPI::toJsonValue(m_listing_type));
-    }
-    if (m_payment_methods.size() > 0) {
-        obj.insert(QString("payment_methods"), ::OpenAPI::toJsonValue(m_payment_methods));
-    }
-    if (m_return_accepted_isSet) {
-        obj.insert(QString("return_accepted"), ::OpenAPI::toJsonValue(m_return_accepted));
-    }
-    if (m_shipping_details.size() > 0) {
-        obj.insert(QString("shipping_details"), ::OpenAPI::toJsonValue(m_shipping_details));
-    }
-    if (m_paypal_email_isSet) {
-        obj.insert(QString("paypal_email"), ::OpenAPI::toJsonValue(m_paypal_email));
-    }
-    if (m_seller_profiles.isSet()) {
-        obj.insert(QString("seller_profiles"), ::OpenAPI::toJsonValue(m_seller_profiles));
-    }
-    if (m_package_details.isSet()) {
-        obj.insert(QString("package_details"), ::OpenAPI::toJsonValue(m_package_details));
-    }
-    if (m_best_offer.isSet()) {
-        obj.insert(QString("best_offer"), ::OpenAPI::toJsonValue(m_best_offer));
-    }
-    if (m_sales_tax.isSet()) {
-        obj.insert(QString("sales_tax"), ::OpenAPI::toJsonValue(m_sales_tax));
     }
     if (m_barcode_isSet) {
         obj.insert(QString("barcode"), ::OpenAPI::toJsonValue(m_barcode));
@@ -921,8 +867,35 @@ QJsonObject OAIProductAdd::asJsonObject() const {
     if (m_isbn_isSet) {
         obj.insert(QString("isbn"), ::OpenAPI::toJsonValue(m_isbn));
     }
-    if (m_specifics.size() > 0) {
-        obj.insert(QString("specifics"), ::OpenAPI::toJsonValue(m_specifics));
+    if (m_gtin_isSet) {
+        obj.insert(QString("gtin"), ::OpenAPI::toJsonValue(m_gtin));
+    }
+    if (m_mpn_isSet) {
+        obj.insert(QString("mpn"), ::OpenAPI::toJsonValue(m_mpn));
+    }
+    if (m_asin_isSet) {
+        obj.insert(QString("asin"), ::OpenAPI::toJsonValue(m_asin));
+    }
+    if (m_product_reference_isSet) {
+        obj.insert(QString("product_reference"), ::OpenAPI::toJsonValue(m_product_reference));
+    }
+    if (m_harmonized_system_code_isSet) {
+        obj.insert(QString("harmonized_system_code"), ::OpenAPI::toJsonValue(m_harmonized_system_code));
+    }
+    if (m_country_of_origin_isSet) {
+        obj.insert(QString("country_of_origin"), ::OpenAPI::toJsonValue(m_country_of_origin));
+    }
+    if (m_manufacturer_isSet) {
+        obj.insert(QString("manufacturer"), ::OpenAPI::toJsonValue(m_manufacturer));
+    }
+    if (m_manufacturer_id_isSet) {
+        obj.insert(QString("manufacturer_id"), ::OpenAPI::toJsonValue(m_manufacturer_id));
+    }
+    if (m_manufacturer_info.isSet()) {
+        obj.insert(QString("manufacturer_info"), ::OpenAPI::toJsonValue(m_manufacturer_info));
+    }
+    if (m_brand_name_isSet) {
+        obj.insert(QString("brand_name"), ::OpenAPI::toJsonValue(m_brand_name));
     }
     if (m_image_url_isSet) {
         obj.insert(QString("image_url"), ::OpenAPI::toJsonValue(m_image_url));
@@ -933,95 +906,113 @@ QJsonObject OAIProductAdd::asJsonObject() const {
     if (m_additional_image_urls.size() > 0) {
         obj.insert(QString("additional_image_urls"), ::OpenAPI::toJsonValue(m_additional_image_urls));
     }
-    if (m_reserve_price_isSet) {
-        obj.insert(QString("reserve_price"), ::OpenAPI::toJsonValue(m_reserve_price));
-    }
-    if (m_buyitnow_price_isSet) {
-        obj.insert(QString("buyitnow_price"), ::OpenAPI::toJsonValue(m_buyitnow_price));
-    }
-    if (m_condition_description_isSet) {
-        obj.insert(QString("condition_description"), ::OpenAPI::toJsonValue(m_condition_description));
-    }
-    if (m_auction_confidentiality_level_isSet) {
-        obj.insert(QString("auction_confidentiality_level"), ::OpenAPI::toJsonValue(m_auction_confidentiality_level));
-    }
-    if (m_logistic_info.size() > 0) {
-        obj.insert(QString("logistic_info"), ::OpenAPI::toJsonValue(m_logistic_info));
-    }
-    if (m_avail_from_isSet) {
-        obj.insert(QString("avail_from"), ::OpenAPI::toJsonValue(m_avail_from));
-    }
-    if (m_tags_isSet) {
-        obj.insert(QString("tags"), ::OpenAPI::toJsonValue(m_tags));
-    }
-    if (m_clear_cache_isSet) {
-        obj.insert(QString("clear_cache"), ::OpenAPI::toJsonValue(m_clear_cache));
-    }
-    if (m_asin_isSet) {
-        obj.insert(QString("asin"), ::OpenAPI::toJsonValue(m_asin));
-    }
-    if (m_gtin_isSet) {
-        obj.insert(QString("gtin"), ::OpenAPI::toJsonValue(m_gtin));
-    }
-    if (m_mpn_isSet) {
-        obj.insert(QString("mpn"), ::OpenAPI::toJsonValue(m_mpn));
-    }
-    if (m_taxable_isSet) {
-        obj.insert(QString("taxable"), ::OpenAPI::toJsonValue(m_taxable));
-    }
-    if (m_visible_isSet) {
-        obj.insert(QString("visible"), ::OpenAPI::toJsonValue(m_visible));
-    }
-    if (m_status_isSet) {
-        obj.insert(QString("status"), ::OpenAPI::toJsonValue(m_status));
-    }
-    if (m_seo_url_isSet) {
-        obj.insert(QString("seo_url"), ::OpenAPI::toJsonValue(m_seo_url));
-    }
-    if (m_product_class_isSet) {
-        obj.insert(QString("product_class"), ::OpenAPI::toJsonValue(m_product_class));
-    }
-    if (m_product_type_isSet) {
-        obj.insert(QString("product_type"), ::OpenAPI::toJsonValue(m_product_type));
-    }
-    if (m_marketplace_item_properties_isSet) {
-        obj.insert(QString("marketplace_item_properties"), ::OpenAPI::toJsonValue(m_marketplace_item_properties));
-    }
-    if (m_manage_stock_isSet) {
-        obj.insert(QString("manage_stock"), ::OpenAPI::toJsonValue(m_manage_stock));
-    }
-    if (m_harmonized_system_code_isSet) {
-        obj.insert(QString("harmonized_system_code"), ::OpenAPI::toJsonValue(m_harmonized_system_code));
-    }
-    if (m_country_of_origin_isSet) {
-        obj.insert(QString("country_of_origin"), ::OpenAPI::toJsonValue(m_country_of_origin));
-    }
     if (m_files.size() > 0) {
         obj.insert(QString("files"), ::OpenAPI::toJsonValue(m_files));
+    }
+    if (m_size_chart.isSet()) {
+        obj.insert(QString("size_chart"), ::OpenAPI::toJsonValue(m_size_chart));
+    }
+    if (m_related_products_ids_isSet) {
+        obj.insert(QString("related_products_ids"), ::OpenAPI::toJsonValue(m_related_products_ids));
+    }
+    if (m_up_sell_products_ids_isSet) {
+        obj.insert(QString("up_sell_products_ids"), ::OpenAPI::toJsonValue(m_up_sell_products_ids));
+    }
+    if (m_cross_sell_products_ids_isSet) {
+        obj.insert(QString("cross_sell_products_ids"), ::OpenAPI::toJsonValue(m_cross_sell_products_ids));
+    }
+    if (m_attribute_set_name_isSet) {
+        obj.insert(QString("attribute_set_name"), ::OpenAPI::toJsonValue(m_attribute_set_name));
+    }
+    if (m_attribute_name_isSet) {
+        obj.insert(QString("attribute_name"), ::OpenAPI::toJsonValue(m_attribute_name));
     }
     if (m_search_keywords_isSet) {
         obj.insert(QString("search_keywords"), ::OpenAPI::toJsonValue(m_search_keywords));
     }
-    if (m_store_id_isSet) {
-        obj.insert(QString("store_id"), ::OpenAPI::toJsonValue(m_store_id));
+    if (m_tags_isSet) {
+        obj.insert(QString("tags"), ::OpenAPI::toJsonValue(m_tags));
     }
-    if (m_brand_name_isSet) {
-        obj.insert(QString("brand_name"), ::OpenAPI::toJsonValue(m_brand_name));
+    if (m_materials.size() > 0) {
+        obj.insert(QString("materials"), ::OpenAPI::toJsonValue(m_materials));
     }
-    if (m_is_virtual_isSet) {
-        obj.insert(QString("is_virtual"), ::OpenAPI::toJsonValue(m_is_virtual));
+    if (m_certifications.size() > 0) {
+        obj.insert(QString("certifications"), ::OpenAPI::toJsonValue(m_certifications));
+    }
+    if (m_specifics.size() > 0) {
+        obj.insert(QString("specifics"), ::OpenAPI::toJsonValue(m_specifics));
+    }
+    if (m_avail_from_isSet) {
+        obj.insert(QString("avail_from"), ::OpenAPI::toJsonValue(m_avail_from));
+    }
+    if (m_sprice_create_isSet) {
+        obj.insert(QString("sprice_create"), ::OpenAPI::toJsonValue(m_sprice_create));
+    }
+    if (m_sprice_modified_isSet) {
+        obj.insert(QString("sprice_modified"), ::OpenAPI::toJsonValue(m_sprice_modified));
+    }
+    if (m_sprice_expire_isSet) {
+        obj.insert(QString("sprice_expire"), ::OpenAPI::toJsonValue(m_sprice_expire));
+    }
+    if (m_created_at_isSet) {
+        obj.insert(QString("created_at"), ::OpenAPI::toJsonValue(m_created_at));
+    }
+    if (m_auto_renew_isSet) {
+        obj.insert(QString("auto_renew"), ::OpenAPI::toJsonValue(m_auto_renew));
+    }
+    if (m_when_made_isSet) {
+        obj.insert(QString("when_made"), ::OpenAPI::toJsonValue(m_when_made));
+    }
+    if (m_meta_title_isSet) {
+        obj.insert(QString("meta_title"), ::OpenAPI::toJsonValue(m_meta_title));
+    }
+    if (m_meta_keywords_isSet) {
+        obj.insert(QString("meta_keywords"), ::OpenAPI::toJsonValue(m_meta_keywords));
+    }
+    if (m_meta_description_isSet) {
+        obj.insert(QString("meta_description"), ::OpenAPI::toJsonValue(m_meta_description));
+    }
+    if (m_url_isSet) {
+        obj.insert(QString("url"), ::OpenAPI::toJsonValue(m_url));
+    }
+    if (m_seo_url_isSet) {
+        obj.insert(QString("seo_url"), ::OpenAPI::toJsonValue(m_seo_url));
+    }
+    if (m_tax_class_id_isSet) {
+        obj.insert(QString("tax_class_id"), ::OpenAPI::toJsonValue(m_tax_class_id));
+    }
+    if (m_taxable_isSet) {
+        obj.insert(QString("taxable"), ::OpenAPI::toJsonValue(m_taxable));
+    }
+    if (m_sales_tax.isSet()) {
+        obj.insert(QString("sales_tax"), ::OpenAPI::toJsonValue(m_sales_tax));
+    }
+    if (m_condition_isSet) {
+        obj.insert(QString("condition"), ::OpenAPI::toJsonValue(m_condition));
+    }
+    if (m_condition_description_isSet) {
+        obj.insert(QString("condition_description"), ::OpenAPI::toJsonValue(m_condition_description));
+    }
+    if (m_allow_display_condition_isSet) {
+        obj.insert(QString("allow_display_condition"), ::OpenAPI::toJsonValue(m_allow_display_condition));
+    }
+    if (m_payment_methods.size() > 0) {
+        obj.insert(QString("payment_methods"), ::OpenAPI::toJsonValue(m_payment_methods));
+    }
+    if (m_paypal_email_isSet) {
+        obj.insert(QString("paypal_email"), ::OpenAPI::toJsonValue(m_paypal_email));
+    }
+    if (m_shipping_template_id_isSet) {
+        obj.insert(QString("shipping_template_id"), ::OpenAPI::toJsonValue(m_shipping_template_id));
+    }
+    if (m_shipping_details.size() > 0) {
+        obj.insert(QString("shipping_details"), ::OpenAPI::toJsonValue(m_shipping_details));
     }
     if (m_is_free_shipping_isSet) {
         obj.insert(QString("is_free_shipping"), ::OpenAPI::toJsonValue(m_is_free_shipping));
     }
-    if (m_in_stock_isSet) {
-        obj.insert(QString("in_stock"), ::OpenAPI::toJsonValue(m_in_stock));
-    }
     if (m_delivery_code_isSet) {
         obj.insert(QString("delivery_code"), ::OpenAPI::toJsonValue(m_delivery_code));
-    }
-    if (m_product_reference_isSet) {
-        obj.insert(QString("product_reference"), ::OpenAPI::toJsonValue(m_product_reference));
     }
     if (m_delivery_type_isSet) {
         obj.insert(QString("delivery_type"), ::OpenAPI::toJsonValue(m_delivery_type));
@@ -1029,38 +1020,47 @@ QJsonObject OAIProductAdd::asJsonObject() const {
     if (m_delivery_time_isSet) {
         obj.insert(QString("delivery_time"), ::OpenAPI::toJsonValue(m_delivery_time));
     }
-    if (m_size_chart.isSet()) {
-        obj.insert(QString("size_chart"), ::OpenAPI::toJsonValue(m_size_chart));
-    }
-    if (m_certifications.size() > 0) {
-        obj.insert(QString("certifications"), ::OpenAPI::toJsonValue(m_certifications));
-    }
     if (m_delivery_option_ids_isSet) {
         obj.insert(QString("delivery_option_ids"), ::OpenAPI::toJsonValue(m_delivery_option_ids));
     }
-    if (m_manufacturer_info.isSet()) {
-        obj.insert(QString("manufacturer_info"), ::OpenAPI::toJsonValue(m_manufacturer_info));
+    if (m_package_details.isSet()) {
+        obj.insert(QString("package_details"), ::OpenAPI::toJsonValue(m_package_details));
     }
-    if (m_when_made_isSet) {
-        obj.insert(QString("when_made"), ::OpenAPI::toJsonValue(m_when_made));
+    if (m_logistic_info.size() > 0) {
+        obj.insert(QString("logistic_info"), ::OpenAPI::toJsonValue(m_logistic_info));
     }
-    if (m_is_supply_isSet) {
-        obj.insert(QString("is_supply"), ::OpenAPI::toJsonValue(m_is_supply));
+    if (m_listing_duration_isSet) {
+        obj.insert(QString("listing_duration"), ::OpenAPI::toJsonValue(m_listing_duration));
     }
-    if (m_materials.size() > 0) {
-        obj.insert(QString("materials"), ::OpenAPI::toJsonValue(m_materials));
+    if (m_listing_type_isSet) {
+        obj.insert(QString("listing_type"), ::OpenAPI::toJsonValue(m_listing_type));
     }
-    if (m_auto_renew_isSet) {
-        obj.insert(QString("auto_renew"), ::OpenAPI::toJsonValue(m_auto_renew));
+    if (m_return_accepted_isSet) {
+        obj.insert(QString("return_accepted"), ::OpenAPI::toJsonValue(m_return_accepted));
     }
-    if (m_allow_display_condition_isSet) {
-        obj.insert(QString("allow_display_condition"), ::OpenAPI::toJsonValue(m_allow_display_condition));
+    if (m_seller_profiles.isSet()) {
+        obj.insert(QString("seller_profiles"), ::OpenAPI::toJsonValue(m_seller_profiles));
     }
-    if (m_min_order_quantity_isSet) {
-        obj.insert(QString("min_order_quantity"), ::OpenAPI::toJsonValue(m_min_order_quantity));
+    if (m_auction_confidentiality_level_isSet) {
+        obj.insert(QString("auction_confidentiality_level"), ::OpenAPI::toJsonValue(m_auction_confidentiality_level));
     }
-    if (m_max_order_quantity_isSet) {
-        obj.insert(QString("max_order_quantity"), ::OpenAPI::toJsonValue(m_max_order_quantity));
+    if (m_best_offer.isSet()) {
+        obj.insert(QString("best_offer"), ::OpenAPI::toJsonValue(m_best_offer));
+    }
+    if (m_production_partner_ids_isSet) {
+        obj.insert(QString("production_partner_ids"), ::OpenAPI::toJsonValue(m_production_partner_ids));
+    }
+    if (m_marketplace_item_properties_isSet) {
+        obj.insert(QString("marketplace_item_properties"), ::OpenAPI::toJsonValue(m_marketplace_item_properties));
+    }
+    if (m_clear_cache_isSet) {
+        obj.insert(QString("clear_cache"), ::OpenAPI::toJsonValue(m_clear_cache));
+    }
+    if (m_viewed_count_isSet) {
+        obj.insert(QString("viewed_count"), ::OpenAPI::toJsonValue(m_viewed_count));
+    }
+    if (m_ordered_count_isSet) {
+        obj.insert(QString("ordered_count"), ::OpenAPI::toJsonValue(m_ordered_count));
     }
     return obj;
 }
@@ -1097,22 +1097,6 @@ bool OAIProductAdd::is_model_Valid() const{
     return m_model_isValid;
 }
 
-QString OAIProductAdd::getSku() const {
-    return m_sku;
-}
-void OAIProductAdd::setSku(const QString &sku) {
-    m_sku = sku;
-    m_sku_isSet = true;
-}
-
-bool OAIProductAdd::is_sku_Set() const{
-    return m_sku_isSet;
-}
-
-bool OAIProductAdd::is_sku_Valid() const{
-    return m_sku_isValid;
-}
-
 QString OAIProductAdd::getDescription() const {
     return m_description;
 }
@@ -1145,148 +1129,196 @@ bool OAIProductAdd::is_price_Valid() const{
     return m_price_isValid;
 }
 
-double OAIProductAdd::getOldPrice() const {
-    return m_old_price;
+QString OAIProductAdd::getSku() const {
+    return m_sku;
 }
-void OAIProductAdd::setOldPrice(const double &old_price) {
-    m_old_price = old_price;
-    m_old_price_isSet = true;
-}
-
-bool OAIProductAdd::is_old_price_Set() const{
-    return m_old_price_isSet;
+void OAIProductAdd::setSku(const QString &sku) {
+    m_sku = sku;
+    m_sku_isSet = true;
 }
 
-bool OAIProductAdd::is_old_price_Valid() const{
-    return m_old_price_isValid;
+bool OAIProductAdd::is_sku_Set() const{
+    return m_sku_isSet;
 }
 
-double OAIProductAdd::getSpecialPrice() const {
-    return m_special_price;
-}
-void OAIProductAdd::setSpecialPrice(const double &special_price) {
-    m_special_price = special_price;
-    m_special_price_isSet = true;
+bool OAIProductAdd::is_sku_Valid() const{
+    return m_sku_isValid;
 }
 
-bool OAIProductAdd::is_special_price_Set() const{
-    return m_special_price_isSet;
+QString OAIProductAdd::getShortDescription() const {
+    return m_short_description;
+}
+void OAIProductAdd::setShortDescription(const QString &short_description) {
+    m_short_description = short_description;
+    m_short_description_isSet = true;
 }
 
-bool OAIProductAdd::is_special_price_Valid() const{
-    return m_special_price_isValid;
+bool OAIProductAdd::is_short_description_Set() const{
+    return m_short_description_isSet;
 }
 
-double OAIProductAdd::getCostPrice() const {
-    return m_cost_price;
-}
-void OAIProductAdd::setCostPrice(const double &cost_price) {
-    m_cost_price = cost_price;
-    m_cost_price_isSet = true;
+bool OAIProductAdd::is_short_description_Valid() const{
+    return m_short_description_isValid;
 }
 
-bool OAIProductAdd::is_cost_price_Set() const{
-    return m_cost_price_isSet;
+QString OAIProductAdd::getType() const {
+    return m_type;
+}
+void OAIProductAdd::setType(const QString &type) {
+    m_type = type;
+    m_type_isSet = true;
 }
 
-bool OAIProductAdd::is_cost_price_Valid() const{
-    return m_cost_price_isValid;
+bool OAIProductAdd::is_type_Set() const{
+    return m_type_isSet;
 }
 
-double OAIProductAdd::getFixedCostShippingPrice() const {
-    return m_fixed_cost_shipping_price;
-}
-void OAIProductAdd::setFixedCostShippingPrice(const double &fixed_cost_shipping_price) {
-    m_fixed_cost_shipping_price = fixed_cost_shipping_price;
-    m_fixed_cost_shipping_price_isSet = true;
+bool OAIProductAdd::is_type_Valid() const{
+    return m_type_isValid;
 }
 
-bool OAIProductAdd::is_fixed_cost_shipping_price_Set() const{
-    return m_fixed_cost_shipping_price_isSet;
+QString OAIProductAdd::getStatus() const {
+    return m_status;
+}
+void OAIProductAdd::setStatus(const QString &status) {
+    m_status = status;
+    m_status_isSet = true;
 }
 
-bool OAIProductAdd::is_fixed_cost_shipping_price_Valid() const{
-    return m_fixed_cost_shipping_price_isValid;
+bool OAIProductAdd::is_status_Set() const{
+    return m_status_isSet;
 }
 
-QString OAIProductAdd::getSpriceCreate() const {
-    return m_sprice_create;
-}
-void OAIProductAdd::setSpriceCreate(const QString &sprice_create) {
-    m_sprice_create = sprice_create;
-    m_sprice_create_isSet = true;
+bool OAIProductAdd::is_status_Valid() const{
+    return m_status_isValid;
 }
 
-bool OAIProductAdd::is_sprice_create_Set() const{
-    return m_sprice_create_isSet;
+QString OAIProductAdd::getVisible() const {
+    return m_visible;
+}
+void OAIProductAdd::setVisible(const QString &visible) {
+    m_visible = visible;
+    m_visible_isSet = true;
 }
 
-bool OAIProductAdd::is_sprice_create_Valid() const{
-    return m_sprice_create_isValid;
+bool OAIProductAdd::is_visible_Set() const{
+    return m_visible_isSet;
 }
 
-QString OAIProductAdd::getSpriceModified() const {
-    return m_sprice_modified;
-}
-void OAIProductAdd::setSpriceModified(const QString &sprice_modified) {
-    m_sprice_modified = sprice_modified;
-    m_sprice_modified_isSet = true;
+bool OAIProductAdd::is_visible_Valid() const{
+    return m_visible_isValid;
 }
 
-bool OAIProductAdd::is_sprice_modified_Set() const{
-    return m_sprice_modified_isSet;
+QString OAIProductAdd::getCategoryId() const {
+    return m_category_id;
+}
+void OAIProductAdd::setCategoryId(const QString &category_id) {
+    m_category_id = category_id;
+    m_category_id_isSet = true;
 }
 
-bool OAIProductAdd::is_sprice_modified_Valid() const{
-    return m_sprice_modified_isValid;
+bool OAIProductAdd::is_category_id_Set() const{
+    return m_category_id_isSet;
 }
 
-QString OAIProductAdd::getSpriceExpire() const {
-    return m_sprice_expire;
-}
-void OAIProductAdd::setSpriceExpire(const QString &sprice_expire) {
-    m_sprice_expire = sprice_expire;
-    m_sprice_expire_isSet = true;
+bool OAIProductAdd::is_category_id_Valid() const{
+    return m_category_id_isValid;
 }
 
-bool OAIProductAdd::is_sprice_expire_Set() const{
-    return m_sprice_expire_isSet;
+QString OAIProductAdd::getCategoriesIds() const {
+    return m_categories_ids;
+}
+void OAIProductAdd::setCategoriesIds(const QString &categories_ids) {
+    m_categories_ids = categories_ids;
+    m_categories_ids_isSet = true;
 }
 
-bool OAIProductAdd::is_sprice_expire_Valid() const{
-    return m_sprice_expire_isValid;
+bool OAIProductAdd::is_categories_ids_Set() const{
+    return m_categories_ids_isSet;
 }
 
-QList<OAIProductAdd_tier_prices_inner> OAIProductAdd::getTierPrices() const {
-    return m_tier_prices;
-}
-void OAIProductAdd::setTierPrices(const QList<OAIProductAdd_tier_prices_inner> &tier_prices) {
-    m_tier_prices = tier_prices;
-    m_tier_prices_isSet = true;
+bool OAIProductAdd::is_categories_ids_Valid() const{
+    return m_categories_ids_isValid;
 }
 
-bool OAIProductAdd::is_tier_prices_Set() const{
-    return m_tier_prices_isSet;
+QString OAIProductAdd::getProductClass() const {
+    return m_product_class;
+}
+void OAIProductAdd::setProductClass(const QString &product_class) {
+    m_product_class = product_class;
+    m_product_class_isSet = true;
 }
 
-bool OAIProductAdd::is_tier_prices_Valid() const{
-    return m_tier_prices_isValid;
+bool OAIProductAdd::is_product_class_Set() const{
+    return m_product_class_isSet;
 }
 
-QList<OAIProductAdd_group_prices_inner> OAIProductAdd::getGroupPrices() const {
-    return m_group_prices;
-}
-void OAIProductAdd::setGroupPrices(const QList<OAIProductAdd_group_prices_inner> &group_prices) {
-    m_group_prices = group_prices;
-    m_group_prices_isSet = true;
+bool OAIProductAdd::is_product_class_Valid() const{
+    return m_product_class_isValid;
 }
 
-bool OAIProductAdd::is_group_prices_Set() const{
-    return m_group_prices_isSet;
+QString OAIProductAdd::getProductType() const {
+    return m_product_type;
+}
+void OAIProductAdd::setProductType(const QString &product_type) {
+    m_product_type = product_type;
+    m_product_type_isSet = true;
 }
 
-bool OAIProductAdd::is_group_prices_Valid() const{
-    return m_group_prices_isValid;
+bool OAIProductAdd::is_product_type_Set() const{
+    return m_product_type_isSet;
+}
+
+bool OAIProductAdd::is_product_type_Valid() const{
+    return m_product_type_isValid;
+}
+
+bool OAIProductAdd::isIsVirtual() const {
+    return m_is_virtual;
+}
+void OAIProductAdd::setIsVirtual(const bool &is_virtual) {
+    m_is_virtual = is_virtual;
+    m_is_virtual_isSet = true;
+}
+
+bool OAIProductAdd::is_is_virtual_Set() const{
+    return m_is_virtual_isSet;
+}
+
+bool OAIProductAdd::is_is_virtual_Valid() const{
+    return m_is_virtual_isValid;
+}
+
+bool OAIProductAdd::isDownloadable() const {
+    return m_downloadable;
+}
+void OAIProductAdd::setDownloadable(const bool &downloadable) {
+    m_downloadable = downloadable;
+    m_downloadable_isSet = true;
+}
+
+bool OAIProductAdd::is_downloadable_Set() const{
+    return m_downloadable_isSet;
+}
+
+bool OAIProductAdd::is_downloadable_Valid() const{
+    return m_downloadable_isValid;
+}
+
+bool OAIProductAdd::isIsSupply() const {
+    return m_is_supply;
+}
+void OAIProductAdd::setIsSupply(const bool &is_supply) {
+    m_is_supply = is_supply;
+    m_is_supply_isSet = true;
+}
+
+bool OAIProductAdd::is_is_supply_Set() const{
+    return m_is_supply_isSet;
+}
+
+bool OAIProductAdd::is_is_supply_Valid() const{
+    return m_is_supply_isValid;
 }
 
 bool OAIProductAdd::isAvailableForView() const {
@@ -1321,6 +1353,310 @@ bool OAIProductAdd::is_available_for_sale_Valid() const{
     return m_available_for_sale_isValid;
 }
 
+QString OAIProductAdd::getStoreId() const {
+    return m_store_id;
+}
+void OAIProductAdd::setStoreId(const QString &store_id) {
+    m_store_id = store_id;
+    m_store_id_isSet = true;
+}
+
+bool OAIProductAdd::is_store_id_Set() const{
+    return m_store_id_isSet;
+}
+
+bool OAIProductAdd::is_store_id_Valid() const{
+    return m_store_id_isValid;
+}
+
+QString OAIProductAdd::getStoresIds() const {
+    return m_stores_ids;
+}
+void OAIProductAdd::setStoresIds(const QString &stores_ids) {
+    m_stores_ids = stores_ids;
+    m_stores_ids_isSet = true;
+}
+
+bool OAIProductAdd::is_stores_ids_Set() const{
+    return m_stores_ids_isSet;
+}
+
+bool OAIProductAdd::is_stores_ids_Valid() const{
+    return m_stores_ids_isValid;
+}
+
+QString OAIProductAdd::getLangId() const {
+    return m_lang_id;
+}
+void OAIProductAdd::setLangId(const QString &lang_id) {
+    m_lang_id = lang_id;
+    m_lang_id_isSet = true;
+}
+
+bool OAIProductAdd::is_lang_id_Set() const{
+    return m_lang_id_isSet;
+}
+
+bool OAIProductAdd::is_lang_id_Valid() const{
+    return m_lang_id_isValid;
+}
+
+double OAIProductAdd::getOldPrice() const {
+    return m_old_price;
+}
+void OAIProductAdd::setOldPrice(const double &old_price) {
+    m_old_price = old_price;
+    m_old_price_isSet = true;
+}
+
+bool OAIProductAdd::is_old_price_Set() const{
+    return m_old_price_isSet;
+}
+
+bool OAIProductAdd::is_old_price_Valid() const{
+    return m_old_price_isValid;
+}
+
+double OAIProductAdd::getSpecialPrice() const {
+    return m_special_price;
+}
+void OAIProductAdd::setSpecialPrice(const double &special_price) {
+    m_special_price = special_price;
+    m_special_price_isSet = true;
+}
+
+bool OAIProductAdd::is_special_price_Set() const{
+    return m_special_price_isSet;
+}
+
+bool OAIProductAdd::is_special_price_Valid() const{
+    return m_special_price_isValid;
+}
+
+double OAIProductAdd::getWholesalePrice() const {
+    return m_wholesale_price;
+}
+void OAIProductAdd::setWholesalePrice(const double &wholesale_price) {
+    m_wholesale_price = wholesale_price;
+    m_wholesale_price_isSet = true;
+}
+
+bool OAIProductAdd::is_wholesale_price_Set() const{
+    return m_wholesale_price_isSet;
+}
+
+bool OAIProductAdd::is_wholesale_price_Valid() const{
+    return m_wholesale_price_isValid;
+}
+
+double OAIProductAdd::getCostPrice() const {
+    return m_cost_price;
+}
+void OAIProductAdd::setCostPrice(const double &cost_price) {
+    m_cost_price = cost_price;
+    m_cost_price_isSet = true;
+}
+
+bool OAIProductAdd::is_cost_price_Set() const{
+    return m_cost_price_isSet;
+}
+
+bool OAIProductAdd::is_cost_price_Valid() const{
+    return m_cost_price_isValid;
+}
+
+double OAIProductAdd::getFixedCostShippingPrice() const {
+    return m_fixed_cost_shipping_price;
+}
+void OAIProductAdd::setFixedCostShippingPrice(const double &fixed_cost_shipping_price) {
+    m_fixed_cost_shipping_price = fixed_cost_shipping_price;
+    m_fixed_cost_shipping_price_isSet = true;
+}
+
+bool OAIProductAdd::is_fixed_cost_shipping_price_Set() const{
+    return m_fixed_cost_shipping_price_isSet;
+}
+
+bool OAIProductAdd::is_fixed_cost_shipping_price_Valid() const{
+    return m_fixed_cost_shipping_price_isValid;
+}
+
+QList<OAIProductAdd_tier_prices_inner> OAIProductAdd::getTierPrices() const {
+    return m_tier_prices;
+}
+void OAIProductAdd::setTierPrices(const QList<OAIProductAdd_tier_prices_inner> &tier_prices) {
+    m_tier_prices = tier_prices;
+    m_tier_prices_isSet = true;
+}
+
+bool OAIProductAdd::is_tier_prices_Set() const{
+    return m_tier_prices_isSet;
+}
+
+bool OAIProductAdd::is_tier_prices_Valid() const{
+    return m_tier_prices_isValid;
+}
+
+QList<OAIProductAdd_group_prices_inner> OAIProductAdd::getGroupPrices() const {
+    return m_group_prices;
+}
+void OAIProductAdd::setGroupPrices(const QList<OAIProductAdd_group_prices_inner> &group_prices) {
+    m_group_prices = group_prices;
+    m_group_prices_isSet = true;
+}
+
+bool OAIProductAdd::is_group_prices_Set() const{
+    return m_group_prices_isSet;
+}
+
+bool OAIProductAdd::is_group_prices_Valid() const{
+    return m_group_prices_isValid;
+}
+
+double OAIProductAdd::getBuyitnowPrice() const {
+    return m_buyitnow_price;
+}
+void OAIProductAdd::setBuyitnowPrice(const double &buyitnow_price) {
+    m_buyitnow_price = buyitnow_price;
+    m_buyitnow_price_isSet = true;
+}
+
+bool OAIProductAdd::is_buyitnow_price_Set() const{
+    return m_buyitnow_price_isSet;
+}
+
+bool OAIProductAdd::is_buyitnow_price_Valid() const{
+    return m_buyitnow_price_isValid;
+}
+
+double OAIProductAdd::getReservePrice() const {
+    return m_reserve_price;
+}
+void OAIProductAdd::setReservePrice(const double &reserve_price) {
+    m_reserve_price = reserve_price;
+    m_reserve_price_isSet = true;
+}
+
+bool OAIProductAdd::is_reserve_price_Set() const{
+    return m_reserve_price_isSet;
+}
+
+bool OAIProductAdd::is_reserve_price_Valid() const{
+    return m_reserve_price_isValid;
+}
+
+double OAIProductAdd::getQuantity() const {
+    return m_quantity;
+}
+void OAIProductAdd::setQuantity(const double &quantity) {
+    m_quantity = quantity;
+    m_quantity_isSet = true;
+}
+
+bool OAIProductAdd::is_quantity_Set() const{
+    return m_quantity_isSet;
+}
+
+bool OAIProductAdd::is_quantity_Valid() const{
+    return m_quantity_isValid;
+}
+
+bool OAIProductAdd::isInStock() const {
+    return m_in_stock;
+}
+void OAIProductAdd::setInStock(const bool &in_stock) {
+    m_in_stock = in_stock;
+    m_in_stock_isSet = true;
+}
+
+bool OAIProductAdd::is_in_stock_Set() const{
+    return m_in_stock_isSet;
+}
+
+bool OAIProductAdd::is_in_stock_Valid() const{
+    return m_in_stock_isValid;
+}
+
+bool OAIProductAdd::isManageStock() const {
+    return m_manage_stock;
+}
+void OAIProductAdd::setManageStock(const bool &manage_stock) {
+    m_manage_stock = manage_stock;
+    m_manage_stock_isSet = true;
+}
+
+bool OAIProductAdd::is_manage_stock_Set() const{
+    return m_manage_stock_isSet;
+}
+
+bool OAIProductAdd::is_manage_stock_Valid() const{
+    return m_manage_stock_isValid;
+}
+
+QString OAIProductAdd::getWarehouseId() const {
+    return m_warehouse_id;
+}
+void OAIProductAdd::setWarehouseId(const QString &warehouse_id) {
+    m_warehouse_id = warehouse_id;
+    m_warehouse_id_isSet = true;
+}
+
+bool OAIProductAdd::is_warehouse_id_Set() const{
+    return m_warehouse_id_isSet;
+}
+
+bool OAIProductAdd::is_warehouse_id_Valid() const{
+    return m_warehouse_id_isValid;
+}
+
+QString OAIProductAdd::getBackorderStatus() const {
+    return m_backorder_status;
+}
+void OAIProductAdd::setBackorderStatus(const QString &backorder_status) {
+    m_backorder_status = backorder_status;
+    m_backorder_status_isSet = true;
+}
+
+bool OAIProductAdd::is_backorder_status_Set() const{
+    return m_backorder_status_isSet;
+}
+
+bool OAIProductAdd::is_backorder_status_Valid() const{
+    return m_backorder_status_isValid;
+}
+
+double OAIProductAdd::getMinOrderQuantity() const {
+    return m_min_order_quantity;
+}
+void OAIProductAdd::setMinOrderQuantity(const double &min_order_quantity) {
+    m_min_order_quantity = min_order_quantity;
+    m_min_order_quantity_isSet = true;
+}
+
+bool OAIProductAdd::is_min_order_quantity_Set() const{
+    return m_min_order_quantity_isSet;
+}
+
+bool OAIProductAdd::is_min_order_quantity_Valid() const{
+    return m_min_order_quantity_isValid;
+}
+
+double OAIProductAdd::getMaxOrderQuantity() const {
+    return m_max_order_quantity;
+}
+void OAIProductAdd::setMaxOrderQuantity(const double &max_order_quantity) {
+    m_max_order_quantity = max_order_quantity;
+    m_max_order_quantity_isSet = true;
+}
+
+bool OAIProductAdd::is_max_order_quantity_Set() const{
+    return m_max_order_quantity_isSet;
+}
+
+bool OAIProductAdd::is_max_order_quantity_Valid() const{
+    return m_max_order_quantity_isValid;
+}
+
 double OAIProductAdd::getWeight() const {
     return m_weight;
 }
@@ -1335,6 +1671,22 @@ bool OAIProductAdd::is_weight_Set() const{
 
 bool OAIProductAdd::is_weight_Valid() const{
     return m_weight_isValid;
+}
+
+QString OAIProductAdd::getWeightUnit() const {
+    return m_weight_unit;
+}
+void OAIProductAdd::setWeightUnit(const QString &weight_unit) {
+    m_weight_unit = weight_unit;
+    m_weight_unit_isSet = true;
+}
+
+bool OAIProductAdd::is_weight_unit_Set() const{
+    return m_weight_unit_isSet;
+}
+
+bool OAIProductAdd::is_weight_unit_Valid() const{
+    return m_weight_unit_isValid;
 }
 
 double OAIProductAdd::getWidth() const {
@@ -1385,22 +1737,6 @@ bool OAIProductAdd::is_length_Valid() const{
     return m_length_isValid;
 }
 
-QString OAIProductAdd::getWeightUnit() const {
-    return m_weight_unit;
-}
-void OAIProductAdd::setWeightUnit(const QString &weight_unit) {
-    m_weight_unit = weight_unit;
-    m_weight_unit_isSet = true;
-}
-
-bool OAIProductAdd::is_weight_unit_Set() const{
-    return m_weight_unit_isSet;
-}
-
-bool OAIProductAdd::is_weight_unit_Valid() const{
-    return m_weight_unit_isValid;
-}
-
 QString OAIProductAdd::getDimensionsUnit() const {
     return m_dimensions_unit;
 }
@@ -1415,630 +1751,6 @@ bool OAIProductAdd::is_dimensions_unit_Set() const{
 
 bool OAIProductAdd::is_dimensions_unit_Valid() const{
     return m_dimensions_unit_isValid;
-}
-
-QString OAIProductAdd::getShortDescription() const {
-    return m_short_description;
-}
-void OAIProductAdd::setShortDescription(const QString &short_description) {
-    m_short_description = short_description;
-    m_short_description_isSet = true;
-}
-
-bool OAIProductAdd::is_short_description_Set() const{
-    return m_short_description_isSet;
-}
-
-bool OAIProductAdd::is_short_description_Valid() const{
-    return m_short_description_isValid;
-}
-
-QString OAIProductAdd::getWarehouseId() const {
-    return m_warehouse_id;
-}
-void OAIProductAdd::setWarehouseId(const QString &warehouse_id) {
-    m_warehouse_id = warehouse_id;
-    m_warehouse_id_isSet = true;
-}
-
-bool OAIProductAdd::is_warehouse_id_Set() const{
-    return m_warehouse_id_isSet;
-}
-
-bool OAIProductAdd::is_warehouse_id_Valid() const{
-    return m_warehouse_id_isValid;
-}
-
-QString OAIProductAdd::getBackorderStatus() const {
-    return m_backorder_status;
-}
-void OAIProductAdd::setBackorderStatus(const QString &backorder_status) {
-    m_backorder_status = backorder_status;
-    m_backorder_status_isSet = true;
-}
-
-bool OAIProductAdd::is_backorder_status_Set() const{
-    return m_backorder_status_isSet;
-}
-
-bool OAIProductAdd::is_backorder_status_Valid() const{
-    return m_backorder_status_isValid;
-}
-
-double OAIProductAdd::getQuantity() const {
-    return m_quantity;
-}
-void OAIProductAdd::setQuantity(const double &quantity) {
-    m_quantity = quantity;
-    m_quantity_isSet = true;
-}
-
-bool OAIProductAdd::is_quantity_Set() const{
-    return m_quantity_isSet;
-}
-
-bool OAIProductAdd::is_quantity_Valid() const{
-    return m_quantity_isValid;
-}
-
-bool OAIProductAdd::isDownloadable() const {
-    return m_downloadable;
-}
-void OAIProductAdd::setDownloadable(const bool &downloadable) {
-    m_downloadable = downloadable;
-    m_downloadable_isSet = true;
-}
-
-bool OAIProductAdd::is_downloadable_Set() const{
-    return m_downloadable_isSet;
-}
-
-bool OAIProductAdd::is_downloadable_Valid() const{
-    return m_downloadable_isValid;
-}
-
-double OAIProductAdd::getWholesalePrice() const {
-    return m_wholesale_price;
-}
-void OAIProductAdd::setWholesalePrice(const double &wholesale_price) {
-    m_wholesale_price = wholesale_price;
-    m_wholesale_price_isSet = true;
-}
-
-bool OAIProductAdd::is_wholesale_price_Set() const{
-    return m_wholesale_price_isSet;
-}
-
-bool OAIProductAdd::is_wholesale_price_Valid() const{
-    return m_wholesale_price_isValid;
-}
-
-QString OAIProductAdd::getCreatedAt() const {
-    return m_created_at;
-}
-void OAIProductAdd::setCreatedAt(const QString &created_at) {
-    m_created_at = created_at;
-    m_created_at_isSet = true;
-}
-
-bool OAIProductAdd::is_created_at_Set() const{
-    return m_created_at_isSet;
-}
-
-bool OAIProductAdd::is_created_at_Valid() const{
-    return m_created_at_isValid;
-}
-
-QString OAIProductAdd::getManufacturer() const {
-    return m_manufacturer;
-}
-void OAIProductAdd::setManufacturer(const QString &manufacturer) {
-    m_manufacturer = manufacturer;
-    m_manufacturer_isSet = true;
-}
-
-bool OAIProductAdd::is_manufacturer_Set() const{
-    return m_manufacturer_isSet;
-}
-
-bool OAIProductAdd::is_manufacturer_Valid() const{
-    return m_manufacturer_isValid;
-}
-
-QString OAIProductAdd::getManufacturerId() const {
-    return m_manufacturer_id;
-}
-void OAIProductAdd::setManufacturerId(const QString &manufacturer_id) {
-    m_manufacturer_id = manufacturer_id;
-    m_manufacturer_id_isSet = true;
-}
-
-bool OAIProductAdd::is_manufacturer_id_Set() const{
-    return m_manufacturer_id_isSet;
-}
-
-bool OAIProductAdd::is_manufacturer_id_Valid() const{
-    return m_manufacturer_id_isValid;
-}
-
-QString OAIProductAdd::getCategoriesIds() const {
-    return m_categories_ids;
-}
-void OAIProductAdd::setCategoriesIds(const QString &categories_ids) {
-    m_categories_ids = categories_ids;
-    m_categories_ids_isSet = true;
-}
-
-bool OAIProductAdd::is_categories_ids_Set() const{
-    return m_categories_ids_isSet;
-}
-
-bool OAIProductAdd::is_categories_ids_Valid() const{
-    return m_categories_ids_isValid;
-}
-
-QString OAIProductAdd::getRelatedProductsIds() const {
-    return m_related_products_ids;
-}
-void OAIProductAdd::setRelatedProductsIds(const QString &related_products_ids) {
-    m_related_products_ids = related_products_ids;
-    m_related_products_ids_isSet = true;
-}
-
-bool OAIProductAdd::is_related_products_ids_Set() const{
-    return m_related_products_ids_isSet;
-}
-
-bool OAIProductAdd::is_related_products_ids_Valid() const{
-    return m_related_products_ids_isValid;
-}
-
-QString OAIProductAdd::getUpSellProductsIds() const {
-    return m_up_sell_products_ids;
-}
-void OAIProductAdd::setUpSellProductsIds(const QString &up_sell_products_ids) {
-    m_up_sell_products_ids = up_sell_products_ids;
-    m_up_sell_products_ids_isSet = true;
-}
-
-bool OAIProductAdd::is_up_sell_products_ids_Set() const{
-    return m_up_sell_products_ids_isSet;
-}
-
-bool OAIProductAdd::is_up_sell_products_ids_Valid() const{
-    return m_up_sell_products_ids_isValid;
-}
-
-QString OAIProductAdd::getCrossSellProductsIds() const {
-    return m_cross_sell_products_ids;
-}
-void OAIProductAdd::setCrossSellProductsIds(const QString &cross_sell_products_ids) {
-    m_cross_sell_products_ids = cross_sell_products_ids;
-    m_cross_sell_products_ids_isSet = true;
-}
-
-bool OAIProductAdd::is_cross_sell_products_ids_Set() const{
-    return m_cross_sell_products_ids_isSet;
-}
-
-bool OAIProductAdd::is_cross_sell_products_ids_Valid() const{
-    return m_cross_sell_products_ids_isValid;
-}
-
-QString OAIProductAdd::getTaxClassId() const {
-    return m_tax_class_id;
-}
-void OAIProductAdd::setTaxClassId(const QString &tax_class_id) {
-    m_tax_class_id = tax_class_id;
-    m_tax_class_id_isSet = true;
-}
-
-bool OAIProductAdd::is_tax_class_id_Set() const{
-    return m_tax_class_id_isSet;
-}
-
-bool OAIProductAdd::is_tax_class_id_Valid() const{
-    return m_tax_class_id_isValid;
-}
-
-QString OAIProductAdd::getType() const {
-    return m_type;
-}
-void OAIProductAdd::setType(const QString &type) {
-    m_type = type;
-    m_type_isSet = true;
-}
-
-bool OAIProductAdd::is_type_Set() const{
-    return m_type_isSet;
-}
-
-bool OAIProductAdd::is_type_Valid() const{
-    return m_type_isValid;
-}
-
-QString OAIProductAdd::getMetaTitle() const {
-    return m_meta_title;
-}
-void OAIProductAdd::setMetaTitle(const QString &meta_title) {
-    m_meta_title = meta_title;
-    m_meta_title_isSet = true;
-}
-
-bool OAIProductAdd::is_meta_title_Set() const{
-    return m_meta_title_isSet;
-}
-
-bool OAIProductAdd::is_meta_title_Valid() const{
-    return m_meta_title_isValid;
-}
-
-QString OAIProductAdd::getMetaKeywords() const {
-    return m_meta_keywords;
-}
-void OAIProductAdd::setMetaKeywords(const QString &meta_keywords) {
-    m_meta_keywords = meta_keywords;
-    m_meta_keywords_isSet = true;
-}
-
-bool OAIProductAdd::is_meta_keywords_Set() const{
-    return m_meta_keywords_isSet;
-}
-
-bool OAIProductAdd::is_meta_keywords_Valid() const{
-    return m_meta_keywords_isValid;
-}
-
-QString OAIProductAdd::getMetaDescription() const {
-    return m_meta_description;
-}
-void OAIProductAdd::setMetaDescription(const QString &meta_description) {
-    m_meta_description = meta_description;
-    m_meta_description_isSet = true;
-}
-
-bool OAIProductAdd::is_meta_description_Set() const{
-    return m_meta_description_isSet;
-}
-
-bool OAIProductAdd::is_meta_description_Valid() const{
-    return m_meta_description_isValid;
-}
-
-QString OAIProductAdd::getUrl() const {
-    return m_url;
-}
-void OAIProductAdd::setUrl(const QString &url) {
-    m_url = url;
-    m_url_isSet = true;
-}
-
-bool OAIProductAdd::is_url_Set() const{
-    return m_url_isSet;
-}
-
-bool OAIProductAdd::is_url_Valid() const{
-    return m_url_isValid;
-}
-
-QString OAIProductAdd::getLangId() const {
-    return m_lang_id;
-}
-void OAIProductAdd::setLangId(const QString &lang_id) {
-    m_lang_id = lang_id;
-    m_lang_id_isSet = true;
-}
-
-bool OAIProductAdd::is_lang_id_Set() const{
-    return m_lang_id_isSet;
-}
-
-bool OAIProductAdd::is_lang_id_Valid() const{
-    return m_lang_id_isValid;
-}
-
-QString OAIProductAdd::getStoresIds() const {
-    return m_stores_ids;
-}
-void OAIProductAdd::setStoresIds(const QString &stores_ids) {
-    m_stores_ids = stores_ids;
-    m_stores_ids_isSet = true;
-}
-
-bool OAIProductAdd::is_stores_ids_Set() const{
-    return m_stores_ids_isSet;
-}
-
-bool OAIProductAdd::is_stores_ids_Valid() const{
-    return m_stores_ids_isValid;
-}
-
-QString OAIProductAdd::getCategoryId() const {
-    return m_category_id;
-}
-void OAIProductAdd::setCategoryId(const QString &category_id) {
-    m_category_id = category_id;
-    m_category_id_isSet = true;
-}
-
-bool OAIProductAdd::is_category_id_Set() const{
-    return m_category_id_isSet;
-}
-
-bool OAIProductAdd::is_category_id_Valid() const{
-    return m_category_id_isValid;
-}
-
-qint32 OAIProductAdd::getViewedCount() const {
-    return m_viewed_count;
-}
-void OAIProductAdd::setViewedCount(const qint32 &viewed_count) {
-    m_viewed_count = viewed_count;
-    m_viewed_count_isSet = true;
-}
-
-bool OAIProductAdd::is_viewed_count_Set() const{
-    return m_viewed_count_isSet;
-}
-
-bool OAIProductAdd::is_viewed_count_Valid() const{
-    return m_viewed_count_isValid;
-}
-
-qint32 OAIProductAdd::getOrderedCount() const {
-    return m_ordered_count;
-}
-void OAIProductAdd::setOrderedCount(const qint32 &ordered_count) {
-    m_ordered_count = ordered_count;
-    m_ordered_count_isSet = true;
-}
-
-bool OAIProductAdd::is_ordered_count_Set() const{
-    return m_ordered_count_isSet;
-}
-
-bool OAIProductAdd::is_ordered_count_Valid() const{
-    return m_ordered_count_isValid;
-}
-
-QString OAIProductAdd::getAttributeSetName() const {
-    return m_attribute_set_name;
-}
-void OAIProductAdd::setAttributeSetName(const QString &attribute_set_name) {
-    m_attribute_set_name = attribute_set_name;
-    m_attribute_set_name_isSet = true;
-}
-
-bool OAIProductAdd::is_attribute_set_name_Set() const{
-    return m_attribute_set_name_isSet;
-}
-
-bool OAIProductAdd::is_attribute_set_name_Valid() const{
-    return m_attribute_set_name_isValid;
-}
-
-QString OAIProductAdd::getAttributeName() const {
-    return m_attribute_name;
-}
-void OAIProductAdd::setAttributeName(const QString &attribute_name) {
-    m_attribute_name = attribute_name;
-    m_attribute_name_isSet = true;
-}
-
-bool OAIProductAdd::is_attribute_name_Set() const{
-    return m_attribute_name_isSet;
-}
-
-bool OAIProductAdd::is_attribute_name_Valid() const{
-    return m_attribute_name_isValid;
-}
-
-qint32 OAIProductAdd::getShippingTemplateId() const {
-    return m_shipping_template_id;
-}
-void OAIProductAdd::setShippingTemplateId(const qint32 &shipping_template_id) {
-    m_shipping_template_id = shipping_template_id;
-    m_shipping_template_id_isSet = true;
-}
-
-bool OAIProductAdd::is_shipping_template_id_Set() const{
-    return m_shipping_template_id_isSet;
-}
-
-bool OAIProductAdd::is_shipping_template_id_Valid() const{
-    return m_shipping_template_id_isValid;
-}
-
-QString OAIProductAdd::getProductionPartnerIds() const {
-    return m_production_partner_ids;
-}
-void OAIProductAdd::setProductionPartnerIds(const QString &production_partner_ids) {
-    m_production_partner_ids = production_partner_ids;
-    m_production_partner_ids_isSet = true;
-}
-
-bool OAIProductAdd::is_production_partner_ids_Set() const{
-    return m_production_partner_ids_isSet;
-}
-
-bool OAIProductAdd::is_production_partner_ids_Valid() const{
-    return m_production_partner_ids_isValid;
-}
-
-QString OAIProductAdd::getCondition() const {
-    return m_condition;
-}
-void OAIProductAdd::setCondition(const QString &condition) {
-    m_condition = condition;
-    m_condition_isSet = true;
-}
-
-bool OAIProductAdd::is_condition_Set() const{
-    return m_condition_isSet;
-}
-
-bool OAIProductAdd::is_condition_Valid() const{
-    return m_condition_isValid;
-}
-
-QString OAIProductAdd::getListingDuration() const {
-    return m_listing_duration;
-}
-void OAIProductAdd::setListingDuration(const QString &listing_duration) {
-    m_listing_duration = listing_duration;
-    m_listing_duration_isSet = true;
-}
-
-bool OAIProductAdd::is_listing_duration_Set() const{
-    return m_listing_duration_isSet;
-}
-
-bool OAIProductAdd::is_listing_duration_Valid() const{
-    return m_listing_duration_isValid;
-}
-
-QString OAIProductAdd::getListingType() const {
-    return m_listing_type;
-}
-void OAIProductAdd::setListingType(const QString &listing_type) {
-    m_listing_type = listing_type;
-    m_listing_type_isSet = true;
-}
-
-bool OAIProductAdd::is_listing_type_Set() const{
-    return m_listing_type_isSet;
-}
-
-bool OAIProductAdd::is_listing_type_Valid() const{
-    return m_listing_type_isValid;
-}
-
-QList<QString> OAIProductAdd::getPaymentMethods() const {
-    return m_payment_methods;
-}
-void OAIProductAdd::setPaymentMethods(const QList<QString> &payment_methods) {
-    m_payment_methods = payment_methods;
-    m_payment_methods_isSet = true;
-}
-
-bool OAIProductAdd::is_payment_methods_Set() const{
-    return m_payment_methods_isSet;
-}
-
-bool OAIProductAdd::is_payment_methods_Valid() const{
-    return m_payment_methods_isValid;
-}
-
-bool OAIProductAdd::isReturnAccepted() const {
-    return m_return_accepted;
-}
-void OAIProductAdd::setReturnAccepted(const bool &return_accepted) {
-    m_return_accepted = return_accepted;
-    m_return_accepted_isSet = true;
-}
-
-bool OAIProductAdd::is_return_accepted_Set() const{
-    return m_return_accepted_isSet;
-}
-
-bool OAIProductAdd::is_return_accepted_Valid() const{
-    return m_return_accepted_isValid;
-}
-
-QList<OAIProductAdd_shipping_details_inner> OAIProductAdd::getShippingDetails() const {
-    return m_shipping_details;
-}
-void OAIProductAdd::setShippingDetails(const QList<OAIProductAdd_shipping_details_inner> &shipping_details) {
-    m_shipping_details = shipping_details;
-    m_shipping_details_isSet = true;
-}
-
-bool OAIProductAdd::is_shipping_details_Set() const{
-    return m_shipping_details_isSet;
-}
-
-bool OAIProductAdd::is_shipping_details_Valid() const{
-    return m_shipping_details_isValid;
-}
-
-QString OAIProductAdd::getPaypalEmail() const {
-    return m_paypal_email;
-}
-void OAIProductAdd::setPaypalEmail(const QString &paypal_email) {
-    m_paypal_email = paypal_email;
-    m_paypal_email_isSet = true;
-}
-
-bool OAIProductAdd::is_paypal_email_Set() const{
-    return m_paypal_email_isSet;
-}
-
-bool OAIProductAdd::is_paypal_email_Valid() const{
-    return m_paypal_email_isValid;
-}
-
-OAIProductAdd_seller_profiles OAIProductAdd::getSellerProfiles() const {
-    return m_seller_profiles;
-}
-void OAIProductAdd::setSellerProfiles(const OAIProductAdd_seller_profiles &seller_profiles) {
-    m_seller_profiles = seller_profiles;
-    m_seller_profiles_isSet = true;
-}
-
-bool OAIProductAdd::is_seller_profiles_Set() const{
-    return m_seller_profiles_isSet;
-}
-
-bool OAIProductAdd::is_seller_profiles_Valid() const{
-    return m_seller_profiles_isValid;
-}
-
-OAIProductAdd_package_details OAIProductAdd::getPackageDetails() const {
-    return m_package_details;
-}
-void OAIProductAdd::setPackageDetails(const OAIProductAdd_package_details &package_details) {
-    m_package_details = package_details;
-    m_package_details_isSet = true;
-}
-
-bool OAIProductAdd::is_package_details_Set() const{
-    return m_package_details_isSet;
-}
-
-bool OAIProductAdd::is_package_details_Valid() const{
-    return m_package_details_isValid;
-}
-
-OAIProductAdd_best_offer OAIProductAdd::getBestOffer() const {
-    return m_best_offer;
-}
-void OAIProductAdd::setBestOffer(const OAIProductAdd_best_offer &best_offer) {
-    m_best_offer = best_offer;
-    m_best_offer_isSet = true;
-}
-
-bool OAIProductAdd::is_best_offer_Set() const{
-    return m_best_offer_isSet;
-}
-
-bool OAIProductAdd::is_best_offer_Valid() const{
-    return m_best_offer_isValid;
-}
-
-OAIProductAdd_sales_tax OAIProductAdd::getSalesTax() const {
-    return m_sales_tax;
-}
-void OAIProductAdd::setSalesTax(const OAIProductAdd_sales_tax &sales_tax) {
-    m_sales_tax = sales_tax;
-    m_sales_tax_isSet = true;
-}
-
-bool OAIProductAdd::is_sales_tax_Set() const{
-    return m_sales_tax_isSet;
-}
-
-bool OAIProductAdd::is_sales_tax_Valid() const{
-    return m_sales_tax_isValid;
 }
 
 QString OAIProductAdd::getBarcode() const {
@@ -2105,20 +1817,164 @@ bool OAIProductAdd::is_isbn_Valid() const{
     return m_isbn_isValid;
 }
 
-QList<OAIProductAdd_specifics_inner> OAIProductAdd::getSpecifics() const {
-    return m_specifics;
+QString OAIProductAdd::getGtin() const {
+    return m_gtin;
 }
-void OAIProductAdd::setSpecifics(const QList<OAIProductAdd_specifics_inner> &specifics) {
-    m_specifics = specifics;
-    m_specifics_isSet = true;
-}
-
-bool OAIProductAdd::is_specifics_Set() const{
-    return m_specifics_isSet;
+void OAIProductAdd::setGtin(const QString &gtin) {
+    m_gtin = gtin;
+    m_gtin_isSet = true;
 }
 
-bool OAIProductAdd::is_specifics_Valid() const{
-    return m_specifics_isValid;
+bool OAIProductAdd::is_gtin_Set() const{
+    return m_gtin_isSet;
+}
+
+bool OAIProductAdd::is_gtin_Valid() const{
+    return m_gtin_isValid;
+}
+
+QString OAIProductAdd::getMpn() const {
+    return m_mpn;
+}
+void OAIProductAdd::setMpn(const QString &mpn) {
+    m_mpn = mpn;
+    m_mpn_isSet = true;
+}
+
+bool OAIProductAdd::is_mpn_Set() const{
+    return m_mpn_isSet;
+}
+
+bool OAIProductAdd::is_mpn_Valid() const{
+    return m_mpn_isValid;
+}
+
+QString OAIProductAdd::getAsin() const {
+    return m_asin;
+}
+void OAIProductAdd::setAsin(const QString &asin) {
+    m_asin = asin;
+    m_asin_isSet = true;
+}
+
+bool OAIProductAdd::is_asin_Set() const{
+    return m_asin_isSet;
+}
+
+bool OAIProductAdd::is_asin_Valid() const{
+    return m_asin_isValid;
+}
+
+QString OAIProductAdd::getProductReference() const {
+    return m_product_reference;
+}
+void OAIProductAdd::setProductReference(const QString &product_reference) {
+    m_product_reference = product_reference;
+    m_product_reference_isSet = true;
+}
+
+bool OAIProductAdd::is_product_reference_Set() const{
+    return m_product_reference_isSet;
+}
+
+bool OAIProductAdd::is_product_reference_Valid() const{
+    return m_product_reference_isValid;
+}
+
+QString OAIProductAdd::getHarmonizedSystemCode() const {
+    return m_harmonized_system_code;
+}
+void OAIProductAdd::setHarmonizedSystemCode(const QString &harmonized_system_code) {
+    m_harmonized_system_code = harmonized_system_code;
+    m_harmonized_system_code_isSet = true;
+}
+
+bool OAIProductAdd::is_harmonized_system_code_Set() const{
+    return m_harmonized_system_code_isSet;
+}
+
+bool OAIProductAdd::is_harmonized_system_code_Valid() const{
+    return m_harmonized_system_code_isValid;
+}
+
+QString OAIProductAdd::getCountryOfOrigin() const {
+    return m_country_of_origin;
+}
+void OAIProductAdd::setCountryOfOrigin(const QString &country_of_origin) {
+    m_country_of_origin = country_of_origin;
+    m_country_of_origin_isSet = true;
+}
+
+bool OAIProductAdd::is_country_of_origin_Set() const{
+    return m_country_of_origin_isSet;
+}
+
+bool OAIProductAdd::is_country_of_origin_Valid() const{
+    return m_country_of_origin_isValid;
+}
+
+QString OAIProductAdd::getManufacturer() const {
+    return m_manufacturer;
+}
+void OAIProductAdd::setManufacturer(const QString &manufacturer) {
+    m_manufacturer = manufacturer;
+    m_manufacturer_isSet = true;
+}
+
+bool OAIProductAdd::is_manufacturer_Set() const{
+    return m_manufacturer_isSet;
+}
+
+bool OAIProductAdd::is_manufacturer_Valid() const{
+    return m_manufacturer_isValid;
+}
+
+QString OAIProductAdd::getManufacturerId() const {
+    return m_manufacturer_id;
+}
+void OAIProductAdd::setManufacturerId(const QString &manufacturer_id) {
+    m_manufacturer_id = manufacturer_id;
+    m_manufacturer_id_isSet = true;
+}
+
+bool OAIProductAdd::is_manufacturer_id_Set() const{
+    return m_manufacturer_id_isSet;
+}
+
+bool OAIProductAdd::is_manufacturer_id_Valid() const{
+    return m_manufacturer_id_isValid;
+}
+
+OAIProductAdd_manufacturer_info OAIProductAdd::getManufacturerInfo() const {
+    return m_manufacturer_info;
+}
+void OAIProductAdd::setManufacturerInfo(const OAIProductAdd_manufacturer_info &manufacturer_info) {
+    m_manufacturer_info = manufacturer_info;
+    m_manufacturer_info_isSet = true;
+}
+
+bool OAIProductAdd::is_manufacturer_info_Set() const{
+    return m_manufacturer_info_isSet;
+}
+
+bool OAIProductAdd::is_manufacturer_info_Valid() const{
+    return m_manufacturer_info_isValid;
+}
+
+QString OAIProductAdd::getBrandName() const {
+    return m_brand_name;
+}
+void OAIProductAdd::setBrandName(const QString &brand_name) {
+    m_brand_name = brand_name;
+    m_brand_name_isSet = true;
+}
+
+bool OAIProductAdd::is_brand_name_Set() const{
+    return m_brand_name_isSet;
+}
+
+bool OAIProductAdd::is_brand_name_Valid() const{
+    return m_brand_name_isValid;
 }
 
 QString OAIProductAdd::getImageUrl() const {
@@ -2169,342 +2025,6 @@ bool OAIProductAdd::is_additional_image_urls_Valid() const{
     return m_additional_image_urls_isValid;
 }
 
-double OAIProductAdd::getReservePrice() const {
-    return m_reserve_price;
-}
-void OAIProductAdd::setReservePrice(const double &reserve_price) {
-    m_reserve_price = reserve_price;
-    m_reserve_price_isSet = true;
-}
-
-bool OAIProductAdd::is_reserve_price_Set() const{
-    return m_reserve_price_isSet;
-}
-
-bool OAIProductAdd::is_reserve_price_Valid() const{
-    return m_reserve_price_isValid;
-}
-
-double OAIProductAdd::getBuyitnowPrice() const {
-    return m_buyitnow_price;
-}
-void OAIProductAdd::setBuyitnowPrice(const double &buyitnow_price) {
-    m_buyitnow_price = buyitnow_price;
-    m_buyitnow_price_isSet = true;
-}
-
-bool OAIProductAdd::is_buyitnow_price_Set() const{
-    return m_buyitnow_price_isSet;
-}
-
-bool OAIProductAdd::is_buyitnow_price_Valid() const{
-    return m_buyitnow_price_isValid;
-}
-
-QString OAIProductAdd::getConditionDescription() const {
-    return m_condition_description;
-}
-void OAIProductAdd::setConditionDescription(const QString &condition_description) {
-    m_condition_description = condition_description;
-    m_condition_description_isSet = true;
-}
-
-bool OAIProductAdd::is_condition_description_Set() const{
-    return m_condition_description_isSet;
-}
-
-bool OAIProductAdd::is_condition_description_Valid() const{
-    return m_condition_description_isValid;
-}
-
-QString OAIProductAdd::getAuctionConfidentialityLevel() const {
-    return m_auction_confidentiality_level;
-}
-void OAIProductAdd::setAuctionConfidentialityLevel(const QString &auction_confidentiality_level) {
-    m_auction_confidentiality_level = auction_confidentiality_level;
-    m_auction_confidentiality_level_isSet = true;
-}
-
-bool OAIProductAdd::is_auction_confidentiality_level_Set() const{
-    return m_auction_confidentiality_level_isSet;
-}
-
-bool OAIProductAdd::is_auction_confidentiality_level_Valid() const{
-    return m_auction_confidentiality_level_isValid;
-}
-
-QList<OAIProductAdd_logistic_info_inner> OAIProductAdd::getLogisticInfo() const {
-    return m_logistic_info;
-}
-void OAIProductAdd::setLogisticInfo(const QList<OAIProductAdd_logistic_info_inner> &logistic_info) {
-    m_logistic_info = logistic_info;
-    m_logistic_info_isSet = true;
-}
-
-bool OAIProductAdd::is_logistic_info_Set() const{
-    return m_logistic_info_isSet;
-}
-
-bool OAIProductAdd::is_logistic_info_Valid() const{
-    return m_logistic_info_isValid;
-}
-
-QString OAIProductAdd::getAvailFrom() const {
-    return m_avail_from;
-}
-void OAIProductAdd::setAvailFrom(const QString &avail_from) {
-    m_avail_from = avail_from;
-    m_avail_from_isSet = true;
-}
-
-bool OAIProductAdd::is_avail_from_Set() const{
-    return m_avail_from_isSet;
-}
-
-bool OAIProductAdd::is_avail_from_Valid() const{
-    return m_avail_from_isValid;
-}
-
-QString OAIProductAdd::getTags() const {
-    return m_tags;
-}
-void OAIProductAdd::setTags(const QString &tags) {
-    m_tags = tags;
-    m_tags_isSet = true;
-}
-
-bool OAIProductAdd::is_tags_Set() const{
-    return m_tags_isSet;
-}
-
-bool OAIProductAdd::is_tags_Valid() const{
-    return m_tags_isValid;
-}
-
-bool OAIProductAdd::isClearCache() const {
-    return m_clear_cache;
-}
-void OAIProductAdd::setClearCache(const bool &clear_cache) {
-    m_clear_cache = clear_cache;
-    m_clear_cache_isSet = true;
-}
-
-bool OAIProductAdd::is_clear_cache_Set() const{
-    return m_clear_cache_isSet;
-}
-
-bool OAIProductAdd::is_clear_cache_Valid() const{
-    return m_clear_cache_isValid;
-}
-
-QString OAIProductAdd::getAsin() const {
-    return m_asin;
-}
-void OAIProductAdd::setAsin(const QString &asin) {
-    m_asin = asin;
-    m_asin_isSet = true;
-}
-
-bool OAIProductAdd::is_asin_Set() const{
-    return m_asin_isSet;
-}
-
-bool OAIProductAdd::is_asin_Valid() const{
-    return m_asin_isValid;
-}
-
-QString OAIProductAdd::getGtin() const {
-    return m_gtin;
-}
-void OAIProductAdd::setGtin(const QString &gtin) {
-    m_gtin = gtin;
-    m_gtin_isSet = true;
-}
-
-bool OAIProductAdd::is_gtin_Set() const{
-    return m_gtin_isSet;
-}
-
-bool OAIProductAdd::is_gtin_Valid() const{
-    return m_gtin_isValid;
-}
-
-QString OAIProductAdd::getMpn() const {
-    return m_mpn;
-}
-void OAIProductAdd::setMpn(const QString &mpn) {
-    m_mpn = mpn;
-    m_mpn_isSet = true;
-}
-
-bool OAIProductAdd::is_mpn_Set() const{
-    return m_mpn_isSet;
-}
-
-bool OAIProductAdd::is_mpn_Valid() const{
-    return m_mpn_isValid;
-}
-
-bool OAIProductAdd::isTaxable() const {
-    return m_taxable;
-}
-void OAIProductAdd::setTaxable(const bool &taxable) {
-    m_taxable = taxable;
-    m_taxable_isSet = true;
-}
-
-bool OAIProductAdd::is_taxable_Set() const{
-    return m_taxable_isSet;
-}
-
-bool OAIProductAdd::is_taxable_Valid() const{
-    return m_taxable_isValid;
-}
-
-QString OAIProductAdd::getVisible() const {
-    return m_visible;
-}
-void OAIProductAdd::setVisible(const QString &visible) {
-    m_visible = visible;
-    m_visible_isSet = true;
-}
-
-bool OAIProductAdd::is_visible_Set() const{
-    return m_visible_isSet;
-}
-
-bool OAIProductAdd::is_visible_Valid() const{
-    return m_visible_isValid;
-}
-
-QString OAIProductAdd::getStatus() const {
-    return m_status;
-}
-void OAIProductAdd::setStatus(const QString &status) {
-    m_status = status;
-    m_status_isSet = true;
-}
-
-bool OAIProductAdd::is_status_Set() const{
-    return m_status_isSet;
-}
-
-bool OAIProductAdd::is_status_Valid() const{
-    return m_status_isValid;
-}
-
-QString OAIProductAdd::getSeoUrl() const {
-    return m_seo_url;
-}
-void OAIProductAdd::setSeoUrl(const QString &seo_url) {
-    m_seo_url = seo_url;
-    m_seo_url_isSet = true;
-}
-
-bool OAIProductAdd::is_seo_url_Set() const{
-    return m_seo_url_isSet;
-}
-
-bool OAIProductAdd::is_seo_url_Valid() const{
-    return m_seo_url_isValid;
-}
-
-QString OAIProductAdd::getProductClass() const {
-    return m_product_class;
-}
-void OAIProductAdd::setProductClass(const QString &product_class) {
-    m_product_class = product_class;
-    m_product_class_isSet = true;
-}
-
-bool OAIProductAdd::is_product_class_Set() const{
-    return m_product_class_isSet;
-}
-
-bool OAIProductAdd::is_product_class_Valid() const{
-    return m_product_class_isValid;
-}
-
-QString OAIProductAdd::getProductType() const {
-    return m_product_type;
-}
-void OAIProductAdd::setProductType(const QString &product_type) {
-    m_product_type = product_type;
-    m_product_type_isSet = true;
-}
-
-bool OAIProductAdd::is_product_type_Set() const{
-    return m_product_type_isSet;
-}
-
-bool OAIProductAdd::is_product_type_Valid() const{
-    return m_product_type_isValid;
-}
-
-QString OAIProductAdd::getMarketplaceItemProperties() const {
-    return m_marketplace_item_properties;
-}
-void OAIProductAdd::setMarketplaceItemProperties(const QString &marketplace_item_properties) {
-    m_marketplace_item_properties = marketplace_item_properties;
-    m_marketplace_item_properties_isSet = true;
-}
-
-bool OAIProductAdd::is_marketplace_item_properties_Set() const{
-    return m_marketplace_item_properties_isSet;
-}
-
-bool OAIProductAdd::is_marketplace_item_properties_Valid() const{
-    return m_marketplace_item_properties_isValid;
-}
-
-bool OAIProductAdd::isManageStock() const {
-    return m_manage_stock;
-}
-void OAIProductAdd::setManageStock(const bool &manage_stock) {
-    m_manage_stock = manage_stock;
-    m_manage_stock_isSet = true;
-}
-
-bool OAIProductAdd::is_manage_stock_Set() const{
-    return m_manage_stock_isSet;
-}
-
-bool OAIProductAdd::is_manage_stock_Valid() const{
-    return m_manage_stock_isValid;
-}
-
-QString OAIProductAdd::getHarmonizedSystemCode() const {
-    return m_harmonized_system_code;
-}
-void OAIProductAdd::setHarmonizedSystemCode(const QString &harmonized_system_code) {
-    m_harmonized_system_code = harmonized_system_code;
-    m_harmonized_system_code_isSet = true;
-}
-
-bool OAIProductAdd::is_harmonized_system_code_Set() const{
-    return m_harmonized_system_code_isSet;
-}
-
-bool OAIProductAdd::is_harmonized_system_code_Valid() const{
-    return m_harmonized_system_code_isValid;
-}
-
-QString OAIProductAdd::getCountryOfOrigin() const {
-    return m_country_of_origin;
-}
-void OAIProductAdd::setCountryOfOrigin(const QString &country_of_origin) {
-    m_country_of_origin = country_of_origin;
-    m_country_of_origin_isSet = true;
-}
-
-bool OAIProductAdd::is_country_of_origin_Set() const{
-    return m_country_of_origin_isSet;
-}
-
-bool OAIProductAdd::is_country_of_origin_Valid() const{
-    return m_country_of_origin_isValid;
-}
-
 QList<OAIProductAdd_files_inner> OAIProductAdd::getFiles() const {
     return m_files;
 }
@@ -2519,6 +2039,102 @@ bool OAIProductAdd::is_files_Set() const{
 
 bool OAIProductAdd::is_files_Valid() const{
     return m_files_isValid;
+}
+
+OAIProductAdd_size_chart OAIProductAdd::getSizeChart() const {
+    return m_size_chart;
+}
+void OAIProductAdd::setSizeChart(const OAIProductAdd_size_chart &size_chart) {
+    m_size_chart = size_chart;
+    m_size_chart_isSet = true;
+}
+
+bool OAIProductAdd::is_size_chart_Set() const{
+    return m_size_chart_isSet;
+}
+
+bool OAIProductAdd::is_size_chart_Valid() const{
+    return m_size_chart_isValid;
+}
+
+QString OAIProductAdd::getRelatedProductsIds() const {
+    return m_related_products_ids;
+}
+void OAIProductAdd::setRelatedProductsIds(const QString &related_products_ids) {
+    m_related_products_ids = related_products_ids;
+    m_related_products_ids_isSet = true;
+}
+
+bool OAIProductAdd::is_related_products_ids_Set() const{
+    return m_related_products_ids_isSet;
+}
+
+bool OAIProductAdd::is_related_products_ids_Valid() const{
+    return m_related_products_ids_isValid;
+}
+
+QString OAIProductAdd::getUpSellProductsIds() const {
+    return m_up_sell_products_ids;
+}
+void OAIProductAdd::setUpSellProductsIds(const QString &up_sell_products_ids) {
+    m_up_sell_products_ids = up_sell_products_ids;
+    m_up_sell_products_ids_isSet = true;
+}
+
+bool OAIProductAdd::is_up_sell_products_ids_Set() const{
+    return m_up_sell_products_ids_isSet;
+}
+
+bool OAIProductAdd::is_up_sell_products_ids_Valid() const{
+    return m_up_sell_products_ids_isValid;
+}
+
+QString OAIProductAdd::getCrossSellProductsIds() const {
+    return m_cross_sell_products_ids;
+}
+void OAIProductAdd::setCrossSellProductsIds(const QString &cross_sell_products_ids) {
+    m_cross_sell_products_ids = cross_sell_products_ids;
+    m_cross_sell_products_ids_isSet = true;
+}
+
+bool OAIProductAdd::is_cross_sell_products_ids_Set() const{
+    return m_cross_sell_products_ids_isSet;
+}
+
+bool OAIProductAdd::is_cross_sell_products_ids_Valid() const{
+    return m_cross_sell_products_ids_isValid;
+}
+
+QString OAIProductAdd::getAttributeSetName() const {
+    return m_attribute_set_name;
+}
+void OAIProductAdd::setAttributeSetName(const QString &attribute_set_name) {
+    m_attribute_set_name = attribute_set_name;
+    m_attribute_set_name_isSet = true;
+}
+
+bool OAIProductAdd::is_attribute_set_name_Set() const{
+    return m_attribute_set_name_isSet;
+}
+
+bool OAIProductAdd::is_attribute_set_name_Valid() const{
+    return m_attribute_set_name_isValid;
+}
+
+QString OAIProductAdd::getAttributeName() const {
+    return m_attribute_name;
+}
+void OAIProductAdd::setAttributeName(const QString &attribute_name) {
+    m_attribute_name = attribute_name;
+    m_attribute_name_isSet = true;
+}
+
+bool OAIProductAdd::is_attribute_name_Set() const{
+    return m_attribute_name_isSet;
+}
+
+bool OAIProductAdd::is_attribute_name_Valid() const{
+    return m_attribute_name_isValid;
 }
 
 QString OAIProductAdd::getSearchKeywords() const {
@@ -2537,52 +2153,420 @@ bool OAIProductAdd::is_search_keywords_Valid() const{
     return m_search_keywords_isValid;
 }
 
-QString OAIProductAdd::getStoreId() const {
-    return m_store_id;
+QString OAIProductAdd::getTags() const {
+    return m_tags;
 }
-void OAIProductAdd::setStoreId(const QString &store_id) {
-    m_store_id = store_id;
-    m_store_id_isSet = true;
-}
-
-bool OAIProductAdd::is_store_id_Set() const{
-    return m_store_id_isSet;
+void OAIProductAdd::setTags(const QString &tags) {
+    m_tags = tags;
+    m_tags_isSet = true;
 }
 
-bool OAIProductAdd::is_store_id_Valid() const{
-    return m_store_id_isValid;
+bool OAIProductAdd::is_tags_Set() const{
+    return m_tags_isSet;
 }
 
-QString OAIProductAdd::getBrandName() const {
-    return m_brand_name;
-}
-void OAIProductAdd::setBrandName(const QString &brand_name) {
-    m_brand_name = brand_name;
-    m_brand_name_isSet = true;
+bool OAIProductAdd::is_tags_Valid() const{
+    return m_tags_isValid;
 }
 
-bool OAIProductAdd::is_brand_name_Set() const{
-    return m_brand_name_isSet;
+QList<QString> OAIProductAdd::getMaterials() const {
+    return m_materials;
+}
+void OAIProductAdd::setMaterials(const QList<QString> &materials) {
+    m_materials = materials;
+    m_materials_isSet = true;
 }
 
-bool OAIProductAdd::is_brand_name_Valid() const{
-    return m_brand_name_isValid;
+bool OAIProductAdd::is_materials_Set() const{
+    return m_materials_isSet;
 }
 
-bool OAIProductAdd::isIsVirtual() const {
-    return m_is_virtual;
-}
-void OAIProductAdd::setIsVirtual(const bool &is_virtual) {
-    m_is_virtual = is_virtual;
-    m_is_virtual_isSet = true;
+bool OAIProductAdd::is_materials_Valid() const{
+    return m_materials_isValid;
 }
 
-bool OAIProductAdd::is_is_virtual_Set() const{
-    return m_is_virtual_isSet;
+QList<OAIProductAdd_certifications_inner> OAIProductAdd::getCertifications() const {
+    return m_certifications;
+}
+void OAIProductAdd::setCertifications(const QList<OAIProductAdd_certifications_inner> &certifications) {
+    m_certifications = certifications;
+    m_certifications_isSet = true;
 }
 
-bool OAIProductAdd::is_is_virtual_Valid() const{
-    return m_is_virtual_isValid;
+bool OAIProductAdd::is_certifications_Set() const{
+    return m_certifications_isSet;
+}
+
+bool OAIProductAdd::is_certifications_Valid() const{
+    return m_certifications_isValid;
+}
+
+QList<OAIProductAdd_specifics_inner> OAIProductAdd::getSpecifics() const {
+    return m_specifics;
+}
+void OAIProductAdd::setSpecifics(const QList<OAIProductAdd_specifics_inner> &specifics) {
+    m_specifics = specifics;
+    m_specifics_isSet = true;
+}
+
+bool OAIProductAdd::is_specifics_Set() const{
+    return m_specifics_isSet;
+}
+
+bool OAIProductAdd::is_specifics_Valid() const{
+    return m_specifics_isValid;
+}
+
+QString OAIProductAdd::getAvailFrom() const {
+    return m_avail_from;
+}
+void OAIProductAdd::setAvailFrom(const QString &avail_from) {
+    m_avail_from = avail_from;
+    m_avail_from_isSet = true;
+}
+
+bool OAIProductAdd::is_avail_from_Set() const{
+    return m_avail_from_isSet;
+}
+
+bool OAIProductAdd::is_avail_from_Valid() const{
+    return m_avail_from_isValid;
+}
+
+QString OAIProductAdd::getSpriceCreate() const {
+    return m_sprice_create;
+}
+void OAIProductAdd::setSpriceCreate(const QString &sprice_create) {
+    m_sprice_create = sprice_create;
+    m_sprice_create_isSet = true;
+}
+
+bool OAIProductAdd::is_sprice_create_Set() const{
+    return m_sprice_create_isSet;
+}
+
+bool OAIProductAdd::is_sprice_create_Valid() const{
+    return m_sprice_create_isValid;
+}
+
+QString OAIProductAdd::getSpriceModified() const {
+    return m_sprice_modified;
+}
+void OAIProductAdd::setSpriceModified(const QString &sprice_modified) {
+    m_sprice_modified = sprice_modified;
+    m_sprice_modified_isSet = true;
+}
+
+bool OAIProductAdd::is_sprice_modified_Set() const{
+    return m_sprice_modified_isSet;
+}
+
+bool OAIProductAdd::is_sprice_modified_Valid() const{
+    return m_sprice_modified_isValid;
+}
+
+QString OAIProductAdd::getSpriceExpire() const {
+    return m_sprice_expire;
+}
+void OAIProductAdd::setSpriceExpire(const QString &sprice_expire) {
+    m_sprice_expire = sprice_expire;
+    m_sprice_expire_isSet = true;
+}
+
+bool OAIProductAdd::is_sprice_expire_Set() const{
+    return m_sprice_expire_isSet;
+}
+
+bool OAIProductAdd::is_sprice_expire_Valid() const{
+    return m_sprice_expire_isValid;
+}
+
+QString OAIProductAdd::getCreatedAt() const {
+    return m_created_at;
+}
+void OAIProductAdd::setCreatedAt(const QString &created_at) {
+    m_created_at = created_at;
+    m_created_at_isSet = true;
+}
+
+bool OAIProductAdd::is_created_at_Set() const{
+    return m_created_at_isSet;
+}
+
+bool OAIProductAdd::is_created_at_Valid() const{
+    return m_created_at_isValid;
+}
+
+bool OAIProductAdd::isAutoRenew() const {
+    return m_auto_renew;
+}
+void OAIProductAdd::setAutoRenew(const bool &auto_renew) {
+    m_auto_renew = auto_renew;
+    m_auto_renew_isSet = true;
+}
+
+bool OAIProductAdd::is_auto_renew_Set() const{
+    return m_auto_renew_isSet;
+}
+
+bool OAIProductAdd::is_auto_renew_Valid() const{
+    return m_auto_renew_isValid;
+}
+
+QString OAIProductAdd::getWhenMade() const {
+    return m_when_made;
+}
+void OAIProductAdd::setWhenMade(const QString &when_made) {
+    m_when_made = when_made;
+    m_when_made_isSet = true;
+}
+
+bool OAIProductAdd::is_when_made_Set() const{
+    return m_when_made_isSet;
+}
+
+bool OAIProductAdd::is_when_made_Valid() const{
+    return m_when_made_isValid;
+}
+
+QString OAIProductAdd::getMetaTitle() const {
+    return m_meta_title;
+}
+void OAIProductAdd::setMetaTitle(const QString &meta_title) {
+    m_meta_title = meta_title;
+    m_meta_title_isSet = true;
+}
+
+bool OAIProductAdd::is_meta_title_Set() const{
+    return m_meta_title_isSet;
+}
+
+bool OAIProductAdd::is_meta_title_Valid() const{
+    return m_meta_title_isValid;
+}
+
+QString OAIProductAdd::getMetaKeywords() const {
+    return m_meta_keywords;
+}
+void OAIProductAdd::setMetaKeywords(const QString &meta_keywords) {
+    m_meta_keywords = meta_keywords;
+    m_meta_keywords_isSet = true;
+}
+
+bool OAIProductAdd::is_meta_keywords_Set() const{
+    return m_meta_keywords_isSet;
+}
+
+bool OAIProductAdd::is_meta_keywords_Valid() const{
+    return m_meta_keywords_isValid;
+}
+
+QString OAIProductAdd::getMetaDescription() const {
+    return m_meta_description;
+}
+void OAIProductAdd::setMetaDescription(const QString &meta_description) {
+    m_meta_description = meta_description;
+    m_meta_description_isSet = true;
+}
+
+bool OAIProductAdd::is_meta_description_Set() const{
+    return m_meta_description_isSet;
+}
+
+bool OAIProductAdd::is_meta_description_Valid() const{
+    return m_meta_description_isValid;
+}
+
+QString OAIProductAdd::getUrl() const {
+    return m_url;
+}
+void OAIProductAdd::setUrl(const QString &url) {
+    m_url = url;
+    m_url_isSet = true;
+}
+
+bool OAIProductAdd::is_url_Set() const{
+    return m_url_isSet;
+}
+
+bool OAIProductAdd::is_url_Valid() const{
+    return m_url_isValid;
+}
+
+QString OAIProductAdd::getSeoUrl() const {
+    return m_seo_url;
+}
+void OAIProductAdd::setSeoUrl(const QString &seo_url) {
+    m_seo_url = seo_url;
+    m_seo_url_isSet = true;
+}
+
+bool OAIProductAdd::is_seo_url_Set() const{
+    return m_seo_url_isSet;
+}
+
+bool OAIProductAdd::is_seo_url_Valid() const{
+    return m_seo_url_isValid;
+}
+
+QString OAIProductAdd::getTaxClassId() const {
+    return m_tax_class_id;
+}
+void OAIProductAdd::setTaxClassId(const QString &tax_class_id) {
+    m_tax_class_id = tax_class_id;
+    m_tax_class_id_isSet = true;
+}
+
+bool OAIProductAdd::is_tax_class_id_Set() const{
+    return m_tax_class_id_isSet;
+}
+
+bool OAIProductAdd::is_tax_class_id_Valid() const{
+    return m_tax_class_id_isValid;
+}
+
+bool OAIProductAdd::isTaxable() const {
+    return m_taxable;
+}
+void OAIProductAdd::setTaxable(const bool &taxable) {
+    m_taxable = taxable;
+    m_taxable_isSet = true;
+}
+
+bool OAIProductAdd::is_taxable_Set() const{
+    return m_taxable_isSet;
+}
+
+bool OAIProductAdd::is_taxable_Valid() const{
+    return m_taxable_isValid;
+}
+
+OAIProductAdd_sales_tax OAIProductAdd::getSalesTax() const {
+    return m_sales_tax;
+}
+void OAIProductAdd::setSalesTax(const OAIProductAdd_sales_tax &sales_tax) {
+    m_sales_tax = sales_tax;
+    m_sales_tax_isSet = true;
+}
+
+bool OAIProductAdd::is_sales_tax_Set() const{
+    return m_sales_tax_isSet;
+}
+
+bool OAIProductAdd::is_sales_tax_Valid() const{
+    return m_sales_tax_isValid;
+}
+
+QString OAIProductAdd::getCondition() const {
+    return m_condition;
+}
+void OAIProductAdd::setCondition(const QString &condition) {
+    m_condition = condition;
+    m_condition_isSet = true;
+}
+
+bool OAIProductAdd::is_condition_Set() const{
+    return m_condition_isSet;
+}
+
+bool OAIProductAdd::is_condition_Valid() const{
+    return m_condition_isValid;
+}
+
+QString OAIProductAdd::getConditionDescription() const {
+    return m_condition_description;
+}
+void OAIProductAdd::setConditionDescription(const QString &condition_description) {
+    m_condition_description = condition_description;
+    m_condition_description_isSet = true;
+}
+
+bool OAIProductAdd::is_condition_description_Set() const{
+    return m_condition_description_isSet;
+}
+
+bool OAIProductAdd::is_condition_description_Valid() const{
+    return m_condition_description_isValid;
+}
+
+bool OAIProductAdd::isAllowDisplayCondition() const {
+    return m_allow_display_condition;
+}
+void OAIProductAdd::setAllowDisplayCondition(const bool &allow_display_condition) {
+    m_allow_display_condition = allow_display_condition;
+    m_allow_display_condition_isSet = true;
+}
+
+bool OAIProductAdd::is_allow_display_condition_Set() const{
+    return m_allow_display_condition_isSet;
+}
+
+bool OAIProductAdd::is_allow_display_condition_Valid() const{
+    return m_allow_display_condition_isValid;
+}
+
+QList<QString> OAIProductAdd::getPaymentMethods() const {
+    return m_payment_methods;
+}
+void OAIProductAdd::setPaymentMethods(const QList<QString> &payment_methods) {
+    m_payment_methods = payment_methods;
+    m_payment_methods_isSet = true;
+}
+
+bool OAIProductAdd::is_payment_methods_Set() const{
+    return m_payment_methods_isSet;
+}
+
+bool OAIProductAdd::is_payment_methods_Valid() const{
+    return m_payment_methods_isValid;
+}
+
+QString OAIProductAdd::getPaypalEmail() const {
+    return m_paypal_email;
+}
+void OAIProductAdd::setPaypalEmail(const QString &paypal_email) {
+    m_paypal_email = paypal_email;
+    m_paypal_email_isSet = true;
+}
+
+bool OAIProductAdd::is_paypal_email_Set() const{
+    return m_paypal_email_isSet;
+}
+
+bool OAIProductAdd::is_paypal_email_Valid() const{
+    return m_paypal_email_isValid;
+}
+
+qint32 OAIProductAdd::getShippingTemplateId() const {
+    return m_shipping_template_id;
+}
+void OAIProductAdd::setShippingTemplateId(const qint32 &shipping_template_id) {
+    m_shipping_template_id = shipping_template_id;
+    m_shipping_template_id_isSet = true;
+}
+
+bool OAIProductAdd::is_shipping_template_id_Set() const{
+    return m_shipping_template_id_isSet;
+}
+
+bool OAIProductAdd::is_shipping_template_id_Valid() const{
+    return m_shipping_template_id_isValid;
+}
+
+QList<OAIProductAdd_shipping_details_inner> OAIProductAdd::getShippingDetails() const {
+    return m_shipping_details;
+}
+void OAIProductAdd::setShippingDetails(const QList<OAIProductAdd_shipping_details_inner> &shipping_details) {
+    m_shipping_details = shipping_details;
+    m_shipping_details_isSet = true;
+}
+
+bool OAIProductAdd::is_shipping_details_Set() const{
+    return m_shipping_details_isSet;
+}
+
+bool OAIProductAdd::is_shipping_details_Valid() const{
+    return m_shipping_details_isValid;
 }
 
 bool OAIProductAdd::isIsFreeShipping() const {
@@ -2601,22 +2585,6 @@ bool OAIProductAdd::is_is_free_shipping_Valid() const{
     return m_is_free_shipping_isValid;
 }
 
-bool OAIProductAdd::isInStock() const {
-    return m_in_stock;
-}
-void OAIProductAdd::setInStock(const bool &in_stock) {
-    m_in_stock = in_stock;
-    m_in_stock_isSet = true;
-}
-
-bool OAIProductAdd::is_in_stock_Set() const{
-    return m_in_stock_isSet;
-}
-
-bool OAIProductAdd::is_in_stock_Valid() const{
-    return m_in_stock_isValid;
-}
-
 QString OAIProductAdd::getDeliveryCode() const {
     return m_delivery_code;
 }
@@ -2631,22 +2599,6 @@ bool OAIProductAdd::is_delivery_code_Set() const{
 
 bool OAIProductAdd::is_delivery_code_Valid() const{
     return m_delivery_code_isValid;
-}
-
-QString OAIProductAdd::getProductReference() const {
-    return m_product_reference;
-}
-void OAIProductAdd::setProductReference(const QString &product_reference) {
-    m_product_reference = product_reference;
-    m_product_reference_isSet = true;
-}
-
-bool OAIProductAdd::is_product_reference_Set() const{
-    return m_product_reference_isSet;
-}
-
-bool OAIProductAdd::is_product_reference_Valid() const{
-    return m_product_reference_isValid;
 }
 
 QString OAIProductAdd::getDeliveryType() const {
@@ -2681,38 +2633,6 @@ bool OAIProductAdd::is_delivery_time_Valid() const{
     return m_delivery_time_isValid;
 }
 
-OAIProductAdd_size_chart OAIProductAdd::getSizeChart() const {
-    return m_size_chart;
-}
-void OAIProductAdd::setSizeChart(const OAIProductAdd_size_chart &size_chart) {
-    m_size_chart = size_chart;
-    m_size_chart_isSet = true;
-}
-
-bool OAIProductAdd::is_size_chart_Set() const{
-    return m_size_chart_isSet;
-}
-
-bool OAIProductAdd::is_size_chart_Valid() const{
-    return m_size_chart_isValid;
-}
-
-QList<OAIProductAdd_certifications_inner> OAIProductAdd::getCertifications() const {
-    return m_certifications;
-}
-void OAIProductAdd::setCertifications(const QList<OAIProductAdd_certifications_inner> &certifications) {
-    m_certifications = certifications;
-    m_certifications_isSet = true;
-}
-
-bool OAIProductAdd::is_certifications_Set() const{
-    return m_certifications_isSet;
-}
-
-bool OAIProductAdd::is_certifications_Valid() const{
-    return m_certifications_isValid;
-}
-
 QString OAIProductAdd::getDeliveryOptionIds() const {
     return m_delivery_option_ids;
 }
@@ -2729,132 +2649,212 @@ bool OAIProductAdd::is_delivery_option_ids_Valid() const{
     return m_delivery_option_ids_isValid;
 }
 
-OAIProductAdd_manufacturer_info OAIProductAdd::getManufacturerInfo() const {
-    return m_manufacturer_info;
+OAIProductAdd_package_details OAIProductAdd::getPackageDetails() const {
+    return m_package_details;
 }
-void OAIProductAdd::setManufacturerInfo(const OAIProductAdd_manufacturer_info &manufacturer_info) {
-    m_manufacturer_info = manufacturer_info;
-    m_manufacturer_info_isSet = true;
-}
-
-bool OAIProductAdd::is_manufacturer_info_Set() const{
-    return m_manufacturer_info_isSet;
+void OAIProductAdd::setPackageDetails(const OAIProductAdd_package_details &package_details) {
+    m_package_details = package_details;
+    m_package_details_isSet = true;
 }
 
-bool OAIProductAdd::is_manufacturer_info_Valid() const{
-    return m_manufacturer_info_isValid;
+bool OAIProductAdd::is_package_details_Set() const{
+    return m_package_details_isSet;
 }
 
-QString OAIProductAdd::getWhenMade() const {
-    return m_when_made;
-}
-void OAIProductAdd::setWhenMade(const QString &when_made) {
-    m_when_made = when_made;
-    m_when_made_isSet = true;
+bool OAIProductAdd::is_package_details_Valid() const{
+    return m_package_details_isValid;
 }
 
-bool OAIProductAdd::is_when_made_Set() const{
-    return m_when_made_isSet;
+QList<OAIProductAdd_logistic_info_inner> OAIProductAdd::getLogisticInfo() const {
+    return m_logistic_info;
+}
+void OAIProductAdd::setLogisticInfo(const QList<OAIProductAdd_logistic_info_inner> &logistic_info) {
+    m_logistic_info = logistic_info;
+    m_logistic_info_isSet = true;
 }
 
-bool OAIProductAdd::is_when_made_Valid() const{
-    return m_when_made_isValid;
+bool OAIProductAdd::is_logistic_info_Set() const{
+    return m_logistic_info_isSet;
 }
 
-bool OAIProductAdd::isIsSupply() const {
-    return m_is_supply;
-}
-void OAIProductAdd::setIsSupply(const bool &is_supply) {
-    m_is_supply = is_supply;
-    m_is_supply_isSet = true;
+bool OAIProductAdd::is_logistic_info_Valid() const{
+    return m_logistic_info_isValid;
 }
 
-bool OAIProductAdd::is_is_supply_Set() const{
-    return m_is_supply_isSet;
+QString OAIProductAdd::getListingDuration() const {
+    return m_listing_duration;
+}
+void OAIProductAdd::setListingDuration(const QString &listing_duration) {
+    m_listing_duration = listing_duration;
+    m_listing_duration_isSet = true;
 }
 
-bool OAIProductAdd::is_is_supply_Valid() const{
-    return m_is_supply_isValid;
+bool OAIProductAdd::is_listing_duration_Set() const{
+    return m_listing_duration_isSet;
 }
 
-QList<QString> OAIProductAdd::getMaterials() const {
-    return m_materials;
-}
-void OAIProductAdd::setMaterials(const QList<QString> &materials) {
-    m_materials = materials;
-    m_materials_isSet = true;
+bool OAIProductAdd::is_listing_duration_Valid() const{
+    return m_listing_duration_isValid;
 }
 
-bool OAIProductAdd::is_materials_Set() const{
-    return m_materials_isSet;
+QString OAIProductAdd::getListingType() const {
+    return m_listing_type;
+}
+void OAIProductAdd::setListingType(const QString &listing_type) {
+    m_listing_type = listing_type;
+    m_listing_type_isSet = true;
 }
 
-bool OAIProductAdd::is_materials_Valid() const{
-    return m_materials_isValid;
+bool OAIProductAdd::is_listing_type_Set() const{
+    return m_listing_type_isSet;
 }
 
-bool OAIProductAdd::isAutoRenew() const {
-    return m_auto_renew;
-}
-void OAIProductAdd::setAutoRenew(const bool &auto_renew) {
-    m_auto_renew = auto_renew;
-    m_auto_renew_isSet = true;
+bool OAIProductAdd::is_listing_type_Valid() const{
+    return m_listing_type_isValid;
 }
 
-bool OAIProductAdd::is_auto_renew_Set() const{
-    return m_auto_renew_isSet;
+bool OAIProductAdd::isReturnAccepted() const {
+    return m_return_accepted;
+}
+void OAIProductAdd::setReturnAccepted(const bool &return_accepted) {
+    m_return_accepted = return_accepted;
+    m_return_accepted_isSet = true;
 }
 
-bool OAIProductAdd::is_auto_renew_Valid() const{
-    return m_auto_renew_isValid;
+bool OAIProductAdd::is_return_accepted_Set() const{
+    return m_return_accepted_isSet;
 }
 
-bool OAIProductAdd::isAllowDisplayCondition() const {
-    return m_allow_display_condition;
-}
-void OAIProductAdd::setAllowDisplayCondition(const bool &allow_display_condition) {
-    m_allow_display_condition = allow_display_condition;
-    m_allow_display_condition_isSet = true;
+bool OAIProductAdd::is_return_accepted_Valid() const{
+    return m_return_accepted_isValid;
 }
 
-bool OAIProductAdd::is_allow_display_condition_Set() const{
-    return m_allow_display_condition_isSet;
+OAIProductAdd_seller_profiles OAIProductAdd::getSellerProfiles() const {
+    return m_seller_profiles;
+}
+void OAIProductAdd::setSellerProfiles(const OAIProductAdd_seller_profiles &seller_profiles) {
+    m_seller_profiles = seller_profiles;
+    m_seller_profiles_isSet = true;
 }
 
-bool OAIProductAdd::is_allow_display_condition_Valid() const{
-    return m_allow_display_condition_isValid;
+bool OAIProductAdd::is_seller_profiles_Set() const{
+    return m_seller_profiles_isSet;
 }
 
-double OAIProductAdd::getMinOrderQuantity() const {
-    return m_min_order_quantity;
-}
-void OAIProductAdd::setMinOrderQuantity(const double &min_order_quantity) {
-    m_min_order_quantity = min_order_quantity;
-    m_min_order_quantity_isSet = true;
+bool OAIProductAdd::is_seller_profiles_Valid() const{
+    return m_seller_profiles_isValid;
 }
 
-bool OAIProductAdd::is_min_order_quantity_Set() const{
-    return m_min_order_quantity_isSet;
+QString OAIProductAdd::getAuctionConfidentialityLevel() const {
+    return m_auction_confidentiality_level;
+}
+void OAIProductAdd::setAuctionConfidentialityLevel(const QString &auction_confidentiality_level) {
+    m_auction_confidentiality_level = auction_confidentiality_level;
+    m_auction_confidentiality_level_isSet = true;
 }
 
-bool OAIProductAdd::is_min_order_quantity_Valid() const{
-    return m_min_order_quantity_isValid;
+bool OAIProductAdd::is_auction_confidentiality_level_Set() const{
+    return m_auction_confidentiality_level_isSet;
 }
 
-double OAIProductAdd::getMaxOrderQuantity() const {
-    return m_max_order_quantity;
-}
-void OAIProductAdd::setMaxOrderQuantity(const double &max_order_quantity) {
-    m_max_order_quantity = max_order_quantity;
-    m_max_order_quantity_isSet = true;
+bool OAIProductAdd::is_auction_confidentiality_level_Valid() const{
+    return m_auction_confidentiality_level_isValid;
 }
 
-bool OAIProductAdd::is_max_order_quantity_Set() const{
-    return m_max_order_quantity_isSet;
+OAIProductAdd_best_offer OAIProductAdd::getBestOffer() const {
+    return m_best_offer;
+}
+void OAIProductAdd::setBestOffer(const OAIProductAdd_best_offer &best_offer) {
+    m_best_offer = best_offer;
+    m_best_offer_isSet = true;
 }
 
-bool OAIProductAdd::is_max_order_quantity_Valid() const{
-    return m_max_order_quantity_isValid;
+bool OAIProductAdd::is_best_offer_Set() const{
+    return m_best_offer_isSet;
+}
+
+bool OAIProductAdd::is_best_offer_Valid() const{
+    return m_best_offer_isValid;
+}
+
+QString OAIProductAdd::getProductionPartnerIds() const {
+    return m_production_partner_ids;
+}
+void OAIProductAdd::setProductionPartnerIds(const QString &production_partner_ids) {
+    m_production_partner_ids = production_partner_ids;
+    m_production_partner_ids_isSet = true;
+}
+
+bool OAIProductAdd::is_production_partner_ids_Set() const{
+    return m_production_partner_ids_isSet;
+}
+
+bool OAIProductAdd::is_production_partner_ids_Valid() const{
+    return m_production_partner_ids_isValid;
+}
+
+QString OAIProductAdd::getMarketplaceItemProperties() const {
+    return m_marketplace_item_properties;
+}
+void OAIProductAdd::setMarketplaceItemProperties(const QString &marketplace_item_properties) {
+    m_marketplace_item_properties = marketplace_item_properties;
+    m_marketplace_item_properties_isSet = true;
+}
+
+bool OAIProductAdd::is_marketplace_item_properties_Set() const{
+    return m_marketplace_item_properties_isSet;
+}
+
+bool OAIProductAdd::is_marketplace_item_properties_Valid() const{
+    return m_marketplace_item_properties_isValid;
+}
+
+bool OAIProductAdd::isClearCache() const {
+    return m_clear_cache;
+}
+void OAIProductAdd::setClearCache(const bool &clear_cache) {
+    m_clear_cache = clear_cache;
+    m_clear_cache_isSet = true;
+}
+
+bool OAIProductAdd::is_clear_cache_Set() const{
+    return m_clear_cache_isSet;
+}
+
+bool OAIProductAdd::is_clear_cache_Valid() const{
+    return m_clear_cache_isValid;
+}
+
+qint32 OAIProductAdd::getViewedCount() const {
+    return m_viewed_count;
+}
+void OAIProductAdd::setViewedCount(const qint32 &viewed_count) {
+    m_viewed_count = viewed_count;
+    m_viewed_count_isSet = true;
+}
+
+bool OAIProductAdd::is_viewed_count_Set() const{
+    return m_viewed_count_isSet;
+}
+
+bool OAIProductAdd::is_viewed_count_Valid() const{
+    return m_viewed_count_isValid;
+}
+
+qint32 OAIProductAdd::getOrderedCount() const {
+    return m_ordered_count;
+}
+void OAIProductAdd::setOrderedCount(const qint32 &ordered_count) {
+    m_ordered_count = ordered_count;
+    m_ordered_count_isSet = true;
+}
+
+bool OAIProductAdd::is_ordered_count_Set() const{
+    return m_ordered_count_isSet;
+}
+
+bool OAIProductAdd::is_ordered_count_Valid() const{
+    return m_ordered_count_isValid;
 }
 
 bool OAIProductAdd::isSet() const {
@@ -2870,11 +2870,6 @@ bool OAIProductAdd::isSet() const {
             break;
         }
 
-        if (m_sku_isSet) {
-            isObjectUpdated = true;
-            break;
-        }
-
         if (m_description_isSet) {
             isObjectUpdated = true;
             break;
@@ -2885,47 +2880,62 @@ bool OAIProductAdd::isSet() const {
             break;
         }
 
-        if (m_old_price_isSet) {
+        if (m_sku_isSet) {
             isObjectUpdated = true;
             break;
         }
 
-        if (m_special_price_isSet) {
+        if (m_short_description_isSet) {
             isObjectUpdated = true;
             break;
         }
 
-        if (m_cost_price_isSet) {
+        if (m_type_isSet) {
             isObjectUpdated = true;
             break;
         }
 
-        if (m_fixed_cost_shipping_price_isSet) {
+        if (m_status_isSet) {
             isObjectUpdated = true;
             break;
         }
 
-        if (m_sprice_create_isSet) {
+        if (m_visible_isSet) {
             isObjectUpdated = true;
             break;
         }
 
-        if (m_sprice_modified_isSet) {
+        if (m_category_id_isSet) {
             isObjectUpdated = true;
             break;
         }
 
-        if (m_sprice_expire_isSet) {
+        if (m_categories_ids_isSet) {
             isObjectUpdated = true;
             break;
         }
 
-        if (m_tier_prices.size() > 0) {
+        if (m_product_class_isSet) {
             isObjectUpdated = true;
             break;
         }
 
-        if (m_group_prices.size() > 0) {
+        if (m_product_type_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_is_virtual_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_downloadable_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_is_supply_isSet) {
             isObjectUpdated = true;
             break;
         }
@@ -2940,7 +2950,107 @@ bool OAIProductAdd::isSet() const {
             break;
         }
 
+        if (m_store_id_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_stores_ids_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_lang_id_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_old_price_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_special_price_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_wholesale_price_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_cost_price_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_fixed_cost_shipping_price_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_tier_prices.size() > 0) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_group_prices.size() > 0) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_buyitnow_price_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_reserve_price_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_quantity_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_in_stock_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_manage_stock_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_warehouse_id_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_backorder_status_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_min_order_quantity_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_max_order_quantity_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
         if (m_weight_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_weight_unit_isSet) {
             isObjectUpdated = true;
             break;
         }
@@ -2960,207 +3070,7 @@ bool OAIProductAdd::isSet() const {
             break;
         }
 
-        if (m_weight_unit_isSet) {
-            isObjectUpdated = true;
-            break;
-        }
-
         if (m_dimensions_unit_isSet) {
-            isObjectUpdated = true;
-            break;
-        }
-
-        if (m_short_description_isSet) {
-            isObjectUpdated = true;
-            break;
-        }
-
-        if (m_warehouse_id_isSet) {
-            isObjectUpdated = true;
-            break;
-        }
-
-        if (m_backorder_status_isSet) {
-            isObjectUpdated = true;
-            break;
-        }
-
-        if (m_quantity_isSet) {
-            isObjectUpdated = true;
-            break;
-        }
-
-        if (m_downloadable_isSet) {
-            isObjectUpdated = true;
-            break;
-        }
-
-        if (m_wholesale_price_isSet) {
-            isObjectUpdated = true;
-            break;
-        }
-
-        if (m_created_at_isSet) {
-            isObjectUpdated = true;
-            break;
-        }
-
-        if (m_manufacturer_isSet) {
-            isObjectUpdated = true;
-            break;
-        }
-
-        if (m_manufacturer_id_isSet) {
-            isObjectUpdated = true;
-            break;
-        }
-
-        if (m_categories_ids_isSet) {
-            isObjectUpdated = true;
-            break;
-        }
-
-        if (m_related_products_ids_isSet) {
-            isObjectUpdated = true;
-            break;
-        }
-
-        if (m_up_sell_products_ids_isSet) {
-            isObjectUpdated = true;
-            break;
-        }
-
-        if (m_cross_sell_products_ids_isSet) {
-            isObjectUpdated = true;
-            break;
-        }
-
-        if (m_tax_class_id_isSet) {
-            isObjectUpdated = true;
-            break;
-        }
-
-        if (m_type_isSet) {
-            isObjectUpdated = true;
-            break;
-        }
-
-        if (m_meta_title_isSet) {
-            isObjectUpdated = true;
-            break;
-        }
-
-        if (m_meta_keywords_isSet) {
-            isObjectUpdated = true;
-            break;
-        }
-
-        if (m_meta_description_isSet) {
-            isObjectUpdated = true;
-            break;
-        }
-
-        if (m_url_isSet) {
-            isObjectUpdated = true;
-            break;
-        }
-
-        if (m_lang_id_isSet) {
-            isObjectUpdated = true;
-            break;
-        }
-
-        if (m_stores_ids_isSet) {
-            isObjectUpdated = true;
-            break;
-        }
-
-        if (m_category_id_isSet) {
-            isObjectUpdated = true;
-            break;
-        }
-
-        if (m_viewed_count_isSet) {
-            isObjectUpdated = true;
-            break;
-        }
-
-        if (m_ordered_count_isSet) {
-            isObjectUpdated = true;
-            break;
-        }
-
-        if (m_attribute_set_name_isSet) {
-            isObjectUpdated = true;
-            break;
-        }
-
-        if (m_attribute_name_isSet) {
-            isObjectUpdated = true;
-            break;
-        }
-
-        if (m_shipping_template_id_isSet) {
-            isObjectUpdated = true;
-            break;
-        }
-
-        if (m_production_partner_ids_isSet) {
-            isObjectUpdated = true;
-            break;
-        }
-
-        if (m_condition_isSet) {
-            isObjectUpdated = true;
-            break;
-        }
-
-        if (m_listing_duration_isSet) {
-            isObjectUpdated = true;
-            break;
-        }
-
-        if (m_listing_type_isSet) {
-            isObjectUpdated = true;
-            break;
-        }
-
-        if (m_payment_methods.size() > 0) {
-            isObjectUpdated = true;
-            break;
-        }
-
-        if (m_return_accepted_isSet) {
-            isObjectUpdated = true;
-            break;
-        }
-
-        if (m_shipping_details.size() > 0) {
-            isObjectUpdated = true;
-            break;
-        }
-
-        if (m_paypal_email_isSet) {
-            isObjectUpdated = true;
-            break;
-        }
-
-        if (m_seller_profiles.isSet()) {
-            isObjectUpdated = true;
-            break;
-        }
-
-        if (m_package_details.isSet()) {
-            isObjectUpdated = true;
-            break;
-        }
-
-        if (m_best_offer.isSet()) {
-            isObjectUpdated = true;
-            break;
-        }
-
-        if (m_sales_tax.isSet()) {
             isObjectUpdated = true;
             break;
         }
@@ -3185,7 +3095,52 @@ bool OAIProductAdd::isSet() const {
             break;
         }
 
-        if (m_specifics.size() > 0) {
+        if (m_gtin_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_mpn_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_asin_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_product_reference_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_harmonized_system_code_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_country_of_origin_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_manufacturer_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_manufacturer_id_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_manufacturer_info.isSet()) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_brand_name_isSet) {
             isObjectUpdated = true;
             break;
         }
@@ -3205,112 +3160,37 @@ bool OAIProductAdd::isSet() const {
             break;
         }
 
-        if (m_reserve_price_isSet) {
-            isObjectUpdated = true;
-            break;
-        }
-
-        if (m_buyitnow_price_isSet) {
-            isObjectUpdated = true;
-            break;
-        }
-
-        if (m_condition_description_isSet) {
-            isObjectUpdated = true;
-            break;
-        }
-
-        if (m_auction_confidentiality_level_isSet) {
-            isObjectUpdated = true;
-            break;
-        }
-
-        if (m_logistic_info.size() > 0) {
-            isObjectUpdated = true;
-            break;
-        }
-
-        if (m_avail_from_isSet) {
-            isObjectUpdated = true;
-            break;
-        }
-
-        if (m_tags_isSet) {
-            isObjectUpdated = true;
-            break;
-        }
-
-        if (m_clear_cache_isSet) {
-            isObjectUpdated = true;
-            break;
-        }
-
-        if (m_asin_isSet) {
-            isObjectUpdated = true;
-            break;
-        }
-
-        if (m_gtin_isSet) {
-            isObjectUpdated = true;
-            break;
-        }
-
-        if (m_mpn_isSet) {
-            isObjectUpdated = true;
-            break;
-        }
-
-        if (m_taxable_isSet) {
-            isObjectUpdated = true;
-            break;
-        }
-
-        if (m_visible_isSet) {
-            isObjectUpdated = true;
-            break;
-        }
-
-        if (m_status_isSet) {
-            isObjectUpdated = true;
-            break;
-        }
-
-        if (m_seo_url_isSet) {
-            isObjectUpdated = true;
-            break;
-        }
-
-        if (m_product_class_isSet) {
-            isObjectUpdated = true;
-            break;
-        }
-
-        if (m_product_type_isSet) {
-            isObjectUpdated = true;
-            break;
-        }
-
-        if (m_marketplace_item_properties_isSet) {
-            isObjectUpdated = true;
-            break;
-        }
-
-        if (m_manage_stock_isSet) {
-            isObjectUpdated = true;
-            break;
-        }
-
-        if (m_harmonized_system_code_isSet) {
-            isObjectUpdated = true;
-            break;
-        }
-
-        if (m_country_of_origin_isSet) {
-            isObjectUpdated = true;
-            break;
-        }
-
         if (m_files.size() > 0) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_size_chart.isSet()) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_related_products_ids_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_up_sell_products_ids_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_cross_sell_products_ids_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_attribute_set_name_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_attribute_name_isSet) {
             isObjectUpdated = true;
             break;
         }
@@ -3320,17 +3200,132 @@ bool OAIProductAdd::isSet() const {
             break;
         }
 
-        if (m_store_id_isSet) {
+        if (m_tags_isSet) {
             isObjectUpdated = true;
             break;
         }
 
-        if (m_brand_name_isSet) {
+        if (m_materials.size() > 0) {
             isObjectUpdated = true;
             break;
         }
 
-        if (m_is_virtual_isSet) {
+        if (m_certifications.size() > 0) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_specifics.size() > 0) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_avail_from_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_sprice_create_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_sprice_modified_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_sprice_expire_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_created_at_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_auto_renew_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_when_made_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_meta_title_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_meta_keywords_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_meta_description_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_url_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_seo_url_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_tax_class_id_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_taxable_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_sales_tax.isSet()) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_condition_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_condition_description_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_allow_display_condition_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_payment_methods.size() > 0) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_paypal_email_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_shipping_template_id_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_shipping_details.size() > 0) {
             isObjectUpdated = true;
             break;
         }
@@ -3340,17 +3335,7 @@ bool OAIProductAdd::isSet() const {
             break;
         }
 
-        if (m_in_stock_isSet) {
-            isObjectUpdated = true;
-            break;
-        }
-
         if (m_delivery_code_isSet) {
-            isObjectUpdated = true;
-            break;
-        }
-
-        if (m_product_reference_isSet) {
             isObjectUpdated = true;
             break;
         }
@@ -3365,57 +3350,72 @@ bool OAIProductAdd::isSet() const {
             break;
         }
 
-        if (m_size_chart.isSet()) {
-            isObjectUpdated = true;
-            break;
-        }
-
-        if (m_certifications.size() > 0) {
-            isObjectUpdated = true;
-            break;
-        }
-
         if (m_delivery_option_ids_isSet) {
             isObjectUpdated = true;
             break;
         }
 
-        if (m_manufacturer_info.isSet()) {
+        if (m_package_details.isSet()) {
             isObjectUpdated = true;
             break;
         }
 
-        if (m_when_made_isSet) {
+        if (m_logistic_info.size() > 0) {
             isObjectUpdated = true;
             break;
         }
 
-        if (m_is_supply_isSet) {
+        if (m_listing_duration_isSet) {
             isObjectUpdated = true;
             break;
         }
 
-        if (m_materials.size() > 0) {
+        if (m_listing_type_isSet) {
             isObjectUpdated = true;
             break;
         }
 
-        if (m_auto_renew_isSet) {
+        if (m_return_accepted_isSet) {
             isObjectUpdated = true;
             break;
         }
 
-        if (m_allow_display_condition_isSet) {
+        if (m_seller_profiles.isSet()) {
             isObjectUpdated = true;
             break;
         }
 
-        if (m_min_order_quantity_isSet) {
+        if (m_auction_confidentiality_level_isSet) {
             isObjectUpdated = true;
             break;
         }
 
-        if (m_max_order_quantity_isSet) {
+        if (m_best_offer.isSet()) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_production_partner_ids_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_marketplace_item_properties_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_clear_cache_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_viewed_count_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_ordered_count_isSet) {
             isObjectUpdated = true;
             break;
         }

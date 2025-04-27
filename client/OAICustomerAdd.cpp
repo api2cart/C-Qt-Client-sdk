@@ -52,6 +52,9 @@ void OAICustomerAdd::initializeModel() {
     m_group_ids_isSet = false;
     m_group_ids_isValid = false;
 
+    m_status_isSet = false;
+    m_status_isValid = false;
+
     m_created_time_isSet = false;
     m_created_time_isValid = false;
 
@@ -67,9 +70,6 @@ void OAICustomerAdd::initializeModel() {
     m_birth_day_isSet = false;
     m_birth_day_isValid = false;
 
-    m_status_isSet = false;
-    m_status_isValid = false;
-
     m_news_letter_subscription_isSet = false;
     m_news_letter_subscription_isValid = false;
 
@@ -81,9 +81,6 @@ void OAICustomerAdd::initializeModel() {
 
     m_website_isSet = false;
     m_website_isValid = false;
-
-    m_store_id_isSet = false;
-    m_store_id_isValid = false;
 
     m_fax_isSet = false;
     m_fax_isValid = false;
@@ -99,6 +96,9 @@ void OAICustomerAdd::initializeModel() {
 
     m_country_isSet = false;
     m_country_isValid = false;
+
+    m_store_id_isSet = false;
+    m_store_id_isValid = false;
 
     m_address_isSet = false;
     m_address_isValid = false;
@@ -131,6 +131,9 @@ void OAICustomerAdd::fromJsonObject(QJsonObject json) {
     m_group_ids_isValid = ::OpenAPI::fromJsonValue(m_group_ids, json[QString("group_ids")]);
     m_group_ids_isSet = !json[QString("group_ids")].isNull() && m_group_ids_isValid;
 
+    m_status_isValid = ::OpenAPI::fromJsonValue(m_status, json[QString("status")]);
+    m_status_isSet = !json[QString("status")].isNull() && m_status_isValid;
+
     m_created_time_isValid = ::OpenAPI::fromJsonValue(m_created_time, json[QString("created_time")]);
     m_created_time_isSet = !json[QString("created_time")].isNull() && m_created_time_isValid;
 
@@ -146,9 +149,6 @@ void OAICustomerAdd::fromJsonObject(QJsonObject json) {
     m_birth_day_isValid = ::OpenAPI::fromJsonValue(m_birth_day, json[QString("birth_day")]);
     m_birth_day_isSet = !json[QString("birth_day")].isNull() && m_birth_day_isValid;
 
-    m_status_isValid = ::OpenAPI::fromJsonValue(m_status, json[QString("status")]);
-    m_status_isSet = !json[QString("status")].isNull() && m_status_isValid;
-
     m_news_letter_subscription_isValid = ::OpenAPI::fromJsonValue(m_news_letter_subscription, json[QString("news_letter_subscription")]);
     m_news_letter_subscription_isSet = !json[QString("news_letter_subscription")].isNull() && m_news_letter_subscription_isValid;
 
@@ -160,9 +160,6 @@ void OAICustomerAdd::fromJsonObject(QJsonObject json) {
 
     m_website_isValid = ::OpenAPI::fromJsonValue(m_website, json[QString("website")]);
     m_website_isSet = !json[QString("website")].isNull() && m_website_isValid;
-
-    m_store_id_isValid = ::OpenAPI::fromJsonValue(m_store_id, json[QString("store_id")]);
-    m_store_id_isSet = !json[QString("store_id")].isNull() && m_store_id_isValid;
 
     m_fax_isValid = ::OpenAPI::fromJsonValue(m_fax, json[QString("fax")]);
     m_fax_isSet = !json[QString("fax")].isNull() && m_fax_isValid;
@@ -178,6 +175,9 @@ void OAICustomerAdd::fromJsonObject(QJsonObject json) {
 
     m_country_isValid = ::OpenAPI::fromJsonValue(m_country, json[QString("country")]);
     m_country_isSet = !json[QString("country")].isNull() && m_country_isValid;
+
+    m_store_id_isValid = ::OpenAPI::fromJsonValue(m_store_id, json[QString("store_id")]);
+    m_store_id_isSet = !json[QString("store_id")].isNull() && m_store_id_isValid;
 
     m_address_isValid = ::OpenAPI::fromJsonValue(m_address, json[QString("address")]);
     m_address_isSet = !json[QString("address")].isNull() && m_address_isValid;
@@ -210,6 +210,9 @@ QJsonObject OAICustomerAdd::asJsonObject() const {
     if (m_group_ids_isSet) {
         obj.insert(QString("group_ids"), ::OpenAPI::toJsonValue(m_group_ids));
     }
+    if (m_status_isSet) {
+        obj.insert(QString("status"), ::OpenAPI::toJsonValue(m_status));
+    }
     if (m_created_time_isSet) {
         obj.insert(QString("created_time"), ::OpenAPI::toJsonValue(m_created_time));
     }
@@ -225,9 +228,6 @@ QJsonObject OAICustomerAdd::asJsonObject() const {
     if (m_birth_day_isSet) {
         obj.insert(QString("birth_day"), ::OpenAPI::toJsonValue(m_birth_day));
     }
-    if (m_status_isSet) {
-        obj.insert(QString("status"), ::OpenAPI::toJsonValue(m_status));
-    }
     if (m_news_letter_subscription_isSet) {
         obj.insert(QString("news_letter_subscription"), ::OpenAPI::toJsonValue(m_news_letter_subscription));
     }
@@ -239,9 +239,6 @@ QJsonObject OAICustomerAdd::asJsonObject() const {
     }
     if (m_website_isSet) {
         obj.insert(QString("website"), ::OpenAPI::toJsonValue(m_website));
-    }
-    if (m_store_id_isSet) {
-        obj.insert(QString("store_id"), ::OpenAPI::toJsonValue(m_store_id));
     }
     if (m_fax_isSet) {
         obj.insert(QString("fax"), ::OpenAPI::toJsonValue(m_fax));
@@ -257,6 +254,9 @@ QJsonObject OAICustomerAdd::asJsonObject() const {
     }
     if (m_country_isSet) {
         obj.insert(QString("country"), ::OpenAPI::toJsonValue(m_country));
+    }
+    if (m_store_id_isSet) {
+        obj.insert(QString("store_id"), ::OpenAPI::toJsonValue(m_store_id));
     }
     if (m_address.size() > 0) {
         obj.insert(QString("address"), ::OpenAPI::toJsonValue(m_address));
@@ -360,6 +360,22 @@ bool OAICustomerAdd::is_group_ids_Valid() const{
     return m_group_ids_isValid;
 }
 
+QString OAICustomerAdd::getStatus() const {
+    return m_status;
+}
+void OAICustomerAdd::setStatus(const QString &status) {
+    m_status = status;
+    m_status_isSet = true;
+}
+
+bool OAICustomerAdd::is_status_Set() const{
+    return m_status_isSet;
+}
+
+bool OAICustomerAdd::is_status_Valid() const{
+    return m_status_isValid;
+}
+
 QString OAICustomerAdd::getCreatedTime() const {
     return m_created_time;
 }
@@ -440,22 +456,6 @@ bool OAICustomerAdd::is_birth_day_Valid() const{
     return m_birth_day_isValid;
 }
 
-QString OAICustomerAdd::getStatus() const {
-    return m_status;
-}
-void OAICustomerAdd::setStatus(const QString &status) {
-    m_status = status;
-    m_status_isSet = true;
-}
-
-bool OAICustomerAdd::is_status_Set() const{
-    return m_status_isSet;
-}
-
-bool OAICustomerAdd::is_status_Valid() const{
-    return m_status_isValid;
-}
-
 bool OAICustomerAdd::isNewsLetterSubscription() const {
     return m_news_letter_subscription;
 }
@@ -518,22 +518,6 @@ bool OAICustomerAdd::is_website_Set() const{
 
 bool OAICustomerAdd::is_website_Valid() const{
     return m_website_isValid;
-}
-
-QString OAICustomerAdd::getStoreId() const {
-    return m_store_id;
-}
-void OAICustomerAdd::setStoreId(const QString &store_id) {
-    m_store_id = store_id;
-    m_store_id_isSet = true;
-}
-
-bool OAICustomerAdd::is_store_id_Set() const{
-    return m_store_id_isSet;
-}
-
-bool OAICustomerAdd::is_store_id_Valid() const{
-    return m_store_id_isValid;
 }
 
 QString OAICustomerAdd::getFax() const {
@@ -616,6 +600,22 @@ bool OAICustomerAdd::is_country_Valid() const{
     return m_country_isValid;
 }
 
+QString OAICustomerAdd::getStoreId() const {
+    return m_store_id;
+}
+void OAICustomerAdd::setStoreId(const QString &store_id) {
+    m_store_id = store_id;
+    m_store_id_isSet = true;
+}
+
+bool OAICustomerAdd::is_store_id_Set() const{
+    return m_store_id_isSet;
+}
+
+bool OAICustomerAdd::is_store_id_Valid() const{
+    return m_store_id_isValid;
+}
+
 QList<OAICustomerAdd_address_inner> OAICustomerAdd::getAddress() const {
     return m_address;
 }
@@ -665,6 +665,11 @@ bool OAICustomerAdd::isSet() const {
             break;
         }
 
+        if (m_status_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
         if (m_created_time_isSet) {
             isObjectUpdated = true;
             break;
@@ -690,11 +695,6 @@ bool OAICustomerAdd::isSet() const {
             break;
         }
 
-        if (m_status_isSet) {
-            isObjectUpdated = true;
-            break;
-        }
-
         if (m_news_letter_subscription_isSet) {
             isObjectUpdated = true;
             break;
@@ -711,11 +711,6 @@ bool OAICustomerAdd::isSet() const {
         }
 
         if (m_website_isSet) {
-            isObjectUpdated = true;
-            break;
-        }
-
-        if (m_store_id_isSet) {
             isObjectUpdated = true;
             break;
         }
@@ -745,6 +740,11 @@ bool OAICustomerAdd::isSet() const {
             break;
         }
 
+        if (m_store_id_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
         if (m_address.size() > 0) {
             isObjectUpdated = true;
             break;
@@ -755,7 +755,7 @@ bool OAICustomerAdd::isSet() const {
 
 bool OAICustomerAdd::isValid() const {
     // only required properties are required for the object to be considered valid
-    return m_email_isValid && m_first_name_isValid && m_last_name_isValid && true;
+    return m_email_isValid && true;
 }
 
 } // namespace OpenAPI

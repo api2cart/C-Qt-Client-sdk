@@ -84,6 +84,11 @@ public:
     bool is_order_item_tax_Set() const;
     bool is_order_item_tax_Valid() const;
 
+    bool isOrderItemPriceIncludesTax() const;
+    void setOrderItemPriceIncludesTax(const bool &order_item_price_includes_tax);
+    bool is_order_item_price_includes_tax_Set() const;
+    bool is_order_item_price_includes_tax_Valid() const;
+
     qint32 getOrderItemParent() const;
     void setOrderItemParent(const qint32 &order_item_parent);
     bool is_order_item_parent_Set() const;
@@ -103,11 +108,6 @@ public:
     void setOrderItemAllowShipItemsSeparately(const bool &order_item_allow_ship_items_separately);
     bool is_order_item_allow_ship_items_separately_Set() const;
     bool is_order_item_allow_ship_items_separately_Valid() const;
-
-    bool isOrderItemPriceIncludesTax() const;
-    void setOrderItemPriceIncludesTax(const bool &order_item_price_includes_tax);
-    bool is_order_item_price_includes_tax_Set() const;
-    bool is_order_item_price_includes_tax_Valid() const;
 
     QList<OAIOrderAdd_order_item_inner_order_item_option_inner> getOrderItemOption() const;
     void setOrderItemOption(const QList<OAIOrderAdd_order_item_inner_order_item_option_inner> &order_item_option);
@@ -157,6 +157,10 @@ private:
     bool m_order_item_tax_isSet;
     bool m_order_item_tax_isValid;
 
+    bool m_order_item_price_includes_tax;
+    bool m_order_item_price_includes_tax_isSet;
+    bool m_order_item_price_includes_tax_isValid;
+
     qint32 m_order_item_parent;
     bool m_order_item_parent_isSet;
     bool m_order_item_parent_isValid;
@@ -172,10 +176,6 @@ private:
     bool m_order_item_allow_ship_items_separately;
     bool m_order_item_allow_ship_items_separately_isSet;
     bool m_order_item_allow_ship_items_separately_isValid;
-
-    bool m_order_item_price_includes_tax;
-    bool m_order_item_price_includes_tax_isSet;
-    bool m_order_item_price_includes_tax_isValid;
 
     QList<OAIOrderAdd_order_item_inner_order_item_option_inner> m_order_item_option;
     bool m_order_item_option_isSet;

@@ -42,25 +42,25 @@ public:
     void fromJsonObject(QJsonObject json) override;
     void fromJson(QString jsonString) override;
 
-    QString getStoreId() const;
-    void setStoreId(const QString &store_id);
-    bool is_store_id_Set() const;
-    bool is_store_id_Valid() const;
-
     QString getWarehouseId() const;
     void setWarehouseId(const QString &warehouse_id);
     bool is_warehouse_id_Set() const;
     bool is_warehouse_id_Valid() const;
+
+    QString getCustomerId() const;
+    void setCustomerId(const QString &customer_id);
+    bool is_customer_id_Set() const;
+    bool is_customer_id_Valid() const;
 
     QString getCustomerEmail() const;
     void setCustomerEmail(const QString &customer_email);
     bool is_customer_email_Set() const;
     bool is_customer_email_Valid() const;
 
-    QString getCustomerId() const;
-    void setCustomerId(const QString &customer_id);
-    bool is_customer_id_Set() const;
-    bool is_customer_id_Valid() const;
+    QString getStoreId() const;
+    void setStoreId(const QString &store_id);
+    bool is_store_id_Set() const;
+    bool is_store_id_Valid() const;
 
     QString getShippAddress1() const;
     void setShippAddress1(const QString &shipp_address_1);
@@ -108,21 +108,21 @@ public:
 private:
     void initializeModel();
 
-    QString m_store_id;
-    bool m_store_id_isSet;
-    bool m_store_id_isValid;
-
     QString m_warehouse_id;
     bool m_warehouse_id_isSet;
     bool m_warehouse_id_isValid;
+
+    QString m_customer_id;
+    bool m_customer_id_isSet;
+    bool m_customer_id_isValid;
 
     QString m_customer_email;
     bool m_customer_email_isSet;
     bool m_customer_email_isValid;
 
-    QString m_customer_id;
-    bool m_customer_id_isSet;
-    bool m_customer_id_isValid;
+    QString m_store_id;
+    bool m_store_id_isSet;
+    bool m_store_id_isValid;
 
     QString m_shipp_address_1;
     bool m_shipp_address_1_isSet;

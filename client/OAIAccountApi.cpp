@@ -294,7 +294,7 @@ void OAIAccountApi::accountCartAddCallback(OAIHttpRequestWorker *worker) {
     }
 }
 
-void OAIAccountApi::accountCartList(const ::OpenAPI::OptionalParam<QString> &params, const ::OpenAPI::OptionalParam<QString> &exclude, const ::OpenAPI::OptionalParam<QString> &request_from_date, const ::OpenAPI::OptionalParam<QString> &request_to_date, const ::OpenAPI::OptionalParam<QString> &store_url, const ::OpenAPI::OptionalParam<QString> &store_key) {
+void OAIAccountApi::accountCartList(const ::OpenAPI::OptionalParam<QString> &store_url, const ::OpenAPI::OptionalParam<QString> &store_key, const ::OpenAPI::OptionalParam<QString> &request_from_date, const ::OpenAPI::OptionalParam<QString> &request_to_date, const ::OpenAPI::OptionalParam<QString> &params, const ::OpenAPI::OptionalParam<QString> &exclude) {
     QString fullPath = QString(_serverConfigs["accountCartList"][_serverIndices.value("accountCartList")].URL()+"/account.cart.list.json");
     
     if (_apiKeys.contains("ApiKeyAuth")) {
@@ -302,35 +302,35 @@ void OAIAccountApi::accountCartList(const ::OpenAPI::OptionalParam<QString> &par
     }
     
     QString queryPrefix, querySuffix, queryDelimiter, queryStyle;
-    if (params.hasValue())
+    if (store_url.hasValue())
     {
         queryStyle = "form";
         if (queryStyle == "")
             queryStyle = "form";
         queryPrefix = getParamStylePrefix(queryStyle);
         querySuffix = getParamStyleSuffix(queryStyle);
-        queryDelimiter = getParamStyleDelimiter(queryStyle, "params", true);
+        queryDelimiter = getParamStyleDelimiter(queryStyle, "store_url", true);
         if (fullPath.indexOf("?") > 0)
             fullPath.append(queryPrefix);
         else
             fullPath.append("?");
 
-        fullPath.append(QUrl::toPercentEncoding("params")).append(querySuffix).append(QUrl::toPercentEncoding(::OpenAPI::toStringValue(params.stringValue())));
+        fullPath.append(QUrl::toPercentEncoding("store_url")).append(querySuffix).append(QUrl::toPercentEncoding(::OpenAPI::toStringValue(store_url.stringValue())));
     }
-    if (exclude.hasValue())
+    if (store_key.hasValue())
     {
         queryStyle = "form";
         if (queryStyle == "")
             queryStyle = "form";
         queryPrefix = getParamStylePrefix(queryStyle);
         querySuffix = getParamStyleSuffix(queryStyle);
-        queryDelimiter = getParamStyleDelimiter(queryStyle, "exclude", true);
+        queryDelimiter = getParamStyleDelimiter(queryStyle, "store_key", true);
         if (fullPath.indexOf("?") > 0)
             fullPath.append(queryPrefix);
         else
             fullPath.append("?");
 
-        fullPath.append(QUrl::toPercentEncoding("exclude")).append(querySuffix).append(QUrl::toPercentEncoding(::OpenAPI::toStringValue(exclude.stringValue())));
+        fullPath.append(QUrl::toPercentEncoding("store_key")).append(querySuffix).append(QUrl::toPercentEncoding(::OpenAPI::toStringValue(store_key.stringValue())));
     }
     if (request_from_date.hasValue())
     {
@@ -362,35 +362,35 @@ void OAIAccountApi::accountCartList(const ::OpenAPI::OptionalParam<QString> &par
 
         fullPath.append(QUrl::toPercentEncoding("request_to_date")).append(querySuffix).append(QUrl::toPercentEncoding(::OpenAPI::toStringValue(request_to_date.stringValue())));
     }
-    if (store_url.hasValue())
+    if (params.hasValue())
     {
         queryStyle = "form";
         if (queryStyle == "")
             queryStyle = "form";
         queryPrefix = getParamStylePrefix(queryStyle);
         querySuffix = getParamStyleSuffix(queryStyle);
-        queryDelimiter = getParamStyleDelimiter(queryStyle, "store_url", true);
+        queryDelimiter = getParamStyleDelimiter(queryStyle, "params", true);
         if (fullPath.indexOf("?") > 0)
             fullPath.append(queryPrefix);
         else
             fullPath.append("?");
 
-        fullPath.append(QUrl::toPercentEncoding("store_url")).append(querySuffix).append(QUrl::toPercentEncoding(::OpenAPI::toStringValue(store_url.stringValue())));
+        fullPath.append(QUrl::toPercentEncoding("params")).append(querySuffix).append(QUrl::toPercentEncoding(::OpenAPI::toStringValue(params.stringValue())));
     }
-    if (store_key.hasValue())
+    if (exclude.hasValue())
     {
         queryStyle = "form";
         if (queryStyle == "")
             queryStyle = "form";
         queryPrefix = getParamStylePrefix(queryStyle);
         querySuffix = getParamStyleSuffix(queryStyle);
-        queryDelimiter = getParamStyleDelimiter(queryStyle, "store_key", true);
+        queryDelimiter = getParamStyleDelimiter(queryStyle, "exclude", true);
         if (fullPath.indexOf("?") > 0)
             fullPath.append(queryPrefix);
         else
             fullPath.append("?");
 
-        fullPath.append(QUrl::toPercentEncoding("store_key")).append(querySuffix).append(QUrl::toPercentEncoding(::OpenAPI::toStringValue(store_key.stringValue())));
+        fullPath.append(QUrl::toPercentEncoding("exclude")).append(querySuffix).append(QUrl::toPercentEncoding(::OpenAPI::toStringValue(exclude.stringValue())));
     }
     OAIHttpRequestWorker *worker = new OAIHttpRequestWorker(this, _manager);
     worker->setTimeOut(_timeOut);
@@ -459,7 +459,7 @@ void OAIAccountApi::accountCartListCallback(OAIHttpRequestWorker *worker) {
     }
 }
 
-void OAIAccountApi::accountConfigUpdate(const ::OpenAPI::OptionalParam<bool> &replace_parameters, const ::OpenAPI::OptionalParam<QString> &new_store_url, const ::OpenAPI::OptionalParam<QString> &new_store_key, const ::OpenAPI::OptionalParam<QString> &bridge_url, const ::OpenAPI::OptionalParam<QString> &store_root, const ::OpenAPI::OptionalParam<QString> &db_tables_prefix, const ::OpenAPI::OptionalParam<QString> &user_agent, const ::OpenAPI::OptionalParam<QString> &r_3dcart_private_key, const ::OpenAPI::OptionalParam<QString> &r_3dcart_access_token, const ::OpenAPI::OptionalParam<QString> &r_3dcartapi_api_key, const ::OpenAPI::OptionalParam<QString> &amazon_sp_client_id, const ::OpenAPI::OptionalParam<QString> &amazon_sp_client_secret, const ::OpenAPI::OptionalParam<QString> &amazon_sp_refresh_token, const ::OpenAPI::OptionalParam<QString> &amazon_sp_aws_region, const ::OpenAPI::OptionalParam<QString> &amazon_sp_api_environment, const ::OpenAPI::OptionalParam<QString> &amazon_seller_id, const ::OpenAPI::OptionalParam<QString> &aspdotnetstorefront_api_user, const ::OpenAPI::OptionalParam<QString> &aspdotnetstorefront_api_pass, const ::OpenAPI::OptionalParam<QString> &bigcommerceapi_admin_account, const ::OpenAPI::OptionalParam<QString> &bigcommerceapi_api_path, const ::OpenAPI::OptionalParam<QString> &bigcommerceapi_api_key, const ::OpenAPI::OptionalParam<QString> &bigcommerceapi_client_id, const ::OpenAPI::OptionalParam<QString> &bigcommerceapi_access_token, const ::OpenAPI::OptionalParam<QString> &bigcommerceapi_context, const ::OpenAPI::OptionalParam<QString> &bol_api_key, const ::OpenAPI::OptionalParam<QString> &bol_api_secret, const ::OpenAPI::OptionalParam<qint32> &bol_retailer_id, const ::OpenAPI::OptionalParam<QString> &demandware_client_id, const ::OpenAPI::OptionalParam<QString> &demandware_api_password, const ::OpenAPI::OptionalParam<QString> &demandware_user_name, const ::OpenAPI::OptionalParam<QString> &demandware_user_password, const ::OpenAPI::OptionalParam<QString> &ebay_client_id, const ::OpenAPI::OptionalParam<QString> &ebay_client_secret, const ::OpenAPI::OptionalParam<QString> &ebay_runame, const ::OpenAPI::OptionalParam<QString> &ebay_access_token, const ::OpenAPI::OptionalParam<QString> &ebay_refresh_token, const ::OpenAPI::OptionalParam<QString> &ebay_environment, const ::OpenAPI::OptionalParam<qint32> &ebay_site_id, const ::OpenAPI::OptionalParam<QString> &ecwid_acess_token, const ::OpenAPI::OptionalParam<QString> &ecwid_store_id, const ::OpenAPI::OptionalParam<QString> &lazada_app_id, const ::OpenAPI::OptionalParam<QString> &lazada_app_secret, const ::OpenAPI::OptionalParam<QString> &lazada_refresh_token, const ::OpenAPI::OptionalParam<QString> &lazada_region, const ::OpenAPI::OptionalParam<QString> &etsy_keystring, const ::OpenAPI::OptionalParam<QString> &etsy_shared_secret, const ::OpenAPI::OptionalParam<QString> &etsy_access_token, const ::OpenAPI::OptionalParam<QString> &etsy_token_secret, const ::OpenAPI::OptionalParam<QString> &etsy_client_id, const ::OpenAPI::OptionalParam<QString> &etsy_refresh_token, const ::OpenAPI::OptionalParam<QString> &facebook_app_id, const ::OpenAPI::OptionalParam<QString> &facebook_app_secret, const ::OpenAPI::OptionalParam<QString> &facebook_access_token, const ::OpenAPI::OptionalParam<QString> &facebook_business_id, const ::OpenAPI::OptionalParam<QString> &neto_api_key, const ::OpenAPI::OptionalParam<QString> &neto_api_username, const ::OpenAPI::OptionalParam<QString> &shopline_access_token, const ::OpenAPI::OptionalParam<QString> &shopline_app_key, const ::OpenAPI::OptionalParam<QString> &shopline_app_secret, const ::OpenAPI::OptionalParam<QString> &shopify_access_token, const ::OpenAPI::OptionalParam<QString> &shopify_api_key, const ::OpenAPI::OptionalParam<QString> &shopify_api_password, const ::OpenAPI::OptionalParam<QString> &shopify_shared_secret, const ::OpenAPI::OptionalParam<QString> &shoplazza_access_token, const ::OpenAPI::OptionalParam<QString> &shoplazza_shared_secret, const ::OpenAPI::OptionalParam<QString> &miva_access_token, const ::OpenAPI::OptionalParam<QString> &miva_signature, const ::OpenAPI::OptionalParam<QString> &shopware_access_key, const ::OpenAPI::OptionalParam<QString> &shopware_api_key, const ::OpenAPI::OptionalParam<QString> &shopware_api_secret, const ::OpenAPI::OptionalParam<QString> &volusion_login, const ::OpenAPI::OptionalParam<QString> &volusion_password, const ::OpenAPI::OptionalParam<QString> &walmart_client_id, const ::OpenAPI::OptionalParam<QString> &walmart_client_secret, const ::OpenAPI::OptionalParam<QString> &walmart_environment, const ::OpenAPI::OptionalParam<QString> &walmart_channel_type, const ::OpenAPI::OptionalParam<QString> &walmart_region, const ::OpenAPI::OptionalParam<QString> &square_client_id, const ::OpenAPI::OptionalParam<QString> &square_client_secret, const ::OpenAPI::OptionalParam<QString> &square_refresh_token, const ::OpenAPI::OptionalParam<QString> &squarespace_api_key, const ::OpenAPI::OptionalParam<QString> &squarespace_client_id, const ::OpenAPI::OptionalParam<QString> &squarespace_client_secret, const ::OpenAPI::OptionalParam<QString> &squarespace_access_token, const ::OpenAPI::OptionalParam<QString> &squarespace_refresh_token, const ::OpenAPI::OptionalParam<QString> &hybris_client_id, const ::OpenAPI::OptionalParam<QString> &hybris_client_secret, const ::OpenAPI::OptionalParam<QString> &hybris_username, const ::OpenAPI::OptionalParam<QString> &hybris_password, const ::OpenAPI::OptionalParam<QList<QString>> &hybris_websites, const ::OpenAPI::OptionalParam<QString> &lightspeed_api_key, const ::OpenAPI::OptionalParam<QString> &lightspeed_api_secret, const ::OpenAPI::OptionalParam<QString> &commercehq_api_key, const ::OpenAPI::OptionalParam<QString> &commercehq_api_password, const ::OpenAPI::OptionalParam<QString> &wc_consumer_key, const ::OpenAPI::OptionalParam<QString> &wc_consumer_secret, const ::OpenAPI::OptionalParam<QString> &magento_consumer_key, const ::OpenAPI::OptionalParam<QString> &magento_consumer_secret, const ::OpenAPI::OptionalParam<QString> &magento_access_token, const ::OpenAPI::OptionalParam<QString> &magento_token_secret, const ::OpenAPI::OptionalParam<QString> &prestashop_webservice_key, const ::OpenAPI::OptionalParam<QString> &wix_app_id, const ::OpenAPI::OptionalParam<QString> &wix_app_secret_key, const ::OpenAPI::OptionalParam<QString> &wix_instance_id, const ::OpenAPI::OptionalParam<QString> &wix_refresh_token, const ::OpenAPI::OptionalParam<QString> &mercado_libre_app_id, const ::OpenAPI::OptionalParam<QString> &mercado_libre_app_secret_key, const ::OpenAPI::OptionalParam<QString> &mercado_libre_refresh_token, const ::OpenAPI::OptionalParam<qint32> &zid_client_id, const ::OpenAPI::OptionalParam<QString> &zid_client_secret, const ::OpenAPI::OptionalParam<QString> &zid_access_token, const ::OpenAPI::OptionalParam<QString> &zid_authorization, const ::OpenAPI::OptionalParam<QString> &zid_refresh_token, const ::OpenAPI::OptionalParam<QString> &flipkart_client_id, const ::OpenAPI::OptionalParam<QString> &flipkart_client_secret, const ::OpenAPI::OptionalParam<QString> &allegro_client_id, const ::OpenAPI::OptionalParam<QString> &allegro_client_secret, const ::OpenAPI::OptionalParam<QString> &allegro_access_token, const ::OpenAPI::OptionalParam<QString> &allegro_refresh_token, const ::OpenAPI::OptionalParam<QString> &allegro_environment, const ::OpenAPI::OptionalParam<QString> &zoho_client_id, const ::OpenAPI::OptionalParam<QString> &zoho_client_secret, const ::OpenAPI::OptionalParam<QString> &zoho_refresh_token, const ::OpenAPI::OptionalParam<QString> &zoho_region, const ::OpenAPI::OptionalParam<qint32> &tiendanube_user_id, const ::OpenAPI::OptionalParam<QString> &tiendanube_access_token, const ::OpenAPI::OptionalParam<QString> &tiendanube_client_secret, const ::OpenAPI::OptionalParam<QString> &otto_client_id, const ::OpenAPI::OptionalParam<QString> &otto_client_secret, const ::OpenAPI::OptionalParam<QString> &otto_app_id, const ::OpenAPI::OptionalParam<QString> &otto_refresh_token, const ::OpenAPI::OptionalParam<QString> &otto_environment, const ::OpenAPI::OptionalParam<QString> &otto_access_token, const ::OpenAPI::OptionalParam<QString> &tiktokshop_app_key, const ::OpenAPI::OptionalParam<QString> &tiktokshop_app_secret, const ::OpenAPI::OptionalParam<QString> &tiktokshop_refresh_token, const ::OpenAPI::OptionalParam<QString> &tiktokshop_access_token, const ::OpenAPI::OptionalParam<QString> &salla_client_id, const ::OpenAPI::OptionalParam<QString> &salla_client_secret, const ::OpenAPI::OptionalParam<QString> &salla_refresh_token, const ::OpenAPI::OptionalParam<QString> &salla_access_token) {
+void OAIAccountApi::accountConfigUpdate(const ::OpenAPI::OptionalParam<bool> &replace_parameters, const ::OpenAPI::OptionalParam<QString> &new_store_url, const ::OpenAPI::OptionalParam<QString> &new_store_key, const ::OpenAPI::OptionalParam<QString> &bridge_url, const ::OpenAPI::OptionalParam<QString> &store_root, const ::OpenAPI::OptionalParam<QString> &db_tables_prefix, const ::OpenAPI::OptionalParam<QString> &user_agent, const ::OpenAPI::OptionalParam<QString> &r_3dcart_private_key, const ::OpenAPI::OptionalParam<QString> &r_3dcart_access_token, const ::OpenAPI::OptionalParam<QString> &r_3dcartapi_api_key, const ::OpenAPI::OptionalParam<QString> &amazon_sp_client_id, const ::OpenAPI::OptionalParam<QString> &amazon_sp_client_secret, const ::OpenAPI::OptionalParam<QString> &amazon_sp_refresh_token, const ::OpenAPI::OptionalParam<QString> &amazon_sp_aws_region, const ::OpenAPI::OptionalParam<QString> &amazon_sp_api_environment, const ::OpenAPI::OptionalParam<QString> &amazon_seller_id, const ::OpenAPI::OptionalParam<QString> &aspdotnetstorefront_api_user, const ::OpenAPI::OptionalParam<QString> &aspdotnetstorefront_api_pass, const ::OpenAPI::OptionalParam<QString> &bigcommerceapi_admin_account, const ::OpenAPI::OptionalParam<QString> &bigcommerceapi_api_path, const ::OpenAPI::OptionalParam<QString> &bigcommerceapi_api_key, const ::OpenAPI::OptionalParam<QString> &bigcommerceapi_client_id, const ::OpenAPI::OptionalParam<QString> &bigcommerceapi_access_token, const ::OpenAPI::OptionalParam<QString> &bigcommerceapi_context, const ::OpenAPI::OptionalParam<QString> &bol_api_key, const ::OpenAPI::OptionalParam<QString> &bol_api_secret, const ::OpenAPI::OptionalParam<qint32> &bol_retailer_id, const ::OpenAPI::OptionalParam<QString> &demandware_client_id, const ::OpenAPI::OptionalParam<QString> &demandware_api_password, const ::OpenAPI::OptionalParam<QString> &demandware_user_name, const ::OpenAPI::OptionalParam<QString> &demandware_user_password, const ::OpenAPI::OptionalParam<QString> &ebay_client_id, const ::OpenAPI::OptionalParam<QString> &ebay_client_secret, const ::OpenAPI::OptionalParam<QString> &ebay_runame, const ::OpenAPI::OptionalParam<QString> &ebay_access_token, const ::OpenAPI::OptionalParam<QString> &ebay_refresh_token, const ::OpenAPI::OptionalParam<QString> &ebay_environment, const ::OpenAPI::OptionalParam<qint32> &ebay_site_id, const ::OpenAPI::OptionalParam<QString> &ecwid_acess_token, const ::OpenAPI::OptionalParam<QString> &ecwid_store_id, const ::OpenAPI::OptionalParam<QString> &lazada_app_id, const ::OpenAPI::OptionalParam<QString> &lazada_app_secret, const ::OpenAPI::OptionalParam<QString> &lazada_refresh_token, const ::OpenAPI::OptionalParam<QString> &lazada_region, const ::OpenAPI::OptionalParam<QString> &etsy_keystring, const ::OpenAPI::OptionalParam<QString> &etsy_shared_secret, const ::OpenAPI::OptionalParam<QString> &etsy_access_token, const ::OpenAPI::OptionalParam<QString> &etsy_token_secret, const ::OpenAPI::OptionalParam<QString> &etsy_client_id, const ::OpenAPI::OptionalParam<QString> &etsy_refresh_token, const ::OpenAPI::OptionalParam<QString> &facebook_app_id, const ::OpenAPI::OptionalParam<QString> &facebook_app_secret, const ::OpenAPI::OptionalParam<QString> &facebook_access_token, const ::OpenAPI::OptionalParam<QString> &facebook_business_id, const ::OpenAPI::OptionalParam<QString> &neto_api_key, const ::OpenAPI::OptionalParam<QString> &neto_api_username, const ::OpenAPI::OptionalParam<QString> &shopline_access_token, const ::OpenAPI::OptionalParam<QString> &shopline_app_key, const ::OpenAPI::OptionalParam<QString> &shopline_app_secret, const ::OpenAPI::OptionalParam<QString> &shopline_shared_secret, const ::OpenAPI::OptionalParam<QString> &shopify_access_token, const ::OpenAPI::OptionalParam<QString> &shopify_api_key, const ::OpenAPI::OptionalParam<QString> &shopify_api_password, const ::OpenAPI::OptionalParam<QString> &shopify_shared_secret, const ::OpenAPI::OptionalParam<QString> &shoplazza_access_token, const ::OpenAPI::OptionalParam<QString> &shoplazza_shared_secret, const ::OpenAPI::OptionalParam<QString> &miva_access_token, const ::OpenAPI::OptionalParam<QString> &miva_signature, const ::OpenAPI::OptionalParam<QString> &shopware_access_key, const ::OpenAPI::OptionalParam<QString> &shopware_api_key, const ::OpenAPI::OptionalParam<QString> &shopware_api_secret, const ::OpenAPI::OptionalParam<QString> &volusion_login, const ::OpenAPI::OptionalParam<QString> &volusion_password, const ::OpenAPI::OptionalParam<QString> &walmart_client_id, const ::OpenAPI::OptionalParam<QString> &walmart_client_secret, const ::OpenAPI::OptionalParam<QString> &walmart_environment, const ::OpenAPI::OptionalParam<QString> &walmart_channel_type, const ::OpenAPI::OptionalParam<QString> &walmart_region, const ::OpenAPI::OptionalParam<QString> &square_client_id, const ::OpenAPI::OptionalParam<QString> &square_client_secret, const ::OpenAPI::OptionalParam<QString> &square_refresh_token, const ::OpenAPI::OptionalParam<QString> &squarespace_api_key, const ::OpenAPI::OptionalParam<QString> &squarespace_client_id, const ::OpenAPI::OptionalParam<QString> &squarespace_client_secret, const ::OpenAPI::OptionalParam<QString> &squarespace_access_token, const ::OpenAPI::OptionalParam<QString> &squarespace_refresh_token, const ::OpenAPI::OptionalParam<QString> &hybris_client_id, const ::OpenAPI::OptionalParam<QString> &hybris_client_secret, const ::OpenAPI::OptionalParam<QString> &hybris_username, const ::OpenAPI::OptionalParam<QString> &hybris_password, const ::OpenAPI::OptionalParam<QList<QString>> &hybris_websites, const ::OpenAPI::OptionalParam<QString> &lightspeed_api_key, const ::OpenAPI::OptionalParam<QString> &lightspeed_api_secret, const ::OpenAPI::OptionalParam<QString> &commercehq_api_key, const ::OpenAPI::OptionalParam<QString> &commercehq_api_password, const ::OpenAPI::OptionalParam<QString> &wc_consumer_key, const ::OpenAPI::OptionalParam<QString> &wc_consumer_secret, const ::OpenAPI::OptionalParam<QString> &magento_consumer_key, const ::OpenAPI::OptionalParam<QString> &magento_consumer_secret, const ::OpenAPI::OptionalParam<QString> &magento_access_token, const ::OpenAPI::OptionalParam<QString> &magento_token_secret, const ::OpenAPI::OptionalParam<QString> &prestashop_webservice_key, const ::OpenAPI::OptionalParam<QString> &wix_app_id, const ::OpenAPI::OptionalParam<QString> &wix_app_secret_key, const ::OpenAPI::OptionalParam<QString> &wix_instance_id, const ::OpenAPI::OptionalParam<QString> &wix_refresh_token, const ::OpenAPI::OptionalParam<QString> &mercado_libre_app_id, const ::OpenAPI::OptionalParam<QString> &mercado_libre_app_secret_key, const ::OpenAPI::OptionalParam<QString> &mercado_libre_refresh_token, const ::OpenAPI::OptionalParam<qint32> &zid_client_id, const ::OpenAPI::OptionalParam<QString> &zid_client_secret, const ::OpenAPI::OptionalParam<QString> &zid_access_token, const ::OpenAPI::OptionalParam<QString> &zid_authorization, const ::OpenAPI::OptionalParam<QString> &zid_refresh_token, const ::OpenAPI::OptionalParam<QString> &flipkart_client_id, const ::OpenAPI::OptionalParam<QString> &flipkart_client_secret, const ::OpenAPI::OptionalParam<QString> &allegro_client_id, const ::OpenAPI::OptionalParam<QString> &allegro_client_secret, const ::OpenAPI::OptionalParam<QString> &allegro_access_token, const ::OpenAPI::OptionalParam<QString> &allegro_refresh_token, const ::OpenAPI::OptionalParam<QString> &allegro_environment, const ::OpenAPI::OptionalParam<QString> &zoho_client_id, const ::OpenAPI::OptionalParam<QString> &zoho_client_secret, const ::OpenAPI::OptionalParam<QString> &zoho_refresh_token, const ::OpenAPI::OptionalParam<QString> &zoho_region, const ::OpenAPI::OptionalParam<qint32> &tiendanube_user_id, const ::OpenAPI::OptionalParam<QString> &tiendanube_access_token, const ::OpenAPI::OptionalParam<QString> &tiendanube_client_secret, const ::OpenAPI::OptionalParam<QString> &otto_client_id, const ::OpenAPI::OptionalParam<QString> &otto_client_secret, const ::OpenAPI::OptionalParam<QString> &otto_app_id, const ::OpenAPI::OptionalParam<QString> &otto_refresh_token, const ::OpenAPI::OptionalParam<QString> &otto_environment, const ::OpenAPI::OptionalParam<QString> &otto_access_token, const ::OpenAPI::OptionalParam<QString> &tiktokshop_app_key, const ::OpenAPI::OptionalParam<QString> &tiktokshop_app_secret, const ::OpenAPI::OptionalParam<QString> &tiktokshop_refresh_token, const ::OpenAPI::OptionalParam<QString> &tiktokshop_access_token, const ::OpenAPI::OptionalParam<QString> &salla_client_id, const ::OpenAPI::OptionalParam<QString> &salla_client_secret, const ::OpenAPI::OptionalParam<QString> &salla_refresh_token, const ::OpenAPI::OptionalParam<QString> &salla_access_token) {
     QString fullPath = QString(_serverConfigs["accountConfigUpdate"][_serverIndices.value("accountConfigUpdate")].URL()+"/account.config.update.json");
     
     if (_apiKeys.contains("StoreKeyAuth")) {
@@ -1355,6 +1355,21 @@ void OAIAccountApi::accountConfigUpdate(const ::OpenAPI::OptionalParam<bool> &re
             fullPath.append("?");
 
         fullPath.append(QUrl::toPercentEncoding("shopline_app_secret")).append(querySuffix).append(QUrl::toPercentEncoding(::OpenAPI::toStringValue(shopline_app_secret.stringValue())));
+    }
+    if (shopline_shared_secret.hasValue())
+    {
+        queryStyle = "form";
+        if (queryStyle == "")
+            queryStyle = "form";
+        queryPrefix = getParamStylePrefix(queryStyle);
+        querySuffix = getParamStyleSuffix(queryStyle);
+        queryDelimiter = getParamStyleDelimiter(queryStyle, "shopline_shared_secret", true);
+        if (fullPath.indexOf("?") > 0)
+            fullPath.append(queryPrefix);
+        else
+            fullPath.append("?");
+
+        fullPath.append(QUrl::toPercentEncoding("shopline_shared_secret")).append(querySuffix).append(QUrl::toPercentEncoding(::OpenAPI::toStringValue(shopline_shared_secret.stringValue())));
     }
     if (shopify_access_token.hasValue())
     {
@@ -2723,7 +2738,7 @@ void OAIAccountApi::accountConfigUpdateCallback(OAIHttpRequestWorker *worker) {
     }
 }
 
-void OAIAccountApi::accountFailedWebhooks(const ::OpenAPI::OptionalParam<qint32> &count, const ::OpenAPI::OptionalParam<qint32> &start, const ::OpenAPI::OptionalParam<QString> &ids) {
+void OAIAccountApi::accountFailedWebhooks(const ::OpenAPI::OptionalParam<qint32> &start, const ::OpenAPI::OptionalParam<qint32> &count, const ::OpenAPI::OptionalParam<QString> &ids) {
     QString fullPath = QString(_serverConfigs["accountFailedWebhooks"][_serverIndices.value("accountFailedWebhooks")].URL()+"/account.failed_webhooks.json");
     
     if (_apiKeys.contains("ApiKeyAuth")) {
@@ -2731,21 +2746,6 @@ void OAIAccountApi::accountFailedWebhooks(const ::OpenAPI::OptionalParam<qint32>
     }
     
     QString queryPrefix, querySuffix, queryDelimiter, queryStyle;
-    if (count.hasValue())
-    {
-        queryStyle = "form";
-        if (queryStyle == "")
-            queryStyle = "form";
-        queryPrefix = getParamStylePrefix(queryStyle);
-        querySuffix = getParamStyleSuffix(queryStyle);
-        queryDelimiter = getParamStyleDelimiter(queryStyle, "count", true);
-        if (fullPath.indexOf("?") > 0)
-            fullPath.append(queryPrefix);
-        else
-            fullPath.append("?");
-
-        fullPath.append(QUrl::toPercentEncoding("count")).append(querySuffix).append(QUrl::toPercentEncoding(::OpenAPI::toStringValue(count.stringValue())));
-    }
     if (start.hasValue())
     {
         queryStyle = "form";
@@ -2760,6 +2760,21 @@ void OAIAccountApi::accountFailedWebhooks(const ::OpenAPI::OptionalParam<qint32>
             fullPath.append("?");
 
         fullPath.append(QUrl::toPercentEncoding("start")).append(querySuffix).append(QUrl::toPercentEncoding(::OpenAPI::toStringValue(start.stringValue())));
+    }
+    if (count.hasValue())
+    {
+        queryStyle = "form";
+        if (queryStyle == "")
+            queryStyle = "form";
+        queryPrefix = getParamStylePrefix(queryStyle);
+        querySuffix = getParamStyleSuffix(queryStyle);
+        queryDelimiter = getParamStyleDelimiter(queryStyle, "count", true);
+        if (fullPath.indexOf("?") > 0)
+            fullPath.append(queryPrefix);
+        else
+            fullPath.append("?");
+
+        fullPath.append(QUrl::toPercentEncoding("count")).append(querySuffix).append(QUrl::toPercentEncoding(::OpenAPI::toStringValue(count.stringValue())));
     }
     if (ids.hasValue())
     {

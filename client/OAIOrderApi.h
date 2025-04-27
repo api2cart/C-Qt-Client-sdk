@@ -87,22 +87,22 @@ public:
     QString getParamStyleDelimiter(const QString &style, const QString &name, bool isExplode);
 
     /**
+    * @param[in]  start qint32 [optional]
+    * @param[in]  count qint32 [optional]
+    * @param[in]  page_cursor QString [optional]
     * @param[in]  customer_id QString [optional]
     * @param[in]  customer_email QString [optional]
-    * @param[in]  created_to QString [optional]
-    * @param[in]  created_from QString [optional]
-    * @param[in]  modified_to QString [optional]
-    * @param[in]  modified_from QString [optional]
-    * @param[in]  skip_empty_email bool [optional]
     * @param[in]  store_id QString [optional]
-    * @param[in]  page_cursor QString [optional]
-    * @param[in]  count qint32 [optional]
-    * @param[in]  start qint32 [optional]
-    * @param[in]  params QString [optional]
+    * @param[in]  created_from QString [optional]
+    * @param[in]  created_to QString [optional]
+    * @param[in]  modified_from QString [optional]
+    * @param[in]  modified_to QString [optional]
+    * @param[in]  skip_empty_email bool [optional]
     * @param[in]  response_fields QString [optional]
+    * @param[in]  params QString [optional]
     * @param[in]  exclude QString [optional]
     */
-    virtual void orderAbandonedList(const ::OpenAPI::OptionalParam<QString> &customer_id = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &customer_email = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &created_to = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &created_from = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &modified_to = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &modified_from = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<bool> &skip_empty_email = ::OpenAPI::OptionalParam<bool>(), const ::OpenAPI::OptionalParam<QString> &store_id = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &page_cursor = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<qint32> &count = ::OpenAPI::OptionalParam<qint32>(), const ::OpenAPI::OptionalParam<qint32> &start = ::OpenAPI::OptionalParam<qint32>(), const ::OpenAPI::OptionalParam<QString> &params = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &response_fields = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &exclude = ::OpenAPI::OptionalParam<QString>());
+    virtual void orderAbandonedList(const ::OpenAPI::OptionalParam<qint32> &start = ::OpenAPI::OptionalParam<qint32>(), const ::OpenAPI::OptionalParam<qint32> &count = ::OpenAPI::OptionalParam<qint32>(), const ::OpenAPI::OptionalParam<QString> &page_cursor = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &customer_id = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &customer_email = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &store_id = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &created_from = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &created_to = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &modified_from = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &modified_to = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<bool> &skip_empty_email = ::OpenAPI::OptionalParam<bool>(), const ::OpenAPI::OptionalParam<QString> &response_fields = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &params = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &exclude = ::OpenAPI::OptionalParam<QString>());
 
     /**
     * @param[in]  oai_order_add OAIOrderAdd [required]
@@ -110,17 +110,13 @@ public:
     virtual void orderAdd(const OAIOrderAdd &oai_order_add);
 
     /**
+    * @param[in]  order_ids QString [optional]
+    * @param[in]  ids QString [optional]
     * @param[in]  customer_id QString [optional]
+    * @param[in]  store_id QString [optional]
     * @param[in]  customer_email QString [optional]
     * @param[in]  order_status QString [optional]
     * @param[in]  order_status_ids QList<QString> [optional]
-    * @param[in]  created_to QString [optional]
-    * @param[in]  created_from QString [optional]
-    * @param[in]  modified_to QString [optional]
-    * @param[in]  modified_from QString [optional]
-    * @param[in]  store_id QString [optional]
-    * @param[in]  ids QString [optional]
-    * @param[in]  order_ids QString [optional]
     * @param[in]  ebay_order_status QString [optional]
     * @param[in]  financial_status QString [optional]
     * @param[in]  financial_status_ids QList<QString> [optional]
@@ -130,27 +126,31 @@ public:
     * @param[in]  delivery_method QString [optional]
     * @param[in]  tags QString [optional]
     * @param[in]  ship_node_type QString [optional]
+    * @param[in]  created_from QString [optional]
+    * @param[in]  created_to QString [optional]
+    * @param[in]  modified_from QString [optional]
+    * @param[in]  modified_to QString [optional]
     */
-    virtual void orderCount(const ::OpenAPI::OptionalParam<QString> &customer_id = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &customer_email = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &order_status = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QList<QString>> &order_status_ids = ::OpenAPI::OptionalParam<QList<QString>>(), const ::OpenAPI::OptionalParam<QString> &created_to = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &created_from = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &modified_to = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &modified_from = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &store_id = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &ids = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &order_ids = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &ebay_order_status = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &financial_status = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QList<QString>> &financial_status_ids = ::OpenAPI::OptionalParam<QList<QString>>(), const ::OpenAPI::OptionalParam<QString> &fulfillment_channel = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &fulfillment_status = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &shipping_method = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &delivery_method = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &tags = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &ship_node_type = ::OpenAPI::OptionalParam<QString>());
+    virtual void orderCount(const ::OpenAPI::OptionalParam<QString> &order_ids = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &ids = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &customer_id = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &store_id = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &customer_email = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &order_status = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QList<QString>> &order_status_ids = ::OpenAPI::OptionalParam<QList<QString>>(), const ::OpenAPI::OptionalParam<QString> &ebay_order_status = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &financial_status = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QList<QString>> &financial_status_ids = ::OpenAPI::OptionalParam<QList<QString>>(), const ::OpenAPI::OptionalParam<QString> &fulfillment_channel = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &fulfillment_status = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &shipping_method = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &delivery_method = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &tags = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &ship_node_type = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &created_from = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &created_to = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &modified_from = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &modified_to = ::OpenAPI::OptionalParam<QString>());
 
 
     virtual void orderFinancialStatusList();
 
     /**
+    * @param[in]  start qint32 [optional]
+    * @param[in]  count qint32 [optional]
     * @param[in]  customer_id QString [optional]
     * @param[in]  customer_email QString [optional]
     * @param[in]  order_status QString [optional]
-    * @param[in]  start qint32 [optional]
-    * @param[in]  count qint32 [optional]
-    * @param[in]  params QString [optional]
-    * @param[in]  exclude QString [optional]
+    * @param[in]  financial_status QString [optional]
     * @param[in]  created_to QString [optional]
     * @param[in]  created_from QString [optional]
     * @param[in]  modified_to QString [optional]
     * @param[in]  modified_from QString [optional]
-    * @param[in]  financial_status QString [optional]
+    * @param[in]  params QString [optional]
+    * @param[in]  exclude QString [optional]
     */
-    Q_DECL_DEPRECATED virtual void orderFind(const ::OpenAPI::OptionalParam<QString> &customer_id = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &customer_email = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &order_status = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<qint32> &start = ::OpenAPI::OptionalParam<qint32>(), const ::OpenAPI::OptionalParam<qint32> &count = ::OpenAPI::OptionalParam<qint32>(), const ::OpenAPI::OptionalParam<QString> &params = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &exclude = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &created_to = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &created_from = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &modified_to = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &modified_from = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &financial_status = ::OpenAPI::OptionalParam<QString>());
+    Q_DECL_DEPRECATED virtual void orderFind(const ::OpenAPI::OptionalParam<qint32> &start = ::OpenAPI::OptionalParam<qint32>(), const ::OpenAPI::OptionalParam<qint32> &count = ::OpenAPI::OptionalParam<qint32>(), const ::OpenAPI::OptionalParam<QString> &customer_id = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &customer_email = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &order_status = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &financial_status = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &created_to = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &created_from = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &modified_to = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &modified_from = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &params = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &exclude = ::OpenAPI::OptionalParam<QString>());
 
     /**
     * @param[in]  action QString [optional]
@@ -158,58 +158,58 @@ public:
     virtual void orderFulfillmentStatusList(const ::OpenAPI::OptionalParam<QString> &action = ::OpenAPI::OptionalParam<QString>());
 
     /**
-    * @param[in]  order_id QString [optional]
     * @param[in]  id QString [optional]
+    * @param[in]  order_id QString [optional]
+    * @param[in]  store_id QString [optional]
     * @param[in]  params QString [optional]
     * @param[in]  response_fields QString [optional]
     * @param[in]  exclude QString [optional]
-    * @param[in]  store_id QString [optional]
     * @param[in]  enable_cache bool [optional]
     * @param[in]  use_latest_api_version bool [optional]
     */
-    virtual void orderInfo(const ::OpenAPI::OptionalParam<QString> &order_id = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &id = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &params = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &response_fields = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &exclude = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &store_id = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<bool> &enable_cache = ::OpenAPI::OptionalParam<bool>(), const ::OpenAPI::OptionalParam<bool> &use_latest_api_version = ::OpenAPI::OptionalParam<bool>());
+    virtual void orderInfo(const ::OpenAPI::OptionalParam<QString> &id = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &order_id = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &store_id = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &params = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &response_fields = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &exclude = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<bool> &enable_cache = ::OpenAPI::OptionalParam<bool>(), const ::OpenAPI::OptionalParam<bool> &use_latest_api_version = ::OpenAPI::OptionalParam<bool>());
 
     /**
-    * @param[in]  customer_id QString [optional]
-    * @param[in]  customer_email QString [optional]
-    * @param[in]  phone QString [optional]
-    * @param[in]  order_status QString [optional]
-    * @param[in]  order_status_ids QList<QString> [optional]
     * @param[in]  start qint32 [optional]
     * @param[in]  count qint32 [optional]
     * @param[in]  page_cursor QString [optional]
+    * @param[in]  ids QString [optional]
+    * @param[in]  order_ids QString [optional]
+    * @param[in]  since_id QString [optional]
+    * @param[in]  store_id QString [optional]
+    * @param[in]  customer_id QString [optional]
+    * @param[in]  customer_email QString [optional]
+    * @param[in]  basket_id QString [optional]
+    * @param[in]  currency_id QString [optional]
+    * @param[in]  phone QString [optional]
+    * @param[in]  order_status QString [optional]
+    * @param[in]  order_status_ids QList<QString> [optional]
+    * @param[in]  ebay_order_status QString [optional]
+    * @param[in]  financial_status QString [optional]
+    * @param[in]  financial_status_ids QList<QString> [optional]
+    * @param[in]  fulfillment_status QString [optional]
+    * @param[in]  return_status QString [optional]
+    * @param[in]  fulfillment_channel QString [optional]
+    * @param[in]  shipping_method QString [optional]
+    * @param[in]  skip_order_ids QString [optional]
+    * @param[in]  is_deleted bool [optional]
+    * @param[in]  shipping_country_iso3 QString [optional]
+    * @param[in]  delivery_method QString [optional]
+    * @param[in]  ship_node_type QString [optional]
+    * @param[in]  created_to QString [optional]
+    * @param[in]  created_from QString [optional]
+    * @param[in]  modified_to QString [optional]
+    * @param[in]  modified_from QString [optional]
+    * @param[in]  tags QString [optional]
     * @param[in]  sort_by QString [optional]
     * @param[in]  sort_direction QString [optional]
     * @param[in]  params QString [optional]
     * @param[in]  response_fields QString [optional]
     * @param[in]  exclude QString [optional]
-    * @param[in]  created_to QString [optional]
-    * @param[in]  created_from QString [optional]
-    * @param[in]  modified_to QString [optional]
-    * @param[in]  modified_from QString [optional]
-    * @param[in]  store_id QString [optional]
-    * @param[in]  ids QString [optional]
-    * @param[in]  order_ids QString [optional]
-    * @param[in]  ebay_order_status QString [optional]
-    * @param[in]  basket_id QString [optional]
-    * @param[in]  financial_status QString [optional]
-    * @param[in]  financial_status_ids QList<QString> [optional]
-    * @param[in]  fulfillment_status QString [optional]
-    * @param[in]  fulfillment_channel QString [optional]
-    * @param[in]  shipping_method QString [optional]
-    * @param[in]  skip_order_ids QString [optional]
-    * @param[in]  since_id QString [optional]
-    * @param[in]  is_deleted bool [optional]
-    * @param[in]  shipping_country_iso3 QString [optional]
     * @param[in]  enable_cache bool [optional]
-    * @param[in]  delivery_method QString [optional]
-    * @param[in]  tags QString [optional]
-    * @param[in]  ship_node_type QString [optional]
-    * @param[in]  currency_id QString [optional]
-    * @param[in]  return_status QString [optional]
     * @param[in]  use_latest_api_version bool [optional]
     */
-    virtual void orderList(const ::OpenAPI::OptionalParam<QString> &customer_id = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &customer_email = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &phone = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &order_status = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QList<QString>> &order_status_ids = ::OpenAPI::OptionalParam<QList<QString>>(), const ::OpenAPI::OptionalParam<qint32> &start = ::OpenAPI::OptionalParam<qint32>(), const ::OpenAPI::OptionalParam<qint32> &count = ::OpenAPI::OptionalParam<qint32>(), const ::OpenAPI::OptionalParam<QString> &page_cursor = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &sort_by = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &sort_direction = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &params = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &response_fields = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &exclude = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &created_to = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &created_from = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &modified_to = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &modified_from = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &store_id = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &ids = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &order_ids = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &ebay_order_status = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &basket_id = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &financial_status = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QList<QString>> &financial_status_ids = ::OpenAPI::OptionalParam<QList<QString>>(), const ::OpenAPI::OptionalParam<QString> &fulfillment_status = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &fulfillment_channel = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &shipping_method = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &skip_order_ids = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &since_id = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<bool> &is_deleted = ::OpenAPI::OptionalParam<bool>(), const ::OpenAPI::OptionalParam<QString> &shipping_country_iso3 = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<bool> &enable_cache = ::OpenAPI::OptionalParam<bool>(), const ::OpenAPI::OptionalParam<QString> &delivery_method = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &tags = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &ship_node_type = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &currency_id = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &return_status = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<bool> &use_latest_api_version = ::OpenAPI::OptionalParam<bool>());
+    virtual void orderList(const ::OpenAPI::OptionalParam<qint32> &start = ::OpenAPI::OptionalParam<qint32>(), const ::OpenAPI::OptionalParam<qint32> &count = ::OpenAPI::OptionalParam<qint32>(), const ::OpenAPI::OptionalParam<QString> &page_cursor = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &ids = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &order_ids = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &since_id = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &store_id = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &customer_id = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &customer_email = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &basket_id = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &currency_id = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &phone = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &order_status = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QList<QString>> &order_status_ids = ::OpenAPI::OptionalParam<QList<QString>>(), const ::OpenAPI::OptionalParam<QString> &ebay_order_status = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &financial_status = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QList<QString>> &financial_status_ids = ::OpenAPI::OptionalParam<QList<QString>>(), const ::OpenAPI::OptionalParam<QString> &fulfillment_status = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &return_status = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &fulfillment_channel = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &shipping_method = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &skip_order_ids = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<bool> &is_deleted = ::OpenAPI::OptionalParam<bool>(), const ::OpenAPI::OptionalParam<QString> &shipping_country_iso3 = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &delivery_method = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &ship_node_type = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &created_to = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &created_from = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &modified_to = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &modified_from = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &tags = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &sort_by = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &sort_direction = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &params = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &response_fields = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &exclude = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<bool> &enable_cache = ::OpenAPI::OptionalParam<bool>(), const ::OpenAPI::OptionalParam<bool> &use_latest_api_version = ::OpenAPI::OptionalParam<bool>());
 
     /**
     * @param[in]  oai_order_preestimate_shipping_list OAIOrderPreestimateShippingList [required]
@@ -259,28 +259,28 @@ public:
     * @param[in]  id QString [required]
     * @param[in]  order_id QString [required]
     * @param[in]  start qint32 [optional]
-    * @param[in]  params QString [optional]
-    * @param[in]  response_fields QString [optional]
-    * @param[in]  exclude QString [optional]
     * @param[in]  store_id QString [optional]
+    * @param[in]  response_fields QString [optional]
+    * @param[in]  params QString [optional]
+    * @param[in]  exclude QString [optional]
     */
-    virtual void orderShipmentInfo(const QString &id, const QString &order_id, const ::OpenAPI::OptionalParam<qint32> &start = ::OpenAPI::OptionalParam<qint32>(), const ::OpenAPI::OptionalParam<QString> &params = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &response_fields = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &exclude = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &store_id = ::OpenAPI::OptionalParam<QString>());
+    virtual void orderShipmentInfo(const QString &id, const QString &order_id, const ::OpenAPI::OptionalParam<qint32> &start = ::OpenAPI::OptionalParam<qint32>(), const ::OpenAPI::OptionalParam<QString> &store_id = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &response_fields = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &params = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &exclude = ::OpenAPI::OptionalParam<QString>());
 
     /**
     * @param[in]  order_id QString [required]
-    * @param[in]  page_cursor QString [optional]
     * @param[in]  start qint32 [optional]
     * @param[in]  count qint32 [optional]
-    * @param[in]  params QString [optional]
-    * @param[in]  response_fields QString [optional]
-    * @param[in]  exclude QString [optional]
+    * @param[in]  page_cursor QString [optional]
+    * @param[in]  store_id QString [optional]
     * @param[in]  created_from QString [optional]
     * @param[in]  created_to QString [optional]
     * @param[in]  modified_from QString [optional]
     * @param[in]  modified_to QString [optional]
-    * @param[in]  store_id QString [optional]
+    * @param[in]  response_fields QString [optional]
+    * @param[in]  params QString [optional]
+    * @param[in]  exclude QString [optional]
     */
-    virtual void orderShipmentList(const QString &order_id, const ::OpenAPI::OptionalParam<QString> &page_cursor = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<qint32> &start = ::OpenAPI::OptionalParam<qint32>(), const ::OpenAPI::OptionalParam<qint32> &count = ::OpenAPI::OptionalParam<qint32>(), const ::OpenAPI::OptionalParam<QString> &params = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &response_fields = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &exclude = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &created_from = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &created_to = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &modified_from = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &modified_to = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &store_id = ::OpenAPI::OptionalParam<QString>());
+    virtual void orderShipmentList(const QString &order_id, const ::OpenAPI::OptionalParam<qint32> &start = ::OpenAPI::OptionalParam<qint32>(), const ::OpenAPI::OptionalParam<qint32> &count = ::OpenAPI::OptionalParam<qint32>(), const ::OpenAPI::OptionalParam<QString> &page_cursor = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &store_id = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &created_from = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &created_to = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &modified_from = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &modified_to = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &response_fields = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &params = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &exclude = ::OpenAPI::OptionalParam<QString>());
 
     /**
     * @param[in]  oai_order_shipment_tracking_add OAIOrderShipmentTrackingAdd [required]
@@ -302,33 +302,33 @@ public:
     /**
     * @param[in]  order_ids QString [required]
     * @param[in]  count qint32 [optional]
+    * @param[in]  page_cursor QString [optional]
     * @param[in]  store_id QString [optional]
     * @param[in]  params QString [optional]
     * @param[in]  response_fields QString [optional]
     * @param[in]  exclude QString [optional]
-    * @param[in]  page_cursor QString [optional]
     */
-    virtual void orderTransactionList(const QString &order_ids, const ::OpenAPI::OptionalParam<qint32> &count = ::OpenAPI::OptionalParam<qint32>(), const ::OpenAPI::OptionalParam<QString> &store_id = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &params = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &response_fields = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &exclude = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &page_cursor = ::OpenAPI::OptionalParam<QString>());
+    virtual void orderTransactionList(const QString &order_ids, const ::OpenAPI::OptionalParam<qint32> &count = ::OpenAPI::OptionalParam<qint32>(), const ::OpenAPI::OptionalParam<QString> &page_cursor = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &store_id = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &params = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &response_fields = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &exclude = ::OpenAPI::OptionalParam<QString>());
 
     /**
     * @param[in]  order_id QString [required]
     * @param[in]  store_id QString [optional]
     * @param[in]  order_status QString [optional]
+    * @param[in]  financial_status QString [optional]
+    * @param[in]  fulfillment_status QString [optional]
     * @param[in]  cancellation_reason QString [optional]
+    * @param[in]  order_payment_method QString [optional]
     * @param[in]  comment QString [optional]
     * @param[in]  admin_comment QString [optional]
     * @param[in]  admin_private_comment QString [optional]
+    * @param[in]  invoice_admin_comment QString [optional]
     * @param[in]  date_modified QString [optional]
     * @param[in]  date_finished QString [optional]
-    * @param[in]  financial_status QString [optional]
-    * @param[in]  fulfillment_status QString [optional]
-    * @param[in]  order_payment_method QString [optional]
     * @param[in]  send_notifications bool [optional]
-    * @param[in]  origin QString [optional]
     * @param[in]  create_invoice bool [optional]
-    * @param[in]  invoice_admin_comment QString [optional]
+    * @param[in]  origin QString [optional]
     */
-    virtual void orderUpdate(const QString &order_id, const ::OpenAPI::OptionalParam<QString> &store_id = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &order_status = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &cancellation_reason = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &comment = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &admin_comment = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &admin_private_comment = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &date_modified = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &date_finished = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &financial_status = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &fulfillment_status = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &order_payment_method = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<bool> &send_notifications = ::OpenAPI::OptionalParam<bool>(), const ::OpenAPI::OptionalParam<QString> &origin = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<bool> &create_invoice = ::OpenAPI::OptionalParam<bool>(), const ::OpenAPI::OptionalParam<QString> &invoice_admin_comment = ::OpenAPI::OptionalParam<QString>());
+    virtual void orderUpdate(const QString &order_id, const ::OpenAPI::OptionalParam<QString> &store_id = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &order_status = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &financial_status = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &fulfillment_status = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &cancellation_reason = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &order_payment_method = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &comment = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &admin_comment = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &admin_private_comment = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &invoice_admin_comment = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &date_modified = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &date_finished = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<bool> &send_notifications = ::OpenAPI::OptionalParam<bool>(), const ::OpenAPI::OptionalParam<bool> &create_invoice = ::OpenAPI::OptionalParam<bool>(), const ::OpenAPI::OptionalParam<QString> &origin = ::OpenAPI::OptionalParam<QString>());
 
 
 private:

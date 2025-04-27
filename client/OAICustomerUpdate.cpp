@@ -73,14 +73,14 @@ void OAICustomerUpdate::initializeModel() {
     m_gender_isSet = false;
     m_gender_isValid = false;
 
-    m_store_id_isSet = false;
-    m_store_id_isValid = false;
-
     m_note_isSet = false;
     m_note_isValid = false;
 
     m_status_isSet = false;
     m_status_isValid = false;
+
+    m_store_id_isSet = false;
+    m_store_id_isValid = false;
 
     m_address_isSet = false;
     m_address_isValid = false;
@@ -134,14 +134,14 @@ void OAICustomerUpdate::fromJsonObject(QJsonObject json) {
     m_gender_isValid = ::OpenAPI::fromJsonValue(m_gender, json[QString("gender")]);
     m_gender_isSet = !json[QString("gender")].isNull() && m_gender_isValid;
 
-    m_store_id_isValid = ::OpenAPI::fromJsonValue(m_store_id, json[QString("store_id")]);
-    m_store_id_isSet = !json[QString("store_id")].isNull() && m_store_id_isValid;
-
     m_note_isValid = ::OpenAPI::fromJsonValue(m_note, json[QString("note")]);
     m_note_isSet = !json[QString("note")].isNull() && m_note_isValid;
 
     m_status_isValid = ::OpenAPI::fromJsonValue(m_status, json[QString("status")]);
     m_status_isSet = !json[QString("status")].isNull() && m_status_isValid;
+
+    m_store_id_isValid = ::OpenAPI::fromJsonValue(m_store_id, json[QString("store_id")]);
+    m_store_id_isSet = !json[QString("store_id")].isNull() && m_store_id_isValid;
 
     m_address_isValid = ::OpenAPI::fromJsonValue(m_address, json[QString("address")]);
     m_address_isSet = !json[QString("address")].isNull() && m_address_isValid;
@@ -195,14 +195,14 @@ QJsonObject OAICustomerUpdate::asJsonObject() const {
     if (m_gender_isSet) {
         obj.insert(QString("gender"), ::OpenAPI::toJsonValue(m_gender));
     }
-    if (m_store_id_isSet) {
-        obj.insert(QString("store_id"), ::OpenAPI::toJsonValue(m_store_id));
-    }
     if (m_note_isSet) {
         obj.insert(QString("note"), ::OpenAPI::toJsonValue(m_note));
     }
     if (m_status_isSet) {
         obj.insert(QString("status"), ::OpenAPI::toJsonValue(m_status));
+    }
+    if (m_store_id_isSet) {
+        obj.insert(QString("store_id"), ::OpenAPI::toJsonValue(m_store_id));
     }
     if (m_address.size() > 0) {
         obj.insert(QString("address"), ::OpenAPI::toJsonValue(m_address));
@@ -418,22 +418,6 @@ bool OAICustomerUpdate::is_gender_Valid() const{
     return m_gender_isValid;
 }
 
-QString OAICustomerUpdate::getStoreId() const {
-    return m_store_id;
-}
-void OAICustomerUpdate::setStoreId(const QString &store_id) {
-    m_store_id = store_id;
-    m_store_id_isSet = true;
-}
-
-bool OAICustomerUpdate::is_store_id_Set() const{
-    return m_store_id_isSet;
-}
-
-bool OAICustomerUpdate::is_store_id_Valid() const{
-    return m_store_id_isValid;
-}
-
 QString OAICustomerUpdate::getNote() const {
     return m_note;
 }
@@ -464,6 +448,22 @@ bool OAICustomerUpdate::is_status_Set() const{
 
 bool OAICustomerUpdate::is_status_Valid() const{
     return m_status_isValid;
+}
+
+QString OAICustomerUpdate::getStoreId() const {
+    return m_store_id;
+}
+void OAICustomerUpdate::setStoreId(const QString &store_id) {
+    m_store_id = store_id;
+    m_store_id_isSet = true;
+}
+
+bool OAICustomerUpdate::is_store_id_Set() const{
+    return m_store_id_isSet;
+}
+
+bool OAICustomerUpdate::is_store_id_Valid() const{
+    return m_store_id_isValid;
 }
 
 QList<OAICustomerUpdate_address_inner> OAICustomerUpdate::getAddress() const {
@@ -550,17 +550,17 @@ bool OAICustomerUpdate::isSet() const {
             break;
         }
 
-        if (m_store_id_isSet) {
-            isObjectUpdated = true;
-            break;
-        }
-
         if (m_note_isSet) {
             isObjectUpdated = true;
             break;
         }
 
         if (m_status_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_store_id_isSet) {
             isObjectUpdated = true;
             break;
         }

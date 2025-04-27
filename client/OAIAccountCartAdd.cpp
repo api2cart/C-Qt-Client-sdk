@@ -253,6 +253,9 @@ void OAIAccountCartAdd::initializeModel() {
     m_shopline_app_secret_isSet = false;
     m_shopline_app_secret_isValid = false;
 
+    m_shopline_shared_secret_isSet = false;
+    m_shopline_shared_secret_isValid = false;
+
     m_shopify_access_token_isSet = false;
     m_shopify_access_token_isValid = false;
 
@@ -707,6 +710,9 @@ void OAIAccountCartAdd::fromJsonObject(QJsonObject json) {
     m_shopline_app_secret_isValid = ::OpenAPI::fromJsonValue(m_shopline_app_secret, json[QString("shopline_app_secret")]);
     m_shopline_app_secret_isSet = !json[QString("shopline_app_secret")].isNull() && m_shopline_app_secret_isValid;
 
+    m_shopline_shared_secret_isValid = ::OpenAPI::fromJsonValue(m_shopline_shared_secret, json[QString("shopline_shared_secret")]);
+    m_shopline_shared_secret_isSet = !json[QString("shopline_shared_secret")].isNull() && m_shopline_shared_secret_isValid;
+
     m_shopify_access_token_isValid = ::OpenAPI::fromJsonValue(m_shopify_access_token, json[QString("shopify_access_token")]);
     m_shopify_access_token_isSet = !json[QString("shopify_access_token")].isNull() && m_shopify_access_token_isValid;
 
@@ -1160,6 +1166,9 @@ QJsonObject OAIAccountCartAdd::asJsonObject() const {
     }
     if (m_shopline_app_secret_isSet) {
         obj.insert(QString("shopline_app_secret"), ::OpenAPI::toJsonValue(m_shopline_app_secret));
+    }
+    if (m_shopline_shared_secret_isSet) {
+        obj.insert(QString("shopline_shared_secret"), ::OpenAPI::toJsonValue(m_shopline_shared_secret));
     }
     if (m_shopify_access_token_isSet) {
         obj.insert(QString("shopify_access_token"), ::OpenAPI::toJsonValue(m_shopify_access_token));
@@ -2555,6 +2564,22 @@ bool OAIAccountCartAdd::is_shopline_app_secret_Set() const{
 
 bool OAIAccountCartAdd::is_shopline_app_secret_Valid() const{
     return m_shopline_app_secret_isValid;
+}
+
+QString OAIAccountCartAdd::getShoplineSharedSecret() const {
+    return m_shopline_shared_secret;
+}
+void OAIAccountCartAdd::setShoplineSharedSecret(const QString &shopline_shared_secret) {
+    m_shopline_shared_secret = shopline_shared_secret;
+    m_shopline_shared_secret_isSet = true;
+}
+
+bool OAIAccountCartAdd::is_shopline_shared_secret_Set() const{
+    return m_shopline_shared_secret_isSet;
+}
+
+bool OAIAccountCartAdd::is_shopline_shared_secret_Valid() const{
+    return m_shopline_shared_secret_isValid;
 }
 
 QString OAIAccountCartAdd::getShopifyAccessToken() const {
@@ -4121,6 +4146,11 @@ bool OAIAccountCartAdd::isSet() const {
         }
 
         if (m_shopline_app_secret_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_shopline_shared_secret_isSet) {
             isObjectUpdated = true;
             break;
         }

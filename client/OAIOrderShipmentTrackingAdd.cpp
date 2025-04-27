@@ -34,9 +34,6 @@ OAIOrderShipmentTrackingAdd::~OAIOrderShipmentTrackingAdd() {}
 
 void OAIOrderShipmentTrackingAdd::initializeModel() {
 
-    m_store_id_isSet = false;
-    m_store_id_isValid = false;
-
     m_order_id_isSet = false;
     m_order_id_isValid = false;
 
@@ -45,6 +42,9 @@ void OAIOrderShipmentTrackingAdd::initializeModel() {
 
     m_carrier_id_isSet = false;
     m_carrier_id_isValid = false;
+
+    m_store_id_isSet = false;
+    m_store_id_isValid = false;
 
     m_tracking_provider_isSet = false;
     m_tracking_provider_isValid = false;
@@ -68,9 +68,6 @@ void OAIOrderShipmentTrackingAdd::fromJson(QString jsonString) {
 
 void OAIOrderShipmentTrackingAdd::fromJsonObject(QJsonObject json) {
 
-    m_store_id_isValid = ::OpenAPI::fromJsonValue(m_store_id, json[QString("store_id")]);
-    m_store_id_isSet = !json[QString("store_id")].isNull() && m_store_id_isValid;
-
     m_order_id_isValid = ::OpenAPI::fromJsonValue(m_order_id, json[QString("order_id")]);
     m_order_id_isSet = !json[QString("order_id")].isNull() && m_order_id_isValid;
 
@@ -79,6 +76,9 @@ void OAIOrderShipmentTrackingAdd::fromJsonObject(QJsonObject json) {
 
     m_carrier_id_isValid = ::OpenAPI::fromJsonValue(m_carrier_id, json[QString("carrier_id")]);
     m_carrier_id_isSet = !json[QString("carrier_id")].isNull() && m_carrier_id_isValid;
+
+    m_store_id_isValid = ::OpenAPI::fromJsonValue(m_store_id, json[QString("store_id")]);
+    m_store_id_isSet = !json[QString("store_id")].isNull() && m_store_id_isValid;
 
     m_tracking_provider_isValid = ::OpenAPI::fromJsonValue(m_tracking_provider, json[QString("tracking_provider")]);
     m_tracking_provider_isSet = !json[QString("tracking_provider")].isNull() && m_tracking_provider_isValid;
@@ -102,9 +102,6 @@ QString OAIOrderShipmentTrackingAdd::asJson() const {
 
 QJsonObject OAIOrderShipmentTrackingAdd::asJsonObject() const {
     QJsonObject obj;
-    if (m_store_id_isSet) {
-        obj.insert(QString("store_id"), ::OpenAPI::toJsonValue(m_store_id));
-    }
     if (m_order_id_isSet) {
         obj.insert(QString("order_id"), ::OpenAPI::toJsonValue(m_order_id));
     }
@@ -113,6 +110,9 @@ QJsonObject OAIOrderShipmentTrackingAdd::asJsonObject() const {
     }
     if (m_carrier_id_isSet) {
         obj.insert(QString("carrier_id"), ::OpenAPI::toJsonValue(m_carrier_id));
+    }
+    if (m_store_id_isSet) {
+        obj.insert(QString("store_id"), ::OpenAPI::toJsonValue(m_store_id));
     }
     if (m_tracking_provider_isSet) {
         obj.insert(QString("tracking_provider"), ::OpenAPI::toJsonValue(m_tracking_provider));
@@ -127,22 +127,6 @@ QJsonObject OAIOrderShipmentTrackingAdd::asJsonObject() const {
         obj.insert(QString("send_notifications"), ::OpenAPI::toJsonValue(m_send_notifications));
     }
     return obj;
-}
-
-QString OAIOrderShipmentTrackingAdd::getStoreId() const {
-    return m_store_id;
-}
-void OAIOrderShipmentTrackingAdd::setStoreId(const QString &store_id) {
-    m_store_id = store_id;
-    m_store_id_isSet = true;
-}
-
-bool OAIOrderShipmentTrackingAdd::is_store_id_Set() const{
-    return m_store_id_isSet;
-}
-
-bool OAIOrderShipmentTrackingAdd::is_store_id_Valid() const{
-    return m_store_id_isValid;
 }
 
 QString OAIOrderShipmentTrackingAdd::getOrderId() const {
@@ -191,6 +175,22 @@ bool OAIOrderShipmentTrackingAdd::is_carrier_id_Set() const{
 
 bool OAIOrderShipmentTrackingAdd::is_carrier_id_Valid() const{
     return m_carrier_id_isValid;
+}
+
+QString OAIOrderShipmentTrackingAdd::getStoreId() const {
+    return m_store_id;
+}
+void OAIOrderShipmentTrackingAdd::setStoreId(const QString &store_id) {
+    m_store_id = store_id;
+    m_store_id_isSet = true;
+}
+
+bool OAIOrderShipmentTrackingAdd::is_store_id_Set() const{
+    return m_store_id_isSet;
+}
+
+bool OAIOrderShipmentTrackingAdd::is_store_id_Valid() const{
+    return m_store_id_isValid;
 }
 
 QString OAIOrderShipmentTrackingAdd::getTrackingProvider() const {
@@ -260,11 +260,6 @@ bool OAIOrderShipmentTrackingAdd::is_send_notifications_Valid() const{
 bool OAIOrderShipmentTrackingAdd::isSet() const {
     bool isObjectUpdated = false;
     do {
-        if (m_store_id_isSet) {
-            isObjectUpdated = true;
-            break;
-        }
-
         if (m_order_id_isSet) {
             isObjectUpdated = true;
             break;
@@ -276,6 +271,11 @@ bool OAIOrderShipmentTrackingAdd::isSet() const {
         }
 
         if (m_carrier_id_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_store_id_isSet) {
             isObjectUpdated = true;
             break;
         }

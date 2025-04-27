@@ -40,25 +40,10 @@ public:
     void fromJsonObject(QJsonObject json) override;
     void fromJson(QString jsonString) override;
 
-    QString getStoreId() const;
-    void setStoreId(const QString &store_id);
-    bool is_store_id_Set() const;
-    bool is_store_id_Valid() const;
-
     QString getCode() const;
     void setCode(const QString &code);
     bool is_code_Set() const;
     bool is_code_Valid() const;
-
-    QString getName() const;
-    void setName(const QString &name);
-    bool is_name_Set() const;
-    bool is_name_Valid() const;
-
-    QList<QString> getCodes() const;
-    void setCodes(const QList<QString> &codes);
-    bool is_codes_Set() const;
-    bool is_codes_Valid() const;
 
     QString getActionType() const;
     void setActionType(const QString &action_type);
@@ -79,6 +64,16 @@ public:
     void setActionAmount(const double &action_amount);
     bool is_action_amount_Set() const;
     bool is_action_amount_Valid() const;
+
+    QList<QString> getCodes() const;
+    void setCodes(const QList<QString> &codes);
+    bool is_codes_Set() const;
+    bool is_codes_Valid() const;
+
+    QString getName() const;
+    void setName(const QString &name);
+    bool is_name_Set() const;
+    bool is_name_Valid() const;
 
     QString getDateStart() const;
     void setDateStart(const QString &date_start);
@@ -125,27 +120,20 @@ public:
     bool is_include_tax_Set() const;
     bool is_include_tax_Valid() const;
 
+    QString getStoreId() const;
+    void setStoreId(const QString &store_id);
+    bool is_store_id_Set() const;
+    bool is_store_id_Valid() const;
+
     virtual bool isSet() const override;
     virtual bool isValid() const override;
 
 private:
     void initializeModel();
 
-    QString m_store_id;
-    bool m_store_id_isSet;
-    bool m_store_id_isValid;
-
     QString m_code;
     bool m_code_isSet;
     bool m_code_isValid;
-
-    QString m_name;
-    bool m_name_isSet;
-    bool m_name_isValid;
-
-    QList<QString> m_codes;
-    bool m_codes_isSet;
-    bool m_codes_isValid;
 
     QString m_action_type;
     bool m_action_type_isSet;
@@ -162,6 +150,14 @@ private:
     double m_action_amount;
     bool m_action_amount_isSet;
     bool m_action_amount_isValid;
+
+    QList<QString> m_codes;
+    bool m_codes_isSet;
+    bool m_codes_isValid;
+
+    QString m_name;
+    bool m_name_isSet;
+    bool m_name_isValid;
 
     QString m_date_start;
     bool m_date_start_isSet;
@@ -198,6 +194,10 @@ private:
     bool m_include_tax;
     bool m_include_tax_isSet;
     bool m_include_tax_isValid;
+
+    QString m_store_id;
+    bool m_store_id_isSet;
+    bool m_store_id_isValid;
 };
 
 } // namespace OpenAPI

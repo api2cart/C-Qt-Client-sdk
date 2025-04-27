@@ -42,11 +42,6 @@ public:
     void fromJsonObject(QJsonObject json) override;
     void fromJson(QString jsonString) override;
 
-    QString getStoreId() const;
-    void setStoreId(const QString &store_id);
-    bool is_store_id_Set() const;
-    bool is_store_id_Valid() const;
-
     QString getId() const;
     void setId(const QString &id);
     bool is_id_Set() const;
@@ -56,6 +51,106 @@ public:
     void setProductId(const QString &product_id);
     bool is_product_id_Set() const;
     bool is_product_id_Valid() const;
+
+    QString getStoreId() const;
+    void setStoreId(const QString &store_id);
+    bool is_store_id_Set() const;
+    bool is_store_id_Valid() const;
+
+    QString getLangId() const;
+    void setLangId(const QString &lang_id);
+    bool is_lang_id_Set() const;
+    bool is_lang_id_Valid() const;
+
+    QList<OAIProductVariantUpdate_options_inner> getOptions() const;
+    void setOptions(const QList<OAIProductVariantUpdate_options_inner> &options);
+    bool is_options_Set() const;
+    bool is_options_Valid() const;
+
+    QString getName() const;
+    void setName(const QString &name);
+    bool is_name_Set() const;
+    bool is_name_Valid() const;
+
+    QString getDescription() const;
+    void setDescription(const QString &description);
+    bool is_description_Set() const;
+    bool is_description_Valid() const;
+
+    QString getShortDescription() const;
+    void setShortDescription(const QString &short_description);
+    bool is_short_description_Set() const;
+    bool is_short_description_Valid() const;
+
+    QString getModel() const;
+    void setModel(const QString &model);
+    bool is_model_Set() const;
+    bool is_model_Valid() const;
+
+    QString getSku() const;
+    void setSku(const QString &sku);
+    bool is_sku_Set() const;
+    bool is_sku_Valid() const;
+
+    QString getVisible() const;
+    void setVisible(const QString &visible);
+    bool is_visible_Set() const;
+    bool is_visible_Valid() const;
+
+    QString getStatus() const;
+    void setStatus(const QString &status);
+    bool is_status_Set() const;
+    bool is_status_Valid() const;
+
+    QString getBackorderStatus() const;
+    void setBackorderStatus(const QString &backorder_status);
+    bool is_backorder_status_Set() const;
+    bool is_backorder_status_Valid() const;
+
+    bool isAvailableForSale() const;
+    void setAvailableForSale(const bool &available_for_sale);
+    bool is_available_for_sale_Set() const;
+    bool is_available_for_sale_Valid() const;
+
+    bool isAvail() const;
+    void setAvail(const bool &avail);
+    bool is_avail_Set() const;
+    bool is_avail_Valid() const;
+
+    bool isIsDefault() const;
+    void setIsDefault(const bool &is_default);
+    bool is_is_default_Set() const;
+    bool is_is_default_Valid() const;
+
+    bool isIsFreeShipping() const;
+    void setIsFreeShipping(const bool &is_free_shipping);
+    bool is_is_free_shipping_Set() const;
+    bool is_is_free_shipping_Valid() const;
+
+    bool isTaxable() const;
+    void setTaxable(const bool &taxable);
+    bool is_taxable_Set() const;
+    bool is_taxable_Valid() const;
+
+    QString getTaxClassId() const;
+    void setTaxClassId(const QString &tax_class_id);
+    bool is_tax_class_id_Set() const;
+    bool is_tax_class_id_Valid() const;
+
+    bool isIsVirtual() const;
+    void setIsVirtual(const bool &is_virtual);
+    bool is_is_virtual_Set() const;
+    bool is_is_virtual_Valid() const;
+
+    bool isManageStock() const;
+    void setManageStock(const bool &manage_stock);
+    bool is_manage_stock_Set() const;
+    bool is_manage_stock_Valid() const;
+
+    bool isInStock() const;
+    void setInStock(const bool &in_stock);
+    bool is_in_stock_Set() const;
+    bool is_in_stock_Valid() const;
 
     QString getWarehouseId() const;
     void setWarehouseId(const QString &warehouse_id);
@@ -122,66 +217,6 @@ public:
     bool is_sprice_expire_Set() const;
     bool is_sprice_expire_Valid() const;
 
-    bool isManageStock() const;
-    void setManageStock(const bool &manage_stock);
-    bool is_manage_stock_Set() const;
-    bool is_manage_stock_Valid() const;
-
-    bool isInStock() const;
-    void setInStock(const bool &in_stock);
-    bool is_in_stock_Set() const;
-    bool is_in_stock_Valid() const;
-
-    QString getName() const;
-    void setName(const QString &name);
-    bool is_name_Set() const;
-    bool is_name_Valid() const;
-
-    QString getDescription() const;
-    void setDescription(const QString &description);
-    bool is_description_Set() const;
-    bool is_description_Valid() const;
-
-    QString getSku() const;
-    void setSku(const QString &sku);
-    bool is_sku_Set() const;
-    bool is_sku_Valid() const;
-
-    QString getMetaTitle() const;
-    void setMetaTitle(const QString &meta_title);
-    bool is_meta_title_Set() const;
-    bool is_meta_title_Valid() const;
-
-    QString getMetaDescription() const;
-    void setMetaDescription(const QString &meta_description);
-    bool is_meta_description_Set() const;
-    bool is_meta_description_Valid() const;
-
-    QString getMetaKeywords() const;
-    void setMetaKeywords(const QString &meta_keywords);
-    bool is_meta_keywords_Set() const;
-    bool is_meta_keywords_Valid() const;
-
-    QString getShortDescription() const;
-    void setShortDescription(const QString &short_description);
-    bool is_short_description_Set() const;
-    bool is_short_description_Valid() const;
-
-    QString getVisible() const;
-    void setVisible(const QString &visible);
-    bool is_visible_Set() const;
-    bool is_visible_Valid() const;
-
-    QString getStatus() const;
-    void setStatus(const QString &status);
-    bool is_status_Set() const;
-    bool is_status_Valid() const;
-
-    QString getBackorderStatus() const;
-    void setBackorderStatus(const QString &backorder_status);
-    bool is_backorder_status_Set() const;
-    bool is_backorder_status_Valid() const;
-
     double getWeight() const;
     void setWeight(const double &weight);
     bool is_weight_Set() const;
@@ -191,31 +226,6 @@ public:
     void setBarcode(const QString &barcode);
     bool is_barcode_Set() const;
     bool is_barcode_Valid() const;
-
-    bool isReindex() const;
-    void setReindex(const bool &reindex);
-    bool is_reindex_Set() const;
-    bool is_reindex_Valid() const;
-
-    bool isTaxable() const;
-    void setTaxable(const bool &taxable);
-    bool is_taxable_Set() const;
-    bool is_taxable_Valid() const;
-
-    QList<OAIProductVariantUpdate_options_inner> getOptions() const;
-    void setOptions(const QList<OAIProductVariantUpdate_options_inner> &options);
-    bool is_options_Set() const;
-    bool is_options_Valid() const;
-
-    QString getHarmonizedSystemCode() const;
-    void setHarmonizedSystemCode(const QString &harmonized_system_code);
-    bool is_harmonized_system_code_Set() const;
-    bool is_harmonized_system_code_Valid() const;
-
-    QString getCountryOfOrigin() const;
-    void setCountryOfOrigin(const QString &country_of_origin);
-    bool is_country_of_origin_Set() const;
-    bool is_country_of_origin_Valid() const;
 
     double getWidth() const;
     void setWidth(const double &width);
@@ -242,26 +252,6 @@ public:
     bool is_gtin_Set() const;
     bool is_gtin_Valid() const;
 
-    bool isClearCache() const;
-    void setClearCache(const bool &clear_cache);
-    bool is_clear_cache_Set() const;
-    bool is_clear_cache_Valid() const;
-
-    QString getLangId() const;
-    void setLangId(const QString &lang_id);
-    bool is_lang_id_Set() const;
-    bool is_lang_id_Valid() const;
-
-    QString getModel() const;
-    void setModel(const QString &model);
-    bool is_model_Set() const;
-    bool is_model_Valid() const;
-
-    bool isAvailableForSale() const;
-    void setAvailableForSale(const bool &available_for_sale);
-    bool is_available_for_sale_Set() const;
-    bool is_available_for_sale_Valid() const;
-
     QString getUpc() const;
     void setUpc(const QString &upc);
     bool is_upc_Set() const;
@@ -282,40 +272,46 @@ public:
     bool is_isbn_Set() const;
     bool is_isbn_Valid() const;
 
-    bool isAvail() const;
-    void setAvail(const bool &avail);
-    bool is_avail_Set() const;
-    bool is_avail_Valid() const;
+    QString getHarmonizedSystemCode() const;
+    void setHarmonizedSystemCode(const QString &harmonized_system_code);
+    bool is_harmonized_system_code_Set() const;
+    bool is_harmonized_system_code_Valid() const;
 
-    bool isIsDefault() const;
-    void setIsDefault(const bool &is_default);
-    bool is_is_default_Set() const;
-    bool is_is_default_Valid() const;
+    QString getCountryOfOrigin() const;
+    void setCountryOfOrigin(const QString &country_of_origin);
+    bool is_country_of_origin_Set() const;
+    bool is_country_of_origin_Valid() const;
 
-    bool isIsFreeShipping() const;
-    void setIsFreeShipping(const bool &is_free_shipping);
-    bool is_is_free_shipping_Set() const;
-    bool is_is_free_shipping_Valid() const;
+    QString getMetaTitle() const;
+    void setMetaTitle(const QString &meta_title);
+    bool is_meta_title_Set() const;
+    bool is_meta_title_Valid() const;
 
-    QString getTaxClassId() const;
-    void setTaxClassId(const QString &tax_class_id);
-    bool is_tax_class_id_Set() const;
-    bool is_tax_class_id_Valid() const;
+    QString getMetaDescription() const;
+    void setMetaDescription(const QString &meta_description);
+    bool is_meta_description_Set() const;
+    bool is_meta_description_Valid() const;
 
-    bool isIsVirtual() const;
-    void setIsVirtual(const bool &is_virtual);
-    bool is_is_virtual_Set() const;
-    bool is_is_virtual_Valid() const;
+    QString getMetaKeywords() const;
+    void setMetaKeywords(const QString &meta_keywords);
+    bool is_meta_keywords_Set() const;
+    bool is_meta_keywords_Valid() const;
+
+    bool isReindex() const;
+    void setReindex(const bool &reindex);
+    bool is_reindex_Set() const;
+    bool is_reindex_Valid() const;
+
+    bool isClearCache() const;
+    void setClearCache(const bool &clear_cache);
+    bool is_clear_cache_Set() const;
+    bool is_clear_cache_Valid() const;
 
     virtual bool isSet() const override;
     virtual bool isValid() const override;
 
 private:
     void initializeModel();
-
-    QString m_store_id;
-    bool m_store_id_isSet;
-    bool m_store_id_isValid;
 
     QString m_id;
     bool m_id_isSet;
@@ -324,6 +320,86 @@ private:
     QString m_product_id;
     bool m_product_id_isSet;
     bool m_product_id_isValid;
+
+    QString m_store_id;
+    bool m_store_id_isSet;
+    bool m_store_id_isValid;
+
+    QString m_lang_id;
+    bool m_lang_id_isSet;
+    bool m_lang_id_isValid;
+
+    QList<OAIProductVariantUpdate_options_inner> m_options;
+    bool m_options_isSet;
+    bool m_options_isValid;
+
+    QString m_name;
+    bool m_name_isSet;
+    bool m_name_isValid;
+
+    QString m_description;
+    bool m_description_isSet;
+    bool m_description_isValid;
+
+    QString m_short_description;
+    bool m_short_description_isSet;
+    bool m_short_description_isValid;
+
+    QString m_model;
+    bool m_model_isSet;
+    bool m_model_isValid;
+
+    QString m_sku;
+    bool m_sku_isSet;
+    bool m_sku_isValid;
+
+    QString m_visible;
+    bool m_visible_isSet;
+    bool m_visible_isValid;
+
+    QString m_status;
+    bool m_status_isSet;
+    bool m_status_isValid;
+
+    QString m_backorder_status;
+    bool m_backorder_status_isSet;
+    bool m_backorder_status_isValid;
+
+    bool m_available_for_sale;
+    bool m_available_for_sale_isSet;
+    bool m_available_for_sale_isValid;
+
+    bool m_avail;
+    bool m_avail_isSet;
+    bool m_avail_isValid;
+
+    bool m_is_default;
+    bool m_is_default_isSet;
+    bool m_is_default_isValid;
+
+    bool m_is_free_shipping;
+    bool m_is_free_shipping_isSet;
+    bool m_is_free_shipping_isValid;
+
+    bool m_taxable;
+    bool m_taxable_isSet;
+    bool m_taxable_isValid;
+
+    QString m_tax_class_id;
+    bool m_tax_class_id_isSet;
+    bool m_tax_class_id_isValid;
+
+    bool m_is_virtual;
+    bool m_is_virtual_isSet;
+    bool m_is_virtual_isValid;
+
+    bool m_manage_stock;
+    bool m_manage_stock_isSet;
+    bool m_manage_stock_isValid;
+
+    bool m_in_stock;
+    bool m_in_stock_isSet;
+    bool m_in_stock_isValid;
 
     QString m_warehouse_id;
     bool m_warehouse_id_isSet;
@@ -377,54 +453,6 @@ private:
     bool m_sprice_expire_isSet;
     bool m_sprice_expire_isValid;
 
-    bool m_manage_stock;
-    bool m_manage_stock_isSet;
-    bool m_manage_stock_isValid;
-
-    bool m_in_stock;
-    bool m_in_stock_isSet;
-    bool m_in_stock_isValid;
-
-    QString m_name;
-    bool m_name_isSet;
-    bool m_name_isValid;
-
-    QString m_description;
-    bool m_description_isSet;
-    bool m_description_isValid;
-
-    QString m_sku;
-    bool m_sku_isSet;
-    bool m_sku_isValid;
-
-    QString m_meta_title;
-    bool m_meta_title_isSet;
-    bool m_meta_title_isValid;
-
-    QString m_meta_description;
-    bool m_meta_description_isSet;
-    bool m_meta_description_isValid;
-
-    QString m_meta_keywords;
-    bool m_meta_keywords_isSet;
-    bool m_meta_keywords_isValid;
-
-    QString m_short_description;
-    bool m_short_description_isSet;
-    bool m_short_description_isValid;
-
-    QString m_visible;
-    bool m_visible_isSet;
-    bool m_visible_isValid;
-
-    QString m_status;
-    bool m_status_isSet;
-    bool m_status_isValid;
-
-    QString m_backorder_status;
-    bool m_backorder_status_isSet;
-    bool m_backorder_status_isValid;
-
     double m_weight;
     bool m_weight_isSet;
     bool m_weight_isValid;
@@ -432,26 +460,6 @@ private:
     QString m_barcode;
     bool m_barcode_isSet;
     bool m_barcode_isValid;
-
-    bool m_reindex;
-    bool m_reindex_isSet;
-    bool m_reindex_isValid;
-
-    bool m_taxable;
-    bool m_taxable_isSet;
-    bool m_taxable_isValid;
-
-    QList<OAIProductVariantUpdate_options_inner> m_options;
-    bool m_options_isSet;
-    bool m_options_isValid;
-
-    QString m_harmonized_system_code;
-    bool m_harmonized_system_code_isSet;
-    bool m_harmonized_system_code_isValid;
-
-    QString m_country_of_origin;
-    bool m_country_of_origin_isSet;
-    bool m_country_of_origin_isValid;
 
     double m_width;
     bool m_width_isSet;
@@ -473,22 +481,6 @@ private:
     bool m_gtin_isSet;
     bool m_gtin_isValid;
 
-    bool m_clear_cache;
-    bool m_clear_cache_isSet;
-    bool m_clear_cache_isValid;
-
-    QString m_lang_id;
-    bool m_lang_id_isSet;
-    bool m_lang_id_isValid;
-
-    QString m_model;
-    bool m_model_isSet;
-    bool m_model_isValid;
-
-    bool m_available_for_sale;
-    bool m_available_for_sale_isSet;
-    bool m_available_for_sale_isValid;
-
     QString m_upc;
     bool m_upc_isSet;
     bool m_upc_isValid;
@@ -505,25 +497,33 @@ private:
     bool m_isbn_isSet;
     bool m_isbn_isValid;
 
-    bool m_avail;
-    bool m_avail_isSet;
-    bool m_avail_isValid;
+    QString m_harmonized_system_code;
+    bool m_harmonized_system_code_isSet;
+    bool m_harmonized_system_code_isValid;
 
-    bool m_is_default;
-    bool m_is_default_isSet;
-    bool m_is_default_isValid;
+    QString m_country_of_origin;
+    bool m_country_of_origin_isSet;
+    bool m_country_of_origin_isValid;
 
-    bool m_is_free_shipping;
-    bool m_is_free_shipping_isSet;
-    bool m_is_free_shipping_isValid;
+    QString m_meta_title;
+    bool m_meta_title_isSet;
+    bool m_meta_title_isValid;
 
-    QString m_tax_class_id;
-    bool m_tax_class_id_isSet;
-    bool m_tax_class_id_isValid;
+    QString m_meta_description;
+    bool m_meta_description_isSet;
+    bool m_meta_description_isValid;
 
-    bool m_is_virtual;
-    bool m_is_virtual_isSet;
-    bool m_is_virtual_isValid;
+    QString m_meta_keywords;
+    bool m_meta_keywords_isSet;
+    bool m_meta_keywords_isValid;
+
+    bool m_reindex;
+    bool m_reindex_isSet;
+    bool m_reindex_isValid;
+
+    bool m_clear_cache;
+    bool m_clear_cache_isSet;
+    bool m_clear_cache_isValid;
 };
 
 } // namespace OpenAPI

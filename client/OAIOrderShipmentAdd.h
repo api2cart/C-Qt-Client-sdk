@@ -49,15 +49,15 @@ public:
     bool is_order_id_Set() const;
     bool is_order_id_Valid() const;
 
-    QString getStoreId() const;
-    void setStoreId(const QString &store_id);
-    bool is_store_id_Set() const;
-    bool is_store_id_Valid() const;
-
     QString getWarehouseId() const;
     void setWarehouseId(const QString &warehouse_id);
     bool is_warehouse_id_Set() const;
     bool is_warehouse_id_Valid() const;
+
+    QString getStoreId() const;
+    void setStoreId(const QString &store_id);
+    bool is_store_id_Set() const;
+    bool is_store_id_Valid() const;
 
     QString getShipmentProvider() const;
     void setShipmentProvider(const QString &shipment_provider);
@@ -74,25 +74,10 @@ public:
     bool is_items_Set() const;
     bool is_items_Valid() const;
 
-    bool isSendNotifications() const;
-    void setSendNotifications(const bool &send_notifications);
-    bool is_send_notifications_Set() const;
-    bool is_send_notifications_Valid() const;
-
     QList<OAIOrderShipmentAdd_tracking_numbers_inner> getTrackingNumbers() const;
     void setTrackingNumbers(const QList<OAIOrderShipmentAdd_tracking_numbers_inner> &tracking_numbers);
     bool is_tracking_numbers_Set() const;
     bool is_tracking_numbers_Valid() const;
-
-    bool isAdjustStock() const;
-    void setAdjustStock(const bool &adjust_stock);
-    bool is_adjust_stock_Set() const;
-    bool is_adjust_stock_Valid() const;
-
-    bool isEnableCache() const;
-    void setEnableCache(const bool &enable_cache);
-    bool is_enable_cache_Set() const;
-    bool is_enable_cache_Valid() const;
 
     QString getTrackingLink() const;
     void setTrackingLink(const QString &tracking_link);
@@ -103,6 +88,21 @@ public:
     void setIsShipped(const bool &is_shipped);
     bool is_is_shipped_Set() const;
     bool is_is_shipped_Valid() const;
+
+    bool isSendNotifications() const;
+    void setSendNotifications(const bool &send_notifications);
+    bool is_send_notifications_Set() const;
+    bool is_send_notifications_Valid() const;
+
+    bool isAdjustStock() const;
+    void setAdjustStock(const bool &adjust_stock);
+    bool is_adjust_stock_Set() const;
+    bool is_adjust_stock_Valid() const;
+
+    bool isEnableCache() const;
+    void setEnableCache(const bool &enable_cache);
+    bool is_enable_cache_Set() const;
+    bool is_enable_cache_Valid() const;
 
     bool isCheckProcessStatus() const;
     void setCheckProcessStatus(const bool &check_process_status);
@@ -124,13 +124,13 @@ private:
     bool m_order_id_isSet;
     bool m_order_id_isValid;
 
-    QString m_store_id;
-    bool m_store_id_isSet;
-    bool m_store_id_isValid;
-
     QString m_warehouse_id;
     bool m_warehouse_id_isSet;
     bool m_warehouse_id_isValid;
+
+    QString m_store_id;
+    bool m_store_id_isSet;
+    bool m_store_id_isValid;
 
     QString m_shipment_provider;
     bool m_shipment_provider_isSet;
@@ -144,21 +144,9 @@ private:
     bool m_items_isSet;
     bool m_items_isValid;
 
-    bool m_send_notifications;
-    bool m_send_notifications_isSet;
-    bool m_send_notifications_isValid;
-
     QList<OAIOrderShipmentAdd_tracking_numbers_inner> m_tracking_numbers;
     bool m_tracking_numbers_isSet;
     bool m_tracking_numbers_isValid;
-
-    bool m_adjust_stock;
-    bool m_adjust_stock_isSet;
-    bool m_adjust_stock_isValid;
-
-    bool m_enable_cache;
-    bool m_enable_cache_isSet;
-    bool m_enable_cache_isValid;
 
     QString m_tracking_link;
     bool m_tracking_link_isSet;
@@ -167,6 +155,18 @@ private:
     bool m_is_shipped;
     bool m_is_shipped_isSet;
     bool m_is_shipped_isValid;
+
+    bool m_send_notifications;
+    bool m_send_notifications_isSet;
+    bool m_send_notifications_isValid;
+
+    bool m_adjust_stock;
+    bool m_adjust_stock_isSet;
+    bool m_adjust_stock_isValid;
+
+    bool m_enable_cache;
+    bool m_enable_cache_isSet;
+    bool m_enable_cache_isValid;
 
     bool m_check_process_status;
     bool m_check_process_status_isSet;

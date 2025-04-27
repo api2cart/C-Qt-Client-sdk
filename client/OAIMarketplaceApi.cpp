@@ -207,7 +207,7 @@ QString OAIMarketplaceApi::getParamStyleDelimiter(const QString &style, const QS
     }
 }
 
-void OAIMarketplaceApi::marketplaceProductFind(const ::OpenAPI::OptionalParam<QString> &store_id, const ::OpenAPI::OptionalParam<qint32> &count, const ::OpenAPI::OptionalParam<QString> &page_cursor, const ::OpenAPI::OptionalParam<QString> &categories_ids, const ::OpenAPI::OptionalParam<QString> &keyword, const ::OpenAPI::OptionalParam<QString> &asin, const ::OpenAPI::OptionalParam<QString> &ean, const ::OpenAPI::OptionalParam<QString> &gtin, const ::OpenAPI::OptionalParam<QString> &upc, const ::OpenAPI::OptionalParam<QString> &mpn, const ::OpenAPI::OptionalParam<QString> &isbn, const ::OpenAPI::OptionalParam<QString> &params, const ::OpenAPI::OptionalParam<QString> &exclude, const ::OpenAPI::OptionalParam<QString> &response_fields) {
+void OAIMarketplaceApi::marketplaceProductFind(const ::OpenAPI::OptionalParam<qint32> &count, const ::OpenAPI::OptionalParam<QString> &page_cursor, const ::OpenAPI::OptionalParam<QString> &keyword, const ::OpenAPI::OptionalParam<QString> &categories_ids, const ::OpenAPI::OptionalParam<QString> &store_id, const ::OpenAPI::OptionalParam<QString> &asin, const ::OpenAPI::OptionalParam<QString> &ean, const ::OpenAPI::OptionalParam<QString> &gtin, const ::OpenAPI::OptionalParam<QString> &upc, const ::OpenAPI::OptionalParam<QString> &mpn, const ::OpenAPI::OptionalParam<QString> &isbn, const ::OpenAPI::OptionalParam<QString> &response_fields, const ::OpenAPI::OptionalParam<QString> &params, const ::OpenAPI::OptionalParam<QString> &exclude) {
     QString fullPath = QString(_serverConfigs["marketplaceProductFind"][_serverIndices.value("marketplaceProductFind")].URL()+"/marketplace.product.find.json");
     
     if (_apiKeys.contains("StoreKeyAuth")) {
@@ -219,21 +219,6 @@ void OAIMarketplaceApi::marketplaceProductFind(const ::OpenAPI::OptionalParam<QS
     }
     
     QString queryPrefix, querySuffix, queryDelimiter, queryStyle;
-    if (store_id.hasValue())
-    {
-        queryStyle = "form";
-        if (queryStyle == "")
-            queryStyle = "form";
-        queryPrefix = getParamStylePrefix(queryStyle);
-        querySuffix = getParamStyleSuffix(queryStyle);
-        queryDelimiter = getParamStyleDelimiter(queryStyle, "store_id", true);
-        if (fullPath.indexOf("?") > 0)
-            fullPath.append(queryPrefix);
-        else
-            fullPath.append("?");
-
-        fullPath.append(QUrl::toPercentEncoding("store_id")).append(querySuffix).append(QUrl::toPercentEncoding(::OpenAPI::toStringValue(store_id.stringValue())));
-    }
     if (count.hasValue())
     {
         queryStyle = "form";
@@ -264,6 +249,21 @@ void OAIMarketplaceApi::marketplaceProductFind(const ::OpenAPI::OptionalParam<QS
 
         fullPath.append(QUrl::toPercentEncoding("page_cursor")).append(querySuffix).append(QUrl::toPercentEncoding(::OpenAPI::toStringValue(page_cursor.stringValue())));
     }
+    if (keyword.hasValue())
+    {
+        queryStyle = "form";
+        if (queryStyle == "")
+            queryStyle = "form";
+        queryPrefix = getParamStylePrefix(queryStyle);
+        querySuffix = getParamStyleSuffix(queryStyle);
+        queryDelimiter = getParamStyleDelimiter(queryStyle, "keyword", true);
+        if (fullPath.indexOf("?") > 0)
+            fullPath.append(queryPrefix);
+        else
+            fullPath.append("?");
+
+        fullPath.append(QUrl::toPercentEncoding("keyword")).append(querySuffix).append(QUrl::toPercentEncoding(::OpenAPI::toStringValue(keyword.stringValue())));
+    }
     if (categories_ids.hasValue())
     {
         queryStyle = "form";
@@ -279,20 +279,20 @@ void OAIMarketplaceApi::marketplaceProductFind(const ::OpenAPI::OptionalParam<QS
 
         fullPath.append(QUrl::toPercentEncoding("categories_ids")).append(querySuffix).append(QUrl::toPercentEncoding(::OpenAPI::toStringValue(categories_ids.stringValue())));
     }
-    if (keyword.hasValue())
+    if (store_id.hasValue())
     {
         queryStyle = "form";
         if (queryStyle == "")
             queryStyle = "form";
         queryPrefix = getParamStylePrefix(queryStyle);
         querySuffix = getParamStyleSuffix(queryStyle);
-        queryDelimiter = getParamStyleDelimiter(queryStyle, "keyword", true);
+        queryDelimiter = getParamStyleDelimiter(queryStyle, "store_id", true);
         if (fullPath.indexOf("?") > 0)
             fullPath.append(queryPrefix);
         else
             fullPath.append("?");
 
-        fullPath.append(QUrl::toPercentEncoding("keyword")).append(querySuffix).append(QUrl::toPercentEncoding(::OpenAPI::toStringValue(keyword.stringValue())));
+        fullPath.append(QUrl::toPercentEncoding("store_id")).append(querySuffix).append(QUrl::toPercentEncoding(::OpenAPI::toStringValue(store_id.stringValue())));
     }
     if (asin.hasValue())
     {
@@ -384,6 +384,21 @@ void OAIMarketplaceApi::marketplaceProductFind(const ::OpenAPI::OptionalParam<QS
 
         fullPath.append(QUrl::toPercentEncoding("isbn")).append(querySuffix).append(QUrl::toPercentEncoding(::OpenAPI::toStringValue(isbn.stringValue())));
     }
+    if (response_fields.hasValue())
+    {
+        queryStyle = "form";
+        if (queryStyle == "")
+            queryStyle = "form";
+        queryPrefix = getParamStylePrefix(queryStyle);
+        querySuffix = getParamStyleSuffix(queryStyle);
+        queryDelimiter = getParamStyleDelimiter(queryStyle, "response_fields", true);
+        if (fullPath.indexOf("?") > 0)
+            fullPath.append(queryPrefix);
+        else
+            fullPath.append("?");
+
+        fullPath.append(QUrl::toPercentEncoding("response_fields")).append(querySuffix).append(QUrl::toPercentEncoding(::OpenAPI::toStringValue(response_fields.stringValue())));
+    }
     if (params.hasValue())
     {
         queryStyle = "form";
@@ -413,21 +428,6 @@ void OAIMarketplaceApi::marketplaceProductFind(const ::OpenAPI::OptionalParam<QS
             fullPath.append("?");
 
         fullPath.append(QUrl::toPercentEncoding("exclude")).append(querySuffix).append(QUrl::toPercentEncoding(::OpenAPI::toStringValue(exclude.stringValue())));
-    }
-    if (response_fields.hasValue())
-    {
-        queryStyle = "form";
-        if (queryStyle == "")
-            queryStyle = "form";
-        queryPrefix = getParamStylePrefix(queryStyle);
-        querySuffix = getParamStyleSuffix(queryStyle);
-        queryDelimiter = getParamStyleDelimiter(queryStyle, "response_fields", true);
-        if (fullPath.indexOf("?") > 0)
-            fullPath.append(queryPrefix);
-        else
-            fullPath.append("?");
-
-        fullPath.append(QUrl::toPercentEncoding("response_fields")).append(querySuffix).append(QUrl::toPercentEncoding(::OpenAPI::toStringValue(response_fields.stringValue())));
     }
     OAIHttpRequestWorker *worker = new OAIHttpRequestWorker(this, _manager);
     worker->setTimeOut(_timeOut);

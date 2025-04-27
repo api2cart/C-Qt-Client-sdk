@@ -58,6 +58,9 @@ void OAIOrderAdd_order_item_inner::initializeModel() {
     m_order_item_tax_isSet = false;
     m_order_item_tax_isValid = false;
 
+    m_order_item_price_includes_tax_isSet = false;
+    m_order_item_price_includes_tax_isValid = false;
+
     m_order_item_parent_isSet = false;
     m_order_item_parent_isValid = false;
 
@@ -69,9 +72,6 @@ void OAIOrderAdd_order_item_inner::initializeModel() {
 
     m_order_item_allow_ship_items_separately_isSet = false;
     m_order_item_allow_ship_items_separately_isValid = false;
-
-    m_order_item_price_includes_tax_isSet = false;
-    m_order_item_price_includes_tax_isValid = false;
 
     m_order_item_option_isSet = false;
     m_order_item_option_isValid = false;
@@ -113,6 +113,9 @@ void OAIOrderAdd_order_item_inner::fromJsonObject(QJsonObject json) {
     m_order_item_tax_isValid = ::OpenAPI::fromJsonValue(m_order_item_tax, json[QString("order_item_tax")]);
     m_order_item_tax_isSet = !json[QString("order_item_tax")].isNull() && m_order_item_tax_isValid;
 
+    m_order_item_price_includes_tax_isValid = ::OpenAPI::fromJsonValue(m_order_item_price_includes_tax, json[QString("order_item_price_includes_tax")]);
+    m_order_item_price_includes_tax_isSet = !json[QString("order_item_price_includes_tax")].isNull() && m_order_item_price_includes_tax_isValid;
+
     m_order_item_parent_isValid = ::OpenAPI::fromJsonValue(m_order_item_parent, json[QString("order_item_parent")]);
     m_order_item_parent_isSet = !json[QString("order_item_parent")].isNull() && m_order_item_parent_isValid;
 
@@ -124,9 +127,6 @@ void OAIOrderAdd_order_item_inner::fromJsonObject(QJsonObject json) {
 
     m_order_item_allow_ship_items_separately_isValid = ::OpenAPI::fromJsonValue(m_order_item_allow_ship_items_separately, json[QString("order_item_allow_ship_items_separately")]);
     m_order_item_allow_ship_items_separately_isSet = !json[QString("order_item_allow_ship_items_separately")].isNull() && m_order_item_allow_ship_items_separately_isValid;
-
-    m_order_item_price_includes_tax_isValid = ::OpenAPI::fromJsonValue(m_order_item_price_includes_tax, json[QString("order_item_price_includes_tax")]);
-    m_order_item_price_includes_tax_isSet = !json[QString("order_item_price_includes_tax")].isNull() && m_order_item_price_includes_tax_isValid;
 
     m_order_item_option_isValid = ::OpenAPI::fromJsonValue(m_order_item_option, json[QString("order_item_option")]);
     m_order_item_option_isSet = !json[QString("order_item_option")].isNull() && m_order_item_option_isValid;
@@ -168,6 +168,9 @@ QJsonObject OAIOrderAdd_order_item_inner::asJsonObject() const {
     if (m_order_item_tax_isSet) {
         obj.insert(QString("order_item_tax"), ::OpenAPI::toJsonValue(m_order_item_tax));
     }
+    if (m_order_item_price_includes_tax_isSet) {
+        obj.insert(QString("order_item_price_includes_tax"), ::OpenAPI::toJsonValue(m_order_item_price_includes_tax));
+    }
     if (m_order_item_parent_isSet) {
         obj.insert(QString("order_item_parent"), ::OpenAPI::toJsonValue(m_order_item_parent));
     }
@@ -179,9 +182,6 @@ QJsonObject OAIOrderAdd_order_item_inner::asJsonObject() const {
     }
     if (m_order_item_allow_ship_items_separately_isSet) {
         obj.insert(QString("order_item_allow_ship_items_separately"), ::OpenAPI::toJsonValue(m_order_item_allow_ship_items_separately));
-    }
-    if (m_order_item_price_includes_tax_isSet) {
-        obj.insert(QString("order_item_price_includes_tax"), ::OpenAPI::toJsonValue(m_order_item_price_includes_tax));
     }
     if (m_order_item_option.size() > 0) {
         obj.insert(QString("order_item_option"), ::OpenAPI::toJsonValue(m_order_item_option));
@@ -320,6 +320,22 @@ bool OAIOrderAdd_order_item_inner::is_order_item_tax_Valid() const{
     return m_order_item_tax_isValid;
 }
 
+bool OAIOrderAdd_order_item_inner::isOrderItemPriceIncludesTax() const {
+    return m_order_item_price_includes_tax;
+}
+void OAIOrderAdd_order_item_inner::setOrderItemPriceIncludesTax(const bool &order_item_price_includes_tax) {
+    m_order_item_price_includes_tax = order_item_price_includes_tax;
+    m_order_item_price_includes_tax_isSet = true;
+}
+
+bool OAIOrderAdd_order_item_inner::is_order_item_price_includes_tax_Set() const{
+    return m_order_item_price_includes_tax_isSet;
+}
+
+bool OAIOrderAdd_order_item_inner::is_order_item_price_includes_tax_Valid() const{
+    return m_order_item_price_includes_tax_isValid;
+}
+
 qint32 OAIOrderAdd_order_item_inner::getOrderItemParent() const {
     return m_order_item_parent;
 }
@@ -382,22 +398,6 @@ bool OAIOrderAdd_order_item_inner::is_order_item_allow_ship_items_separately_Set
 
 bool OAIOrderAdd_order_item_inner::is_order_item_allow_ship_items_separately_Valid() const{
     return m_order_item_allow_ship_items_separately_isValid;
-}
-
-bool OAIOrderAdd_order_item_inner::isOrderItemPriceIncludesTax() const {
-    return m_order_item_price_includes_tax;
-}
-void OAIOrderAdd_order_item_inner::setOrderItemPriceIncludesTax(const bool &order_item_price_includes_tax) {
-    m_order_item_price_includes_tax = order_item_price_includes_tax;
-    m_order_item_price_includes_tax_isSet = true;
-}
-
-bool OAIOrderAdd_order_item_inner::is_order_item_price_includes_tax_Set() const{
-    return m_order_item_price_includes_tax_isSet;
-}
-
-bool OAIOrderAdd_order_item_inner::is_order_item_price_includes_tax_Valid() const{
-    return m_order_item_price_includes_tax_isValid;
 }
 
 QList<OAIOrderAdd_order_item_inner_order_item_option_inner> OAIOrderAdd_order_item_inner::getOrderItemOption() const {
@@ -475,6 +475,11 @@ bool OAIOrderAdd_order_item_inner::isSet() const {
             break;
         }
 
+        if (m_order_item_price_includes_tax_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
         if (m_order_item_parent_isSet) {
             isObjectUpdated = true;
             break;
@@ -491,11 +496,6 @@ bool OAIOrderAdd_order_item_inner::isSet() const {
         }
 
         if (m_order_item_allow_ship_items_separately_isSet) {
-            isObjectUpdated = true;
-            break;
-        }
-
-        if (m_order_item_price_includes_tax_isSet) {
             isObjectUpdated = true;
             break;
         }

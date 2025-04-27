@@ -109,11 +109,6 @@ public:
     bool is_gender_Set() const;
     bool is_gender_Valid() const;
 
-    QString getStoreId() const;
-    void setStoreId(const QString &store_id);
-    bool is_store_id_Set() const;
-    bool is_store_id_Valid() const;
-
     QString getNote() const;
     void setNote(const QString &note);
     bool is_note_Set() const;
@@ -123,6 +118,11 @@ public:
     void setStatus(const QString &status);
     bool is_status_Set() const;
     bool is_status_Valid() const;
+
+    QString getStoreId() const;
+    void setStoreId(const QString &store_id);
+    bool is_store_id_Set() const;
+    bool is_store_id_Valid() const;
 
     QList<OAICustomerUpdate_address_inner> getAddress() const;
     void setAddress(const QList<OAICustomerUpdate_address_inner> &address);
@@ -187,10 +187,6 @@ private:
     bool m_gender_isSet;
     bool m_gender_isValid;
 
-    QString m_store_id;
-    bool m_store_id_isSet;
-    bool m_store_id_isValid;
-
     QString m_note;
     bool m_note_isSet;
     bool m_note_isValid;
@@ -198,6 +194,10 @@ private:
     QString m_status;
     bool m_status_isSet;
     bool m_status_isValid;
+
+    QString m_store_id;
+    bool m_store_id_isSet;
+    bool m_store_id_isValid;
 
     QList<OAICustomerUpdate_address_inner> m_address;
     bool m_address_isSet;

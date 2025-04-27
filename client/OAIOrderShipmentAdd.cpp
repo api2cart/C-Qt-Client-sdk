@@ -37,11 +37,11 @@ void OAIOrderShipmentAdd::initializeModel() {
     m_order_id_isSet = false;
     m_order_id_isValid = false;
 
-    m_store_id_isSet = false;
-    m_store_id_isValid = false;
-
     m_warehouse_id_isSet = false;
     m_warehouse_id_isValid = false;
+
+    m_store_id_isSet = false;
+    m_store_id_isValid = false;
 
     m_shipment_provider_isSet = false;
     m_shipment_provider_isValid = false;
@@ -52,23 +52,23 @@ void OAIOrderShipmentAdd::initializeModel() {
     m_items_isSet = false;
     m_items_isValid = false;
 
-    m_send_notifications_isSet = false;
-    m_send_notifications_isValid = false;
-
     m_tracking_numbers_isSet = false;
     m_tracking_numbers_isValid = false;
-
-    m_adjust_stock_isSet = false;
-    m_adjust_stock_isValid = false;
-
-    m_enable_cache_isSet = false;
-    m_enable_cache_isValid = false;
 
     m_tracking_link_isSet = false;
     m_tracking_link_isValid = false;
 
     m_is_shipped_isSet = false;
     m_is_shipped_isValid = false;
+
+    m_send_notifications_isSet = false;
+    m_send_notifications_isValid = false;
+
+    m_adjust_stock_isSet = false;
+    m_adjust_stock_isValid = false;
+
+    m_enable_cache_isSet = false;
+    m_enable_cache_isValid = false;
 
     m_check_process_status_isSet = false;
     m_check_process_status_isValid = false;
@@ -89,11 +89,11 @@ void OAIOrderShipmentAdd::fromJsonObject(QJsonObject json) {
     m_order_id_isValid = ::OpenAPI::fromJsonValue(m_order_id, json[QString("order_id")]);
     m_order_id_isSet = !json[QString("order_id")].isNull() && m_order_id_isValid;
 
-    m_store_id_isValid = ::OpenAPI::fromJsonValue(m_store_id, json[QString("store_id")]);
-    m_store_id_isSet = !json[QString("store_id")].isNull() && m_store_id_isValid;
-
     m_warehouse_id_isValid = ::OpenAPI::fromJsonValue(m_warehouse_id, json[QString("warehouse_id")]);
     m_warehouse_id_isSet = !json[QString("warehouse_id")].isNull() && m_warehouse_id_isValid;
+
+    m_store_id_isValid = ::OpenAPI::fromJsonValue(m_store_id, json[QString("store_id")]);
+    m_store_id_isSet = !json[QString("store_id")].isNull() && m_store_id_isValid;
 
     m_shipment_provider_isValid = ::OpenAPI::fromJsonValue(m_shipment_provider, json[QString("shipment_provider")]);
     m_shipment_provider_isSet = !json[QString("shipment_provider")].isNull() && m_shipment_provider_isValid;
@@ -104,23 +104,23 @@ void OAIOrderShipmentAdd::fromJsonObject(QJsonObject json) {
     m_items_isValid = ::OpenAPI::fromJsonValue(m_items, json[QString("items")]);
     m_items_isSet = !json[QString("items")].isNull() && m_items_isValid;
 
-    m_send_notifications_isValid = ::OpenAPI::fromJsonValue(m_send_notifications, json[QString("send_notifications")]);
-    m_send_notifications_isSet = !json[QString("send_notifications")].isNull() && m_send_notifications_isValid;
-
     m_tracking_numbers_isValid = ::OpenAPI::fromJsonValue(m_tracking_numbers, json[QString("tracking_numbers")]);
     m_tracking_numbers_isSet = !json[QString("tracking_numbers")].isNull() && m_tracking_numbers_isValid;
-
-    m_adjust_stock_isValid = ::OpenAPI::fromJsonValue(m_adjust_stock, json[QString("adjust_stock")]);
-    m_adjust_stock_isSet = !json[QString("adjust_stock")].isNull() && m_adjust_stock_isValid;
-
-    m_enable_cache_isValid = ::OpenAPI::fromJsonValue(m_enable_cache, json[QString("enable_cache")]);
-    m_enable_cache_isSet = !json[QString("enable_cache")].isNull() && m_enable_cache_isValid;
 
     m_tracking_link_isValid = ::OpenAPI::fromJsonValue(m_tracking_link, json[QString("tracking_link")]);
     m_tracking_link_isSet = !json[QString("tracking_link")].isNull() && m_tracking_link_isValid;
 
     m_is_shipped_isValid = ::OpenAPI::fromJsonValue(m_is_shipped, json[QString("is_shipped")]);
     m_is_shipped_isSet = !json[QString("is_shipped")].isNull() && m_is_shipped_isValid;
+
+    m_send_notifications_isValid = ::OpenAPI::fromJsonValue(m_send_notifications, json[QString("send_notifications")]);
+    m_send_notifications_isSet = !json[QString("send_notifications")].isNull() && m_send_notifications_isValid;
+
+    m_adjust_stock_isValid = ::OpenAPI::fromJsonValue(m_adjust_stock, json[QString("adjust_stock")]);
+    m_adjust_stock_isSet = !json[QString("adjust_stock")].isNull() && m_adjust_stock_isValid;
+
+    m_enable_cache_isValid = ::OpenAPI::fromJsonValue(m_enable_cache, json[QString("enable_cache")]);
+    m_enable_cache_isSet = !json[QString("enable_cache")].isNull() && m_enable_cache_isValid;
 
     m_check_process_status_isValid = ::OpenAPI::fromJsonValue(m_check_process_status, json[QString("check_process_status")]);
     m_check_process_status_isSet = !json[QString("check_process_status")].isNull() && m_check_process_status_isValid;
@@ -141,11 +141,11 @@ QJsonObject OAIOrderShipmentAdd::asJsonObject() const {
     if (m_order_id_isSet) {
         obj.insert(QString("order_id"), ::OpenAPI::toJsonValue(m_order_id));
     }
-    if (m_store_id_isSet) {
-        obj.insert(QString("store_id"), ::OpenAPI::toJsonValue(m_store_id));
-    }
     if (m_warehouse_id_isSet) {
         obj.insert(QString("warehouse_id"), ::OpenAPI::toJsonValue(m_warehouse_id));
+    }
+    if (m_store_id_isSet) {
+        obj.insert(QString("store_id"), ::OpenAPI::toJsonValue(m_store_id));
     }
     if (m_shipment_provider_isSet) {
         obj.insert(QString("shipment_provider"), ::OpenAPI::toJsonValue(m_shipment_provider));
@@ -156,23 +156,23 @@ QJsonObject OAIOrderShipmentAdd::asJsonObject() const {
     if (m_items.size() > 0) {
         obj.insert(QString("items"), ::OpenAPI::toJsonValue(m_items));
     }
-    if (m_send_notifications_isSet) {
-        obj.insert(QString("send_notifications"), ::OpenAPI::toJsonValue(m_send_notifications));
-    }
     if (m_tracking_numbers.size() > 0) {
         obj.insert(QString("tracking_numbers"), ::OpenAPI::toJsonValue(m_tracking_numbers));
-    }
-    if (m_adjust_stock_isSet) {
-        obj.insert(QString("adjust_stock"), ::OpenAPI::toJsonValue(m_adjust_stock));
-    }
-    if (m_enable_cache_isSet) {
-        obj.insert(QString("enable_cache"), ::OpenAPI::toJsonValue(m_enable_cache));
     }
     if (m_tracking_link_isSet) {
         obj.insert(QString("tracking_link"), ::OpenAPI::toJsonValue(m_tracking_link));
     }
     if (m_is_shipped_isSet) {
         obj.insert(QString("is_shipped"), ::OpenAPI::toJsonValue(m_is_shipped));
+    }
+    if (m_send_notifications_isSet) {
+        obj.insert(QString("send_notifications"), ::OpenAPI::toJsonValue(m_send_notifications));
+    }
+    if (m_adjust_stock_isSet) {
+        obj.insert(QString("adjust_stock"), ::OpenAPI::toJsonValue(m_adjust_stock));
+    }
+    if (m_enable_cache_isSet) {
+        obj.insert(QString("enable_cache"), ::OpenAPI::toJsonValue(m_enable_cache));
     }
     if (m_check_process_status_isSet) {
         obj.insert(QString("check_process_status"), ::OpenAPI::toJsonValue(m_check_process_status));
@@ -199,22 +199,6 @@ bool OAIOrderShipmentAdd::is_order_id_Valid() const{
     return m_order_id_isValid;
 }
 
-QString OAIOrderShipmentAdd::getStoreId() const {
-    return m_store_id;
-}
-void OAIOrderShipmentAdd::setStoreId(const QString &store_id) {
-    m_store_id = store_id;
-    m_store_id_isSet = true;
-}
-
-bool OAIOrderShipmentAdd::is_store_id_Set() const{
-    return m_store_id_isSet;
-}
-
-bool OAIOrderShipmentAdd::is_store_id_Valid() const{
-    return m_store_id_isValid;
-}
-
 QString OAIOrderShipmentAdd::getWarehouseId() const {
     return m_warehouse_id;
 }
@@ -229,6 +213,22 @@ bool OAIOrderShipmentAdd::is_warehouse_id_Set() const{
 
 bool OAIOrderShipmentAdd::is_warehouse_id_Valid() const{
     return m_warehouse_id_isValid;
+}
+
+QString OAIOrderShipmentAdd::getStoreId() const {
+    return m_store_id;
+}
+void OAIOrderShipmentAdd::setStoreId(const QString &store_id) {
+    m_store_id = store_id;
+    m_store_id_isSet = true;
+}
+
+bool OAIOrderShipmentAdd::is_store_id_Set() const{
+    return m_store_id_isSet;
+}
+
+bool OAIOrderShipmentAdd::is_store_id_Valid() const{
+    return m_store_id_isValid;
 }
 
 QString OAIOrderShipmentAdd::getShipmentProvider() const {
@@ -279,22 +279,6 @@ bool OAIOrderShipmentAdd::is_items_Valid() const{
     return m_items_isValid;
 }
 
-bool OAIOrderShipmentAdd::isSendNotifications() const {
-    return m_send_notifications;
-}
-void OAIOrderShipmentAdd::setSendNotifications(const bool &send_notifications) {
-    m_send_notifications = send_notifications;
-    m_send_notifications_isSet = true;
-}
-
-bool OAIOrderShipmentAdd::is_send_notifications_Set() const{
-    return m_send_notifications_isSet;
-}
-
-bool OAIOrderShipmentAdd::is_send_notifications_Valid() const{
-    return m_send_notifications_isValid;
-}
-
 QList<OAIOrderShipmentAdd_tracking_numbers_inner> OAIOrderShipmentAdd::getTrackingNumbers() const {
     return m_tracking_numbers;
 }
@@ -309,38 +293,6 @@ bool OAIOrderShipmentAdd::is_tracking_numbers_Set() const{
 
 bool OAIOrderShipmentAdd::is_tracking_numbers_Valid() const{
     return m_tracking_numbers_isValid;
-}
-
-bool OAIOrderShipmentAdd::isAdjustStock() const {
-    return m_adjust_stock;
-}
-void OAIOrderShipmentAdd::setAdjustStock(const bool &adjust_stock) {
-    m_adjust_stock = adjust_stock;
-    m_adjust_stock_isSet = true;
-}
-
-bool OAIOrderShipmentAdd::is_adjust_stock_Set() const{
-    return m_adjust_stock_isSet;
-}
-
-bool OAIOrderShipmentAdd::is_adjust_stock_Valid() const{
-    return m_adjust_stock_isValid;
-}
-
-bool OAIOrderShipmentAdd::isEnableCache() const {
-    return m_enable_cache;
-}
-void OAIOrderShipmentAdd::setEnableCache(const bool &enable_cache) {
-    m_enable_cache = enable_cache;
-    m_enable_cache_isSet = true;
-}
-
-bool OAIOrderShipmentAdd::is_enable_cache_Set() const{
-    return m_enable_cache_isSet;
-}
-
-bool OAIOrderShipmentAdd::is_enable_cache_Valid() const{
-    return m_enable_cache_isValid;
 }
 
 QString OAIOrderShipmentAdd::getTrackingLink() const {
@@ -373,6 +325,54 @@ bool OAIOrderShipmentAdd::is_is_shipped_Set() const{
 
 bool OAIOrderShipmentAdd::is_is_shipped_Valid() const{
     return m_is_shipped_isValid;
+}
+
+bool OAIOrderShipmentAdd::isSendNotifications() const {
+    return m_send_notifications;
+}
+void OAIOrderShipmentAdd::setSendNotifications(const bool &send_notifications) {
+    m_send_notifications = send_notifications;
+    m_send_notifications_isSet = true;
+}
+
+bool OAIOrderShipmentAdd::is_send_notifications_Set() const{
+    return m_send_notifications_isSet;
+}
+
+bool OAIOrderShipmentAdd::is_send_notifications_Valid() const{
+    return m_send_notifications_isValid;
+}
+
+bool OAIOrderShipmentAdd::isAdjustStock() const {
+    return m_adjust_stock;
+}
+void OAIOrderShipmentAdd::setAdjustStock(const bool &adjust_stock) {
+    m_adjust_stock = adjust_stock;
+    m_adjust_stock_isSet = true;
+}
+
+bool OAIOrderShipmentAdd::is_adjust_stock_Set() const{
+    return m_adjust_stock_isSet;
+}
+
+bool OAIOrderShipmentAdd::is_adjust_stock_Valid() const{
+    return m_adjust_stock_isValid;
+}
+
+bool OAIOrderShipmentAdd::isEnableCache() const {
+    return m_enable_cache;
+}
+void OAIOrderShipmentAdd::setEnableCache(const bool &enable_cache) {
+    m_enable_cache = enable_cache;
+    m_enable_cache_isSet = true;
+}
+
+bool OAIOrderShipmentAdd::is_enable_cache_Set() const{
+    return m_enable_cache_isSet;
+}
+
+bool OAIOrderShipmentAdd::is_enable_cache_Valid() const{
+    return m_enable_cache_isValid;
 }
 
 bool OAIOrderShipmentAdd::isCheckProcessStatus() const {
@@ -415,12 +415,12 @@ bool OAIOrderShipmentAdd::isSet() const {
             break;
         }
 
-        if (m_store_id_isSet) {
+        if (m_warehouse_id_isSet) {
             isObjectUpdated = true;
             break;
         }
 
-        if (m_warehouse_id_isSet) {
+        if (m_store_id_isSet) {
             isObjectUpdated = true;
             break;
         }
@@ -440,22 +440,7 @@ bool OAIOrderShipmentAdd::isSet() const {
             break;
         }
 
-        if (m_send_notifications_isSet) {
-            isObjectUpdated = true;
-            break;
-        }
-
         if (m_tracking_numbers.size() > 0) {
-            isObjectUpdated = true;
-            break;
-        }
-
-        if (m_adjust_stock_isSet) {
-            isObjectUpdated = true;
-            break;
-        }
-
-        if (m_enable_cache_isSet) {
             isObjectUpdated = true;
             break;
         }
@@ -466,6 +451,21 @@ bool OAIOrderShipmentAdd::isSet() const {
         }
 
         if (m_is_shipped_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_send_notifications_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_adjust_stock_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_enable_cache_isSet) {
             isObjectUpdated = true;
             break;
         }

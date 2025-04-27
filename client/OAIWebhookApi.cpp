@@ -697,7 +697,7 @@ void OAIWebhookApi::webhookEventsCallback(OAIHttpRequestWorker *worker) {
     }
 }
 
-void OAIWebhookApi::webhookList(const ::OpenAPI::OptionalParam<QString> &params, const ::OpenAPI::OptionalParam<qint32> &start, const ::OpenAPI::OptionalParam<qint32> &count, const ::OpenAPI::OptionalParam<QString> &entity, const ::OpenAPI::OptionalParam<QString> &action, const ::OpenAPI::OptionalParam<bool> &active, const ::OpenAPI::OptionalParam<QString> &ids) {
+void OAIWebhookApi::webhookList(const ::OpenAPI::OptionalParam<qint32> &start, const ::OpenAPI::OptionalParam<qint32> &count, const ::OpenAPI::OptionalParam<QString> &entity, const ::OpenAPI::OptionalParam<QString> &action, const ::OpenAPI::OptionalParam<bool> &active, const ::OpenAPI::OptionalParam<QString> &ids, const ::OpenAPI::OptionalParam<QString> &params) {
     QString fullPath = QString(_serverConfigs["webhookList"][_serverIndices.value("webhookList")].URL()+"/webhook.list.json");
     
     if (_apiKeys.contains("StoreKeyAuth")) {
@@ -709,21 +709,6 @@ void OAIWebhookApi::webhookList(const ::OpenAPI::OptionalParam<QString> &params,
     }
     
     QString queryPrefix, querySuffix, queryDelimiter, queryStyle;
-    if (params.hasValue())
-    {
-        queryStyle = "form";
-        if (queryStyle == "")
-            queryStyle = "form";
-        queryPrefix = getParamStylePrefix(queryStyle);
-        querySuffix = getParamStyleSuffix(queryStyle);
-        queryDelimiter = getParamStyleDelimiter(queryStyle, "params", true);
-        if (fullPath.indexOf("?") > 0)
-            fullPath.append(queryPrefix);
-        else
-            fullPath.append("?");
-
-        fullPath.append(QUrl::toPercentEncoding("params")).append(querySuffix).append(QUrl::toPercentEncoding(::OpenAPI::toStringValue(params.stringValue())));
-    }
     if (start.hasValue())
     {
         queryStyle = "form";
@@ -813,6 +798,21 @@ void OAIWebhookApi::webhookList(const ::OpenAPI::OptionalParam<QString> &params,
             fullPath.append("?");
 
         fullPath.append(QUrl::toPercentEncoding("ids")).append(querySuffix).append(QUrl::toPercentEncoding(::OpenAPI::toStringValue(ids.stringValue())));
+    }
+    if (params.hasValue())
+    {
+        queryStyle = "form";
+        if (queryStyle == "")
+            queryStyle = "form";
+        queryPrefix = getParamStylePrefix(queryStyle);
+        querySuffix = getParamStyleSuffix(queryStyle);
+        queryDelimiter = getParamStyleDelimiter(queryStyle, "params", true);
+        if (fullPath.indexOf("?") > 0)
+            fullPath.append(queryPrefix);
+        else
+            fullPath.append("?");
+
+        fullPath.append(QUrl::toPercentEncoding("params")).append(querySuffix).append(QUrl::toPercentEncoding(::OpenAPI::toStringValue(params.stringValue())));
     }
     OAIHttpRequestWorker *worker = new OAIHttpRequestWorker(this, _manager);
     worker->setTimeOut(_timeOut);

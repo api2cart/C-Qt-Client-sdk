@@ -58,22 +58,22 @@ public:
     QString getParamStyleDelimiter(const QString &style, const QString &name, bool isExplode);
 
     /**
-    * @param[in]  store_id QString [optional]
     * @param[in]  count qint32 [optional]
     * @param[in]  page_cursor QString [optional]
-    * @param[in]  categories_ids QString [optional]
     * @param[in]  keyword QString [optional]
+    * @param[in]  categories_ids QString [optional]
+    * @param[in]  store_id QString [optional]
     * @param[in]  asin QString [optional]
     * @param[in]  ean QString [optional]
     * @param[in]  gtin QString [optional]
     * @param[in]  upc QString [optional]
     * @param[in]  mpn QString [optional]
     * @param[in]  isbn QString [optional]
+    * @param[in]  response_fields QString [optional]
     * @param[in]  params QString [optional]
     * @param[in]  exclude QString [optional]
-    * @param[in]  response_fields QString [optional]
     */
-    virtual void marketplaceProductFind(const ::OpenAPI::OptionalParam<QString> &store_id = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<qint32> &count = ::OpenAPI::OptionalParam<qint32>(), const ::OpenAPI::OptionalParam<QString> &page_cursor = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &categories_ids = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &keyword = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &asin = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &ean = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &gtin = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &upc = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &mpn = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &isbn = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &params = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &exclude = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &response_fields = ::OpenAPI::OptionalParam<QString>());
+    virtual void marketplaceProductFind(const ::OpenAPI::OptionalParam<qint32> &count = ::OpenAPI::OptionalParam<qint32>(), const ::OpenAPI::OptionalParam<QString> &page_cursor = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &keyword = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &categories_ids = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &store_id = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &asin = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &ean = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &gtin = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &upc = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &mpn = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &isbn = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &response_fields = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &params = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &exclude = ::OpenAPI::OptionalParam<QString>());
 
 
 private:

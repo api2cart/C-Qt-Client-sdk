@@ -34,17 +34,17 @@ OAIOrderPreestimateShippingList::~OAIOrderPreestimateShippingList() {}
 
 void OAIOrderPreestimateShippingList::initializeModel() {
 
-    m_store_id_isSet = false;
-    m_store_id_isValid = false;
-
     m_warehouse_id_isSet = false;
     m_warehouse_id_isValid = false;
+
+    m_customer_id_isSet = false;
+    m_customer_id_isValid = false;
 
     m_customer_email_isSet = false;
     m_customer_email_isValid = false;
 
-    m_customer_id_isSet = false;
-    m_customer_id_isValid = false;
+    m_store_id_isSet = false;
+    m_store_id_isValid = false;
 
     m_shipp_address_1_isSet = false;
     m_shipp_address_1_isValid = false;
@@ -80,17 +80,17 @@ void OAIOrderPreestimateShippingList::fromJson(QString jsonString) {
 
 void OAIOrderPreestimateShippingList::fromJsonObject(QJsonObject json) {
 
-    m_store_id_isValid = ::OpenAPI::fromJsonValue(m_store_id, json[QString("store_id")]);
-    m_store_id_isSet = !json[QString("store_id")].isNull() && m_store_id_isValid;
-
     m_warehouse_id_isValid = ::OpenAPI::fromJsonValue(m_warehouse_id, json[QString("warehouse_id")]);
     m_warehouse_id_isSet = !json[QString("warehouse_id")].isNull() && m_warehouse_id_isValid;
+
+    m_customer_id_isValid = ::OpenAPI::fromJsonValue(m_customer_id, json[QString("customer_id")]);
+    m_customer_id_isSet = !json[QString("customer_id")].isNull() && m_customer_id_isValid;
 
     m_customer_email_isValid = ::OpenAPI::fromJsonValue(m_customer_email, json[QString("customer_email")]);
     m_customer_email_isSet = !json[QString("customer_email")].isNull() && m_customer_email_isValid;
 
-    m_customer_id_isValid = ::OpenAPI::fromJsonValue(m_customer_id, json[QString("customer_id")]);
-    m_customer_id_isSet = !json[QString("customer_id")].isNull() && m_customer_id_isValid;
+    m_store_id_isValid = ::OpenAPI::fromJsonValue(m_store_id, json[QString("store_id")]);
+    m_store_id_isSet = !json[QString("store_id")].isNull() && m_store_id_isValid;
 
     m_shipp_address_1_isValid = ::OpenAPI::fromJsonValue(m_shipp_address_1, json[QString("shipp_address_1")]);
     m_shipp_address_1_isSet = !json[QString("shipp_address_1")].isNull() && m_shipp_address_1_isValid;
@@ -126,17 +126,17 @@ QString OAIOrderPreestimateShippingList::asJson() const {
 
 QJsonObject OAIOrderPreestimateShippingList::asJsonObject() const {
     QJsonObject obj;
-    if (m_store_id_isSet) {
-        obj.insert(QString("store_id"), ::OpenAPI::toJsonValue(m_store_id));
-    }
     if (m_warehouse_id_isSet) {
         obj.insert(QString("warehouse_id"), ::OpenAPI::toJsonValue(m_warehouse_id));
+    }
+    if (m_customer_id_isSet) {
+        obj.insert(QString("customer_id"), ::OpenAPI::toJsonValue(m_customer_id));
     }
     if (m_customer_email_isSet) {
         obj.insert(QString("customer_email"), ::OpenAPI::toJsonValue(m_customer_email));
     }
-    if (m_customer_id_isSet) {
-        obj.insert(QString("customer_id"), ::OpenAPI::toJsonValue(m_customer_id));
+    if (m_store_id_isSet) {
+        obj.insert(QString("store_id"), ::OpenAPI::toJsonValue(m_store_id));
     }
     if (m_shipp_address_1_isSet) {
         obj.insert(QString("shipp_address_1"), ::OpenAPI::toJsonValue(m_shipp_address_1));
@@ -165,22 +165,6 @@ QJsonObject OAIOrderPreestimateShippingList::asJsonObject() const {
     return obj;
 }
 
-QString OAIOrderPreestimateShippingList::getStoreId() const {
-    return m_store_id;
-}
-void OAIOrderPreestimateShippingList::setStoreId(const QString &store_id) {
-    m_store_id = store_id;
-    m_store_id_isSet = true;
-}
-
-bool OAIOrderPreestimateShippingList::is_store_id_Set() const{
-    return m_store_id_isSet;
-}
-
-bool OAIOrderPreestimateShippingList::is_store_id_Valid() const{
-    return m_store_id_isValid;
-}
-
 QString OAIOrderPreestimateShippingList::getWarehouseId() const {
     return m_warehouse_id;
 }
@@ -195,6 +179,22 @@ bool OAIOrderPreestimateShippingList::is_warehouse_id_Set() const{
 
 bool OAIOrderPreestimateShippingList::is_warehouse_id_Valid() const{
     return m_warehouse_id_isValid;
+}
+
+QString OAIOrderPreestimateShippingList::getCustomerId() const {
+    return m_customer_id;
+}
+void OAIOrderPreestimateShippingList::setCustomerId(const QString &customer_id) {
+    m_customer_id = customer_id;
+    m_customer_id_isSet = true;
+}
+
+bool OAIOrderPreestimateShippingList::is_customer_id_Set() const{
+    return m_customer_id_isSet;
+}
+
+bool OAIOrderPreestimateShippingList::is_customer_id_Valid() const{
+    return m_customer_id_isValid;
 }
 
 QString OAIOrderPreestimateShippingList::getCustomerEmail() const {
@@ -213,20 +213,20 @@ bool OAIOrderPreestimateShippingList::is_customer_email_Valid() const{
     return m_customer_email_isValid;
 }
 
-QString OAIOrderPreestimateShippingList::getCustomerId() const {
-    return m_customer_id;
+QString OAIOrderPreestimateShippingList::getStoreId() const {
+    return m_store_id;
 }
-void OAIOrderPreestimateShippingList::setCustomerId(const QString &customer_id) {
-    m_customer_id = customer_id;
-    m_customer_id_isSet = true;
-}
-
-bool OAIOrderPreestimateShippingList::is_customer_id_Set() const{
-    return m_customer_id_isSet;
+void OAIOrderPreestimateShippingList::setStoreId(const QString &store_id) {
+    m_store_id = store_id;
+    m_store_id_isSet = true;
 }
 
-bool OAIOrderPreestimateShippingList::is_customer_id_Valid() const{
-    return m_customer_id_isValid;
+bool OAIOrderPreestimateShippingList::is_store_id_Set() const{
+    return m_store_id_isSet;
+}
+
+bool OAIOrderPreestimateShippingList::is_store_id_Valid() const{
+    return m_store_id_isValid;
 }
 
 QString OAIOrderPreestimateShippingList::getShippAddress1() const {
@@ -360,12 +360,12 @@ bool OAIOrderPreestimateShippingList::is_order_item_Valid() const{
 bool OAIOrderPreestimateShippingList::isSet() const {
     bool isObjectUpdated = false;
     do {
-        if (m_store_id_isSet) {
+        if (m_warehouse_id_isSet) {
             isObjectUpdated = true;
             break;
         }
 
-        if (m_warehouse_id_isSet) {
+        if (m_customer_id_isSet) {
             isObjectUpdated = true;
             break;
         }
@@ -375,7 +375,7 @@ bool OAIOrderPreestimateShippingList::isSet() const {
             break;
         }
 
-        if (m_customer_id_isSet) {
+        if (m_store_id_isSet) {
             isObjectUpdated = true;
             break;
         }

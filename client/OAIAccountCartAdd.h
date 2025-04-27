@@ -407,6 +407,11 @@ public:
     bool is_shopline_app_secret_Set() const;
     bool is_shopline_app_secret_Valid() const;
 
+    QString getShoplineSharedSecret() const;
+    void setShoplineSharedSecret(const QString &shopline_shared_secret);
+    bool is_shopline_shared_secret_Set() const;
+    bool is_shopline_shared_secret_Valid() const;
+
     QString getShopifyAccessToken() const;
     void setShopifyAccessToken(const QString &shopify_access_token);
     bool is_shopify_access_token_Set() const;
@@ -1079,6 +1084,10 @@ private:
     QString m_shopline_app_secret;
     bool m_shopline_app_secret_isSet;
     bool m_shopline_app_secret_isValid;
+
+    QString m_shopline_shared_secret;
+    bool m_shopline_shared_secret_isSet;
+    bool m_shopline_shared_secret_isValid;
 
     QString m_shopify_access_token;
     bool m_shopify_access_token_isSet;

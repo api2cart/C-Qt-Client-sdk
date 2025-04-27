@@ -39,45 +39,20 @@ public:
     void fromJsonObject(QJsonObject json) override;
     void fromJson(QString jsonString) override;
 
-    QString getProductId() const;
-    void setProductId(const QString &product_id);
-    bool is_product_id_Set() const;
-    bool is_product_id_Valid() const;
+    QString getType() const;
+    void setType(const QString &type);
+    bool is_type_Set() const;
+    bool is_type_Valid() const;
 
     QString getImageName() const;
     void setImageName(const QString &image_name);
     bool is_image_name_Set() const;
     bool is_image_name_Valid() const;
 
-    QString getType() const;
-    void setType(const QString &type);
-    bool is_type_Set() const;
-    bool is_type_Valid() const;
-
-    QString getUrl() const;
-    void setUrl(const QString &url);
-    bool is_url_Set() const;
-    bool is_url_Valid() const;
-
-    QString getLabel() const;
-    void setLabel(const QString &label);
-    bool is_label_Set() const;
-    bool is_label_Valid() const;
-
-    QString getMime() const;
-    void setMime(const QString &mime);
-    bool is_mime_Set() const;
-    bool is_mime_Valid() const;
-
-    qint32 getPosition() const;
-    void setPosition(const qint32 &position);
-    bool is_position_Set() const;
-    bool is_position_Valid() const;
-
-    QString getContent() const;
-    void setContent(const QString &content);
-    bool is_content_Set() const;
-    bool is_content_Valid() const;
+    QString getProductId() const;
+    void setProductId(const QString &product_id);
+    bool is_product_id_Set() const;
+    bool is_product_id_Valid() const;
 
     QString getProductVariantId() const;
     void setProductVariantId(const QString &product_variant_id);
@@ -104,6 +79,31 @@ public:
     bool is_lang_id_Set() const;
     bool is_lang_id_Valid() const;
 
+    QString getUrl() const;
+    void setUrl(const QString &url);
+    bool is_url_Set() const;
+    bool is_url_Valid() const;
+
+    QString getContent() const;
+    void setContent(const QString &content);
+    bool is_content_Set() const;
+    bool is_content_Valid() const;
+
+    QString getLabel() const;
+    void setLabel(const QString &label);
+    bool is_label_Set() const;
+    bool is_label_Valid() const;
+
+    QString getMime() const;
+    void setMime(const QString &mime);
+    bool is_mime_Set() const;
+    bool is_mime_Valid() const;
+
+    qint32 getPosition() const;
+    void setPosition(const qint32 &position);
+    bool is_position_Set() const;
+    bool is_position_Valid() const;
+
     bool isUseLatestApiVersion() const;
     void setUseLatestApiVersion(const bool &use_latest_api_version);
     bool is_use_latest_api_version_Set() const;
@@ -115,37 +115,17 @@ public:
 private:
     void initializeModel();
 
-    QString m_product_id;
-    bool m_product_id_isSet;
-    bool m_product_id_isValid;
+    QString m_type;
+    bool m_type_isSet;
+    bool m_type_isValid;
 
     QString m_image_name;
     bool m_image_name_isSet;
     bool m_image_name_isValid;
 
-    QString m_type;
-    bool m_type_isSet;
-    bool m_type_isValid;
-
-    QString m_url;
-    bool m_url_isSet;
-    bool m_url_isValid;
-
-    QString m_label;
-    bool m_label_isSet;
-    bool m_label_isValid;
-
-    QString m_mime;
-    bool m_mime_isSet;
-    bool m_mime_isValid;
-
-    qint32 m_position;
-    bool m_position_isSet;
-    bool m_position_isValid;
-
-    QString m_content;
-    bool m_content_isSet;
-    bool m_content_isValid;
+    QString m_product_id;
+    bool m_product_id_isSet;
+    bool m_product_id_isValid;
 
     QString m_product_variant_id;
     bool m_product_variant_id_isSet;
@@ -166,6 +146,26 @@ private:
     QString m_lang_id;
     bool m_lang_id_isSet;
     bool m_lang_id_isValid;
+
+    QString m_url;
+    bool m_url_isSet;
+    bool m_url_isValid;
+
+    QString m_content;
+    bool m_content_isSet;
+    bool m_content_isValid;
+
+    QString m_label;
+    bool m_label_isSet;
+    bool m_label_isValid;
+
+    QString m_mime;
+    bool m_mime_isSet;
+    bool m_mime_isValid;
+
+    qint32 m_position;
+    bool m_position_isSet;
+    bool m_position_isValid;
 
     bool m_use_latest_api_version;
     bool m_use_latest_api_version_isSet;

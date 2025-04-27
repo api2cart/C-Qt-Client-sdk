@@ -39,11 +39,6 @@ public:
     void fromJsonObject(QJsonObject json) override;
     void fromJson(QString jsonString) override;
 
-    QString getStoreId() const;
-    void setStoreId(const QString &store_id);
-    bool is_store_id_Set() const;
-    bool is_store_id_Valid() const;
-
     QString getOrderId() const;
     void setOrderId(const QString &order_id);
     bool is_order_id_Set() const;
@@ -58,6 +53,11 @@ public:
     void setCarrierId(const QString &carrier_id);
     bool is_carrier_id_Set() const;
     bool is_carrier_id_Valid() const;
+
+    QString getStoreId() const;
+    void setStoreId(const QString &store_id);
+    bool is_store_id_Set() const;
+    bool is_store_id_Valid() const;
 
     QString getTrackingProvider() const;
     void setTrackingProvider(const QString &tracking_provider);
@@ -85,10 +85,6 @@ public:
 private:
     void initializeModel();
 
-    QString m_store_id;
-    bool m_store_id_isSet;
-    bool m_store_id_isValid;
-
     QString m_order_id;
     bool m_order_id_isSet;
     bool m_order_id_isValid;
@@ -100,6 +96,10 @@ private:
     QString m_carrier_id;
     bool m_carrier_id_isSet;
     bool m_carrier_id_isValid;
+
+    QString m_store_id;
+    bool m_store_id_isSet;
+    bool m_store_id_isValid;
 
     QString m_tracking_provider;
     bool m_tracking_provider_isSet;

@@ -74,6 +74,11 @@ public:
     bool is_group_ids_Set() const;
     bool is_group_ids_Valid() const;
 
+    QString getStatus() const;
+    void setStatus(const QString &status);
+    bool is_status_Set() const;
+    bool is_status_Valid() const;
+
     QString getCreatedTime() const;
     void setCreatedTime(const QString &created_time);
     bool is_created_time_Set() const;
@@ -99,11 +104,6 @@ public:
     bool is_birth_day_Set() const;
     bool is_birth_day_Valid() const;
 
-    QString getStatus() const;
-    void setStatus(const QString &status);
-    bool is_status_Set() const;
-    bool is_status_Valid() const;
-
     bool isNewsLetterSubscription() const;
     void setNewsLetterSubscription(const bool &news_letter_subscription);
     bool is_news_letter_subscription_Set() const;
@@ -123,11 +123,6 @@ public:
     void setWebsite(const QString &website);
     bool is_website_Set() const;
     bool is_website_Valid() const;
-
-    QString getStoreId() const;
-    void setStoreId(const QString &store_id);
-    bool is_store_id_Set() const;
-    bool is_store_id_Valid() const;
 
     QString getFax() const;
     void setFax(const QString &fax);
@@ -153,6 +148,11 @@ public:
     void setCountry(const QString &country);
     bool is_country_Set() const;
     bool is_country_Valid() const;
+
+    QString getStoreId() const;
+    void setStoreId(const QString &store_id);
+    bool is_store_id_Set() const;
+    bool is_store_id_Valid() const;
 
     QList<OAICustomerAdd_address_inner> getAddress() const;
     void setAddress(const QList<OAICustomerAdd_address_inner> &address);
@@ -189,6 +189,10 @@ private:
     bool m_group_ids_isSet;
     bool m_group_ids_isValid;
 
+    QString m_status;
+    bool m_status_isSet;
+    bool m_status_isValid;
+
     QString m_created_time;
     bool m_created_time_isSet;
     bool m_created_time_isValid;
@@ -209,10 +213,6 @@ private:
     bool m_birth_day_isSet;
     bool m_birth_day_isValid;
 
-    QString m_status;
-    bool m_status_isSet;
-    bool m_status_isValid;
-
     bool m_news_letter_subscription;
     bool m_news_letter_subscription_isSet;
     bool m_news_letter_subscription_isValid;
@@ -228,10 +228,6 @@ private:
     QString m_website;
     bool m_website_isSet;
     bool m_website_isValid;
-
-    QString m_store_id;
-    bool m_store_id_isSet;
-    bool m_store_id_isValid;
 
     QString m_fax;
     bool m_fax_isSet;
@@ -252,6 +248,10 @@ private:
     QString m_country;
     bool m_country_isSet;
     bool m_country_isValid;
+
+    QString m_store_id;
+    bool m_store_id_isSet;
+    bool m_store_id_isValid;
 
     QList<OAICustomerAdd_address_inner> m_address;
     bool m_address_isSet;

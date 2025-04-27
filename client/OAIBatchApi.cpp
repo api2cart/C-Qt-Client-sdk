@@ -209,7 +209,7 @@ QString OAIBatchApi::getParamStyleDelimiter(const QString &style, const QString 
     }
 }
 
-void OAIBatchApi::batchJobList(const ::OpenAPI::OptionalParam<qint32> &count, const ::OpenAPI::OptionalParam<QString> &page_cursor, const ::OpenAPI::OptionalParam<QString> &created_from, const ::OpenAPI::OptionalParam<QString> &created_to, const ::OpenAPI::OptionalParam<QString> &processed_from, const ::OpenAPI::OptionalParam<QString> &processed_to, const ::OpenAPI::OptionalParam<QString> &ids, const ::OpenAPI::OptionalParam<QString> &response_fields) {
+void OAIBatchApi::batchJobList(const ::OpenAPI::OptionalParam<qint32> &count, const ::OpenAPI::OptionalParam<QString> &page_cursor, const ::OpenAPI::OptionalParam<QString> &ids, const ::OpenAPI::OptionalParam<QString> &created_from, const ::OpenAPI::OptionalParam<QString> &created_to, const ::OpenAPI::OptionalParam<QString> &processed_from, const ::OpenAPI::OptionalParam<QString> &processed_to, const ::OpenAPI::OptionalParam<QString> &response_fields) {
     QString fullPath = QString(_serverConfigs["batchJobList"][_serverIndices.value("batchJobList")].URL()+"/batch.job.list.json");
     
     if (_apiKeys.contains("StoreKeyAuth")) {
@@ -250,6 +250,21 @@ void OAIBatchApi::batchJobList(const ::OpenAPI::OptionalParam<qint32> &count, co
             fullPath.append("?");
 
         fullPath.append(QUrl::toPercentEncoding("page_cursor")).append(querySuffix).append(QUrl::toPercentEncoding(::OpenAPI::toStringValue(page_cursor.stringValue())));
+    }
+    if (ids.hasValue())
+    {
+        queryStyle = "form";
+        if (queryStyle == "")
+            queryStyle = "form";
+        queryPrefix = getParamStylePrefix(queryStyle);
+        querySuffix = getParamStyleSuffix(queryStyle);
+        queryDelimiter = getParamStyleDelimiter(queryStyle, "ids", true);
+        if (fullPath.indexOf("?") > 0)
+            fullPath.append(queryPrefix);
+        else
+            fullPath.append("?");
+
+        fullPath.append(QUrl::toPercentEncoding("ids")).append(querySuffix).append(QUrl::toPercentEncoding(::OpenAPI::toStringValue(ids.stringValue())));
     }
     if (created_from.hasValue())
     {
@@ -310,21 +325,6 @@ void OAIBatchApi::batchJobList(const ::OpenAPI::OptionalParam<qint32> &count, co
             fullPath.append("?");
 
         fullPath.append(QUrl::toPercentEncoding("processed_to")).append(querySuffix).append(QUrl::toPercentEncoding(::OpenAPI::toStringValue(processed_to.stringValue())));
-    }
-    if (ids.hasValue())
-    {
-        queryStyle = "form";
-        if (queryStyle == "")
-            queryStyle = "form";
-        queryPrefix = getParamStylePrefix(queryStyle);
-        querySuffix = getParamStyleSuffix(queryStyle);
-        queryDelimiter = getParamStyleDelimiter(queryStyle, "ids", true);
-        if (fullPath.indexOf("?") > 0)
-            fullPath.append(queryPrefix);
-        else
-            fullPath.append("?");
-
-        fullPath.append(QUrl::toPercentEncoding("ids")).append(querySuffix).append(QUrl::toPercentEncoding(::OpenAPI::toStringValue(ids.stringValue())));
     }
     if (response_fields.hasValue())
     {
