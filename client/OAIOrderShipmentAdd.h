@@ -109,6 +109,11 @@ public:
     bool is_check_process_status_Set() const;
     bool is_check_process_status_Valid() const;
 
+    QString getTrackingProvider() const;
+    void setTrackingProvider(const QString &tracking_provider);
+    bool is_tracking_provider_Set() const;
+    bool is_tracking_provider_Valid() const;
+
     bool isUseLatestApiVersion() const;
     void setUseLatestApiVersion(const bool &use_latest_api_version);
     bool is_use_latest_api_version_Set() const;
@@ -171,6 +176,10 @@ private:
     bool m_check_process_status;
     bool m_check_process_status_isSet;
     bool m_check_process_status_isValid;
+
+    QString m_tracking_provider;
+    bool m_tracking_provider_isSet;
+    bool m_tracking_provider_isValid;
 
     bool m_use_latest_api_version;
     bool m_use_latest_api_version_isSet;

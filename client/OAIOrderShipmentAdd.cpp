@@ -73,6 +73,9 @@ void OAIOrderShipmentAdd::initializeModel() {
     m_check_process_status_isSet = false;
     m_check_process_status_isValid = false;
 
+    m_tracking_provider_isSet = false;
+    m_tracking_provider_isValid = false;
+
     m_use_latest_api_version_isSet = false;
     m_use_latest_api_version_isValid = false;
 }
@@ -125,6 +128,9 @@ void OAIOrderShipmentAdd::fromJsonObject(QJsonObject json) {
     m_check_process_status_isValid = ::OpenAPI::fromJsonValue(m_check_process_status, json[QString("check_process_status")]);
     m_check_process_status_isSet = !json[QString("check_process_status")].isNull() && m_check_process_status_isValid;
 
+    m_tracking_provider_isValid = ::OpenAPI::fromJsonValue(m_tracking_provider, json[QString("tracking_provider")]);
+    m_tracking_provider_isSet = !json[QString("tracking_provider")].isNull() && m_tracking_provider_isValid;
+
     m_use_latest_api_version_isValid = ::OpenAPI::fromJsonValue(m_use_latest_api_version, json[QString("use_latest_api_version")]);
     m_use_latest_api_version_isSet = !json[QString("use_latest_api_version")].isNull() && m_use_latest_api_version_isValid;
 }
@@ -176,6 +182,9 @@ QJsonObject OAIOrderShipmentAdd::asJsonObject() const {
     }
     if (m_check_process_status_isSet) {
         obj.insert(QString("check_process_status"), ::OpenAPI::toJsonValue(m_check_process_status));
+    }
+    if (m_tracking_provider_isSet) {
+        obj.insert(QString("tracking_provider"), ::OpenAPI::toJsonValue(m_tracking_provider));
     }
     if (m_use_latest_api_version_isSet) {
         obj.insert(QString("use_latest_api_version"), ::OpenAPI::toJsonValue(m_use_latest_api_version));
@@ -391,6 +400,22 @@ bool OAIOrderShipmentAdd::is_check_process_status_Valid() const{
     return m_check_process_status_isValid;
 }
 
+QString OAIOrderShipmentAdd::getTrackingProvider() const {
+    return m_tracking_provider;
+}
+void OAIOrderShipmentAdd::setTrackingProvider(const QString &tracking_provider) {
+    m_tracking_provider = tracking_provider;
+    m_tracking_provider_isSet = true;
+}
+
+bool OAIOrderShipmentAdd::is_tracking_provider_Set() const{
+    return m_tracking_provider_isSet;
+}
+
+bool OAIOrderShipmentAdd::is_tracking_provider_Valid() const{
+    return m_tracking_provider_isValid;
+}
+
 bool OAIOrderShipmentAdd::isUseLatestApiVersion() const {
     return m_use_latest_api_version;
 }
@@ -471,6 +496,11 @@ bool OAIOrderShipmentAdd::isSet() const {
         }
 
         if (m_check_process_status_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_tracking_provider_isSet) {
             isObjectUpdated = true;
             break;
         }

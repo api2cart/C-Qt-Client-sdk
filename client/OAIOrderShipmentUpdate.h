@@ -21,6 +21,7 @@
 
 #include <QJsonObject>
 
+#include "OAIOrderShipmentAdd_items_inner.h"
 #include "OAIOrderShipmentAdd_tracking_numbers_inner.h"
 #include <QList>
 #include <QString>
@@ -30,6 +31,7 @@
 
 namespace OpenAPI {
 class OAIOrderShipmentAdd_tracking_numbers_inner;
+class OAIOrderShipmentAdd_items_inner;
 
 class OAIOrderShipmentUpdate : public OAIObject {
 public:
@@ -87,6 +89,21 @@ public:
     bool is_replace_Set() const;
     bool is_replace_Valid() const;
 
+    bool isSendNotifications() const;
+    void setSendNotifications(const bool &send_notifications);
+    bool is_send_notifications_Set() const;
+    bool is_send_notifications_Valid() const;
+
+    QString getTrackingProvider() const;
+    void setTrackingProvider(const QString &tracking_provider);
+    bool is_tracking_provider_Set() const;
+    bool is_tracking_provider_Valid() const;
+
+    QList<OAIOrderShipmentAdd_items_inner> getItems() const;
+    void setItems(const QList<OAIOrderShipmentAdd_items_inner> &items);
+    bool is_items_Set() const;
+    bool is_items_Valid() const;
+
     virtual bool isSet() const override;
     virtual bool isValid() const override;
 
@@ -128,6 +145,18 @@ private:
     bool m_replace;
     bool m_replace_isSet;
     bool m_replace_isValid;
+
+    bool m_send_notifications;
+    bool m_send_notifications_isSet;
+    bool m_send_notifications_isValid;
+
+    QString m_tracking_provider;
+    bool m_tracking_provider_isSet;
+    bool m_tracking_provider_isValid;
+
+    QList<OAIOrderShipmentAdd_items_inner> m_items;
+    bool m_items_isSet;
+    bool m_items_isValid;
 };
 
 } // namespace OpenAPI

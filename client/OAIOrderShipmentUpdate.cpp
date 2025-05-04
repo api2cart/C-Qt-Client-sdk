@@ -60,6 +60,15 @@ void OAIOrderShipmentUpdate::initializeModel() {
 
     m_replace_isSet = false;
     m_replace_isValid = false;
+
+    m_send_notifications_isSet = false;
+    m_send_notifications_isValid = false;
+
+    m_tracking_provider_isSet = false;
+    m_tracking_provider_isValid = false;
+
+    m_items_isSet = false;
+    m_items_isValid = false;
 }
 
 void OAIOrderShipmentUpdate::fromJson(QString jsonString) {
@@ -97,6 +106,15 @@ void OAIOrderShipmentUpdate::fromJsonObject(QJsonObject json) {
 
     m_replace_isValid = ::OpenAPI::fromJsonValue(m_replace, json[QString("replace")]);
     m_replace_isSet = !json[QString("replace")].isNull() && m_replace_isValid;
+
+    m_send_notifications_isValid = ::OpenAPI::fromJsonValue(m_send_notifications, json[QString("send_notifications")]);
+    m_send_notifications_isSet = !json[QString("send_notifications")].isNull() && m_send_notifications_isValid;
+
+    m_tracking_provider_isValid = ::OpenAPI::fromJsonValue(m_tracking_provider, json[QString("tracking_provider")]);
+    m_tracking_provider_isSet = !json[QString("tracking_provider")].isNull() && m_tracking_provider_isValid;
+
+    m_items_isValid = ::OpenAPI::fromJsonValue(m_items, json[QString("items")]);
+    m_items_isSet = !json[QString("items")].isNull() && m_items_isValid;
 }
 
 QString OAIOrderShipmentUpdate::asJson() const {
@@ -134,6 +152,15 @@ QJsonObject OAIOrderShipmentUpdate::asJsonObject() const {
     }
     if (m_replace_isSet) {
         obj.insert(QString("replace"), ::OpenAPI::toJsonValue(m_replace));
+    }
+    if (m_send_notifications_isSet) {
+        obj.insert(QString("send_notifications"), ::OpenAPI::toJsonValue(m_send_notifications));
+    }
+    if (m_tracking_provider_isSet) {
+        obj.insert(QString("tracking_provider"), ::OpenAPI::toJsonValue(m_tracking_provider));
+    }
+    if (m_items.size() > 0) {
+        obj.insert(QString("items"), ::OpenAPI::toJsonValue(m_items));
     }
     return obj;
 }
@@ -282,6 +309,54 @@ bool OAIOrderShipmentUpdate::is_replace_Valid() const{
     return m_replace_isValid;
 }
 
+bool OAIOrderShipmentUpdate::isSendNotifications() const {
+    return m_send_notifications;
+}
+void OAIOrderShipmentUpdate::setSendNotifications(const bool &send_notifications) {
+    m_send_notifications = send_notifications;
+    m_send_notifications_isSet = true;
+}
+
+bool OAIOrderShipmentUpdate::is_send_notifications_Set() const{
+    return m_send_notifications_isSet;
+}
+
+bool OAIOrderShipmentUpdate::is_send_notifications_Valid() const{
+    return m_send_notifications_isValid;
+}
+
+QString OAIOrderShipmentUpdate::getTrackingProvider() const {
+    return m_tracking_provider;
+}
+void OAIOrderShipmentUpdate::setTrackingProvider(const QString &tracking_provider) {
+    m_tracking_provider = tracking_provider;
+    m_tracking_provider_isSet = true;
+}
+
+bool OAIOrderShipmentUpdate::is_tracking_provider_Set() const{
+    return m_tracking_provider_isSet;
+}
+
+bool OAIOrderShipmentUpdate::is_tracking_provider_Valid() const{
+    return m_tracking_provider_isValid;
+}
+
+QList<OAIOrderShipmentAdd_items_inner> OAIOrderShipmentUpdate::getItems() const {
+    return m_items;
+}
+void OAIOrderShipmentUpdate::setItems(const QList<OAIOrderShipmentAdd_items_inner> &items) {
+    m_items = items;
+    m_items_isSet = true;
+}
+
+bool OAIOrderShipmentUpdate::is_items_Set() const{
+    return m_items_isSet;
+}
+
+bool OAIOrderShipmentUpdate::is_items_Valid() const{
+    return m_items_isValid;
+}
+
 bool OAIOrderShipmentUpdate::isSet() const {
     bool isObjectUpdated = false;
     do {
@@ -326,6 +401,21 @@ bool OAIOrderShipmentUpdate::isSet() const {
         }
 
         if (m_replace_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_send_notifications_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_tracking_provider_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_items.size() > 0) {
             isObjectUpdated = true;
             break;
         }

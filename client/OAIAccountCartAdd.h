@@ -212,6 +212,16 @@ public:
     bool is_bol_retailer_id_Set() const;
     bool is_bol_retailer_id_Valid() const;
 
+    QString getBigcartelUserName() const;
+    void setBigcartelUserName(const QString &bigcartel_user_name);
+    bool is_bigcartel_user_name_Set() const;
+    bool is_bigcartel_user_name_Valid() const;
+
+    QString getBigcartelPassword() const;
+    void setBigcartelPassword(const QString &bigcartel_password);
+    bool is_bigcartel_password_Set() const;
+    bool is_bigcartel_password_Valid() const;
+
     QString getDemandwareClientId() const;
     void setDemandwareClientId(const QString &demandware_client_id);
     bool is_demandware_client_id_Set() const;
@@ -928,6 +938,14 @@ private:
     qint32 m_bol_retailer_id;
     bool m_bol_retailer_id_isSet;
     bool m_bol_retailer_id_isValid;
+
+    QString m_bigcartel_user_name;
+    bool m_bigcartel_user_name_isSet;
+    bool m_bigcartel_user_name_isValid;
+
+    QString m_bigcartel_password;
+    bool m_bigcartel_password_isSet;
+    bool m_bigcartel_password_isValid;
 
     QString m_demandware_client_id;
     bool m_demandware_client_id_isSet;

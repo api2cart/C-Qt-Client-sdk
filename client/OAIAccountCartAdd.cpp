@@ -136,6 +136,12 @@ void OAIAccountCartAdd::initializeModel() {
     m_bol_retailer_id_isSet = false;
     m_bol_retailer_id_isValid = false;
 
+    m_bigcartel_user_name_isSet = false;
+    m_bigcartel_user_name_isValid = false;
+
+    m_bigcartel_password_isSet = false;
+    m_bigcartel_password_isValid = false;
+
     m_demandware_client_id_isSet = false;
     m_demandware_client_id_isValid = false;
 
@@ -593,6 +599,12 @@ void OAIAccountCartAdd::fromJsonObject(QJsonObject json) {
     m_bol_retailer_id_isValid = ::OpenAPI::fromJsonValue(m_bol_retailer_id, json[QString("bol_retailer_id")]);
     m_bol_retailer_id_isSet = !json[QString("bol_retailer_id")].isNull() && m_bol_retailer_id_isValid;
 
+    m_bigcartel_user_name_isValid = ::OpenAPI::fromJsonValue(m_bigcartel_user_name, json[QString("bigcartel_user_name")]);
+    m_bigcartel_user_name_isSet = !json[QString("bigcartel_user_name")].isNull() && m_bigcartel_user_name_isValid;
+
+    m_bigcartel_password_isValid = ::OpenAPI::fromJsonValue(m_bigcartel_password, json[QString("bigcartel_password")]);
+    m_bigcartel_password_isSet = !json[QString("bigcartel_password")].isNull() && m_bigcartel_password_isValid;
+
     m_demandware_client_id_isValid = ::OpenAPI::fromJsonValue(m_demandware_client_id, json[QString("demandware_client_id")]);
     m_demandware_client_id_isSet = !json[QString("demandware_client_id")].isNull() && m_demandware_client_id_isValid;
 
@@ -1049,6 +1061,12 @@ QJsonObject OAIAccountCartAdd::asJsonObject() const {
     }
     if (m_bol_retailer_id_isSet) {
         obj.insert(QString("bol_retailer_id"), ::OpenAPI::toJsonValue(m_bol_retailer_id));
+    }
+    if (m_bigcartel_user_name_isSet) {
+        obj.insert(QString("bigcartel_user_name"), ::OpenAPI::toJsonValue(m_bigcartel_user_name));
+    }
+    if (m_bigcartel_password_isSet) {
+        obj.insert(QString("bigcartel_password"), ::OpenAPI::toJsonValue(m_bigcartel_password));
     }
     if (m_demandware_client_id_isSet) {
         obj.insert(QString("demandware_client_id"), ::OpenAPI::toJsonValue(m_demandware_client_id));
@@ -1940,6 +1958,38 @@ bool OAIAccountCartAdd::is_bol_retailer_id_Set() const{
 
 bool OAIAccountCartAdd::is_bol_retailer_id_Valid() const{
     return m_bol_retailer_id_isValid;
+}
+
+QString OAIAccountCartAdd::getBigcartelUserName() const {
+    return m_bigcartel_user_name;
+}
+void OAIAccountCartAdd::setBigcartelUserName(const QString &bigcartel_user_name) {
+    m_bigcartel_user_name = bigcartel_user_name;
+    m_bigcartel_user_name_isSet = true;
+}
+
+bool OAIAccountCartAdd::is_bigcartel_user_name_Set() const{
+    return m_bigcartel_user_name_isSet;
+}
+
+bool OAIAccountCartAdd::is_bigcartel_user_name_Valid() const{
+    return m_bigcartel_user_name_isValid;
+}
+
+QString OAIAccountCartAdd::getBigcartelPassword() const {
+    return m_bigcartel_password;
+}
+void OAIAccountCartAdd::setBigcartelPassword(const QString &bigcartel_password) {
+    m_bigcartel_password = bigcartel_password;
+    m_bigcartel_password_isSet = true;
+}
+
+bool OAIAccountCartAdd::is_bigcartel_password_Set() const{
+    return m_bigcartel_password_isSet;
+}
+
+bool OAIAccountCartAdd::is_bigcartel_password_Valid() const{
+    return m_bigcartel_password_isValid;
 }
 
 QString OAIAccountCartAdd::getDemandwareClientId() const {
@@ -3955,6 +4005,16 @@ bool OAIAccountCartAdd::isSet() const {
             break;
         }
 
+        if (m_bigcartel_user_name_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_bigcartel_password_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
         if (m_demandware_client_id_isSet) {
             isObjectUpdated = true;
             break;
@@ -4535,7 +4595,7 @@ bool OAIAccountCartAdd::isSet() const {
 
 bool OAIAccountCartAdd::isValid() const {
     // only required properties are required for the object to be considered valid
-    return m_cart_id_isValid && m_wix_app_id_isValid && m_wix_app_secret_key_isValid && true;
+    return m_cart_id_isValid && m_bigcartel_user_name_isValid && m_bigcartel_password_isValid && m_wix_app_id_isValid && m_wix_app_secret_key_isValid && true;
 }
 
 } // namespace OpenAPI
