@@ -369,6 +369,15 @@ void OAIProductAdd::initializeModel() {
 
     m_ordered_count_isSet = false;
     m_ordered_count_isValid = false;
+
+    m_shop_section_id_isSet = false;
+    m_shop_section_id_isValid = false;
+
+    m_return_policy_id_isSet = false;
+    m_return_policy_id_isValid = false;
+
+    m_personalization_details_isSet = false;
+    m_personalization_details_isValid = false;
 }
 
 void OAIProductAdd::fromJson(QString jsonString) {
@@ -715,6 +724,15 @@ void OAIProductAdd::fromJsonObject(QJsonObject json) {
 
     m_ordered_count_isValid = ::OpenAPI::fromJsonValue(m_ordered_count, json[QString("ordered_count")]);
     m_ordered_count_isSet = !json[QString("ordered_count")].isNull() && m_ordered_count_isValid;
+
+    m_shop_section_id_isValid = ::OpenAPI::fromJsonValue(m_shop_section_id, json[QString("shop_section_id")]);
+    m_shop_section_id_isSet = !json[QString("shop_section_id")].isNull() && m_shop_section_id_isValid;
+
+    m_return_policy_id_isValid = ::OpenAPI::fromJsonValue(m_return_policy_id, json[QString("return_policy_id")]);
+    m_return_policy_id_isSet = !json[QString("return_policy_id")].isNull() && m_return_policy_id_isValid;
+
+    m_personalization_details_isValid = ::OpenAPI::fromJsonValue(m_personalization_details, json[QString("personalization_details")]);
+    m_personalization_details_isSet = !json[QString("personalization_details")].isNull() && m_personalization_details_isValid;
 }
 
 QString OAIProductAdd::asJson() const {
@@ -1061,6 +1079,15 @@ QJsonObject OAIProductAdd::asJsonObject() const {
     }
     if (m_ordered_count_isSet) {
         obj.insert(QString("ordered_count"), ::OpenAPI::toJsonValue(m_ordered_count));
+    }
+    if (m_shop_section_id_isSet) {
+        obj.insert(QString("shop_section_id"), ::OpenAPI::toJsonValue(m_shop_section_id));
+    }
+    if (m_return_policy_id_isSet) {
+        obj.insert(QString("return_policy_id"), ::OpenAPI::toJsonValue(m_return_policy_id));
+    }
+    if (m_personalization_details.isSet()) {
+        obj.insert(QString("personalization_details"), ::OpenAPI::toJsonValue(m_personalization_details));
     }
     return obj;
 }
@@ -2857,6 +2884,54 @@ bool OAIProductAdd::is_ordered_count_Valid() const{
     return m_ordered_count_isValid;
 }
 
+qint32 OAIProductAdd::getShopSectionId() const {
+    return m_shop_section_id;
+}
+void OAIProductAdd::setShopSectionId(const qint32 &shop_section_id) {
+    m_shop_section_id = shop_section_id;
+    m_shop_section_id_isSet = true;
+}
+
+bool OAIProductAdd::is_shop_section_id_Set() const{
+    return m_shop_section_id_isSet;
+}
+
+bool OAIProductAdd::is_shop_section_id_Valid() const{
+    return m_shop_section_id_isValid;
+}
+
+qint32 OAIProductAdd::getReturnPolicyId() const {
+    return m_return_policy_id;
+}
+void OAIProductAdd::setReturnPolicyId(const qint32 &return_policy_id) {
+    m_return_policy_id = return_policy_id;
+    m_return_policy_id_isSet = true;
+}
+
+bool OAIProductAdd::is_return_policy_id_Set() const{
+    return m_return_policy_id_isSet;
+}
+
+bool OAIProductAdd::is_return_policy_id_Valid() const{
+    return m_return_policy_id_isValid;
+}
+
+OAIProductAdd_personalization_details OAIProductAdd::getPersonalizationDetails() const {
+    return m_personalization_details;
+}
+void OAIProductAdd::setPersonalizationDetails(const OAIProductAdd_personalization_details &personalization_details) {
+    m_personalization_details = personalization_details;
+    m_personalization_details_isSet = true;
+}
+
+bool OAIProductAdd::is_personalization_details_Set() const{
+    return m_personalization_details_isSet;
+}
+
+bool OAIProductAdd::is_personalization_details_Valid() const{
+    return m_personalization_details_isValid;
+}
+
 bool OAIProductAdd::isSet() const {
     bool isObjectUpdated = false;
     do {
@@ -3416,6 +3491,21 @@ bool OAIProductAdd::isSet() const {
         }
 
         if (m_ordered_count_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_shop_section_id_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_return_policy_id_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_personalization_details.isSet()) {
             isObjectUpdated = true;
             break;
         }

@@ -23,6 +23,8 @@
 
 #include "OAIProductAdd_manufacturer_info.h"
 #include "OAIProductAdd_package_details.h"
+#include "OAIProductAdd_personalization_details.h"
+#include "OAIProductAdd_specifics_inner.h"
 #include "OAIProductAdd_tier_prices_inner.h"
 #include <QList>
 #include <QString>
@@ -34,6 +36,8 @@ namespace OpenAPI {
 class OAIProductAdd_tier_prices_inner;
 class OAIProductAdd_package_details;
 class OAIProductAdd_manufacturer_info;
+class OAIProductAdd_specifics_inner;
+class OAIProductAdd_personalization_details;
 
 class OAIProductUpdate : public OAIObject {
 public:
@@ -456,6 +460,21 @@ public:
     bool is_check_process_status_Set() const;
     bool is_check_process_status_Valid() const;
 
+    QList<OAIProductAdd_specifics_inner> getSpecifics() const;
+    void setSpecifics(const QList<OAIProductAdd_specifics_inner> &specifics);
+    bool is_specifics_Set() const;
+    bool is_specifics_Valid() const;
+
+    qint32 getShopSectionId() const;
+    void setShopSectionId(const qint32 &shop_section_id);
+    bool is_shop_section_id_Set() const;
+    bool is_shop_section_id_Valid() const;
+
+    OAIProductAdd_personalization_details getPersonalizationDetails() const;
+    void setPersonalizationDetails(const OAIProductAdd_personalization_details &personalization_details);
+    bool is_personalization_details_Set() const;
+    bool is_personalization_details_Valid() const;
+
     virtual bool isSet() const override;
     virtual bool isValid() const override;
 
@@ -789,6 +808,18 @@ private:
     bool m_check_process_status;
     bool m_check_process_status_isSet;
     bool m_check_process_status_isValid;
+
+    QList<OAIProductAdd_specifics_inner> m_specifics;
+    bool m_specifics_isSet;
+    bool m_specifics_isValid;
+
+    qint32 m_shop_section_id;
+    bool m_shop_section_id_isSet;
+    bool m_shop_section_id_isValid;
+
+    OAIProductAdd_personalization_details m_personalization_details;
+    bool m_personalization_details_isSet;
+    bool m_personalization_details_isValid;
 };
 
 } // namespace OpenAPI

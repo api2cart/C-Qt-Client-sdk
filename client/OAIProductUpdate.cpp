@@ -279,6 +279,15 @@ void OAIProductUpdate::initializeModel() {
 
     m_check_process_status_isSet = false;
     m_check_process_status_isValid = false;
+
+    m_specifics_isSet = false;
+    m_specifics_isValid = false;
+
+    m_shop_section_id_isSet = false;
+    m_shop_section_id_isValid = false;
+
+    m_personalization_details_isSet = false;
+    m_personalization_details_isValid = false;
 }
 
 void OAIProductUpdate::fromJson(QString jsonString) {
@@ -535,6 +544,15 @@ void OAIProductUpdate::fromJsonObject(QJsonObject json) {
 
     m_check_process_status_isValid = ::OpenAPI::fromJsonValue(m_check_process_status, json[QString("check_process_status")]);
     m_check_process_status_isSet = !json[QString("check_process_status")].isNull() && m_check_process_status_isValid;
+
+    m_specifics_isValid = ::OpenAPI::fromJsonValue(m_specifics, json[QString("specifics")]);
+    m_specifics_isSet = !json[QString("specifics")].isNull() && m_specifics_isValid;
+
+    m_shop_section_id_isValid = ::OpenAPI::fromJsonValue(m_shop_section_id, json[QString("shop_section_id")]);
+    m_shop_section_id_isSet = !json[QString("shop_section_id")].isNull() && m_shop_section_id_isValid;
+
+    m_personalization_details_isValid = ::OpenAPI::fromJsonValue(m_personalization_details, json[QString("personalization_details")]);
+    m_personalization_details_isSet = !json[QString("personalization_details")].isNull() && m_personalization_details_isValid;
 }
 
 QString OAIProductUpdate::asJson() const {
@@ -791,6 +809,15 @@ QJsonObject OAIProductUpdate::asJsonObject() const {
     }
     if (m_check_process_status_isSet) {
         obj.insert(QString("check_process_status"), ::OpenAPI::toJsonValue(m_check_process_status));
+    }
+    if (m_specifics.size() > 0) {
+        obj.insert(QString("specifics"), ::OpenAPI::toJsonValue(m_specifics));
+    }
+    if (m_shop_section_id_isSet) {
+        obj.insert(QString("shop_section_id"), ::OpenAPI::toJsonValue(m_shop_section_id));
+    }
+    if (m_personalization_details.isSet()) {
+        obj.insert(QString("personalization_details"), ::OpenAPI::toJsonValue(m_personalization_details));
     }
     return obj;
 }
@@ -2107,6 +2134,54 @@ bool OAIProductUpdate::is_check_process_status_Valid() const{
     return m_check_process_status_isValid;
 }
 
+QList<OAIProductAdd_specifics_inner> OAIProductUpdate::getSpecifics() const {
+    return m_specifics;
+}
+void OAIProductUpdate::setSpecifics(const QList<OAIProductAdd_specifics_inner> &specifics) {
+    m_specifics = specifics;
+    m_specifics_isSet = true;
+}
+
+bool OAIProductUpdate::is_specifics_Set() const{
+    return m_specifics_isSet;
+}
+
+bool OAIProductUpdate::is_specifics_Valid() const{
+    return m_specifics_isValid;
+}
+
+qint32 OAIProductUpdate::getShopSectionId() const {
+    return m_shop_section_id;
+}
+void OAIProductUpdate::setShopSectionId(const qint32 &shop_section_id) {
+    m_shop_section_id = shop_section_id;
+    m_shop_section_id_isSet = true;
+}
+
+bool OAIProductUpdate::is_shop_section_id_Set() const{
+    return m_shop_section_id_isSet;
+}
+
+bool OAIProductUpdate::is_shop_section_id_Valid() const{
+    return m_shop_section_id_isValid;
+}
+
+OAIProductAdd_personalization_details OAIProductUpdate::getPersonalizationDetails() const {
+    return m_personalization_details;
+}
+void OAIProductUpdate::setPersonalizationDetails(const OAIProductAdd_personalization_details &personalization_details) {
+    m_personalization_details = personalization_details;
+    m_personalization_details_isSet = true;
+}
+
+bool OAIProductUpdate::is_personalization_details_Set() const{
+    return m_personalization_details_isSet;
+}
+
+bool OAIProductUpdate::is_personalization_details_Valid() const{
+    return m_personalization_details_isValid;
+}
+
 bool OAIProductUpdate::isSet() const {
     bool isObjectUpdated = false;
     do {
@@ -2516,6 +2591,21 @@ bool OAIProductUpdate::isSet() const {
         }
 
         if (m_check_process_status_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_specifics.size() > 0) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_shop_section_id_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_personalization_details.isSet()) {
             isObjectUpdated = true;
             break;
         }

@@ -207,7 +207,7 @@ QString OAISubscriberApi::getParamStyleDelimiter(const QString &style, const QSt
     }
 }
 
-void OAISubscriberApi::subscriberList(const ::OpenAPI::OptionalParam<qint32> &start, const ::OpenAPI::OptionalParam<qint32> &count, const ::OpenAPI::OptionalParam<QString> &page_cursor, const ::OpenAPI::OptionalParam<bool> &subscribed, const ::OpenAPI::OptionalParam<QString> &store_id, const ::OpenAPI::OptionalParam<QString> &email, const ::OpenAPI::OptionalParam<QString> &created_from, const ::OpenAPI::OptionalParam<QString> &created_to, const ::OpenAPI::OptionalParam<QString> &modified_from, const ::OpenAPI::OptionalParam<QString> &modified_to, const ::OpenAPI::OptionalParam<QString> &response_fields, const ::OpenAPI::OptionalParam<QString> &params, const ::OpenAPI::OptionalParam<QString> &exclude) {
+void OAISubscriberApi::subscriberList(const ::OpenAPI::OptionalParam<QString> &ids, const ::OpenAPI::OptionalParam<qint32> &start, const ::OpenAPI::OptionalParam<qint32> &count, const ::OpenAPI::OptionalParam<QString> &page_cursor, const ::OpenAPI::OptionalParam<bool> &subscribed, const ::OpenAPI::OptionalParam<QString> &store_id, const ::OpenAPI::OptionalParam<QString> &email, const ::OpenAPI::OptionalParam<QString> &created_from, const ::OpenAPI::OptionalParam<QString> &created_to, const ::OpenAPI::OptionalParam<QString> &modified_from, const ::OpenAPI::OptionalParam<QString> &modified_to, const ::OpenAPI::OptionalParam<QString> &response_fields, const ::OpenAPI::OptionalParam<QString> &params, const ::OpenAPI::OptionalParam<QString> &exclude) {
     QString fullPath = QString(_serverConfigs["subscriberList"][_serverIndices.value("subscriberList")].URL()+"/subscriber.list.json");
     
     if (_apiKeys.contains("StoreKeyAuth")) {
@@ -219,6 +219,21 @@ void OAISubscriberApi::subscriberList(const ::OpenAPI::OptionalParam<qint32> &st
     }
     
     QString queryPrefix, querySuffix, queryDelimiter, queryStyle;
+    if (ids.hasValue())
+    {
+        queryStyle = "form";
+        if (queryStyle == "")
+            queryStyle = "form";
+        queryPrefix = getParamStylePrefix(queryStyle);
+        querySuffix = getParamStyleSuffix(queryStyle);
+        queryDelimiter = getParamStyleDelimiter(queryStyle, "ids", true);
+        if (fullPath.indexOf("?") > 0)
+            fullPath.append(queryPrefix);
+        else
+            fullPath.append("?");
+
+        fullPath.append(QUrl::toPercentEncoding("ids")).append(querySuffix).append(QUrl::toPercentEncoding(::OpenAPI::toStringValue(ids.stringValue())));
+    }
     if (start.hasValue())
     {
         queryStyle = "form";

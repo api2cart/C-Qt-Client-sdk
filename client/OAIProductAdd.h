@@ -28,6 +28,7 @@
 #include "OAIProductAdd_logistic_info_inner.h"
 #include "OAIProductAdd_manufacturer_info.h"
 #include "OAIProductAdd_package_details.h"
+#include "OAIProductAdd_personalization_details.h"
 #include "OAIProductAdd_sales_tax.h"
 #include "OAIProductAdd_seller_profiles.h"
 #include "OAIProductAdd_shipping_details_inner.h"
@@ -54,6 +55,7 @@ class OAIProductAdd_package_details;
 class OAIProductAdd_logistic_info_inner;
 class OAIProductAdd_seller_profiles;
 class OAIProductAdd_best_offer;
+class OAIProductAdd_personalization_details;
 
 class OAIProductAdd : public OAIObject {
 public:
@@ -626,6 +628,21 @@ public:
     bool is_ordered_count_Set() const;
     bool is_ordered_count_Valid() const;
 
+    qint32 getShopSectionId() const;
+    void setShopSectionId(const qint32 &shop_section_id);
+    bool is_shop_section_id_Set() const;
+    bool is_shop_section_id_Valid() const;
+
+    qint32 getReturnPolicyId() const;
+    void setReturnPolicyId(const qint32 &return_policy_id);
+    bool is_return_policy_id_Set() const;
+    bool is_return_policy_id_Valid() const;
+
+    OAIProductAdd_personalization_details getPersonalizationDetails() const;
+    void setPersonalizationDetails(const OAIProductAdd_personalization_details &personalization_details);
+    bool is_personalization_details_Set() const;
+    bool is_personalization_details_Valid() const;
+
     virtual bool isSet() const override;
     virtual bool isValid() const override;
 
@@ -1079,6 +1096,18 @@ private:
     qint32 m_ordered_count;
     bool m_ordered_count_isSet;
     bool m_ordered_count_isValid;
+
+    qint32 m_shop_section_id;
+    bool m_shop_section_id_isSet;
+    bool m_shop_section_id_isValid;
+
+    qint32 m_return_policy_id;
+    bool m_return_policy_id_isSet;
+    bool m_return_policy_id_isValid;
+
+    OAIProductAdd_personalization_details m_personalization_details;
+    bool m_personalization_details_isSet;
+    bool m_personalization_details_isValid;
 };
 
 } // namespace OpenAPI

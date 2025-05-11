@@ -578,6 +578,8 @@ client/OAIProductAdd_manufacturer_info.cpp
 client/OAIProductAdd_manufacturer_info.h
 client/OAIProductAdd_package_details.cpp
 client/OAIProductAdd_package_details.h
+client/OAIProductAdd_personalization_details.cpp
+client/OAIProductAdd_personalization_details.h
 client/OAIProductAdd_sales_tax.cpp
 client/OAIProductAdd_sales_tax.h
 client/OAIProductAdd_seller_profiles.cpp

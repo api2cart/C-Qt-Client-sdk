@@ -275,6 +275,7 @@ HEADERS += \
     $${PWD}/OAIProductAdd_logistic_info_inner.h \
     $${PWD}/OAIProductAdd_manufacturer_info.h \
     $${PWD}/OAIProductAdd_package_details.h \
+    $${PWD}/OAIProductAdd_personalization_details.h \
     $${PWD}/OAIProductAdd_sales_tax.h \
     $${PWD}/OAIProductAdd_seller_profiles.h \
     $${PWD}/OAIProductAdd_shipping_details_inner.h \
@@ -740,6 +741,7 @@ SOURCES += \
     $${PWD}/OAIProductAdd_logistic_info_inner.cpp \
     $${PWD}/OAIProductAdd_manufacturer_info.cpp \
     $${PWD}/OAIProductAdd_package_details.cpp \
+    $${PWD}/OAIProductAdd_personalization_details.cpp \
     $${PWD}/OAIProductAdd_sales_tax.cpp \
     $${PWD}/OAIProductAdd_seller_profiles.cpp \
     $${PWD}/OAIProductAdd_shipping_details_inner.cpp \
