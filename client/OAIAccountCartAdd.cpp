@@ -274,6 +274,24 @@ void OAIAccountCartAdd::initializeModel() {
     m_shopify_shared_secret_isSet = false;
     m_shopify_shared_secret_isValid = false;
 
+    m_shopee_partner_id_isSet = false;
+    m_shopee_partner_id_isValid = false;
+
+    m_shopee_partner_key_isSet = false;
+    m_shopee_partner_key_isValid = false;
+
+    m_shopee_shop_id_isSet = false;
+    m_shopee_shop_id_isValid = false;
+
+    m_shopee_refresh_token_isSet = false;
+    m_shopee_refresh_token_isValid = false;
+
+    m_shopee_region_isSet = false;
+    m_shopee_region_isValid = false;
+
+    m_shopee_environment_isSet = false;
+    m_shopee_environment_isValid = false;
+
     m_shoplazza_access_token_isSet = false;
     m_shoplazza_access_token_isValid = false;
 
@@ -486,6 +504,18 @@ void OAIAccountCartAdd::initializeModel() {
 
     m_salla_access_token_isSet = false;
     m_salla_access_token_isValid = false;
+
+    m_temu_app_key_isSet = false;
+    m_temu_app_key_isValid = false;
+
+    m_temu_app_secret_isSet = false;
+    m_temu_app_secret_isValid = false;
+
+    m_temu_access_token_isSet = false;
+    m_temu_access_token_isValid = false;
+
+    m_temu_region_isSet = false;
+    m_temu_region_isValid = false;
 }
 
 void OAIAccountCartAdd::fromJson(QString jsonString) {
@@ -737,6 +767,24 @@ void OAIAccountCartAdd::fromJsonObject(QJsonObject json) {
     m_shopify_shared_secret_isValid = ::OpenAPI::fromJsonValue(m_shopify_shared_secret, json[QString("shopify_shared_secret")]);
     m_shopify_shared_secret_isSet = !json[QString("shopify_shared_secret")].isNull() && m_shopify_shared_secret_isValid;
 
+    m_shopee_partner_id_isValid = ::OpenAPI::fromJsonValue(m_shopee_partner_id, json[QString("shopee_partner_id")]);
+    m_shopee_partner_id_isSet = !json[QString("shopee_partner_id")].isNull() && m_shopee_partner_id_isValid;
+
+    m_shopee_partner_key_isValid = ::OpenAPI::fromJsonValue(m_shopee_partner_key, json[QString("shopee_partner_key")]);
+    m_shopee_partner_key_isSet = !json[QString("shopee_partner_key")].isNull() && m_shopee_partner_key_isValid;
+
+    m_shopee_shop_id_isValid = ::OpenAPI::fromJsonValue(m_shopee_shop_id, json[QString("shopee_shop_id")]);
+    m_shopee_shop_id_isSet = !json[QString("shopee_shop_id")].isNull() && m_shopee_shop_id_isValid;
+
+    m_shopee_refresh_token_isValid = ::OpenAPI::fromJsonValue(m_shopee_refresh_token, json[QString("shopee_refresh_token")]);
+    m_shopee_refresh_token_isSet = !json[QString("shopee_refresh_token")].isNull() && m_shopee_refresh_token_isValid;
+
+    m_shopee_region_isValid = ::OpenAPI::fromJsonValue(m_shopee_region, json[QString("shopee_region")]);
+    m_shopee_region_isSet = !json[QString("shopee_region")].isNull() && m_shopee_region_isValid;
+
+    m_shopee_environment_isValid = ::OpenAPI::fromJsonValue(m_shopee_environment, json[QString("shopee_environment")]);
+    m_shopee_environment_isSet = !json[QString("shopee_environment")].isNull() && m_shopee_environment_isValid;
+
     m_shoplazza_access_token_isValid = ::OpenAPI::fromJsonValue(m_shoplazza_access_token, json[QString("shoplazza_access_token")]);
     m_shoplazza_access_token_isSet = !json[QString("shoplazza_access_token")].isNull() && m_shoplazza_access_token_isValid;
 
@@ -949,6 +997,18 @@ void OAIAccountCartAdd::fromJsonObject(QJsonObject json) {
 
     m_salla_access_token_isValid = ::OpenAPI::fromJsonValue(m_salla_access_token, json[QString("salla_access_token")]);
     m_salla_access_token_isSet = !json[QString("salla_access_token")].isNull() && m_salla_access_token_isValid;
+
+    m_temu_app_key_isValid = ::OpenAPI::fromJsonValue(m_temu_app_key, json[QString("temu_app_key")]);
+    m_temu_app_key_isSet = !json[QString("temu_app_key")].isNull() && m_temu_app_key_isValid;
+
+    m_temu_app_secret_isValid = ::OpenAPI::fromJsonValue(m_temu_app_secret, json[QString("temu_app_secret")]);
+    m_temu_app_secret_isSet = !json[QString("temu_app_secret")].isNull() && m_temu_app_secret_isValid;
+
+    m_temu_access_token_isValid = ::OpenAPI::fromJsonValue(m_temu_access_token, json[QString("temu_access_token")]);
+    m_temu_access_token_isSet = !json[QString("temu_access_token")].isNull() && m_temu_access_token_isValid;
+
+    m_temu_region_isValid = ::OpenAPI::fromJsonValue(m_temu_region, json[QString("temu_region")]);
+    m_temu_region_isSet = !json[QString("temu_region")].isNull() && m_temu_region_isValid;
 }
 
 QString OAIAccountCartAdd::asJson() const {
@@ -1200,6 +1260,24 @@ QJsonObject OAIAccountCartAdd::asJsonObject() const {
     if (m_shopify_shared_secret_isSet) {
         obj.insert(QString("shopify_shared_secret"), ::OpenAPI::toJsonValue(m_shopify_shared_secret));
     }
+    if (m_shopee_partner_id_isSet) {
+        obj.insert(QString("shopee_partner_id"), ::OpenAPI::toJsonValue(m_shopee_partner_id));
+    }
+    if (m_shopee_partner_key_isSet) {
+        obj.insert(QString("shopee_partner_key"), ::OpenAPI::toJsonValue(m_shopee_partner_key));
+    }
+    if (m_shopee_shop_id_isSet) {
+        obj.insert(QString("shopee_shop_id"), ::OpenAPI::toJsonValue(m_shopee_shop_id));
+    }
+    if (m_shopee_refresh_token_isSet) {
+        obj.insert(QString("shopee_refresh_token"), ::OpenAPI::toJsonValue(m_shopee_refresh_token));
+    }
+    if (m_shopee_region_isSet) {
+        obj.insert(QString("shopee_region"), ::OpenAPI::toJsonValue(m_shopee_region));
+    }
+    if (m_shopee_environment_isSet) {
+        obj.insert(QString("shopee_environment"), ::OpenAPI::toJsonValue(m_shopee_environment));
+    }
     if (m_shoplazza_access_token_isSet) {
         obj.insert(QString("shoplazza_access_token"), ::OpenAPI::toJsonValue(m_shoplazza_access_token));
     }
@@ -1412,6 +1490,18 @@ QJsonObject OAIAccountCartAdd::asJsonObject() const {
     }
     if (m_salla_access_token_isSet) {
         obj.insert(QString("salla_access_token"), ::OpenAPI::toJsonValue(m_salla_access_token));
+    }
+    if (m_temu_app_key_isSet) {
+        obj.insert(QString("temu_app_key"), ::OpenAPI::toJsonValue(m_temu_app_key));
+    }
+    if (m_temu_app_secret_isSet) {
+        obj.insert(QString("temu_app_secret"), ::OpenAPI::toJsonValue(m_temu_app_secret));
+    }
+    if (m_temu_access_token_isSet) {
+        obj.insert(QString("temu_access_token"), ::OpenAPI::toJsonValue(m_temu_access_token));
+    }
+    if (m_temu_region_isSet) {
+        obj.insert(QString("temu_region"), ::OpenAPI::toJsonValue(m_temu_region));
     }
     return obj;
 }
@@ -2696,6 +2786,102 @@ bool OAIAccountCartAdd::is_shopify_shared_secret_Valid() const{
     return m_shopify_shared_secret_isValid;
 }
 
+QString OAIAccountCartAdd::getShopeePartnerId() const {
+    return m_shopee_partner_id;
+}
+void OAIAccountCartAdd::setShopeePartnerId(const QString &shopee_partner_id) {
+    m_shopee_partner_id = shopee_partner_id;
+    m_shopee_partner_id_isSet = true;
+}
+
+bool OAIAccountCartAdd::is_shopee_partner_id_Set() const{
+    return m_shopee_partner_id_isSet;
+}
+
+bool OAIAccountCartAdd::is_shopee_partner_id_Valid() const{
+    return m_shopee_partner_id_isValid;
+}
+
+QString OAIAccountCartAdd::getShopeePartnerKey() const {
+    return m_shopee_partner_key;
+}
+void OAIAccountCartAdd::setShopeePartnerKey(const QString &shopee_partner_key) {
+    m_shopee_partner_key = shopee_partner_key;
+    m_shopee_partner_key_isSet = true;
+}
+
+bool OAIAccountCartAdd::is_shopee_partner_key_Set() const{
+    return m_shopee_partner_key_isSet;
+}
+
+bool OAIAccountCartAdd::is_shopee_partner_key_Valid() const{
+    return m_shopee_partner_key_isValid;
+}
+
+QString OAIAccountCartAdd::getShopeeShopId() const {
+    return m_shopee_shop_id;
+}
+void OAIAccountCartAdd::setShopeeShopId(const QString &shopee_shop_id) {
+    m_shopee_shop_id = shopee_shop_id;
+    m_shopee_shop_id_isSet = true;
+}
+
+bool OAIAccountCartAdd::is_shopee_shop_id_Set() const{
+    return m_shopee_shop_id_isSet;
+}
+
+bool OAIAccountCartAdd::is_shopee_shop_id_Valid() const{
+    return m_shopee_shop_id_isValid;
+}
+
+QString OAIAccountCartAdd::getShopeeRefreshToken() const {
+    return m_shopee_refresh_token;
+}
+void OAIAccountCartAdd::setShopeeRefreshToken(const QString &shopee_refresh_token) {
+    m_shopee_refresh_token = shopee_refresh_token;
+    m_shopee_refresh_token_isSet = true;
+}
+
+bool OAIAccountCartAdd::is_shopee_refresh_token_Set() const{
+    return m_shopee_refresh_token_isSet;
+}
+
+bool OAIAccountCartAdd::is_shopee_refresh_token_Valid() const{
+    return m_shopee_refresh_token_isValid;
+}
+
+QString OAIAccountCartAdd::getShopeeRegion() const {
+    return m_shopee_region;
+}
+void OAIAccountCartAdd::setShopeeRegion(const QString &shopee_region) {
+    m_shopee_region = shopee_region;
+    m_shopee_region_isSet = true;
+}
+
+bool OAIAccountCartAdd::is_shopee_region_Set() const{
+    return m_shopee_region_isSet;
+}
+
+bool OAIAccountCartAdd::is_shopee_region_Valid() const{
+    return m_shopee_region_isValid;
+}
+
+QString OAIAccountCartAdd::getShopeeEnvironment() const {
+    return m_shopee_environment;
+}
+void OAIAccountCartAdd::setShopeeEnvironment(const QString &shopee_environment) {
+    m_shopee_environment = shopee_environment;
+    m_shopee_environment_isSet = true;
+}
+
+bool OAIAccountCartAdd::is_shopee_environment_Set() const{
+    return m_shopee_environment_isSet;
+}
+
+bool OAIAccountCartAdd::is_shopee_environment_Valid() const{
+    return m_shopee_environment_isValid;
+}
+
 QString OAIAccountCartAdd::getShoplazzaAccessToken() const {
     return m_shoplazza_access_token;
 }
@@ -3832,6 +4018,70 @@ bool OAIAccountCartAdd::is_salla_access_token_Valid() const{
     return m_salla_access_token_isValid;
 }
 
+QString OAIAccountCartAdd::getTemuAppKey() const {
+    return m_temu_app_key;
+}
+void OAIAccountCartAdd::setTemuAppKey(const QString &temu_app_key) {
+    m_temu_app_key = temu_app_key;
+    m_temu_app_key_isSet = true;
+}
+
+bool OAIAccountCartAdd::is_temu_app_key_Set() const{
+    return m_temu_app_key_isSet;
+}
+
+bool OAIAccountCartAdd::is_temu_app_key_Valid() const{
+    return m_temu_app_key_isValid;
+}
+
+QString OAIAccountCartAdd::getTemuAppSecret() const {
+    return m_temu_app_secret;
+}
+void OAIAccountCartAdd::setTemuAppSecret(const QString &temu_app_secret) {
+    m_temu_app_secret = temu_app_secret;
+    m_temu_app_secret_isSet = true;
+}
+
+bool OAIAccountCartAdd::is_temu_app_secret_Set() const{
+    return m_temu_app_secret_isSet;
+}
+
+bool OAIAccountCartAdd::is_temu_app_secret_Valid() const{
+    return m_temu_app_secret_isValid;
+}
+
+QString OAIAccountCartAdd::getTemuAccessToken() const {
+    return m_temu_access_token;
+}
+void OAIAccountCartAdd::setTemuAccessToken(const QString &temu_access_token) {
+    m_temu_access_token = temu_access_token;
+    m_temu_access_token_isSet = true;
+}
+
+bool OAIAccountCartAdd::is_temu_access_token_Set() const{
+    return m_temu_access_token_isSet;
+}
+
+bool OAIAccountCartAdd::is_temu_access_token_Valid() const{
+    return m_temu_access_token_isValid;
+}
+
+QString OAIAccountCartAdd::getTemuRegion() const {
+    return m_temu_region;
+}
+void OAIAccountCartAdd::setTemuRegion(const QString &temu_region) {
+    m_temu_region = temu_region;
+    m_temu_region_isSet = true;
+}
+
+bool OAIAccountCartAdd::is_temu_region_Set() const{
+    return m_temu_region_isSet;
+}
+
+bool OAIAccountCartAdd::is_temu_region_Valid() const{
+    return m_temu_region_isValid;
+}
+
 bool OAIAccountCartAdd::isSet() const {
     bool isObjectUpdated = false;
     do {
@@ -4235,6 +4485,36 @@ bool OAIAccountCartAdd::isSet() const {
             break;
         }
 
+        if (m_shopee_partner_id_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_shopee_partner_key_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_shopee_shop_id_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_shopee_refresh_token_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_shopee_region_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_shopee_environment_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
         if (m_shoplazza_access_token_isSet) {
             isObjectUpdated = true;
             break;
@@ -4589,13 +4869,33 @@ bool OAIAccountCartAdd::isSet() const {
             isObjectUpdated = true;
             break;
         }
+
+        if (m_temu_app_key_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_temu_app_secret_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_temu_access_token_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_temu_region_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
     } while (false);
     return isObjectUpdated;
 }
 
 bool OAIAccountCartAdd::isValid() const {
     // only required properties are required for the object to be considered valid
-    return m_cart_id_isValid && m_bigcartel_user_name_isValid && m_bigcartel_password_isValid && m_wix_app_id_isValid && m_wix_app_secret_key_isValid && true;
+    return m_cart_id_isValid && m_bigcartel_user_name_isValid && m_bigcartel_password_isValid && m_wix_app_id_isValid && m_wix_app_secret_key_isValid && m_temu_access_token_isValid && true;
 }
 
 } // namespace OpenAPI

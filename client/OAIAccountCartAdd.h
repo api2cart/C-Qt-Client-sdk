@@ -442,6 +442,36 @@ public:
     bool is_shopify_shared_secret_Set() const;
     bool is_shopify_shared_secret_Valid() const;
 
+    QString getShopeePartnerId() const;
+    void setShopeePartnerId(const QString &shopee_partner_id);
+    bool is_shopee_partner_id_Set() const;
+    bool is_shopee_partner_id_Valid() const;
+
+    QString getShopeePartnerKey() const;
+    void setShopeePartnerKey(const QString &shopee_partner_key);
+    bool is_shopee_partner_key_Set() const;
+    bool is_shopee_partner_key_Valid() const;
+
+    QString getShopeeShopId() const;
+    void setShopeeShopId(const QString &shopee_shop_id);
+    bool is_shopee_shop_id_Set() const;
+    bool is_shopee_shop_id_Valid() const;
+
+    QString getShopeeRefreshToken() const;
+    void setShopeeRefreshToken(const QString &shopee_refresh_token);
+    bool is_shopee_refresh_token_Set() const;
+    bool is_shopee_refresh_token_Valid() const;
+
+    QString getShopeeRegion() const;
+    void setShopeeRegion(const QString &shopee_region);
+    bool is_shopee_region_Set() const;
+    bool is_shopee_region_Valid() const;
+
+    QString getShopeeEnvironment() const;
+    void setShopeeEnvironment(const QString &shopee_environment);
+    bool is_shopee_environment_Set() const;
+    bool is_shopee_environment_Valid() const;
+
     QString getShoplazzaAccessToken() const;
     void setShoplazzaAccessToken(const QString &shoplazza_access_token);
     bool is_shoplazza_access_token_Set() const;
@@ -797,6 +827,26 @@ public:
     bool is_salla_access_token_Set() const;
     bool is_salla_access_token_Valid() const;
 
+    QString getTemuAppKey() const;
+    void setTemuAppKey(const QString &temu_app_key);
+    bool is_temu_app_key_Set() const;
+    bool is_temu_app_key_Valid() const;
+
+    QString getTemuAppSecret() const;
+    void setTemuAppSecret(const QString &temu_app_secret);
+    bool is_temu_app_secret_Set() const;
+    bool is_temu_app_secret_Valid() const;
+
+    QString getTemuAccessToken() const;
+    void setTemuAccessToken(const QString &temu_access_token);
+    bool is_temu_access_token_Set() const;
+    bool is_temu_access_token_Valid() const;
+
+    QString getTemuRegion() const;
+    void setTemuRegion(const QString &temu_region);
+    bool is_temu_region_Set() const;
+    bool is_temu_region_Valid() const;
+
     virtual bool isSet() const override;
     virtual bool isValid() const override;
 
@@ -1123,6 +1173,30 @@ private:
     bool m_shopify_shared_secret_isSet;
     bool m_shopify_shared_secret_isValid;
 
+    QString m_shopee_partner_id;
+    bool m_shopee_partner_id_isSet;
+    bool m_shopee_partner_id_isValid;
+
+    QString m_shopee_partner_key;
+    bool m_shopee_partner_key_isSet;
+    bool m_shopee_partner_key_isValid;
+
+    QString m_shopee_shop_id;
+    bool m_shopee_shop_id_isSet;
+    bool m_shopee_shop_id_isValid;
+
+    QString m_shopee_refresh_token;
+    bool m_shopee_refresh_token_isSet;
+    bool m_shopee_refresh_token_isValid;
+
+    QString m_shopee_region;
+    bool m_shopee_region_isSet;
+    bool m_shopee_region_isValid;
+
+    QString m_shopee_environment;
+    bool m_shopee_environment_isSet;
+    bool m_shopee_environment_isValid;
+
     QString m_shoplazza_access_token;
     bool m_shoplazza_access_token_isSet;
     bool m_shoplazza_access_token_isValid;
@@ -1406,6 +1480,22 @@ private:
     QString m_salla_access_token;
     bool m_salla_access_token_isSet;
     bool m_salla_access_token_isValid;
+
+    QString m_temu_app_key;
+    bool m_temu_app_key_isSet;
+    bool m_temu_app_key_isValid;
+
+    QString m_temu_app_secret;
+    bool m_temu_app_secret_isSet;
+    bool m_temu_app_secret_isValid;
+
+    QString m_temu_access_token;
+    bool m_temu_access_token_isSet;
+    bool m_temu_access_token_isValid;
+
+    QString m_temu_region;
+    bool m_temu_region_isSet;
+    bool m_temu_region_isValid;
 };
 
 } // namespace OpenAPI
