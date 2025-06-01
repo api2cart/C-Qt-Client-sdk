@@ -4895,7 +4895,7 @@ bool OAIAccountCartAdd::isSet() const {
 
 bool OAIAccountCartAdd::isValid() const {
     // only required properties are required for the object to be considered valid
-    return m_cart_id_isValid && m_bigcartel_user_name_isValid && m_bigcartel_password_isValid && m_wix_app_id_isValid && m_wix_app_secret_key_isValid && m_temu_access_token_isValid && true;
+    return m_cart_id_isValid && m_bigcartel_user_name_isValid && m_bigcartel_password_isValid && m_wix_app_id_isValid && m_wix_app_secret_key_isValid && m_temu_access_token_isValid && m_temu_region_isValid && true;
 }
 
 } // namespace OpenAPI
