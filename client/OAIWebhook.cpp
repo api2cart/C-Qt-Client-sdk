@@ -43,6 +43,9 @@ void OAIWebhook::initializeModel() {
     m_store_id_isSet = false;
     m_store_id_isValid = false;
 
+    m_lang_id_isSet = false;
+    m_lang_id_isValid = false;
+
     m_active_isSet = false;
     m_active_isValid = false;
 
@@ -89,6 +92,9 @@ void OAIWebhook::fromJsonObject(QJsonObject json) {
     m_store_id_isValid = ::OpenAPI::fromJsonValue(m_store_id, json[QString("store_id")]);
     m_store_id_isSet = !json[QString("store_id")].isNull() && m_store_id_isValid;
 
+    m_lang_id_isValid = ::OpenAPI::fromJsonValue(m_lang_id, json[QString("lang_id")]);
+    m_lang_id_isSet = !json[QString("lang_id")].isNull() && m_lang_id_isValid;
+
     m_active_isValid = ::OpenAPI::fromJsonValue(m_active, json[QString("active")]);
     m_active_isSet = !json[QString("active")].isNull() && m_active_isValid;
 
@@ -134,6 +140,9 @@ QJsonObject OAIWebhook::asJsonObject() const {
     }
     if (m_store_id_isSet) {
         obj.insert(QString("store_id"), ::OpenAPI::toJsonValue(m_store_id));
+    }
+    if (m_lang_id_isSet) {
+        obj.insert(QString("lang_id"), ::OpenAPI::toJsonValue(m_lang_id));
     }
     if (m_active_isSet) {
         obj.insert(QString("active"), ::OpenAPI::toJsonValue(m_active));
@@ -211,6 +220,22 @@ bool OAIWebhook::is_store_id_Set() const{
 
 bool OAIWebhook::is_store_id_Valid() const{
     return m_store_id_isValid;
+}
+
+QString OAIWebhook::getLangId() const {
+    return m_lang_id;
+}
+void OAIWebhook::setLangId(const QString &lang_id) {
+    m_lang_id = lang_id;
+    m_lang_id_isSet = true;
+}
+
+bool OAIWebhook::is_lang_id_Set() const{
+    return m_lang_id_isSet;
+}
+
+bool OAIWebhook::is_lang_id_Valid() const{
+    return m_lang_id_isValid;
 }
 
 bool OAIWebhook::isActive() const {
@@ -371,6 +396,11 @@ bool OAIWebhook::isSet() const {
         }
 
         if (m_store_id_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_lang_id_isSet) {
             isObjectUpdated = true;
             break;
         }

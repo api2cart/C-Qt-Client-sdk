@@ -341,7 +341,7 @@ void OAIWebhookApi::webhookCountCallback(OAIHttpRequestWorker *worker) {
     }
 }
 
-void OAIWebhookApi::webhookCreate(const QString &entity, const QString &action, const ::OpenAPI::OptionalParam<QString> &callback, const ::OpenAPI::OptionalParam<QString> &label, const ::OpenAPI::OptionalParam<QString> &fields, const ::OpenAPI::OptionalParam<bool> &active, const ::OpenAPI::OptionalParam<QString> &store_id) {
+void OAIWebhookApi::webhookCreate(const QString &entity, const QString &action, const ::OpenAPI::OptionalParam<QString> &callback, const ::OpenAPI::OptionalParam<QString> &label, const ::OpenAPI::OptionalParam<QString> &fields, const ::OpenAPI::OptionalParam<bool> &active, const ::OpenAPI::OptionalParam<QString> &lang_id, const ::OpenAPI::OptionalParam<QString> &store_id) {
     QString fullPath = QString(_serverConfigs["webhookCreate"][_serverIndices.value("webhookCreate")].URL()+"/webhook.create.json");
     
     if (_apiKeys.contains("StoreKeyAuth")) {
@@ -442,6 +442,21 @@ void OAIWebhookApi::webhookCreate(const QString &entity, const QString &action, 
             fullPath.append("?");
 
         fullPath.append(QUrl::toPercentEncoding("active")).append(querySuffix).append(QUrl::toPercentEncoding(::OpenAPI::toStringValue(active.stringValue())));
+    }
+    if (lang_id.hasValue())
+    {
+        queryStyle = "form";
+        if (queryStyle == "")
+            queryStyle = "form";
+        queryPrefix = getParamStylePrefix(queryStyle);
+        querySuffix = getParamStyleSuffix(queryStyle);
+        queryDelimiter = getParamStyleDelimiter(queryStyle, "lang_id", true);
+        if (fullPath.indexOf("?") > 0)
+            fullPath.append(queryPrefix);
+        else
+            fullPath.append("?");
+
+        fullPath.append(QUrl::toPercentEncoding("lang_id")).append(querySuffix).append(QUrl::toPercentEncoding(::OpenAPI::toStringValue(lang_id.stringValue())));
     }
     if (store_id.hasValue())
     {
@@ -881,7 +896,7 @@ void OAIWebhookApi::webhookListCallback(OAIHttpRequestWorker *worker) {
     }
 }
 
-void OAIWebhookApi::webhookUpdate(const QString &id, const ::OpenAPI::OptionalParam<QString> &callback, const ::OpenAPI::OptionalParam<QString> &label, const ::OpenAPI::OptionalParam<QString> &fields, const ::OpenAPI::OptionalParam<bool> &active) {
+void OAIWebhookApi::webhookUpdate(const QString &id, const ::OpenAPI::OptionalParam<QString> &callback, const ::OpenAPI::OptionalParam<QString> &label, const ::OpenAPI::OptionalParam<QString> &fields, const ::OpenAPI::OptionalParam<bool> &active, const ::OpenAPI::OptionalParam<QString> &lang_id) {
     QString fullPath = QString(_serverConfigs["webhookUpdate"][_serverIndices.value("webhookUpdate")].URL()+"/webhook.update.json");
     
     if (_apiKeys.contains("StoreKeyAuth")) {
@@ -967,6 +982,21 @@ void OAIWebhookApi::webhookUpdate(const QString &id, const ::OpenAPI::OptionalPa
             fullPath.append("?");
 
         fullPath.append(QUrl::toPercentEncoding("active")).append(querySuffix).append(QUrl::toPercentEncoding(::OpenAPI::toStringValue(active.stringValue())));
+    }
+    if (lang_id.hasValue())
+    {
+        queryStyle = "form";
+        if (queryStyle == "")
+            queryStyle = "form";
+        queryPrefix = getParamStylePrefix(queryStyle);
+        querySuffix = getParamStyleSuffix(queryStyle);
+        queryDelimiter = getParamStyleDelimiter(queryStyle, "lang_id", true);
+        if (fullPath.indexOf("?") > 0)
+            fullPath.append(queryPrefix);
+        else
+            fullPath.append("?");
+
+        fullPath.append(QUrl::toPercentEncoding("lang_id")).append(querySuffix).append(QUrl::toPercentEncoding(::OpenAPI::toStringValue(lang_id.stringValue())));
     }
     OAIHttpRequestWorker *worker = new OAIHttpRequestWorker(this, _manager);
     worker->setTimeOut(_timeOut);

@@ -55,6 +55,11 @@ public:
     bool is_store_id_Set() const;
     bool is_store_id_Valid() const;
 
+    QString getLangId() const;
+    void setLangId(const QString &lang_id);
+    bool is_lang_id_Set() const;
+    bool is_lang_id_Valid() const;
+
     bool isActive() const;
     void setActive(const bool &active);
     bool is_active_Set() const;
@@ -117,6 +122,10 @@ private:
     QString m_store_id;
     bool m_store_id_isSet;
     bool m_store_id_isValid;
+
+    QString m_lang_id;
+    bool m_lang_id_isSet;
+    bool m_lang_id_isValid;
 
     bool m_active;
     bool m_active_isSet;
