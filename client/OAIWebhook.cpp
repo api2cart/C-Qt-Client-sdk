@@ -55,6 +55,9 @@ void OAIWebhook::initializeModel() {
     m_fields_isSet = false;
     m_fields_isValid = false;
 
+    m_response_fields_isSet = false;
+    m_response_fields_isValid = false;
+
     m_created_at_isSet = false;
     m_created_at_isValid = false;
 
@@ -104,6 +107,9 @@ void OAIWebhook::fromJsonObject(QJsonObject json) {
     m_fields_isValid = ::OpenAPI::fromJsonValue(m_fields, json[QString("fields")]);
     m_fields_isSet = !json[QString("fields")].isNull() && m_fields_isValid;
 
+    m_response_fields_isValid = ::OpenAPI::fromJsonValue(m_response_fields, json[QString("response_fields")]);
+    m_response_fields_isSet = !json[QString("response_fields")].isNull() && m_response_fields_isValid;
+
     m_created_at_isValid = ::OpenAPI::fromJsonValue(m_created_at, json[QString("created_at")]);
     m_created_at_isSet = !json[QString("created_at")].isNull() && m_created_at_isValid;
 
@@ -152,6 +158,9 @@ QJsonObject OAIWebhook::asJsonObject() const {
     }
     if (m_fields_isSet) {
         obj.insert(QString("fields"), ::OpenAPI::toJsonValue(m_fields));
+    }
+    if (m_response_fields_isSet) {
+        obj.insert(QString("response_fields"), ::OpenAPI::toJsonValue(m_response_fields));
     }
     if (m_created_at_isSet) {
         obj.insert(QString("created_at"), ::OpenAPI::toJsonValue(m_created_at));
@@ -286,6 +295,22 @@ bool OAIWebhook::is_fields_Valid() const{
     return m_fields_isValid;
 }
 
+QString OAIWebhook::getResponseFields() const {
+    return m_response_fields;
+}
+void OAIWebhook::setResponseFields(const QString &response_fields) {
+    m_response_fields = response_fields;
+    m_response_fields_isSet = true;
+}
+
+bool OAIWebhook::is_response_fields_Set() const{
+    return m_response_fields_isSet;
+}
+
+bool OAIWebhook::is_response_fields_Valid() const{
+    return m_response_fields_isValid;
+}
+
 QString OAIWebhook::getCreatedAt() const {
     return m_created_at;
 }
@@ -416,6 +441,11 @@ bool OAIWebhook::isSet() const {
         }
 
         if (m_fields_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_response_fields_isSet) {
             isObjectUpdated = true;
             break;
         }

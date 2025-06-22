@@ -75,6 +75,11 @@ public:
     bool is_fields_Set() const;
     bool is_fields_Valid() const;
 
+    QString getResponseFields() const;
+    void setResponseFields(const QString &response_fields);
+    bool is_response_fields_Set() const;
+    bool is_response_fields_Valid() const;
+
     QString getCreatedAt() const;
     void setCreatedAt(const QString &created_at);
     bool is_created_at_Set() const;
@@ -138,6 +143,10 @@ private:
     QString m_fields;
     bool m_fields_isSet;
     bool m_fields_isValid;
+
+    QString m_response_fields;
+    bool m_response_fields_isSet;
+    bool m_response_fields_isValid;
 
     QString m_created_at;
     bool m_created_at_isSet;

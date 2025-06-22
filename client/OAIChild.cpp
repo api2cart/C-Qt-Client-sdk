@@ -115,6 +115,9 @@ void OAIChild::initializeModel() {
     m_in_stock_isSet = false;
     m_in_stock_isValid = false;
 
+    m_on_sale_isSet = false;
+    m_on_sale_isValid = false;
+
     m_manage_stock_isSet = false;
     m_manage_stock_isValid = false;
 
@@ -263,6 +266,9 @@ void OAIChild::fromJsonObject(QJsonObject json) {
     m_in_stock_isValid = ::OpenAPI::fromJsonValue(m_in_stock, json[QString("in_stock")]);
     m_in_stock_isSet = !json[QString("in_stock")].isNull() && m_in_stock_isValid;
 
+    m_on_sale_isValid = ::OpenAPI::fromJsonValue(m_on_sale, json[QString("on_sale")]);
+    m_on_sale_isSet = !json[QString("on_sale")].isNull() && m_on_sale_isValid;
+
     m_manage_stock_isValid = ::OpenAPI::fromJsonValue(m_manage_stock, json[QString("manage_stock")]);
     m_manage_stock_isSet = !json[QString("manage_stock")].isNull() && m_manage_stock_isValid;
 
@@ -410,6 +416,9 @@ QJsonObject OAIChild::asJsonObject() const {
     }
     if (m_in_stock_isSet) {
         obj.insert(QString("in_stock"), ::OpenAPI::toJsonValue(m_in_stock));
+    }
+    if (m_on_sale_isSet) {
+        obj.insert(QString("on_sale"), ::OpenAPI::toJsonValue(m_on_sale));
     }
     if (m_manage_stock_isSet) {
         obj.insert(QString("manage_stock"), ::OpenAPI::toJsonValue(m_manage_stock));
@@ -903,6 +912,22 @@ bool OAIChild::is_in_stock_Valid() const{
     return m_in_stock_isValid;
 }
 
+bool OAIChild::isOnSale() const {
+    return m_on_sale;
+}
+void OAIChild::setOnSale(const bool &on_sale) {
+    m_on_sale = on_sale;
+    m_on_sale_isSet = true;
+}
+
+bool OAIChild::is_on_sale_Set() const{
+    return m_on_sale_isSet;
+}
+
+bool OAIChild::is_on_sale_Valid() const{
+    return m_on_sale_isValid;
+}
+
 bool OAIChild::isManageStock() const {
     return m_manage_stock;
 }
@@ -1341,6 +1366,11 @@ bool OAIChild::isSet() const {
         }
 
         if (m_in_stock_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_on_sale_isSet) {
             isObjectUpdated = true;
             break;
         }

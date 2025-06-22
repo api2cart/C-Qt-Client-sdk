@@ -188,6 +188,11 @@ public:
     bool is_in_stock_Set() const;
     bool is_in_stock_Valid() const;
 
+    bool isOnSale() const;
+    void setOnSale(const bool &on_sale);
+    bool is_on_sale_Set() const;
+    bool is_on_sale_Valid() const;
+
     bool isManageStock() const;
     void setManageStock(const bool &manage_stock);
     bool is_manage_stock_Set() const;
@@ -396,6 +401,10 @@ private:
     bool m_in_stock;
     bool m_in_stock_isSet;
     bool m_in_stock_isValid;
+
+    bool m_on_sale;
+    bool m_on_sale_isSet;
+    bool m_on_sale_isValid;
 
     bool m_manage_stock;
     bool m_manage_stock_isSet;

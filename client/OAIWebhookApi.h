@@ -75,11 +75,12 @@ public:
     * @param[in]  callback QString [optional]
     * @param[in]  label QString [optional]
     * @param[in]  fields QString [optional]
+    * @param[in]  response_fields QString [optional]
     * @param[in]  active bool [optional]
     * @param[in]  lang_id QString [optional]
     * @param[in]  store_id QString [optional]
     */
-    virtual void webhookCreate(const QString &entity, const QString &action, const ::OpenAPI::OptionalParam<QString> &callback = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &label = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &fields = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<bool> &active = ::OpenAPI::OptionalParam<bool>(), const ::OpenAPI::OptionalParam<QString> &lang_id = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &store_id = ::OpenAPI::OptionalParam<QString>());
+    virtual void webhookCreate(const QString &entity, const QString &action, const ::OpenAPI::OptionalParam<QString> &callback = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &label = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &fields = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &response_fields = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<bool> &active = ::OpenAPI::OptionalParam<bool>(), const ::OpenAPI::OptionalParam<QString> &lang_id = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &store_id = ::OpenAPI::OptionalParam<QString>());
 
     /**
     * @param[in]  id QString [required]
@@ -105,10 +106,11 @@ public:
     * @param[in]  callback QString [optional]
     * @param[in]  label QString [optional]
     * @param[in]  fields QString [optional]
+    * @param[in]  response_fields QString [optional]
     * @param[in]  active bool [optional]
     * @param[in]  lang_id QString [optional]
     */
-    virtual void webhookUpdate(const QString &id, const ::OpenAPI::OptionalParam<QString> &callback = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &label = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &fields = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<bool> &active = ::OpenAPI::OptionalParam<bool>(), const ::OpenAPI::OptionalParam<QString> &lang_id = ::OpenAPI::OptionalParam<QString>());
+    virtual void webhookUpdate(const QString &id, const ::OpenAPI::OptionalParam<QString> &callback = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &label = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &fields = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &response_fields = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<bool> &active = ::OpenAPI::OptionalParam<bool>(), const ::OpenAPI::OptionalParam<QString> &lang_id = ::OpenAPI::OptionalParam<QString>());
 
 
 private:
