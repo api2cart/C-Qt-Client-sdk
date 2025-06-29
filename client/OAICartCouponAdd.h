@@ -125,6 +125,11 @@ public:
     bool is_store_id_Set() const;
     bool is_store_id_Valid() const;
 
+    bool isFreeCashOnDelivery() const;
+    void setFreeCashOnDelivery(const bool &free_cash_on_delivery);
+    bool is_free_cash_on_delivery_Set() const;
+    bool is_free_cash_on_delivery_Valid() const;
+
     virtual bool isSet() const override;
     virtual bool isValid() const override;
 
@@ -198,6 +203,10 @@ private:
     QString m_store_id;
     bool m_store_id_isSet;
     bool m_store_id_isValid;
+
+    bool m_free_cash_on_delivery;
+    bool m_free_cash_on_delivery_isSet;
+    bool m_free_cash_on_delivery_isValid;
 };
 
 } // namespace OpenAPI

@@ -84,6 +84,11 @@ public:
     bool is_order_item_tax_Set() const;
     bool is_order_item_tax_Valid() const;
 
+    QString getOrderItemTaxClass() const;
+    void setOrderItemTaxClass(const QString &order_item_tax_class);
+    bool is_order_item_tax_class_Set() const;
+    bool is_order_item_tax_class_Valid() const;
+
     bool isOrderItemPriceIncludesTax() const;
     void setOrderItemPriceIncludesTax(const bool &order_item_price_includes_tax);
     bool is_order_item_price_includes_tax_Set() const;
@@ -156,6 +161,10 @@ private:
     double m_order_item_tax;
     bool m_order_item_tax_isSet;
     bool m_order_item_tax_isValid;
+
+    QString m_order_item_tax_class;
+    bool m_order_item_tax_class_isSet;
+    bool m_order_item_tax_class_isValid;
 
     bool m_order_item_price_includes_tax;
     bool m_order_item_price_includes_tax_isSet;

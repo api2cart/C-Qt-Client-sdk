@@ -84,6 +84,9 @@ void OAICartCouponAdd::initializeModel() {
 
     m_store_id_isSet = false;
     m_store_id_isValid = false;
+
+    m_free_cash_on_delivery_isSet = false;
+    m_free_cash_on_delivery_isValid = false;
 }
 
 void OAICartCouponAdd::fromJson(QString jsonString) {
@@ -145,6 +148,9 @@ void OAICartCouponAdd::fromJsonObject(QJsonObject json) {
 
     m_store_id_isValid = ::OpenAPI::fromJsonValue(m_store_id, json[QString("store_id")]);
     m_store_id_isSet = !json[QString("store_id")].isNull() && m_store_id_isValid;
+
+    m_free_cash_on_delivery_isValid = ::OpenAPI::fromJsonValue(m_free_cash_on_delivery, json[QString("free_cash_on_delivery")]);
+    m_free_cash_on_delivery_isSet = !json[QString("free_cash_on_delivery")].isNull() && m_free_cash_on_delivery_isValid;
 }
 
 QString OAICartCouponAdd::asJson() const {
@@ -206,6 +212,9 @@ QJsonObject OAICartCouponAdd::asJsonObject() const {
     }
     if (m_store_id_isSet) {
         obj.insert(QString("store_id"), ::OpenAPI::toJsonValue(m_store_id));
+    }
+    if (m_free_cash_on_delivery_isSet) {
+        obj.insert(QString("free_cash_on_delivery"), ::OpenAPI::toJsonValue(m_free_cash_on_delivery));
     }
     return obj;
 }
@@ -482,6 +491,22 @@ bool OAICartCouponAdd::is_store_id_Valid() const{
     return m_store_id_isValid;
 }
 
+bool OAICartCouponAdd::isFreeCashOnDelivery() const {
+    return m_free_cash_on_delivery;
+}
+void OAICartCouponAdd::setFreeCashOnDelivery(const bool &free_cash_on_delivery) {
+    m_free_cash_on_delivery = free_cash_on_delivery;
+    m_free_cash_on_delivery_isSet = true;
+}
+
+bool OAICartCouponAdd::is_free_cash_on_delivery_Set() const{
+    return m_free_cash_on_delivery_isSet;
+}
+
+bool OAICartCouponAdd::is_free_cash_on_delivery_Valid() const{
+    return m_free_cash_on_delivery_isValid;
+}
+
 bool OAICartCouponAdd::isSet() const {
     bool isObjectUpdated = false;
     do {
@@ -566,6 +591,11 @@ bool OAICartCouponAdd::isSet() const {
         }
 
         if (m_store_id_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_free_cash_on_delivery_isSet) {
             isObjectUpdated = true;
             break;
         }

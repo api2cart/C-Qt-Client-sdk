@@ -583,6 +583,11 @@ public:
     bool is_listing_type_Set() const;
     bool is_listing_type_Valid() const;
 
+    QString getCategoryType() const;
+    void setCategoryType(const QString &category_type);
+    bool is_category_type_Set() const;
+    bool is_category_type_Valid() const;
+
     bool isReturnAccepted() const;
     void setReturnAccepted(const bool &return_accepted);
     bool is_return_accepted_Set() const;
@@ -1060,6 +1065,10 @@ private:
     QString m_listing_type;
     bool m_listing_type_isSet;
     bool m_listing_type_isValid;
+
+    QString m_category_type;
+    bool m_category_type_isSet;
+    bool m_category_type_isValid;
 
     bool m_return_accepted;
     bool m_return_accepted_isSet;

@@ -71,6 +71,11 @@ public:
     bool is_scale_id_Set() const;
     bool is_scale_id_Valid() const;
 
+    QString getInputValue() const;
+    void setInputValue(const QString &input_value);
+    bool is_input_value_Set() const;
+    bool is_input_value_Valid() const;
+
     OAIProductAdd_specifics_inner_food_details getFoodDetails() const;
     void setFoodDetails(const OAIProductAdd_specifics_inner_food_details &food_details);
     bool is_food_details_Set() const;
@@ -111,6 +116,10 @@ private:
     qint32 m_scale_id;
     bool m_scale_id_isSet;
     bool m_scale_id_isValid;
+
+    QString m_input_value;
+    bool m_input_value_isSet;
+    bool m_input_value_isValid;
 
     OAIProductAdd_specifics_inner_food_details m_food_details;
     bool m_food_details_isSet;

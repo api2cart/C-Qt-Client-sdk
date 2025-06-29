@@ -49,6 +49,9 @@ void OAIProductAdd_specifics_inner::initializeModel() {
     m_scale_id_isSet = false;
     m_scale_id_isValid = false;
 
+    m_input_value_isSet = false;
+    m_input_value_isValid = false;
+
     m_food_details_isSet = false;
     m_food_details_isValid = false;
 
@@ -83,6 +86,9 @@ void OAIProductAdd_specifics_inner::fromJsonObject(QJsonObject json) {
     m_scale_id_isValid = ::OpenAPI::fromJsonValue(m_scale_id, json[QString("scale_id")]);
     m_scale_id_isSet = !json[QString("scale_id")].isNull() && m_scale_id_isValid;
 
+    m_input_value_isValid = ::OpenAPI::fromJsonValue(m_input_value, json[QString("input_value")]);
+    m_input_value_isSet = !json[QString("input_value")].isNull() && m_input_value_isValid;
+
     m_food_details_isValid = ::OpenAPI::fromJsonValue(m_food_details, json[QString("food_details")]);
     m_food_details_isSet = !json[QString("food_details")].isNull() && m_food_details_isValid;
 
@@ -116,6 +122,9 @@ QJsonObject OAIProductAdd_specifics_inner::asJsonObject() const {
     }
     if (m_scale_id_isSet) {
         obj.insert(QString("scale_id"), ::OpenAPI::toJsonValue(m_scale_id));
+    }
+    if (m_input_value_isSet) {
+        obj.insert(QString("input_value"), ::OpenAPI::toJsonValue(m_input_value));
     }
     if (m_food_details.isSet()) {
         obj.insert(QString("food_details"), ::OpenAPI::toJsonValue(m_food_details));
@@ -209,6 +218,22 @@ bool OAIProductAdd_specifics_inner::is_scale_id_Valid() const{
     return m_scale_id_isValid;
 }
 
+QString OAIProductAdd_specifics_inner::getInputValue() const {
+    return m_input_value;
+}
+void OAIProductAdd_specifics_inner::setInputValue(const QString &input_value) {
+    m_input_value = input_value;
+    m_input_value_isSet = true;
+}
+
+bool OAIProductAdd_specifics_inner::is_input_value_Set() const{
+    return m_input_value_isSet;
+}
+
+bool OAIProductAdd_specifics_inner::is_input_value_Valid() const{
+    return m_input_value_isValid;
+}
+
 OAIProductAdd_specifics_inner_food_details OAIProductAdd_specifics_inner::getFoodDetails() const {
     return m_food_details;
 }
@@ -281,6 +306,11 @@ bool OAIProductAdd_specifics_inner::isSet() const {
         }
 
         if (m_scale_id_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_input_value_isSet) {
             isObjectUpdated = true;
             break;
         }

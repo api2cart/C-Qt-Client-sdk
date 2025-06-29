@@ -343,6 +343,9 @@ void OAIProductAdd::initializeModel() {
     m_listing_type_isSet = false;
     m_listing_type_isValid = false;
 
+    m_category_type_isSet = false;
+    m_category_type_isValid = false;
+
     m_return_accepted_isSet = false;
     m_return_accepted_isValid = false;
 
@@ -698,6 +701,9 @@ void OAIProductAdd::fromJsonObject(QJsonObject json) {
     m_listing_type_isValid = ::OpenAPI::fromJsonValue(m_listing_type, json[QString("listing_type")]);
     m_listing_type_isSet = !json[QString("listing_type")].isNull() && m_listing_type_isValid;
 
+    m_category_type_isValid = ::OpenAPI::fromJsonValue(m_category_type, json[QString("category_type")]);
+    m_category_type_isSet = !json[QString("category_type")].isNull() && m_category_type_isValid;
+
     m_return_accepted_isValid = ::OpenAPI::fromJsonValue(m_return_accepted, json[QString("return_accepted")]);
     m_return_accepted_isSet = !json[QString("return_accepted")].isNull() && m_return_accepted_isValid;
 
@@ -1052,6 +1058,9 @@ QJsonObject OAIProductAdd::asJsonObject() const {
     }
     if (m_listing_type_isSet) {
         obj.insert(QString("listing_type"), ::OpenAPI::toJsonValue(m_listing_type));
+    }
+    if (m_category_type_isSet) {
+        obj.insert(QString("category_type"), ::OpenAPI::toJsonValue(m_category_type));
     }
     if (m_return_accepted_isSet) {
         obj.insert(QString("return_accepted"), ::OpenAPI::toJsonValue(m_return_accepted));
@@ -2740,6 +2749,22 @@ bool OAIProductAdd::is_listing_type_Valid() const{
     return m_listing_type_isValid;
 }
 
+QString OAIProductAdd::getCategoryType() const {
+    return m_category_type;
+}
+void OAIProductAdd::setCategoryType(const QString &category_type) {
+    m_category_type = category_type;
+    m_category_type_isSet = true;
+}
+
+bool OAIProductAdd::is_category_type_Set() const{
+    return m_category_type_isSet;
+}
+
+bool OAIProductAdd::is_category_type_Valid() const{
+    return m_category_type_isValid;
+}
+
 bool OAIProductAdd::isReturnAccepted() const {
     return m_return_accepted;
 }
@@ -3446,6 +3471,11 @@ bool OAIProductAdd::isSet() const {
         }
 
         if (m_listing_type_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_category_type_isSet) {
             isObjectUpdated = true;
             break;
         }
