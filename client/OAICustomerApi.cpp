@@ -594,7 +594,7 @@ void OAICustomerApi::customerAttributeListCallback(OAIHttpRequestWorker *worker)
     }
 }
 
-void OAICustomerApi::customerCount(const ::OpenAPI::OptionalParam<QString> &ids, const ::OpenAPI::OptionalParam<QString> &since_id, const ::OpenAPI::OptionalParam<QString> &customer_list_id, const ::OpenAPI::OptionalParam<QString> &group_id, const ::OpenAPI::OptionalParam<QString> &store_id, const ::OpenAPI::OptionalParam<bool> &avail, const ::OpenAPI::OptionalParam<QString> &find_value, const ::OpenAPI::OptionalParam<QString> &find_where, const ::OpenAPI::OptionalParam<QString> &created_from, const ::OpenAPI::OptionalParam<QString> &created_to, const ::OpenAPI::OptionalParam<QString> &modified_from, const ::OpenAPI::OptionalParam<QString> &modified_to) {
+void OAICustomerApi::customerCount(const ::OpenAPI::OptionalParam<QString> &ids, const ::OpenAPI::OptionalParam<QString> &since_id, const ::OpenAPI::OptionalParam<QString> &customer_list_id, const ::OpenAPI::OptionalParam<QString> &group_id, const ::OpenAPI::OptionalParam<QString> &store_id, const ::OpenAPI::OptionalParam<bool> &avail, const ::OpenAPI::OptionalParam<bool> &include_guests, const ::OpenAPI::OptionalParam<QString> &find_value, const ::OpenAPI::OptionalParam<QString> &find_where, const ::OpenAPI::OptionalParam<QString> &created_from, const ::OpenAPI::OptionalParam<QString> &created_to, const ::OpenAPI::OptionalParam<QString> &modified_from, const ::OpenAPI::OptionalParam<QString> &modified_to) {
     QString fullPath = QString(_serverConfigs["customerCount"][_serverIndices.value("customerCount")].URL()+"/customer.count.json");
     
     if (_apiKeys.contains("StoreKeyAuth")) {
@@ -695,6 +695,21 @@ void OAICustomerApi::customerCount(const ::OpenAPI::OptionalParam<QString> &ids,
             fullPath.append("?");
 
         fullPath.append(QUrl::toPercentEncoding("avail")).append(querySuffix).append(QUrl::toPercentEncoding(::OpenAPI::toStringValue(avail.stringValue())));
+    }
+    if (include_guests.hasValue())
+    {
+        queryStyle = "form";
+        if (queryStyle == "")
+            queryStyle = "form";
+        queryPrefix = getParamStylePrefix(queryStyle);
+        querySuffix = getParamStyleSuffix(queryStyle);
+        queryDelimiter = getParamStyleDelimiter(queryStyle, "include_guests", true);
+        if (fullPath.indexOf("?") > 0)
+            fullPath.append(queryPrefix);
+        else
+            fullPath.append("?");
+
+        fullPath.append(QUrl::toPercentEncoding("include_guests")).append(querySuffix).append(QUrl::toPercentEncoding(::OpenAPI::toStringValue(include_guests.stringValue())));
     }
     if (find_value.hasValue())
     {
@@ -947,7 +962,7 @@ void OAICustomerApi::customerDeleteCallback(OAIHttpRequestWorker *worker) {
     }
 }
 
-void OAICustomerApi::customerFind(const QString &find_value, const ::OpenAPI::OptionalParam<QString> &find_where, const ::OpenAPI::OptionalParam<QString> &find_params, const ::OpenAPI::OptionalParam<QString> &store_id) {
+void OAICustomerApi::customerFind(const QString &find_value, const ::OpenAPI::OptionalParam<QString> &find_where, const ::OpenAPI::OptionalParam<QString> &find_params, const ::OpenAPI::OptionalParam<QString> &store_id, const ::OpenAPI::OptionalParam<bool> &include_guests) {
     QString fullPath = QString(_serverConfigs["customerFind"][_serverIndices.value("customerFind")].URL()+"/customer.find.json");
     
     if (_apiKeys.contains("StoreKeyAuth")) {
@@ -1018,6 +1033,21 @@ void OAICustomerApi::customerFind(const QString &find_value, const ::OpenAPI::Op
             fullPath.append("?");
 
         fullPath.append(QUrl::toPercentEncoding("store_id")).append(querySuffix).append(QUrl::toPercentEncoding(::OpenAPI::toStringValue(store_id.stringValue())));
+    }
+    if (include_guests.hasValue())
+    {
+        queryStyle = "form";
+        if (queryStyle == "")
+            queryStyle = "form";
+        queryPrefix = getParamStylePrefix(queryStyle);
+        querySuffix = getParamStyleSuffix(queryStyle);
+        queryDelimiter = getParamStyleDelimiter(queryStyle, "include_guests", true);
+        if (fullPath.indexOf("?") > 0)
+            fullPath.append(queryPrefix);
+        else
+            fullPath.append("?");
+
+        fullPath.append(QUrl::toPercentEncoding("include_guests")).append(querySuffix).append(QUrl::toPercentEncoding(::OpenAPI::toStringValue(include_guests.stringValue())));
     }
     OAIHttpRequestWorker *worker = new OAIHttpRequestWorker(this, _manager);
     worker->setTimeOut(_timeOut);
@@ -1593,7 +1623,7 @@ void OAICustomerApi::customerInfoCallback(OAIHttpRequestWorker *worker) {
     }
 }
 
-void OAICustomerApi::customerList(const ::OpenAPI::OptionalParam<qint32> &start, const ::OpenAPI::OptionalParam<qint32> &count, const ::OpenAPI::OptionalParam<QString> &page_cursor, const ::OpenAPI::OptionalParam<QString> &ids, const ::OpenAPI::OptionalParam<QString> &since_id, const ::OpenAPI::OptionalParam<QString> &customer_list_id, const ::OpenAPI::OptionalParam<QString> &group_id, const ::OpenAPI::OptionalParam<QString> &store_id, const ::OpenAPI::OptionalParam<bool> &avail, const ::OpenAPI::OptionalParam<QString> &find_value, const ::OpenAPI::OptionalParam<QString> &find_where, const ::OpenAPI::OptionalParam<QString> &created_from, const ::OpenAPI::OptionalParam<QString> &created_to, const ::OpenAPI::OptionalParam<QString> &modified_from, const ::OpenAPI::OptionalParam<QString> &modified_to, const ::OpenAPI::OptionalParam<QString> &sort_by, const ::OpenAPI::OptionalParam<QString> &sort_direction, const ::OpenAPI::OptionalParam<QString> &response_fields, const ::OpenAPI::OptionalParam<QString> &params, const ::OpenAPI::OptionalParam<QString> &exclude) {
+void OAICustomerApi::customerList(const ::OpenAPI::OptionalParam<qint32> &start, const ::OpenAPI::OptionalParam<qint32> &count, const ::OpenAPI::OptionalParam<QString> &page_cursor, const ::OpenAPI::OptionalParam<QString> &ids, const ::OpenAPI::OptionalParam<QString> &since_id, const ::OpenAPI::OptionalParam<QString> &customer_list_id, const ::OpenAPI::OptionalParam<QString> &group_id, const ::OpenAPI::OptionalParam<QString> &store_id, const ::OpenAPI::OptionalParam<bool> &avail, const ::OpenAPI::OptionalParam<bool> &include_guests, const ::OpenAPI::OptionalParam<QString> &find_value, const ::OpenAPI::OptionalParam<QString> &find_where, const ::OpenAPI::OptionalParam<QString> &created_from, const ::OpenAPI::OptionalParam<QString> &created_to, const ::OpenAPI::OptionalParam<QString> &modified_from, const ::OpenAPI::OptionalParam<QString> &modified_to, const ::OpenAPI::OptionalParam<QString> &sort_by, const ::OpenAPI::OptionalParam<QString> &sort_direction, const ::OpenAPI::OptionalParam<QString> &response_fields, const ::OpenAPI::OptionalParam<QString> &params, const ::OpenAPI::OptionalParam<QString> &exclude) {
     QString fullPath = QString(_serverConfigs["customerList"][_serverIndices.value("customerList")].URL()+"/customer.list.json");
     
     if (_apiKeys.contains("StoreKeyAuth")) {
@@ -1739,6 +1769,21 @@ void OAICustomerApi::customerList(const ::OpenAPI::OptionalParam<qint32> &start,
             fullPath.append("?");
 
         fullPath.append(QUrl::toPercentEncoding("avail")).append(querySuffix).append(QUrl::toPercentEncoding(::OpenAPI::toStringValue(avail.stringValue())));
+    }
+    if (include_guests.hasValue())
+    {
+        queryStyle = "form";
+        if (queryStyle == "")
+            queryStyle = "form";
+        queryPrefix = getParamStylePrefix(queryStyle);
+        querySuffix = getParamStyleSuffix(queryStyle);
+        queryDelimiter = getParamStyleDelimiter(queryStyle, "include_guests", true);
+        if (fullPath.indexOf("?") > 0)
+            fullPath.append(queryPrefix);
+        else
+            fullPath.append("?");
+
+        fullPath.append(QUrl::toPercentEncoding("include_guests")).append(querySuffix).append(QUrl::toPercentEncoding(::OpenAPI::toStringValue(include_guests.stringValue())));
     }
     if (find_value.hasValue())
     {

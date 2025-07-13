@@ -109,6 +109,11 @@ public:
     bool is_status_Set() const;
     bool is_status_Valid() const;
 
+    bool isIsGuest() const;
+    void setIsGuest(const bool &is_guest);
+    bool is_is_guest_Set() const;
+    bool is_is_guest_Valid() const;
+
     bool isNewsLetterSubscription() const;
     void setNewsLetterSubscription(const bool &news_letter_subscription);
     bool is_news_letter_subscription_Set() const;
@@ -232,6 +237,10 @@ private:
     QString m_status;
     bool m_status_isSet;
     bool m_status_isValid;
+
+    bool m_is_guest;
+    bool m_is_guest_isSet;
+    bool m_is_guest_isValid;
 
     bool m_news_letter_subscription;
     bool m_news_letter_subscription_isSet;

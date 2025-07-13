@@ -70,6 +70,9 @@ void OAICustomer::initializeModel() {
     m_status_isSet = false;
     m_status_isValid = false;
 
+    m_is_guest_isSet = false;
+    m_is_guest_isValid = false;
+
     m_news_letter_subscription_isSet = false;
     m_news_letter_subscription_isValid = false;
 
@@ -158,6 +161,9 @@ void OAICustomer::fromJsonObject(QJsonObject json) {
     m_status_isValid = ::OpenAPI::fromJsonValue(m_status, json[QString("status")]);
     m_status_isSet = !json[QString("status")].isNull() && m_status_isValid;
 
+    m_is_guest_isValid = ::OpenAPI::fromJsonValue(m_is_guest, json[QString("is_guest")]);
+    m_is_guest_isSet = !json[QString("is_guest")].isNull() && m_is_guest_isValid;
+
     m_news_letter_subscription_isValid = ::OpenAPI::fromJsonValue(m_news_letter_subscription, json[QString("news_letter_subscription")]);
     m_news_letter_subscription_isSet = !json[QString("news_letter_subscription")].isNull() && m_news_letter_subscription_isValid;
 
@@ -245,6 +251,9 @@ QJsonObject OAICustomer::asJsonObject() const {
     }
     if (m_status_isSet) {
         obj.insert(QString("status"), ::OpenAPI::toJsonValue(m_status));
+    }
+    if (m_is_guest_isSet) {
+        obj.insert(QString("is_guest"), ::OpenAPI::toJsonValue(m_is_guest));
     }
     if (m_news_letter_subscription_isSet) {
         obj.insert(QString("news_letter_subscription"), ::OpenAPI::toJsonValue(m_news_letter_subscription));
@@ -481,6 +490,22 @@ bool OAICustomer::is_status_Set() const{
 
 bool OAICustomer::is_status_Valid() const{
     return m_status_isValid;
+}
+
+bool OAICustomer::isIsGuest() const {
+    return m_is_guest;
+}
+void OAICustomer::setIsGuest(const bool &is_guest) {
+    m_is_guest = is_guest;
+    m_is_guest_isSet = true;
+}
+
+bool OAICustomer::is_is_guest_Set() const{
+    return m_is_guest_isSet;
+}
+
+bool OAICustomer::is_is_guest_Valid() const{
+    return m_is_guest_isValid;
 }
 
 bool OAICustomer::isNewsLetterSubscription() const {
@@ -766,6 +791,11 @@ bool OAICustomer::isSet() const {
         }
 
         if (m_status_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_is_guest_isSet) {
             isObjectUpdated = true;
             break;
         }
