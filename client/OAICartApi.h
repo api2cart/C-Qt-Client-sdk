@@ -18,26 +18,17 @@
 #include "OAIServerConfiguration.h"
 #include "OAIOauth.h"
 
-#include "OAIAccountCartAdd_200_response.h"
 #include "OAIAttributeAdd_200_response.h"
 #include "OAIAttributeDelete_200_response.h"
 #include "OAIBasketLiveShippingServiceDelete_200_response.h"
-#include "OAICartBridge_200_response.h"
 #include "OAICartCatalogPriceRulesCount_200_response.h"
-#include "OAICartClearCache_200_response.h"
-#include "OAICartConfigUpdate.h"
-#include "OAICartConfigUpdate_200_response.h"
-#include "OAICartConfig_200_response.h"
 #include "OAICartCouponAdd.h"
 #include "OAICartCouponAdd_200_response.h"
 #include "OAICartCouponCount_200_response.h"
-#include "OAICartCreate.h"
 #include "OAICartDelete_200_response.h"
-#include "OAICartDisconnect_200_response.h"
 #include "OAICartGiftcardAdd_200_response.h"
 #include "OAICartGiftcardCount_200_response.h"
 #include "OAICartInfo_200_response.h"
-#include "OAICartList_200_response.h"
 #include "OAICartMethods_200_response.h"
 #include "OAICartPluginList_200_response.h"
 #include "OAICartScriptAdd_200_response.h"
@@ -87,9 +78,6 @@ public:
     QString getParamStyleDelimiter(const QString &style, const QString &name, bool isExplode);
 
 
-    Q_DECL_DEPRECATED virtual void cartBridge();
-
-
     virtual void cartCatalogPriceRulesCount();
 
     /**
@@ -102,22 +90,6 @@ public:
     * @param[in]  exclude QString [optional]
     */
     virtual void cartCatalogPriceRulesList(const ::OpenAPI::OptionalParam<qint32> &start = ::OpenAPI::OptionalParam<qint32>(), const ::OpenAPI::OptionalParam<qint32> &count = ::OpenAPI::OptionalParam<qint32>(), const ::OpenAPI::OptionalParam<QString> &page_cursor = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &ids = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &response_fields = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &params = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &exclude = ::OpenAPI::OptionalParam<QString>());
-
-    /**
-    * @param[in]  cache_type QString [required]
-    */
-    Q_DECL_DEPRECATED virtual void cartClearCache(const QString &cache_type);
-
-    /**
-    * @param[in]  params QString [optional]
-    * @param[in]  exclude QString [optional]
-    */
-    Q_DECL_DEPRECATED virtual void cartConfig(const ::OpenAPI::OptionalParam<QString> &params = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &exclude = ::OpenAPI::OptionalParam<QString>());
-
-    /**
-    * @param[in]  oai_cart_config_update OAICartConfigUpdate [required]
-    */
-    Q_DECL_DEPRECATED virtual void cartConfigUpdate(const OAICartConfigUpdate &oai_cart_config_update);
 
     /**
     * @param[in]  oai_cart_coupon_add OAICartCouponAdd [required]
@@ -172,19 +144,9 @@ public:
     virtual void cartCouponList(const ::OpenAPI::OptionalParam<qint32> &start = ::OpenAPI::OptionalParam<qint32>(), const ::OpenAPI::OptionalParam<qint32> &count = ::OpenAPI::OptionalParam<qint32>(), const ::OpenAPI::OptionalParam<QString> &page_cursor = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &coupons_ids = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &store_id = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &lang_id = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<bool> &avail = ::OpenAPI::OptionalParam<bool>(), const ::OpenAPI::OptionalParam<QString> &date_start_from = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &date_start_to = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &date_end_from = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &date_end_to = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &response_fields = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &params = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &exclude = ::OpenAPI::OptionalParam<QString>());
 
     /**
-    * @param[in]  oai_cart_create OAICartCreate [required]
-    */
-    Q_DECL_DEPRECATED virtual void cartCreate(const OAICartCreate &oai_cart_create);
-
-    /**
     * @param[in]  delete_bridge bool [optional]
     */
     virtual void cartDelete(const ::OpenAPI::OptionalParam<bool> &delete_bridge = ::OpenAPI::OptionalParam<bool>());
-
-    /**
-    * @param[in]  delete_bridge bool [optional]
-    */
-    Q_DECL_DEPRECATED virtual void cartDisconnect(const ::OpenAPI::OptionalParam<bool> &delete_bridge = ::OpenAPI::OptionalParam<bool>());
 
     /**
     * @param[in]  amount double [required]
@@ -224,9 +186,6 @@ public:
     * @param[in]  exclude QString [optional]
     */
     virtual void cartInfo(const ::OpenAPI::OptionalParam<QString> &store_id = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &response_fields = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &params = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &exclude = ::OpenAPI::OptionalParam<QString>());
-
-
-    Q_DECL_DEPRECATED virtual void cartList();
 
     /**
     * @param[in]  entity_id QString [required]
@@ -344,26 +303,19 @@ private:
     OauthPassword _passwordFlow;
     int _OauthMethod = 0;
 
-    void cartBridgeCallback(OAIHttpRequestWorker *worker);
     void cartCatalogPriceRulesCountCallback(OAIHttpRequestWorker *worker);
     void cartCatalogPriceRulesListCallback(OAIHttpRequestWorker *worker);
-    void cartClearCacheCallback(OAIHttpRequestWorker *worker);
-    void cartConfigCallback(OAIHttpRequestWorker *worker);
-    void cartConfigUpdateCallback(OAIHttpRequestWorker *worker);
     void cartCouponAddCallback(OAIHttpRequestWorker *worker);
     void cartCouponConditionAddCallback(OAIHttpRequestWorker *worker);
     void cartCouponCountCallback(OAIHttpRequestWorker *worker);
     void cartCouponDeleteCallback(OAIHttpRequestWorker *worker);
     void cartCouponListCallback(OAIHttpRequestWorker *worker);
-    void cartCreateCallback(OAIHttpRequestWorker *worker);
     void cartDeleteCallback(OAIHttpRequestWorker *worker);
-    void cartDisconnectCallback(OAIHttpRequestWorker *worker);
     void cartGiftcardAddCallback(OAIHttpRequestWorker *worker);
     void cartGiftcardCountCallback(OAIHttpRequestWorker *worker);
     void cartGiftcardDeleteCallback(OAIHttpRequestWorker *worker);
     void cartGiftcardListCallback(OAIHttpRequestWorker *worker);
     void cartInfoCallback(OAIHttpRequestWorker *worker);
-    void cartListCallback(OAIHttpRequestWorker *worker);
     void cartMetaDataListCallback(OAIHttpRequestWorker *worker);
     void cartMetaDataSetCallback(OAIHttpRequestWorker *worker);
     void cartMetaDataUnsetCallback(OAIHttpRequestWorker *worker);
@@ -377,26 +329,19 @@ private:
 
 Q_SIGNALS:
 
-    void cartBridgeSignal(OAICartBridge_200_response summary);
     void cartCatalogPriceRulesCountSignal(OAICartCatalogPriceRulesCount_200_response summary);
     void cartCatalogPriceRulesListSignal(OAIModel_Response_Cart_Catalog_PriceRules_List summary);
-    void cartClearCacheSignal(OAICartClearCache_200_response summary);
-    void cartConfigSignal(OAICartConfig_200_response summary);
-    void cartConfigUpdateSignal(OAICartConfigUpdate_200_response summary);
     void cartCouponAddSignal(OAICartCouponAdd_200_response summary);
     void cartCouponConditionAddSignal(OAIBasketLiveShippingServiceDelete_200_response summary);
     void cartCouponCountSignal(OAICartCouponCount_200_response summary);
     void cartCouponDeleteSignal(OAIAttributeDelete_200_response summary);
     void cartCouponListSignal(OAIModel_Response_Cart_Coupon_List summary);
-    void cartCreateSignal(OAIAccountCartAdd_200_response summary);
     void cartDeleteSignal(OAICartDelete_200_response summary);
-    void cartDisconnectSignal(OAICartDisconnect_200_response summary);
     void cartGiftcardAddSignal(OAICartGiftcardAdd_200_response summary);
     void cartGiftcardCountSignal(OAICartGiftcardCount_200_response summary);
     void cartGiftcardDeleteSignal(OAIAttributeDelete_200_response summary);
     void cartGiftcardListSignal(OAIModel_Response_Cart_GiftCard_List summary);
     void cartInfoSignal(OAICartInfo_200_response summary);
-    void cartListSignal(OAICartList_200_response summary);
     void cartMetaDataListSignal(OAIModel_Response_Cart_MetaData_List summary);
     void cartMetaDataSetSignal(OAIAttributeAdd_200_response summary);
     void cartMetaDataUnsetSignal(OAIBasketLiveShippingServiceDelete_200_response summary);
@@ -409,26 +354,19 @@ Q_SIGNALS:
     void cartValidateSignal(OAICartValidate_200_response summary);
 
 
-    void cartBridgeSignalFull(OAIHttpRequestWorker *worker, OAICartBridge_200_response summary);
     void cartCatalogPriceRulesCountSignalFull(OAIHttpRequestWorker *worker, OAICartCatalogPriceRulesCount_200_response summary);
     void cartCatalogPriceRulesListSignalFull(OAIHttpRequestWorker *worker, OAIModel_Response_Cart_Catalog_PriceRules_List summary);
-    void cartClearCacheSignalFull(OAIHttpRequestWorker *worker, OAICartClearCache_200_response summary);
-    void cartConfigSignalFull(OAIHttpRequestWorker *worker, OAICartConfig_200_response summary);
-    void cartConfigUpdateSignalFull(OAIHttpRequestWorker *worker, OAICartConfigUpdate_200_response summary);
     void cartCouponAddSignalFull(OAIHttpRequestWorker *worker, OAICartCouponAdd_200_response summary);
     void cartCouponConditionAddSignalFull(OAIHttpRequestWorker *worker, OAIBasketLiveShippingServiceDelete_200_response summary);
     void cartCouponCountSignalFull(OAIHttpRequestWorker *worker, OAICartCouponCount_200_response summary);
     void cartCouponDeleteSignalFull(OAIHttpRequestWorker *worker, OAIAttributeDelete_200_response summary);
     void cartCouponListSignalFull(OAIHttpRequestWorker *worker, OAIModel_Response_Cart_Coupon_List summary);
-    void cartCreateSignalFull(OAIHttpRequestWorker *worker, OAIAccountCartAdd_200_response summary);
     void cartDeleteSignalFull(OAIHttpRequestWorker *worker, OAICartDelete_200_response summary);
-    void cartDisconnectSignalFull(OAIHttpRequestWorker *worker, OAICartDisconnect_200_response summary);
     void cartGiftcardAddSignalFull(OAIHttpRequestWorker *worker, OAICartGiftcardAdd_200_response summary);
     void cartGiftcardCountSignalFull(OAIHttpRequestWorker *worker, OAICartGiftcardCount_200_response summary);
     void cartGiftcardDeleteSignalFull(OAIHttpRequestWorker *worker, OAIAttributeDelete_200_response summary);
     void cartGiftcardListSignalFull(OAIHttpRequestWorker *worker, OAIModel_Response_Cart_GiftCard_List summary);
     void cartInfoSignalFull(OAIHttpRequestWorker *worker, OAICartInfo_200_response summary);
-    void cartListSignalFull(OAIHttpRequestWorker *worker, OAICartList_200_response summary);
     void cartMetaDataListSignalFull(OAIHttpRequestWorker *worker, OAIModel_Response_Cart_MetaData_List summary);
     void cartMetaDataSetSignalFull(OAIHttpRequestWorker *worker, OAIAttributeAdd_200_response summary);
     void cartMetaDataUnsetSignalFull(OAIHttpRequestWorker *worker, OAIBasketLiveShippingServiceDelete_200_response summary);
@@ -440,24 +378,12 @@ Q_SIGNALS:
     void cartShippingZonesListSignalFull(OAIHttpRequestWorker *worker, OAIModel_Response_Cart_ShippingZones_List summary);
     void cartValidateSignalFull(OAIHttpRequestWorker *worker, OAICartValidate_200_response summary);
 
-    Q_DECL_DEPRECATED_X("Use cartBridgeSignalError() instead")
-    void cartBridgeSignalE(OAICartBridge_200_response summary, QNetworkReply::NetworkError error_type, QString error_str);
-    void cartBridgeSignalError(OAICartBridge_200_response summary, QNetworkReply::NetworkError error_type, const QString &error_str);
     Q_DECL_DEPRECATED_X("Use cartCatalogPriceRulesCountSignalError() instead")
     void cartCatalogPriceRulesCountSignalE(OAICartCatalogPriceRulesCount_200_response summary, QNetworkReply::NetworkError error_type, QString error_str);
     void cartCatalogPriceRulesCountSignalError(OAICartCatalogPriceRulesCount_200_response summary, QNetworkReply::NetworkError error_type, const QString &error_str);
     Q_DECL_DEPRECATED_X("Use cartCatalogPriceRulesListSignalError() instead")
     void cartCatalogPriceRulesListSignalE(OAIModel_Response_Cart_Catalog_PriceRules_List summary, QNetworkReply::NetworkError error_type, QString error_str);
     void cartCatalogPriceRulesListSignalError(OAIModel_Response_Cart_Catalog_PriceRules_List summary, QNetworkReply::NetworkError error_type, const QString &error_str);
-    Q_DECL_DEPRECATED_X("Use cartClearCacheSignalError() instead")
-    void cartClearCacheSignalE(OAICartClearCache_200_response summary, QNetworkReply::NetworkError error_type, QString error_str);
-    void cartClearCacheSignalError(OAICartClearCache_200_response summary, QNetworkReply::NetworkError error_type, const QString &error_str);
-    Q_DECL_DEPRECATED_X("Use cartConfigSignalError() instead")
-    void cartConfigSignalE(OAICartConfig_200_response summary, QNetworkReply::NetworkError error_type, QString error_str);
-    void cartConfigSignalError(OAICartConfig_200_response summary, QNetworkReply::NetworkError error_type, const QString &error_str);
-    Q_DECL_DEPRECATED_X("Use cartConfigUpdateSignalError() instead")
-    void cartConfigUpdateSignalE(OAICartConfigUpdate_200_response summary, QNetworkReply::NetworkError error_type, QString error_str);
-    void cartConfigUpdateSignalError(OAICartConfigUpdate_200_response summary, QNetworkReply::NetworkError error_type, const QString &error_str);
     Q_DECL_DEPRECATED_X("Use cartCouponAddSignalError() instead")
     void cartCouponAddSignalE(OAICartCouponAdd_200_response summary, QNetworkReply::NetworkError error_type, QString error_str);
     void cartCouponAddSignalError(OAICartCouponAdd_200_response summary, QNetworkReply::NetworkError error_type, const QString &error_str);
@@ -473,15 +399,9 @@ Q_SIGNALS:
     Q_DECL_DEPRECATED_X("Use cartCouponListSignalError() instead")
     void cartCouponListSignalE(OAIModel_Response_Cart_Coupon_List summary, QNetworkReply::NetworkError error_type, QString error_str);
     void cartCouponListSignalError(OAIModel_Response_Cart_Coupon_List summary, QNetworkReply::NetworkError error_type, const QString &error_str);
-    Q_DECL_DEPRECATED_X("Use cartCreateSignalError() instead")
-    void cartCreateSignalE(OAIAccountCartAdd_200_response summary, QNetworkReply::NetworkError error_type, QString error_str);
-    void cartCreateSignalError(OAIAccountCartAdd_200_response summary, QNetworkReply::NetworkError error_type, const QString &error_str);
     Q_DECL_DEPRECATED_X("Use cartDeleteSignalError() instead")
     void cartDeleteSignalE(OAICartDelete_200_response summary, QNetworkReply::NetworkError error_type, QString error_str);
     void cartDeleteSignalError(OAICartDelete_200_response summary, QNetworkReply::NetworkError error_type, const QString &error_str);
-    Q_DECL_DEPRECATED_X("Use cartDisconnectSignalError() instead")
-    void cartDisconnectSignalE(OAICartDisconnect_200_response summary, QNetworkReply::NetworkError error_type, QString error_str);
-    void cartDisconnectSignalError(OAICartDisconnect_200_response summary, QNetworkReply::NetworkError error_type, const QString &error_str);
     Q_DECL_DEPRECATED_X("Use cartGiftcardAddSignalError() instead")
     void cartGiftcardAddSignalE(OAICartGiftcardAdd_200_response summary, QNetworkReply::NetworkError error_type, QString error_str);
     void cartGiftcardAddSignalError(OAICartGiftcardAdd_200_response summary, QNetworkReply::NetworkError error_type, const QString &error_str);
@@ -497,9 +417,6 @@ Q_SIGNALS:
     Q_DECL_DEPRECATED_X("Use cartInfoSignalError() instead")
     void cartInfoSignalE(OAICartInfo_200_response summary, QNetworkReply::NetworkError error_type, QString error_str);
     void cartInfoSignalError(OAICartInfo_200_response summary, QNetworkReply::NetworkError error_type, const QString &error_str);
-    Q_DECL_DEPRECATED_X("Use cartListSignalError() instead")
-    void cartListSignalE(OAICartList_200_response summary, QNetworkReply::NetworkError error_type, QString error_str);
-    void cartListSignalError(OAICartList_200_response summary, QNetworkReply::NetworkError error_type, const QString &error_str);
     Q_DECL_DEPRECATED_X("Use cartMetaDataListSignalError() instead")
     void cartMetaDataListSignalE(OAIModel_Response_Cart_MetaData_List summary, QNetworkReply::NetworkError error_type, QString error_str);
     void cartMetaDataListSignalError(OAIModel_Response_Cart_MetaData_List summary, QNetworkReply::NetworkError error_type, const QString &error_str);
@@ -531,24 +448,12 @@ Q_SIGNALS:
     void cartValidateSignalE(OAICartValidate_200_response summary, QNetworkReply::NetworkError error_type, QString error_str);
     void cartValidateSignalError(OAICartValidate_200_response summary, QNetworkReply::NetworkError error_type, const QString &error_str);
 
-    Q_DECL_DEPRECATED_X("Use cartBridgeSignalErrorFull() instead")
-    void cartBridgeSignalEFull(OAIHttpRequestWorker *worker, QNetworkReply::NetworkError error_type, QString error_str);
-    void cartBridgeSignalErrorFull(OAIHttpRequestWorker *worker, QNetworkReply::NetworkError error_type, const QString &error_str);
     Q_DECL_DEPRECATED_X("Use cartCatalogPriceRulesCountSignalErrorFull() instead")
     void cartCatalogPriceRulesCountSignalEFull(OAIHttpRequestWorker *worker, QNetworkReply::NetworkError error_type, QString error_str);
     void cartCatalogPriceRulesCountSignalErrorFull(OAIHttpRequestWorker *worker, QNetworkReply::NetworkError error_type, const QString &error_str);
     Q_DECL_DEPRECATED_X("Use cartCatalogPriceRulesListSignalErrorFull() instead")
     void cartCatalogPriceRulesListSignalEFull(OAIHttpRequestWorker *worker, QNetworkReply::NetworkError error_type, QString error_str);
     void cartCatalogPriceRulesListSignalErrorFull(OAIHttpRequestWorker *worker, QNetworkReply::NetworkError error_type, const QString &error_str);
-    Q_DECL_DEPRECATED_X("Use cartClearCacheSignalErrorFull() instead")
-    void cartClearCacheSignalEFull(OAIHttpRequestWorker *worker, QNetworkReply::NetworkError error_type, QString error_str);
-    void cartClearCacheSignalErrorFull(OAIHttpRequestWorker *worker, QNetworkReply::NetworkError error_type, const QString &error_str);
-    Q_DECL_DEPRECATED_X("Use cartConfigSignalErrorFull() instead")
-    void cartConfigSignalEFull(OAIHttpRequestWorker *worker, QNetworkReply::NetworkError error_type, QString error_str);
-    void cartConfigSignalErrorFull(OAIHttpRequestWorker *worker, QNetworkReply::NetworkError error_type, const QString &error_str);
-    Q_DECL_DEPRECATED_X("Use cartConfigUpdateSignalErrorFull() instead")
-    void cartConfigUpdateSignalEFull(OAIHttpRequestWorker *worker, QNetworkReply::NetworkError error_type, QString error_str);
-    void cartConfigUpdateSignalErrorFull(OAIHttpRequestWorker *worker, QNetworkReply::NetworkError error_type, const QString &error_str);
     Q_DECL_DEPRECATED_X("Use cartCouponAddSignalErrorFull() instead")
     void cartCouponAddSignalEFull(OAIHttpRequestWorker *worker, QNetworkReply::NetworkError error_type, QString error_str);
     void cartCouponAddSignalErrorFull(OAIHttpRequestWorker *worker, QNetworkReply::NetworkError error_type, const QString &error_str);
@@ -564,15 +469,9 @@ Q_SIGNALS:
     Q_DECL_DEPRECATED_X("Use cartCouponListSignalErrorFull() instead")
     void cartCouponListSignalEFull(OAIHttpRequestWorker *worker, QNetworkReply::NetworkError error_type, QString error_str);
     void cartCouponListSignalErrorFull(OAIHttpRequestWorker *worker, QNetworkReply::NetworkError error_type, const QString &error_str);
-    Q_DECL_DEPRECATED_X("Use cartCreateSignalErrorFull() instead")
-    void cartCreateSignalEFull(OAIHttpRequestWorker *worker, QNetworkReply::NetworkError error_type, QString error_str);
-    void cartCreateSignalErrorFull(OAIHttpRequestWorker *worker, QNetworkReply::NetworkError error_type, const QString &error_str);
     Q_DECL_DEPRECATED_X("Use cartDeleteSignalErrorFull() instead")
     void cartDeleteSignalEFull(OAIHttpRequestWorker *worker, QNetworkReply::NetworkError error_type, QString error_str);
     void cartDeleteSignalErrorFull(OAIHttpRequestWorker *worker, QNetworkReply::NetworkError error_type, const QString &error_str);
-    Q_DECL_DEPRECATED_X("Use cartDisconnectSignalErrorFull() instead")
-    void cartDisconnectSignalEFull(OAIHttpRequestWorker *worker, QNetworkReply::NetworkError error_type, QString error_str);
-    void cartDisconnectSignalErrorFull(OAIHttpRequestWorker *worker, QNetworkReply::NetworkError error_type, const QString &error_str);
     Q_DECL_DEPRECATED_X("Use cartGiftcardAddSignalErrorFull() instead")
     void cartGiftcardAddSignalEFull(OAIHttpRequestWorker *worker, QNetworkReply::NetworkError error_type, QString error_str);
     void cartGiftcardAddSignalErrorFull(OAIHttpRequestWorker *worker, QNetworkReply::NetworkError error_type, const QString &error_str);
@@ -588,9 +487,6 @@ Q_SIGNALS:
     Q_DECL_DEPRECATED_X("Use cartInfoSignalErrorFull() instead")
     void cartInfoSignalEFull(OAIHttpRequestWorker *worker, QNetworkReply::NetworkError error_type, QString error_str);
     void cartInfoSignalErrorFull(OAIHttpRequestWorker *worker, QNetworkReply::NetworkError error_type, const QString &error_str);
-    Q_DECL_DEPRECATED_X("Use cartListSignalErrorFull() instead")
-    void cartListSignalEFull(OAIHttpRequestWorker *worker, QNetworkReply::NetworkError error_type, QString error_str);
-    void cartListSignalErrorFull(OAIHttpRequestWorker *worker, QNetworkReply::NetworkError error_type, const QString &error_str);
     Q_DECL_DEPRECATED_X("Use cartMetaDataListSignalErrorFull() instead")
     void cartMetaDataListSignalEFull(OAIHttpRequestWorker *worker, QNetworkReply::NetworkError error_type, QString error_str);
     void cartMetaDataListSignalErrorFull(OAIHttpRequestWorker *worker, QNetworkReply::NetworkError error_type, const QString &error_str);

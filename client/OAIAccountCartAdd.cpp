@@ -142,6 +142,18 @@ void OAIAccountCartAdd::initializeModel() {
     m_bigcartel_password_isSet = false;
     m_bigcartel_password_isValid = false;
 
+    m_bricklink_consumer_key_isSet = false;
+    m_bricklink_consumer_key_isValid = false;
+
+    m_bricklink_consumer_secret_isSet = false;
+    m_bricklink_consumer_secret_isValid = false;
+
+    m_bricklink_token_isSet = false;
+    m_bricklink_token_isValid = false;
+
+    m_bricklink_token_secret_isSet = false;
+    m_bricklink_token_secret_isValid = false;
+
     m_demandware_client_id_isSet = false;
     m_demandware_client_id_isValid = false;
 
@@ -635,6 +647,18 @@ void OAIAccountCartAdd::fromJsonObject(QJsonObject json) {
     m_bigcartel_password_isValid = ::OpenAPI::fromJsonValue(m_bigcartel_password, json[QString("bigcartel_password")]);
     m_bigcartel_password_isSet = !json[QString("bigcartel_password")].isNull() && m_bigcartel_password_isValid;
 
+    m_bricklink_consumer_key_isValid = ::OpenAPI::fromJsonValue(m_bricklink_consumer_key, json[QString("bricklink_consumer_key")]);
+    m_bricklink_consumer_key_isSet = !json[QString("bricklink_consumer_key")].isNull() && m_bricklink_consumer_key_isValid;
+
+    m_bricklink_consumer_secret_isValid = ::OpenAPI::fromJsonValue(m_bricklink_consumer_secret, json[QString("bricklink_consumer_secret")]);
+    m_bricklink_consumer_secret_isSet = !json[QString("bricklink_consumer_secret")].isNull() && m_bricklink_consumer_secret_isValid;
+
+    m_bricklink_token_isValid = ::OpenAPI::fromJsonValue(m_bricklink_token, json[QString("bricklink_token")]);
+    m_bricklink_token_isSet = !json[QString("bricklink_token")].isNull() && m_bricklink_token_isValid;
+
+    m_bricklink_token_secret_isValid = ::OpenAPI::fromJsonValue(m_bricklink_token_secret, json[QString("bricklink_token_secret")]);
+    m_bricklink_token_secret_isSet = !json[QString("bricklink_token_secret")].isNull() && m_bricklink_token_secret_isValid;
+
     m_demandware_client_id_isValid = ::OpenAPI::fromJsonValue(m_demandware_client_id, json[QString("demandware_client_id")]);
     m_demandware_client_id_isSet = !json[QString("demandware_client_id")].isNull() && m_demandware_client_id_isValid;
 
@@ -1127,6 +1151,18 @@ QJsonObject OAIAccountCartAdd::asJsonObject() const {
     }
     if (m_bigcartel_password_isSet) {
         obj.insert(QString("bigcartel_password"), ::OpenAPI::toJsonValue(m_bigcartel_password));
+    }
+    if (m_bricklink_consumer_key_isSet) {
+        obj.insert(QString("bricklink_consumer_key"), ::OpenAPI::toJsonValue(m_bricklink_consumer_key));
+    }
+    if (m_bricklink_consumer_secret_isSet) {
+        obj.insert(QString("bricklink_consumer_secret"), ::OpenAPI::toJsonValue(m_bricklink_consumer_secret));
+    }
+    if (m_bricklink_token_isSet) {
+        obj.insert(QString("bricklink_token"), ::OpenAPI::toJsonValue(m_bricklink_token));
+    }
+    if (m_bricklink_token_secret_isSet) {
+        obj.insert(QString("bricklink_token_secret"), ::OpenAPI::toJsonValue(m_bricklink_token_secret));
     }
     if (m_demandware_client_id_isSet) {
         obj.insert(QString("demandware_client_id"), ::OpenAPI::toJsonValue(m_demandware_client_id));
@@ -2080,6 +2116,70 @@ bool OAIAccountCartAdd::is_bigcartel_password_Set() const{
 
 bool OAIAccountCartAdd::is_bigcartel_password_Valid() const{
     return m_bigcartel_password_isValid;
+}
+
+QString OAIAccountCartAdd::getBricklinkConsumerKey() const {
+    return m_bricklink_consumer_key;
+}
+void OAIAccountCartAdd::setBricklinkConsumerKey(const QString &bricklink_consumer_key) {
+    m_bricklink_consumer_key = bricklink_consumer_key;
+    m_bricklink_consumer_key_isSet = true;
+}
+
+bool OAIAccountCartAdd::is_bricklink_consumer_key_Set() const{
+    return m_bricklink_consumer_key_isSet;
+}
+
+bool OAIAccountCartAdd::is_bricklink_consumer_key_Valid() const{
+    return m_bricklink_consumer_key_isValid;
+}
+
+QString OAIAccountCartAdd::getBricklinkConsumerSecret() const {
+    return m_bricklink_consumer_secret;
+}
+void OAIAccountCartAdd::setBricklinkConsumerSecret(const QString &bricklink_consumer_secret) {
+    m_bricklink_consumer_secret = bricklink_consumer_secret;
+    m_bricklink_consumer_secret_isSet = true;
+}
+
+bool OAIAccountCartAdd::is_bricklink_consumer_secret_Set() const{
+    return m_bricklink_consumer_secret_isSet;
+}
+
+bool OAIAccountCartAdd::is_bricklink_consumer_secret_Valid() const{
+    return m_bricklink_consumer_secret_isValid;
+}
+
+QString OAIAccountCartAdd::getBricklinkToken() const {
+    return m_bricklink_token;
+}
+void OAIAccountCartAdd::setBricklinkToken(const QString &bricklink_token) {
+    m_bricklink_token = bricklink_token;
+    m_bricklink_token_isSet = true;
+}
+
+bool OAIAccountCartAdd::is_bricklink_token_Set() const{
+    return m_bricklink_token_isSet;
+}
+
+bool OAIAccountCartAdd::is_bricklink_token_Valid() const{
+    return m_bricklink_token_isValid;
+}
+
+QString OAIAccountCartAdd::getBricklinkTokenSecret() const {
+    return m_bricklink_token_secret;
+}
+void OAIAccountCartAdd::setBricklinkTokenSecret(const QString &bricklink_token_secret) {
+    m_bricklink_token_secret = bricklink_token_secret;
+    m_bricklink_token_secret_isSet = true;
+}
+
+bool OAIAccountCartAdd::is_bricklink_token_secret_Set() const{
+    return m_bricklink_token_secret_isSet;
+}
+
+bool OAIAccountCartAdd::is_bricklink_token_secret_Valid() const{
+    return m_bricklink_token_secret_isValid;
 }
 
 QString OAIAccountCartAdd::getDemandwareClientId() const {
@@ -4265,6 +4365,26 @@ bool OAIAccountCartAdd::isSet() const {
             break;
         }
 
+        if (m_bricklink_consumer_key_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_bricklink_consumer_secret_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_bricklink_token_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_bricklink_token_secret_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
         if (m_demandware_client_id_isSet) {
             isObjectUpdated = true;
             break;
@@ -4895,7 +5015,7 @@ bool OAIAccountCartAdd::isSet() const {
 
 bool OAIAccountCartAdd::isValid() const {
     // only required properties are required for the object to be considered valid
-    return m_cart_id_isValid && m_bigcartel_user_name_isValid && m_bigcartel_password_isValid && m_wix_app_id_isValid && m_wix_app_secret_key_isValid && m_temu_access_token_isValid && m_temu_region_isValid && true;
+    return m_cart_id_isValid && m_bigcartel_user_name_isValid && m_bigcartel_password_isValid && m_bricklink_consumer_key_isValid && m_bricklink_consumer_secret_isValid && m_bricklink_token_isValid && m_bricklink_token_secret_isValid && m_wix_app_id_isValid && m_wix_app_secret_key_isValid && m_temu_access_token_isValid && m_temu_region_isValid && true;
 }
 
 } // namespace OpenAPI

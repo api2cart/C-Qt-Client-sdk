@@ -66,34 +66,20 @@ add_library(${PROJECT_NAME}
   OAIBrand.h
   OAICarrier.h
   OAICart.h
-  OAICartBridge_200_response.h
-  OAICartBridge_200_response_result.h
   OAICartCatalogPriceRulesCount_200_response.h
   OAICartCatalogPriceRulesCount_200_response_result.h
-  OAICartClearCache_200_response.h
-  OAICartClearCache_200_response_result.h
-  OAICartConfigUpdate.h
-  OAICartConfigUpdate_200_response.h
-  OAICartConfig_200_response.h
-  OAICartConfig_200_response_result.h
   OAICartCouponAdd.h
   OAICartCouponAdd_200_response.h
   OAICartCouponAdd_200_response_result.h
   OAICartCouponCount_200_response.h
   OAICartCouponCount_200_response_result.h
-  OAICartCreate.h
   OAICartDelete_200_response.h
   OAICartDelete_200_response_result.h
-  OAICartDisconnect_200_response.h
-  OAICartDisconnect_200_response_result.h
   OAICartGiftcardAdd_200_response.h
   OAICartGiftcardAdd_200_response_result.h
   OAICartGiftcardCount_200_response.h
   OAICartGiftcardCount_200_response_result.h
   OAICartInfo_200_response.h
-  OAICartList_200_response.h
-  OAICartList_200_response_result.h
-  OAICartList_200_response_result_supported_carts_inner.h
   OAICartMethods_200_response.h
   OAICartMethods_200_response_result.h
   OAICartPluginList_200_response.h
@@ -120,6 +106,7 @@ add_library(${PROJECT_NAME}
   OAICategoryAddBatch_payload_inner_images_inner.h
   OAICategoryAdd_200_response.h
   OAICategoryAdd_200_response_result.h
+  OAICategoryAssign_200_response.h
   OAICategoryCount_200_response.h
   OAICategoryCount_200_response_result.h
   OAICategoryDelete_200_response.h
@@ -217,8 +204,6 @@ add_library(${PROJECT_NAME}
   OAIOrderFinancialStatusList_200_response.h
   OAIOrderFinancialStatusList_200_response_result.h
   OAIOrderFinancialStatusList_200_response_result_order_financial_statuses_inner.h
-  OAIOrderFind_200_response.h
-  OAIOrderFind_200_response_result.h
   OAIOrderFulfillmentStatusList_200_response.h
   OAIOrderFulfillmentStatusList_200_response_result.h
   OAIOrderInfo_200_response.h
@@ -350,15 +335,11 @@ add_library(${PROJECT_NAME}
   OAIProductVariantAdd_200_response.h
   OAIProductVariantAdd_200_response_result.h
   OAIProductVariantAdd_attributes_inner.h
-  OAIProductVariantCount_200_response.h
-  OAIProductVariantCount_200_response_result.h
   OAIProductVariantDeleteBatch.h
   OAIProductVariantDeleteBatch_payload_inner.h
   OAIProductVariantImageAdd.h
   OAIProductVariantImageAdd_200_response.h
   OAIProductVariantImageAdd_200_response_result.h
-  OAIProductVariantList_200_response.h
-  OAIProductVariantList_200_response_result.h
   OAIProductVariantPriceAdd.h
   OAIProductVariantPriceUpdate.h
   OAIProductVariantUpdate.h
@@ -527,34 +508,20 @@ add_library(${PROJECT_NAME}
   OAIBrand.cpp
   OAICarrier.cpp
   OAICart.cpp
-  OAICartBridge_200_response.cpp
-  OAICartBridge_200_response_result.cpp
   OAICartCatalogPriceRulesCount_200_response.cpp
   OAICartCatalogPriceRulesCount_200_response_result.cpp
-  OAICartClearCache_200_response.cpp
-  OAICartClearCache_200_response_result.cpp
-  OAICartConfigUpdate.cpp
-  OAICartConfigUpdate_200_response.cpp
-  OAICartConfig_200_response.cpp
-  OAICartConfig_200_response_result.cpp
   OAICartCouponAdd.cpp
   OAICartCouponAdd_200_response.cpp
   OAICartCouponAdd_200_response_result.cpp
   OAICartCouponCount_200_response.cpp
   OAICartCouponCount_200_response_result.cpp
-  OAICartCreate.cpp
   OAICartDelete_200_response.cpp
   OAICartDelete_200_response_result.cpp
-  OAICartDisconnect_200_response.cpp
-  OAICartDisconnect_200_response_result.cpp
   OAICartGiftcardAdd_200_response.cpp
   OAICartGiftcardAdd_200_response_result.cpp
   OAICartGiftcardCount_200_response.cpp
   OAICartGiftcardCount_200_response_result.cpp
   OAICartInfo_200_response.cpp
-  OAICartList_200_response.cpp
-  OAICartList_200_response_result.cpp
-  OAICartList_200_response_result_supported_carts_inner.cpp
   OAICartMethods_200_response.cpp
   OAICartMethods_200_response_result.cpp
   OAICartPluginList_200_response.cpp
@@ -581,6 +548,7 @@ add_library(${PROJECT_NAME}
   OAICategoryAddBatch_payload_inner_images_inner.cpp
   OAICategoryAdd_200_response.cpp
   OAICategoryAdd_200_response_result.cpp
+  OAICategoryAssign_200_response.cpp
   OAICategoryCount_200_response.cpp
   OAICategoryCount_200_response_result.cpp
   OAICategoryDelete_200_response.cpp
@@ -678,8 +646,6 @@ add_library(${PROJECT_NAME}
   OAIOrderFinancialStatusList_200_response.cpp
   OAIOrderFinancialStatusList_200_response_result.cpp
   OAIOrderFinancialStatusList_200_response_result_order_financial_statuses_inner.cpp
-  OAIOrderFind_200_response.cpp
-  OAIOrderFind_200_response_result.cpp
   OAIOrderFulfillmentStatusList_200_response.cpp
   OAIOrderFulfillmentStatusList_200_response_result.cpp
   OAIOrderInfo_200_response.cpp
@@ -811,15 +777,11 @@ add_library(${PROJECT_NAME}
   OAIProductVariantAdd_200_response.cpp
   OAIProductVariantAdd_200_response_result.cpp
   OAIProductVariantAdd_attributes_inner.cpp
-  OAIProductVariantCount_200_response.cpp
-  OAIProductVariantCount_200_response_result.cpp
   OAIProductVariantDeleteBatch.cpp
   OAIProductVariantDeleteBatch_payload_inner.cpp
   OAIProductVariantImageAdd.cpp
   OAIProductVariantImageAdd_200_response.cpp
   OAIProductVariantImageAdd_200_response_result.cpp
-  OAIProductVariantList_200_response.cpp
-  OAIProductVariantList_200_response_result.cpp
   OAIProductVariantPriceAdd.cpp
   OAIProductVariantPriceUpdate.cpp
   OAIProductVariantUpdate.cpp

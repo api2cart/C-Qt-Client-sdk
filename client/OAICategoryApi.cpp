@@ -33,7 +33,7 @@ void OAICategoryApi::initializeServerConfigs() {
     QList<OAIServerConfiguration> defaultConf = QList<OAIServerConfiguration>();
     //varying endpoint server
     defaultConf.append(OAIServerConfiguration(
-    QUrl("https://api.api2cart.com/v1.1"),
+    QUrl("https://api.api2cart.local.com/v1.1"),
     "API2Cart Production Server",
     QMap<QString, OAIServerVariable>()));
     _serverConfigs.insert("categoryAdd", defaultConf);
@@ -702,7 +702,7 @@ void OAICategoryApi::categoryAssignCallback(OAIHttpRequestWorker *worker) {
     if (worker->error_type != QNetworkReply::NoError) {
         error_str = QString("%1, %2").arg(worker->error_str, QString(worker->response));
     }
-    OAICartConfigUpdate_200_response output(QString(worker->response));
+    OAICategoryAssign_200_response output(QString(worker->response));
     worker->deleteLater();
 
     if (worker->error_type == QNetworkReply::NoError) {
@@ -2279,7 +2279,7 @@ void OAICategoryApi::categoryUnassignCallback(OAIHttpRequestWorker *worker) {
     if (worker->error_type != QNetworkReply::NoError) {
         error_str = QString("%1, %2").arg(worker->error_str, QString(worker->response));
     }
-    OAICartConfigUpdate_200_response output(QString(worker->response));
+    OAICategoryAssign_200_response output(QString(worker->response));
     worker->deleteLater();
 
     if (worker->error_type == QNetworkReply::NoError) {

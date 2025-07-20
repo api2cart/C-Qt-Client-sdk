@@ -33,7 +33,7 @@ void OAIWebhookApi::initializeServerConfigs() {
     QList<OAIServerConfiguration> defaultConf = QList<OAIServerConfiguration>();
     //varying endpoint server
     defaultConf.append(OAIServerConfiguration(
-    QUrl("https://api.api2cart.com/v1.1"),
+    QUrl("https://api.api2cart.local.com/v1.1"),
     "API2Cart Production Server",
     QMap<QString, OAIServerVariable>()));
     _serverConfigs.insert("webhookCount", defaultConf);

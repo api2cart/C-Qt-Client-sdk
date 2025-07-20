@@ -20,10 +20,10 @@
 
 #include "OAIAccountConfigUpdate_200_response.h"
 #include "OAIAttributeDelete_200_response.h"
-#include "OAICartConfigUpdate_200_response.h"
 #include "OAICategoryAddBatch.h"
 #include "OAICategoryAddBatch_200_response.h"
 #include "OAICategoryAdd_200_response.h"
+#include "OAICategoryAssign_200_response.h"
 #include "OAICategoryCount_200_response.h"
 #include "OAICategoryDelete_200_response.h"
 #include "OAICategoryFind_200_response.h"
@@ -253,7 +253,7 @@ Q_SIGNALS:
 
     void categoryAddSignal(OAICategoryAdd_200_response summary);
     void categoryAddBatchSignal(OAICategoryAddBatch_200_response summary);
-    void categoryAssignSignal(OAICartConfigUpdate_200_response summary);
+    void categoryAssignSignal(OAICategoryAssign_200_response summary);
     void categoryCountSignal(OAICategoryCount_200_response summary);
     void categoryDeleteSignal(OAICategoryDelete_200_response summary);
     void categoryFindSignal(OAICategoryFind_200_response summary);
@@ -261,13 +261,13 @@ Q_SIGNALS:
     void categoryImageDeleteSignal(OAIAttributeDelete_200_response summary);
     void categoryInfoSignal(OAICategoryInfo_200_response summary);
     void categoryListSignal(OAIModel_Response_Category_List summary);
-    void categoryUnassignSignal(OAICartConfigUpdate_200_response summary);
+    void categoryUnassignSignal(OAICategoryAssign_200_response summary);
     void categoryUpdateSignal(OAIAccountConfigUpdate_200_response summary);
 
 
     void categoryAddSignalFull(OAIHttpRequestWorker *worker, OAICategoryAdd_200_response summary);
     void categoryAddBatchSignalFull(OAIHttpRequestWorker *worker, OAICategoryAddBatch_200_response summary);
-    void categoryAssignSignalFull(OAIHttpRequestWorker *worker, OAICartConfigUpdate_200_response summary);
+    void categoryAssignSignalFull(OAIHttpRequestWorker *worker, OAICategoryAssign_200_response summary);
     void categoryCountSignalFull(OAIHttpRequestWorker *worker, OAICategoryCount_200_response summary);
     void categoryDeleteSignalFull(OAIHttpRequestWorker *worker, OAICategoryDelete_200_response summary);
     void categoryFindSignalFull(OAIHttpRequestWorker *worker, OAICategoryFind_200_response summary);
@@ -275,7 +275,7 @@ Q_SIGNALS:
     void categoryImageDeleteSignalFull(OAIHttpRequestWorker *worker, OAIAttributeDelete_200_response summary);
     void categoryInfoSignalFull(OAIHttpRequestWorker *worker, OAICategoryInfo_200_response summary);
     void categoryListSignalFull(OAIHttpRequestWorker *worker, OAIModel_Response_Category_List summary);
-    void categoryUnassignSignalFull(OAIHttpRequestWorker *worker, OAICartConfigUpdate_200_response summary);
+    void categoryUnassignSignalFull(OAIHttpRequestWorker *worker, OAICategoryAssign_200_response summary);
     void categoryUpdateSignalFull(OAIHttpRequestWorker *worker, OAIAccountConfigUpdate_200_response summary);
 
     Q_DECL_DEPRECATED_X("Use categoryAddSignalError() instead")
@@ -285,8 +285,8 @@ Q_SIGNALS:
     void categoryAddBatchSignalE(OAICategoryAddBatch_200_response summary, QNetworkReply::NetworkError error_type, QString error_str);
     void categoryAddBatchSignalError(OAICategoryAddBatch_200_response summary, QNetworkReply::NetworkError error_type, const QString &error_str);
     Q_DECL_DEPRECATED_X("Use categoryAssignSignalError() instead")
-    void categoryAssignSignalE(OAICartConfigUpdate_200_response summary, QNetworkReply::NetworkError error_type, QString error_str);
-    void categoryAssignSignalError(OAICartConfigUpdate_200_response summary, QNetworkReply::NetworkError error_type, const QString &error_str);
+    void categoryAssignSignalE(OAICategoryAssign_200_response summary, QNetworkReply::NetworkError error_type, QString error_str);
+    void categoryAssignSignalError(OAICategoryAssign_200_response summary, QNetworkReply::NetworkError error_type, const QString &error_str);
     Q_DECL_DEPRECATED_X("Use categoryCountSignalError() instead")
     void categoryCountSignalE(OAICategoryCount_200_response summary, QNetworkReply::NetworkError error_type, QString error_str);
     void categoryCountSignalError(OAICategoryCount_200_response summary, QNetworkReply::NetworkError error_type, const QString &error_str);
@@ -309,8 +309,8 @@ Q_SIGNALS:
     void categoryListSignalE(OAIModel_Response_Category_List summary, QNetworkReply::NetworkError error_type, QString error_str);
     void categoryListSignalError(OAIModel_Response_Category_List summary, QNetworkReply::NetworkError error_type, const QString &error_str);
     Q_DECL_DEPRECATED_X("Use categoryUnassignSignalError() instead")
-    void categoryUnassignSignalE(OAICartConfigUpdate_200_response summary, QNetworkReply::NetworkError error_type, QString error_str);
-    void categoryUnassignSignalError(OAICartConfigUpdate_200_response summary, QNetworkReply::NetworkError error_type, const QString &error_str);
+    void categoryUnassignSignalE(OAICategoryAssign_200_response summary, QNetworkReply::NetworkError error_type, QString error_str);
+    void categoryUnassignSignalError(OAICategoryAssign_200_response summary, QNetworkReply::NetworkError error_type, const QString &error_str);
     Q_DECL_DEPRECATED_X("Use categoryUpdateSignalError() instead")
     void categoryUpdateSignalE(OAIAccountConfigUpdate_200_response summary, QNetworkReply::NetworkError error_type, QString error_str);
     void categoryUpdateSignalError(OAIAccountConfigUpdate_200_response summary, QNetworkReply::NetworkError error_type, const QString &error_str);

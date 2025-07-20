@@ -21,7 +21,6 @@
 #include "OAIAccountConfigUpdate_200_response.h"
 #include "OAIAttributeDelete_200_response.h"
 #include "OAIAttributeValueDelete_200_response.h"
-#include "OAICartConfigUpdate_200_response.h"
 #include "OAICartValidate_200_response.h"
 #include "OAICategoryAddBatch_200_response.h"
 #include "OAICustomerDelete_200_response.h"
@@ -62,11 +61,9 @@
 #include "OAIProductVariantAdd.h"
 #include "OAIProductVariantAddBatch.h"
 #include "OAIProductVariantAdd_200_response.h"
-#include "OAIProductVariantCount_200_response.h"
 #include "OAIProductVariantDeleteBatch.h"
 #include "OAIProductVariantImageAdd.h"
 #include "OAIProductVariantImageAdd_200_response.h"
-#include "OAIProductVariantList_200_response.h"
 #include "OAIProductVariantPriceAdd.h"
 #include "OAIProductVariantPriceUpdate.h"
 #include "OAIProductVariantUpdate.h"
@@ -289,9 +286,6 @@ public:
     * @param[in]  oai_product_delete_batch OAIProductDeleteBatch [required]
     */
     virtual void productDeleteBatch(const OAIProductDeleteBatch &oai_product_delete_batch);
-
-
-    Q_DECL_DEPRECATED virtual void productFields();
 
     /**
     * @param[in]  find_value QString [required]
@@ -523,17 +517,6 @@ public:
     virtual void productVariantAddBatch(const OAIProductVariantAddBatch &oai_product_variant_add_batch);
 
     /**
-    * @param[in]  product_id QString [required]
-    * @param[in]  category_id QString [optional]
-    * @param[in]  store_id QString [optional]
-    * @param[in]  created_from QString [optional]
-    * @param[in]  created_to QString [optional]
-    * @param[in]  modified_from QString [optional]
-    * @param[in]  modified_to QString [optional]
-    */
-    Q_DECL_DEPRECATED virtual void productVariantCount(const QString &product_id, const ::OpenAPI::OptionalParam<QString> &category_id = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &store_id = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &created_from = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &created_to = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &modified_from = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &modified_to = ::OpenAPI::OptionalParam<QString>());
-
-    /**
     * @param[in]  id QString [required]
     * @param[in]  product_id QString [required]
     * @param[in]  store_id QString [optional]
@@ -557,29 +540,6 @@ public:
     * @param[in]  store_id QString [optional]
     */
     virtual void productVariantImageDelete(const QString &product_id, const QString &product_variant_id, const QString &id, const ::OpenAPI::OptionalParam<QString> &store_id = ::OpenAPI::OptionalParam<QString>());
-
-    /**
-    * @param[in]  id QString [required]
-    * @param[in]  store_id QString [optional]
-    * @param[in]  params QString [optional]
-    * @param[in]  exclude QString [optional]
-    */
-    Q_DECL_DEPRECATED virtual void productVariantInfo(const QString &id, const ::OpenAPI::OptionalParam<QString> &store_id = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &params = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &exclude = ::OpenAPI::OptionalParam<QString>());
-
-    /**
-    * @param[in]  start qint32 [optional]
-    * @param[in]  count qint32 [optional]
-    * @param[in]  product_id QString [optional]
-    * @param[in]  category_id QString [optional]
-    * @param[in]  store_id QString [optional]
-    * @param[in]  created_from QString [optional]
-    * @param[in]  created_to QString [optional]
-    * @param[in]  modified_from QString [optional]
-    * @param[in]  modified_to QString [optional]
-    * @param[in]  params QString [optional]
-    * @param[in]  exclude QString [optional]
-    */
-    Q_DECL_DEPRECATED virtual void productVariantList(const ::OpenAPI::OptionalParam<qint32> &start = ::OpenAPI::OptionalParam<qint32>(), const ::OpenAPI::OptionalParam<qint32> &count = ::OpenAPI::OptionalParam<qint32>(), const ::OpenAPI::OptionalParam<QString> &product_id = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &category_id = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &store_id = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &created_from = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &created_to = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &modified_from = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &modified_to = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &params = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &exclude = ::OpenAPI::OptionalParam<QString>());
 
     /**
     * @param[in]  oai_product_variant_price_add OAIProductVariantPriceAdd [required]
@@ -646,7 +606,6 @@ private:
     void productCurrencyListCallback(OAIHttpRequestWorker *worker);
     void productDeleteCallback(OAIHttpRequestWorker *worker);
     void productDeleteBatchCallback(OAIHttpRequestWorker *worker);
-    void productFieldsCallback(OAIHttpRequestWorker *worker);
     void productFindCallback(OAIHttpRequestWorker *worker);
     void productImageAddCallback(OAIHttpRequestWorker *worker);
     void productImageDeleteCallback(OAIHttpRequestWorker *worker);
@@ -672,13 +631,10 @@ private:
     void productUpdateBatchCallback(OAIHttpRequestWorker *worker);
     void productVariantAddCallback(OAIHttpRequestWorker *worker);
     void productVariantAddBatchCallback(OAIHttpRequestWorker *worker);
-    void productVariantCountCallback(OAIHttpRequestWorker *worker);
     void productVariantDeleteCallback(OAIHttpRequestWorker *worker);
     void productVariantDeleteBatchCallback(OAIHttpRequestWorker *worker);
     void productVariantImageAddCallback(OAIHttpRequestWorker *worker);
     void productVariantImageDeleteCallback(OAIHttpRequestWorker *worker);
-    void productVariantInfoCallback(OAIHttpRequestWorker *worker);
-    void productVariantListCallback(OAIHttpRequestWorker *worker);
     void productVariantPriceAddCallback(OAIHttpRequestWorker *worker);
     void productVariantPriceDeleteCallback(OAIHttpRequestWorker *worker);
     void productVariantPriceUpdateCallback(OAIHttpRequestWorker *worker);
@@ -701,7 +657,6 @@ Q_SIGNALS:
     void productCurrencyListSignal(OAIModel_Response_Product_Currency_List summary);
     void productDeleteSignal(OAICustomerDelete_200_response summary);
     void productDeleteBatchSignal(OAICategoryAddBatch_200_response summary);
-    void productFieldsSignal(OAICartConfigUpdate_200_response summary);
     void productFindSignal(OAIProductFind_200_response summary);
     void productImageAddSignal(OAIProductImageAdd_200_response summary);
     void productImageDeleteSignal(OAIAttributeDelete_200_response summary);
@@ -727,13 +682,10 @@ Q_SIGNALS:
     void productUpdateBatchSignal(OAICategoryAddBatch_200_response summary);
     void productVariantAddSignal(OAIProductVariantAdd_200_response summary);
     void productVariantAddBatchSignal(OAICategoryAddBatch_200_response summary);
-    void productVariantCountSignal(OAIProductVariantCount_200_response summary);
     void productVariantDeleteSignal(OAIAttributeValueDelete_200_response summary);
     void productVariantDeleteBatchSignal(OAICategoryAddBatch_200_response summary);
     void productVariantImageAddSignal(OAIProductVariantImageAdd_200_response summary);
     void productVariantImageDeleteSignal(OAIAttributeDelete_200_response summary);
-    void productVariantInfoSignal(OAIProductInfo_200_response summary);
-    void productVariantListSignal(OAIProductVariantList_200_response summary);
     void productVariantPriceAddSignal(OAICartValidate_200_response summary);
     void productVariantPriceDeleteSignal(OAIAttributeDelete_200_response summary);
     void productVariantPriceUpdateSignal(OAIAccountConfigUpdate_200_response summary);
@@ -755,7 +707,6 @@ Q_SIGNALS:
     void productCurrencyListSignalFull(OAIHttpRequestWorker *worker, OAIModel_Response_Product_Currency_List summary);
     void productDeleteSignalFull(OAIHttpRequestWorker *worker, OAICustomerDelete_200_response summary);
     void productDeleteBatchSignalFull(OAIHttpRequestWorker *worker, OAICategoryAddBatch_200_response summary);
-    void productFieldsSignalFull(OAIHttpRequestWorker *worker, OAICartConfigUpdate_200_response summary);
     void productFindSignalFull(OAIHttpRequestWorker *worker, OAIProductFind_200_response summary);
     void productImageAddSignalFull(OAIHttpRequestWorker *worker, OAIProductImageAdd_200_response summary);
     void productImageDeleteSignalFull(OAIHttpRequestWorker *worker, OAIAttributeDelete_200_response summary);
@@ -781,13 +732,10 @@ Q_SIGNALS:
     void productUpdateBatchSignalFull(OAIHttpRequestWorker *worker, OAICategoryAddBatch_200_response summary);
     void productVariantAddSignalFull(OAIHttpRequestWorker *worker, OAIProductVariantAdd_200_response summary);
     void productVariantAddBatchSignalFull(OAIHttpRequestWorker *worker, OAICategoryAddBatch_200_response summary);
-    void productVariantCountSignalFull(OAIHttpRequestWorker *worker, OAIProductVariantCount_200_response summary);
     void productVariantDeleteSignalFull(OAIHttpRequestWorker *worker, OAIAttributeValueDelete_200_response summary);
     void productVariantDeleteBatchSignalFull(OAIHttpRequestWorker *worker, OAICategoryAddBatch_200_response summary);
     void productVariantImageAddSignalFull(OAIHttpRequestWorker *worker, OAIProductVariantImageAdd_200_response summary);
     void productVariantImageDeleteSignalFull(OAIHttpRequestWorker *worker, OAIAttributeDelete_200_response summary);
-    void productVariantInfoSignalFull(OAIHttpRequestWorker *worker, OAIProductInfo_200_response summary);
-    void productVariantListSignalFull(OAIHttpRequestWorker *worker, OAIProductVariantList_200_response summary);
     void productVariantPriceAddSignalFull(OAIHttpRequestWorker *worker, OAICartValidate_200_response summary);
     void productVariantPriceDeleteSignalFull(OAIHttpRequestWorker *worker, OAIAttributeDelete_200_response summary);
     void productVariantPriceUpdateSignalFull(OAIHttpRequestWorker *worker, OAIAccountConfigUpdate_200_response summary);
@@ -836,9 +784,6 @@ Q_SIGNALS:
     Q_DECL_DEPRECATED_X("Use productDeleteBatchSignalError() instead")
     void productDeleteBatchSignalE(OAICategoryAddBatch_200_response summary, QNetworkReply::NetworkError error_type, QString error_str);
     void productDeleteBatchSignalError(OAICategoryAddBatch_200_response summary, QNetworkReply::NetworkError error_type, const QString &error_str);
-    Q_DECL_DEPRECATED_X("Use productFieldsSignalError() instead")
-    void productFieldsSignalE(OAICartConfigUpdate_200_response summary, QNetworkReply::NetworkError error_type, QString error_str);
-    void productFieldsSignalError(OAICartConfigUpdate_200_response summary, QNetworkReply::NetworkError error_type, const QString &error_str);
     Q_DECL_DEPRECATED_X("Use productFindSignalError() instead")
     void productFindSignalE(OAIProductFind_200_response summary, QNetworkReply::NetworkError error_type, QString error_str);
     void productFindSignalError(OAIProductFind_200_response summary, QNetworkReply::NetworkError error_type, const QString &error_str);
@@ -914,9 +859,6 @@ Q_SIGNALS:
     Q_DECL_DEPRECATED_X("Use productVariantAddBatchSignalError() instead")
     void productVariantAddBatchSignalE(OAICategoryAddBatch_200_response summary, QNetworkReply::NetworkError error_type, QString error_str);
     void productVariantAddBatchSignalError(OAICategoryAddBatch_200_response summary, QNetworkReply::NetworkError error_type, const QString &error_str);
-    Q_DECL_DEPRECATED_X("Use productVariantCountSignalError() instead")
-    void productVariantCountSignalE(OAIProductVariantCount_200_response summary, QNetworkReply::NetworkError error_type, QString error_str);
-    void productVariantCountSignalError(OAIProductVariantCount_200_response summary, QNetworkReply::NetworkError error_type, const QString &error_str);
     Q_DECL_DEPRECATED_X("Use productVariantDeleteSignalError() instead")
     void productVariantDeleteSignalE(OAIAttributeValueDelete_200_response summary, QNetworkReply::NetworkError error_type, QString error_str);
     void productVariantDeleteSignalError(OAIAttributeValueDelete_200_response summary, QNetworkReply::NetworkError error_type, const QString &error_str);
@@ -929,12 +871,6 @@ Q_SIGNALS:
     Q_DECL_DEPRECATED_X("Use productVariantImageDeleteSignalError() instead")
     void productVariantImageDeleteSignalE(OAIAttributeDelete_200_response summary, QNetworkReply::NetworkError error_type, QString error_str);
     void productVariantImageDeleteSignalError(OAIAttributeDelete_200_response summary, QNetworkReply::NetworkError error_type, const QString &error_str);
-    Q_DECL_DEPRECATED_X("Use productVariantInfoSignalError() instead")
-    void productVariantInfoSignalE(OAIProductInfo_200_response summary, QNetworkReply::NetworkError error_type, QString error_str);
-    void productVariantInfoSignalError(OAIProductInfo_200_response summary, QNetworkReply::NetworkError error_type, const QString &error_str);
-    Q_DECL_DEPRECATED_X("Use productVariantListSignalError() instead")
-    void productVariantListSignalE(OAIProductVariantList_200_response summary, QNetworkReply::NetworkError error_type, QString error_str);
-    void productVariantListSignalError(OAIProductVariantList_200_response summary, QNetworkReply::NetworkError error_type, const QString &error_str);
     Q_DECL_DEPRECATED_X("Use productVariantPriceAddSignalError() instead")
     void productVariantPriceAddSignalE(OAICartValidate_200_response summary, QNetworkReply::NetworkError error_type, QString error_str);
     void productVariantPriceAddSignalError(OAICartValidate_200_response summary, QNetworkReply::NetworkError error_type, const QString &error_str);
@@ -993,9 +929,6 @@ Q_SIGNALS:
     Q_DECL_DEPRECATED_X("Use productDeleteBatchSignalErrorFull() instead")
     void productDeleteBatchSignalEFull(OAIHttpRequestWorker *worker, QNetworkReply::NetworkError error_type, QString error_str);
     void productDeleteBatchSignalErrorFull(OAIHttpRequestWorker *worker, QNetworkReply::NetworkError error_type, const QString &error_str);
-    Q_DECL_DEPRECATED_X("Use productFieldsSignalErrorFull() instead")
-    void productFieldsSignalEFull(OAIHttpRequestWorker *worker, QNetworkReply::NetworkError error_type, QString error_str);
-    void productFieldsSignalErrorFull(OAIHttpRequestWorker *worker, QNetworkReply::NetworkError error_type, const QString &error_str);
     Q_DECL_DEPRECATED_X("Use productFindSignalErrorFull() instead")
     void productFindSignalEFull(OAIHttpRequestWorker *worker, QNetworkReply::NetworkError error_type, QString error_str);
     void productFindSignalErrorFull(OAIHttpRequestWorker *worker, QNetworkReply::NetworkError error_type, const QString &error_str);
@@ -1071,9 +1004,6 @@ Q_SIGNALS:
     Q_DECL_DEPRECATED_X("Use productVariantAddBatchSignalErrorFull() instead")
     void productVariantAddBatchSignalEFull(OAIHttpRequestWorker *worker, QNetworkReply::NetworkError error_type, QString error_str);
     void productVariantAddBatchSignalErrorFull(OAIHttpRequestWorker *worker, QNetworkReply::NetworkError error_type, const QString &error_str);
-    Q_DECL_DEPRECATED_X("Use productVariantCountSignalErrorFull() instead")
-    void productVariantCountSignalEFull(OAIHttpRequestWorker *worker, QNetworkReply::NetworkError error_type, QString error_str);
-    void productVariantCountSignalErrorFull(OAIHttpRequestWorker *worker, QNetworkReply::NetworkError error_type, const QString &error_str);
     Q_DECL_DEPRECATED_X("Use productVariantDeleteSignalErrorFull() instead")
     void productVariantDeleteSignalEFull(OAIHttpRequestWorker *worker, QNetworkReply::NetworkError error_type, QString error_str);
     void productVariantDeleteSignalErrorFull(OAIHttpRequestWorker *worker, QNetworkReply::NetworkError error_type, const QString &error_str);
@@ -1086,12 +1016,6 @@ Q_SIGNALS:
     Q_DECL_DEPRECATED_X("Use productVariantImageDeleteSignalErrorFull() instead")
     void productVariantImageDeleteSignalEFull(OAIHttpRequestWorker *worker, QNetworkReply::NetworkError error_type, QString error_str);
     void productVariantImageDeleteSignalErrorFull(OAIHttpRequestWorker *worker, QNetworkReply::NetworkError error_type, const QString &error_str);
-    Q_DECL_DEPRECATED_X("Use productVariantInfoSignalErrorFull() instead")
-    void productVariantInfoSignalEFull(OAIHttpRequestWorker *worker, QNetworkReply::NetworkError error_type, QString error_str);
-    void productVariantInfoSignalErrorFull(OAIHttpRequestWorker *worker, QNetworkReply::NetworkError error_type, const QString &error_str);
-    Q_DECL_DEPRECATED_X("Use productVariantListSignalErrorFull() instead")
-    void productVariantListSignalEFull(OAIHttpRequestWorker *worker, QNetworkReply::NetworkError error_type, QString error_str);
-    void productVariantListSignalErrorFull(OAIHttpRequestWorker *worker, QNetworkReply::NetworkError error_type, const QString &error_str);
     Q_DECL_DEPRECATED_X("Use productVariantPriceAddSignalErrorFull() instead")
     void productVariantPriceAddSignalEFull(OAIHttpRequestWorker *worker, QNetworkReply::NetworkError error_type, QString error_str);
     void productVariantPriceAddSignalErrorFull(OAIHttpRequestWorker *worker, QNetworkReply::NetworkError error_type, const QString &error_str);

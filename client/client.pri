@@ -57,34 +57,20 @@ HEADERS += \
     $${PWD}/OAIBrand.h \
     $${PWD}/OAICarrier.h \
     $${PWD}/OAICart.h \
-    $${PWD}/OAICartBridge_200_response.h \
-    $${PWD}/OAICartBridge_200_response_result.h \
     $${PWD}/OAICartCatalogPriceRulesCount_200_response.h \
     $${PWD}/OAICartCatalogPriceRulesCount_200_response_result.h \
-    $${PWD}/OAICartClearCache_200_response.h \
-    $${PWD}/OAICartClearCache_200_response_result.h \
-    $${PWD}/OAICartConfigUpdate.h \
-    $${PWD}/OAICartConfigUpdate_200_response.h \
-    $${PWD}/OAICartConfig_200_response.h \
-    $${PWD}/OAICartConfig_200_response_result.h \
     $${PWD}/OAICartCouponAdd.h \
     $${PWD}/OAICartCouponAdd_200_response.h \
     $${PWD}/OAICartCouponAdd_200_response_result.h \
     $${PWD}/OAICartCouponCount_200_response.h \
     $${PWD}/OAICartCouponCount_200_response_result.h \
-    $${PWD}/OAICartCreate.h \
     $${PWD}/OAICartDelete_200_response.h \
     $${PWD}/OAICartDelete_200_response_result.h \
-    $${PWD}/OAICartDisconnect_200_response.h \
-    $${PWD}/OAICartDisconnect_200_response_result.h \
     $${PWD}/OAICartGiftcardAdd_200_response.h \
     $${PWD}/OAICartGiftcardAdd_200_response_result.h \
     $${PWD}/OAICartGiftcardCount_200_response.h \
     $${PWD}/OAICartGiftcardCount_200_response_result.h \
     $${PWD}/OAICartInfo_200_response.h \
-    $${PWD}/OAICartList_200_response.h \
-    $${PWD}/OAICartList_200_response_result.h \
-    $${PWD}/OAICartList_200_response_result_supported_carts_inner.h \
     $${PWD}/OAICartMethods_200_response.h \
     $${PWD}/OAICartMethods_200_response_result.h \
     $${PWD}/OAICartPluginList_200_response.h \
@@ -111,6 +97,7 @@ HEADERS += \
     $${PWD}/OAICategoryAddBatch_payload_inner_images_inner.h \
     $${PWD}/OAICategoryAdd_200_response.h \
     $${PWD}/OAICategoryAdd_200_response_result.h \
+    $${PWD}/OAICategoryAssign_200_response.h \
     $${PWD}/OAICategoryCount_200_response.h \
     $${PWD}/OAICategoryCount_200_response_result.h \
     $${PWD}/OAICategoryDelete_200_response.h \
@@ -208,8 +195,6 @@ HEADERS += \
     $${PWD}/OAIOrderFinancialStatusList_200_response.h \
     $${PWD}/OAIOrderFinancialStatusList_200_response_result.h \
     $${PWD}/OAIOrderFinancialStatusList_200_response_result_order_financial_statuses_inner.h \
-    $${PWD}/OAIOrderFind_200_response.h \
-    $${PWD}/OAIOrderFind_200_response_result.h \
     $${PWD}/OAIOrderFulfillmentStatusList_200_response.h \
     $${PWD}/OAIOrderFulfillmentStatusList_200_response_result.h \
     $${PWD}/OAIOrderInfo_200_response.h \
@@ -341,15 +326,11 @@ HEADERS += \
     $${PWD}/OAIProductVariantAdd_200_response.h \
     $${PWD}/OAIProductVariantAdd_200_response_result.h \
     $${PWD}/OAIProductVariantAdd_attributes_inner.h \
-    $${PWD}/OAIProductVariantCount_200_response.h \
-    $${PWD}/OAIProductVariantCount_200_response_result.h \
     $${PWD}/OAIProductVariantDeleteBatch.h \
     $${PWD}/OAIProductVariantDeleteBatch_payload_inner.h \
     $${PWD}/OAIProductVariantImageAdd.h \
     $${PWD}/OAIProductVariantImageAdd_200_response.h \
     $${PWD}/OAIProductVariantImageAdd_200_response_result.h \
-    $${PWD}/OAIProductVariantList_200_response.h \
-    $${PWD}/OAIProductVariantList_200_response_result.h \
     $${PWD}/OAIProductVariantPriceAdd.h \
     $${PWD}/OAIProductVariantPriceUpdate.h \
     $${PWD}/OAIProductVariantUpdate.h \
@@ -523,34 +504,20 @@ SOURCES += \
     $${PWD}/OAIBrand.cpp \
     $${PWD}/OAICarrier.cpp \
     $${PWD}/OAICart.cpp \
-    $${PWD}/OAICartBridge_200_response.cpp \
-    $${PWD}/OAICartBridge_200_response_result.cpp \
     $${PWD}/OAICartCatalogPriceRulesCount_200_response.cpp \
     $${PWD}/OAICartCatalogPriceRulesCount_200_response_result.cpp \
-    $${PWD}/OAICartClearCache_200_response.cpp \
-    $${PWD}/OAICartClearCache_200_response_result.cpp \
-    $${PWD}/OAICartConfigUpdate.cpp \
-    $${PWD}/OAICartConfigUpdate_200_response.cpp \
-    $${PWD}/OAICartConfig_200_response.cpp \
-    $${PWD}/OAICartConfig_200_response_result.cpp \
     $${PWD}/OAICartCouponAdd.cpp \
     $${PWD}/OAICartCouponAdd_200_response.cpp \
     $${PWD}/OAICartCouponAdd_200_response_result.cpp \
     $${PWD}/OAICartCouponCount_200_response.cpp \
     $${PWD}/OAICartCouponCount_200_response_result.cpp \
-    $${PWD}/OAICartCreate.cpp \
     $${PWD}/OAICartDelete_200_response.cpp \
     $${PWD}/OAICartDelete_200_response_result.cpp \
-    $${PWD}/OAICartDisconnect_200_response.cpp \
-    $${PWD}/OAICartDisconnect_200_response_result.cpp \
     $${PWD}/OAICartGiftcardAdd_200_response.cpp \
     $${PWD}/OAICartGiftcardAdd_200_response_result.cpp \
     $${PWD}/OAICartGiftcardCount_200_response.cpp \
     $${PWD}/OAICartGiftcardCount_200_response_result.cpp \
     $${PWD}/OAICartInfo_200_response.cpp \
-    $${PWD}/OAICartList_200_response.cpp \
-    $${PWD}/OAICartList_200_response_result.cpp \
-    $${PWD}/OAICartList_200_response_result_supported_carts_inner.cpp \
     $${PWD}/OAICartMethods_200_response.cpp \
     $${PWD}/OAICartMethods_200_response_result.cpp \
     $${PWD}/OAICartPluginList_200_response.cpp \
@@ -577,6 +544,7 @@ SOURCES += \
     $${PWD}/OAICategoryAddBatch_payload_inner_images_inner.cpp \
     $${PWD}/OAICategoryAdd_200_response.cpp \
     $${PWD}/OAICategoryAdd_200_response_result.cpp \
+    $${PWD}/OAICategoryAssign_200_response.cpp \
     $${PWD}/OAICategoryCount_200_response.cpp \
     $${PWD}/OAICategoryCount_200_response_result.cpp \
     $${PWD}/OAICategoryDelete_200_response.cpp \
@@ -674,8 +642,6 @@ SOURCES += \
     $${PWD}/OAIOrderFinancialStatusList_200_response.cpp \
     $${PWD}/OAIOrderFinancialStatusList_200_response_result.cpp \
     $${PWD}/OAIOrderFinancialStatusList_200_response_result_order_financial_statuses_inner.cpp \
-    $${PWD}/OAIOrderFind_200_response.cpp \
-    $${PWD}/OAIOrderFind_200_response_result.cpp \
     $${PWD}/OAIOrderFulfillmentStatusList_200_response.cpp \
     $${PWD}/OAIOrderFulfillmentStatusList_200_response_result.cpp \
     $${PWD}/OAIOrderInfo_200_response.cpp \
@@ -807,15 +773,11 @@ SOURCES += \
     $${PWD}/OAIProductVariantAdd_200_response.cpp \
     $${PWD}/OAIProductVariantAdd_200_response_result.cpp \
     $${PWD}/OAIProductVariantAdd_attributes_inner.cpp \
-    $${PWD}/OAIProductVariantCount_200_response.cpp \
-    $${PWD}/OAIProductVariantCount_200_response_result.cpp \
     $${PWD}/OAIProductVariantDeleteBatch.cpp \
     $${PWD}/OAIProductVariantDeleteBatch_payload_inner.cpp \
     $${PWD}/OAIProductVariantImageAdd.cpp \
     $${PWD}/OAIProductVariantImageAdd_200_response.cpp \
     $${PWD}/OAIProductVariantImageAdd_200_response_result.cpp \
-    $${PWD}/OAIProductVariantList_200_response.cpp \
-    $${PWD}/OAIProductVariantList_200_response_result.cpp \
     $${PWD}/OAIProductVariantPriceAdd.cpp \
     $${PWD}/OAIProductVariantPriceUpdate.cpp \
     $${PWD}/OAIProductVariantUpdate.cpp \

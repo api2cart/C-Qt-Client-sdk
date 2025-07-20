@@ -222,6 +222,26 @@ public:
     bool is_bigcartel_password_Set() const;
     bool is_bigcartel_password_Valid() const;
 
+    QString getBricklinkConsumerKey() const;
+    void setBricklinkConsumerKey(const QString &bricklink_consumer_key);
+    bool is_bricklink_consumer_key_Set() const;
+    bool is_bricklink_consumer_key_Valid() const;
+
+    QString getBricklinkConsumerSecret() const;
+    void setBricklinkConsumerSecret(const QString &bricklink_consumer_secret);
+    bool is_bricklink_consumer_secret_Set() const;
+    bool is_bricklink_consumer_secret_Valid() const;
+
+    QString getBricklinkToken() const;
+    void setBricklinkToken(const QString &bricklink_token);
+    bool is_bricklink_token_Set() const;
+    bool is_bricklink_token_Valid() const;
+
+    QString getBricklinkTokenSecret() const;
+    void setBricklinkTokenSecret(const QString &bricklink_token_secret);
+    bool is_bricklink_token_secret_Set() const;
+    bool is_bricklink_token_secret_Valid() const;
+
     QString getDemandwareClientId() const;
     void setDemandwareClientId(const QString &demandware_client_id);
     bool is_demandware_client_id_Set() const;
@@ -996,6 +1016,22 @@ private:
     QString m_bigcartel_password;
     bool m_bigcartel_password_isSet;
     bool m_bigcartel_password_isValid;
+
+    QString m_bricklink_consumer_key;
+    bool m_bricklink_consumer_key_isSet;
+    bool m_bricklink_consumer_key_isValid;
+
+    QString m_bricklink_consumer_secret;
+    bool m_bricklink_consumer_secret_isSet;
+    bool m_bricklink_consumer_secret_isValid;
+
+    QString m_bricklink_token;
+    bool m_bricklink_token_isSet;
+    bool m_bricklink_token_isValid;
+
+    QString m_bricklink_token_secret;
+    bool m_bricklink_token_secret_isSet;
+    bool m_bricklink_token_secret_isValid;
 
     QString m_demandware_client_id;
     bool m_demandware_client_id_isSet;

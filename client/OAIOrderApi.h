@@ -31,7 +31,6 @@
 #include "OAIOrderAdd_200_response.h"
 #include "OAIOrderCount_200_response.h"
 #include "OAIOrderFinancialStatusList_200_response.h"
-#include "OAIOrderFind_200_response.h"
 #include "OAIOrderFulfillmentStatusList_200_response.h"
 #include "OAIOrderInfo_200_response.h"
 #include "OAIOrderPreestimateShippingList.h"
@@ -135,22 +134,6 @@ public:
 
 
     virtual void orderFinancialStatusList();
-
-    /**
-    * @param[in]  start qint32 [optional]
-    * @param[in]  count qint32 [optional]
-    * @param[in]  customer_id QString [optional]
-    * @param[in]  customer_email QString [optional]
-    * @param[in]  order_status QString [optional]
-    * @param[in]  financial_status QString [optional]
-    * @param[in]  created_to QString [optional]
-    * @param[in]  created_from QString [optional]
-    * @param[in]  modified_to QString [optional]
-    * @param[in]  modified_from QString [optional]
-    * @param[in]  params QString [optional]
-    * @param[in]  exclude QString [optional]
-    */
-    Q_DECL_DEPRECATED virtual void orderFind(const ::OpenAPI::OptionalParam<qint32> &start = ::OpenAPI::OptionalParam<qint32>(), const ::OpenAPI::OptionalParam<qint32> &count = ::OpenAPI::OptionalParam<qint32>(), const ::OpenAPI::OptionalParam<QString> &customer_id = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &customer_email = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &order_status = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &financial_status = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &created_to = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &created_from = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &modified_to = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &modified_from = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &params = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &exclude = ::OpenAPI::OptionalParam<QString>());
 
     /**
     * @param[in]  action QString [optional]
@@ -358,7 +341,6 @@ private:
     void orderAddCallback(OAIHttpRequestWorker *worker);
     void orderCountCallback(OAIHttpRequestWorker *worker);
     void orderFinancialStatusListCallback(OAIHttpRequestWorker *worker);
-    void orderFindCallback(OAIHttpRequestWorker *worker);
     void orderFulfillmentStatusListCallback(OAIHttpRequestWorker *worker);
     void orderInfoCallback(OAIHttpRequestWorker *worker);
     void orderListCallback(OAIHttpRequestWorker *worker);
@@ -384,7 +366,6 @@ Q_SIGNALS:
     void orderAddSignal(OAIOrderAdd_200_response summary);
     void orderCountSignal(OAIOrderCount_200_response summary);
     void orderFinancialStatusListSignal(OAIOrderFinancialStatusList_200_response summary);
-    void orderFindSignal(OAIOrderFind_200_response summary);
     void orderFulfillmentStatusListSignal(OAIOrderFulfillmentStatusList_200_response summary);
     void orderInfoSignal(OAIOrderInfo_200_response summary);
     void orderListSignal(OAIModel_Response_Order_List summary);
@@ -409,7 +390,6 @@ Q_SIGNALS:
     void orderAddSignalFull(OAIHttpRequestWorker *worker, OAIOrderAdd_200_response summary);
     void orderCountSignalFull(OAIHttpRequestWorker *worker, OAIOrderCount_200_response summary);
     void orderFinancialStatusListSignalFull(OAIHttpRequestWorker *worker, OAIOrderFinancialStatusList_200_response summary);
-    void orderFindSignalFull(OAIHttpRequestWorker *worker, OAIOrderFind_200_response summary);
     void orderFulfillmentStatusListSignalFull(OAIHttpRequestWorker *worker, OAIOrderFulfillmentStatusList_200_response summary);
     void orderInfoSignalFull(OAIHttpRequestWorker *worker, OAIOrderInfo_200_response summary);
     void orderListSignalFull(OAIHttpRequestWorker *worker, OAIModel_Response_Order_List summary);
@@ -441,9 +421,6 @@ Q_SIGNALS:
     Q_DECL_DEPRECATED_X("Use orderFinancialStatusListSignalError() instead")
     void orderFinancialStatusListSignalE(OAIOrderFinancialStatusList_200_response summary, QNetworkReply::NetworkError error_type, QString error_str);
     void orderFinancialStatusListSignalError(OAIOrderFinancialStatusList_200_response summary, QNetworkReply::NetworkError error_type, const QString &error_str);
-    Q_DECL_DEPRECATED_X("Use orderFindSignalError() instead")
-    void orderFindSignalE(OAIOrderFind_200_response summary, QNetworkReply::NetworkError error_type, QString error_str);
-    void orderFindSignalError(OAIOrderFind_200_response summary, QNetworkReply::NetworkError error_type, const QString &error_str);
     Q_DECL_DEPRECATED_X("Use orderFulfillmentStatusListSignalError() instead")
     void orderFulfillmentStatusListSignalE(OAIOrderFulfillmentStatusList_200_response summary, QNetworkReply::NetworkError error_type, QString error_str);
     void orderFulfillmentStatusListSignalError(OAIOrderFulfillmentStatusList_200_response summary, QNetworkReply::NetworkError error_type, const QString &error_str);
@@ -511,9 +488,6 @@ Q_SIGNALS:
     Q_DECL_DEPRECATED_X("Use orderFinancialStatusListSignalErrorFull() instead")
     void orderFinancialStatusListSignalEFull(OAIHttpRequestWorker *worker, QNetworkReply::NetworkError error_type, QString error_str);
     void orderFinancialStatusListSignalErrorFull(OAIHttpRequestWorker *worker, QNetworkReply::NetworkError error_type, const QString &error_str);
-    Q_DECL_DEPRECATED_X("Use orderFindSignalErrorFull() instead")
-    void orderFindSignalEFull(OAIHttpRequestWorker *worker, QNetworkReply::NetworkError error_type, QString error_str);
-    void orderFindSignalErrorFull(OAIHttpRequestWorker *worker, QNetworkReply::NetworkError error_type, const QString &error_str);
     Q_DECL_DEPRECATED_X("Use orderFulfillmentStatusListSignalErrorFull() instead")
     void orderFulfillmentStatusListSignalEFull(OAIHttpRequestWorker *worker, QNetworkReply::NetworkError error_type, QString error_str);
     void orderFulfillmentStatusListSignalErrorFull(OAIHttpRequestWorker *worker, QNetworkReply::NetworkError error_type, const QString &error_str);
