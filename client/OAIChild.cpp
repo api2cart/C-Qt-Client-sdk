@@ -130,6 +130,9 @@ void OAIChild::initializeModel() {
     m_min_quantity_isSet = false;
     m_min_quantity_isValid = false;
 
+    m_low_stock_threshold_isSet = false;
+    m_low_stock_threshold_isValid = false;
+
     m_default_qty_in_pack_isSet = false;
     m_default_qty_in_pack_isValid = false;
 
@@ -281,6 +284,9 @@ void OAIChild::fromJsonObject(QJsonObject json) {
     m_min_quantity_isValid = ::OpenAPI::fromJsonValue(m_min_quantity, json[QString("min_quantity")]);
     m_min_quantity_isSet = !json[QString("min_quantity")].isNull() && m_min_quantity_isValid;
 
+    m_low_stock_threshold_isValid = ::OpenAPI::fromJsonValue(m_low_stock_threshold, json[QString("low_stock_threshold")]);
+    m_low_stock_threshold_isSet = !json[QString("low_stock_threshold")].isNull() && m_low_stock_threshold_isValid;
+
     m_default_qty_in_pack_isValid = ::OpenAPI::fromJsonValue(m_default_qty_in_pack, json[QString("default_qty_in_pack")]);
     m_default_qty_in_pack_isSet = !json[QString("default_qty_in_pack")].isNull() && m_default_qty_in_pack_isValid;
 
@@ -431,6 +437,9 @@ QJsonObject OAIChild::asJsonObject() const {
     }
     if (m_min_quantity_isSet) {
         obj.insert(QString("min_quantity"), ::OpenAPI::toJsonValue(m_min_quantity));
+    }
+    if (m_low_stock_threshold_isSet) {
+        obj.insert(QString("low_stock_threshold"), ::OpenAPI::toJsonValue(m_low_stock_threshold));
     }
     if (m_default_qty_in_pack_isSet) {
         obj.insert(QString("default_qty_in_pack"), ::OpenAPI::toJsonValue(m_default_qty_in_pack));
@@ -992,6 +1001,22 @@ bool OAIChild::is_min_quantity_Valid() const{
     return m_min_quantity_isValid;
 }
 
+double OAIChild::getLowStockThreshold() const {
+    return m_low_stock_threshold;
+}
+void OAIChild::setLowStockThreshold(const double &low_stock_threshold) {
+    m_low_stock_threshold = low_stock_threshold;
+    m_low_stock_threshold_isSet = true;
+}
+
+bool OAIChild::is_low_stock_threshold_Set() const{
+    return m_low_stock_threshold_isSet;
+}
+
+bool OAIChild::is_low_stock_threshold_Valid() const{
+    return m_low_stock_threshold_isValid;
+}
+
 double OAIChild::getDefaultQtyInPack() const {
     return m_default_qty_in_pack;
 }
@@ -1391,6 +1416,11 @@ bool OAIChild::isSet() const {
         }
 
         if (m_min_quantity_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_low_stock_threshold_isSet) {
             isObjectUpdated = true;
             break;
         }

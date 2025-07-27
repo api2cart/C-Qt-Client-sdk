@@ -174,6 +174,11 @@ public:
     bool is_manage_stock_Set() const;
     bool is_manage_stock_Valid() const;
 
+    double getLowStockThreshold() const;
+    void setLowStockThreshold(const double &low_stock_threshold);
+    bool is_low_stock_threshold_Set() const;
+    bool is_low_stock_threshold_Valid() const;
+
     double getWeight() const;
     void setWeight(const double &weight);
     bool is_weight_Set() const;
@@ -413,6 +418,10 @@ private:
     bool m_manage_stock;
     bool m_manage_stock_isSet;
     bool m_manage_stock_isValid;
+
+    double m_low_stock_threshold;
+    bool m_low_stock_threshold_isSet;
+    bool m_low_stock_threshold_isValid;
 
     double m_weight;
     bool m_weight_isSet;

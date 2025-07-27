@@ -145,6 +145,9 @@ void OAIProductAdd::initializeModel() {
     m_max_order_quantity_isSet = false;
     m_max_order_quantity_isValid = false;
 
+    m_low_stock_threshold_isSet = false;
+    m_low_stock_threshold_isValid = false;
+
     m_weight_isSet = false;
     m_weight_isValid = false;
 
@@ -503,6 +506,9 @@ void OAIProductAdd::fromJsonObject(QJsonObject json) {
     m_max_order_quantity_isValid = ::OpenAPI::fromJsonValue(m_max_order_quantity, json[QString("max_order_quantity")]);
     m_max_order_quantity_isSet = !json[QString("max_order_quantity")].isNull() && m_max_order_quantity_isValid;
 
+    m_low_stock_threshold_isValid = ::OpenAPI::fromJsonValue(m_low_stock_threshold, json[QString("low_stock_threshold")]);
+    m_low_stock_threshold_isSet = !json[QString("low_stock_threshold")].isNull() && m_low_stock_threshold_isValid;
+
     m_weight_isValid = ::OpenAPI::fromJsonValue(m_weight, json[QString("weight")]);
     m_weight_isSet = !json[QString("weight")].isNull() && m_weight_isValid;
 
@@ -860,6 +866,9 @@ QJsonObject OAIProductAdd::asJsonObject() const {
     }
     if (m_max_order_quantity_isSet) {
         obj.insert(QString("max_order_quantity"), ::OpenAPI::toJsonValue(m_max_order_quantity));
+    }
+    if (m_low_stock_threshold_isSet) {
+        obj.insert(QString("low_stock_threshold"), ::OpenAPI::toJsonValue(m_low_stock_threshold));
     }
     if (m_weight_isSet) {
         obj.insert(QString("weight"), ::OpenAPI::toJsonValue(m_weight));
@@ -1691,6 +1700,22 @@ bool OAIProductAdd::is_max_order_quantity_Set() const{
 
 bool OAIProductAdd::is_max_order_quantity_Valid() const{
     return m_max_order_quantity_isValid;
+}
+
+double OAIProductAdd::getLowStockThreshold() const {
+    return m_low_stock_threshold;
+}
+void OAIProductAdd::setLowStockThreshold(const double &low_stock_threshold) {
+    m_low_stock_threshold = low_stock_threshold;
+    m_low_stock_threshold_isSet = true;
+}
+
+bool OAIProductAdd::is_low_stock_threshold_Set() const{
+    return m_low_stock_threshold_isSet;
+}
+
+bool OAIProductAdd::is_low_stock_threshold_Valid() const{
+    return m_low_stock_threshold_isValid;
 }
 
 double OAIProductAdd::getWeight() const {
@@ -3141,6 +3166,11 @@ bool OAIProductAdd::isSet() const {
         }
 
         if (m_max_order_quantity_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_low_stock_threshold_isSet) {
             isObjectUpdated = true;
             break;
         }

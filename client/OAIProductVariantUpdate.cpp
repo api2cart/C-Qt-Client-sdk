@@ -73,6 +73,9 @@ void OAIProductVariantUpdate::initializeModel() {
     m_backorder_status_isSet = false;
     m_backorder_status_isValid = false;
 
+    m_low_stock_threshold_isSet = false;
+    m_low_stock_threshold_isValid = false;
+
     m_available_for_sale_isSet = false;
     m_available_for_sale_isValid = false;
 
@@ -242,6 +245,9 @@ void OAIProductVariantUpdate::fromJsonObject(QJsonObject json) {
     m_backorder_status_isValid = ::OpenAPI::fromJsonValue(m_backorder_status, json[QString("backorder_status")]);
     m_backorder_status_isSet = !json[QString("backorder_status")].isNull() && m_backorder_status_isValid;
 
+    m_low_stock_threshold_isValid = ::OpenAPI::fromJsonValue(m_low_stock_threshold, json[QString("low_stock_threshold")]);
+    m_low_stock_threshold_isSet = !json[QString("low_stock_threshold")].isNull() && m_low_stock_threshold_isValid;
+
     m_available_for_sale_isValid = ::OpenAPI::fromJsonValue(m_available_for_sale, json[QString("available_for_sale")]);
     m_available_for_sale_isSet = !json[QString("available_for_sale")].isNull() && m_available_for_sale_isValid;
 
@@ -410,6 +416,9 @@ QJsonObject OAIProductVariantUpdate::asJsonObject() const {
     }
     if (m_backorder_status_isSet) {
         obj.insert(QString("backorder_status"), ::OpenAPI::toJsonValue(m_backorder_status));
+    }
+    if (m_low_stock_threshold_isSet) {
+        obj.insert(QString("low_stock_threshold"), ::OpenAPI::toJsonValue(m_low_stock_threshold));
     }
     if (m_available_for_sale_isSet) {
         obj.insert(QString("available_for_sale"), ::OpenAPI::toJsonValue(m_available_for_sale));
@@ -740,6 +749,22 @@ bool OAIProductVariantUpdate::is_backorder_status_Set() const{
 
 bool OAIProductVariantUpdate::is_backorder_status_Valid() const{
     return m_backorder_status_isValid;
+}
+
+double OAIProductVariantUpdate::getLowStockThreshold() const {
+    return m_low_stock_threshold;
+}
+void OAIProductVariantUpdate::setLowStockThreshold(const double &low_stock_threshold) {
+    m_low_stock_threshold = low_stock_threshold;
+    m_low_stock_threshold_isSet = true;
+}
+
+bool OAIProductVariantUpdate::is_low_stock_threshold_Set() const{
+    return m_low_stock_threshold_isSet;
+}
+
+bool OAIProductVariantUpdate::is_low_stock_threshold_Valid() const{
+    return m_low_stock_threshold_isValid;
 }
 
 bool OAIProductVariantUpdate::isAvailableForSale() const {
@@ -1446,6 +1471,11 @@ bool OAIProductVariantUpdate::isSet() const {
         }
 
         if (m_backorder_status_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_low_stock_threshold_isSet) {
             isObjectUpdated = true;
             break;
         }

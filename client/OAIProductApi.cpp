@@ -4153,7 +4153,7 @@ void OAIProductApi::productInfoCallback(OAIHttpRequestWorker *worker) {
     }
 }
 
-void OAIProductApi::productList(const ::OpenAPI::OptionalParam<qint32> &start, const ::OpenAPI::OptionalParam<qint32> &count, const ::OpenAPI::OptionalParam<QString> &page_cursor, const ::OpenAPI::OptionalParam<QString> &product_ids, const ::OpenAPI::OptionalParam<QString> &since_id, const ::OpenAPI::OptionalParam<QString> &categories_ids, const ::OpenAPI::OptionalParam<QString> &category_id, const ::OpenAPI::OptionalParam<QString> &store_id, const ::OpenAPI::OptionalParam<QString> &lang_id, const ::OpenAPI::OptionalParam<QString> &currency_id, const ::OpenAPI::OptionalParam<bool> &avail_view, const ::OpenAPI::OptionalParam<bool> &avail_sale, const ::OpenAPI::OptionalParam<QString> &created_from, const ::OpenAPI::OptionalParam<QString> &created_to, const ::OpenAPI::OptionalParam<QString> &modified_from, const ::OpenAPI::OptionalParam<QString> &modified_to, const ::OpenAPI::OptionalParam<QString> &sku, const ::OpenAPI::OptionalParam<QString> &brand_name, const ::OpenAPI::OptionalParam<QList<QString>> &product_attributes, const ::OpenAPI::OptionalParam<QString> &status, const ::OpenAPI::OptionalParam<QString> &type, const ::OpenAPI::OptionalParam<QString> &visible, const ::OpenAPI::OptionalParam<QString> &find_value, const ::OpenAPI::OptionalParam<QString> &find_where, const ::OpenAPI::OptionalParam<bool> &return_global, const ::OpenAPI::OptionalParam<QString> &params, const ::OpenAPI::OptionalParam<QString> &response_fields, const ::OpenAPI::OptionalParam<QString> &exclude, const ::OpenAPI::OptionalParam<QString> &sort_by, const ::OpenAPI::OptionalParam<QString> &sort_direction, const ::OpenAPI::OptionalParam<QString> &report_request_id, const ::OpenAPI::OptionalParam<bool> &disable_cache, const ::OpenAPI::OptionalParam<bool> &disable_report_cache, const ::OpenAPI::OptionalParam<bool> &use_latest_api_version) {
+void OAIProductApi::productList(const ::OpenAPI::OptionalParam<qint32> &start, const ::OpenAPI::OptionalParam<qint32> &count, const ::OpenAPI::OptionalParam<QString> &page_cursor, const ::OpenAPI::OptionalParam<QString> &product_ids, const ::OpenAPI::OptionalParam<QString> &since_id, const ::OpenAPI::OptionalParam<QString> &categories_ids, const ::OpenAPI::OptionalParam<QString> &category_id, const ::OpenAPI::OptionalParam<QString> &store_id, const ::OpenAPI::OptionalParam<QString> &lang_id, const ::OpenAPI::OptionalParam<QString> &currency_id, const ::OpenAPI::OptionalParam<bool> &avail_view, const ::OpenAPI::OptionalParam<bool> &avail_sale, const ::OpenAPI::OptionalParam<QString> &created_from, const ::OpenAPI::OptionalParam<QString> &created_to, const ::OpenAPI::OptionalParam<QString> &modified_from, const ::OpenAPI::OptionalParam<QString> &modified_to, const ::OpenAPI::OptionalParam<QString> &sku, const ::OpenAPI::OptionalParam<QString> &brand_name, const ::OpenAPI::OptionalParam<QList<QString>> &product_attributes, const ::OpenAPI::OptionalParam<QString> &status, const ::OpenAPI::OptionalParam<QString> &type, const ::OpenAPI::OptionalParam<QString> &visible, const ::OpenAPI::OptionalParam<QString> &find_value, const ::OpenAPI::OptionalParam<QString> &find_where, const ::OpenAPI::OptionalParam<bool> &return_global, const ::OpenAPI::OptionalParam<QString> &params, const ::OpenAPI::OptionalParam<QString> &response_fields, const ::OpenAPI::OptionalParam<QString> &exclude, const ::OpenAPI::OptionalParam<QString> &sort_by, const ::OpenAPI::OptionalParam<QString> &sort_direction, const ::OpenAPI::OptionalParam<QString> &report_request_id, const ::OpenAPI::OptionalParam<bool> &disable_cache, const ::OpenAPI::OptionalParam<bool> &disable_report_cache, const ::OpenAPI::OptionalParam<bool> &use_latest_api_version, const ::OpenAPI::OptionalParam<QString> &product_type) {
     QString fullPath = QString(_serverConfigs["productList"][_serverIndices.value("productList")].URL()+"/product.list.json");
     
     if (_apiKeys.contains("StoreKeyAuth")) {
@@ -4744,6 +4744,21 @@ void OAIProductApi::productList(const ::OpenAPI::OptionalParam<qint32> &start, c
             fullPath.append("?");
 
         fullPath.append(QUrl::toPercentEncoding("use_latest_api_version")).append(querySuffix).append(QUrl::toPercentEncoding(::OpenAPI::toStringValue(use_latest_api_version.stringValue())));
+    }
+    if (product_type.hasValue())
+    {
+        queryStyle = "form";
+        if (queryStyle == "")
+            queryStyle = "form";
+        queryPrefix = getParamStylePrefix(queryStyle);
+        querySuffix = getParamStyleSuffix(queryStyle);
+        queryDelimiter = getParamStyleDelimiter(queryStyle, "product_type", true);
+        if (fullPath.indexOf("?") > 0)
+            fullPath.append(queryPrefix);
+        else
+            fullPath.append("?");
+
+        fullPath.append(QUrl::toPercentEncoding("product_type")).append(querySuffix).append(QUrl::toPercentEncoding(::OpenAPI::toStringValue(product_type.stringValue())));
     }
     OAIHttpRequestWorker *worker = new OAIHttpRequestWorker(this, _manager);
     worker->setTimeOut(_timeOut);

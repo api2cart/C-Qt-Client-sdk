@@ -213,6 +213,11 @@ public:
     bool is_min_quantity_Set() const;
     bool is_min_quantity_Valid() const;
 
+    double getLowStockThreshold() const;
+    void setLowStockThreshold(const double &low_stock_threshold);
+    bool is_low_stock_threshold_Set() const;
+    bool is_low_stock_threshold_Valid() const;
+
     double getDefaultQtyInPack() const;
     void setDefaultQtyInPack(const double &default_qty_in_pack);
     bool is_default_qty_in_pack_Set() const;
@@ -421,6 +426,10 @@ private:
     double m_min_quantity;
     bool m_min_quantity_isSet;
     bool m_min_quantity_isValid;
+
+    double m_low_stock_threshold;
+    bool m_low_stock_threshold_isSet;
+    bool m_low_stock_threshold_isValid;
 
     double m_default_qty_in_pack;
     bool m_default_qty_in_pack_isSet;

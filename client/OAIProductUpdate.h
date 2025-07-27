@@ -235,6 +235,11 @@ public:
     bool is_reduce_quantity_Set() const;
     bool is_reduce_quantity_Valid() const;
 
+    double getLowStockThreshold() const;
+    void setLowStockThreshold(const double &low_stock_threshold);
+    bool is_low_stock_threshold_Set() const;
+    bool is_low_stock_threshold_Valid() const;
+
     QString getWarehouseId() const;
     void setWarehouseId(const QString &warehouse_id);
     bool is_warehouse_id_Set() const;
@@ -628,6 +633,10 @@ private:
     double m_reduce_quantity;
     bool m_reduce_quantity_isSet;
     bool m_reduce_quantity_isValid;
+
+    double m_low_stock_threshold;
+    bool m_low_stock_threshold_isSet;
+    bool m_low_stock_threshold_isValid;
 
     QString m_warehouse_id;
     bool m_warehouse_id_isSet;

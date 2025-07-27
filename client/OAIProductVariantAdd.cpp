@@ -112,6 +112,9 @@ void OAIProductVariantAdd::initializeModel() {
     m_manage_stock_isSet = false;
     m_manage_stock_isValid = false;
 
+    m_low_stock_threshold_isSet = false;
+    m_low_stock_threshold_isValid = false;
+
     m_weight_isSet = false;
     m_weight_isValid = false;
 
@@ -278,6 +281,9 @@ void OAIProductVariantAdd::fromJsonObject(QJsonObject json) {
     m_manage_stock_isValid = ::OpenAPI::fromJsonValue(m_manage_stock, json[QString("manage_stock")]);
     m_manage_stock_isSet = !json[QString("manage_stock")].isNull() && m_manage_stock_isValid;
 
+    m_low_stock_threshold_isValid = ::OpenAPI::fromJsonValue(m_low_stock_threshold, json[QString("low_stock_threshold")]);
+    m_low_stock_threshold_isSet = !json[QString("low_stock_threshold")].isNull() && m_low_stock_threshold_isValid;
+
     m_weight_isValid = ::OpenAPI::fromJsonValue(m_weight, json[QString("weight")]);
     m_weight_isSet = !json[QString("weight")].isNull() && m_weight_isValid;
 
@@ -443,6 +449,9 @@ QJsonObject OAIProductVariantAdd::asJsonObject() const {
     }
     if (m_manage_stock_isSet) {
         obj.insert(QString("manage_stock"), ::OpenAPI::toJsonValue(m_manage_stock));
+    }
+    if (m_low_stock_threshold_isSet) {
+        obj.insert(QString("low_stock_threshold"), ::OpenAPI::toJsonValue(m_low_stock_threshold));
     }
     if (m_weight_isSet) {
         obj.insert(QString("weight"), ::OpenAPI::toJsonValue(m_weight));
@@ -939,6 +948,22 @@ bool OAIProductVariantAdd::is_manage_stock_Set() const{
 
 bool OAIProductVariantAdd::is_manage_stock_Valid() const{
     return m_manage_stock_isValid;
+}
+
+double OAIProductVariantAdd::getLowStockThreshold() const {
+    return m_low_stock_threshold;
+}
+void OAIProductVariantAdd::setLowStockThreshold(const double &low_stock_threshold) {
+    m_low_stock_threshold = low_stock_threshold;
+    m_low_stock_threshold_isSet = true;
+}
+
+bool OAIProductVariantAdd::is_low_stock_threshold_Set() const{
+    return m_low_stock_threshold_isSet;
+}
+
+bool OAIProductVariantAdd::is_low_stock_threshold_Valid() const{
+    return m_low_stock_threshold_isValid;
 }
 
 double OAIProductVariantAdd::getWeight() const {
@@ -1486,6 +1511,11 @@ bool OAIProductVariantAdd::isSet() const {
         }
 
         if (m_manage_stock_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_low_stock_threshold_isSet) {
             isObjectUpdated = true;
             break;
         }

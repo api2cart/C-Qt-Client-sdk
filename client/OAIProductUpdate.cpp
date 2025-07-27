@@ -145,6 +145,9 @@ void OAIProductUpdate::initializeModel() {
     m_reduce_quantity_isSet = false;
     m_reduce_quantity_isValid = false;
 
+    m_low_stock_threshold_isSet = false;
+    m_low_stock_threshold_isValid = false;
+
     m_warehouse_id_isSet = false;
     m_warehouse_id_isValid = false;
 
@@ -410,6 +413,9 @@ void OAIProductUpdate::fromJsonObject(QJsonObject json) {
     m_reduce_quantity_isValid = ::OpenAPI::fromJsonValue(m_reduce_quantity, json[QString("reduce_quantity")]);
     m_reduce_quantity_isSet = !json[QString("reduce_quantity")].isNull() && m_reduce_quantity_isValid;
 
+    m_low_stock_threshold_isValid = ::OpenAPI::fromJsonValue(m_low_stock_threshold, json[QString("low_stock_threshold")]);
+    m_low_stock_threshold_isSet = !json[QString("low_stock_threshold")].isNull() && m_low_stock_threshold_isValid;
+
     m_warehouse_id_isValid = ::OpenAPI::fromJsonValue(m_warehouse_id, json[QString("warehouse_id")]);
     m_warehouse_id_isSet = !json[QString("warehouse_id")].isNull() && m_warehouse_id_isValid;
 
@@ -674,6 +680,9 @@ QJsonObject OAIProductUpdate::asJsonObject() const {
     }
     if (m_reduce_quantity_isSet) {
         obj.insert(QString("reduce_quantity"), ::OpenAPI::toJsonValue(m_reduce_quantity));
+    }
+    if (m_low_stock_threshold_isSet) {
+        obj.insert(QString("low_stock_threshold"), ::OpenAPI::toJsonValue(m_low_stock_threshold));
     }
     if (m_warehouse_id_isSet) {
         obj.insert(QString("warehouse_id"), ::OpenAPI::toJsonValue(m_warehouse_id));
@@ -1412,6 +1421,22 @@ bool OAIProductUpdate::is_reduce_quantity_Set() const{
 
 bool OAIProductUpdate::is_reduce_quantity_Valid() const{
     return m_reduce_quantity_isValid;
+}
+
+double OAIProductUpdate::getLowStockThreshold() const {
+    return m_low_stock_threshold;
+}
+void OAIProductUpdate::setLowStockThreshold(const double &low_stock_threshold) {
+    m_low_stock_threshold = low_stock_threshold;
+    m_low_stock_threshold_isSet = true;
+}
+
+bool OAIProductUpdate::is_low_stock_threshold_Set() const{
+    return m_low_stock_threshold_isSet;
+}
+
+bool OAIProductUpdate::is_low_stock_threshold_Valid() const{
+    return m_low_stock_threshold_isValid;
 }
 
 QString OAIProductUpdate::getWarehouseId() const {
@@ -2366,6 +2391,11 @@ bool OAIProductUpdate::isSet() const {
         }
 
         if (m_reduce_quantity_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_low_stock_threshold_isSet) {
             isObjectUpdated = true;
             break;
         }

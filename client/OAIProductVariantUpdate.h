@@ -107,6 +107,11 @@ public:
     bool is_backorder_status_Set() const;
     bool is_backorder_status_Valid() const;
 
+    double getLowStockThreshold() const;
+    void setLowStockThreshold(const double &low_stock_threshold);
+    bool is_low_stock_threshold_Set() const;
+    bool is_low_stock_threshold_Valid() const;
+
     bool isAvailableForSale() const;
     void setAvailableForSale(const bool &available_for_sale);
     bool is_available_for_sale_Set() const;
@@ -364,6 +369,10 @@ private:
     QString m_backorder_status;
     bool m_backorder_status_isSet;
     bool m_backorder_status_isValid;
+
+    double m_low_stock_threshold;
+    bool m_low_stock_threshold_isSet;
+    bool m_low_stock_threshold_isValid;
 
     bool m_available_for_sale;
     bool m_available_for_sale_isSet;
