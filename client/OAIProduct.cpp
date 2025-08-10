@@ -124,9 +124,6 @@ void OAIProduct::initializeModel() {
     m_in_stock_isSet = false;
     m_in_stock_isValid = false;
 
-    m_on_sale_isSet = false;
-    m_on_sale_isValid = false;
-
     m_backorders_isSet = false;
     m_backorders_isValid = false;
 
@@ -135,6 +132,9 @@ void OAIProduct::initializeModel() {
 
     m_is_stock_managed_isSet = false;
     m_is_stock_managed_isValid = false;
+
+    m_on_sale_isSet = false;
+    m_on_sale_isValid = false;
 
     m_create_at_isSet = false;
     m_create_at_isValid = false;
@@ -305,9 +305,6 @@ void OAIProduct::fromJsonObject(QJsonObject json) {
     m_in_stock_isValid = ::OpenAPI::fromJsonValue(m_in_stock, json[QString("in_stock")]);
     m_in_stock_isSet = !json[QString("in_stock")].isNull() && m_in_stock_isValid;
 
-    m_on_sale_isValid = ::OpenAPI::fromJsonValue(m_on_sale, json[QString("on_sale")]);
-    m_on_sale_isSet = !json[QString("on_sale")].isNull() && m_on_sale_isValid;
-
     m_backorders_isValid = ::OpenAPI::fromJsonValue(m_backorders, json[QString("backorders")]);
     m_backorders_isSet = !json[QString("backorders")].isNull() && m_backorders_isValid;
 
@@ -316,6 +313,9 @@ void OAIProduct::fromJsonObject(QJsonObject json) {
 
     m_is_stock_managed_isValid = ::OpenAPI::fromJsonValue(m_is_stock_managed, json[QString("is_stock_managed")]);
     m_is_stock_managed_isSet = !json[QString("is_stock_managed")].isNull() && m_is_stock_managed_isValid;
+
+    m_on_sale_isValid = ::OpenAPI::fromJsonValue(m_on_sale, json[QString("on_sale")]);
+    m_on_sale_isSet = !json[QString("on_sale")].isNull() && m_on_sale_isValid;
 
     m_create_at_isValid = ::OpenAPI::fromJsonValue(m_create_at, json[QString("create_at")]);
     m_create_at_isSet = !json[QString("create_at")].isNull() && m_create_at_isValid;
@@ -486,9 +486,6 @@ QJsonObject OAIProduct::asJsonObject() const {
     if (m_in_stock_isSet) {
         obj.insert(QString("in_stock"), ::OpenAPI::toJsonValue(m_in_stock));
     }
-    if (m_on_sale_isSet) {
-        obj.insert(QString("on_sale"), ::OpenAPI::toJsonValue(m_on_sale));
-    }
     if (m_backorders_isSet) {
         obj.insert(QString("backorders"), ::OpenAPI::toJsonValue(m_backorders));
     }
@@ -497,6 +494,9 @@ QJsonObject OAIProduct::asJsonObject() const {
     }
     if (m_is_stock_managed_isSet) {
         obj.insert(QString("is_stock_managed"), ::OpenAPI::toJsonValue(m_is_stock_managed));
+    }
+    if (m_on_sale_isSet) {
+        obj.insert(QString("on_sale"), ::OpenAPI::toJsonValue(m_on_sale));
     }
     if (m_create_at.isSet()) {
         obj.insert(QString("create_at"), ::OpenAPI::toJsonValue(m_create_at));
@@ -1050,22 +1050,6 @@ bool OAIProduct::is_in_stock_Valid() const{
     return m_in_stock_isValid;
 }
 
-bool OAIProduct::isOnSale() const {
-    return m_on_sale;
-}
-void OAIProduct::setOnSale(const bool &on_sale) {
-    m_on_sale = on_sale;
-    m_on_sale_isSet = true;
-}
-
-bool OAIProduct::is_on_sale_Set() const{
-    return m_on_sale_isSet;
-}
-
-bool OAIProduct::is_on_sale_Valid() const{
-    return m_on_sale_isValid;
-}
-
 QString OAIProduct::getBackorders() const {
     return m_backorders;
 }
@@ -1112,6 +1096,22 @@ bool OAIProduct::is_is_stock_managed_Set() const{
 
 bool OAIProduct::is_is_stock_managed_Valid() const{
     return m_is_stock_managed_isValid;
+}
+
+bool OAIProduct::isOnSale() const {
+    return m_on_sale;
+}
+void OAIProduct::setOnSale(const bool &on_sale) {
+    m_on_sale = on_sale;
+    m_on_sale_isSet = true;
+}
+
+bool OAIProduct::is_on_sale_Set() const{
+    return m_on_sale_isSet;
+}
+
+bool OAIProduct::is_on_sale_Valid() const{
+    return m_on_sale_isValid;
 }
 
 OAIA2CDateTime OAIProduct::getCreateAt() const {
@@ -1635,11 +1635,6 @@ bool OAIProduct::isSet() const {
             break;
         }
 
-        if (m_on_sale_isSet) {
-            isObjectUpdated = true;
-            break;
-        }
-
         if (m_backorders_isSet) {
             isObjectUpdated = true;
             break;
@@ -1651,6 +1646,11 @@ bool OAIProduct::isSet() const {
         }
 
         if (m_is_stock_managed_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_on_sale_isSet) {
             isObjectUpdated = true;
             break;
         }

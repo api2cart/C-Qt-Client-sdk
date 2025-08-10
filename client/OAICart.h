@@ -62,6 +62,11 @@ public:
     bool is_version_Set() const;
     bool is_version_Valid() const;
 
+    QString getBridgeVersion() const;
+    void setBridgeVersion(const QString &bridge_version);
+    bool is_bridge_version_Set() const;
+    bool is_bridge_version_Valid() const;
+
     QString getDbPrefix() const;
     void setDbPrefix(const QString &db_prefix);
     bool is_db_prefix_Set() const;
@@ -109,6 +114,10 @@ private:
     QString m_version;
     bool m_version_isSet;
     bool m_version_isValid;
+
+    QString m_bridge_version;
+    bool m_bridge_version_isSet;
+    bool m_bridge_version_isValid;
 
     QString m_db_prefix;
     bool m_db_prefix_isSet;

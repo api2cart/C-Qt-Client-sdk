@@ -291,6 +291,12 @@ void OAIProductUpdate::initializeModel() {
 
     m_personalization_details_isSet = false;
     m_personalization_details_isValid = false;
+
+    m_marketplace_item_properties_isSet = false;
+    m_marketplace_item_properties_isValid = false;
+
+    m_min_order_quantity_isSet = false;
+    m_min_order_quantity_isValid = false;
 }
 
 void OAIProductUpdate::fromJson(QString jsonString) {
@@ -559,6 +565,12 @@ void OAIProductUpdate::fromJsonObject(QJsonObject json) {
 
     m_personalization_details_isValid = ::OpenAPI::fromJsonValue(m_personalization_details, json[QString("personalization_details")]);
     m_personalization_details_isSet = !json[QString("personalization_details")].isNull() && m_personalization_details_isValid;
+
+    m_marketplace_item_properties_isValid = ::OpenAPI::fromJsonValue(m_marketplace_item_properties, json[QString("marketplace_item_properties")]);
+    m_marketplace_item_properties_isSet = !json[QString("marketplace_item_properties")].isNull() && m_marketplace_item_properties_isValid;
+
+    m_min_order_quantity_isValid = ::OpenAPI::fromJsonValue(m_min_order_quantity, json[QString("min_order_quantity")]);
+    m_min_order_quantity_isSet = !json[QString("min_order_quantity")].isNull() && m_min_order_quantity_isValid;
 }
 
 QString OAIProductUpdate::asJson() const {
@@ -827,6 +839,12 @@ QJsonObject OAIProductUpdate::asJsonObject() const {
     }
     if (m_personalization_details.isSet()) {
         obj.insert(QString("personalization_details"), ::OpenAPI::toJsonValue(m_personalization_details));
+    }
+    if (m_marketplace_item_properties_isSet) {
+        obj.insert(QString("marketplace_item_properties"), ::OpenAPI::toJsonValue(m_marketplace_item_properties));
+    }
+    if (m_min_order_quantity_isSet) {
+        obj.insert(QString("min_order_quantity"), ::OpenAPI::toJsonValue(m_min_order_quantity));
     }
     return obj;
 }
@@ -2207,6 +2225,38 @@ bool OAIProductUpdate::is_personalization_details_Valid() const{
     return m_personalization_details_isValid;
 }
 
+QString OAIProductUpdate::getMarketplaceItemProperties() const {
+    return m_marketplace_item_properties;
+}
+void OAIProductUpdate::setMarketplaceItemProperties(const QString &marketplace_item_properties) {
+    m_marketplace_item_properties = marketplace_item_properties;
+    m_marketplace_item_properties_isSet = true;
+}
+
+bool OAIProductUpdate::is_marketplace_item_properties_Set() const{
+    return m_marketplace_item_properties_isSet;
+}
+
+bool OAIProductUpdate::is_marketplace_item_properties_Valid() const{
+    return m_marketplace_item_properties_isValid;
+}
+
+double OAIProductUpdate::getMinOrderQuantity() const {
+    return m_min_order_quantity;
+}
+void OAIProductUpdate::setMinOrderQuantity(const double &min_order_quantity) {
+    m_min_order_quantity = min_order_quantity;
+    m_min_order_quantity_isSet = true;
+}
+
+bool OAIProductUpdate::is_min_order_quantity_Set() const{
+    return m_min_order_quantity_isSet;
+}
+
+bool OAIProductUpdate::is_min_order_quantity_Valid() const{
+    return m_min_order_quantity_isValid;
+}
+
 bool OAIProductUpdate::isSet() const {
     bool isObjectUpdated = false;
     do {
@@ -2636,6 +2686,16 @@ bool OAIProductUpdate::isSet() const {
         }
 
         if (m_personalization_details.isSet()) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_marketplace_item_properties_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_min_order_quantity_isSet) {
             isObjectUpdated = true;
             break;
         }

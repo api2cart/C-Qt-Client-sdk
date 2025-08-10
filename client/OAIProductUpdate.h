@@ -480,6 +480,16 @@ public:
     bool is_personalization_details_Set() const;
     bool is_personalization_details_Valid() const;
 
+    QString getMarketplaceItemProperties() const;
+    void setMarketplaceItemProperties(const QString &marketplace_item_properties);
+    bool is_marketplace_item_properties_Set() const;
+    bool is_marketplace_item_properties_Valid() const;
+
+    double getMinOrderQuantity() const;
+    void setMinOrderQuantity(const double &min_order_quantity);
+    bool is_min_order_quantity_Set() const;
+    bool is_min_order_quantity_Valid() const;
+
     virtual bool isSet() const override;
     virtual bool isValid() const override;
 
@@ -829,6 +839,14 @@ private:
     OAIProductAdd_personalization_details m_personalization_details;
     bool m_personalization_details_isSet;
     bool m_personalization_details_isValid;
+
+    QString m_marketplace_item_properties;
+    bool m_marketplace_item_properties_isSet;
+    bool m_marketplace_item_properties_isValid;
+
+    double m_min_order_quantity;
+    bool m_min_order_quantity_isSet;
+    bool m_min_order_quantity_isValid;
 };
 
 } // namespace OpenAPI

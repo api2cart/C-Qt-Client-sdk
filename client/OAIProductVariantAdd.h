@@ -84,6 +84,11 @@ public:
     bool is_available_for_sale_Set() const;
     bool is_available_for_sale_Valid() const;
 
+    QString getStatus() const;
+    void setStatus(const QString &status);
+    bool is_status_Set() const;
+    bool is_status_Valid() const;
+
     bool isIsVirtual() const;
     void setIsVirtual(const bool &is_virtual);
     bool is_is_virtual_Set() const;
@@ -239,6 +244,11 @@ public:
     bool is_isbn_Set() const;
     bool is_isbn_Valid() const;
 
+    QString getSeoUrl() const;
+    void setSeoUrl(const QString &seo_url);
+    bool is_seo_url_Set() const;
+    bool is_seo_url_Valid() const;
+
     QString getManufacturer() const;
     void setManufacturer(const QString &manufacturer);
     bool is_manufacturer_Set() const;
@@ -346,6 +356,10 @@ private:
     bool m_available_for_sale;
     bool m_available_for_sale_isSet;
     bool m_available_for_sale_isValid;
+
+    QString m_status;
+    bool m_status_isSet;
+    bool m_status_isValid;
 
     bool m_is_virtual;
     bool m_is_virtual_isSet;
@@ -470,6 +484,10 @@ private:
     QString m_isbn;
     bool m_isbn_isSet;
     bool m_isbn_isValid;
+
+    QString m_seo_url;
+    bool m_seo_url_isSet;
+    bool m_seo_url_isValid;
 
     QString m_manufacturer;
     bool m_manufacturer_isSet;

@@ -43,6 +43,9 @@ void OAICart::initializeModel() {
     m_version_isSet = false;
     m_version_isValid = false;
 
+    m_bridge_version_isSet = false;
+    m_bridge_version_isValid = false;
+
     m_db_prefix_isSet = false;
     m_db_prefix_isValid = false;
 
@@ -80,6 +83,9 @@ void OAICart::fromJsonObject(QJsonObject json) {
     m_version_isValid = ::OpenAPI::fromJsonValue(m_version, json[QString("version")]);
     m_version_isSet = !json[QString("version")].isNull() && m_version_isValid;
 
+    m_bridge_version_isValid = ::OpenAPI::fromJsonValue(m_bridge_version, json[QString("bridge_version")]);
+    m_bridge_version_isSet = !json[QString("bridge_version")].isNull() && m_bridge_version_isValid;
+
     m_db_prefix_isValid = ::OpenAPI::fromJsonValue(m_db_prefix, json[QString("db_prefix")]);
     m_db_prefix_isSet = !json[QString("db_prefix")].isNull() && m_db_prefix_isValid;
 
@@ -116,6 +122,9 @@ QJsonObject OAICart::asJsonObject() const {
     }
     if (m_version_isSet) {
         obj.insert(QString("version"), ::OpenAPI::toJsonValue(m_version));
+    }
+    if (m_bridge_version_isSet) {
+        obj.insert(QString("bridge_version"), ::OpenAPI::toJsonValue(m_bridge_version));
     }
     if (m_db_prefix_isSet) {
         obj.insert(QString("db_prefix"), ::OpenAPI::toJsonValue(m_db_prefix));
@@ -184,6 +193,22 @@ bool OAICart::is_version_Set() const{
 
 bool OAICart::is_version_Valid() const{
     return m_version_isValid;
+}
+
+QString OAICart::getBridgeVersion() const {
+    return m_bridge_version;
+}
+void OAICart::setBridgeVersion(const QString &bridge_version) {
+    m_bridge_version = bridge_version;
+    m_bridge_version_isSet = true;
+}
+
+bool OAICart::is_bridge_version_Set() const{
+    return m_bridge_version_isSet;
+}
+
+bool OAICart::is_bridge_version_Valid() const{
+    return m_bridge_version_isValid;
 }
 
 QString OAICart::getDbPrefix() const {
@@ -296,6 +321,11 @@ bool OAICart::isSet() const {
         }
 
         if (m_version_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_bridge_version_isSet) {
             isObjectUpdated = true;
             break;
         }

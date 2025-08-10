@@ -58,6 +58,9 @@ void OAIProductVariantAdd::initializeModel() {
     m_available_for_sale_isSet = false;
     m_available_for_sale_isValid = false;
 
+    m_status_isSet = false;
+    m_status_isValid = false;
+
     m_is_virtual_isSet = false;
     m_is_virtual_isValid = false;
 
@@ -151,6 +154,9 @@ void OAIProductVariantAdd::initializeModel() {
     m_isbn_isSet = false;
     m_isbn_isValid = false;
 
+    m_seo_url_isSet = false;
+    m_seo_url_isValid = false;
+
     m_manufacturer_isSet = false;
     m_manufacturer_isValid = false;
 
@@ -226,6 +232,9 @@ void OAIProductVariantAdd::fromJsonObject(QJsonObject json) {
 
     m_available_for_sale_isValid = ::OpenAPI::fromJsonValue(m_available_for_sale, json[QString("available_for_sale")]);
     m_available_for_sale_isSet = !json[QString("available_for_sale")].isNull() && m_available_for_sale_isValid;
+
+    m_status_isValid = ::OpenAPI::fromJsonValue(m_status, json[QString("status")]);
+    m_status_isSet = !json[QString("status")].isNull() && m_status_isValid;
 
     m_is_virtual_isValid = ::OpenAPI::fromJsonValue(m_is_virtual, json[QString("is_virtual")]);
     m_is_virtual_isSet = !json[QString("is_virtual")].isNull() && m_is_virtual_isValid;
@@ -320,6 +329,9 @@ void OAIProductVariantAdd::fromJsonObject(QJsonObject json) {
     m_isbn_isValid = ::OpenAPI::fromJsonValue(m_isbn, json[QString("isbn")]);
     m_isbn_isSet = !json[QString("isbn")].isNull() && m_isbn_isValid;
 
+    m_seo_url_isValid = ::OpenAPI::fromJsonValue(m_seo_url, json[QString("seo_url")]);
+    m_seo_url_isSet = !json[QString("seo_url")].isNull() && m_seo_url_isValid;
+
     m_manufacturer_isValid = ::OpenAPI::fromJsonValue(m_manufacturer, json[QString("manufacturer")]);
     m_manufacturer_isSet = !json[QString("manufacturer")].isNull() && m_manufacturer_isValid;
 
@@ -395,6 +407,9 @@ QJsonObject OAIProductVariantAdd::asJsonObject() const {
     }
     if (m_available_for_sale_isSet) {
         obj.insert(QString("available_for_sale"), ::OpenAPI::toJsonValue(m_available_for_sale));
+    }
+    if (m_status_isSet) {
+        obj.insert(QString("status"), ::OpenAPI::toJsonValue(m_status));
     }
     if (m_is_virtual_isSet) {
         obj.insert(QString("is_virtual"), ::OpenAPI::toJsonValue(m_is_virtual));
@@ -488,6 +503,9 @@ QJsonObject OAIProductVariantAdd::asJsonObject() const {
     }
     if (m_isbn_isSet) {
         obj.insert(QString("isbn"), ::OpenAPI::toJsonValue(m_isbn));
+    }
+    if (m_seo_url_isSet) {
+        obj.insert(QString("seo_url"), ::OpenAPI::toJsonValue(m_seo_url));
     }
     if (m_manufacturer_isSet) {
         obj.insert(QString("manufacturer"), ::OpenAPI::toJsonValue(m_manufacturer));
@@ -660,6 +678,22 @@ bool OAIProductVariantAdd::is_available_for_sale_Set() const{
 
 bool OAIProductVariantAdd::is_available_for_sale_Valid() const{
     return m_available_for_sale_isValid;
+}
+
+QString OAIProductVariantAdd::getStatus() const {
+    return m_status;
+}
+void OAIProductVariantAdd::setStatus(const QString &status) {
+    m_status = status;
+    m_status_isSet = true;
+}
+
+bool OAIProductVariantAdd::is_status_Set() const{
+    return m_status_isSet;
+}
+
+bool OAIProductVariantAdd::is_status_Valid() const{
+    return m_status_isValid;
 }
 
 bool OAIProductVariantAdd::isIsVirtual() const {
@@ -1158,6 +1192,22 @@ bool OAIProductVariantAdd::is_isbn_Valid() const{
     return m_isbn_isValid;
 }
 
+QString OAIProductVariantAdd::getSeoUrl() const {
+    return m_seo_url;
+}
+void OAIProductVariantAdd::setSeoUrl(const QString &seo_url) {
+    m_seo_url = seo_url;
+    m_seo_url_isSet = true;
+}
+
+bool OAIProductVariantAdd::is_seo_url_Set() const{
+    return m_seo_url_isSet;
+}
+
+bool OAIProductVariantAdd::is_seo_url_Valid() const{
+    return m_seo_url_isValid;
+}
+
 QString OAIProductVariantAdd::getManufacturer() const {
     return m_manufacturer;
 }
@@ -1425,6 +1475,11 @@ bool OAIProductVariantAdd::isSet() const {
             break;
         }
 
+        if (m_status_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
         if (m_is_virtual_isSet) {
             isObjectUpdated = true;
             break;
@@ -1576,6 +1631,11 @@ bool OAIProductVariantAdd::isSet() const {
         }
 
         if (m_isbn_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_seo_url_isSet) {
             isObjectUpdated = true;
             break;
         }
