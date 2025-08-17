@@ -190,6 +190,9 @@ void OAIProductAdd::initializeModel() {
     m_product_reference_isSet = false;
     m_product_reference_isValid = false;
 
+    m_external_product_link_isSet = false;
+    m_external_product_link_isValid = false;
+
     m_harmonized_system_code_isSet = false;
     m_harmonized_system_code_isValid = false;
 
@@ -551,6 +554,9 @@ void OAIProductAdd::fromJsonObject(QJsonObject json) {
     m_product_reference_isValid = ::OpenAPI::fromJsonValue(m_product_reference, json[QString("product_reference")]);
     m_product_reference_isSet = !json[QString("product_reference")].isNull() && m_product_reference_isValid;
 
+    m_external_product_link_isValid = ::OpenAPI::fromJsonValue(m_external_product_link, json[QString("external_product_link")]);
+    m_external_product_link_isSet = !json[QString("external_product_link")].isNull() && m_external_product_link_isValid;
+
     m_harmonized_system_code_isValid = ::OpenAPI::fromJsonValue(m_harmonized_system_code, json[QString("harmonized_system_code")]);
     m_harmonized_system_code_isSet = !json[QString("harmonized_system_code")].isNull() && m_harmonized_system_code_isValid;
 
@@ -911,6 +917,9 @@ QJsonObject OAIProductAdd::asJsonObject() const {
     }
     if (m_product_reference_isSet) {
         obj.insert(QString("product_reference"), ::OpenAPI::toJsonValue(m_product_reference));
+    }
+    if (m_external_product_link_isSet) {
+        obj.insert(QString("external_product_link"), ::OpenAPI::toJsonValue(m_external_product_link));
     }
     if (m_harmonized_system_code_isSet) {
         obj.insert(QString("harmonized_system_code"), ::OpenAPI::toJsonValue(m_harmonized_system_code));
@@ -1940,6 +1949,22 @@ bool OAIProductAdd::is_product_reference_Set() const{
 
 bool OAIProductAdd::is_product_reference_Valid() const{
     return m_product_reference_isValid;
+}
+
+QString OAIProductAdd::getExternalProductLink() const {
+    return m_external_product_link;
+}
+void OAIProductAdd::setExternalProductLink(const QString &external_product_link) {
+    m_external_product_link = external_product_link;
+    m_external_product_link_isSet = true;
+}
+
+bool OAIProductAdd::is_external_product_link_Set() const{
+    return m_external_product_link_isSet;
+}
+
+bool OAIProductAdd::is_external_product_link_Valid() const{
+    return m_external_product_link_isValid;
 }
 
 QString OAIProductAdd::getHarmonizedSystemCode() const {
@@ -3241,6 +3266,11 @@ bool OAIProductAdd::isSet() const {
         }
 
         if (m_product_reference_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_external_product_link_isSet) {
             isObjectUpdated = true;
             break;
         }

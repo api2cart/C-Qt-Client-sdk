@@ -87,6 +87,9 @@ void OAICartCouponAdd::initializeModel() {
 
     m_free_cash_on_delivery_isSet = false;
     m_free_cash_on_delivery_isValid = false;
+
+    m_customer_id_isSet = false;
+    m_customer_id_isValid = false;
 }
 
 void OAICartCouponAdd::fromJson(QString jsonString) {
@@ -151,6 +154,9 @@ void OAICartCouponAdd::fromJsonObject(QJsonObject json) {
 
     m_free_cash_on_delivery_isValid = ::OpenAPI::fromJsonValue(m_free_cash_on_delivery, json[QString("free_cash_on_delivery")]);
     m_free_cash_on_delivery_isSet = !json[QString("free_cash_on_delivery")].isNull() && m_free_cash_on_delivery_isValid;
+
+    m_customer_id_isValid = ::OpenAPI::fromJsonValue(m_customer_id, json[QString("customer_id")]);
+    m_customer_id_isSet = !json[QString("customer_id")].isNull() && m_customer_id_isValid;
 }
 
 QString OAICartCouponAdd::asJson() const {
@@ -215,6 +221,9 @@ QJsonObject OAICartCouponAdd::asJsonObject() const {
     }
     if (m_free_cash_on_delivery_isSet) {
         obj.insert(QString("free_cash_on_delivery"), ::OpenAPI::toJsonValue(m_free_cash_on_delivery));
+    }
+    if (m_customer_id_isSet) {
+        obj.insert(QString("customer_id"), ::OpenAPI::toJsonValue(m_customer_id));
     }
     return obj;
 }
@@ -507,6 +516,22 @@ bool OAICartCouponAdd::is_free_cash_on_delivery_Valid() const{
     return m_free_cash_on_delivery_isValid;
 }
 
+QString OAICartCouponAdd::getCustomerId() const {
+    return m_customer_id;
+}
+void OAICartCouponAdd::setCustomerId(const QString &customer_id) {
+    m_customer_id = customer_id;
+    m_customer_id_isSet = true;
+}
+
+bool OAICartCouponAdd::is_customer_id_Set() const{
+    return m_customer_id_isSet;
+}
+
+bool OAICartCouponAdd::is_customer_id_Valid() const{
+    return m_customer_id_isValid;
+}
+
 bool OAICartCouponAdd::isSet() const {
     bool isObjectUpdated = false;
     do {
@@ -596,6 +621,11 @@ bool OAICartCouponAdd::isSet() const {
         }
 
         if (m_free_cash_on_delivery_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_customer_id_isSet) {
             isObjectUpdated = true;
             break;
         }

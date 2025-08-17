@@ -328,6 +328,11 @@ public:
     bool is_product_reference_Set() const;
     bool is_product_reference_Valid() const;
 
+    QString getExternalProductLink() const;
+    void setExternalProductLink(const QString &external_product_link);
+    bool is_external_product_link_Set() const;
+    bool is_external_product_link_Valid() const;
+
     QString getHarmonizedSystemCode() const;
     void setHarmonizedSystemCode(const QString &harmonized_system_code);
     bool is_harmonized_system_code_Set() const;
@@ -866,6 +871,10 @@ private:
     QString m_product_reference;
     bool m_product_reference_isSet;
     bool m_product_reference_isValid;
+
+    QString m_external_product_link;
+    bool m_external_product_link_isSet;
+    bool m_external_product_link_isValid;
 
     QString m_harmonized_system_code;
     bool m_harmonized_system_code_isSet;

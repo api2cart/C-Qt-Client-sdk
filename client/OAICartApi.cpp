@@ -1088,7 +1088,7 @@ void OAICartApi::cartCouponDeleteCallback(OAIHttpRequestWorker *worker) {
     }
 }
 
-void OAICartApi::cartCouponList(const ::OpenAPI::OptionalParam<qint32> &start, const ::OpenAPI::OptionalParam<qint32> &count, const ::OpenAPI::OptionalParam<QString> &page_cursor, const ::OpenAPI::OptionalParam<QString> &coupons_ids, const ::OpenAPI::OptionalParam<QString> &store_id, const ::OpenAPI::OptionalParam<QString> &lang_id, const ::OpenAPI::OptionalParam<bool> &avail, const ::OpenAPI::OptionalParam<QString> &date_start_from, const ::OpenAPI::OptionalParam<QString> &date_start_to, const ::OpenAPI::OptionalParam<QString> &date_end_from, const ::OpenAPI::OptionalParam<QString> &date_end_to, const ::OpenAPI::OptionalParam<QString> &response_fields, const ::OpenAPI::OptionalParam<QString> &params, const ::OpenAPI::OptionalParam<QString> &exclude) {
+void OAICartApi::cartCouponList(const ::OpenAPI::OptionalParam<qint32> &start, const ::OpenAPI::OptionalParam<qint32> &count, const ::OpenAPI::OptionalParam<QString> &page_cursor, const ::OpenAPI::OptionalParam<QString> &coupons_ids, const ::OpenAPI::OptionalParam<QString> &store_id, const ::OpenAPI::OptionalParam<QString> &lang_id, const ::OpenAPI::OptionalParam<bool> &avail, const ::OpenAPI::OptionalParam<QString> &status, const ::OpenAPI::OptionalParam<QString> &date_start_from, const ::OpenAPI::OptionalParam<QString> &date_start_to, const ::OpenAPI::OptionalParam<QString> &date_end_from, const ::OpenAPI::OptionalParam<QString> &date_end_to, const ::OpenAPI::OptionalParam<QString> &response_fields, const ::OpenAPI::OptionalParam<QString> &params, const ::OpenAPI::OptionalParam<QString> &exclude) {
     QString fullPath = QString(_serverConfigs["cartCouponList"][_serverIndices.value("cartCouponList")].URL()+"/cart.coupon.list.json");
     
     if (_apiKeys.contains("StoreKeyAuth")) {
@@ -1204,6 +1204,21 @@ void OAICartApi::cartCouponList(const ::OpenAPI::OptionalParam<qint32> &start, c
             fullPath.append("?");
 
         fullPath.append(QUrl::toPercentEncoding("avail")).append(querySuffix).append(QUrl::toPercentEncoding(::OpenAPI::toStringValue(avail.stringValue())));
+    }
+    if (status.hasValue())
+    {
+        queryStyle = "form";
+        if (queryStyle == "")
+            queryStyle = "form";
+        queryPrefix = getParamStylePrefix(queryStyle);
+        querySuffix = getParamStyleSuffix(queryStyle);
+        queryDelimiter = getParamStyleDelimiter(queryStyle, "status", true);
+        if (fullPath.indexOf("?") > 0)
+            fullPath.append(queryPrefix);
+        else
+            fullPath.append("?");
+
+        fullPath.append(QUrl::toPercentEncoding("status")).append(querySuffix).append(QUrl::toPercentEncoding(::OpenAPI::toStringValue(status.stringValue())));
     }
     if (date_start_from.hasValue())
     {
