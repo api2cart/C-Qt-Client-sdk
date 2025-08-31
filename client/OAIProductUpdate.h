@@ -480,6 +480,11 @@ public:
     bool is_personalization_details_Set() const;
     bool is_personalization_details_Valid() const;
 
+    QString getExternalProductLink() const;
+    void setExternalProductLink(const QString &external_product_link);
+    bool is_external_product_link_Set() const;
+    bool is_external_product_link_Valid() const;
+
     QString getMarketplaceItemProperties() const;
     void setMarketplaceItemProperties(const QString &marketplace_item_properties);
     bool is_marketplace_item_properties_Set() const;
@@ -839,6 +844,10 @@ private:
     OAIProductAdd_personalization_details m_personalization_details;
     bool m_personalization_details_isSet;
     bool m_personalization_details_isValid;
+
+    QString m_external_product_link;
+    bool m_external_product_link_isSet;
+    bool m_external_product_link_isValid;
 
     QString m_marketplace_item_properties;
     bool m_marketplace_item_properties_isSet;
