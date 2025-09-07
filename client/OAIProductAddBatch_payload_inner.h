@@ -162,6 +162,11 @@ public:
     bool is_marketplace_item_properties_Set() const;
     bool is_marketplace_item_properties_Valid() const;
 
+    OAIObject getSpecifics() const;
+    void setSpecifics(const OAIObject &specifics);
+    bool is_specifics_Set() const;
+    bool is_specifics_Valid() const;
+
     bool isIsFreeShipping() const;
     void setIsFreeShipping(const bool &is_free_shipping);
     bool is_is_free_shipping_Set() const;
@@ -332,6 +337,11 @@ public:
     bool is_seo_url_Set() const;
     bool is_seo_url_Valid() const;
 
+    QString getExternalProductLink() const;
+    void setExternalProductLink(const QString &external_product_link);
+    bool is_external_product_link_Set() const;
+    bool is_external_product_link_Valid() const;
+
     QString getManufacturer() const;
     void setManufacturer(const QString &manufacturer);
     bool is_manufacturer_Set() const;
@@ -459,6 +469,10 @@ private:
     OAIObject m_marketplace_item_properties;
     bool m_marketplace_item_properties_isSet;
     bool m_marketplace_item_properties_isValid;
+
+    OAIObject m_specifics;
+    bool m_specifics_isSet;
+    bool m_specifics_isValid;
 
     bool m_is_free_shipping;
     bool m_is_free_shipping_isSet;
@@ -595,6 +609,10 @@ private:
     QString m_seo_url;
     bool m_seo_url_isSet;
     bool m_seo_url_isValid;
+
+    QString m_external_product_link;
+    bool m_external_product_link_isSet;
+    bool m_external_product_link_isValid;
 
     QString m_manufacturer;
     bool m_manufacturer_isSet;

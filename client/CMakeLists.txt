@@ -199,6 +199,10 @@ add_library(${PROJECT_NAME}
   OAIOrderAdd_order_item_inner.h
   OAIOrderAdd_order_item_inner_order_item_option_inner.h
   OAIOrderAdd_order_item_inner_order_item_property_inner.h
+  OAIOrderCalculate.h
+  OAIOrderCalculate_200_response.h
+  OAIOrderCalculate_order_item_inner.h
+  OAIOrderCalculate_order_item_inner_order_item_option_inner.h
   OAIOrderCount_200_response.h
   OAIOrderCount_200_response_result.h
   OAIOrderFinancialStatusList_200_response.h
@@ -235,6 +239,12 @@ add_library(${PROJECT_NAME}
   OAIOrderShipmentTrackingAdd_200_response.h
   OAIOrderShipmentTrackingAdd_200_response_result.h
   OAIOrderShipmentUpdate.h
+  OAIOrder_Calculate.h
+  OAIOrder_Calculate_Discount.h
+  OAIOrder_Calculate_Item.h
+  OAIOrder_Calculate_ShippingRate.h
+  OAIOrder_Calculate_Subtotal.h
+  OAIOrder_Calculate_Tax.h
   OAIOrder_Item.h
   OAIOrder_Item_Option.h
   OAIOrder_PaymentMethod.h
@@ -641,6 +651,10 @@ add_library(${PROJECT_NAME}
   OAIOrderAdd_order_item_inner.cpp
   OAIOrderAdd_order_item_inner_order_item_option_inner.cpp
   OAIOrderAdd_order_item_inner_order_item_property_inner.cpp
+  OAIOrderCalculate.cpp
+  OAIOrderCalculate_200_response.cpp
+  OAIOrderCalculate_order_item_inner.cpp
+  OAIOrderCalculate_order_item_inner_order_item_option_inner.cpp
   OAIOrderCount_200_response.cpp
   OAIOrderCount_200_response_result.cpp
   OAIOrderFinancialStatusList_200_response.cpp
@@ -677,6 +691,12 @@ add_library(${PROJECT_NAME}
   OAIOrderShipmentTrackingAdd_200_response.cpp
   OAIOrderShipmentTrackingAdd_200_response_result.cpp
   OAIOrderShipmentUpdate.cpp
+  OAIOrder_Calculate.cpp
+  OAIOrder_Calculate_Discount.cpp
+  OAIOrder_Calculate_Item.cpp
+  OAIOrder_Calculate_ShippingRate.cpp
+  OAIOrder_Calculate_Subtotal.cpp
+  OAIOrder_Calculate_Tax.cpp
   OAIOrder_Item.cpp
   OAIOrder_Item_Option.cpp
   OAIOrder_PaymentMethod.cpp

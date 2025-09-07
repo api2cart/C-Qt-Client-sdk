@@ -67,6 +67,9 @@ void OAIProduct_Review::initializeModel() {
     m_created_time_isSet = false;
     m_created_time_isValid = false;
 
+    m_modified_time_isSet = false;
+    m_modified_time_isValid = false;
+
     m_medias_isSet = false;
     m_medias_isValid = false;
 
@@ -119,6 +122,9 @@ void OAIProduct_Review::fromJsonObject(QJsonObject json) {
     m_created_time_isValid = ::OpenAPI::fromJsonValue(m_created_time, json[QString("created_time")]);
     m_created_time_isSet = !json[QString("created_time")].isNull() && m_created_time_isValid;
 
+    m_modified_time_isValid = ::OpenAPI::fromJsonValue(m_modified_time, json[QString("modified_time")]);
+    m_modified_time_isSet = !json[QString("modified_time")].isNull() && m_modified_time_isValid;
+
     m_medias_isValid = ::OpenAPI::fromJsonValue(m_medias, json[QString("medias")]);
     m_medias_isSet = !json[QString("medias")].isNull() && m_medias_isValid;
 
@@ -170,6 +176,9 @@ QJsonObject OAIProduct_Review::asJsonObject() const {
     }
     if (m_created_time.isSet()) {
         obj.insert(QString("created_time"), ::OpenAPI::toJsonValue(m_created_time));
+    }
+    if (m_modified_time.isSet()) {
+        obj.insert(QString("modified_time"), ::OpenAPI::toJsonValue(m_modified_time));
     }
     if (m_medias.size() > 0) {
         obj.insert(QString("medias"), ::OpenAPI::toJsonValue(m_medias));
@@ -359,6 +368,22 @@ bool OAIProduct_Review::is_created_time_Valid() const{
     return m_created_time_isValid;
 }
 
+OAIA2CDateTime OAIProduct_Review::getModifiedTime() const {
+    return m_modified_time;
+}
+void OAIProduct_Review::setModifiedTime(const OAIA2CDateTime &modified_time) {
+    m_modified_time = modified_time;
+    m_modified_time_isSet = true;
+}
+
+bool OAIProduct_Review::is_modified_time_Set() const{
+    return m_modified_time_isSet;
+}
+
+bool OAIProduct_Review::is_modified_time_Valid() const{
+    return m_modified_time_isValid;
+}
+
 QList<OAIMedia> OAIProduct_Review::getMedias() const {
     return m_medias;
 }
@@ -461,6 +486,11 @@ bool OAIProduct_Review::isSet() const {
         }
 
         if (m_created_time.isSet()) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_modified_time.isSet()) {
             isObjectUpdated = true;
             break;
         }

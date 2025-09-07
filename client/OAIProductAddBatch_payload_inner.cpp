@@ -103,6 +103,9 @@ void OAIProductAddBatch_payload_inner::initializeModel() {
     m_marketplace_item_properties_isSet = false;
     m_marketplace_item_properties_isValid = false;
 
+    m_specifics_isSet = false;
+    m_specifics_isValid = false;
+
     m_is_free_shipping_isSet = false;
     m_is_free_shipping_isValid = false;
 
@@ -205,6 +208,9 @@ void OAIProductAddBatch_payload_inner::initializeModel() {
     m_seo_url_isSet = false;
     m_seo_url_isValid = false;
 
+    m_external_product_link_isSet = false;
+    m_external_product_link_isValid = false;
+
     m_manufacturer_isSet = false;
     m_manufacturer_isValid = false;
 
@@ -301,6 +307,9 @@ void OAIProductAddBatch_payload_inner::fromJsonObject(QJsonObject json) {
 
     m_marketplace_item_properties_isValid = ::OpenAPI::fromJsonValue(m_marketplace_item_properties, json[QString("marketplace_item_properties")]);
     m_marketplace_item_properties_isSet = !json[QString("marketplace_item_properties")].isNull() && m_marketplace_item_properties_isValid;
+
+    m_specifics_isValid = ::OpenAPI::fromJsonValue(m_specifics, json[QString("specifics")]);
+    m_specifics_isSet = !json[QString("specifics")].isNull() && m_specifics_isValid;
 
     m_is_free_shipping_isValid = ::OpenAPI::fromJsonValue(m_is_free_shipping, json[QString("is_free_shipping")]);
     m_is_free_shipping_isSet = !json[QString("is_free_shipping")].isNull() && m_is_free_shipping_isValid;
@@ -404,6 +413,9 @@ void OAIProductAddBatch_payload_inner::fromJsonObject(QJsonObject json) {
     m_seo_url_isValid = ::OpenAPI::fromJsonValue(m_seo_url, json[QString("seo_url")]);
     m_seo_url_isSet = !json[QString("seo_url")].isNull() && m_seo_url_isValid;
 
+    m_external_product_link_isValid = ::OpenAPI::fromJsonValue(m_external_product_link, json[QString("external_product_link")]);
+    m_external_product_link_isSet = !json[QString("external_product_link")].isNull() && m_external_product_link_isValid;
+
     m_manufacturer_isValid = ::OpenAPI::fromJsonValue(m_manufacturer, json[QString("manufacturer")]);
     m_manufacturer_isSet = !json[QString("manufacturer")].isNull() && m_manufacturer_isValid;
 
@@ -500,6 +512,9 @@ QJsonObject OAIProductAddBatch_payload_inner::asJsonObject() const {
     }
     if (m_marketplace_item_properties_isSet) {
         obj.insert(QString("marketplace_item_properties"), ::OpenAPI::toJsonValue(m_marketplace_item_properties));
+    }
+    if (m_specifics_isSet) {
+        obj.insert(QString("specifics"), ::OpenAPI::toJsonValue(m_specifics));
     }
     if (m_is_free_shipping_isSet) {
         obj.insert(QString("is_free_shipping"), ::OpenAPI::toJsonValue(m_is_free_shipping));
@@ -602,6 +617,9 @@ QJsonObject OAIProductAddBatch_payload_inner::asJsonObject() const {
     }
     if (m_seo_url_isSet) {
         obj.insert(QString("seo_url"), ::OpenAPI::toJsonValue(m_seo_url));
+    }
+    if (m_external_product_link_isSet) {
+        obj.insert(QString("external_product_link"), ::OpenAPI::toJsonValue(m_external_product_link));
     }
     if (m_manufacturer_isSet) {
         obj.insert(QString("manufacturer"), ::OpenAPI::toJsonValue(m_manufacturer));
@@ -990,6 +1008,22 @@ bool OAIProductAddBatch_payload_inner::is_marketplace_item_properties_Set() cons
 
 bool OAIProductAddBatch_payload_inner::is_marketplace_item_properties_Valid() const{
     return m_marketplace_item_properties_isValid;
+}
+
+OAIObject OAIProductAddBatch_payload_inner::getSpecifics() const {
+    return m_specifics;
+}
+void OAIProductAddBatch_payload_inner::setSpecifics(const OAIObject &specifics) {
+    m_specifics = specifics;
+    m_specifics_isSet = true;
+}
+
+bool OAIProductAddBatch_payload_inner::is_specifics_Set() const{
+    return m_specifics_isSet;
+}
+
+bool OAIProductAddBatch_payload_inner::is_specifics_Valid() const{
+    return m_specifics_isValid;
 }
 
 bool OAIProductAddBatch_payload_inner::isIsFreeShipping() const {
@@ -1536,6 +1570,22 @@ bool OAIProductAddBatch_payload_inner::is_seo_url_Valid() const{
     return m_seo_url_isValid;
 }
 
+QString OAIProductAddBatch_payload_inner::getExternalProductLink() const {
+    return m_external_product_link;
+}
+void OAIProductAddBatch_payload_inner::setExternalProductLink(const QString &external_product_link) {
+    m_external_product_link = external_product_link;
+    m_external_product_link_isSet = true;
+}
+
+bool OAIProductAddBatch_payload_inner::is_external_product_link_Set() const{
+    return m_external_product_link_isSet;
+}
+
+bool OAIProductAddBatch_payload_inner::is_external_product_link_Valid() const{
+    return m_external_product_link_isValid;
+}
+
 QString OAIProductAddBatch_payload_inner::getManufacturer() const {
     return m_manufacturer;
 }
@@ -1750,6 +1800,11 @@ bool OAIProductAddBatch_payload_inner::isSet() const {
             break;
         }
 
+        if (m_specifics_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
         if (m_is_free_shipping_isSet) {
             isObjectUpdated = true;
             break;
@@ -1916,6 +1971,11 @@ bool OAIProductAddBatch_payload_inner::isSet() const {
         }
 
         if (m_seo_url_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_external_product_link_isSet) {
             isObjectUpdated = true;
             break;
         }

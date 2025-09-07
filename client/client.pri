@@ -190,6 +190,10 @@ HEADERS += \
     $${PWD}/OAIOrderAdd_order_item_inner.h \
     $${PWD}/OAIOrderAdd_order_item_inner_order_item_option_inner.h \
     $${PWD}/OAIOrderAdd_order_item_inner_order_item_property_inner.h \
+    $${PWD}/OAIOrderCalculate.h \
+    $${PWD}/OAIOrderCalculate_200_response.h \
+    $${PWD}/OAIOrderCalculate_order_item_inner.h \
+    $${PWD}/OAIOrderCalculate_order_item_inner_order_item_option_inner.h \
     $${PWD}/OAIOrderCount_200_response.h \
     $${PWD}/OAIOrderCount_200_response_result.h \
     $${PWD}/OAIOrderFinancialStatusList_200_response.h \
@@ -226,6 +230,12 @@ HEADERS += \
     $${PWD}/OAIOrderShipmentTrackingAdd_200_response.h \
     $${PWD}/OAIOrderShipmentTrackingAdd_200_response_result.h \
     $${PWD}/OAIOrderShipmentUpdate.h \
+    $${PWD}/OAIOrder_Calculate.h \
+    $${PWD}/OAIOrder_Calculate_Discount.h \
+    $${PWD}/OAIOrder_Calculate_Item.h \
+    $${PWD}/OAIOrder_Calculate_ShippingRate.h \
+    $${PWD}/OAIOrder_Calculate_Subtotal.h \
+    $${PWD}/OAIOrder_Calculate_Tax.h \
     $${PWD}/OAIOrder_Item.h \
     $${PWD}/OAIOrder_Item_Option.h \
     $${PWD}/OAIOrder_PaymentMethod.h \
@@ -637,6 +647,10 @@ SOURCES += \
     $${PWD}/OAIOrderAdd_order_item_inner.cpp \
     $${PWD}/OAIOrderAdd_order_item_inner_order_item_option_inner.cpp \
     $${PWD}/OAIOrderAdd_order_item_inner_order_item_property_inner.cpp \
+    $${PWD}/OAIOrderCalculate.cpp \
+    $${PWD}/OAIOrderCalculate_200_response.cpp \
+    $${PWD}/OAIOrderCalculate_order_item_inner.cpp \
+    $${PWD}/OAIOrderCalculate_order_item_inner_order_item_option_inner.cpp \
     $${PWD}/OAIOrderCount_200_response.cpp \
     $${PWD}/OAIOrderCount_200_response_result.cpp \
     $${PWD}/OAIOrderFinancialStatusList_200_response.cpp \
@@ -673,6 +687,12 @@ SOURCES += \
     $${PWD}/OAIOrderShipmentTrackingAdd_200_response.cpp \
     $${PWD}/OAIOrderShipmentTrackingAdd_200_response_result.cpp \
     $${PWD}/OAIOrderShipmentUpdate.cpp \
+    $${PWD}/OAIOrder_Calculate.cpp \
+    $${PWD}/OAIOrder_Calculate_Discount.cpp \
+    $${PWD}/OAIOrder_Calculate_Item.cpp \
+    $${PWD}/OAIOrder_Calculate_ShippingRate.cpp \
+    $${PWD}/OAIOrder_Calculate_Subtotal.cpp \
+    $${PWD}/OAIOrder_Calculate_Tax.cpp \
     $${PWD}/OAIOrder_Item.cpp \
     $${PWD}/OAIOrder_Item_Option.cpp \
     $${PWD}/OAIOrder_PaymentMethod.cpp \

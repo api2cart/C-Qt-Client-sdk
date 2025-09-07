@@ -102,6 +102,11 @@ public:
     bool is_created_time_Set() const;
     bool is_created_time_Valid() const;
 
+    OAIA2CDateTime getModifiedTime() const;
+    void setModifiedTime(const OAIA2CDateTime &modified_time);
+    bool is_modified_time_Set() const;
+    bool is_modified_time_Valid() const;
+
     QList<OAIMedia> getMedias() const;
     void setMedias(const QList<OAIMedia> &medias);
     bool is_medias_Set() const;
@@ -166,6 +171,10 @@ private:
     OAIA2CDateTime m_created_time;
     bool m_created_time_isSet;
     bool m_created_time_isValid;
+
+    OAIA2CDateTime m_modified_time;
+    bool m_modified_time_isSet;
+    bool m_modified_time_isValid;
 
     QList<OAIMedia> m_medias;
     bool m_medias_isSet;

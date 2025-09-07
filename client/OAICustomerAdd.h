@@ -69,6 +69,11 @@ public:
     bool is_group_Set() const;
     bool is_group_Valid() const;
 
+    QString getGroupId() const;
+    void setGroupId(const QString &group_id);
+    bool is_group_id_Set() const;
+    bool is_group_id_Valid() const;
+
     QString getGroupIds() const;
     void setGroupIds(const QString &group_ids);
     bool is_group_ids_Set() const;
@@ -184,6 +189,10 @@ private:
     QString m_group;
     bool m_group_isSet;
     bool m_group_isValid;
+
+    QString m_group_id;
+    bool m_group_id_isSet;
+    bool m_group_id_isValid;
 
     QString m_group_ids;
     bool m_group_ids_isSet;

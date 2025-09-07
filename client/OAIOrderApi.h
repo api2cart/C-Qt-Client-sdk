@@ -29,6 +29,8 @@
 #include "OAIModel_Response_Order_Transaction_List.h"
 #include "OAIOrderAdd.h"
 #include "OAIOrderAdd_200_response.h"
+#include "OAIOrderCalculate.h"
+#include "OAIOrderCalculate_200_response.h"
 #include "OAIOrderCount_200_response.h"
 #include "OAIOrderFinancialStatusList_200_response.h"
 #include "OAIOrderFulfillmentStatusList_200_response.h"
@@ -107,6 +109,11 @@ public:
     * @param[in]  oai_order_add OAIOrderAdd [required]
     */
     virtual void orderAdd(const OAIOrderAdd &oai_order_add);
+
+    /**
+    * @param[in]  oai_order_calculate OAIOrderCalculate [required]
+    */
+    virtual void orderCalculate(const OAIOrderCalculate &oai_order_calculate);
 
     /**
     * @param[in]  order_ids QString [optional]
@@ -339,6 +346,7 @@ private:
 
     void orderAbandonedListCallback(OAIHttpRequestWorker *worker);
     void orderAddCallback(OAIHttpRequestWorker *worker);
+    void orderCalculateCallback(OAIHttpRequestWorker *worker);
     void orderCountCallback(OAIHttpRequestWorker *worker);
     void orderFinancialStatusListCallback(OAIHttpRequestWorker *worker);
     void orderFulfillmentStatusListCallback(OAIHttpRequestWorker *worker);
@@ -364,6 +372,7 @@ Q_SIGNALS:
 
     void orderAbandonedListSignal(OAIModel_Response_Order_Abandoned_List summary);
     void orderAddSignal(OAIOrderAdd_200_response summary);
+    void orderCalculateSignal(OAIOrderCalculate_200_response summary);
     void orderCountSignal(OAIOrderCount_200_response summary);
     void orderFinancialStatusListSignal(OAIOrderFinancialStatusList_200_response summary);
     void orderFulfillmentStatusListSignal(OAIOrderFulfillmentStatusList_200_response summary);
@@ -388,6 +397,7 @@ Q_SIGNALS:
 
     void orderAbandonedListSignalFull(OAIHttpRequestWorker *worker, OAIModel_Response_Order_Abandoned_List summary);
     void orderAddSignalFull(OAIHttpRequestWorker *worker, OAIOrderAdd_200_response summary);
+    void orderCalculateSignalFull(OAIHttpRequestWorker *worker, OAIOrderCalculate_200_response summary);
     void orderCountSignalFull(OAIHttpRequestWorker *worker, OAIOrderCount_200_response summary);
     void orderFinancialStatusListSignalFull(OAIHttpRequestWorker *worker, OAIOrderFinancialStatusList_200_response summary);
     void orderFulfillmentStatusListSignalFull(OAIHttpRequestWorker *worker, OAIOrderFulfillmentStatusList_200_response summary);
@@ -415,6 +425,9 @@ Q_SIGNALS:
     Q_DECL_DEPRECATED_X("Use orderAddSignalError() instead")
     void orderAddSignalE(OAIOrderAdd_200_response summary, QNetworkReply::NetworkError error_type, QString error_str);
     void orderAddSignalError(OAIOrderAdd_200_response summary, QNetworkReply::NetworkError error_type, const QString &error_str);
+    Q_DECL_DEPRECATED_X("Use orderCalculateSignalError() instead")
+    void orderCalculateSignalE(OAIOrderCalculate_200_response summary, QNetworkReply::NetworkError error_type, QString error_str);
+    void orderCalculateSignalError(OAIOrderCalculate_200_response summary, QNetworkReply::NetworkError error_type, const QString &error_str);
     Q_DECL_DEPRECATED_X("Use orderCountSignalError() instead")
     void orderCountSignalE(OAIOrderCount_200_response summary, QNetworkReply::NetworkError error_type, QString error_str);
     void orderCountSignalError(OAIOrderCount_200_response summary, QNetworkReply::NetworkError error_type, const QString &error_str);
@@ -482,6 +495,9 @@ Q_SIGNALS:
     Q_DECL_DEPRECATED_X("Use orderAddSignalErrorFull() instead")
     void orderAddSignalEFull(OAIHttpRequestWorker *worker, QNetworkReply::NetworkError error_type, QString error_str);
     void orderAddSignalErrorFull(OAIHttpRequestWorker *worker, QNetworkReply::NetworkError error_type, const QString &error_str);
+    Q_DECL_DEPRECATED_X("Use orderCalculateSignalErrorFull() instead")
+    void orderCalculateSignalEFull(OAIHttpRequestWorker *worker, QNetworkReply::NetworkError error_type, QString error_str);
+    void orderCalculateSignalErrorFull(OAIHttpRequestWorker *worker, QNetworkReply::NetworkError error_type, const QString &error_str);
     Q_DECL_DEPRECATED_X("Use orderCountSignalErrorFull() instead")
     void orderCountSignalEFull(OAIHttpRequestWorker *worker, QNetworkReply::NetworkError error_type, QString error_str);
     void orderCountSignalErrorFull(OAIHttpRequestWorker *worker, QNetworkReply::NetworkError error_type, const QString &error_str);
