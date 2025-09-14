@@ -185,6 +185,11 @@ public:
     bool is_product_class_Set() const;
     bool is_product_class_Valid() const;
 
+    QString getBrandName() const;
+    void setBrandName(const QString &brand_name);
+    bool is_brand_name_Set() const;
+    bool is_brand_name_Valid() const;
+
     bool isAvailableForView() const;
     void setAvailableForView(const bool &available_for_view);
     bool is_available_for_view_Set() const;
@@ -608,6 +613,10 @@ private:
     QString m_product_class;
     bool m_product_class_isSet;
     bool m_product_class_isValid;
+
+    QString m_brand_name;
+    bool m_brand_name_isSet;
+    bool m_brand_name_isValid;
 
     bool m_available_for_view;
     bool m_available_for_view_isSet;

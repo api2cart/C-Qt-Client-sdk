@@ -103,6 +103,9 @@ void OAIProductUpdateBatch_payload_inner::initializeModel() {
     m_condition_isSet = false;
     m_condition_isValid = false;
 
+    m_condition_description_isSet = false;
+    m_condition_description_isValid = false;
+
     m_visible_isSet = false;
     m_visible_isValid = false;
 
@@ -302,6 +305,9 @@ void OAIProductUpdateBatch_payload_inner::fromJsonObject(QJsonObject json) {
     m_condition_isValid = ::OpenAPI::fromJsonValue(m_condition, json[QString("condition")]);
     m_condition_isSet = !json[QString("condition")].isNull() && m_condition_isValid;
 
+    m_condition_description_isValid = ::OpenAPI::fromJsonValue(m_condition_description, json[QString("condition_description")]);
+    m_condition_description_isSet = !json[QString("condition_description")].isNull() && m_condition_description_isValid;
+
     m_visible_isValid = ::OpenAPI::fromJsonValue(m_visible, json[QString("visible")]);
     m_visible_isSet = !json[QString("visible")].isNull() && m_visible_isValid;
 
@@ -500,6 +506,9 @@ QJsonObject OAIProductUpdateBatch_payload_inner::asJsonObject() const {
     }
     if (m_condition_isSet) {
         obj.insert(QString("condition"), ::OpenAPI::toJsonValue(m_condition));
+    }
+    if (m_condition_description_isSet) {
+        obj.insert(QString("condition_description"), ::OpenAPI::toJsonValue(m_condition_description));
     }
     if (m_visible_isSet) {
         obj.insert(QString("visible"), ::OpenAPI::toJsonValue(m_visible));
@@ -990,6 +999,22 @@ bool OAIProductUpdateBatch_payload_inner::is_condition_Set() const{
 
 bool OAIProductUpdateBatch_payload_inner::is_condition_Valid() const{
     return m_condition_isValid;
+}
+
+QString OAIProductUpdateBatch_payload_inner::getConditionDescription() const {
+    return m_condition_description;
+}
+void OAIProductUpdateBatch_payload_inner::setConditionDescription(const QString &condition_description) {
+    m_condition_description = condition_description;
+    m_condition_description_isSet = true;
+}
+
+bool OAIProductUpdateBatch_payload_inner::is_condition_description_Set() const{
+    return m_condition_description_isSet;
+}
+
+bool OAIProductUpdateBatch_payload_inner::is_condition_description_Valid() const{
+    return m_condition_description_isValid;
 }
 
 QString OAIProductUpdateBatch_payload_inner::getVisible() const {
@@ -1746,6 +1771,11 @@ bool OAIProductUpdateBatch_payload_inner::isSet() const {
         }
 
         if (m_condition_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_condition_description_isSet) {
             isObjectUpdated = true;
             break;
         }

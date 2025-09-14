@@ -159,6 +159,11 @@ public:
     bool is_condition_Set() const;
     bool is_condition_Valid() const;
 
+    QString getConditionDescription() const;
+    void setConditionDescription(const QString &condition_description);
+    bool is_condition_description_Set() const;
+    bool is_condition_description_Valid() const;
+
     QString getVisible() const;
     void setVisible(const QString &visible);
     bool is_visible_Set() const;
@@ -456,6 +461,10 @@ private:
     QString m_condition;
     bool m_condition_isSet;
     bool m_condition_isValid;
+
+    QString m_condition_description;
+    bool m_condition_description_isSet;
+    bool m_condition_description_isValid;
 
     QString m_visible;
     bool m_visible_isSet;

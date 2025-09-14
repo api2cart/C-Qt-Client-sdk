@@ -115,6 +115,9 @@ void OAIProductUpdate::initializeModel() {
     m_product_class_isSet = false;
     m_product_class_isValid = false;
 
+    m_brand_name_isSet = false;
+    m_brand_name_isValid = false;
+
     m_available_for_view_isSet = false;
     m_available_for_view_isValid = false;
 
@@ -392,6 +395,9 @@ void OAIProductUpdate::fromJsonObject(QJsonObject json) {
     m_product_class_isValid = ::OpenAPI::fromJsonValue(m_product_class, json[QString("product_class")]);
     m_product_class_isSet = !json[QString("product_class")].isNull() && m_product_class_isValid;
 
+    m_brand_name_isValid = ::OpenAPI::fromJsonValue(m_brand_name, json[QString("brand_name")]);
+    m_brand_name_isSet = !json[QString("brand_name")].isNull() && m_brand_name_isValid;
+
     m_available_for_view_isValid = ::OpenAPI::fromJsonValue(m_available_for_view, json[QString("available_for_view")]);
     m_available_for_view_isSet = !json[QString("available_for_view")].isNull() && m_available_for_view_isValid;
 
@@ -668,6 +674,9 @@ QJsonObject OAIProductUpdate::asJsonObject() const {
     }
     if (m_product_class_isSet) {
         obj.insert(QString("product_class"), ::OpenAPI::toJsonValue(m_product_class));
+    }
+    if (m_brand_name_isSet) {
+        obj.insert(QString("brand_name"), ::OpenAPI::toJsonValue(m_brand_name));
     }
     if (m_available_for_view_isSet) {
         obj.insert(QString("available_for_view"), ::OpenAPI::toJsonValue(m_available_for_view));
@@ -1288,6 +1297,22 @@ bool OAIProductUpdate::is_product_class_Set() const{
 
 bool OAIProductUpdate::is_product_class_Valid() const{
     return m_product_class_isValid;
+}
+
+QString OAIProductUpdate::getBrandName() const {
+    return m_brand_name;
+}
+void OAIProductUpdate::setBrandName(const QString &brand_name) {
+    m_brand_name = brand_name;
+    m_brand_name_isSet = true;
+}
+
+bool OAIProductUpdate::is_brand_name_Set() const{
+    return m_brand_name_isSet;
+}
+
+bool OAIProductUpdate::is_brand_name_Valid() const{
+    return m_brand_name_isValid;
 }
 
 bool OAIProductUpdate::isAvailableForView() const {
@@ -2416,6 +2441,11 @@ bool OAIProductUpdate::isSet() const {
         }
 
         if (m_product_class_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_brand_name_isSet) {
             isObjectUpdated = true;
             break;
         }
