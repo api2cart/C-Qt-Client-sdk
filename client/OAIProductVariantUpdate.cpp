@@ -190,6 +190,9 @@ void OAIProductVariantUpdate::initializeModel() {
     m_meta_keywords_isSet = false;
     m_meta_keywords_isValid = false;
 
+    m_manufacturer_isSet = false;
+    m_manufacturer_isValid = false;
+
     m_reindex_isSet = false;
     m_reindex_isValid = false;
 
@@ -362,6 +365,9 @@ void OAIProductVariantUpdate::fromJsonObject(QJsonObject json) {
     m_meta_keywords_isValid = ::OpenAPI::fromJsonValue(m_meta_keywords, json[QString("meta_keywords")]);
     m_meta_keywords_isSet = !json[QString("meta_keywords")].isNull() && m_meta_keywords_isValid;
 
+    m_manufacturer_isValid = ::OpenAPI::fromJsonValue(m_manufacturer, json[QString("manufacturer")]);
+    m_manufacturer_isSet = !json[QString("manufacturer")].isNull() && m_manufacturer_isValid;
+
     m_reindex_isValid = ::OpenAPI::fromJsonValue(m_reindex, json[QString("reindex")]);
     m_reindex_isSet = !json[QString("reindex")].isNull() && m_reindex_isValid;
 
@@ -533,6 +539,9 @@ QJsonObject OAIProductVariantUpdate::asJsonObject() const {
     }
     if (m_meta_keywords_isSet) {
         obj.insert(QString("meta_keywords"), ::OpenAPI::toJsonValue(m_meta_keywords));
+    }
+    if (m_manufacturer_isSet) {
+        obj.insert(QString("manufacturer"), ::OpenAPI::toJsonValue(m_manufacturer));
     }
     if (m_reindex_isSet) {
         obj.insert(QString("reindex"), ::OpenAPI::toJsonValue(m_reindex));
@@ -1375,6 +1384,22 @@ bool OAIProductVariantUpdate::is_meta_keywords_Valid() const{
     return m_meta_keywords_isValid;
 }
 
+QString OAIProductVariantUpdate::getManufacturer() const {
+    return m_manufacturer;
+}
+void OAIProductVariantUpdate::setManufacturer(const QString &manufacturer) {
+    m_manufacturer = manufacturer;
+    m_manufacturer_isSet = true;
+}
+
+bool OAIProductVariantUpdate::is_manufacturer_Set() const{
+    return m_manufacturer_isSet;
+}
+
+bool OAIProductVariantUpdate::is_manufacturer_Valid() const{
+    return m_manufacturer_isValid;
+}
+
 bool OAIProductVariantUpdate::isReindex() const {
     return m_reindex;
 }
@@ -1666,6 +1691,11 @@ bool OAIProductVariantUpdate::isSet() const {
         }
 
         if (m_meta_keywords_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_manufacturer_isSet) {
             isObjectUpdated = true;
             break;
         }

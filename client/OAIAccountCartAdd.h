@@ -507,6 +507,11 @@ public:
     bool is_shopware_access_key_Set() const;
     bool is_shopware_access_key_Valid() const;
 
+    QString getUnasApiKey() const;
+    void setUnasApiKey(const QString &unas_api_key);
+    bool is_unas_api_key_Set() const;
+    bool is_unas_api_key_Valid() const;
+
     QString getShopwareApiKey() const;
     void setShopwareApiKey(const QString &shopware_api_key);
     bool is_shopware_api_key_Set() const;
@@ -1244,6 +1249,10 @@ private:
     QString m_shopware_access_key;
     bool m_shopware_access_key_isSet;
     bool m_shopware_access_key_isValid;
+
+    QString m_unas_api_key;
+    bool m_unas_api_key_isSet;
+    bool m_unas_api_key_isValid;
 
     QString m_shopware_api_key;
     bool m_shopware_api_key_isSet;

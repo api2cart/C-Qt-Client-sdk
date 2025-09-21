@@ -302,6 +302,11 @@ public:
     bool is_meta_keywords_Set() const;
     bool is_meta_keywords_Valid() const;
 
+    QString getManufacturer() const;
+    void setManufacturer(const QString &manufacturer);
+    bool is_manufacturer_Set() const;
+    bool is_manufacturer_Valid() const;
+
     bool isReindex() const;
     void setReindex(const bool &reindex);
     bool is_reindex_Set() const;
@@ -525,6 +530,10 @@ private:
     QString m_meta_keywords;
     bool m_meta_keywords_isSet;
     bool m_meta_keywords_isValid;
+
+    QString m_manufacturer;
+    bool m_manufacturer_isSet;
+    bool m_manufacturer_isValid;
 
     bool m_reindex;
     bool m_reindex_isSet;

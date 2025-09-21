@@ -313,6 +313,9 @@ void OAIAccountCartAdd::initializeModel() {
     m_shopware_access_key_isSet = false;
     m_shopware_access_key_isValid = false;
 
+    m_unas_api_key_isSet = false;
+    m_unas_api_key_isValid = false;
+
     m_shopware_api_key_isSet = false;
     m_shopware_api_key_isValid = false;
 
@@ -818,6 +821,9 @@ void OAIAccountCartAdd::fromJsonObject(QJsonObject json) {
     m_shopware_access_key_isValid = ::OpenAPI::fromJsonValue(m_shopware_access_key, json[QString("shopware_access_key")]);
     m_shopware_access_key_isSet = !json[QString("shopware_access_key")].isNull() && m_shopware_access_key_isValid;
 
+    m_unas_api_key_isValid = ::OpenAPI::fromJsonValue(m_unas_api_key, json[QString("unas_api_key")]);
+    m_unas_api_key_isSet = !json[QString("unas_api_key")].isNull() && m_unas_api_key_isValid;
+
     m_shopware_api_key_isValid = ::OpenAPI::fromJsonValue(m_shopware_api_key, json[QString("shopware_api_key")]);
     m_shopware_api_key_isSet = !json[QString("shopware_api_key")].isNull() && m_shopware_api_key_isValid;
 
@@ -1322,6 +1328,9 @@ QJsonObject OAIAccountCartAdd::asJsonObject() const {
     }
     if (m_shopware_access_key_isSet) {
         obj.insert(QString("shopware_access_key"), ::OpenAPI::toJsonValue(m_shopware_access_key));
+    }
+    if (m_unas_api_key_isSet) {
+        obj.insert(QString("unas_api_key"), ::OpenAPI::toJsonValue(m_unas_api_key));
     }
     if (m_shopware_api_key_isSet) {
         obj.insert(QString("shopware_api_key"), ::OpenAPI::toJsonValue(m_shopware_api_key));
@@ -3030,6 +3039,22 @@ bool OAIAccountCartAdd::is_shopware_access_key_Valid() const{
     return m_shopware_access_key_isValid;
 }
 
+QString OAIAccountCartAdd::getUnasApiKey() const {
+    return m_unas_api_key;
+}
+void OAIAccountCartAdd::setUnasApiKey(const QString &unas_api_key) {
+    m_unas_api_key = unas_api_key;
+    m_unas_api_key_isSet = true;
+}
+
+bool OAIAccountCartAdd::is_unas_api_key_Set() const{
+    return m_unas_api_key_isSet;
+}
+
+bool OAIAccountCartAdd::is_unas_api_key_Valid() const{
+    return m_unas_api_key_isValid;
+}
+
 QString OAIAccountCartAdd::getShopwareApiKey() const {
     return m_shopware_api_key;
 }
@@ -4646,6 +4671,11 @@ bool OAIAccountCartAdd::isSet() const {
         }
 
         if (m_shopware_access_key_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_unas_api_key_isSet) {
             isObjectUpdated = true;
             break;
         }
