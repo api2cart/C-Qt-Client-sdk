@@ -24,6 +24,7 @@
 #include "OAIBaseCustomer.h"
 #include "OAICurrency.h"
 #include "OAIObject.h"
+#include "OAIOrder_Calculate_Bundle.h"
 #include "OAIOrder_Calculate_Discount.h"
 #include "OAIOrder_Calculate_Item.h"
 #include "OAIOrder_Calculate_ShippingRate.h"
@@ -38,6 +39,7 @@ namespace OpenAPI {
 class OAIBaseCustomer;
 class OAIOrder_Calculate_Subtotal;
 class OAIOrder_Calculate_Item;
+class OAIOrder_Calculate_Bundle;
 class OAICurrency;
 class OAIOrder_Calculate_ShippingRate;
 class OAIOrder_Calculate_Tax;
@@ -68,6 +70,11 @@ public:
     void setItems(const QList<OAIOrder_Calculate_Item> &items);
     bool is_items_Set() const;
     bool is_items_Valid() const;
+
+    QList<OAIOrder_Calculate_Bundle> getBundles() const;
+    void setBundles(const QList<OAIOrder_Calculate_Bundle> &bundles);
+    bool is_bundles_Set() const;
+    bool is_bundles_Valid() const;
 
     OAICurrency getCurrency() const;
     void setCurrency(const OAICurrency &currency);
@@ -116,6 +123,10 @@ private:
     QList<OAIOrder_Calculate_Item> m_items;
     bool m_items_isSet;
     bool m_items_isValid;
+
+    QList<OAIOrder_Calculate_Bundle> m_bundles;
+    bool m_bundles_isSet;
+    bool m_bundles_isValid;
 
     OAICurrency m_currency;
     bool m_currency_isSet;

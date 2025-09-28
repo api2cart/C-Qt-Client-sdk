@@ -24,6 +24,7 @@
 #include "OAIObject.h"
 #include "OAIProductAddBatch_payload_inner_advanced_prices_inner.h"
 #include "OAIProductAddBatch_payload_inner_images_inner.h"
+#include "OAIProductAddBatch_payload_inner_sales_tax.h"
 #include "OAIProductAdd_files_inner.h"
 #include <QList>
 #include <QString>
@@ -33,6 +34,7 @@
 
 namespace OpenAPI {
 class OAIProductAddBatch_payload_inner_advanced_prices_inner;
+class OAIProductAddBatch_payload_inner_sales_tax;
 class OAIProductAddBatch_payload_inner_images_inner;
 class OAIProductAdd_files_inner;
 
@@ -97,6 +99,11 @@ public:
     bool is_mpn_Set() const;
     bool is_mpn_Valid() const;
 
+    QString getIsbn() const;
+    void setIsbn(const QString &isbn);
+    bool is_isbn_Set() const;
+    bool is_isbn_Valid() const;
+
     QString getBarcode() const;
     void setBarcode(const QString &barcode);
     bool is_barcode_Set() const;
@@ -132,6 +139,11 @@ public:
     bool is_sprice_expire_Set() const;
     bool is_sprice_expire_Valid() const;
 
+    QString getAvailFrom() const;
+    void setAvailFrom(const QString &avail_from);
+    bool is_avail_from_Set() const;
+    bool is_avail_from_Valid() const;
+
     QList<OAIProductAddBatch_payload_inner_advanced_prices_inner> getAdvancedPrices() const;
     void setAdvancedPrices(const QList<OAIProductAddBatch_payload_inner_advanced_prices_inner> &advanced_prices);
     bool is_advanced_prices_Set() const;
@@ -141,6 +153,21 @@ public:
     void setFixedCostShippingPrice(const double &fixed_cost_shipping_price);
     bool is_fixed_cost_shipping_price_Set() const;
     bool is_fixed_cost_shipping_price_Valid() const;
+
+    double getBuyitnowPrice() const;
+    void setBuyitnowPrice(const double &buyitnow_price);
+    bool is_buyitnow_price_Set() const;
+    bool is_buyitnow_price_Valid() const;
+
+    double getReservePrice() const;
+    void setReservePrice(const double &reserve_price);
+    bool is_reserve_price_Set() const;
+    bool is_reserve_price_Valid() const;
+
+    double getBestOffer() const;
+    void setBestOffer(const double &best_offer);
+    bool is_best_offer_Set() const;
+    bool is_best_offer_Valid() const;
 
     double getQuantity() const;
     void setQuantity(const double &quantity);
@@ -187,6 +214,11 @@ public:
     bool is_condition_Set() const;
     bool is_condition_Valid() const;
 
+    QString getConditionDescription() const;
+    void setConditionDescription(const QString &condition_description);
+    bool is_condition_description_Set() const;
+    bool is_condition_description_Valid() const;
+
     QString getVisible() const;
     void setVisible(const QString &visible);
     bool is_visible_Set() const;
@@ -216,6 +248,16 @@ public:
     void setType(const QString &type);
     bool is_type_Set() const;
     bool is_type_Valid() const;
+
+    QString getListingType() const;
+    void setListingType(const QString &listing_type);
+    bool is_listing_type_Set() const;
+    bool is_listing_type_Valid() const;
+
+    QString getListingDuration() const;
+    void setListingDuration(const QString &listing_duration);
+    bool is_listing_duration_Set() const;
+    bool is_listing_duration_Valid() const;
 
     bool isDownloadable() const;
     void setDownloadable(const bool &downloadable);
@@ -301,6 +343,11 @@ public:
     void setTaxClassId(const QString &tax_class_id);
     bool is_tax_class_id_Set() const;
     bool is_tax_class_id_Valid() const;
+
+    OAIProductAddBatch_payload_inner_sales_tax getSalesTax() const;
+    void setSalesTax(const OAIProductAddBatch_payload_inner_sales_tax &sales_tax);
+    bool is_sales_tax_Set() const;
+    bool is_sales_tax_Valid() const;
 
     QString getMetaTitle() const;
     void setMetaTitle(const QString &meta_title);
@@ -418,6 +465,10 @@ private:
     bool m_mpn_isSet;
     bool m_mpn_isValid;
 
+    QString m_isbn;
+    bool m_isbn_isSet;
+    bool m_isbn_isValid;
+
     QString m_barcode;
     bool m_barcode_isSet;
     bool m_barcode_isValid;
@@ -446,6 +497,10 @@ private:
     bool m_sprice_expire_isSet;
     bool m_sprice_expire_isValid;
 
+    QString m_avail_from;
+    bool m_avail_from_isSet;
+    bool m_avail_from_isValid;
+
     QList<OAIProductAddBatch_payload_inner_advanced_prices_inner> m_advanced_prices;
     bool m_advanced_prices_isSet;
     bool m_advanced_prices_isValid;
@@ -453,6 +508,18 @@ private:
     double m_fixed_cost_shipping_price;
     bool m_fixed_cost_shipping_price_isSet;
     bool m_fixed_cost_shipping_price_isValid;
+
+    double m_buyitnow_price;
+    bool m_buyitnow_price_isSet;
+    bool m_buyitnow_price_isValid;
+
+    double m_reserve_price;
+    bool m_reserve_price_isSet;
+    bool m_reserve_price_isValid;
+
+    double m_best_offer;
+    bool m_best_offer_isSet;
+    bool m_best_offer_isValid;
 
     double m_quantity;
     bool m_quantity_isSet;
@@ -490,6 +557,10 @@ private:
     bool m_condition_isSet;
     bool m_condition_isValid;
 
+    QString m_condition_description;
+    bool m_condition_description_isSet;
+    bool m_condition_description_isValid;
+
     QString m_visible;
     bool m_visible_isSet;
     bool m_visible_isValid;
@@ -513,6 +584,14 @@ private:
     QString m_type;
     bool m_type_isSet;
     bool m_type_isValid;
+
+    QString m_listing_type;
+    bool m_listing_type_isSet;
+    bool m_listing_type_isValid;
+
+    QString m_listing_duration;
+    bool m_listing_duration_isSet;
+    bool m_listing_duration_isValid;
 
     bool m_downloadable;
     bool m_downloadable_isSet;
@@ -581,6 +660,10 @@ private:
     QString m_tax_class_id;
     bool m_tax_class_id_isSet;
     bool m_tax_class_id_isValid;
+
+    OAIProductAddBatch_payload_inner_sales_tax m_sales_tax;
+    bool m_sales_tax_isSet;
+    bool m_sales_tax_isValid;
 
     QString m_meta_title;
     bool m_meta_title_isSet;

@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 
-#include "OAIOrder_Calculate_Item.h"
+#include "OAIOrder_Calculate_Bundle.h"
 
 #include <QDebug>
 #include <QJsonArray>
@@ -21,18 +21,18 @@
 
 namespace OpenAPI {
 
-OAIOrder_Calculate_Item::OAIOrder_Calculate_Item(QString json) {
+OAIOrder_Calculate_Bundle::OAIOrder_Calculate_Bundle(QString json) {
     this->initializeModel();
     this->fromJson(json);
 }
 
-OAIOrder_Calculate_Item::OAIOrder_Calculate_Item() {
+OAIOrder_Calculate_Bundle::OAIOrder_Calculate_Bundle() {
     this->initializeModel();
 }
 
-OAIOrder_Calculate_Item::~OAIOrder_Calculate_Item() {}
+OAIOrder_Calculate_Bundle::~OAIOrder_Calculate_Bundle() {}
 
-void OAIOrder_Calculate_Item::initializeModel() {
+void OAIOrder_Calculate_Bundle::initializeModel() {
 
     m_product_id_isSet = false;
     m_product_id_isValid = false;
@@ -70,9 +70,6 @@ void OAIOrder_Calculate_Item::initializeModel() {
     m_variant_id_isSet = false;
     m_variant_id_isValid = false;
 
-    m_bundle_product_id_isSet = false;
-    m_bundle_product_id_isValid = false;
-
     m_options_isSet = false;
     m_options_isValid = false;
 
@@ -83,14 +80,14 @@ void OAIOrder_Calculate_Item::initializeModel() {
     m_custom_fields_isValid = false;
 }
 
-void OAIOrder_Calculate_Item::fromJson(QString jsonString) {
+void OAIOrder_Calculate_Bundle::fromJson(QString jsonString) {
     QByteArray array(jsonString.toStdString().c_str());
     QJsonDocument doc = QJsonDocument::fromJson(array);
     QJsonObject jsonObject = doc.object();
     this->fromJsonObject(jsonObject);
 }
 
-void OAIOrder_Calculate_Item::fromJsonObject(QJsonObject json) {
+void OAIOrder_Calculate_Bundle::fromJsonObject(QJsonObject json) {
 
     m_product_id_isValid = ::OpenAPI::fromJsonValue(m_product_id, json[QString("product_id")]);
     m_product_id_isSet = !json[QString("product_id")].isNull() && m_product_id_isValid;
@@ -128,9 +125,6 @@ void OAIOrder_Calculate_Item::fromJsonObject(QJsonObject json) {
     m_variant_id_isValid = ::OpenAPI::fromJsonValue(m_variant_id, json[QString("variant_id")]);
     m_variant_id_isSet = !json[QString("variant_id")].isNull() && m_variant_id_isValid;
 
-    m_bundle_product_id_isValid = ::OpenAPI::fromJsonValue(m_bundle_product_id, json[QString("bundle_product_id")]);
-    m_bundle_product_id_isSet = !json[QString("bundle_product_id")].isNull() && m_bundle_product_id_isValid;
-
     m_options_isValid = ::OpenAPI::fromJsonValue(m_options, json[QString("options")]);
     m_options_isSet = !json[QString("options")].isNull() && m_options_isValid;
 
@@ -141,14 +135,14 @@ void OAIOrder_Calculate_Item::fromJsonObject(QJsonObject json) {
     m_custom_fields_isSet = !json[QString("custom_fields")].isNull() && m_custom_fields_isValid;
 }
 
-QString OAIOrder_Calculate_Item::asJson() const {
+QString OAIOrder_Calculate_Bundle::asJson() const {
     QJsonObject obj = this->asJsonObject();
     QJsonDocument doc(obj);
     QByteArray bytes = doc.toJson();
     return QString(bytes);
 }
 
-QJsonObject OAIOrder_Calculate_Item::asJsonObject() const {
+QJsonObject OAIOrder_Calculate_Bundle::asJsonObject() const {
     QJsonObject obj;
     if (m_product_id_isSet) {
         obj.insert(QString("product_id"), ::OpenAPI::toJsonValue(m_product_id));
@@ -186,9 +180,6 @@ QJsonObject OAIOrder_Calculate_Item::asJsonObject() const {
     if (m_variant_id_isSet) {
         obj.insert(QString("variant_id"), ::OpenAPI::toJsonValue(m_variant_id));
     }
-    if (m_bundle_product_id_isSet) {
-        obj.insert(QString("bundle_product_id"), ::OpenAPI::toJsonValue(m_bundle_product_id));
-    }
     if (m_options.size() > 0) {
         obj.insert(QString("options"), ::OpenAPI::toJsonValue(m_options));
     }
@@ -201,263 +192,247 @@ QJsonObject OAIOrder_Calculate_Item::asJsonObject() const {
     return obj;
 }
 
-QString OAIOrder_Calculate_Item::getProductId() const {
+QString OAIOrder_Calculate_Bundle::getProductId() const {
     return m_product_id;
 }
-void OAIOrder_Calculate_Item::setProductId(const QString &product_id) {
+void OAIOrder_Calculate_Bundle::setProductId(const QString &product_id) {
     m_product_id = product_id;
     m_product_id_isSet = true;
 }
 
-bool OAIOrder_Calculate_Item::is_product_id_Set() const{
+bool OAIOrder_Calculate_Bundle::is_product_id_Set() const{
     return m_product_id_isSet;
 }
 
-bool OAIOrder_Calculate_Item::is_product_id_Valid() const{
+bool OAIOrder_Calculate_Bundle::is_product_id_Valid() const{
     return m_product_id_isValid;
 }
 
-QString OAIOrder_Calculate_Item::getSku() const {
+QString OAIOrder_Calculate_Bundle::getSku() const {
     return m_sku;
 }
-void OAIOrder_Calculate_Item::setSku(const QString &sku) {
+void OAIOrder_Calculate_Bundle::setSku(const QString &sku) {
     m_sku = sku;
     m_sku_isSet = true;
 }
 
-bool OAIOrder_Calculate_Item::is_sku_Set() const{
+bool OAIOrder_Calculate_Bundle::is_sku_Set() const{
     return m_sku_isSet;
 }
 
-bool OAIOrder_Calculate_Item::is_sku_Valid() const{
+bool OAIOrder_Calculate_Bundle::is_sku_Valid() const{
     return m_sku_isValid;
 }
 
-QString OAIOrder_Calculate_Item::getName() const {
+QString OAIOrder_Calculate_Bundle::getName() const {
     return m_name;
 }
-void OAIOrder_Calculate_Item::setName(const QString &name) {
+void OAIOrder_Calculate_Bundle::setName(const QString &name) {
     m_name = name;
     m_name_isSet = true;
 }
 
-bool OAIOrder_Calculate_Item::is_name_Set() const{
+bool OAIOrder_Calculate_Bundle::is_name_Set() const{
     return m_name_isSet;
 }
 
-bool OAIOrder_Calculate_Item::is_name_Valid() const{
+bool OAIOrder_Calculate_Bundle::is_name_Valid() const{
     return m_name_isValid;
 }
 
-qint32 OAIOrder_Calculate_Item::getQuantity() const {
+qint32 OAIOrder_Calculate_Bundle::getQuantity() const {
     return m_quantity;
 }
-void OAIOrder_Calculate_Item::setQuantity(const qint32 &quantity) {
+void OAIOrder_Calculate_Bundle::setQuantity(const qint32 &quantity) {
     m_quantity = quantity;
     m_quantity_isSet = true;
 }
 
-bool OAIOrder_Calculate_Item::is_quantity_Set() const{
+bool OAIOrder_Calculate_Bundle::is_quantity_Set() const{
     return m_quantity_isSet;
 }
 
-bool OAIOrder_Calculate_Item::is_quantity_Valid() const{
+bool OAIOrder_Calculate_Bundle::is_quantity_Valid() const{
     return m_quantity_isValid;
 }
 
-double OAIOrder_Calculate_Item::getPrice() const {
+double OAIOrder_Calculate_Bundle::getPrice() const {
     return m_price;
 }
-void OAIOrder_Calculate_Item::setPrice(const double &price) {
+void OAIOrder_Calculate_Bundle::setPrice(const double &price) {
     m_price = price;
     m_price_isSet = true;
 }
 
-bool OAIOrder_Calculate_Item::is_price_Set() const{
+bool OAIOrder_Calculate_Bundle::is_price_Set() const{
     return m_price_isSet;
 }
 
-bool OAIOrder_Calculate_Item::is_price_Valid() const{
+bool OAIOrder_Calculate_Bundle::is_price_Valid() const{
     return m_price_isValid;
 }
 
-double OAIOrder_Calculate_Item::getPriceIncTax() const {
+double OAIOrder_Calculate_Bundle::getPriceIncTax() const {
     return m_price_inc_tax;
 }
-void OAIOrder_Calculate_Item::setPriceIncTax(const double &price_inc_tax) {
+void OAIOrder_Calculate_Bundle::setPriceIncTax(const double &price_inc_tax) {
     m_price_inc_tax = price_inc_tax;
     m_price_inc_tax_isSet = true;
 }
 
-bool OAIOrder_Calculate_Item::is_price_inc_tax_Set() const{
+bool OAIOrder_Calculate_Bundle::is_price_inc_tax_Set() const{
     return m_price_inc_tax_isSet;
 }
 
-bool OAIOrder_Calculate_Item::is_price_inc_tax_Valid() const{
+bool OAIOrder_Calculate_Bundle::is_price_inc_tax_Valid() const{
     return m_price_inc_tax_isValid;
 }
 
-double OAIOrder_Calculate_Item::getTaxRate() const {
+double OAIOrder_Calculate_Bundle::getTaxRate() const {
     return m_tax_rate;
 }
-void OAIOrder_Calculate_Item::setTaxRate(const double &tax_rate) {
+void OAIOrder_Calculate_Bundle::setTaxRate(const double &tax_rate) {
     m_tax_rate = tax_rate;
     m_tax_rate_isSet = true;
 }
 
-bool OAIOrder_Calculate_Item::is_tax_rate_Set() const{
+bool OAIOrder_Calculate_Bundle::is_tax_rate_Set() const{
     return m_tax_rate_isSet;
 }
 
-bool OAIOrder_Calculate_Item::is_tax_rate_Valid() const{
+bool OAIOrder_Calculate_Bundle::is_tax_rate_Valid() const{
     return m_tax_rate_isValid;
 }
 
-double OAIOrder_Calculate_Item::getUnitDiscount() const {
+double OAIOrder_Calculate_Bundle::getUnitDiscount() const {
     return m_unit_discount;
 }
-void OAIOrder_Calculate_Item::setUnitDiscount(const double &unit_discount) {
+void OAIOrder_Calculate_Bundle::setUnitDiscount(const double &unit_discount) {
     m_unit_discount = unit_discount;
     m_unit_discount_isSet = true;
 }
 
-bool OAIOrder_Calculate_Item::is_unit_discount_Set() const{
+bool OAIOrder_Calculate_Bundle::is_unit_discount_Set() const{
     return m_unit_discount_isSet;
 }
 
-bool OAIOrder_Calculate_Item::is_unit_discount_Valid() const{
+bool OAIOrder_Calculate_Bundle::is_unit_discount_Valid() const{
     return m_unit_discount_isValid;
 }
 
-double OAIOrder_Calculate_Item::getWeight() const {
+double OAIOrder_Calculate_Bundle::getWeight() const {
     return m_weight;
 }
-void OAIOrder_Calculate_Item::setWeight(const double &weight) {
+void OAIOrder_Calculate_Bundle::setWeight(const double &weight) {
     m_weight = weight;
     m_weight_isSet = true;
 }
 
-bool OAIOrder_Calculate_Item::is_weight_Set() const{
+bool OAIOrder_Calculate_Bundle::is_weight_Set() const{
     return m_weight_isSet;
 }
 
-bool OAIOrder_Calculate_Item::is_weight_Valid() const{
+bool OAIOrder_Calculate_Bundle::is_weight_Valid() const{
     return m_weight_isValid;
 }
 
-QString OAIOrder_Calculate_Item::getWeightUnit() const {
+QString OAIOrder_Calculate_Bundle::getWeightUnit() const {
     return m_weight_unit;
 }
-void OAIOrder_Calculate_Item::setWeightUnit(const QString &weight_unit) {
+void OAIOrder_Calculate_Bundle::setWeightUnit(const QString &weight_unit) {
     m_weight_unit = weight_unit;
     m_weight_unit_isSet = true;
 }
 
-bool OAIOrder_Calculate_Item::is_weight_unit_Set() const{
+bool OAIOrder_Calculate_Bundle::is_weight_unit_Set() const{
     return m_weight_unit_isSet;
 }
 
-bool OAIOrder_Calculate_Item::is_weight_unit_Valid() const{
+bool OAIOrder_Calculate_Bundle::is_weight_unit_Valid() const{
     return m_weight_unit_isValid;
 }
 
-QString OAIOrder_Calculate_Item::getBarcode() const {
+QString OAIOrder_Calculate_Bundle::getBarcode() const {
     return m_barcode;
 }
-void OAIOrder_Calculate_Item::setBarcode(const QString &barcode) {
+void OAIOrder_Calculate_Bundle::setBarcode(const QString &barcode) {
     m_barcode = barcode;
     m_barcode_isSet = true;
 }
 
-bool OAIOrder_Calculate_Item::is_barcode_Set() const{
+bool OAIOrder_Calculate_Bundle::is_barcode_Set() const{
     return m_barcode_isSet;
 }
 
-bool OAIOrder_Calculate_Item::is_barcode_Valid() const{
+bool OAIOrder_Calculate_Bundle::is_barcode_Valid() const{
     return m_barcode_isValid;
 }
 
-QString OAIOrder_Calculate_Item::getVariantId() const {
+QString OAIOrder_Calculate_Bundle::getVariantId() const {
     return m_variant_id;
 }
-void OAIOrder_Calculate_Item::setVariantId(const QString &variant_id) {
+void OAIOrder_Calculate_Bundle::setVariantId(const QString &variant_id) {
     m_variant_id = variant_id;
     m_variant_id_isSet = true;
 }
 
-bool OAIOrder_Calculate_Item::is_variant_id_Set() const{
+bool OAIOrder_Calculate_Bundle::is_variant_id_Set() const{
     return m_variant_id_isSet;
 }
 
-bool OAIOrder_Calculate_Item::is_variant_id_Valid() const{
+bool OAIOrder_Calculate_Bundle::is_variant_id_Valid() const{
     return m_variant_id_isValid;
 }
 
-QString OAIOrder_Calculate_Item::getBundleProductId() const {
-    return m_bundle_product_id;
-}
-void OAIOrder_Calculate_Item::setBundleProductId(const QString &bundle_product_id) {
-    m_bundle_product_id = bundle_product_id;
-    m_bundle_product_id_isSet = true;
-}
-
-bool OAIOrder_Calculate_Item::is_bundle_product_id_Set() const{
-    return m_bundle_product_id_isSet;
-}
-
-bool OAIOrder_Calculate_Item::is_bundle_product_id_Valid() const{
-    return m_bundle_product_id_isValid;
-}
-
-QList<OAIOrder_Item_Option> OAIOrder_Calculate_Item::getOptions() const {
+QList<OAIOrder_Item_Option> OAIOrder_Calculate_Bundle::getOptions() const {
     return m_options;
 }
-void OAIOrder_Calculate_Item::setOptions(const QList<OAIOrder_Item_Option> &options) {
+void OAIOrder_Calculate_Bundle::setOptions(const QList<OAIOrder_Item_Option> &options) {
     m_options = options;
     m_options_isSet = true;
 }
 
-bool OAIOrder_Calculate_Item::is_options_Set() const{
+bool OAIOrder_Calculate_Bundle::is_options_Set() const{
     return m_options_isSet;
 }
 
-bool OAIOrder_Calculate_Item::is_options_Valid() const{
+bool OAIOrder_Calculate_Bundle::is_options_Valid() const{
     return m_options_isValid;
 }
 
-OAIObject OAIOrder_Calculate_Item::getAdditionalFields() const {
+OAIObject OAIOrder_Calculate_Bundle::getAdditionalFields() const {
     return m_additional_fields;
 }
-void OAIOrder_Calculate_Item::setAdditionalFields(const OAIObject &additional_fields) {
+void OAIOrder_Calculate_Bundle::setAdditionalFields(const OAIObject &additional_fields) {
     m_additional_fields = additional_fields;
     m_additional_fields_isSet = true;
 }
 
-bool OAIOrder_Calculate_Item::is_additional_fields_Set() const{
+bool OAIOrder_Calculate_Bundle::is_additional_fields_Set() const{
     return m_additional_fields_isSet;
 }
 
-bool OAIOrder_Calculate_Item::is_additional_fields_Valid() const{
+bool OAIOrder_Calculate_Bundle::is_additional_fields_Valid() const{
     return m_additional_fields_isValid;
 }
 
-OAIObject OAIOrder_Calculate_Item::getCustomFields() const {
+OAIObject OAIOrder_Calculate_Bundle::getCustomFields() const {
     return m_custom_fields;
 }
-void OAIOrder_Calculate_Item::setCustomFields(const OAIObject &custom_fields) {
+void OAIOrder_Calculate_Bundle::setCustomFields(const OAIObject &custom_fields) {
     m_custom_fields = custom_fields;
     m_custom_fields_isSet = true;
 }
 
-bool OAIOrder_Calculate_Item::is_custom_fields_Set() const{
+bool OAIOrder_Calculate_Bundle::is_custom_fields_Set() const{
     return m_custom_fields_isSet;
 }
 
-bool OAIOrder_Calculate_Item::is_custom_fields_Valid() const{
+bool OAIOrder_Calculate_Bundle::is_custom_fields_Valid() const{
     return m_custom_fields_isValid;
 }
 
-bool OAIOrder_Calculate_Item::isSet() const {
+bool OAIOrder_Calculate_Bundle::isSet() const {
     bool isObjectUpdated = false;
     do {
         if (m_product_id_isSet) {
@@ -520,11 +495,6 @@ bool OAIOrder_Calculate_Item::isSet() const {
             break;
         }
 
-        if (m_bundle_product_id_isSet) {
-            isObjectUpdated = true;
-            break;
-        }
-
         if (m_options.size() > 0) {
             isObjectUpdated = true;
             break;
@@ -543,7 +513,7 @@ bool OAIOrder_Calculate_Item::isSet() const {
     return isObjectUpdated;
 }
 
-bool OAIOrder_Calculate_Item::isValid() const {
+bool OAIOrder_Calculate_Bundle::isValid() const {
     // only required properties are required for the object to be considered valid
     return true;
 }

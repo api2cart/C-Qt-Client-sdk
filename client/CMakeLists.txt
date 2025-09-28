@@ -240,6 +240,7 @@ add_library(${PROJECT_NAME}
   OAIOrderShipmentTrackingAdd_200_response_result.h
   OAIOrderShipmentUpdate.h
   OAIOrder_Calculate.h
+  OAIOrder_Calculate_Bundle.h
   OAIOrder_Calculate_Discount.h
   OAIOrder_Calculate_Item.h
   OAIOrder_Calculate_ShippingRate.h
@@ -268,6 +269,7 @@ add_library(${PROJECT_NAME}
   OAIProductAddBatch_payload_inner.h
   OAIProductAddBatch_payload_inner_advanced_prices_inner.h
   OAIProductAddBatch_payload_inner_images_inner.h
+  OAIProductAddBatch_payload_inner_sales_tax.h
   OAIProductAdd_200_response.h
   OAIProductAdd_200_response_result.h
   OAIProductAdd_best_offer.h
@@ -692,6 +694,7 @@ add_library(${PROJECT_NAME}
   OAIOrderShipmentTrackingAdd_200_response_result.cpp
   OAIOrderShipmentUpdate.cpp
   OAIOrder_Calculate.cpp
+  OAIOrder_Calculate_Bundle.cpp
   OAIOrder_Calculate_Discount.cpp
   OAIOrder_Calculate_Item.cpp
   OAIOrder_Calculate_ShippingRate.cpp
@@ -720,6 +723,7 @@ add_library(${PROJECT_NAME}
   OAIProductAddBatch_payload_inner.cpp
   OAIProductAddBatch_payload_inner_advanced_prices_inner.cpp
   OAIProductAddBatch_payload_inner_images_inner.cpp
+  OAIProductAddBatch_payload_inner_sales_tax.cpp
   OAIProductAdd_200_response.cpp
   OAIProductAdd_200_response_result.cpp
   OAIProductAdd_best_offer.cpp

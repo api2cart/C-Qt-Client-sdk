@@ -11,13 +11,13 @@
  */
 
 /*
- * OAIOrder_Calculate_Item.h
+ * OAIOrder_Calculate_Bundle.h
  *
  * 
  */
 
-#ifndef OAIOrder_Calculate_Item_H
-#define OAIOrder_Calculate_Item_H
+#ifndef OAIOrder_Calculate_Bundle_H
+#define OAIOrder_Calculate_Bundle_H
 
 #include <QJsonObject>
 
@@ -32,11 +32,11 @@
 namespace OpenAPI {
 class OAIOrder_Item_Option;
 
-class OAIOrder_Calculate_Item : public OAIObject {
+class OAIOrder_Calculate_Bundle : public OAIObject {
 public:
-    OAIOrder_Calculate_Item();
-    OAIOrder_Calculate_Item(QString json);
-    ~OAIOrder_Calculate_Item() override;
+    OAIOrder_Calculate_Bundle();
+    OAIOrder_Calculate_Bundle(QString json);
+    ~OAIOrder_Calculate_Bundle() override;
 
     QString asJson() const override;
     QJsonObject asJsonObject() const override;
@@ -102,11 +102,6 @@ public:
     void setVariantId(const QString &variant_id);
     bool is_variant_id_Set() const;
     bool is_variant_id_Valid() const;
-
-    QString getBundleProductId() const;
-    void setBundleProductId(const QString &bundle_product_id);
-    bool is_bundle_product_id_Set() const;
-    bool is_bundle_product_id_Valid() const;
 
     QList<OAIOrder_Item_Option> getOptions() const;
     void setOptions(const QList<OAIOrder_Item_Option> &options);
@@ -177,10 +172,6 @@ private:
     bool m_variant_id_isSet;
     bool m_variant_id_isValid;
 
-    QString m_bundle_product_id;
-    bool m_bundle_product_id_isSet;
-    bool m_bundle_product_id_isValid;
-
     QList<OAIOrder_Item_Option> m_options;
     bool m_options_isSet;
     bool m_options_isValid;
@@ -196,6 +187,6 @@ private:
 
 } // namespace OpenAPI
 
-Q_DECLARE_METATYPE(OpenAPI::OAIOrder_Calculate_Item)
+Q_DECLARE_METATYPE(OpenAPI::OAIOrder_Calculate_Bundle)
 
-#endif // OAIOrder_Calculate_Item_H
+#endif // OAIOrder_Calculate_Bundle_H

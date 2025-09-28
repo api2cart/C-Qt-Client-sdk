@@ -43,6 +43,12 @@ void OAIOrderCalculate_order_item_inner::initializeModel() {
     m_order_item_variant_id_isSet = false;
     m_order_item_variant_id_isValid = false;
 
+    m_order_item_parent_isSet = false;
+    m_order_item_parent_isValid = false;
+
+    m_order_item_parent_option_name_isSet = false;
+    m_order_item_parent_option_name_isValid = false;
+
     m_order_item_option_isSet = false;
     m_order_item_option_isValid = false;
 }
@@ -65,6 +71,12 @@ void OAIOrderCalculate_order_item_inner::fromJsonObject(QJsonObject json) {
     m_order_item_variant_id_isValid = ::OpenAPI::fromJsonValue(m_order_item_variant_id, json[QString("order_item_variant_id")]);
     m_order_item_variant_id_isSet = !json[QString("order_item_variant_id")].isNull() && m_order_item_variant_id_isValid;
 
+    m_order_item_parent_isValid = ::OpenAPI::fromJsonValue(m_order_item_parent, json[QString("order_item_parent")]);
+    m_order_item_parent_isSet = !json[QString("order_item_parent")].isNull() && m_order_item_parent_isValid;
+
+    m_order_item_parent_option_name_isValid = ::OpenAPI::fromJsonValue(m_order_item_parent_option_name, json[QString("order_item_parent_option_name")]);
+    m_order_item_parent_option_name_isSet = !json[QString("order_item_parent_option_name")].isNull() && m_order_item_parent_option_name_isValid;
+
     m_order_item_option_isValid = ::OpenAPI::fromJsonValue(m_order_item_option, json[QString("order_item_option")]);
     m_order_item_option_isSet = !json[QString("order_item_option")].isNull() && m_order_item_option_isValid;
 }
@@ -86,6 +98,12 @@ QJsonObject OAIOrderCalculate_order_item_inner::asJsonObject() const {
     }
     if (m_order_item_variant_id_isSet) {
         obj.insert(QString("order_item_variant_id"), ::OpenAPI::toJsonValue(m_order_item_variant_id));
+    }
+    if (m_order_item_parent_isSet) {
+        obj.insert(QString("order_item_parent"), ::OpenAPI::toJsonValue(m_order_item_parent));
+    }
+    if (m_order_item_parent_option_name_isSet) {
+        obj.insert(QString("order_item_parent_option_name"), ::OpenAPI::toJsonValue(m_order_item_parent_option_name));
     }
     if (m_order_item_option.size() > 0) {
         obj.insert(QString("order_item_option"), ::OpenAPI::toJsonValue(m_order_item_option));
@@ -141,6 +159,38 @@ bool OAIOrderCalculate_order_item_inner::is_order_item_variant_id_Valid() const{
     return m_order_item_variant_id_isValid;
 }
 
+qint32 OAIOrderCalculate_order_item_inner::getOrderItemParent() const {
+    return m_order_item_parent;
+}
+void OAIOrderCalculate_order_item_inner::setOrderItemParent(const qint32 &order_item_parent) {
+    m_order_item_parent = order_item_parent;
+    m_order_item_parent_isSet = true;
+}
+
+bool OAIOrderCalculate_order_item_inner::is_order_item_parent_Set() const{
+    return m_order_item_parent_isSet;
+}
+
+bool OAIOrderCalculate_order_item_inner::is_order_item_parent_Valid() const{
+    return m_order_item_parent_isValid;
+}
+
+QString OAIOrderCalculate_order_item_inner::getOrderItemParentOptionName() const {
+    return m_order_item_parent_option_name;
+}
+void OAIOrderCalculate_order_item_inner::setOrderItemParentOptionName(const QString &order_item_parent_option_name) {
+    m_order_item_parent_option_name = order_item_parent_option_name;
+    m_order_item_parent_option_name_isSet = true;
+}
+
+bool OAIOrderCalculate_order_item_inner::is_order_item_parent_option_name_Set() const{
+    return m_order_item_parent_option_name_isSet;
+}
+
+bool OAIOrderCalculate_order_item_inner::is_order_item_parent_option_name_Valid() const{
+    return m_order_item_parent_option_name_isValid;
+}
+
 QList<OAIOrderCalculate_order_item_inner_order_item_option_inner> OAIOrderCalculate_order_item_inner::getOrderItemOption() const {
     return m_order_item_option;
 }
@@ -171,6 +221,16 @@ bool OAIOrderCalculate_order_item_inner::isSet() const {
         }
 
         if (m_order_item_variant_id_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_order_item_parent_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_order_item_parent_option_name_isSet) {
             isObjectUpdated = true;
             break;
         }

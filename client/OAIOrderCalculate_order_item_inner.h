@@ -57,6 +57,16 @@ public:
     bool is_order_item_variant_id_Set() const;
     bool is_order_item_variant_id_Valid() const;
 
+    qint32 getOrderItemParent() const;
+    void setOrderItemParent(const qint32 &order_item_parent);
+    bool is_order_item_parent_Set() const;
+    bool is_order_item_parent_Valid() const;
+
+    QString getOrderItemParentOptionName() const;
+    void setOrderItemParentOptionName(const QString &order_item_parent_option_name);
+    bool is_order_item_parent_option_name_Set() const;
+    bool is_order_item_parent_option_name_Valid() const;
+
     QList<OAIOrderCalculate_order_item_inner_order_item_option_inner> getOrderItemOption() const;
     void setOrderItemOption(const QList<OAIOrderCalculate_order_item_inner_order_item_option_inner> &order_item_option);
     bool is_order_item_option_Set() const;
@@ -79,6 +89,14 @@ private:
     QString m_order_item_variant_id;
     bool m_order_item_variant_id_isSet;
     bool m_order_item_variant_id_isValid;
+
+    qint32 m_order_item_parent;
+    bool m_order_item_parent_isSet;
+    bool m_order_item_parent_isValid;
+
+    QString m_order_item_parent_option_name;
+    bool m_order_item_parent_option_name_isSet;
+    bool m_order_item_parent_option_name_isValid;
 
     QList<OAIOrderCalculate_order_item_inner_order_item_option_inner> m_order_item_option;
     bool m_order_item_option_isSet;

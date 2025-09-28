@@ -43,6 +43,9 @@ void OAIOrder_Calculate::initializeModel() {
     m_items_isSet = false;
     m_items_isValid = false;
 
+    m_bundles_isSet = false;
+    m_bundles_isValid = false;
+
     m_currency_isSet = false;
     m_currency_isValid = false;
 
@@ -80,6 +83,9 @@ void OAIOrder_Calculate::fromJsonObject(QJsonObject json) {
     m_items_isValid = ::OpenAPI::fromJsonValue(m_items, json[QString("items")]);
     m_items_isSet = !json[QString("items")].isNull() && m_items_isValid;
 
+    m_bundles_isValid = ::OpenAPI::fromJsonValue(m_bundles, json[QString("bundles")]);
+    m_bundles_isSet = !json[QString("bundles")].isNull() && m_bundles_isValid;
+
     m_currency_isValid = ::OpenAPI::fromJsonValue(m_currency, json[QString("currency")]);
     m_currency_isSet = !json[QString("currency")].isNull() && m_currency_isValid;
 
@@ -116,6 +122,9 @@ QJsonObject OAIOrder_Calculate::asJsonObject() const {
     }
     if (m_items.size() > 0) {
         obj.insert(QString("items"), ::OpenAPI::toJsonValue(m_items));
+    }
+    if (m_bundles.size() > 0) {
+        obj.insert(QString("bundles"), ::OpenAPI::toJsonValue(m_bundles));
     }
     if (m_currency.isSet()) {
         obj.insert(QString("currency"), ::OpenAPI::toJsonValue(m_currency));
@@ -184,6 +193,22 @@ bool OAIOrder_Calculate::is_items_Set() const{
 
 bool OAIOrder_Calculate::is_items_Valid() const{
     return m_items_isValid;
+}
+
+QList<OAIOrder_Calculate_Bundle> OAIOrder_Calculate::getBundles() const {
+    return m_bundles;
+}
+void OAIOrder_Calculate::setBundles(const QList<OAIOrder_Calculate_Bundle> &bundles) {
+    m_bundles = bundles;
+    m_bundles_isSet = true;
+}
+
+bool OAIOrder_Calculate::is_bundles_Set() const{
+    return m_bundles_isSet;
+}
+
+bool OAIOrder_Calculate::is_bundles_Valid() const{
+    return m_bundles_isValid;
 }
 
 OAICurrency OAIOrder_Calculate::getCurrency() const {
@@ -296,6 +321,11 @@ bool OAIOrder_Calculate::isSet() const {
         }
 
         if (m_items.size() > 0) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_bundles.size() > 0) {
             isObjectUpdated = true;
             break;
         }

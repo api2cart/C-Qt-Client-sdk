@@ -231,6 +231,7 @@ HEADERS += \
     $${PWD}/OAIOrderShipmentTrackingAdd_200_response_result.h \
     $${PWD}/OAIOrderShipmentUpdate.h \
     $${PWD}/OAIOrder_Calculate.h \
+    $${PWD}/OAIOrder_Calculate_Bundle.h \
     $${PWD}/OAIOrder_Calculate_Discount.h \
     $${PWD}/OAIOrder_Calculate_Item.h \
     $${PWD}/OAIOrder_Calculate_ShippingRate.h \
@@ -259,6 +260,7 @@ HEADERS += \
     $${PWD}/OAIProductAddBatch_payload_inner.h \
     $${PWD}/OAIProductAddBatch_payload_inner_advanced_prices_inner.h \
     $${PWD}/OAIProductAddBatch_payload_inner_images_inner.h \
+    $${PWD}/OAIProductAddBatch_payload_inner_sales_tax.h \
     $${PWD}/OAIProductAdd_200_response.h \
     $${PWD}/OAIProductAdd_200_response_result.h \
     $${PWD}/OAIProductAdd_best_offer.h \
@@ -688,6 +690,7 @@ SOURCES += \
     $${PWD}/OAIOrderShipmentTrackingAdd_200_response_result.cpp \
     $${PWD}/OAIOrderShipmentUpdate.cpp \
     $${PWD}/OAIOrder_Calculate.cpp \
+    $${PWD}/OAIOrder_Calculate_Bundle.cpp \
     $${PWD}/OAIOrder_Calculate_Discount.cpp \
     $${PWD}/OAIOrder_Calculate_Item.cpp \
     $${PWD}/OAIOrder_Calculate_ShippingRate.cpp \
@@ -716,6 +719,7 @@ SOURCES += \
     $${PWD}/OAIProductAddBatch_payload_inner.cpp \
     $${PWD}/OAIProductAddBatch_payload_inner_advanced_prices_inner.cpp \
     $${PWD}/OAIProductAddBatch_payload_inner_images_inner.cpp \
+    $${PWD}/OAIProductAddBatch_payload_inner_sales_tax.cpp \
     $${PWD}/OAIProductAdd_200_response.cpp \
     $${PWD}/OAIProductAdd_200_response_result.cpp \
     $${PWD}/OAIProductAdd_best_offer.cpp \

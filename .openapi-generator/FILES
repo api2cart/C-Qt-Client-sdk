@@ -490,6 +490,8 @@ client/OAIOrderShipmentUpdate.cpp
 client/OAIOrderShipmentUpdate.h
 client/OAIOrder_Calculate.cpp
 client/OAIOrder_Calculate.h
+client/OAIOrder_Calculate_Bundle.cpp
+client/OAIOrder_Calculate_Bundle.h
 client/OAIOrder_Calculate_Discount.cpp
 client/OAIOrder_Calculate_Discount.h
 client/OAIOrder_Calculate_Item.cpp
@@ -546,6 +548,8 @@ client/OAIProductAddBatch_payload_inner_advanced_prices_inner.cpp
 client/OAIProductAddBatch_payload_inner_advanced_prices_inner.h
 client/OAIProductAddBatch_payload_inner_images_inner.cpp
 client/OAIProductAddBatch_payload_inner_images_inner.h
+client/OAIProductAddBatch_payload_inner_sales_tax.cpp
+client/OAIProductAddBatch_payload_inner_sales_tax.h
 client/OAIProductAdd_200_response.cpp
 client/OAIProductAdd_200_response.h
 client/OAIProductAdd_200_response_result.cpp
