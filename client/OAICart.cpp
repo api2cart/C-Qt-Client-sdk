@@ -46,6 +46,9 @@ void OAICart::initializeModel() {
     m_bridge_version_isSet = false;
     m_bridge_version_isValid = false;
 
+    m_default_rounding_precision_isSet = false;
+    m_default_rounding_precision_isValid = false;
+
     m_db_prefix_isSet = false;
     m_db_prefix_isValid = false;
 
@@ -86,6 +89,9 @@ void OAICart::fromJsonObject(QJsonObject json) {
     m_bridge_version_isValid = ::OpenAPI::fromJsonValue(m_bridge_version, json[QString("bridge_version")]);
     m_bridge_version_isSet = !json[QString("bridge_version")].isNull() && m_bridge_version_isValid;
 
+    m_default_rounding_precision_isValid = ::OpenAPI::fromJsonValue(m_default_rounding_precision, json[QString("default_rounding_precision")]);
+    m_default_rounding_precision_isSet = !json[QString("default_rounding_precision")].isNull() && m_default_rounding_precision_isValid;
+
     m_db_prefix_isValid = ::OpenAPI::fromJsonValue(m_db_prefix, json[QString("db_prefix")]);
     m_db_prefix_isSet = !json[QString("db_prefix")].isNull() && m_db_prefix_isValid;
 
@@ -125,6 +131,9 @@ QJsonObject OAICart::asJsonObject() const {
     }
     if (m_bridge_version_isSet) {
         obj.insert(QString("bridge_version"), ::OpenAPI::toJsonValue(m_bridge_version));
+    }
+    if (m_default_rounding_precision_isSet) {
+        obj.insert(QString("default_rounding_precision"), ::OpenAPI::toJsonValue(m_default_rounding_precision));
     }
     if (m_db_prefix_isSet) {
         obj.insert(QString("db_prefix"), ::OpenAPI::toJsonValue(m_db_prefix));
@@ -209,6 +218,22 @@ bool OAICart::is_bridge_version_Set() const{
 
 bool OAICart::is_bridge_version_Valid() const{
     return m_bridge_version_isValid;
+}
+
+qint32 OAICart::getDefaultRoundingPrecision() const {
+    return m_default_rounding_precision;
+}
+void OAICart::setDefaultRoundingPrecision(const qint32 &default_rounding_precision) {
+    m_default_rounding_precision = default_rounding_precision;
+    m_default_rounding_precision_isSet = true;
+}
+
+bool OAICart::is_default_rounding_precision_Set() const{
+    return m_default_rounding_precision_isSet;
+}
+
+bool OAICart::is_default_rounding_precision_Valid() const{
+    return m_default_rounding_precision_isValid;
 }
 
 QString OAICart::getDbPrefix() const {
@@ -326,6 +351,11 @@ bool OAICart::isSet() const {
         }
 
         if (m_bridge_version_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_default_rounding_precision_isSet) {
             isObjectUpdated = true;
             break;
         }

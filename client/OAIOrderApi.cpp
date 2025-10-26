@@ -1397,7 +1397,7 @@ void OAIOrderApi::orderFulfillmentStatusListCallback(OAIHttpRequestWorker *worke
     }
 }
 
-void OAIOrderApi::orderInfo(const ::OpenAPI::OptionalParam<QString> &id, const ::OpenAPI::OptionalParam<QString> &order_id, const ::OpenAPI::OptionalParam<QString> &store_id, const ::OpenAPI::OptionalParam<QString> &params, const ::OpenAPI::OptionalParam<QString> &response_fields, const ::OpenAPI::OptionalParam<QString> &exclude, const ::OpenAPI::OptionalParam<bool> &enable_cache, const ::OpenAPI::OptionalParam<bool> &use_latest_api_version) {
+void OAIOrderApi::orderInfo(const ::OpenAPI::OptionalParam<QString> &id, const ::OpenAPI::OptionalParam<QString> &order_id, const ::OpenAPI::OptionalParam<QString> &store_id, const ::OpenAPI::OptionalParam<QString> &params, const ::OpenAPI::OptionalParam<QString> &response_fields, const ::OpenAPI::OptionalParam<QString> &exclude, const ::OpenAPI::OptionalParam<bool> &enable_cache, const ::OpenAPI::OptionalParam<bool> &use_latest_api_version, const ::OpenAPI::OptionalParam<qint32> &rounding_precision) {
     QString fullPath = QString(_serverConfigs["orderInfo"][_serverIndices.value("orderInfo")].URL()+"/order.info.json");
     
     if (_apiKeys.contains("StoreKeyAuth")) {
@@ -1529,6 +1529,21 @@ void OAIOrderApi::orderInfo(const ::OpenAPI::OptionalParam<QString> &id, const :
 
         fullPath.append(QUrl::toPercentEncoding("use_latest_api_version")).append(querySuffix).append(QUrl::toPercentEncoding(::OpenAPI::toStringValue(use_latest_api_version.stringValue())));
     }
+    if (rounding_precision.hasValue())
+    {
+        queryStyle = "form";
+        if (queryStyle == "")
+            queryStyle = "form";
+        queryPrefix = getParamStylePrefix(queryStyle);
+        querySuffix = getParamStyleSuffix(queryStyle);
+        queryDelimiter = getParamStyleDelimiter(queryStyle, "rounding_precision", true);
+        if (fullPath.indexOf("?") > 0)
+            fullPath.append(queryPrefix);
+        else
+            fullPath.append("?");
+
+        fullPath.append(QUrl::toPercentEncoding("rounding_precision")).append(querySuffix).append(QUrl::toPercentEncoding(::OpenAPI::toStringValue(rounding_precision.stringValue())));
+    }
     OAIHttpRequestWorker *worker = new OAIHttpRequestWorker(this, _manager);
     worker->setTimeOut(_timeOut);
     worker->setWorkingDirectory(_workingDirectory);
@@ -1596,7 +1611,7 @@ void OAIOrderApi::orderInfoCallback(OAIHttpRequestWorker *worker) {
     }
 }
 
-void OAIOrderApi::orderList(const ::OpenAPI::OptionalParam<qint32> &start, const ::OpenAPI::OptionalParam<qint32> &count, const ::OpenAPI::OptionalParam<QString> &page_cursor, const ::OpenAPI::OptionalParam<QString> &ids, const ::OpenAPI::OptionalParam<QString> &order_ids, const ::OpenAPI::OptionalParam<QString> &since_id, const ::OpenAPI::OptionalParam<QString> &store_id, const ::OpenAPI::OptionalParam<QString> &customer_id, const ::OpenAPI::OptionalParam<QString> &customer_email, const ::OpenAPI::OptionalParam<QString> &basket_id, const ::OpenAPI::OptionalParam<QString> &currency_id, const ::OpenAPI::OptionalParam<QString> &phone, const ::OpenAPI::OptionalParam<QString> &order_status, const ::OpenAPI::OptionalParam<QList<QString>> &order_status_ids, const ::OpenAPI::OptionalParam<QString> &ebay_order_status, const ::OpenAPI::OptionalParam<QString> &financial_status, const ::OpenAPI::OptionalParam<QList<QString>> &financial_status_ids, const ::OpenAPI::OptionalParam<QString> &fulfillment_status, const ::OpenAPI::OptionalParam<QString> &return_status, const ::OpenAPI::OptionalParam<QString> &fulfillment_channel, const ::OpenAPI::OptionalParam<QString> &shipping_method, const ::OpenAPI::OptionalParam<QString> &skip_order_ids, const ::OpenAPI::OptionalParam<bool> &is_deleted, const ::OpenAPI::OptionalParam<QString> &shipping_country_iso3, const ::OpenAPI::OptionalParam<QString> &delivery_method, const ::OpenAPI::OptionalParam<QString> &ship_node_type, const ::OpenAPI::OptionalParam<QString> &created_to, const ::OpenAPI::OptionalParam<QString> &created_from, const ::OpenAPI::OptionalParam<QString> &modified_to, const ::OpenAPI::OptionalParam<QString> &modified_from, const ::OpenAPI::OptionalParam<QString> &tags, const ::OpenAPI::OptionalParam<QString> &sort_by, const ::OpenAPI::OptionalParam<QString> &sort_direction, const ::OpenAPI::OptionalParam<QString> &params, const ::OpenAPI::OptionalParam<QString> &response_fields, const ::OpenAPI::OptionalParam<QString> &exclude, const ::OpenAPI::OptionalParam<bool> &enable_cache, const ::OpenAPI::OptionalParam<bool> &use_latest_api_version) {
+void OAIOrderApi::orderList(const ::OpenAPI::OptionalParam<qint32> &start, const ::OpenAPI::OptionalParam<qint32> &count, const ::OpenAPI::OptionalParam<QString> &page_cursor, const ::OpenAPI::OptionalParam<QString> &ids, const ::OpenAPI::OptionalParam<QString> &order_ids, const ::OpenAPI::OptionalParam<QString> &since_id, const ::OpenAPI::OptionalParam<QString> &store_id, const ::OpenAPI::OptionalParam<QString> &customer_id, const ::OpenAPI::OptionalParam<QString> &customer_email, const ::OpenAPI::OptionalParam<QString> &basket_id, const ::OpenAPI::OptionalParam<QString> &currency_id, const ::OpenAPI::OptionalParam<QString> &phone, const ::OpenAPI::OptionalParam<QString> &order_status, const ::OpenAPI::OptionalParam<QList<QString>> &order_status_ids, const ::OpenAPI::OptionalParam<QString> &ebay_order_status, const ::OpenAPI::OptionalParam<QString> &financial_status, const ::OpenAPI::OptionalParam<QList<QString>> &financial_status_ids, const ::OpenAPI::OptionalParam<QString> &fulfillment_status, const ::OpenAPI::OptionalParam<QString> &return_status, const ::OpenAPI::OptionalParam<QString> &fulfillment_channel, const ::OpenAPI::OptionalParam<QString> &shipping_method, const ::OpenAPI::OptionalParam<QString> &skip_order_ids, const ::OpenAPI::OptionalParam<bool> &is_deleted, const ::OpenAPI::OptionalParam<QString> &shipping_country_iso3, const ::OpenAPI::OptionalParam<QString> &delivery_method, const ::OpenAPI::OptionalParam<QString> &ship_node_type, const ::OpenAPI::OptionalParam<QString> &created_to, const ::OpenAPI::OptionalParam<QString> &created_from, const ::OpenAPI::OptionalParam<QString> &modified_to, const ::OpenAPI::OptionalParam<QString> &modified_from, const ::OpenAPI::OptionalParam<QString> &tags, const ::OpenAPI::OptionalParam<QString> &sort_by, const ::OpenAPI::OptionalParam<QString> &sort_direction, const ::OpenAPI::OptionalParam<QString> &params, const ::OpenAPI::OptionalParam<QString> &response_fields, const ::OpenAPI::OptionalParam<QString> &exclude, const ::OpenAPI::OptionalParam<bool> &enable_cache, const ::OpenAPI::OptionalParam<bool> &use_latest_api_version, const ::OpenAPI::OptionalParam<qint32> &rounding_precision) {
     QString fullPath = QString(_serverConfigs["orderList"][_serverIndices.value("orderList")].URL()+"/order.list.json");
     
     if (_apiKeys.contains("StoreKeyAuth")) {
@@ -2317,6 +2332,21 @@ void OAIOrderApi::orderList(const ::OpenAPI::OptionalParam<qint32> &start, const
             fullPath.append("?");
 
         fullPath.append(QUrl::toPercentEncoding("use_latest_api_version")).append(querySuffix).append(QUrl::toPercentEncoding(::OpenAPI::toStringValue(use_latest_api_version.stringValue())));
+    }
+    if (rounding_precision.hasValue())
+    {
+        queryStyle = "form";
+        if (queryStyle == "")
+            queryStyle = "form";
+        queryPrefix = getParamStylePrefix(queryStyle);
+        querySuffix = getParamStyleSuffix(queryStyle);
+        queryDelimiter = getParamStyleDelimiter(queryStyle, "rounding_precision", true);
+        if (fullPath.indexOf("?") > 0)
+            fullPath.append(queryPrefix);
+        else
+            fullPath.append("?");
+
+        fullPath.append(QUrl::toPercentEncoding("rounding_precision")).append(querySuffix).append(QUrl::toPercentEncoding(::OpenAPI::toStringValue(rounding_precision.stringValue())));
     }
     OAIHttpRequestWorker *worker = new OAIHttpRequestWorker(this, _manager);
     worker->setTimeOut(_timeOut);

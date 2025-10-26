@@ -405,6 +405,11 @@ public:
     bool is_shipping_template_id_Set() const;
     bool is_shipping_template_id_Valid() const;
 
+    qint32 getProcessingProfileId() const;
+    void setProcessingProfileId(const qint32 &processing_profile_id);
+    bool is_processing_profile_id_Set() const;
+    bool is_processing_profile_id_Valid() const;
+
     QString getWhenMade() const;
     void setWhenMade(const QString &when_made);
     bool is_when_made_Set() const;
@@ -789,6 +794,10 @@ private:
     qint32 m_shipping_template_id;
     bool m_shipping_template_id_isSet;
     bool m_shipping_template_id_isValid;
+
+    qint32 m_processing_profile_id;
+    bool m_processing_profile_id_isSet;
+    bool m_processing_profile_id_isValid;
 
     QString m_when_made;
     bool m_when_made_isSet;

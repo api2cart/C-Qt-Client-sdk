@@ -247,6 +247,9 @@ void OAIProductUpdate::initializeModel() {
     m_shipping_template_id_isSet = false;
     m_shipping_template_id_isValid = false;
 
+    m_processing_profile_id_isSet = false;
+    m_processing_profile_id_isValid = false;
+
     m_when_made_isSet = false;
     m_when_made_isValid = false;
 
@@ -527,6 +530,9 @@ void OAIProductUpdate::fromJsonObject(QJsonObject json) {
     m_shipping_template_id_isValid = ::OpenAPI::fromJsonValue(m_shipping_template_id, json[QString("shipping_template_id")]);
     m_shipping_template_id_isSet = !json[QString("shipping_template_id")].isNull() && m_shipping_template_id_isValid;
 
+    m_processing_profile_id_isValid = ::OpenAPI::fromJsonValue(m_processing_profile_id, json[QString("processing_profile_id")]);
+    m_processing_profile_id_isSet = !json[QString("processing_profile_id")].isNull() && m_processing_profile_id_isValid;
+
     m_when_made_isValid = ::OpenAPI::fromJsonValue(m_when_made, json[QString("when_made")]);
     m_when_made_isSet = !json[QString("when_made")].isNull() && m_when_made_isValid;
 
@@ -806,6 +812,9 @@ QJsonObject OAIProductUpdate::asJsonObject() const {
     }
     if (m_shipping_template_id_isSet) {
         obj.insert(QString("shipping_template_id"), ::OpenAPI::toJsonValue(m_shipping_template_id));
+    }
+    if (m_processing_profile_id_isSet) {
+        obj.insert(QString("processing_profile_id"), ::OpenAPI::toJsonValue(m_processing_profile_id));
     }
     if (m_when_made_isSet) {
         obj.insert(QString("when_made"), ::OpenAPI::toJsonValue(m_when_made));
@@ -2003,6 +2012,22 @@ bool OAIProductUpdate::is_shipping_template_id_Valid() const{
     return m_shipping_template_id_isValid;
 }
 
+qint32 OAIProductUpdate::getProcessingProfileId() const {
+    return m_processing_profile_id;
+}
+void OAIProductUpdate::setProcessingProfileId(const qint32 &processing_profile_id) {
+    m_processing_profile_id = processing_profile_id;
+    m_processing_profile_id_isSet = true;
+}
+
+bool OAIProductUpdate::is_processing_profile_id_Set() const{
+    return m_processing_profile_id_isSet;
+}
+
+bool OAIProductUpdate::is_processing_profile_id_Valid() const{
+    return m_processing_profile_id_isValid;
+}
+
 QString OAIProductUpdate::getWhenMade() const {
     return m_when_made;
 }
@@ -2661,6 +2686,11 @@ bool OAIProductUpdate::isSet() const {
         }
 
         if (m_shipping_template_id_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_processing_profile_id_isSet) {
             isObjectUpdated = true;
             break;
         }

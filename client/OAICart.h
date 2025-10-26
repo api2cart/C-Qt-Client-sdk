@@ -67,6 +67,11 @@ public:
     bool is_bridge_version_Set() const;
     bool is_bridge_version_Valid() const;
 
+    qint32 getDefaultRoundingPrecision() const;
+    void setDefaultRoundingPrecision(const qint32 &default_rounding_precision);
+    bool is_default_rounding_precision_Set() const;
+    bool is_default_rounding_precision_Valid() const;
+
     QString getDbPrefix() const;
     void setDbPrefix(const QString &db_prefix);
     bool is_db_prefix_Set() const;
@@ -118,6 +123,10 @@ private:
     QString m_bridge_version;
     bool m_bridge_version_isSet;
     bool m_bridge_version_isValid;
+
+    qint32 m_default_rounding_precision;
+    bool m_default_rounding_precision_isSet;
+    bool m_default_rounding_precision_isValid;
 
     QString m_db_prefix;
     bool m_db_prefix_isSet;

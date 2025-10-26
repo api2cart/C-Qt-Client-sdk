@@ -319,6 +319,9 @@ void OAIProductAdd::initializeModel() {
     m_shipping_template_id_isSet = false;
     m_shipping_template_id_isValid = false;
 
+    m_processing_profile_id_isSet = false;
+    m_processing_profile_id_isValid = false;
+
     m_shipping_details_isSet = false;
     m_shipping_details_isValid = false;
 
@@ -683,6 +686,9 @@ void OAIProductAdd::fromJsonObject(QJsonObject json) {
     m_shipping_template_id_isValid = ::OpenAPI::fromJsonValue(m_shipping_template_id, json[QString("shipping_template_id")]);
     m_shipping_template_id_isSet = !json[QString("shipping_template_id")].isNull() && m_shipping_template_id_isValid;
 
+    m_processing_profile_id_isValid = ::OpenAPI::fromJsonValue(m_processing_profile_id, json[QString("processing_profile_id")]);
+    m_processing_profile_id_isSet = !json[QString("processing_profile_id")].isNull() && m_processing_profile_id_isValid;
+
     m_shipping_details_isValid = ::OpenAPI::fromJsonValue(m_shipping_details, json[QString("shipping_details")]);
     m_shipping_details_isSet = !json[QString("shipping_details")].isNull() && m_shipping_details_isValid;
 
@@ -1046,6 +1052,9 @@ QJsonObject OAIProductAdd::asJsonObject() const {
     }
     if (m_shipping_template_id_isSet) {
         obj.insert(QString("shipping_template_id"), ::OpenAPI::toJsonValue(m_shipping_template_id));
+    }
+    if (m_processing_profile_id_isSet) {
+        obj.insert(QString("processing_profile_id"), ::OpenAPI::toJsonValue(m_processing_profile_id));
     }
     if (m_shipping_details.size() > 0) {
         obj.insert(QString("shipping_details"), ::OpenAPI::toJsonValue(m_shipping_details));
@@ -2639,6 +2648,22 @@ bool OAIProductAdd::is_shipping_template_id_Valid() const{
     return m_shipping_template_id_isValid;
 }
 
+qint32 OAIProductAdd::getProcessingProfileId() const {
+    return m_processing_profile_id;
+}
+void OAIProductAdd::setProcessingProfileId(const qint32 &processing_profile_id) {
+    m_processing_profile_id = processing_profile_id;
+    m_processing_profile_id_isSet = true;
+}
+
+bool OAIProductAdd::is_processing_profile_id_Set() const{
+    return m_processing_profile_id_isSet;
+}
+
+bool OAIProductAdd::is_processing_profile_id_Valid() const{
+    return m_processing_profile_id_isValid;
+}
+
 QList<OAIProductAdd_shipping_details_inner> OAIProductAdd::getShippingDetails() const {
     return m_shipping_details;
 }
@@ -3481,6 +3506,11 @@ bool OAIProductAdd::isSet() const {
         }
 
         if (m_shipping_template_id_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_processing_profile_id_isSet) {
             isObjectUpdated = true;
             break;
         }

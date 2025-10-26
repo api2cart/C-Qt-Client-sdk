@@ -543,6 +543,11 @@ public:
     bool is_shipping_template_id_Set() const;
     bool is_shipping_template_id_Valid() const;
 
+    qint32 getProcessingProfileId() const;
+    void setProcessingProfileId(const qint32 &processing_profile_id);
+    bool is_processing_profile_id_Set() const;
+    bool is_processing_profile_id_Valid() const;
+
     QList<OAIProductAdd_shipping_details_inner> getShippingDetails() const;
     void setShippingDetails(const QList<OAIProductAdd_shipping_details_inner> &shipping_details);
     bool is_shipping_details_Set() const;
@@ -1043,6 +1048,10 @@ private:
     qint32 m_shipping_template_id;
     bool m_shipping_template_id_isSet;
     bool m_shipping_template_id_isValid;
+
+    qint32 m_processing_profile_id;
+    bool m_processing_profile_id_isSet;
+    bool m_processing_profile_id_isValid;
 
     QList<OAIProductAdd_shipping_details_inner> m_shipping_details;
     bool m_shipping_details_isSet;
