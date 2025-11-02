@@ -389,6 +389,11 @@ public:
     bool is_origin_Set() const;
     bool is_origin_Valid() const;
 
+    double getFeePrice() const;
+    void setFeePrice(const double &fee_price);
+    bool is_fee_price_Set() const;
+    bool is_fee_price_Valid() const;
+
     QList<OAIOrderAdd_order_item_inner> getOrderItem() const;
     void setOrderItem(const QList<OAIOrderAdd_order_item_inner> &order_item);
     bool is_order_item_Set() const;
@@ -675,6 +680,10 @@ private:
     QString m_origin;
     bool m_origin_isSet;
     bool m_origin_isValid;
+
+    double m_fee_price;
+    bool m_fee_price_isSet;
+    bool m_fee_price_isValid;
 
     QList<OAIOrderAdd_order_item_inner> m_order_item;
     bool m_order_item_isSet;

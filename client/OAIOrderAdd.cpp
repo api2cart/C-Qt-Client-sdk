@@ -241,6 +241,9 @@ void OAIOrderAdd::initializeModel() {
     m_origin_isSet = false;
     m_origin_isValid = false;
 
+    m_fee_price_isSet = false;
+    m_fee_price_isValid = false;
+
     m_order_item_isSet = false;
     m_order_item_isValid = false;
 }
@@ -461,6 +464,9 @@ void OAIOrderAdd::fromJsonObject(QJsonObject json) {
     m_origin_isValid = ::OpenAPI::fromJsonValue(m_origin, json[QString("origin")]);
     m_origin_isSet = !json[QString("origin")].isNull() && m_origin_isValid;
 
+    m_fee_price_isValid = ::OpenAPI::fromJsonValue(m_fee_price, json[QString("fee_price")]);
+    m_fee_price_isSet = !json[QString("fee_price")].isNull() && m_fee_price_isValid;
+
     m_order_item_isValid = ::OpenAPI::fromJsonValue(m_order_item, json[QString("order_item")]);
     m_order_item_isSet = !json[QString("order_item")].isNull() && m_order_item_isValid;
 }
@@ -680,6 +686,9 @@ QJsonObject OAIOrderAdd::asJsonObject() const {
     }
     if (m_origin_isSet) {
         obj.insert(QString("origin"), ::OpenAPI::toJsonValue(m_origin));
+    }
+    if (m_fee_price_isSet) {
+        obj.insert(QString("fee_price"), ::OpenAPI::toJsonValue(m_fee_price));
     }
     if (m_order_item.size() > 0) {
         obj.insert(QString("order_item"), ::OpenAPI::toJsonValue(m_order_item));
@@ -1791,6 +1800,22 @@ bool OAIOrderAdd::is_origin_Valid() const{
     return m_origin_isValid;
 }
 
+double OAIOrderAdd::getFeePrice() const {
+    return m_fee_price;
+}
+void OAIOrderAdd::setFeePrice(const double &fee_price) {
+    m_fee_price = fee_price;
+    m_fee_price_isSet = true;
+}
+
+bool OAIOrderAdd::is_fee_price_Set() const{
+    return m_fee_price_isSet;
+}
+
+bool OAIOrderAdd::is_fee_price_Valid() const{
+    return m_fee_price_isValid;
+}
+
 QList<OAIOrderAdd_order_item_inner> OAIOrderAdd::getOrderItem() const {
     return m_order_item;
 }
@@ -2151,6 +2176,11 @@ bool OAIOrderAdd::isSet() const {
         }
 
         if (m_origin_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_fee_price_isSet) {
             isObjectUpdated = true;
             break;
         }
