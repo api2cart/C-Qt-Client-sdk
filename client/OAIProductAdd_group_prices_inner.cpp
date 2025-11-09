@@ -39,6 +39,9 @@ void OAIProductAdd_group_prices_inner::initializeModel() {
 
     m_price_isSet = false;
     m_price_isValid = false;
+
+    m_qty_isSet = false;
+    m_qty_isValid = false;
 }
 
 void OAIProductAdd_group_prices_inner::fromJson(QString jsonString) {
@@ -55,6 +58,9 @@ void OAIProductAdd_group_prices_inner::fromJsonObject(QJsonObject json) {
 
     m_price_isValid = ::OpenAPI::fromJsonValue(m_price, json[QString("price")]);
     m_price_isSet = !json[QString("price")].isNull() && m_price_isValid;
+
+    m_qty_isValid = ::OpenAPI::fromJsonValue(m_qty, json[QString("qty")]);
+    m_qty_isSet = !json[QString("qty")].isNull() && m_qty_isValid;
 }
 
 QString OAIProductAdd_group_prices_inner::asJson() const {
@@ -71,6 +77,9 @@ QJsonObject OAIProductAdd_group_prices_inner::asJsonObject() const {
     }
     if (m_price_isSet) {
         obj.insert(QString("price"), ::OpenAPI::toJsonValue(m_price));
+    }
+    if (m_qty_isSet) {
+        obj.insert(QString("qty"), ::OpenAPI::toJsonValue(m_qty));
     }
     return obj;
 }
@@ -107,6 +116,22 @@ bool OAIProductAdd_group_prices_inner::is_price_Valid() const{
     return m_price_isValid;
 }
 
+qint32 OAIProductAdd_group_prices_inner::getQty() const {
+    return m_qty;
+}
+void OAIProductAdd_group_prices_inner::setQty(const qint32 &qty) {
+    m_qty = qty;
+    m_qty_isSet = true;
+}
+
+bool OAIProductAdd_group_prices_inner::is_qty_Set() const{
+    return m_qty_isSet;
+}
+
+bool OAIProductAdd_group_prices_inner::is_qty_Valid() const{
+    return m_qty_isValid;
+}
+
 bool OAIProductAdd_group_prices_inner::isSet() const {
     bool isObjectUpdated = false;
     do {
@@ -116,6 +141,11 @@ bool OAIProductAdd_group_prices_inner::isSet() const {
         }
 
         if (m_price_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_qty_isSet) {
             isObjectUpdated = true;
             break;
         }

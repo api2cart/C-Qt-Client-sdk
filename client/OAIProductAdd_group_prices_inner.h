@@ -49,6 +49,11 @@ public:
     bool is_price_Set() const;
     bool is_price_Valid() const;
 
+    qint32 getQty() const;
+    void setQty(const qint32 &qty);
+    bool is_qty_Set() const;
+    bool is_qty_Valid() const;
+
     virtual bool isSet() const override;
     virtual bool isValid() const override;
 
@@ -62,6 +67,10 @@ private:
     double m_price;
     bool m_price_isSet;
     bool m_price_isValid;
+
+    qint32 m_qty;
+    bool m_qty_isSet;
+    bool m_qty_isValid;
 };
 
 } // namespace OpenAPI

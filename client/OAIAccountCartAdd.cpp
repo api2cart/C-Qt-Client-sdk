@@ -109,6 +109,18 @@ void OAIAccountCartAdd::initializeModel() {
     m_aspdotnetstorefront_api_pass_isSet = false;
     m_aspdotnetstorefront_api_pass_isValid = false;
 
+    m_americommerce_app_id_isSet = false;
+    m_americommerce_app_id_isValid = false;
+
+    m_americommerce_app_secret_isSet = false;
+    m_americommerce_app_secret_isValid = false;
+
+    m_americommerce_access_token_isSet = false;
+    m_americommerce_access_token_isValid = false;
+
+    m_americommerce_refresh_token_isSet = false;
+    m_americommerce_refresh_token_isValid = false;
+
     m_bigcommerceapi_admin_account_isSet = false;
     m_bigcommerceapi_admin_account_isValid = false;
 
@@ -617,6 +629,18 @@ void OAIAccountCartAdd::fromJsonObject(QJsonObject json) {
     m_aspdotnetstorefront_api_pass_isValid = ::OpenAPI::fromJsonValue(m_aspdotnetstorefront_api_pass, json[QString("aspdotnetstorefront_api_pass")]);
     m_aspdotnetstorefront_api_pass_isSet = !json[QString("aspdotnetstorefront_api_pass")].isNull() && m_aspdotnetstorefront_api_pass_isValid;
 
+    m_americommerce_app_id_isValid = ::OpenAPI::fromJsonValue(m_americommerce_app_id, json[QString("americommerce_app_id")]);
+    m_americommerce_app_id_isSet = !json[QString("americommerce_app_id")].isNull() && m_americommerce_app_id_isValid;
+
+    m_americommerce_app_secret_isValid = ::OpenAPI::fromJsonValue(m_americommerce_app_secret, json[QString("americommerce_app_secret")]);
+    m_americommerce_app_secret_isSet = !json[QString("americommerce_app_secret")].isNull() && m_americommerce_app_secret_isValid;
+
+    m_americommerce_access_token_isValid = ::OpenAPI::fromJsonValue(m_americommerce_access_token, json[QString("americommerce_access_token")]);
+    m_americommerce_access_token_isSet = !json[QString("americommerce_access_token")].isNull() && m_americommerce_access_token_isValid;
+
+    m_americommerce_refresh_token_isValid = ::OpenAPI::fromJsonValue(m_americommerce_refresh_token, json[QString("americommerce_refresh_token")]);
+    m_americommerce_refresh_token_isSet = !json[QString("americommerce_refresh_token")].isNull() && m_americommerce_refresh_token_isValid;
+
     m_bigcommerceapi_admin_account_isValid = ::OpenAPI::fromJsonValue(m_bigcommerceapi_admin_account, json[QString("bigcommerceapi_admin_account")]);
     m_bigcommerceapi_admin_account_isSet = !json[QString("bigcommerceapi_admin_account")].isNull() && m_bigcommerceapi_admin_account_isValid;
 
@@ -1124,6 +1148,18 @@ QJsonObject OAIAccountCartAdd::asJsonObject() const {
     }
     if (m_aspdotnetstorefront_api_pass_isSet) {
         obj.insert(QString("aspdotnetstorefront_api_pass"), ::OpenAPI::toJsonValue(m_aspdotnetstorefront_api_pass));
+    }
+    if (m_americommerce_app_id_isSet) {
+        obj.insert(QString("americommerce_app_id"), ::OpenAPI::toJsonValue(m_americommerce_app_id));
+    }
+    if (m_americommerce_app_secret_isSet) {
+        obj.insert(QString("americommerce_app_secret"), ::OpenAPI::toJsonValue(m_americommerce_app_secret));
+    }
+    if (m_americommerce_access_token_isSet) {
+        obj.insert(QString("americommerce_access_token"), ::OpenAPI::toJsonValue(m_americommerce_access_token));
+    }
+    if (m_americommerce_refresh_token_isSet) {
+        obj.insert(QString("americommerce_refresh_token"), ::OpenAPI::toJsonValue(m_americommerce_refresh_token));
     }
     if (m_bigcommerceapi_admin_account_isSet) {
         obj.insert(QString("bigcommerceapi_admin_account"), ::OpenAPI::toJsonValue(m_bigcommerceapi_admin_account));
@@ -1949,6 +1985,70 @@ bool OAIAccountCartAdd::is_aspdotnetstorefront_api_pass_Set() const{
 
 bool OAIAccountCartAdd::is_aspdotnetstorefront_api_pass_Valid() const{
     return m_aspdotnetstorefront_api_pass_isValid;
+}
+
+QString OAIAccountCartAdd::getAmericommerceAppId() const {
+    return m_americommerce_app_id;
+}
+void OAIAccountCartAdd::setAmericommerceAppId(const QString &americommerce_app_id) {
+    m_americommerce_app_id = americommerce_app_id;
+    m_americommerce_app_id_isSet = true;
+}
+
+bool OAIAccountCartAdd::is_americommerce_app_id_Set() const{
+    return m_americommerce_app_id_isSet;
+}
+
+bool OAIAccountCartAdd::is_americommerce_app_id_Valid() const{
+    return m_americommerce_app_id_isValid;
+}
+
+QString OAIAccountCartAdd::getAmericommerceAppSecret() const {
+    return m_americommerce_app_secret;
+}
+void OAIAccountCartAdd::setAmericommerceAppSecret(const QString &americommerce_app_secret) {
+    m_americommerce_app_secret = americommerce_app_secret;
+    m_americommerce_app_secret_isSet = true;
+}
+
+bool OAIAccountCartAdd::is_americommerce_app_secret_Set() const{
+    return m_americommerce_app_secret_isSet;
+}
+
+bool OAIAccountCartAdd::is_americommerce_app_secret_Valid() const{
+    return m_americommerce_app_secret_isValid;
+}
+
+QString OAIAccountCartAdd::getAmericommerceAccessToken() const {
+    return m_americommerce_access_token;
+}
+void OAIAccountCartAdd::setAmericommerceAccessToken(const QString &americommerce_access_token) {
+    m_americommerce_access_token = americommerce_access_token;
+    m_americommerce_access_token_isSet = true;
+}
+
+bool OAIAccountCartAdd::is_americommerce_access_token_Set() const{
+    return m_americommerce_access_token_isSet;
+}
+
+bool OAIAccountCartAdd::is_americommerce_access_token_Valid() const{
+    return m_americommerce_access_token_isValid;
+}
+
+QString OAIAccountCartAdd::getAmericommerceRefreshToken() const {
+    return m_americommerce_refresh_token;
+}
+void OAIAccountCartAdd::setAmericommerceRefreshToken(const QString &americommerce_refresh_token) {
+    m_americommerce_refresh_token = americommerce_refresh_token;
+    m_americommerce_refresh_token_isSet = true;
+}
+
+bool OAIAccountCartAdd::is_americommerce_refresh_token_Set() const{
+    return m_americommerce_refresh_token_isSet;
+}
+
+bool OAIAccountCartAdd::is_americommerce_refresh_token_Valid() const{
+    return m_americommerce_refresh_token_isValid;
 }
 
 QString OAIAccountCartAdd::getBigcommerceapiAdminAccount() const {
@@ -4331,6 +4431,26 @@ bool OAIAccountCartAdd::isSet() const {
         }
 
         if (m_aspdotnetstorefront_api_pass_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_americommerce_app_id_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_americommerce_app_secret_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_americommerce_access_token_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_americommerce_refresh_token_isSet) {
             isObjectUpdated = true;
             break;
         }

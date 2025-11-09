@@ -167,6 +167,26 @@ public:
     bool is_aspdotnetstorefront_api_pass_Set() const;
     bool is_aspdotnetstorefront_api_pass_Valid() const;
 
+    QString getAmericommerceAppId() const;
+    void setAmericommerceAppId(const QString &americommerce_app_id);
+    bool is_americommerce_app_id_Set() const;
+    bool is_americommerce_app_id_Valid() const;
+
+    QString getAmericommerceAppSecret() const;
+    void setAmericommerceAppSecret(const QString &americommerce_app_secret);
+    bool is_americommerce_app_secret_Set() const;
+    bool is_americommerce_app_secret_Valid() const;
+
+    QString getAmericommerceAccessToken() const;
+    void setAmericommerceAccessToken(const QString &americommerce_access_token);
+    bool is_americommerce_access_token_Set() const;
+    bool is_americommerce_access_token_Valid() const;
+
+    QString getAmericommerceRefreshToken() const;
+    void setAmericommerceRefreshToken(const QString &americommerce_refresh_token);
+    bool is_americommerce_refresh_token_Set() const;
+    bool is_americommerce_refresh_token_Valid() const;
+
     QString getBigcommerceapiAdminAccount() const;
     void setBigcommerceapiAdminAccount(const QString &bigcommerceapi_admin_account);
     bool is_bigcommerceapi_admin_account_Set() const;
@@ -977,6 +997,22 @@ private:
     QString m_aspdotnetstorefront_api_pass;
     bool m_aspdotnetstorefront_api_pass_isSet;
     bool m_aspdotnetstorefront_api_pass_isValid;
+
+    QString m_americommerce_app_id;
+    bool m_americommerce_app_id_isSet;
+    bool m_americommerce_app_id_isValid;
+
+    QString m_americommerce_app_secret;
+    bool m_americommerce_app_secret_isSet;
+    bool m_americommerce_app_secret_isValid;
+
+    QString m_americommerce_access_token;
+    bool m_americommerce_access_token_isSet;
+    bool m_americommerce_access_token_isValid;
+
+    QString m_americommerce_refresh_token;
+    bool m_americommerce_refresh_token_isSet;
+    bool m_americommerce_refresh_token_isValid;
 
     QString m_bigcommerceapi_admin_account;
     bool m_bigcommerceapi_admin_account_isSet;

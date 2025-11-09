@@ -46,6 +46,9 @@ void OAIOrderCalculate::initializeModel() {
     m_coupons_isSet = false;
     m_coupons_isValid = false;
 
+    m_rounding_precision_isSet = false;
+    m_rounding_precision_isValid = false;
+
     m_shipp_first_name_isSet = false;
     m_shipp_first_name_isValid = false;
 
@@ -134,6 +137,9 @@ void OAIOrderCalculate::fromJsonObject(QJsonObject json) {
     m_coupons_isValid = ::OpenAPI::fromJsonValue(m_coupons, json[QString("coupons")]);
     m_coupons_isSet = !json[QString("coupons")].isNull() && m_coupons_isValid;
 
+    m_rounding_precision_isValid = ::OpenAPI::fromJsonValue(m_rounding_precision, json[QString("rounding_precision")]);
+    m_rounding_precision_isSet = !json[QString("rounding_precision")].isNull() && m_rounding_precision_isValid;
+
     m_shipp_first_name_isValid = ::OpenAPI::fromJsonValue(m_shipp_first_name, json[QString("shipp_first_name")]);
     m_shipp_first_name_isSet = !json[QString("shipp_first_name")].isNull() && m_shipp_first_name_isValid;
 
@@ -221,6 +227,9 @@ QJsonObject OAIOrderCalculate::asJsonObject() const {
     }
     if (m_coupons.size() > 0) {
         obj.insert(QString("coupons"), ::OpenAPI::toJsonValue(m_coupons));
+    }
+    if (m_rounding_precision_isSet) {
+        obj.insert(QString("rounding_precision"), ::OpenAPI::toJsonValue(m_rounding_precision));
     }
     if (m_shipp_first_name_isSet) {
         obj.insert(QString("shipp_first_name"), ::OpenAPI::toJsonValue(m_shipp_first_name));
@@ -353,6 +362,22 @@ bool OAIOrderCalculate::is_coupons_Set() const{
 
 bool OAIOrderCalculate::is_coupons_Valid() const{
     return m_coupons_isValid;
+}
+
+qint32 OAIOrderCalculate::getRoundingPrecision() const {
+    return m_rounding_precision;
+}
+void OAIOrderCalculate::setRoundingPrecision(const qint32 &rounding_precision) {
+    m_rounding_precision = rounding_precision;
+    m_rounding_precision_isSet = true;
+}
+
+bool OAIOrderCalculate::is_rounding_precision_Set() const{
+    return m_rounding_precision_isSet;
+}
+
+bool OAIOrderCalculate::is_rounding_precision_Valid() const{
+    return m_rounding_precision_isValid;
 }
 
 QString OAIOrderCalculate::getShippFirstName() const {
@@ -726,6 +751,11 @@ bool OAIOrderCalculate::isSet() const {
         }
 
         if (m_coupons.size() > 0) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_rounding_precision_isSet) {
             isObjectUpdated = true;
             break;
         }

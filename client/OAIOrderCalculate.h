@@ -62,6 +62,11 @@ public:
     bool is_coupons_Set() const;
     bool is_coupons_Valid() const;
 
+    qint32 getRoundingPrecision() const;
+    void setRoundingPrecision(const qint32 &rounding_precision);
+    bool is_rounding_precision_Set() const;
+    bool is_rounding_precision_Valid() const;
+
     QString getShippFirstName() const;
     void setShippFirstName(const QString &shipp_first_name);
     bool is_shipp_first_name_Set() const;
@@ -193,6 +198,10 @@ private:
     QList<QString> m_coupons;
     bool m_coupons_isSet;
     bool m_coupons_isValid;
+
+    qint32 m_rounding_precision;
+    bool m_rounding_precision_isSet;
+    bool m_rounding_precision_isValid;
 
     QString m_shipp_first_name;
     bool m_shipp_first_name_isSet;
