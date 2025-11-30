@@ -114,6 +114,11 @@ public:
     bool is_customer_fax_Set() const;
     bool is_customer_fax_Valid() const;
 
+    bool isIsGuest() const;
+    void setIsGuest(const bool &is_guest);
+    bool is_is_guest_Set() const;
+    bool is_is_guest_Valid() const;
+
     QString getOrderPaymentMethod() const;
     void setOrderPaymentMethod(const QString &order_payment_method);
     bool is_order_payment_method_Set() const;
@@ -460,6 +465,10 @@ private:
     QString m_customer_fax;
     bool m_customer_fax_isSet;
     bool m_customer_fax_isValid;
+
+    bool m_is_guest;
+    bool m_is_guest_isSet;
+    bool m_is_guest_isValid;
 
     QString m_order_payment_method;
     bool m_order_payment_method_isSet;

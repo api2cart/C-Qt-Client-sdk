@@ -76,6 +76,9 @@ void OAIOrderAdd::initializeModel() {
     m_customer_fax_isSet = false;
     m_customer_fax_isValid = false;
 
+    m_is_guest_isSet = false;
+    m_is_guest_isValid = false;
+
     m_order_payment_method_isSet = false;
     m_order_payment_method_isValid = false;
 
@@ -299,6 +302,9 @@ void OAIOrderAdd::fromJsonObject(QJsonObject json) {
     m_customer_fax_isValid = ::OpenAPI::fromJsonValue(m_customer_fax, json[QString("customer_fax")]);
     m_customer_fax_isSet = !json[QString("customer_fax")].isNull() && m_customer_fax_isValid;
 
+    m_is_guest_isValid = ::OpenAPI::fromJsonValue(m_is_guest, json[QString("is_guest")]);
+    m_is_guest_isSet = !json[QString("is_guest")].isNull() && m_is_guest_isValid;
+
     m_order_payment_method_isValid = ::OpenAPI::fromJsonValue(m_order_payment_method, json[QString("order_payment_method")]);
     m_order_payment_method_isSet = !json[QString("order_payment_method")].isNull() && m_order_payment_method_isValid;
 
@@ -521,6 +527,9 @@ QJsonObject OAIOrderAdd::asJsonObject() const {
     }
     if (m_customer_fax_isSet) {
         obj.insert(QString("customer_fax"), ::OpenAPI::toJsonValue(m_customer_fax));
+    }
+    if (m_is_guest_isSet) {
+        obj.insert(QString("is_guest"), ::OpenAPI::toJsonValue(m_is_guest));
     }
     if (m_order_payment_method_isSet) {
         obj.insert(QString("order_payment_method"), ::OpenAPI::toJsonValue(m_order_payment_method));
@@ -918,6 +927,22 @@ bool OAIOrderAdd::is_customer_fax_Set() const{
 
 bool OAIOrderAdd::is_customer_fax_Valid() const{
     return m_customer_fax_isValid;
+}
+
+bool OAIOrderAdd::isIsGuest() const {
+    return m_is_guest;
+}
+void OAIOrderAdd::setIsGuest(const bool &is_guest) {
+    m_is_guest = is_guest;
+    m_is_guest_isSet = true;
+}
+
+bool OAIOrderAdd::is_is_guest_Set() const{
+    return m_is_guest_isSet;
+}
+
+bool OAIOrderAdd::is_is_guest_Valid() const{
+    return m_is_guest_isValid;
 }
 
 QString OAIOrderAdd::getOrderPaymentMethod() const {
@@ -1901,6 +1926,11 @@ bool OAIOrderAdd::isSet() const {
         }
 
         if (m_customer_fax_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_is_guest_isSet) {
             isObjectUpdated = true;
             break;
         }

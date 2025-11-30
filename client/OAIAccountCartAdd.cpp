@@ -543,6 +543,21 @@ void OAIAccountCartAdd::initializeModel() {
 
     m_temu_region_isSet = false;
     m_temu_region_isValid = false;
+
+    m_scapi_client_id_isSet = false;
+    m_scapi_client_id_isValid = false;
+
+    m_scapi_client_secret_isSet = false;
+    m_scapi_client_secret_isValid = false;
+
+    m_scapi_organization_id_isSet = false;
+    m_scapi_organization_id_isValid = false;
+
+    m_scapi_short_code_isSet = false;
+    m_scapi_short_code_isValid = false;
+
+    m_scapi_scopes_isSet = false;
+    m_scapi_scopes_isValid = false;
 }
 
 void OAIAccountCartAdd::fromJson(QString jsonString) {
@@ -1063,6 +1078,21 @@ void OAIAccountCartAdd::fromJsonObject(QJsonObject json) {
 
     m_temu_region_isValid = ::OpenAPI::fromJsonValue(m_temu_region, json[QString("temu_region")]);
     m_temu_region_isSet = !json[QString("temu_region")].isNull() && m_temu_region_isValid;
+
+    m_scapi_client_id_isValid = ::OpenAPI::fromJsonValue(m_scapi_client_id, json[QString("scapi_client_id")]);
+    m_scapi_client_id_isSet = !json[QString("scapi_client_id")].isNull() && m_scapi_client_id_isValid;
+
+    m_scapi_client_secret_isValid = ::OpenAPI::fromJsonValue(m_scapi_client_secret, json[QString("scapi_client_secret")]);
+    m_scapi_client_secret_isSet = !json[QString("scapi_client_secret")].isNull() && m_scapi_client_secret_isValid;
+
+    m_scapi_organization_id_isValid = ::OpenAPI::fromJsonValue(m_scapi_organization_id, json[QString("scapi_organization_id")]);
+    m_scapi_organization_id_isSet = !json[QString("scapi_organization_id")].isNull() && m_scapi_organization_id_isValid;
+
+    m_scapi_short_code_isValid = ::OpenAPI::fromJsonValue(m_scapi_short_code, json[QString("scapi_short_code")]);
+    m_scapi_short_code_isSet = !json[QString("scapi_short_code")].isNull() && m_scapi_short_code_isValid;
+
+    m_scapi_scopes_isValid = ::OpenAPI::fromJsonValue(m_scapi_scopes, json[QString("scapi_scopes")]);
+    m_scapi_scopes_isSet = !json[QString("scapi_scopes")].isNull() && m_scapi_scopes_isValid;
 }
 
 QString OAIAccountCartAdd::asJson() const {
@@ -1583,6 +1613,21 @@ QJsonObject OAIAccountCartAdd::asJsonObject() const {
     }
     if (m_temu_region_isSet) {
         obj.insert(QString("temu_region"), ::OpenAPI::toJsonValue(m_temu_region));
+    }
+    if (m_scapi_client_id_isSet) {
+        obj.insert(QString("scapi_client_id"), ::OpenAPI::toJsonValue(m_scapi_client_id));
+    }
+    if (m_scapi_client_secret_isSet) {
+        obj.insert(QString("scapi_client_secret"), ::OpenAPI::toJsonValue(m_scapi_client_secret));
+    }
+    if (m_scapi_organization_id_isSet) {
+        obj.insert(QString("scapi_organization_id"), ::OpenAPI::toJsonValue(m_scapi_organization_id));
+    }
+    if (m_scapi_short_code_isSet) {
+        obj.insert(QString("scapi_short_code"), ::OpenAPI::toJsonValue(m_scapi_short_code));
+    }
+    if (m_scapi_scopes_isSet) {
+        obj.insert(QString("scapi_scopes"), ::OpenAPI::toJsonValue(m_scapi_scopes));
     }
     return obj;
 }
@@ -4307,6 +4352,86 @@ bool OAIAccountCartAdd::is_temu_region_Valid() const{
     return m_temu_region_isValid;
 }
 
+QString OAIAccountCartAdd::getScapiClientId() const {
+    return m_scapi_client_id;
+}
+void OAIAccountCartAdd::setScapiClientId(const QString &scapi_client_id) {
+    m_scapi_client_id = scapi_client_id;
+    m_scapi_client_id_isSet = true;
+}
+
+bool OAIAccountCartAdd::is_scapi_client_id_Set() const{
+    return m_scapi_client_id_isSet;
+}
+
+bool OAIAccountCartAdd::is_scapi_client_id_Valid() const{
+    return m_scapi_client_id_isValid;
+}
+
+QString OAIAccountCartAdd::getScapiClientSecret() const {
+    return m_scapi_client_secret;
+}
+void OAIAccountCartAdd::setScapiClientSecret(const QString &scapi_client_secret) {
+    m_scapi_client_secret = scapi_client_secret;
+    m_scapi_client_secret_isSet = true;
+}
+
+bool OAIAccountCartAdd::is_scapi_client_secret_Set() const{
+    return m_scapi_client_secret_isSet;
+}
+
+bool OAIAccountCartAdd::is_scapi_client_secret_Valid() const{
+    return m_scapi_client_secret_isValid;
+}
+
+QString OAIAccountCartAdd::getScapiOrganizationId() const {
+    return m_scapi_organization_id;
+}
+void OAIAccountCartAdd::setScapiOrganizationId(const QString &scapi_organization_id) {
+    m_scapi_organization_id = scapi_organization_id;
+    m_scapi_organization_id_isSet = true;
+}
+
+bool OAIAccountCartAdd::is_scapi_organization_id_Set() const{
+    return m_scapi_organization_id_isSet;
+}
+
+bool OAIAccountCartAdd::is_scapi_organization_id_Valid() const{
+    return m_scapi_organization_id_isValid;
+}
+
+QString OAIAccountCartAdd::getScapiShortCode() const {
+    return m_scapi_short_code;
+}
+void OAIAccountCartAdd::setScapiShortCode(const QString &scapi_short_code) {
+    m_scapi_short_code = scapi_short_code;
+    m_scapi_short_code_isSet = true;
+}
+
+bool OAIAccountCartAdd::is_scapi_short_code_Set() const{
+    return m_scapi_short_code_isSet;
+}
+
+bool OAIAccountCartAdd::is_scapi_short_code_Valid() const{
+    return m_scapi_short_code_isValid;
+}
+
+QString OAIAccountCartAdd::getScapiScopes() const {
+    return m_scapi_scopes;
+}
+void OAIAccountCartAdd::setScapiScopes(const QString &scapi_scopes) {
+    m_scapi_scopes = scapi_scopes;
+    m_scapi_scopes_isSet = true;
+}
+
+bool OAIAccountCartAdd::is_scapi_scopes_Set() const{
+    return m_scapi_scopes_isSet;
+}
+
+bool OAIAccountCartAdd::is_scapi_scopes_Valid() const{
+    return m_scapi_scopes_isValid;
+}
+
 bool OAIAccountCartAdd::isSet() const {
     bool isObjectUpdated = false;
     do {
@@ -5156,6 +5281,31 @@ bool OAIAccountCartAdd::isSet() const {
         }
 
         if (m_temu_region_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_scapi_client_id_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_scapi_client_secret_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_scapi_organization_id_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_scapi_short_code_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_scapi_scopes_isSet) {
             isObjectUpdated = true;
             break;
         }

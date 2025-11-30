@@ -892,6 +892,31 @@ public:
     bool is_temu_region_Set() const;
     bool is_temu_region_Valid() const;
 
+    QString getScapiClientId() const;
+    void setScapiClientId(const QString &scapi_client_id);
+    bool is_scapi_client_id_Set() const;
+    bool is_scapi_client_id_Valid() const;
+
+    QString getScapiClientSecret() const;
+    void setScapiClientSecret(const QString &scapi_client_secret);
+    bool is_scapi_client_secret_Set() const;
+    bool is_scapi_client_secret_Valid() const;
+
+    QString getScapiOrganizationId() const;
+    void setScapiOrganizationId(const QString &scapi_organization_id);
+    bool is_scapi_organization_id_Set() const;
+    bool is_scapi_organization_id_Valid() const;
+
+    QString getScapiShortCode() const;
+    void setScapiShortCode(const QString &scapi_short_code);
+    bool is_scapi_short_code_Set() const;
+    bool is_scapi_short_code_Valid() const;
+
+    QString getScapiScopes() const;
+    void setScapiScopes(const QString &scapi_scopes);
+    bool is_scapi_scopes_Set() const;
+    bool is_scapi_scopes_Valid() const;
+
     virtual bool isSet() const override;
     virtual bool isValid() const override;
 
@@ -1577,6 +1602,26 @@ private:
     QString m_temu_region;
     bool m_temu_region_isSet;
     bool m_temu_region_isValid;
+
+    QString m_scapi_client_id;
+    bool m_scapi_client_id_isSet;
+    bool m_scapi_client_id_isValid;
+
+    QString m_scapi_client_secret;
+    bool m_scapi_client_secret_isSet;
+    bool m_scapi_client_secret_isValid;
+
+    QString m_scapi_organization_id;
+    bool m_scapi_organization_id_isSet;
+    bool m_scapi_organization_id_isValid;
+
+    QString m_scapi_short_code;
+    bool m_scapi_short_code_isSet;
+    bool m_scapi_short_code_isValid;
+
+    QString m_scapi_scopes;
+    bool m_scapi_scopes_isSet;
+    bool m_scapi_scopes_isValid;
 };
 
 } // namespace OpenAPI
