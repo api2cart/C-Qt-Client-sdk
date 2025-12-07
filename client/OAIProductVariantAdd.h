@@ -309,6 +309,11 @@ public:
     bool is_harmonized_system_code_Set() const;
     bool is_harmonized_system_code_Valid() const;
 
+    qint32 getProcessingProfileId() const;
+    void setProcessingProfileId(const qint32 &processing_profile_id);
+    bool is_processing_profile_id_Set() const;
+    bool is_processing_profile_id_Valid() const;
+
     QString getMarketplaceItemProperties() const;
     void setMarketplaceItemProperties(const QString &marketplace_item_properties);
     bool is_marketplace_item_properties_Set() const;
@@ -536,6 +541,10 @@ private:
     QString m_harmonized_system_code;
     bool m_harmonized_system_code_isSet;
     bool m_harmonized_system_code_isValid;
+
+    qint32 m_processing_profile_id;
+    bool m_processing_profile_id_isSet;
+    bool m_processing_profile_id_isValid;
 
     QString m_marketplace_item_properties;
     bool m_marketplace_item_properties_isSet;

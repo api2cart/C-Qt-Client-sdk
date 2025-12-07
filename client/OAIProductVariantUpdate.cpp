@@ -198,6 +198,9 @@ void OAIProductVariantUpdate::initializeModel() {
 
     m_clear_cache_isSet = false;
     m_clear_cache_isValid = false;
+
+    m_processing_profile_id_isSet = false;
+    m_processing_profile_id_isValid = false;
 }
 
 void OAIProductVariantUpdate::fromJson(QString jsonString) {
@@ -373,6 +376,9 @@ void OAIProductVariantUpdate::fromJsonObject(QJsonObject json) {
 
     m_clear_cache_isValid = ::OpenAPI::fromJsonValue(m_clear_cache, json[QString("clear_cache")]);
     m_clear_cache_isSet = !json[QString("clear_cache")].isNull() && m_clear_cache_isValid;
+
+    m_processing_profile_id_isValid = ::OpenAPI::fromJsonValue(m_processing_profile_id, json[QString("processing_profile_id")]);
+    m_processing_profile_id_isSet = !json[QString("processing_profile_id")].isNull() && m_processing_profile_id_isValid;
 }
 
 QString OAIProductVariantUpdate::asJson() const {
@@ -548,6 +554,9 @@ QJsonObject OAIProductVariantUpdate::asJsonObject() const {
     }
     if (m_clear_cache_isSet) {
         obj.insert(QString("clear_cache"), ::OpenAPI::toJsonValue(m_clear_cache));
+    }
+    if (m_processing_profile_id_isSet) {
+        obj.insert(QString("processing_profile_id"), ::OpenAPI::toJsonValue(m_processing_profile_id));
     }
     return obj;
 }
@@ -1432,6 +1441,22 @@ bool OAIProductVariantUpdate::is_clear_cache_Valid() const{
     return m_clear_cache_isValid;
 }
 
+qint32 OAIProductVariantUpdate::getProcessingProfileId() const {
+    return m_processing_profile_id;
+}
+void OAIProductVariantUpdate::setProcessingProfileId(const qint32 &processing_profile_id) {
+    m_processing_profile_id = processing_profile_id;
+    m_processing_profile_id_isSet = true;
+}
+
+bool OAIProductVariantUpdate::is_processing_profile_id_Set() const{
+    return m_processing_profile_id_isSet;
+}
+
+bool OAIProductVariantUpdate::is_processing_profile_id_Valid() const{
+    return m_processing_profile_id_isValid;
+}
+
 bool OAIProductVariantUpdate::isSet() const {
     bool isObjectUpdated = false;
     do {
@@ -1706,6 +1731,11 @@ bool OAIProductVariantUpdate::isSet() const {
         }
 
         if (m_clear_cache_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_processing_profile_id_isSet) {
             isObjectUpdated = true;
             break;
         }

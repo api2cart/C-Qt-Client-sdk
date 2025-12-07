@@ -317,6 +317,11 @@ public:
     bool is_clear_cache_Set() const;
     bool is_clear_cache_Valid() const;
 
+    qint32 getProcessingProfileId() const;
+    void setProcessingProfileId(const qint32 &processing_profile_id);
+    bool is_processing_profile_id_Set() const;
+    bool is_processing_profile_id_Valid() const;
+
     virtual bool isSet() const override;
     virtual bool isValid() const override;
 
@@ -542,6 +547,10 @@ private:
     bool m_clear_cache;
     bool m_clear_cache_isSet;
     bool m_clear_cache_isValid;
+
+    qint32 m_processing_profile_id;
+    bool m_processing_profile_id_isSet;
+    bool m_processing_profile_id_isValid;
 };
 
 } // namespace OpenAPI

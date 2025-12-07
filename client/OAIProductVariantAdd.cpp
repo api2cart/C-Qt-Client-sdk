@@ -193,6 +193,9 @@ void OAIProductVariantAdd::initializeModel() {
     m_harmonized_system_code_isSet = false;
     m_harmonized_system_code_isValid = false;
 
+    m_processing_profile_id_isSet = false;
+    m_processing_profile_id_isValid = false;
+
     m_marketplace_item_properties_isSet = false;
     m_marketplace_item_properties_isValid = false;
 
@@ -368,6 +371,9 @@ void OAIProductVariantAdd::fromJsonObject(QJsonObject json) {
     m_harmonized_system_code_isValid = ::OpenAPI::fromJsonValue(m_harmonized_system_code, json[QString("harmonized_system_code")]);
     m_harmonized_system_code_isSet = !json[QString("harmonized_system_code")].isNull() && m_harmonized_system_code_isValid;
 
+    m_processing_profile_id_isValid = ::OpenAPI::fromJsonValue(m_processing_profile_id, json[QString("processing_profile_id")]);
+    m_processing_profile_id_isSet = !json[QString("processing_profile_id")].isNull() && m_processing_profile_id_isValid;
+
     m_marketplace_item_properties_isValid = ::OpenAPI::fromJsonValue(m_marketplace_item_properties, json[QString("marketplace_item_properties")]);
     m_marketplace_item_properties_isSet = !json[QString("marketplace_item_properties")].isNull() && m_marketplace_item_properties_isValid;
 
@@ -542,6 +548,9 @@ QJsonObject OAIProductVariantAdd::asJsonObject() const {
     }
     if (m_harmonized_system_code_isSet) {
         obj.insert(QString("harmonized_system_code"), ::OpenAPI::toJsonValue(m_harmonized_system_code));
+    }
+    if (m_processing_profile_id_isSet) {
+        obj.insert(QString("processing_profile_id"), ::OpenAPI::toJsonValue(m_processing_profile_id));
     }
     if (m_marketplace_item_properties_isSet) {
         obj.insert(QString("marketplace_item_properties"), ::OpenAPI::toJsonValue(m_marketplace_item_properties));
@@ -1400,6 +1409,22 @@ bool OAIProductVariantAdd::is_harmonized_system_code_Valid() const{
     return m_harmonized_system_code_isValid;
 }
 
+qint32 OAIProductVariantAdd::getProcessingProfileId() const {
+    return m_processing_profile_id;
+}
+void OAIProductVariantAdd::setProcessingProfileId(const qint32 &processing_profile_id) {
+    m_processing_profile_id = processing_profile_id;
+    m_processing_profile_id_isSet = true;
+}
+
+bool OAIProductVariantAdd::is_processing_profile_id_Set() const{
+    return m_processing_profile_id_isSet;
+}
+
+bool OAIProductVariantAdd::is_processing_profile_id_Valid() const{
+    return m_processing_profile_id_isValid;
+}
+
 QString OAIProductVariantAdd::getMarketplaceItemProperties() const {
     return m_marketplace_item_properties;
 }
@@ -1696,6 +1721,11 @@ bool OAIProductVariantAdd::isSet() const {
         }
 
         if (m_harmonized_system_code_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_processing_profile_id_isSet) {
             isObjectUpdated = true;
             break;
         }
