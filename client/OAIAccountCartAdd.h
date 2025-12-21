@@ -467,6 +467,11 @@ public:
     bool is_shopify_access_token_Set() const;
     bool is_shopify_access_token_Valid() const;
 
+    QString getShopifyClientId() const;
+    void setShopifyClientId(const QString &shopify_client_id);
+    bool is_shopify_client_id_Set() const;
+    bool is_shopify_client_id_Valid() const;
+
     QString getShopifyApiKey() const;
     void setShopifyApiKey(const QString &shopify_api_key);
     bool is_shopify_api_key_Set() const;
@@ -1262,6 +1267,10 @@ private:
     QString m_shopify_access_token;
     bool m_shopify_access_token_isSet;
     bool m_shopify_access_token_isValid;
+
+    QString m_shopify_client_id;
+    bool m_shopify_client_id_isSet;
+    bool m_shopify_client_id_isValid;
 
     QString m_shopify_api_key;
     bool m_shopify_api_key_isSet;

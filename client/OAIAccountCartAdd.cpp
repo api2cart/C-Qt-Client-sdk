@@ -289,6 +289,9 @@ void OAIAccountCartAdd::initializeModel() {
     m_shopify_access_token_isSet = false;
     m_shopify_access_token_isValid = false;
 
+    m_shopify_client_id_isSet = false;
+    m_shopify_client_id_isValid = false;
+
     m_shopify_api_key_isSet = false;
     m_shopify_api_key_isValid = false;
 
@@ -824,6 +827,9 @@ void OAIAccountCartAdd::fromJsonObject(QJsonObject json) {
     m_shopify_access_token_isValid = ::OpenAPI::fromJsonValue(m_shopify_access_token, json[QString("shopify_access_token")]);
     m_shopify_access_token_isSet = !json[QString("shopify_access_token")].isNull() && m_shopify_access_token_isValid;
 
+    m_shopify_client_id_isValid = ::OpenAPI::fromJsonValue(m_shopify_client_id, json[QString("shopify_client_id")]);
+    m_shopify_client_id_isSet = !json[QString("shopify_client_id")].isNull() && m_shopify_client_id_isValid;
+
     m_shopify_api_key_isValid = ::OpenAPI::fromJsonValue(m_shopify_api_key, json[QString("shopify_api_key")]);
     m_shopify_api_key_isSet = !json[QString("shopify_api_key")].isNull() && m_shopify_api_key_isValid;
 
@@ -1358,6 +1364,9 @@ QJsonObject OAIAccountCartAdd::asJsonObject() const {
     }
     if (m_shopify_access_token_isSet) {
         obj.insert(QString("shopify_access_token"), ::OpenAPI::toJsonValue(m_shopify_access_token));
+    }
+    if (m_shopify_client_id_isSet) {
+        obj.insert(QString("shopify_client_id"), ::OpenAPI::toJsonValue(m_shopify_client_id));
     }
     if (m_shopify_api_key_isSet) {
         obj.insert(QString("shopify_api_key"), ::OpenAPI::toJsonValue(m_shopify_api_key));
@@ -2990,6 +2999,22 @@ bool OAIAccountCartAdd::is_shopify_access_token_Set() const{
 
 bool OAIAccountCartAdd::is_shopify_access_token_Valid() const{
     return m_shopify_access_token_isValid;
+}
+
+QString OAIAccountCartAdd::getShopifyClientId() const {
+    return m_shopify_client_id;
+}
+void OAIAccountCartAdd::setShopifyClientId(const QString &shopify_client_id) {
+    m_shopify_client_id = shopify_client_id;
+    m_shopify_client_id_isSet = true;
+}
+
+bool OAIAccountCartAdd::is_shopify_client_id_Set() const{
+    return m_shopify_client_id_isSet;
+}
+
+bool OAIAccountCartAdd::is_shopify_client_id_Valid() const{
+    return m_shopify_client_id_isValid;
 }
 
 QString OAIAccountCartAdd::getShopifyApiKey() const {
@@ -4856,6 +4881,11 @@ bool OAIAccountCartAdd::isSet() const {
         }
 
         if (m_shopify_access_token_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_shopify_client_id_isSet) {
             isObjectUpdated = true;
             break;
         }
