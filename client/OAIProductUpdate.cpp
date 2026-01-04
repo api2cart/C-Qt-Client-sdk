@@ -121,6 +121,12 @@ void OAIProductUpdate::initializeModel() {
     m_available_for_view_isSet = false;
     m_available_for_view_isValid = false;
 
+    m_measure_unit_isSet = false;
+    m_measure_unit_isValid = false;
+
+    m_unit_price_isSet = false;
+    m_unit_price_isValid = false;
+
     m_stores_ids_isSet = false;
     m_stores_ids_isValid = false;
 
@@ -404,6 +410,12 @@ void OAIProductUpdate::fromJsonObject(QJsonObject json) {
     m_available_for_view_isValid = ::OpenAPI::fromJsonValue(m_available_for_view, json[QString("available_for_view")]);
     m_available_for_view_isSet = !json[QString("available_for_view")].isNull() && m_available_for_view_isValid;
 
+    m_measure_unit_isValid = ::OpenAPI::fromJsonValue(m_measure_unit, json[QString("measure_unit")]);
+    m_measure_unit_isSet = !json[QString("measure_unit")].isNull() && m_measure_unit_isValid;
+
+    m_unit_price_isValid = ::OpenAPI::fromJsonValue(m_unit_price, json[QString("unit_price")]);
+    m_unit_price_isSet = !json[QString("unit_price")].isNull() && m_unit_price_isValid;
+
     m_stores_ids_isValid = ::OpenAPI::fromJsonValue(m_stores_ids, json[QString("stores_ids")]);
     m_stores_ids_isSet = !json[QString("stores_ids")].isNull() && m_stores_ids_isValid;
 
@@ -686,6 +698,12 @@ QJsonObject OAIProductUpdate::asJsonObject() const {
     }
     if (m_available_for_view_isSet) {
         obj.insert(QString("available_for_view"), ::OpenAPI::toJsonValue(m_available_for_view));
+    }
+    if (m_measure_unit_isSet) {
+        obj.insert(QString("measure_unit"), ::OpenAPI::toJsonValue(m_measure_unit));
+    }
+    if (m_unit_price_isSet) {
+        obj.insert(QString("unit_price"), ::OpenAPI::toJsonValue(m_unit_price));
     }
     if (m_stores_ids_isSet) {
         obj.insert(QString("stores_ids"), ::OpenAPI::toJsonValue(m_stores_ids));
@@ -1338,6 +1356,38 @@ bool OAIProductUpdate::is_available_for_view_Set() const{
 
 bool OAIProductUpdate::is_available_for_view_Valid() const{
     return m_available_for_view_isValid;
+}
+
+QString OAIProductUpdate::getMeasureUnit() const {
+    return m_measure_unit;
+}
+void OAIProductUpdate::setMeasureUnit(const QString &measure_unit) {
+    m_measure_unit = measure_unit;
+    m_measure_unit_isSet = true;
+}
+
+bool OAIProductUpdate::is_measure_unit_Set() const{
+    return m_measure_unit_isSet;
+}
+
+bool OAIProductUpdate::is_measure_unit_Valid() const{
+    return m_measure_unit_isValid;
+}
+
+double OAIProductUpdate::getUnitPrice() const {
+    return m_unit_price;
+}
+void OAIProductUpdate::setUnitPrice(const double &unit_price) {
+    m_unit_price = unit_price;
+    m_unit_price_isSet = true;
+}
+
+bool OAIProductUpdate::is_unit_price_Set() const{
+    return m_unit_price_isSet;
+}
+
+bool OAIProductUpdate::is_unit_price_Valid() const{
+    return m_unit_price_isValid;
 }
 
 QString OAIProductUpdate::getStoresIds() const {
@@ -2476,6 +2526,16 @@ bool OAIProductUpdate::isSet() const {
         }
 
         if (m_available_for_view_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_measure_unit_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_unit_price_isSet) {
             isObjectUpdated = true;
             break;
         }

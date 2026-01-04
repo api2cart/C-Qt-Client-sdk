@@ -153,6 +153,16 @@ public:
     bool is_cost_price_Set() const;
     bool is_cost_price_Valid() const;
 
+    double getUnitPrice() const;
+    void setUnitPrice(const double &unit_price);
+    bool is_unit_price_Set() const;
+    bool is_unit_price_Valid() const;
+
+    QString getMeasureUnit() const;
+    void setMeasureUnit(const QString &measure_unit);
+    bool is_measure_unit_Set() const;
+    bool is_measure_unit_Valid() const;
+
     double getListPrice() const;
     void setListPrice(const double &list_price);
     bool is_list_price_Set() const;
@@ -378,6 +388,14 @@ private:
     double m_cost_price;
     bool m_cost_price_isSet;
     bool m_cost_price_isValid;
+
+    double m_unit_price;
+    bool m_unit_price_isSet;
+    bool m_unit_price_isValid;
+
+    QString m_measure_unit;
+    bool m_measure_unit_isSet;
+    bool m_measure_unit_isValid;
 
     double m_list_price;
     bool m_list_price_isSet;

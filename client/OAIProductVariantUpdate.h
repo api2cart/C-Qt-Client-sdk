@@ -222,6 +222,16 @@ public:
     bool is_sprice_expire_Set() const;
     bool is_sprice_expire_Valid() const;
 
+    QString getMeasureUnit() const;
+    void setMeasureUnit(const QString &measure_unit);
+    bool is_measure_unit_Set() const;
+    bool is_measure_unit_Valid() const;
+
+    double getUnitPrice() const;
+    void setUnitPrice(const double &unit_price);
+    bool is_unit_price_Set() const;
+    bool is_unit_price_Valid() const;
+
     double getWeight() const;
     void setWeight(const double &weight);
     bool is_weight_Set() const;
@@ -471,6 +481,14 @@ private:
     QString m_sprice_expire;
     bool m_sprice_expire_isSet;
     bool m_sprice_expire_isValid;
+
+    QString m_measure_unit;
+    bool m_measure_unit_isSet;
+    bool m_measure_unit_isValid;
+
+    double m_unit_price;
+    bool m_unit_price_isSet;
+    bool m_unit_price_isValid;
 
     double m_weight;
     bool m_weight_isSet;

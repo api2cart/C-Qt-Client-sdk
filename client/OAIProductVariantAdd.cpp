@@ -100,6 +100,12 @@ void OAIProductVariantAdd::initializeModel() {
     m_tier_prices_isSet = false;
     m_tier_prices_isValid = false;
 
+    m_measure_unit_isSet = false;
+    m_measure_unit_isValid = false;
+
+    m_unit_price_isSet = false;
+    m_unit_price_isValid = false;
+
     m_quantity_isSet = false;
     m_quantity_isValid = false;
 
@@ -278,6 +284,12 @@ void OAIProductVariantAdd::fromJsonObject(QJsonObject json) {
     m_tier_prices_isValid = ::OpenAPI::fromJsonValue(m_tier_prices, json[QString("tier_prices")]);
     m_tier_prices_isSet = !json[QString("tier_prices")].isNull() && m_tier_prices_isValid;
 
+    m_measure_unit_isValid = ::OpenAPI::fromJsonValue(m_measure_unit, json[QString("measure_unit")]);
+    m_measure_unit_isSet = !json[QString("measure_unit")].isNull() && m_measure_unit_isValid;
+
+    m_unit_price_isValid = ::OpenAPI::fromJsonValue(m_unit_price, json[QString("unit_price")]);
+    m_unit_price_isSet = !json[QString("unit_price")].isNull() && m_unit_price_isValid;
+
     m_quantity_isValid = ::OpenAPI::fromJsonValue(m_quantity, json[QString("quantity")]);
     m_quantity_isSet = !json[QString("quantity")].isNull() && m_quantity_isValid;
 
@@ -455,6 +467,12 @@ QJsonObject OAIProductVariantAdd::asJsonObject() const {
     }
     if (m_tier_prices.size() > 0) {
         obj.insert(QString("tier_prices"), ::OpenAPI::toJsonValue(m_tier_prices));
+    }
+    if (m_measure_unit_isSet) {
+        obj.insert(QString("measure_unit"), ::OpenAPI::toJsonValue(m_measure_unit));
+    }
+    if (m_unit_price_isSet) {
+        obj.insert(QString("unit_price"), ::OpenAPI::toJsonValue(m_unit_price));
     }
     if (m_quantity_isSet) {
         obj.insert(QString("quantity"), ::OpenAPI::toJsonValue(m_quantity));
@@ -911,6 +929,38 @@ bool OAIProductVariantAdd::is_tier_prices_Set() const{
 
 bool OAIProductVariantAdd::is_tier_prices_Valid() const{
     return m_tier_prices_isValid;
+}
+
+QString OAIProductVariantAdd::getMeasureUnit() const {
+    return m_measure_unit;
+}
+void OAIProductVariantAdd::setMeasureUnit(const QString &measure_unit) {
+    m_measure_unit = measure_unit;
+    m_measure_unit_isSet = true;
+}
+
+bool OAIProductVariantAdd::is_measure_unit_Set() const{
+    return m_measure_unit_isSet;
+}
+
+bool OAIProductVariantAdd::is_measure_unit_Valid() const{
+    return m_measure_unit_isValid;
+}
+
+double OAIProductVariantAdd::getUnitPrice() const {
+    return m_unit_price;
+}
+void OAIProductVariantAdd::setUnitPrice(const double &unit_price) {
+    m_unit_price = unit_price;
+    m_unit_price_isSet = true;
+}
+
+bool OAIProductVariantAdd::is_unit_price_Set() const{
+    return m_unit_price_isSet;
+}
+
+bool OAIProductVariantAdd::is_unit_price_Valid() const{
+    return m_unit_price_isValid;
 }
 
 double OAIProductVariantAdd::getQuantity() const {
@@ -1566,6 +1616,16 @@ bool OAIProductVariantAdd::isSet() const {
         }
 
         if (m_tier_prices.size() > 0) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_measure_unit_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_unit_price_isSet) {
             isObjectUpdated = true;
             break;
         }

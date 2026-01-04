@@ -154,6 +154,16 @@ public:
     bool is_tier_prices_Set() const;
     bool is_tier_prices_Valid() const;
 
+    QString getMeasureUnit() const;
+    void setMeasureUnit(const QString &measure_unit);
+    bool is_measure_unit_Set() const;
+    bool is_measure_unit_Valid() const;
+
+    double getUnitPrice() const;
+    void setUnitPrice(const double &unit_price);
+    bool is_unit_price_Set() const;
+    bool is_unit_price_Valid() const;
+
     double getQuantity() const;
     void setQuantity(const double &quantity);
     bool is_quantity_Set() const;
@@ -417,6 +427,14 @@ private:
     QList<OAIProductAdd_tier_prices_inner> m_tier_prices;
     bool m_tier_prices_isSet;
     bool m_tier_prices_isValid;
+
+    QString m_measure_unit;
+    bool m_measure_unit_isSet;
+    bool m_measure_unit_isValid;
+
+    double m_unit_price;
+    bool m_unit_price_isSet;
+    bool m_unit_price_isValid;
 
     double m_quantity;
     bool m_quantity_isSet;

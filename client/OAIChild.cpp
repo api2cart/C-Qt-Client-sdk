@@ -94,6 +94,12 @@ void OAIChild::initializeModel() {
     m_cost_price_isSet = false;
     m_cost_price_isValid = false;
 
+    m_unit_price_isSet = false;
+    m_unit_price_isValid = false;
+
+    m_measure_unit_isSet = false;
+    m_measure_unit_isValid = false;
+
     m_list_price_isSet = false;
     m_list_price_isValid = false;
 
@@ -248,6 +254,12 @@ void OAIChild::fromJsonObject(QJsonObject json) {
     m_cost_price_isValid = ::OpenAPI::fromJsonValue(m_cost_price, json[QString("cost_price")]);
     m_cost_price_isSet = !json[QString("cost_price")].isNull() && m_cost_price_isValid;
 
+    m_unit_price_isValid = ::OpenAPI::fromJsonValue(m_unit_price, json[QString("unit_price")]);
+    m_unit_price_isSet = !json[QString("unit_price")].isNull() && m_unit_price_isValid;
+
+    m_measure_unit_isValid = ::OpenAPI::fromJsonValue(m_measure_unit, json[QString("measure_unit")]);
+    m_measure_unit_isSet = !json[QString("measure_unit")].isNull() && m_measure_unit_isValid;
+
     m_list_price_isValid = ::OpenAPI::fromJsonValue(m_list_price, json[QString("list_price")]);
     m_list_price_isSet = !json[QString("list_price")].isNull() && m_list_price_isValid;
 
@@ -401,6 +413,12 @@ QJsonObject OAIChild::asJsonObject() const {
     }
     if (m_cost_price_isSet) {
         obj.insert(QString("cost_price"), ::OpenAPI::toJsonValue(m_cost_price));
+    }
+    if (m_unit_price_isSet) {
+        obj.insert(QString("unit_price"), ::OpenAPI::toJsonValue(m_unit_price));
+    }
+    if (m_measure_unit_isSet) {
+        obj.insert(QString("measure_unit"), ::OpenAPI::toJsonValue(m_measure_unit));
     }
     if (m_list_price_isSet) {
         obj.insert(QString("list_price"), ::OpenAPI::toJsonValue(m_list_price));
@@ -807,6 +825,38 @@ bool OAIChild::is_cost_price_Set() const{
 
 bool OAIChild::is_cost_price_Valid() const{
     return m_cost_price_isValid;
+}
+
+double OAIChild::getUnitPrice() const {
+    return m_unit_price;
+}
+void OAIChild::setUnitPrice(const double &unit_price) {
+    m_unit_price = unit_price;
+    m_unit_price_isSet = true;
+}
+
+bool OAIChild::is_unit_price_Set() const{
+    return m_unit_price_isSet;
+}
+
+bool OAIChild::is_unit_price_Valid() const{
+    return m_unit_price_isValid;
+}
+
+QString OAIChild::getMeasureUnit() const {
+    return m_measure_unit;
+}
+void OAIChild::setMeasureUnit(const QString &measure_unit) {
+    m_measure_unit = measure_unit;
+    m_measure_unit_isSet = true;
+}
+
+bool OAIChild::is_measure_unit_Set() const{
+    return m_measure_unit_isSet;
+}
+
+bool OAIChild::is_measure_unit_Valid() const{
+    return m_measure_unit_isValid;
 }
 
 double OAIChild::getListPrice() const {
@@ -1356,6 +1406,16 @@ bool OAIChild::isSet() const {
         }
 
         if (m_cost_price_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_unit_price_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_measure_unit_isSet) {
             isObjectUpdated = true;
             break;
         }

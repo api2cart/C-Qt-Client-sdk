@@ -195,6 +195,16 @@ public:
     bool is_available_for_view_Set() const;
     bool is_available_for_view_Valid() const;
 
+    QString getMeasureUnit() const;
+    void setMeasureUnit(const QString &measure_unit);
+    bool is_measure_unit_Set() const;
+    bool is_measure_unit_Valid() const;
+
+    double getUnitPrice() const;
+    void setUnitPrice(const double &unit_price);
+    bool is_unit_price_Set() const;
+    bool is_unit_price_Valid() const;
+
     QString getStoresIds() const;
     void setStoresIds(const QString &stores_ids);
     bool is_stores_ids_Set() const;
@@ -626,6 +636,14 @@ private:
     bool m_available_for_view;
     bool m_available_for_view_isSet;
     bool m_available_for_view_isValid;
+
+    QString m_measure_unit;
+    bool m_measure_unit_isSet;
+    bool m_measure_unit_isValid;
+
+    double m_unit_price;
+    bool m_unit_price_isSet;
+    bool m_unit_price_isValid;
 
     QString m_stores_ids;
     bool m_stores_ids_isSet;
