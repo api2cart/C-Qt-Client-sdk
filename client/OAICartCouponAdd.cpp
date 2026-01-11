@@ -90,6 +90,9 @@ void OAICartCouponAdd::initializeModel() {
 
     m_customer_id_isSet = false;
     m_customer_id_isValid = false;
+
+    m_idempotency_key_isSet = false;
+    m_idempotency_key_isValid = false;
 }
 
 void OAICartCouponAdd::fromJson(QString jsonString) {
@@ -157,6 +160,9 @@ void OAICartCouponAdd::fromJsonObject(QJsonObject json) {
 
     m_customer_id_isValid = ::OpenAPI::fromJsonValue(m_customer_id, json[QString("customer_id")]);
     m_customer_id_isSet = !json[QString("customer_id")].isNull() && m_customer_id_isValid;
+
+    m_idempotency_key_isValid = ::OpenAPI::fromJsonValue(m_idempotency_key, json[QString("idempotency_key")]);
+    m_idempotency_key_isSet = !json[QString("idempotency_key")].isNull() && m_idempotency_key_isValid;
 }
 
 QString OAICartCouponAdd::asJson() const {
@@ -224,6 +230,9 @@ QJsonObject OAICartCouponAdd::asJsonObject() const {
     }
     if (m_customer_id_isSet) {
         obj.insert(QString("customer_id"), ::OpenAPI::toJsonValue(m_customer_id));
+    }
+    if (m_idempotency_key_isSet) {
+        obj.insert(QString("idempotency_key"), ::OpenAPI::toJsonValue(m_idempotency_key));
     }
     return obj;
 }
@@ -532,6 +541,22 @@ bool OAICartCouponAdd::is_customer_id_Valid() const{
     return m_customer_id_isValid;
 }
 
+QString OAICartCouponAdd::getIdempotencyKey() const {
+    return m_idempotency_key;
+}
+void OAICartCouponAdd::setIdempotencyKey(const QString &idempotency_key) {
+    m_idempotency_key = idempotency_key;
+    m_idempotency_key_isSet = true;
+}
+
+bool OAICartCouponAdd::is_idempotency_key_Set() const{
+    return m_idempotency_key_isSet;
+}
+
+bool OAICartCouponAdd::is_idempotency_key_Valid() const{
+    return m_idempotency_key_isValid;
+}
+
 bool OAICartCouponAdd::isSet() const {
     bool isObjectUpdated = false;
     do {
@@ -626,6 +651,11 @@ bool OAICartCouponAdd::isSet() const {
         }
 
         if (m_customer_id_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_idempotency_key_isSet) {
             isObjectUpdated = true;
             break;
         }

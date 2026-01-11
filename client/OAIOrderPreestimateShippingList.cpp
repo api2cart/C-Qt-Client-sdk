@@ -67,6 +67,9 @@ void OAIOrderPreestimateShippingList::initializeModel() {
     m_exclude_isSet = false;
     m_exclude_isValid = false;
 
+    m_idempotency_key_isSet = false;
+    m_idempotency_key_isValid = false;
+
     m_order_item_isSet = false;
     m_order_item_isValid = false;
 }
@@ -113,6 +116,9 @@ void OAIOrderPreestimateShippingList::fromJsonObject(QJsonObject json) {
     m_exclude_isValid = ::OpenAPI::fromJsonValue(m_exclude, json[QString("exclude")]);
     m_exclude_isSet = !json[QString("exclude")].isNull() && m_exclude_isValid;
 
+    m_idempotency_key_isValid = ::OpenAPI::fromJsonValue(m_idempotency_key, json[QString("idempotency_key")]);
+    m_idempotency_key_isSet = !json[QString("idempotency_key")].isNull() && m_idempotency_key_isValid;
+
     m_order_item_isValid = ::OpenAPI::fromJsonValue(m_order_item, json[QString("order_item")]);
     m_order_item_isSet = !json[QString("order_item")].isNull() && m_order_item_isValid;
 }
@@ -158,6 +164,9 @@ QJsonObject OAIOrderPreestimateShippingList::asJsonObject() const {
     }
     if (m_exclude_isSet) {
         obj.insert(QString("exclude"), ::OpenAPI::toJsonValue(m_exclude));
+    }
+    if (m_idempotency_key_isSet) {
+        obj.insert(QString("idempotency_key"), ::OpenAPI::toJsonValue(m_idempotency_key));
     }
     if (m_order_item.size() > 0) {
         obj.insert(QString("order_item"), ::OpenAPI::toJsonValue(m_order_item));
@@ -341,6 +350,22 @@ bool OAIOrderPreestimateShippingList::is_exclude_Valid() const{
     return m_exclude_isValid;
 }
 
+QString OAIOrderPreestimateShippingList::getIdempotencyKey() const {
+    return m_idempotency_key;
+}
+void OAIOrderPreestimateShippingList::setIdempotencyKey(const QString &idempotency_key) {
+    m_idempotency_key = idempotency_key;
+    m_idempotency_key_isSet = true;
+}
+
+bool OAIOrderPreestimateShippingList::is_idempotency_key_Set() const{
+    return m_idempotency_key_isSet;
+}
+
+bool OAIOrderPreestimateShippingList::is_idempotency_key_Valid() const{
+    return m_idempotency_key_isValid;
+}
+
 QList<OAIOrderPreestimateShippingList_order_item_inner> OAIOrderPreestimateShippingList::getOrderItem() const {
     return m_order_item;
 }
@@ -411,6 +436,11 @@ bool OAIOrderPreestimateShippingList::isSet() const {
         }
 
         if (m_exclude_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_idempotency_key_isSet) {
             isObjectUpdated = true;
             break;
         }

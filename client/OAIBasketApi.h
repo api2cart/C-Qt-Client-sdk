@@ -76,15 +76,17 @@ public:
     * @param[in]  variant_id QString [optional]
     * @param[in]  quantity double [optional]
     * @param[in]  store_id QString [optional]
+    * @param[in]  idempotency_key QString [optional]
     */
-    virtual void basketItemAdd(const QString &customer_id, const QString &product_id, const ::OpenAPI::OptionalParam<QString> &variant_id = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<double> &quantity = ::OpenAPI::OptionalParam<double>(), const ::OpenAPI::OptionalParam<QString> &store_id = ::OpenAPI::OptionalParam<QString>());
+    virtual void basketItemAdd(const QString &customer_id, const QString &product_id, const ::OpenAPI::OptionalParam<QString> &variant_id = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<double> &quantity = ::OpenAPI::OptionalParam<double>(), const ::OpenAPI::OptionalParam<QString> &store_id = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &idempotency_key = ::OpenAPI::OptionalParam<QString>());
 
     /**
     * @param[in]  name QString [required]
     * @param[in]  callback QString [required]
     * @param[in]  store_id QString [optional]
+    * @param[in]  idempotency_key QString [optional]
     */
-    virtual void basketLiveShippingServiceCreate(const QString &name, const QString &callback, const ::OpenAPI::OptionalParam<QString> &store_id = ::OpenAPI::OptionalParam<QString>());
+    virtual void basketLiveShippingServiceCreate(const QString &name, const QString &callback, const ::OpenAPI::OptionalParam<QString> &store_id = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &idempotency_key = ::OpenAPI::OptionalParam<QString>());
 
     /**
     * @param[in]  id qint32 [required]

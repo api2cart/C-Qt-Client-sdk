@@ -596,7 +596,7 @@ void OAICartApi::cartCouponAddCallback(OAIHttpRequestWorker *worker) {
     }
 }
 
-void OAICartApi::cartCouponConditionAdd(const QString &coupon_id, const QString &entity, const QString &key, const QString &r_operator, const QString &value, const ::OpenAPI::OptionalParam<QString> &target, const ::OpenAPI::OptionalParam<bool> &include_tax, const ::OpenAPI::OptionalParam<bool> &include_shipping, const ::OpenAPI::OptionalParam<QString> &store_id) {
+void OAICartApi::cartCouponConditionAdd(const QString &coupon_id, const QString &entity, const QString &key, const QString &r_operator, const QString &value, const ::OpenAPI::OptionalParam<QString> &target, const ::OpenAPI::OptionalParam<bool> &include_tax, const ::OpenAPI::OptionalParam<bool> &include_shipping, const ::OpenAPI::OptionalParam<QString> &store_id, const ::OpenAPI::OptionalParam<QString> &idempotency_key) {
     QString fullPath = QString(_serverConfigs["cartCouponConditionAdd"][_serverIndices.value("cartCouponConditionAdd")].URL()+"/cart.coupon.condition.add.json");
     
     if (_apiKeys.contains("StoreKeyAuth")) {
@@ -742,6 +742,21 @@ void OAICartApi::cartCouponConditionAdd(const QString &coupon_id, const QString 
             fullPath.append("?");
 
         fullPath.append(QUrl::toPercentEncoding("store_id")).append(querySuffix).append(QUrl::toPercentEncoding(::OpenAPI::toStringValue(store_id.stringValue())));
+    }
+    if (idempotency_key.hasValue())
+    {
+        queryStyle = "form";
+        if (queryStyle == "")
+            queryStyle = "form";
+        queryPrefix = getParamStylePrefix(queryStyle);
+        querySuffix = getParamStyleSuffix(queryStyle);
+        queryDelimiter = getParamStyleDelimiter(queryStyle, "idempotency_key", true);
+        if (fullPath.indexOf("?") > 0)
+            fullPath.append(queryPrefix);
+        else
+            fullPath.append("?");
+
+        fullPath.append(QUrl::toPercentEncoding("idempotency_key")).append(querySuffix).append(QUrl::toPercentEncoding(::OpenAPI::toStringValue(idempotency_key.stringValue())));
     }
     OAIHttpRequestWorker *worker = new OAIHttpRequestWorker(this, _manager);
     worker->setTimeOut(_timeOut);
@@ -1486,7 +1501,7 @@ void OAICartApi::cartDeleteCallback(OAIHttpRequestWorker *worker) {
     }
 }
 
-void OAICartApi::cartGiftcardAdd(const double &amount, const ::OpenAPI::OptionalParam<QString> &code, const ::OpenAPI::OptionalParam<QString> &owner_email, const ::OpenAPI::OptionalParam<QString> &recipient_email, const ::OpenAPI::OptionalParam<QString> &recipient_name, const ::OpenAPI::OptionalParam<QString> &owner_name) {
+void OAICartApi::cartGiftcardAdd(const double &amount, const ::OpenAPI::OptionalParam<QString> &code, const ::OpenAPI::OptionalParam<QString> &owner_email, const ::OpenAPI::OptionalParam<QString> &recipient_email, const ::OpenAPI::OptionalParam<QString> &recipient_name, const ::OpenAPI::OptionalParam<QString> &owner_name, const ::OpenAPI::OptionalParam<QString> &idempotency_key) {
     QString fullPath = QString(_serverConfigs["cartGiftcardAdd"][_serverIndices.value("cartGiftcardAdd")].URL()+"/cart.giftcard.add.json");
     
     if (_apiKeys.contains("StoreKeyAuth")) {
@@ -1587,6 +1602,21 @@ void OAICartApi::cartGiftcardAdd(const double &amount, const ::OpenAPI::Optional
             fullPath.append("?");
 
         fullPath.append(QUrl::toPercentEncoding("owner_name")).append(querySuffix).append(QUrl::toPercentEncoding(::OpenAPI::toStringValue(owner_name.stringValue())));
+    }
+    if (idempotency_key.hasValue())
+    {
+        queryStyle = "form";
+        if (queryStyle == "")
+            queryStyle = "form";
+        queryPrefix = getParamStylePrefix(queryStyle);
+        querySuffix = getParamStyleSuffix(queryStyle);
+        queryDelimiter = getParamStyleDelimiter(queryStyle, "idempotency_key", true);
+        if (fullPath.indexOf("?") > 0)
+            fullPath.append(queryPrefix);
+        else
+            fullPath.append("?");
+
+        fullPath.append(QUrl::toPercentEncoding("idempotency_key")).append(querySuffix).append(QUrl::toPercentEncoding(::OpenAPI::toStringValue(idempotency_key.stringValue())));
     }
     OAIHttpRequestWorker *worker = new OAIHttpRequestWorker(this, _manager);
     worker->setTimeOut(_timeOut);
@@ -2395,7 +2425,7 @@ void OAICartApi::cartMetaDataListCallback(OAIHttpRequestWorker *worker) {
     }
 }
 
-void OAICartApi::cartMetaDataSet(const QString &entity_id, const QString &key, const QString &value, const QString &r_namespace, const ::OpenAPI::OptionalParam<QString> &entity, const ::OpenAPI::OptionalParam<QString> &store_id, const ::OpenAPI::OptionalParam<QString> &lang_id) {
+void OAICartApi::cartMetaDataSet(const QString &entity_id, const QString &key, const QString &value, const QString &r_namespace, const ::OpenAPI::OptionalParam<QString> &entity, const ::OpenAPI::OptionalParam<QString> &store_id, const ::OpenAPI::OptionalParam<QString> &lang_id, const ::OpenAPI::OptionalParam<QString> &idempotency_key) {
     QString fullPath = QString(_serverConfigs["cartMetaDataSet"][_serverIndices.value("cartMetaDataSet")].URL()+"/cart.meta_data.set.json");
     
     if (_apiKeys.contains("StoreKeyAuth")) {
@@ -2511,6 +2541,21 @@ void OAICartApi::cartMetaDataSet(const QString &entity_id, const QString &key, c
             fullPath.append("?");
 
         fullPath.append(QUrl::toPercentEncoding("lang_id")).append(querySuffix).append(QUrl::toPercentEncoding(::OpenAPI::toStringValue(lang_id.stringValue())));
+    }
+    if (idempotency_key.hasValue())
+    {
+        queryStyle = "form";
+        if (queryStyle == "")
+            queryStyle = "form";
+        queryPrefix = getParamStylePrefix(queryStyle);
+        querySuffix = getParamStyleSuffix(queryStyle);
+        queryDelimiter = getParamStyleDelimiter(queryStyle, "idempotency_key", true);
+        if (fullPath.indexOf("?") > 0)
+            fullPath.append(queryPrefix);
+        else
+            fullPath.append("?");
+
+        fullPath.append(QUrl::toPercentEncoding("idempotency_key")).append(querySuffix).append(QUrl::toPercentEncoding(::OpenAPI::toStringValue(idempotency_key.stringValue())));
     }
     OAIHttpRequestWorker *worker = new OAIHttpRequestWorker(this, _manager);
     worker->setTimeOut(_timeOut);
@@ -2935,7 +2980,7 @@ void OAICartApi::cartPluginListCallback(OAIHttpRequestWorker *worker) {
     }
 }
 
-void OAICartApi::cartScriptAdd(const ::OpenAPI::OptionalParam<QString> &name, const ::OpenAPI::OptionalParam<QString> &description, const ::OpenAPI::OptionalParam<QString> &html, const ::OpenAPI::OptionalParam<QString> &src, const ::OpenAPI::OptionalParam<QString> &load_method, const ::OpenAPI::OptionalParam<QString> &scope, const ::OpenAPI::OptionalParam<QString> &events, const ::OpenAPI::OptionalParam<QString> &store_id) {
+void OAICartApi::cartScriptAdd(const ::OpenAPI::OptionalParam<QString> &name, const ::OpenAPI::OptionalParam<QString> &description, const ::OpenAPI::OptionalParam<QString> &html, const ::OpenAPI::OptionalParam<QString> &src, const ::OpenAPI::OptionalParam<QString> &load_method, const ::OpenAPI::OptionalParam<QString> &scope, const ::OpenAPI::OptionalParam<QString> &events, const ::OpenAPI::OptionalParam<QString> &store_id, const ::OpenAPI::OptionalParam<QString> &idempotency_key) {
     QString fullPath = QString(_serverConfigs["cartScriptAdd"][_serverIndices.value("cartScriptAdd")].URL()+"/cart.script.add.json");
     
     if (_apiKeys.contains("StoreKeyAuth")) {
@@ -3066,6 +3111,21 @@ void OAICartApi::cartScriptAdd(const ::OpenAPI::OptionalParam<QString> &name, co
             fullPath.append("?");
 
         fullPath.append(QUrl::toPercentEncoding("store_id")).append(querySuffix).append(QUrl::toPercentEncoding(::OpenAPI::toStringValue(store_id.stringValue())));
+    }
+    if (idempotency_key.hasValue())
+    {
+        queryStyle = "form";
+        if (queryStyle == "")
+            queryStyle = "form";
+        queryPrefix = getParamStylePrefix(queryStyle);
+        querySuffix = getParamStyleSuffix(queryStyle);
+        queryDelimiter = getParamStyleDelimiter(queryStyle, "idempotency_key", true);
+        if (fullPath.indexOf("?") > 0)
+            fullPath.append(queryPrefix);
+        else
+            fullPath.append("?");
+
+        fullPath.append(QUrl::toPercentEncoding("idempotency_key")).append(querySuffix).append(QUrl::toPercentEncoding(::OpenAPI::toStringValue(idempotency_key.stringValue())));
     }
     OAIHttpRequestWorker *worker = new OAIHttpRequestWorker(this, _manager);
     worker->setTimeOut(_timeOut);

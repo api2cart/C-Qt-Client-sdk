@@ -4123,7 +4123,7 @@ void OAIOrderApi::orderTransactionListCallback(OAIHttpRequestWorker *worker) {
     }
 }
 
-void OAIOrderApi::orderUpdate(const QString &order_id, const ::OpenAPI::OptionalParam<QString> &store_id, const ::OpenAPI::OptionalParam<QString> &order_status, const ::OpenAPI::OptionalParam<QString> &financial_status, const ::OpenAPI::OptionalParam<QString> &fulfillment_status, const ::OpenAPI::OptionalParam<QString> &cancellation_reason, const ::OpenAPI::OptionalParam<QString> &order_payment_method, const ::OpenAPI::OptionalParam<QString> &comment, const ::OpenAPI::OptionalParam<QString> &admin_comment, const ::OpenAPI::OptionalParam<QString> &admin_private_comment, const ::OpenAPI::OptionalParam<QString> &invoice_admin_comment, const ::OpenAPI::OptionalParam<QString> &date_modified, const ::OpenAPI::OptionalParam<QString> &date_finished, const ::OpenAPI::OptionalParam<bool> &send_notifications, const ::OpenAPI::OptionalParam<bool> &create_invoice, const ::OpenAPI::OptionalParam<QString> &origin, const ::OpenAPI::OptionalParam<QString> &tags) {
+void OAIOrderApi::orderUpdate(const QString &order_id, const ::OpenAPI::OptionalParam<QString> &store_id, const ::OpenAPI::OptionalParam<QString> &order_status, const ::OpenAPI::OptionalParam<QString> &financial_status, const ::OpenAPI::OptionalParam<QString> &fulfillment_status, const ::OpenAPI::OptionalParam<QString> &cancellation_reason, const ::OpenAPI::OptionalParam<QString> &order_payment_method, const ::OpenAPI::OptionalParam<QString> &comment, const ::OpenAPI::OptionalParam<QString> &admin_comment, const ::OpenAPI::OptionalParam<QString> &admin_private_comment, const ::OpenAPI::OptionalParam<QString> &invoice_admin_comment, const ::OpenAPI::OptionalParam<QString> &date_modified, const ::OpenAPI::OptionalParam<QString> &date_finished, const ::OpenAPI::OptionalParam<bool> &send_notifications, const ::OpenAPI::OptionalParam<bool> &create_invoice, const ::OpenAPI::OptionalParam<QString> &origin, const ::OpenAPI::OptionalParam<QString> &tags, const ::OpenAPI::OptionalParam<QString> &idempotency_key) {
     QString fullPath = QString(_serverConfigs["orderUpdate"][_serverIndices.value("orderUpdate")].URL()+"/order.update.json");
     
     if (_apiKeys.contains("StoreKeyAuth")) {
@@ -4389,6 +4389,21 @@ void OAIOrderApi::orderUpdate(const QString &order_id, const ::OpenAPI::Optional
             fullPath.append("?");
 
         fullPath.append(QUrl::toPercentEncoding("tags")).append(querySuffix).append(QUrl::toPercentEncoding(::OpenAPI::toStringValue(tags.stringValue())));
+    }
+    if (idempotency_key.hasValue())
+    {
+        queryStyle = "form";
+        if (queryStyle == "")
+            queryStyle = "form";
+        queryPrefix = getParamStylePrefix(queryStyle);
+        querySuffix = getParamStyleSuffix(queryStyle);
+        queryDelimiter = getParamStyleDelimiter(queryStyle, "idempotency_key", true);
+        if (fullPath.indexOf("?") > 0)
+            fullPath.append(queryPrefix);
+        else
+            fullPath.append("?");
+
+        fullPath.append(QUrl::toPercentEncoding("idempotency_key")).append(querySuffix).append(QUrl::toPercentEncoding(::OpenAPI::toStringValue(idempotency_key.stringValue())));
     }
     OAIHttpRequestWorker *worker = new OAIHttpRequestWorker(this, _manager);
     worker->setTimeOut(_timeOut);

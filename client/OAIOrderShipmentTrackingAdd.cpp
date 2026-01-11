@@ -57,6 +57,9 @@ void OAIOrderShipmentTrackingAdd::initializeModel() {
 
     m_send_notifications_isSet = false;
     m_send_notifications_isValid = false;
+
+    m_idempotency_key_isSet = false;
+    m_idempotency_key_isValid = false;
 }
 
 void OAIOrderShipmentTrackingAdd::fromJson(QString jsonString) {
@@ -91,6 +94,9 @@ void OAIOrderShipmentTrackingAdd::fromJsonObject(QJsonObject json) {
 
     m_send_notifications_isValid = ::OpenAPI::fromJsonValue(m_send_notifications, json[QString("send_notifications")]);
     m_send_notifications_isSet = !json[QString("send_notifications")].isNull() && m_send_notifications_isValid;
+
+    m_idempotency_key_isValid = ::OpenAPI::fromJsonValue(m_idempotency_key, json[QString("idempotency_key")]);
+    m_idempotency_key_isSet = !json[QString("idempotency_key")].isNull() && m_idempotency_key_isValid;
 }
 
 QString OAIOrderShipmentTrackingAdd::asJson() const {
@@ -125,6 +131,9 @@ QJsonObject OAIOrderShipmentTrackingAdd::asJsonObject() const {
     }
     if (m_send_notifications_isSet) {
         obj.insert(QString("send_notifications"), ::OpenAPI::toJsonValue(m_send_notifications));
+    }
+    if (m_idempotency_key_isSet) {
+        obj.insert(QString("idempotency_key"), ::OpenAPI::toJsonValue(m_idempotency_key));
     }
     return obj;
 }
@@ -257,6 +266,22 @@ bool OAIOrderShipmentTrackingAdd::is_send_notifications_Valid() const{
     return m_send_notifications_isValid;
 }
 
+QString OAIOrderShipmentTrackingAdd::getIdempotencyKey() const {
+    return m_idempotency_key;
+}
+void OAIOrderShipmentTrackingAdd::setIdempotencyKey(const QString &idempotency_key) {
+    m_idempotency_key = idempotency_key;
+    m_idempotency_key_isSet = true;
+}
+
+bool OAIOrderShipmentTrackingAdd::is_idempotency_key_Set() const{
+    return m_idempotency_key_isSet;
+}
+
+bool OAIOrderShipmentTrackingAdd::is_idempotency_key_Valid() const{
+    return m_idempotency_key_isValid;
+}
+
 bool OAIOrderShipmentTrackingAdd::isSet() const {
     bool isObjectUpdated = false;
     do {
@@ -296,6 +321,11 @@ bool OAIOrderShipmentTrackingAdd::isSet() const {
         }
 
         if (m_send_notifications_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_idempotency_key_isSet) {
             isObjectUpdated = true;
             break;
         }

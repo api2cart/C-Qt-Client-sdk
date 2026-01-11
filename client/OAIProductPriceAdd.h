@@ -57,6 +57,11 @@ public:
     bool is_store_id_Set() const;
     bool is_store_id_Valid() const;
 
+    QString getIdempotencyKey() const;
+    void setIdempotencyKey(const QString &idempotency_key);
+    bool is_idempotency_key_Set() const;
+    bool is_idempotency_key_Valid() const;
+
     virtual bool isSet() const override;
     virtual bool isValid() const override;
 
@@ -74,6 +79,10 @@ private:
     QString m_store_id;
     bool m_store_id_isSet;
     bool m_store_id_isValid;
+
+    QString m_idempotency_key;
+    bool m_idempotency_key_isSet;
+    bool m_idempotency_key_isValid;
 };
 
 } // namespace OpenAPI

@@ -369,7 +369,7 @@ void OAIBasketApi::basketInfoCallback(OAIHttpRequestWorker *worker) {
     }
 }
 
-void OAIBasketApi::basketItemAdd(const QString &customer_id, const QString &product_id, const ::OpenAPI::OptionalParam<QString> &variant_id, const ::OpenAPI::OptionalParam<double> &quantity, const ::OpenAPI::OptionalParam<QString> &store_id) {
+void OAIBasketApi::basketItemAdd(const QString &customer_id, const QString &product_id, const ::OpenAPI::OptionalParam<QString> &variant_id, const ::OpenAPI::OptionalParam<double> &quantity, const ::OpenAPI::OptionalParam<QString> &store_id, const ::OpenAPI::OptionalParam<QString> &idempotency_key) {
     QString fullPath = QString(_serverConfigs["basketItemAdd"][_serverIndices.value("basketItemAdd")].URL()+"/basket.item.add.json");
     
     if (_apiKeys.contains("StoreKeyAuth")) {
@@ -456,6 +456,21 @@ void OAIBasketApi::basketItemAdd(const QString &customer_id, const QString &prod
 
         fullPath.append(QUrl::toPercentEncoding("store_id")).append(querySuffix).append(QUrl::toPercentEncoding(::OpenAPI::toStringValue(store_id.stringValue())));
     }
+    if (idempotency_key.hasValue())
+    {
+        queryStyle = "form";
+        if (queryStyle == "")
+            queryStyle = "form";
+        queryPrefix = getParamStylePrefix(queryStyle);
+        querySuffix = getParamStyleSuffix(queryStyle);
+        queryDelimiter = getParamStyleDelimiter(queryStyle, "idempotency_key", true);
+        if (fullPath.indexOf("?") > 0)
+            fullPath.append(queryPrefix);
+        else
+            fullPath.append("?");
+
+        fullPath.append(QUrl::toPercentEncoding("idempotency_key")).append(querySuffix).append(QUrl::toPercentEncoding(::OpenAPI::toStringValue(idempotency_key.stringValue())));
+    }
     OAIHttpRequestWorker *worker = new OAIHttpRequestWorker(this, _manager);
     worker->setTimeOut(_timeOut);
     worker->setWorkingDirectory(_workingDirectory);
@@ -523,7 +538,7 @@ void OAIBasketApi::basketItemAddCallback(OAIHttpRequestWorker *worker) {
     }
 }
 
-void OAIBasketApi::basketLiveShippingServiceCreate(const QString &name, const QString &callback, const ::OpenAPI::OptionalParam<QString> &store_id) {
+void OAIBasketApi::basketLiveShippingServiceCreate(const QString &name, const QString &callback, const ::OpenAPI::OptionalParam<QString> &store_id, const ::OpenAPI::OptionalParam<QString> &idempotency_key) {
     QString fullPath = QString(_serverConfigs["basketLiveShippingServiceCreate"][_serverIndices.value("basketLiveShippingServiceCreate")].URL()+"/basket.live_shipping_service.create.json");
     
     if (_apiKeys.contains("StoreKeyAuth")) {
@@ -579,6 +594,21 @@ void OAIBasketApi::basketLiveShippingServiceCreate(const QString &name, const QS
             fullPath.append("?");
 
         fullPath.append(QUrl::toPercentEncoding("store_id")).append(querySuffix).append(QUrl::toPercentEncoding(::OpenAPI::toStringValue(store_id.stringValue())));
+    }
+    if (idempotency_key.hasValue())
+    {
+        queryStyle = "form";
+        if (queryStyle == "")
+            queryStyle = "form";
+        queryPrefix = getParamStylePrefix(queryStyle);
+        querySuffix = getParamStyleSuffix(queryStyle);
+        queryDelimiter = getParamStyleDelimiter(queryStyle, "idempotency_key", true);
+        if (fullPath.indexOf("?") > 0)
+            fullPath.append(queryPrefix);
+        else
+            fullPath.append("?");
+
+        fullPath.append(QUrl::toPercentEncoding("idempotency_key")).append(querySuffix).append(QUrl::toPercentEncoding(::OpenAPI::toStringValue(idempotency_key.stringValue())));
     }
     OAIHttpRequestWorker *worker = new OAIHttpRequestWorker(this, _manager);
     worker->setTimeOut(_timeOut);

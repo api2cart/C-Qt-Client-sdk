@@ -57,6 +57,11 @@ public:
     bool is_tax_rates_Set() const;
     bool is_tax_rates_Valid() const;
 
+    QString getIdempotencyKey() const;
+    void setIdempotencyKey(const QString &idempotency_key);
+    bool is_idempotency_key_Set() const;
+    bool is_idempotency_key_Valid() const;
+
     virtual bool isSet() const override;
     virtual bool isValid() const override;
 
@@ -74,6 +79,10 @@ private:
     QList<OAIProductTaxAdd_tax_rates_inner> m_tax_rates;
     bool m_tax_rates_isSet;
     bool m_tax_rates_isValid;
+
+    QString m_idempotency_key;
+    bool m_idempotency_key_isSet;
+    bool m_idempotency_key_isValid;
 };
 
 } // namespace OpenAPI

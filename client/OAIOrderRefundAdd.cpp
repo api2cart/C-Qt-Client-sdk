@@ -63,6 +63,9 @@ void OAIOrderRefundAdd::initializeModel() {
 
     m_is_online_isSet = false;
     m_is_online_isValid = false;
+
+    m_idempotency_key_isSet = false;
+    m_idempotency_key_isValid = false;
 }
 
 void OAIOrderRefundAdd::fromJson(QString jsonString) {
@@ -103,6 +106,9 @@ void OAIOrderRefundAdd::fromJsonObject(QJsonObject json) {
 
     m_is_online_isValid = ::OpenAPI::fromJsonValue(m_is_online, json[QString("is_online")]);
     m_is_online_isSet = !json[QString("is_online")].isNull() && m_is_online_isValid;
+
+    m_idempotency_key_isValid = ::OpenAPI::fromJsonValue(m_idempotency_key, json[QString("idempotency_key")]);
+    m_idempotency_key_isSet = !json[QString("idempotency_key")].isNull() && m_idempotency_key_isValid;
 }
 
 QString OAIOrderRefundAdd::asJson() const {
@@ -143,6 +149,9 @@ QJsonObject OAIOrderRefundAdd::asJsonObject() const {
     }
     if (m_is_online_isSet) {
         obj.insert(QString("is_online"), ::OpenAPI::toJsonValue(m_is_online));
+    }
+    if (m_idempotency_key_isSet) {
+        obj.insert(QString("idempotency_key"), ::OpenAPI::toJsonValue(m_idempotency_key));
     }
     return obj;
 }
@@ -307,6 +316,22 @@ bool OAIOrderRefundAdd::is_is_online_Valid() const{
     return m_is_online_isValid;
 }
 
+QString OAIOrderRefundAdd::getIdempotencyKey() const {
+    return m_idempotency_key;
+}
+void OAIOrderRefundAdd::setIdempotencyKey(const QString &idempotency_key) {
+    m_idempotency_key = idempotency_key;
+    m_idempotency_key_isSet = true;
+}
+
+bool OAIOrderRefundAdd::is_idempotency_key_Set() const{
+    return m_idempotency_key_isSet;
+}
+
+bool OAIOrderRefundAdd::is_idempotency_key_Valid() const{
+    return m_idempotency_key_isValid;
+}
+
 bool OAIOrderRefundAdd::isSet() const {
     bool isObjectUpdated = false;
     do {
@@ -356,6 +381,11 @@ bool OAIOrderRefundAdd::isSet() const {
         }
 
         if (m_is_online_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_idempotency_key_isSet) {
             isObjectUpdated = true;
             break;
         }

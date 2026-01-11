@@ -868,7 +868,7 @@ void OAICustomerApi::customerCountCallback(OAIHttpRequestWorker *worker) {
     }
 }
 
-void OAICustomerApi::customerDelete(const QString &id) {
+void OAICustomerApi::customerDelete(const QString &id, const ::OpenAPI::OptionalParam<QString> &store_id) {
     QString fullPath = QString(_serverConfigs["customerDelete"][_serverIndices.value("customerDelete")].URL()+"/customer.delete.json");
     
     if (_apiKeys.contains("StoreKeyAuth")) {
@@ -894,6 +894,21 @@ void OAICustomerApi::customerDelete(const QString &id) {
             fullPath.append("?");
 
         fullPath.append(QUrl::toPercentEncoding("id")).append(querySuffix).append(QUrl::toPercentEncoding(::OpenAPI::toStringValue(id)));
+    }
+    if (store_id.hasValue())
+    {
+        queryStyle = "form";
+        if (queryStyle == "")
+            queryStyle = "form";
+        queryPrefix = getParamStylePrefix(queryStyle);
+        querySuffix = getParamStyleSuffix(queryStyle);
+        queryDelimiter = getParamStyleDelimiter(queryStyle, "store_id", true);
+        if (fullPath.indexOf("?") > 0)
+            fullPath.append(queryPrefix);
+        else
+            fullPath.append("?");
+
+        fullPath.append(QUrl::toPercentEncoding("store_id")).append(querySuffix).append(QUrl::toPercentEncoding(::OpenAPI::toStringValue(store_id.stringValue())));
     }
     OAIHttpRequestWorker *worker = new OAIHttpRequestWorker(this, _manager);
     worker->setTimeOut(_timeOut);
@@ -1116,7 +1131,7 @@ void OAICustomerApi::customerFindCallback(OAIHttpRequestWorker *worker) {
     }
 }
 
-void OAICustomerApi::customerGroupAdd(const QString &name, const ::OpenAPI::OptionalParam<QString> &store_id, const ::OpenAPI::OptionalParam<QString> &stores_ids) {
+void OAICustomerApi::customerGroupAdd(const QString &name, const ::OpenAPI::OptionalParam<QString> &store_id, const ::OpenAPI::OptionalParam<QString> &stores_ids, const ::OpenAPI::OptionalParam<QString> &idempotency_key) {
     QString fullPath = QString(_serverConfigs["customerGroupAdd"][_serverIndices.value("customerGroupAdd")].URL()+"/customer.group.add.json");
     
     if (_apiKeys.contains("StoreKeyAuth")) {
@@ -1172,6 +1187,21 @@ void OAICustomerApi::customerGroupAdd(const QString &name, const ::OpenAPI::Opti
             fullPath.append("?");
 
         fullPath.append(QUrl::toPercentEncoding("stores_ids")).append(querySuffix).append(QUrl::toPercentEncoding(::OpenAPI::toStringValue(stores_ids.stringValue())));
+    }
+    if (idempotency_key.hasValue())
+    {
+        queryStyle = "form";
+        if (queryStyle == "")
+            queryStyle = "form";
+        queryPrefix = getParamStylePrefix(queryStyle);
+        querySuffix = getParamStyleSuffix(queryStyle);
+        queryDelimiter = getParamStyleDelimiter(queryStyle, "idempotency_key", true);
+        if (fullPath.indexOf("?") > 0)
+            fullPath.append(queryPrefix);
+        else
+            fullPath.append("?");
+
+        fullPath.append(QUrl::toPercentEncoding("idempotency_key")).append(querySuffix).append(QUrl::toPercentEncoding(::OpenAPI::toStringValue(idempotency_key.stringValue())));
     }
     OAIHttpRequestWorker *worker = new OAIHttpRequestWorker(this, _manager);
     worker->setTimeOut(_timeOut);

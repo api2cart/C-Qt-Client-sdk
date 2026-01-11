@@ -96,6 +96,9 @@ void OAICustomerAddressAdd::initializeModel() {
 
     m_alias_isSet = false;
     m_alias_isValid = false;
+
+    m_idempotency_key_isSet = false;
+    m_idempotency_key_isValid = false;
 }
 
 void OAICustomerAddressAdd::fromJson(QString jsonString) {
@@ -169,6 +172,9 @@ void OAICustomerAddressAdd::fromJsonObject(QJsonObject json) {
 
     m_alias_isValid = ::OpenAPI::fromJsonValue(m_alias, json[QString("alias")]);
     m_alias_isSet = !json[QString("alias")].isNull() && m_alias_isValid;
+
+    m_idempotency_key_isValid = ::OpenAPI::fromJsonValue(m_idempotency_key, json[QString("idempotency_key")]);
+    m_idempotency_key_isSet = !json[QString("idempotency_key")].isNull() && m_idempotency_key_isValid;
 }
 
 QString OAICustomerAddressAdd::asJson() const {
@@ -242,6 +248,9 @@ QJsonObject OAICustomerAddressAdd::asJsonObject() const {
     }
     if (m_alias_isSet) {
         obj.insert(QString("alias"), ::OpenAPI::toJsonValue(m_alias));
+    }
+    if (m_idempotency_key_isSet) {
+        obj.insert(QString("idempotency_key"), ::OpenAPI::toJsonValue(m_idempotency_key));
     }
     return obj;
 }
@@ -582,6 +591,22 @@ bool OAICustomerAddressAdd::is_alias_Valid() const{
     return m_alias_isValid;
 }
 
+QString OAICustomerAddressAdd::getIdempotencyKey() const {
+    return m_idempotency_key;
+}
+void OAICustomerAddressAdd::setIdempotencyKey(const QString &idempotency_key) {
+    m_idempotency_key = idempotency_key;
+    m_idempotency_key_isSet = true;
+}
+
+bool OAICustomerAddressAdd::is_idempotency_key_Set() const{
+    return m_idempotency_key_isSet;
+}
+
+bool OAICustomerAddressAdd::is_idempotency_key_Valid() const{
+    return m_idempotency_key_isValid;
+}
+
 bool OAICustomerAddressAdd::isSet() const {
     bool isObjectUpdated = false;
     do {
@@ -686,6 +711,11 @@ bool OAICustomerAddressAdd::isSet() const {
         }
 
         if (m_alias_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_idempotency_key_isSet) {
             isObjectUpdated = true;
             break;
         }

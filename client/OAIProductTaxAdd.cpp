@@ -42,6 +42,9 @@ void OAIProductTaxAdd::initializeModel() {
 
     m_tax_rates_isSet = false;
     m_tax_rates_isValid = false;
+
+    m_idempotency_key_isSet = false;
+    m_idempotency_key_isValid = false;
 }
 
 void OAIProductTaxAdd::fromJson(QString jsonString) {
@@ -61,6 +64,9 @@ void OAIProductTaxAdd::fromJsonObject(QJsonObject json) {
 
     m_tax_rates_isValid = ::OpenAPI::fromJsonValue(m_tax_rates, json[QString("tax_rates")]);
     m_tax_rates_isSet = !json[QString("tax_rates")].isNull() && m_tax_rates_isValid;
+
+    m_idempotency_key_isValid = ::OpenAPI::fromJsonValue(m_idempotency_key, json[QString("idempotency_key")]);
+    m_idempotency_key_isSet = !json[QString("idempotency_key")].isNull() && m_idempotency_key_isValid;
 }
 
 QString OAIProductTaxAdd::asJson() const {
@@ -80,6 +86,9 @@ QJsonObject OAIProductTaxAdd::asJsonObject() const {
     }
     if (m_tax_rates.size() > 0) {
         obj.insert(QString("tax_rates"), ::OpenAPI::toJsonValue(m_tax_rates));
+    }
+    if (m_idempotency_key_isSet) {
+        obj.insert(QString("idempotency_key"), ::OpenAPI::toJsonValue(m_idempotency_key));
     }
     return obj;
 }
@@ -132,6 +141,22 @@ bool OAIProductTaxAdd::is_tax_rates_Valid() const{
     return m_tax_rates_isValid;
 }
 
+QString OAIProductTaxAdd::getIdempotencyKey() const {
+    return m_idempotency_key;
+}
+void OAIProductTaxAdd::setIdempotencyKey(const QString &idempotency_key) {
+    m_idempotency_key = idempotency_key;
+    m_idempotency_key_isSet = true;
+}
+
+bool OAIProductTaxAdd::is_idempotency_key_Set() const{
+    return m_idempotency_key_isSet;
+}
+
+bool OAIProductTaxAdd::is_idempotency_key_Valid() const{
+    return m_idempotency_key_isValid;
+}
+
 bool OAIProductTaxAdd::isSet() const {
     bool isObjectUpdated = false;
     do {
@@ -146,6 +171,11 @@ bool OAIProductTaxAdd::isSet() const {
         }
 
         if (m_tax_rates.size() > 0) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_idempotency_key_isSet) {
             isObjectUpdated = true;
             break;
         }

@@ -106,8 +106,9 @@ public:
     * @param[in]  include_tax bool [optional]
     * @param[in]  include_shipping bool [optional]
     * @param[in]  store_id QString [optional]
+    * @param[in]  idempotency_key QString [optional]
     */
-    virtual void cartCouponConditionAdd(const QString &coupon_id, const QString &entity, const QString &key, const QString &r_operator, const QString &value, const ::OpenAPI::OptionalParam<QString> &target = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<bool> &include_tax = ::OpenAPI::OptionalParam<bool>(), const ::OpenAPI::OptionalParam<bool> &include_shipping = ::OpenAPI::OptionalParam<bool>(), const ::OpenAPI::OptionalParam<QString> &store_id = ::OpenAPI::OptionalParam<QString>());
+    virtual void cartCouponConditionAdd(const QString &coupon_id, const QString &entity, const QString &key, const QString &r_operator, const QString &value, const ::OpenAPI::OptionalParam<QString> &target = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<bool> &include_tax = ::OpenAPI::OptionalParam<bool>(), const ::OpenAPI::OptionalParam<bool> &include_shipping = ::OpenAPI::OptionalParam<bool>(), const ::OpenAPI::OptionalParam<QString> &store_id = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &idempotency_key = ::OpenAPI::OptionalParam<QString>());
 
     /**
     * @param[in]  store_id QString [optional]
@@ -156,8 +157,9 @@ public:
     * @param[in]  recipient_email QString [optional]
     * @param[in]  recipient_name QString [optional]
     * @param[in]  owner_name QString [optional]
+    * @param[in]  idempotency_key QString [optional]
     */
-    virtual void cartGiftcardAdd(const double &amount, const ::OpenAPI::OptionalParam<QString> &code = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &owner_email = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &recipient_email = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &recipient_name = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &owner_name = ::OpenAPI::OptionalParam<QString>());
+    virtual void cartGiftcardAdd(const double &amount, const ::OpenAPI::OptionalParam<QString> &code = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &owner_email = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &recipient_email = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &recipient_name = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &owner_name = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &idempotency_key = ::OpenAPI::OptionalParam<QString>());
 
     /**
     * @param[in]  store_id QString [optional]
@@ -210,8 +212,9 @@ public:
     * @param[in]  entity QString [optional]
     * @param[in]  store_id QString [optional]
     * @param[in]  lang_id QString [optional]
+    * @param[in]  idempotency_key QString [optional]
     */
-    virtual void cartMetaDataSet(const QString &entity_id, const QString &key, const QString &value, const QString &r_namespace, const ::OpenAPI::OptionalParam<QString> &entity = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &store_id = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &lang_id = ::OpenAPI::OptionalParam<QString>());
+    virtual void cartMetaDataSet(const QString &entity_id, const QString &key, const QString &value, const QString &r_namespace, const ::OpenAPI::OptionalParam<QString> &entity = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &store_id = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &lang_id = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &idempotency_key = ::OpenAPI::OptionalParam<QString>());
 
     /**
     * @param[in]  entity_id QString [required]
@@ -241,8 +244,9 @@ public:
     * @param[in]  scope QString [optional]
     * @param[in]  events QString [optional]
     * @param[in]  store_id QString [optional]
+    * @param[in]  idempotency_key QString [optional]
     */
-    virtual void cartScriptAdd(const ::OpenAPI::OptionalParam<QString> &name = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &description = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &html = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &src = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &load_method = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &scope = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &events = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &store_id = ::OpenAPI::OptionalParam<QString>());
+    virtual void cartScriptAdd(const ::OpenAPI::OptionalParam<QString> &name = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &description = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &html = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &src = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &load_method = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &scope = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &events = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &store_id = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &idempotency_key = ::OpenAPI::OptionalParam<QString>());
 
     /**
     * @param[in]  id QString [required]

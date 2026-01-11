@@ -112,8 +112,9 @@ public:
 
     /**
     * @param[in]  id QString [required]
+    * @param[in]  store_id QString [optional]
     */
-    virtual void customerDelete(const QString &id);
+    virtual void customerDelete(const QString &id, const ::OpenAPI::OptionalParam<QString> &store_id = ::OpenAPI::OptionalParam<QString>());
 
     /**
     * @param[in]  find_value QString [required]
@@ -128,8 +129,9 @@ public:
     * @param[in]  name QString [required]
     * @param[in]  store_id QString [optional]
     * @param[in]  stores_ids QString [optional]
+    * @param[in]  idempotency_key QString [optional]
     */
-    virtual void customerGroupAdd(const QString &name, const ::OpenAPI::OptionalParam<QString> &store_id = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &stores_ids = ::OpenAPI::OptionalParam<QString>());
+    virtual void customerGroupAdd(const QString &name, const ::OpenAPI::OptionalParam<QString> &store_id = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &stores_ids = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &idempotency_key = ::OpenAPI::OptionalParam<QString>());
 
     /**
     * @param[in]  start qint32 [optional]

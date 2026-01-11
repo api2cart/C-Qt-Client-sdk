@@ -312,6 +312,9 @@ void OAIProductUpdate::initializeModel() {
 
     m_min_order_quantity_isSet = false;
     m_min_order_quantity_isValid = false;
+
+    m_idempotency_key_isSet = false;
+    m_idempotency_key_isValid = false;
 }
 
 void OAIProductUpdate::fromJson(QString jsonString) {
@@ -601,6 +604,9 @@ void OAIProductUpdate::fromJsonObject(QJsonObject json) {
 
     m_min_order_quantity_isValid = ::OpenAPI::fromJsonValue(m_min_order_quantity, json[QString("min_order_quantity")]);
     m_min_order_quantity_isSet = !json[QString("min_order_quantity")].isNull() && m_min_order_quantity_isValid;
+
+    m_idempotency_key_isValid = ::OpenAPI::fromJsonValue(m_idempotency_key, json[QString("idempotency_key")]);
+    m_idempotency_key_isSet = !json[QString("idempotency_key")].isNull() && m_idempotency_key_isValid;
 }
 
 QString OAIProductUpdate::asJson() const {
@@ -890,6 +896,9 @@ QJsonObject OAIProductUpdate::asJsonObject() const {
     }
     if (m_min_order_quantity_isSet) {
         obj.insert(QString("min_order_quantity"), ::OpenAPI::toJsonValue(m_min_order_quantity));
+    }
+    if (m_idempotency_key_isSet) {
+        obj.insert(QString("idempotency_key"), ::OpenAPI::toJsonValue(m_idempotency_key));
     }
     return obj;
 }
@@ -2382,6 +2391,22 @@ bool OAIProductUpdate::is_min_order_quantity_Valid() const{
     return m_min_order_quantity_isValid;
 }
 
+QString OAIProductUpdate::getIdempotencyKey() const {
+    return m_idempotency_key;
+}
+void OAIProductUpdate::setIdempotencyKey(const QString &idempotency_key) {
+    m_idempotency_key = idempotency_key;
+    m_idempotency_key_isSet = true;
+}
+
+bool OAIProductUpdate::is_idempotency_key_Set() const{
+    return m_idempotency_key_isSet;
+}
+
+bool OAIProductUpdate::is_idempotency_key_Valid() const{
+    return m_idempotency_key_isValid;
+}
+
 bool OAIProductUpdate::isSet() const {
     bool isObjectUpdated = false;
     do {
@@ -2846,6 +2871,11 @@ bool OAIProductUpdate::isSet() const {
         }
 
         if (m_min_order_quantity_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_idempotency_key_isSet) {
             isObjectUpdated = true;
             break;
         }

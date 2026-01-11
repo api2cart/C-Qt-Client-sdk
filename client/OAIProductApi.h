@@ -144,8 +144,9 @@ public:
     * @param[in]  value_id qint32 [optional]
     * @param[in]  lang_id QString [optional]
     * @param[in]  store_id QString [optional]
+    * @param[in]  idempotency_key QString [optional]
     */
-    virtual void productAttributeValueSet(const QString &product_id, const ::OpenAPI::OptionalParam<QString> &attribute_id = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &attribute_group_id = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &attribute_name = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &value = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<qint32> &value_id = ::OpenAPI::OptionalParam<qint32>(), const ::OpenAPI::OptionalParam<QString> &lang_id = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &store_id = ::OpenAPI::OptionalParam<QString>());
+    virtual void productAttributeValueSet(const QString &product_id, const ::OpenAPI::OptionalParam<QString> &attribute_id = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &attribute_group_id = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &attribute_name = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &value = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<qint32> &value_id = ::OpenAPI::OptionalParam<qint32>(), const ::OpenAPI::OptionalParam<QString> &lang_id = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &store_id = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &idempotency_key = ::OpenAPI::OptionalParam<QString>());
 
     /**
     * @param[in]  product_id QString [required]
@@ -154,8 +155,9 @@ public:
     * @param[in]  include_default bool [optional]
     * @param[in]  reindex bool [optional]
     * @param[in]  clear_cache bool [optional]
+    * @param[in]  idempotency_key QString [optional]
     */
-    virtual void productAttributeValueUnset(const QString &product_id, const QString &attribute_id, const ::OpenAPI::OptionalParam<QString> &store_id = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<bool> &include_default = ::OpenAPI::OptionalParam<bool>(), const ::OpenAPI::OptionalParam<bool> &reindex = ::OpenAPI::OptionalParam<bool>(), const ::OpenAPI::OptionalParam<bool> &clear_cache = ::OpenAPI::OptionalParam<bool>());
+    virtual void productAttributeValueUnset(const QString &product_id, const QString &attribute_id, const ::OpenAPI::OptionalParam<QString> &store_id = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<bool> &include_default = ::OpenAPI::OptionalParam<bool>(), const ::OpenAPI::OptionalParam<bool> &reindex = ::OpenAPI::OptionalParam<bool>(), const ::OpenAPI::OptionalParam<bool> &clear_cache = ::OpenAPI::OptionalParam<bool>(), const ::OpenAPI::OptionalParam<QString> &idempotency_key = ::OpenAPI::OptionalParam<QString>());
 
     /**
     * @param[in]  start qint32 [optional]
@@ -263,8 +265,9 @@ public:
     * @param[in]  symbol_left QString [optional]
     * @param[in]  symbol_right QString [optional]
     * @param[in]  r_default bool [optional]
+    * @param[in]  idempotency_key QString [optional]
     */
-    virtual void productCurrencyAdd(const QString &iso3, const double &rate, const ::OpenAPI::OptionalParam<QString> &name = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<bool> &avail = ::OpenAPI::OptionalParam<bool>(), const ::OpenAPI::OptionalParam<QString> &symbol_left = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &symbol_right = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<bool> &r_default = ::OpenAPI::OptionalParam<bool>());
+    virtual void productCurrencyAdd(const QString &iso3, const double &rate, const ::OpenAPI::OptionalParam<QString> &name = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<bool> &avail = ::OpenAPI::OptionalParam<bool>(), const ::OpenAPI::OptionalParam<QString> &symbol_left = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &symbol_right = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<bool> &r_default = ::OpenAPI::OptionalParam<bool>(), const ::OpenAPI::OptionalParam<QString> &idempotency_key = ::OpenAPI::OptionalParam<QString>());
 
     /**
     * @param[in]  start qint32 [optional]
@@ -322,8 +325,9 @@ public:
     * @param[in]  label QString [optional]
     * @param[in]  position qint32 [optional]
     * @param[in]  hidden bool [optional]
+    * @param[in]  idempotency_key QString [optional]
     */
-    virtual void productImageUpdate(const QString &product_id, const QString &id, const ::OpenAPI::OptionalParam<QString> &variant_ids = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &store_id = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &lang_id = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &image_name = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &type = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &label = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<qint32> &position = ::OpenAPI::OptionalParam<qint32>(), const ::OpenAPI::OptionalParam<bool> &hidden = ::OpenAPI::OptionalParam<bool>());
+    virtual void productImageUpdate(const QString &product_id, const QString &id, const ::OpenAPI::OptionalParam<QString> &variant_ids = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &store_id = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &lang_id = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &image_name = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &type = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &label = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<qint32> &position = ::OpenAPI::OptionalParam<qint32>(), const ::OpenAPI::OptionalParam<bool> &hidden = ::OpenAPI::OptionalParam<bool>(), const ::OpenAPI::OptionalParam<QString> &idempotency_key = ::OpenAPI::OptionalParam<QString>());
 
     /**
     * @param[in]  id QString [required]
@@ -389,8 +393,9 @@ public:
     * @param[in]  search_keywords QString [optional]
     * @param[in]  image_url QString [optional]
     * @param[in]  seo_url QString [optional]
+    * @param[in]  idempotency_key QString [optional]
     */
-    virtual void productManufacturerAdd(const QString &product_id, const QString &manufacturer, const ::OpenAPI::OptionalParam<QString> &store_id = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &meta_title = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &meta_keywords = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &meta_description = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &search_keywords = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &image_url = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &seo_url = ::OpenAPI::OptionalParam<QString>());
+    virtual void productManufacturerAdd(const QString &product_id, const QString &manufacturer, const ::OpenAPI::OptionalParam<QString> &store_id = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &meta_title = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &meta_keywords = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &meta_description = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &search_keywords = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &image_url = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &seo_url = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &idempotency_key = ::OpenAPI::OptionalParam<QString>());
 
     /**
     * @param[in]  oai_product_option_add OAIProductOptionAdd [required]
@@ -404,8 +409,9 @@ public:
     * @param[in]  sort_order qint32 [optional]
     * @param[in]  option_values QString [optional]
     * @param[in]  clear_cache bool [optional]
+    * @param[in]  idempotency_key QString [optional]
     */
-    virtual void productOptionAssign(const QString &product_id, const QString &option_id, const ::OpenAPI::OptionalParam<bool> &required = ::OpenAPI::OptionalParam<bool>(), const ::OpenAPI::OptionalParam<qint32> &sort_order = ::OpenAPI::OptionalParam<qint32>(), const ::OpenAPI::OptionalParam<QString> &option_values = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<bool> &clear_cache = ::OpenAPI::OptionalParam<bool>());
+    virtual void productOptionAssign(const QString &product_id, const QString &option_id, const ::OpenAPI::OptionalParam<bool> &required = ::OpenAPI::OptionalParam<bool>(), const ::OpenAPI::OptionalParam<qint32> &sort_order = ::OpenAPI::OptionalParam<qint32>(), const ::OpenAPI::OptionalParam<QString> &option_values = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<bool> &clear_cache = ::OpenAPI::OptionalParam<bool>(), const ::OpenAPI::OptionalParam<QString> &idempotency_key = ::OpenAPI::OptionalParam<QString>());
 
     /**
     * @param[in]  option_id QString [required]
@@ -434,15 +440,17 @@ public:
     * @param[in]  display_value QString [optional]
     * @param[in]  is_default bool [optional]
     * @param[in]  clear_cache bool [optional]
+    * @param[in]  idempotency_key QString [optional]
     */
-    virtual void productOptionValueAdd(const QString &product_id, const QString &option_id, const ::OpenAPI::OptionalParam<QString> &option_value = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<qint32> &sort_order = ::OpenAPI::OptionalParam<qint32>(), const ::OpenAPI::OptionalParam<QString> &display_value = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<bool> &is_default = ::OpenAPI::OptionalParam<bool>(), const ::OpenAPI::OptionalParam<bool> &clear_cache = ::OpenAPI::OptionalParam<bool>());
+    virtual void productOptionValueAdd(const QString &product_id, const QString &option_id, const ::OpenAPI::OptionalParam<QString> &option_value = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<qint32> &sort_order = ::OpenAPI::OptionalParam<qint32>(), const ::OpenAPI::OptionalParam<QString> &display_value = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<bool> &is_default = ::OpenAPI::OptionalParam<bool>(), const ::OpenAPI::OptionalParam<bool> &clear_cache = ::OpenAPI::OptionalParam<bool>(), const ::OpenAPI::OptionalParam<QString> &idempotency_key = ::OpenAPI::OptionalParam<QString>());
 
     /**
     * @param[in]  product_option_id qint32 [required]
     * @param[in]  option_value_id QString [required]
     * @param[in]  clear_cache bool [optional]
+    * @param[in]  idempotency_key QString [optional]
     */
-    virtual void productOptionValueAssign(const qint32 &product_option_id, const QString &option_value_id, const ::OpenAPI::OptionalParam<bool> &clear_cache = ::OpenAPI::OptionalParam<bool>());
+    virtual void productOptionValueAssign(const qint32 &product_option_id, const QString &option_value_id, const ::OpenAPI::OptionalParam<bool> &clear_cache = ::OpenAPI::OptionalParam<bool>(), const ::OpenAPI::OptionalParam<QString> &idempotency_key = ::OpenAPI::OptionalParam<QString>());
 
     /**
     * @param[in]  option_id QString [required]
@@ -461,8 +469,9 @@ public:
     * @param[in]  quantity double [optional]
     * @param[in]  display_value QString [optional]
     * @param[in]  clear_cache bool [optional]
+    * @param[in]  idempotency_key QString [optional]
     */
-    virtual void productOptionValueUpdate(const QString &product_id, const QString &option_id, const QString &option_value_id, const ::OpenAPI::OptionalParam<QString> &option_value = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<double> &price = ::OpenAPI::OptionalParam<double>(), const ::OpenAPI::OptionalParam<double> &quantity = ::OpenAPI::OptionalParam<double>(), const ::OpenAPI::OptionalParam<QString> &display_value = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<bool> &clear_cache = ::OpenAPI::OptionalParam<bool>());
+    virtual void productOptionValueUpdate(const QString &product_id, const QString &option_id, const QString &option_value_id, const ::OpenAPI::OptionalParam<QString> &option_value = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<double> &price = ::OpenAPI::OptionalParam<double>(), const ::OpenAPI::OptionalParam<double> &quantity = ::OpenAPI::OptionalParam<double>(), const ::OpenAPI::OptionalParam<QString> &display_value = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<bool> &clear_cache = ::OpenAPI::OptionalParam<bool>(), const ::OpenAPI::OptionalParam<QString> &idempotency_key = ::OpenAPI::OptionalParam<QString>());
 
     /**
     * @param[in]  oai_product_price_add OAIProductPriceAdd [required]
@@ -504,8 +513,9 @@ public:
     /**
     * @param[in]  product_id QString [required]
     * @param[in]  store_id QString [required]
+    * @param[in]  idempotency_key QString [optional]
     */
-    virtual void productStoreAssign(const QString &product_id, const QString &store_id);
+    virtual void productStoreAssign(const QString &product_id, const QString &store_id, const ::OpenAPI::OptionalParam<QString> &idempotency_key = ::OpenAPI::OptionalParam<QString>());
 
     /**
     * @param[in]  oai_product_tax_add OAIProductTaxAdd [required]

@@ -23,6 +23,7 @@
 
 #include "OAIProductVariantDeleteBatch_payload_inner.h"
 #include <QList>
+#include <QString>
 
 #include "OAIEnum.h"
 #include "OAIObject.h"
@@ -56,6 +57,11 @@ public:
     bool is_payload_Set() const;
     bool is_payload_Valid() const;
 
+    QString getIdempotencyKey() const;
+    void setIdempotencyKey(const QString &idempotency_key);
+    bool is_idempotency_key_Set() const;
+    bool is_idempotency_key_Valid() const;
+
     virtual bool isSet() const override;
     virtual bool isValid() const override;
 
@@ -73,6 +79,10 @@ private:
     QList<OAIProductVariantDeleteBatch_payload_inner> m_payload;
     bool m_payload_isSet;
     bool m_payload_isValid;
+
+    QString m_idempotency_key;
+    bool m_idempotency_key_isSet;
+    bool m_idempotency_key_isValid;
 };
 
 } // namespace OpenAPI

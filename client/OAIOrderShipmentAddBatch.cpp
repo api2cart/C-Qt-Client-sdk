@@ -36,6 +36,9 @@ void OAIOrderShipmentAddBatch::initializeModel() {
 
     m_payload_isSet = false;
     m_payload_isValid = false;
+
+    m_idempotency_key_isSet = false;
+    m_idempotency_key_isValid = false;
 }
 
 void OAIOrderShipmentAddBatch::fromJson(QString jsonString) {
@@ -49,6 +52,9 @@ void OAIOrderShipmentAddBatch::fromJsonObject(QJsonObject json) {
 
     m_payload_isValid = ::OpenAPI::fromJsonValue(m_payload, json[QString("payload")]);
     m_payload_isSet = !json[QString("payload")].isNull() && m_payload_isValid;
+
+    m_idempotency_key_isValid = ::OpenAPI::fromJsonValue(m_idempotency_key, json[QString("idempotency_key")]);
+    m_idempotency_key_isSet = !json[QString("idempotency_key")].isNull() && m_idempotency_key_isValid;
 }
 
 QString OAIOrderShipmentAddBatch::asJson() const {
@@ -62,6 +68,9 @@ QJsonObject OAIOrderShipmentAddBatch::asJsonObject() const {
     QJsonObject obj;
     if (m_payload.size() > 0) {
         obj.insert(QString("payload"), ::OpenAPI::toJsonValue(m_payload));
+    }
+    if (m_idempotency_key_isSet) {
+        obj.insert(QString("idempotency_key"), ::OpenAPI::toJsonValue(m_idempotency_key));
     }
     return obj;
 }
@@ -82,10 +91,31 @@ bool OAIOrderShipmentAddBatch::is_payload_Valid() const{
     return m_payload_isValid;
 }
 
+QString OAIOrderShipmentAddBatch::getIdempotencyKey() const {
+    return m_idempotency_key;
+}
+void OAIOrderShipmentAddBatch::setIdempotencyKey(const QString &idempotency_key) {
+    m_idempotency_key = idempotency_key;
+    m_idempotency_key_isSet = true;
+}
+
+bool OAIOrderShipmentAddBatch::is_idempotency_key_Set() const{
+    return m_idempotency_key_isSet;
+}
+
+bool OAIOrderShipmentAddBatch::is_idempotency_key_Valid() const{
+    return m_idempotency_key_isValid;
+}
+
 bool OAIOrderShipmentAddBatch::isSet() const {
     bool isObjectUpdated = false;
     do {
         if (m_payload.size() > 0) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_idempotency_key_isSet) {
             isObjectUpdated = true;
             break;
         }

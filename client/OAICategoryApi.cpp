@@ -46,6 +46,8 @@ void OAICategoryApi::initializeServerConfigs() {
     _serverIndices.insert("categoryCount", 0);
     _serverConfigs.insert("categoryDelete", defaultConf);
     _serverIndices.insert("categoryDelete", 0);
+    _serverConfigs.insert("categoryDeleteBatch", defaultConf);
+    _serverIndices.insert("categoryDeleteBatch", 0);
     _serverConfigs.insert("categoryFind", defaultConf);
     _serverIndices.insert("categoryFind", 0);
     _serverConfigs.insert("categoryImageAdd", defaultConf);
@@ -229,7 +231,7 @@ QString OAICategoryApi::getParamStyleDelimiter(const QString &style, const QStri
     }
 }
 
-void OAICategoryApi::categoryAdd(const QString &name, const ::OpenAPI::OptionalParam<QString> &description, const ::OpenAPI::OptionalParam<QString> &short_description, const ::OpenAPI::OptionalParam<QString> &parent_id, const ::OpenAPI::OptionalParam<bool> &avail, const ::OpenAPI::OptionalParam<QString> &created_time, const ::OpenAPI::OptionalParam<QString> &modified_time, const ::OpenAPI::OptionalParam<qint32> &sort_order, const ::OpenAPI::OptionalParam<QString> &meta_title, const ::OpenAPI::OptionalParam<QString> &meta_description, const ::OpenAPI::OptionalParam<QString> &meta_keywords, const ::OpenAPI::OptionalParam<QString> &seo_url, const ::OpenAPI::OptionalParam<QString> &store_id, const ::OpenAPI::OptionalParam<QString> &stores_ids, const ::OpenAPI::OptionalParam<QString> &lang_id) {
+void OAICategoryApi::categoryAdd(const QString &name, const ::OpenAPI::OptionalParam<QString> &description, const ::OpenAPI::OptionalParam<QString> &short_description, const ::OpenAPI::OptionalParam<QString> &parent_id, const ::OpenAPI::OptionalParam<bool> &avail, const ::OpenAPI::OptionalParam<QString> &created_time, const ::OpenAPI::OptionalParam<QString> &modified_time, const ::OpenAPI::OptionalParam<qint32> &sort_order, const ::OpenAPI::OptionalParam<QString> &meta_title, const ::OpenAPI::OptionalParam<QString> &meta_description, const ::OpenAPI::OptionalParam<QString> &meta_keywords, const ::OpenAPI::OptionalParam<QString> &seo_url, const ::OpenAPI::OptionalParam<QString> &store_id, const ::OpenAPI::OptionalParam<QString> &stores_ids, const ::OpenAPI::OptionalParam<QString> &lang_id, const ::OpenAPI::OptionalParam<QString> &idempotency_key) {
     QString fullPath = QString(_serverConfigs["categoryAdd"][_serverIndices.value("categoryAdd")].URL()+"/category.add.json");
     
     if (_apiKeys.contains("StoreKeyAuth")) {
@@ -466,6 +468,21 @@ void OAICategoryApi::categoryAdd(const QString &name, const ::OpenAPI::OptionalP
 
         fullPath.append(QUrl::toPercentEncoding("lang_id")).append(querySuffix).append(QUrl::toPercentEncoding(::OpenAPI::toStringValue(lang_id.stringValue())));
     }
+    if (idempotency_key.hasValue())
+    {
+        queryStyle = "form";
+        if (queryStyle == "")
+            queryStyle = "form";
+        queryPrefix = getParamStylePrefix(queryStyle);
+        querySuffix = getParamStyleSuffix(queryStyle);
+        queryDelimiter = getParamStyleDelimiter(queryStyle, "idempotency_key", true);
+        if (fullPath.indexOf("?") > 0)
+            fullPath.append(queryPrefix);
+        else
+            fullPath.append("?");
+
+        fullPath.append(QUrl::toPercentEncoding("idempotency_key")).append(querySuffix).append(QUrl::toPercentEncoding(::OpenAPI::toStringValue(idempotency_key.stringValue())));
+    }
     OAIHttpRequestWorker *worker = new OAIHttpRequestWorker(this, _manager);
     worker->setTimeOut(_timeOut);
     worker->setWorkingDirectory(_workingDirectory);
@@ -616,7 +633,7 @@ void OAICategoryApi::categoryAddBatchCallback(OAIHttpRequestWorker *worker) {
     }
 }
 
-void OAICategoryApi::categoryAssign(const QString &category_id, const QString &product_id, const ::OpenAPI::OptionalParam<QString> &store_id) {
+void OAICategoryApi::categoryAssign(const QString &category_id, const QString &product_id, const ::OpenAPI::OptionalParam<QString> &store_id, const ::OpenAPI::OptionalParam<QString> &idempotency_key) {
     QString fullPath = QString(_serverConfigs["categoryAssign"][_serverIndices.value("categoryAssign")].URL()+"/category.assign.json");
     
     if (_apiKeys.contains("StoreKeyAuth")) {
@@ -672,6 +689,21 @@ void OAICategoryApi::categoryAssign(const QString &category_id, const QString &p
             fullPath.append("?");
 
         fullPath.append(QUrl::toPercentEncoding("store_id")).append(querySuffix).append(QUrl::toPercentEncoding(::OpenAPI::toStringValue(store_id.stringValue())));
+    }
+    if (idempotency_key.hasValue())
+    {
+        queryStyle = "form";
+        if (queryStyle == "")
+            queryStyle = "form";
+        queryPrefix = getParamStylePrefix(queryStyle);
+        querySuffix = getParamStyleSuffix(queryStyle);
+        queryDelimiter = getParamStyleDelimiter(queryStyle, "idempotency_key", true);
+        if (fullPath.indexOf("?") > 0)
+            fullPath.append(queryPrefix);
+        else
+            fullPath.append("?");
+
+        fullPath.append(QUrl::toPercentEncoding("idempotency_key")).append(querySuffix).append(QUrl::toPercentEncoding(::OpenAPI::toStringValue(idempotency_key.stringValue())));
     }
     OAIHttpRequestWorker *worker = new OAIHttpRequestWorker(this, _manager);
     worker->setTimeOut(_timeOut);
@@ -1123,6 +1155,89 @@ void OAICategoryApi::categoryDeleteCallback(OAIHttpRequestWorker *worker) {
     }
 }
 
+void OAICategoryApi::categoryDeleteBatch(const OAICategoryDeleteBatch &oai_category_delete_batch) {
+    QString fullPath = QString(_serverConfigs["categoryDeleteBatch"][_serverIndices.value("categoryDeleteBatch")].URL()+"/category.delete.batch.json");
+    
+    if (_apiKeys.contains("StoreKeyAuth")) {
+        addHeaders("StoreKeyAuth",_apiKeys.find("StoreKeyAuth").value());
+    }
+    
+    if (_apiKeys.contains("ApiKeyAuth")) {
+        addHeaders("ApiKeyAuth",_apiKeys.find("ApiKeyAuth").value());
+    }
+    
+    OAIHttpRequestWorker *worker = new OAIHttpRequestWorker(this, _manager);
+    worker->setTimeOut(_timeOut);
+    worker->setWorkingDirectory(_workingDirectory);
+    OAIHttpRequestInput input(fullPath, "POST");
+
+    {
+
+        
+        QByteArray output = oai_category_delete_batch.asJson().toUtf8();
+        input.request_body.append(output);
+    }
+    for (auto keyValueIt = _defaultHeaders.keyValueBegin(); keyValueIt != _defaultHeaders.keyValueEnd(); keyValueIt++) {
+        input.headers.insert(keyValueIt->first, keyValueIt->second);
+    }
+
+
+    connect(worker, &OAIHttpRequestWorker::on_execution_finished, this, &OAICategoryApi::categoryDeleteBatchCallback);
+    connect(this, &OAICategoryApi::abortRequestsSignal, worker, &QObject::deleteLater);
+    connect(worker, &QObject::destroyed, this, [this] {
+        if (findChildren<OAIHttpRequestWorker*>().count() == 0) {
+            Q_EMIT allPendingRequestsCompleted();
+        }
+    });
+
+    worker->execute(&input);
+}
+
+void OAICategoryApi::categoryDeleteBatchCallback(OAIHttpRequestWorker *worker) {
+    QString error_str = worker->error_str;
+    QNetworkReply::NetworkError error_type = worker->error_type;
+
+    if (worker->error_type != QNetworkReply::NoError) {
+        error_str = QString("%1, %2").arg(worker->error_str, QString(worker->response));
+    }
+    OAICategoryAddBatch_200_response output(QString(worker->response));
+    worker->deleteLater();
+
+    if (worker->error_type == QNetworkReply::NoError) {
+        Q_EMIT categoryDeleteBatchSignal(output);
+        Q_EMIT categoryDeleteBatchSignalFull(worker, output);
+    } else {
+
+#if defined(_MSC_VER)
+// For MSVC
+#pragma warning(push)
+#pragma warning(disable : 4996)
+#elif defined(__clang__)
+// For Clang
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
+#elif defined(__GNUC__)
+// For GCC
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wdeprecated-declarations"
+#endif
+
+        Q_EMIT categoryDeleteBatchSignalE(output, error_type, error_str);
+        Q_EMIT categoryDeleteBatchSignalEFull(worker, error_type, error_str);
+
+#if defined(_MSC_VER)
+#pragma warning(pop)
+#elif defined(__clang__)
+#pragma clang diagnostic pop
+#elif defined(__GNUC__)
+#pragma GCC diagnostic pop
+#endif
+
+        Q_EMIT categoryDeleteBatchSignalError(output, error_type, error_str);
+        Q_EMIT categoryDeleteBatchSignalErrorFull(worker, error_type, error_str);
+    }
+}
+
 void OAICategoryApi::categoryFind(const QString &find_value, const ::OpenAPI::OptionalParam<QString> &find_where, const ::OpenAPI::OptionalParam<QString> &find_params, const ::OpenAPI::OptionalParam<QString> &store_id, const ::OpenAPI::OptionalParam<QString> &lang_id) {
     QString fullPath = QString(_serverConfigs["categoryFind"][_serverIndices.value("categoryFind")].URL()+"/category.find.json");
     
@@ -1277,7 +1392,7 @@ void OAICategoryApi::categoryFindCallback(OAIHttpRequestWorker *worker) {
     }
 }
 
-void OAICategoryApi::categoryImageAdd(const QString &category_id, const QString &image_name, const QString &url, const QString &type, const ::OpenAPI::OptionalParam<QString> &store_id, const ::OpenAPI::OptionalParam<QString> &label, const ::OpenAPI::OptionalParam<QString> &mime, const ::OpenAPI::OptionalParam<qint32> &position) {
+void OAICategoryApi::categoryImageAdd(const QString &category_id, const QString &image_name, const QString &url, const QString &type, const ::OpenAPI::OptionalParam<QString> &store_id, const ::OpenAPI::OptionalParam<QString> &label, const ::OpenAPI::OptionalParam<QString> &mime, const ::OpenAPI::OptionalParam<qint32> &position, const ::OpenAPI::OptionalParam<QString> &idempotency_key) {
     QString fullPath = QString(_serverConfigs["categoryImageAdd"][_serverIndices.value("categoryImageAdd")].URL()+"/category.image.add.json");
     
     if (_apiKeys.contains("StoreKeyAuth")) {
@@ -1408,6 +1523,21 @@ void OAICategoryApi::categoryImageAdd(const QString &category_id, const QString 
             fullPath.append("?");
 
         fullPath.append(QUrl::toPercentEncoding("position")).append(querySuffix).append(QUrl::toPercentEncoding(::OpenAPI::toStringValue(position.stringValue())));
+    }
+    if (idempotency_key.hasValue())
+    {
+        queryStyle = "form";
+        if (queryStyle == "")
+            queryStyle = "form";
+        queryPrefix = getParamStylePrefix(queryStyle);
+        querySuffix = getParamStyleSuffix(queryStyle);
+        queryDelimiter = getParamStyleDelimiter(queryStyle, "idempotency_key", true);
+        if (fullPath.indexOf("?") > 0)
+            fullPath.append(queryPrefix);
+        else
+            fullPath.append("?");
+
+        fullPath.append(QUrl::toPercentEncoding("idempotency_key")).append(querySuffix).append(QUrl::toPercentEncoding(::OpenAPI::toStringValue(idempotency_key.stringValue())));
     }
     OAIHttpRequestWorker *worker = new OAIHttpRequestWorker(this, _manager);
     worker->setTimeOut(_timeOut);
@@ -2193,7 +2323,7 @@ void OAICategoryApi::categoryListCallback(OAIHttpRequestWorker *worker) {
     }
 }
 
-void OAICategoryApi::categoryUnassign(const QString &category_id, const QString &product_id, const ::OpenAPI::OptionalParam<QString> &store_id) {
+void OAICategoryApi::categoryUnassign(const QString &category_id, const QString &product_id, const ::OpenAPI::OptionalParam<QString> &store_id, const ::OpenAPI::OptionalParam<QString> &idempotency_key) {
     QString fullPath = QString(_serverConfigs["categoryUnassign"][_serverIndices.value("categoryUnassign")].URL()+"/category.unassign.json");
     
     if (_apiKeys.contains("StoreKeyAuth")) {
@@ -2249,6 +2379,21 @@ void OAICategoryApi::categoryUnassign(const QString &category_id, const QString 
             fullPath.append("?");
 
         fullPath.append(QUrl::toPercentEncoding("store_id")).append(querySuffix).append(QUrl::toPercentEncoding(::OpenAPI::toStringValue(store_id.stringValue())));
+    }
+    if (idempotency_key.hasValue())
+    {
+        queryStyle = "form";
+        if (queryStyle == "")
+            queryStyle = "form";
+        queryPrefix = getParamStylePrefix(queryStyle);
+        querySuffix = getParamStyleSuffix(queryStyle);
+        queryDelimiter = getParamStyleDelimiter(queryStyle, "idempotency_key", true);
+        if (fullPath.indexOf("?") > 0)
+            fullPath.append(queryPrefix);
+        else
+            fullPath.append("?");
+
+        fullPath.append(QUrl::toPercentEncoding("idempotency_key")).append(querySuffix).append(QUrl::toPercentEncoding(::OpenAPI::toStringValue(idempotency_key.stringValue())));
     }
     OAIHttpRequestWorker *worker = new OAIHttpRequestWorker(this, _manager);
     worker->setTimeOut(_timeOut);
@@ -2317,7 +2462,7 @@ void OAICategoryApi::categoryUnassignCallback(OAIHttpRequestWorker *worker) {
     }
 }
 
-void OAICategoryApi::categoryUpdate(const QString &id, const ::OpenAPI::OptionalParam<QString> &name, const ::OpenAPI::OptionalParam<QString> &description, const ::OpenAPI::OptionalParam<QString> &short_description, const ::OpenAPI::OptionalParam<QString> &parent_id, const ::OpenAPI::OptionalParam<bool> &avail, const ::OpenAPI::OptionalParam<qint32> &sort_order, const ::OpenAPI::OptionalParam<QString> &modified_time, const ::OpenAPI::OptionalParam<QString> &meta_title, const ::OpenAPI::OptionalParam<QString> &meta_description, const ::OpenAPI::OptionalParam<QString> &meta_keywords, const ::OpenAPI::OptionalParam<QString> &seo_url, const ::OpenAPI::OptionalParam<QString> &store_id, const ::OpenAPI::OptionalParam<QString> &stores_ids, const ::OpenAPI::OptionalParam<QString> &lang_id) {
+void OAICategoryApi::categoryUpdate(const QString &id, const ::OpenAPI::OptionalParam<QString> &name, const ::OpenAPI::OptionalParam<QString> &description, const ::OpenAPI::OptionalParam<QString> &short_description, const ::OpenAPI::OptionalParam<QString> &parent_id, const ::OpenAPI::OptionalParam<bool> &avail, const ::OpenAPI::OptionalParam<qint32> &sort_order, const ::OpenAPI::OptionalParam<QString> &modified_time, const ::OpenAPI::OptionalParam<QString> &meta_title, const ::OpenAPI::OptionalParam<QString> &meta_description, const ::OpenAPI::OptionalParam<QString> &meta_keywords, const ::OpenAPI::OptionalParam<QString> &seo_url, const ::OpenAPI::OptionalParam<QString> &store_id, const ::OpenAPI::OptionalParam<QString> &stores_ids, const ::OpenAPI::OptionalParam<QString> &lang_id, const ::OpenAPI::OptionalParam<QString> &idempotency_key) {
     QString fullPath = QString(_serverConfigs["categoryUpdate"][_serverIndices.value("categoryUpdate")].URL()+"/category.update.json");
     
     if (_apiKeys.contains("StoreKeyAuth")) {
@@ -2553,6 +2698,21 @@ void OAICategoryApi::categoryUpdate(const QString &id, const ::OpenAPI::Optional
             fullPath.append("?");
 
         fullPath.append(QUrl::toPercentEncoding("lang_id")).append(querySuffix).append(QUrl::toPercentEncoding(::OpenAPI::toStringValue(lang_id.stringValue())));
+    }
+    if (idempotency_key.hasValue())
+    {
+        queryStyle = "form";
+        if (queryStyle == "")
+            queryStyle = "form";
+        queryPrefix = getParamStylePrefix(queryStyle);
+        querySuffix = getParamStyleSuffix(queryStyle);
+        queryDelimiter = getParamStyleDelimiter(queryStyle, "idempotency_key", true);
+        if (fullPath.indexOf("?") > 0)
+            fullPath.append(queryPrefix);
+        else
+            fullPath.append("?");
+
+        fullPath.append(QUrl::toPercentEncoding("idempotency_key")).append(querySuffix).append(QUrl::toPercentEncoding(::OpenAPI::toStringValue(idempotency_key.stringValue())));
     }
     OAIHttpRequestWorker *worker = new OAIHttpRequestWorker(this, _manager);
     worker->setTimeOut(_timeOut);

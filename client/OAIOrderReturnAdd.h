@@ -97,6 +97,11 @@ public:
     bool is_reject_reason_Set() const;
     bool is_reject_reason_Valid() const;
 
+    QString getIdempotencyKey() const;
+    void setIdempotencyKey(const QString &idempotency_key);
+    bool is_idempotency_key_Set() const;
+    bool is_idempotency_key_Valid() const;
+
     QList<OAIOrderReturnAdd_order_products_inner> getOrderProducts() const;
     void setOrderProducts(const QList<OAIOrderReturnAdd_order_products_inner> &order_products);
     bool is_order_products_Set() const;
@@ -151,6 +156,10 @@ private:
     QString m_reject_reason;
     bool m_reject_reason_isSet;
     bool m_reject_reason_isValid;
+
+    QString m_idempotency_key;
+    bool m_idempotency_key_isSet;
+    bool m_idempotency_key_isValid;
 
     QList<OAIOrderReturnAdd_order_products_inner> m_order_products;
     bool m_order_products_isSet;

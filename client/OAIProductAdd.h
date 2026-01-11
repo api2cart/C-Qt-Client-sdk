@@ -673,6 +673,11 @@ public:
     bool is_personalization_details_Set() const;
     bool is_personalization_details_Valid() const;
 
+    QString getIdempotencyKey() const;
+    void setIdempotencyKey(const QString &idempotency_key);
+    bool is_idempotency_key_Set() const;
+    bool is_idempotency_key_Valid() const;
+
     virtual bool isSet() const override;
     virtual bool isValid() const override;
 
@@ -1162,6 +1167,10 @@ private:
     OAIProductAdd_personalization_details m_personalization_details;
     bool m_personalization_details_isSet;
     bool m_personalization_details_isValid;
+
+    QString m_idempotency_key;
+    bool m_idempotency_key_isSet;
+    bool m_idempotency_key_isValid;
 };
 
 } // namespace OpenAPI

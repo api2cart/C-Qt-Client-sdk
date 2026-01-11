@@ -78,6 +78,9 @@ void OAIOrderShipmentAdd::initializeModel() {
 
     m_use_latest_api_version_isSet = false;
     m_use_latest_api_version_isValid = false;
+
+    m_idempotency_key_isSet = false;
+    m_idempotency_key_isValid = false;
 }
 
 void OAIOrderShipmentAdd::fromJson(QString jsonString) {
@@ -133,6 +136,9 @@ void OAIOrderShipmentAdd::fromJsonObject(QJsonObject json) {
 
     m_use_latest_api_version_isValid = ::OpenAPI::fromJsonValue(m_use_latest_api_version, json[QString("use_latest_api_version")]);
     m_use_latest_api_version_isSet = !json[QString("use_latest_api_version")].isNull() && m_use_latest_api_version_isValid;
+
+    m_idempotency_key_isValid = ::OpenAPI::fromJsonValue(m_idempotency_key, json[QString("idempotency_key")]);
+    m_idempotency_key_isSet = !json[QString("idempotency_key")].isNull() && m_idempotency_key_isValid;
 }
 
 QString OAIOrderShipmentAdd::asJson() const {
@@ -188,6 +194,9 @@ QJsonObject OAIOrderShipmentAdd::asJsonObject() const {
     }
     if (m_use_latest_api_version_isSet) {
         obj.insert(QString("use_latest_api_version"), ::OpenAPI::toJsonValue(m_use_latest_api_version));
+    }
+    if (m_idempotency_key_isSet) {
+        obj.insert(QString("idempotency_key"), ::OpenAPI::toJsonValue(m_idempotency_key));
     }
     return obj;
 }
@@ -432,6 +441,22 @@ bool OAIOrderShipmentAdd::is_use_latest_api_version_Valid() const{
     return m_use_latest_api_version_isValid;
 }
 
+QString OAIOrderShipmentAdd::getIdempotencyKey() const {
+    return m_idempotency_key;
+}
+void OAIOrderShipmentAdd::setIdempotencyKey(const QString &idempotency_key) {
+    m_idempotency_key = idempotency_key;
+    m_idempotency_key_isSet = true;
+}
+
+bool OAIOrderShipmentAdd::is_idempotency_key_Set() const{
+    return m_idempotency_key_isSet;
+}
+
+bool OAIOrderShipmentAdd::is_idempotency_key_Valid() const{
+    return m_idempotency_key_isValid;
+}
+
 bool OAIOrderShipmentAdd::isSet() const {
     bool isObjectUpdated = false;
     do {
@@ -506,6 +531,11 @@ bool OAIOrderShipmentAdd::isSet() const {
         }
 
         if (m_use_latest_api_version_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_idempotency_key_isSet) {
             isObjectUpdated = true;
             break;
         }

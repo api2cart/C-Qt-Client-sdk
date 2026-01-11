@@ -771,7 +771,7 @@ void OAIProductApi::productAttributeListCallback(OAIHttpRequestWorker *worker) {
     }
 }
 
-void OAIProductApi::productAttributeValueSet(const QString &product_id, const ::OpenAPI::OptionalParam<QString> &attribute_id, const ::OpenAPI::OptionalParam<QString> &attribute_group_id, const ::OpenAPI::OptionalParam<QString> &attribute_name, const ::OpenAPI::OptionalParam<QString> &value, const ::OpenAPI::OptionalParam<qint32> &value_id, const ::OpenAPI::OptionalParam<QString> &lang_id, const ::OpenAPI::OptionalParam<QString> &store_id) {
+void OAIProductApi::productAttributeValueSet(const QString &product_id, const ::OpenAPI::OptionalParam<QString> &attribute_id, const ::OpenAPI::OptionalParam<QString> &attribute_group_id, const ::OpenAPI::OptionalParam<QString> &attribute_name, const ::OpenAPI::OptionalParam<QString> &value, const ::OpenAPI::OptionalParam<qint32> &value_id, const ::OpenAPI::OptionalParam<QString> &lang_id, const ::OpenAPI::OptionalParam<QString> &store_id, const ::OpenAPI::OptionalParam<QString> &idempotency_key) {
     QString fullPath = QString(_serverConfigs["productAttributeValueSet"][_serverIndices.value("productAttributeValueSet")].URL()+"/product.attribute.value.set.json");
     
     if (_apiKeys.contains("StoreKeyAuth")) {
@@ -903,6 +903,21 @@ void OAIProductApi::productAttributeValueSet(const QString &product_id, const ::
 
         fullPath.append(QUrl::toPercentEncoding("store_id")).append(querySuffix).append(QUrl::toPercentEncoding(::OpenAPI::toStringValue(store_id.stringValue())));
     }
+    if (idempotency_key.hasValue())
+    {
+        queryStyle = "form";
+        if (queryStyle == "")
+            queryStyle = "form";
+        queryPrefix = getParamStylePrefix(queryStyle);
+        querySuffix = getParamStyleSuffix(queryStyle);
+        queryDelimiter = getParamStyleDelimiter(queryStyle, "idempotency_key", true);
+        if (fullPath.indexOf("?") > 0)
+            fullPath.append(queryPrefix);
+        else
+            fullPath.append("?");
+
+        fullPath.append(QUrl::toPercentEncoding("idempotency_key")).append(querySuffix).append(QUrl::toPercentEncoding(::OpenAPI::toStringValue(idempotency_key.stringValue())));
+    }
     OAIHttpRequestWorker *worker = new OAIHttpRequestWorker(this, _manager);
     worker->setTimeOut(_timeOut);
     worker->setWorkingDirectory(_workingDirectory);
@@ -970,7 +985,7 @@ void OAIProductApi::productAttributeValueSetCallback(OAIHttpRequestWorker *worke
     }
 }
 
-void OAIProductApi::productAttributeValueUnset(const QString &product_id, const QString &attribute_id, const ::OpenAPI::OptionalParam<QString> &store_id, const ::OpenAPI::OptionalParam<bool> &include_default, const ::OpenAPI::OptionalParam<bool> &reindex, const ::OpenAPI::OptionalParam<bool> &clear_cache) {
+void OAIProductApi::productAttributeValueUnset(const QString &product_id, const QString &attribute_id, const ::OpenAPI::OptionalParam<QString> &store_id, const ::OpenAPI::OptionalParam<bool> &include_default, const ::OpenAPI::OptionalParam<bool> &reindex, const ::OpenAPI::OptionalParam<bool> &clear_cache, const ::OpenAPI::OptionalParam<QString> &idempotency_key) {
     QString fullPath = QString(_serverConfigs["productAttributeValueUnset"][_serverIndices.value("productAttributeValueUnset")].URL()+"/product.attribute.value.unset.json");
     
     if (_apiKeys.contains("StoreKeyAuth")) {
@@ -1071,6 +1086,21 @@ void OAIProductApi::productAttributeValueUnset(const QString &product_id, const 
             fullPath.append("?");
 
         fullPath.append(QUrl::toPercentEncoding("clear_cache")).append(querySuffix).append(QUrl::toPercentEncoding(::OpenAPI::toStringValue(clear_cache.stringValue())));
+    }
+    if (idempotency_key.hasValue())
+    {
+        queryStyle = "form";
+        if (queryStyle == "")
+            queryStyle = "form";
+        queryPrefix = getParamStylePrefix(queryStyle);
+        querySuffix = getParamStyleSuffix(queryStyle);
+        queryDelimiter = getParamStyleDelimiter(queryStyle, "idempotency_key", true);
+        if (fullPath.indexOf("?") > 0)
+            fullPath.append(queryPrefix);
+        else
+            fullPath.append("?");
+
+        fullPath.append(QUrl::toPercentEncoding("idempotency_key")).append(querySuffix).append(QUrl::toPercentEncoding(::OpenAPI::toStringValue(idempotency_key.stringValue())));
     }
     OAIHttpRequestWorker *worker = new OAIHttpRequestWorker(this, _manager);
     worker->setTimeOut(_timeOut);
@@ -2774,7 +2804,7 @@ void OAIProductApi::productCountCallback(OAIHttpRequestWorker *worker) {
     }
 }
 
-void OAIProductApi::productCurrencyAdd(const QString &iso3, const double &rate, const ::OpenAPI::OptionalParam<QString> &name, const ::OpenAPI::OptionalParam<bool> &avail, const ::OpenAPI::OptionalParam<QString> &symbol_left, const ::OpenAPI::OptionalParam<QString> &symbol_right, const ::OpenAPI::OptionalParam<bool> &r_default) {
+void OAIProductApi::productCurrencyAdd(const QString &iso3, const double &rate, const ::OpenAPI::OptionalParam<QString> &name, const ::OpenAPI::OptionalParam<bool> &avail, const ::OpenAPI::OptionalParam<QString> &symbol_left, const ::OpenAPI::OptionalParam<QString> &symbol_right, const ::OpenAPI::OptionalParam<bool> &r_default, const ::OpenAPI::OptionalParam<QString> &idempotency_key) {
     QString fullPath = QString(_serverConfigs["productCurrencyAdd"][_serverIndices.value("productCurrencyAdd")].URL()+"/product.currency.add.json");
     
     if (_apiKeys.contains("StoreKeyAuth")) {
@@ -2890,6 +2920,21 @@ void OAIProductApi::productCurrencyAdd(const QString &iso3, const double &rate, 
             fullPath.append("?");
 
         fullPath.append(QUrl::toPercentEncoding("default")).append(querySuffix).append(QUrl::toPercentEncoding(::OpenAPI::toStringValue(r_default.stringValue())));
+    }
+    if (idempotency_key.hasValue())
+    {
+        queryStyle = "form";
+        if (queryStyle == "")
+            queryStyle = "form";
+        queryPrefix = getParamStylePrefix(queryStyle);
+        querySuffix = getParamStyleSuffix(queryStyle);
+        queryDelimiter = getParamStyleDelimiter(queryStyle, "idempotency_key", true);
+        if (fullPath.indexOf("?") > 0)
+            fullPath.append(queryPrefix);
+        else
+            fullPath.append("?");
+
+        fullPath.append(QUrl::toPercentEncoding("idempotency_key")).append(querySuffix).append(QUrl::toPercentEncoding(::OpenAPI::toStringValue(idempotency_key.stringValue())));
     }
     OAIHttpRequestWorker *worker = new OAIHttpRequestWorker(this, _manager);
     worker->setTimeOut(_timeOut);
@@ -3725,7 +3770,7 @@ void OAIProductApi::productImageDeleteCallback(OAIHttpRequestWorker *worker) {
     }
 }
 
-void OAIProductApi::productImageUpdate(const QString &product_id, const QString &id, const ::OpenAPI::OptionalParam<QString> &variant_ids, const ::OpenAPI::OptionalParam<QString> &store_id, const ::OpenAPI::OptionalParam<QString> &lang_id, const ::OpenAPI::OptionalParam<QString> &image_name, const ::OpenAPI::OptionalParam<QString> &type, const ::OpenAPI::OptionalParam<QString> &label, const ::OpenAPI::OptionalParam<qint32> &position, const ::OpenAPI::OptionalParam<bool> &hidden) {
+void OAIProductApi::productImageUpdate(const QString &product_id, const QString &id, const ::OpenAPI::OptionalParam<QString> &variant_ids, const ::OpenAPI::OptionalParam<QString> &store_id, const ::OpenAPI::OptionalParam<QString> &lang_id, const ::OpenAPI::OptionalParam<QString> &image_name, const ::OpenAPI::OptionalParam<QString> &type, const ::OpenAPI::OptionalParam<QString> &label, const ::OpenAPI::OptionalParam<qint32> &position, const ::OpenAPI::OptionalParam<bool> &hidden, const ::OpenAPI::OptionalParam<QString> &idempotency_key) {
     QString fullPath = QString(_serverConfigs["productImageUpdate"][_serverIndices.value("productImageUpdate")].URL()+"/product.image.update.json");
     
     if (_apiKeys.contains("StoreKeyAuth")) {
@@ -3886,6 +3931,21 @@ void OAIProductApi::productImageUpdate(const QString &product_id, const QString 
             fullPath.append("?");
 
         fullPath.append(QUrl::toPercentEncoding("hidden")).append(querySuffix).append(QUrl::toPercentEncoding(::OpenAPI::toStringValue(hidden.stringValue())));
+    }
+    if (idempotency_key.hasValue())
+    {
+        queryStyle = "form";
+        if (queryStyle == "")
+            queryStyle = "form";
+        queryPrefix = getParamStylePrefix(queryStyle);
+        querySuffix = getParamStyleSuffix(queryStyle);
+        queryDelimiter = getParamStyleDelimiter(queryStyle, "idempotency_key", true);
+        if (fullPath.indexOf("?") > 0)
+            fullPath.append(queryPrefix);
+        else
+            fullPath.append("?");
+
+        fullPath.append(QUrl::toPercentEncoding("idempotency_key")).append(querySuffix).append(QUrl::toPercentEncoding(::OpenAPI::toStringValue(idempotency_key.stringValue())));
     }
     OAIHttpRequestWorker *worker = new OAIHttpRequestWorker(this, _manager);
     worker->setTimeOut(_timeOut);
@@ -4872,7 +4932,7 @@ void OAIProductApi::productListCallback(OAIHttpRequestWorker *worker) {
     }
 }
 
-void OAIProductApi::productManufacturerAdd(const QString &product_id, const QString &manufacturer, const ::OpenAPI::OptionalParam<QString> &store_id, const ::OpenAPI::OptionalParam<QString> &meta_title, const ::OpenAPI::OptionalParam<QString> &meta_keywords, const ::OpenAPI::OptionalParam<QString> &meta_description, const ::OpenAPI::OptionalParam<QString> &search_keywords, const ::OpenAPI::OptionalParam<QString> &image_url, const ::OpenAPI::OptionalParam<QString> &seo_url) {
+void OAIProductApi::productManufacturerAdd(const QString &product_id, const QString &manufacturer, const ::OpenAPI::OptionalParam<QString> &store_id, const ::OpenAPI::OptionalParam<QString> &meta_title, const ::OpenAPI::OptionalParam<QString> &meta_keywords, const ::OpenAPI::OptionalParam<QString> &meta_description, const ::OpenAPI::OptionalParam<QString> &search_keywords, const ::OpenAPI::OptionalParam<QString> &image_url, const ::OpenAPI::OptionalParam<QString> &seo_url, const ::OpenAPI::OptionalParam<QString> &idempotency_key) {
     QString fullPath = QString(_serverConfigs["productManufacturerAdd"][_serverIndices.value("productManufacturerAdd")].URL()+"/product.manufacturer.add.json");
     
     if (_apiKeys.contains("StoreKeyAuth")) {
@@ -5018,6 +5078,21 @@ void OAIProductApi::productManufacturerAdd(const QString &product_id, const QStr
             fullPath.append("?");
 
         fullPath.append(QUrl::toPercentEncoding("seo_url")).append(querySuffix).append(QUrl::toPercentEncoding(::OpenAPI::toStringValue(seo_url.stringValue())));
+    }
+    if (idempotency_key.hasValue())
+    {
+        queryStyle = "form";
+        if (queryStyle == "")
+            queryStyle = "form";
+        queryPrefix = getParamStylePrefix(queryStyle);
+        querySuffix = getParamStyleSuffix(queryStyle);
+        queryDelimiter = getParamStyleDelimiter(queryStyle, "idempotency_key", true);
+        if (fullPath.indexOf("?") > 0)
+            fullPath.append(queryPrefix);
+        else
+            fullPath.append("?");
+
+        fullPath.append(QUrl::toPercentEncoding("idempotency_key")).append(querySuffix).append(QUrl::toPercentEncoding(::OpenAPI::toStringValue(idempotency_key.stringValue())));
     }
     OAIHttpRequestWorker *worker = new OAIHttpRequestWorker(this, _manager);
     worker->setTimeOut(_timeOut);
@@ -5169,7 +5244,7 @@ void OAIProductApi::productOptionAddCallback(OAIHttpRequestWorker *worker) {
     }
 }
 
-void OAIProductApi::productOptionAssign(const QString &product_id, const QString &option_id, const ::OpenAPI::OptionalParam<bool> &required, const ::OpenAPI::OptionalParam<qint32> &sort_order, const ::OpenAPI::OptionalParam<QString> &option_values, const ::OpenAPI::OptionalParam<bool> &clear_cache) {
+void OAIProductApi::productOptionAssign(const QString &product_id, const QString &option_id, const ::OpenAPI::OptionalParam<bool> &required, const ::OpenAPI::OptionalParam<qint32> &sort_order, const ::OpenAPI::OptionalParam<QString> &option_values, const ::OpenAPI::OptionalParam<bool> &clear_cache, const ::OpenAPI::OptionalParam<QString> &idempotency_key) {
     QString fullPath = QString(_serverConfigs["productOptionAssign"][_serverIndices.value("productOptionAssign")].URL()+"/product.option.assign.json");
     
     if (_apiKeys.contains("StoreKeyAuth")) {
@@ -5270,6 +5345,21 @@ void OAIProductApi::productOptionAssign(const QString &product_id, const QString
             fullPath.append("?");
 
         fullPath.append(QUrl::toPercentEncoding("clear_cache")).append(querySuffix).append(QUrl::toPercentEncoding(::OpenAPI::toStringValue(clear_cache.stringValue())));
+    }
+    if (idempotency_key.hasValue())
+    {
+        queryStyle = "form";
+        if (queryStyle == "")
+            queryStyle = "form";
+        queryPrefix = getParamStylePrefix(queryStyle);
+        querySuffix = getParamStyleSuffix(queryStyle);
+        queryDelimiter = getParamStyleDelimiter(queryStyle, "idempotency_key", true);
+        if (fullPath.indexOf("?") > 0)
+            fullPath.append(queryPrefix);
+        else
+            fullPath.append("?");
+
+        fullPath.append(QUrl::toPercentEncoding("idempotency_key")).append(querySuffix).append(QUrl::toPercentEncoding(::OpenAPI::toStringValue(idempotency_key.stringValue())));
     }
     OAIHttpRequestWorker *worker = new OAIHttpRequestWorker(this, _manager);
     worker->setTimeOut(_timeOut);
@@ -5661,7 +5751,7 @@ void OAIProductApi::productOptionListCallback(OAIHttpRequestWorker *worker) {
     }
 }
 
-void OAIProductApi::productOptionValueAdd(const QString &product_id, const QString &option_id, const ::OpenAPI::OptionalParam<QString> &option_value, const ::OpenAPI::OptionalParam<qint32> &sort_order, const ::OpenAPI::OptionalParam<QString> &display_value, const ::OpenAPI::OptionalParam<bool> &is_default, const ::OpenAPI::OptionalParam<bool> &clear_cache) {
+void OAIProductApi::productOptionValueAdd(const QString &product_id, const QString &option_id, const ::OpenAPI::OptionalParam<QString> &option_value, const ::OpenAPI::OptionalParam<qint32> &sort_order, const ::OpenAPI::OptionalParam<QString> &display_value, const ::OpenAPI::OptionalParam<bool> &is_default, const ::OpenAPI::OptionalParam<bool> &clear_cache, const ::OpenAPI::OptionalParam<QString> &idempotency_key) {
     QString fullPath = QString(_serverConfigs["productOptionValueAdd"][_serverIndices.value("productOptionValueAdd")].URL()+"/product.option.value.add.json");
     
     if (_apiKeys.contains("StoreKeyAuth")) {
@@ -5778,6 +5868,21 @@ void OAIProductApi::productOptionValueAdd(const QString &product_id, const QStri
 
         fullPath.append(QUrl::toPercentEncoding("clear_cache")).append(querySuffix).append(QUrl::toPercentEncoding(::OpenAPI::toStringValue(clear_cache.stringValue())));
     }
+    if (idempotency_key.hasValue())
+    {
+        queryStyle = "form";
+        if (queryStyle == "")
+            queryStyle = "form";
+        queryPrefix = getParamStylePrefix(queryStyle);
+        querySuffix = getParamStyleSuffix(queryStyle);
+        queryDelimiter = getParamStyleDelimiter(queryStyle, "idempotency_key", true);
+        if (fullPath.indexOf("?") > 0)
+            fullPath.append(queryPrefix);
+        else
+            fullPath.append("?");
+
+        fullPath.append(QUrl::toPercentEncoding("idempotency_key")).append(querySuffix).append(QUrl::toPercentEncoding(::OpenAPI::toStringValue(idempotency_key.stringValue())));
+    }
     OAIHttpRequestWorker *worker = new OAIHttpRequestWorker(this, _manager);
     worker->setTimeOut(_timeOut);
     worker->setWorkingDirectory(_workingDirectory);
@@ -5845,7 +5950,7 @@ void OAIProductApi::productOptionValueAddCallback(OAIHttpRequestWorker *worker) 
     }
 }
 
-void OAIProductApi::productOptionValueAssign(const qint32 &product_option_id, const QString &option_value_id, const ::OpenAPI::OptionalParam<bool> &clear_cache) {
+void OAIProductApi::productOptionValueAssign(const qint32 &product_option_id, const QString &option_value_id, const ::OpenAPI::OptionalParam<bool> &clear_cache, const ::OpenAPI::OptionalParam<QString> &idempotency_key) {
     QString fullPath = QString(_serverConfigs["productOptionValueAssign"][_serverIndices.value("productOptionValueAssign")].URL()+"/product.option.value.assign.json");
     
     if (_apiKeys.contains("StoreKeyAuth")) {
@@ -5901,6 +6006,21 @@ void OAIProductApi::productOptionValueAssign(const qint32 &product_option_id, co
             fullPath.append("?");
 
         fullPath.append(QUrl::toPercentEncoding("clear_cache")).append(querySuffix).append(QUrl::toPercentEncoding(::OpenAPI::toStringValue(clear_cache.stringValue())));
+    }
+    if (idempotency_key.hasValue())
+    {
+        queryStyle = "form";
+        if (queryStyle == "")
+            queryStyle = "form";
+        queryPrefix = getParamStylePrefix(queryStyle);
+        querySuffix = getParamStyleSuffix(queryStyle);
+        queryDelimiter = getParamStyleDelimiter(queryStyle, "idempotency_key", true);
+        if (fullPath.indexOf("?") > 0)
+            fullPath.append(queryPrefix);
+        else
+            fullPath.append("?");
+
+        fullPath.append(QUrl::toPercentEncoding("idempotency_key")).append(querySuffix).append(QUrl::toPercentEncoding(::OpenAPI::toStringValue(idempotency_key.stringValue())));
     }
     OAIHttpRequestWorker *worker = new OAIHttpRequestWorker(this, _manager);
     worker->setTimeOut(_timeOut);
@@ -6108,7 +6228,7 @@ void OAIProductApi::productOptionValueDeleteCallback(OAIHttpRequestWorker *worke
     }
 }
 
-void OAIProductApi::productOptionValueUpdate(const QString &product_id, const QString &option_id, const QString &option_value_id, const ::OpenAPI::OptionalParam<QString> &option_value, const ::OpenAPI::OptionalParam<double> &price, const ::OpenAPI::OptionalParam<double> &quantity, const ::OpenAPI::OptionalParam<QString> &display_value, const ::OpenAPI::OptionalParam<bool> &clear_cache) {
+void OAIProductApi::productOptionValueUpdate(const QString &product_id, const QString &option_id, const QString &option_value_id, const ::OpenAPI::OptionalParam<QString> &option_value, const ::OpenAPI::OptionalParam<double> &price, const ::OpenAPI::OptionalParam<double> &quantity, const ::OpenAPI::OptionalParam<QString> &display_value, const ::OpenAPI::OptionalParam<bool> &clear_cache, const ::OpenAPI::OptionalParam<QString> &idempotency_key) {
     QString fullPath = QString(_serverConfigs["productOptionValueUpdate"][_serverIndices.value("productOptionValueUpdate")].URL()+"/product.option.value.update.json");
     
     if (_apiKeys.contains("StoreKeyAuth")) {
@@ -6239,6 +6359,21 @@ void OAIProductApi::productOptionValueUpdate(const QString &product_id, const QS
             fullPath.append("?");
 
         fullPath.append(QUrl::toPercentEncoding("clear_cache")).append(querySuffix).append(QUrl::toPercentEncoding(::OpenAPI::toStringValue(clear_cache.stringValue())));
+    }
+    if (idempotency_key.hasValue())
+    {
+        queryStyle = "form";
+        if (queryStyle == "")
+            queryStyle = "form";
+        queryPrefix = getParamStylePrefix(queryStyle);
+        querySuffix = getParamStyleSuffix(queryStyle);
+        queryDelimiter = getParamStyleDelimiter(queryStyle, "idempotency_key", true);
+        if (fullPath.indexOf("?") > 0)
+            fullPath.append(queryPrefix);
+        else
+            fullPath.append("?");
+
+        fullPath.append(QUrl::toPercentEncoding("idempotency_key")).append(querySuffix).append(QUrl::toPercentEncoding(::OpenAPI::toStringValue(idempotency_key.stringValue())));
     }
     OAIHttpRequestWorker *worker = new OAIHttpRequestWorker(this, _manager);
     worker->setTimeOut(_timeOut);
@@ -6916,7 +7051,7 @@ void OAIProductApi::productReviewListCallback(OAIHttpRequestWorker *worker) {
     }
 }
 
-void OAIProductApi::productStoreAssign(const QString &product_id, const QString &store_id) {
+void OAIProductApi::productStoreAssign(const QString &product_id, const QString &store_id, const ::OpenAPI::OptionalParam<QString> &idempotency_key) {
     QString fullPath = QString(_serverConfigs["productStoreAssign"][_serverIndices.value("productStoreAssign")].URL()+"/product.store.assign.json");
     
     if (_apiKeys.contains("StoreKeyAuth")) {
@@ -6957,6 +7092,21 @@ void OAIProductApi::productStoreAssign(const QString &product_id, const QString 
             fullPath.append("?");
 
         fullPath.append(QUrl::toPercentEncoding("store_id")).append(querySuffix).append(QUrl::toPercentEncoding(::OpenAPI::toStringValue(store_id)));
+    }
+    if (idempotency_key.hasValue())
+    {
+        queryStyle = "form";
+        if (queryStyle == "")
+            queryStyle = "form";
+        queryPrefix = getParamStylePrefix(queryStyle);
+        querySuffix = getParamStyleSuffix(queryStyle);
+        queryDelimiter = getParamStyleDelimiter(queryStyle, "idempotency_key", true);
+        if (fullPath.indexOf("?") > 0)
+            fullPath.append(queryPrefix);
+        else
+            fullPath.append("?");
+
+        fullPath.append(QUrl::toPercentEncoding("idempotency_key")).append(querySuffix).append(QUrl::toPercentEncoding(::OpenAPI::toStringValue(idempotency_key.stringValue())));
     }
     OAIHttpRequestWorker *worker = new OAIHttpRequestWorker(this, _manager);
     worker->setTimeOut(_timeOut);

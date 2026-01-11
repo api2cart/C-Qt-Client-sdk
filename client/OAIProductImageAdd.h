@@ -109,6 +109,11 @@ public:
     bool is_use_latest_api_version_Set() const;
     bool is_use_latest_api_version_Valid() const;
 
+    QString getIdempotencyKey() const;
+    void setIdempotencyKey(const QString &idempotency_key);
+    bool is_idempotency_key_Set() const;
+    bool is_idempotency_key_Valid() const;
+
     virtual bool isSet() const override;
     virtual bool isValid() const override;
 
@@ -170,6 +175,10 @@ private:
     bool m_use_latest_api_version;
     bool m_use_latest_api_version_isSet;
     bool m_use_latest_api_version_isValid;
+
+    QString m_idempotency_key;
+    bool m_idempotency_key_isSet;
+    bool m_idempotency_key_isValid;
 };
 
 } // namespace OpenAPI

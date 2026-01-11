@@ -82,6 +82,9 @@ void OAICustomerUpdate::initializeModel() {
     m_store_id_isSet = false;
     m_store_id_isValid = false;
 
+    m_idempotency_key_isSet = false;
+    m_idempotency_key_isValid = false;
+
     m_address_isSet = false;
     m_address_isValid = false;
 }
@@ -143,6 +146,9 @@ void OAICustomerUpdate::fromJsonObject(QJsonObject json) {
     m_store_id_isValid = ::OpenAPI::fromJsonValue(m_store_id, json[QString("store_id")]);
     m_store_id_isSet = !json[QString("store_id")].isNull() && m_store_id_isValid;
 
+    m_idempotency_key_isValid = ::OpenAPI::fromJsonValue(m_idempotency_key, json[QString("idempotency_key")]);
+    m_idempotency_key_isSet = !json[QString("idempotency_key")].isNull() && m_idempotency_key_isValid;
+
     m_address_isValid = ::OpenAPI::fromJsonValue(m_address, json[QString("address")]);
     m_address_isSet = !json[QString("address")].isNull() && m_address_isValid;
 }
@@ -203,6 +209,9 @@ QJsonObject OAICustomerUpdate::asJsonObject() const {
     }
     if (m_store_id_isSet) {
         obj.insert(QString("store_id"), ::OpenAPI::toJsonValue(m_store_id));
+    }
+    if (m_idempotency_key_isSet) {
+        obj.insert(QString("idempotency_key"), ::OpenAPI::toJsonValue(m_idempotency_key));
     }
     if (m_address.size() > 0) {
         obj.insert(QString("address"), ::OpenAPI::toJsonValue(m_address));
@@ -466,6 +475,22 @@ bool OAICustomerUpdate::is_store_id_Valid() const{
     return m_store_id_isValid;
 }
 
+QString OAICustomerUpdate::getIdempotencyKey() const {
+    return m_idempotency_key;
+}
+void OAICustomerUpdate::setIdempotencyKey(const QString &idempotency_key) {
+    m_idempotency_key = idempotency_key;
+    m_idempotency_key_isSet = true;
+}
+
+bool OAICustomerUpdate::is_idempotency_key_Set() const{
+    return m_idempotency_key_isSet;
+}
+
+bool OAICustomerUpdate::is_idempotency_key_Valid() const{
+    return m_idempotency_key_isValid;
+}
+
 QList<OAICustomerUpdate_address_inner> OAICustomerUpdate::getAddress() const {
     return m_address;
 }
@@ -561,6 +586,11 @@ bool OAICustomerUpdate::isSet() const {
         }
 
         if (m_store_id_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_idempotency_key_isSet) {
             isObjectUpdated = true;
             break;
         }

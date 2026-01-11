@@ -399,6 +399,11 @@ public:
     bool is_fee_price_Set() const;
     bool is_fee_price_Valid() const;
 
+    QString getIdempotencyKey() const;
+    void setIdempotencyKey(const QString &idempotency_key);
+    bool is_idempotency_key_Set() const;
+    bool is_idempotency_key_Valid() const;
+
     QList<OAIOrderAdd_order_item_inner> getOrderItem() const;
     void setOrderItem(const QList<OAIOrderAdd_order_item_inner> &order_item);
     bool is_order_item_Set() const;
@@ -693,6 +698,10 @@ private:
     double m_fee_price;
     bool m_fee_price_isSet;
     bool m_fee_price_isValid;
+
+    QString m_idempotency_key;
+    bool m_idempotency_key_isSet;
+    bool m_idempotency_key_isValid;
 
     QList<OAIOrderAdd_order_item_inner> m_order_item;
     bool m_order_item_isSet;

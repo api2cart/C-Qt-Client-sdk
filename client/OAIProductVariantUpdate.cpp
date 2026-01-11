@@ -207,6 +207,9 @@ void OAIProductVariantUpdate::initializeModel() {
 
     m_processing_profile_id_isSet = false;
     m_processing_profile_id_isValid = false;
+
+    m_idempotency_key_isSet = false;
+    m_idempotency_key_isValid = false;
 }
 
 void OAIProductVariantUpdate::fromJson(QString jsonString) {
@@ -391,6 +394,9 @@ void OAIProductVariantUpdate::fromJsonObject(QJsonObject json) {
 
     m_processing_profile_id_isValid = ::OpenAPI::fromJsonValue(m_processing_profile_id, json[QString("processing_profile_id")]);
     m_processing_profile_id_isSet = !json[QString("processing_profile_id")].isNull() && m_processing_profile_id_isValid;
+
+    m_idempotency_key_isValid = ::OpenAPI::fromJsonValue(m_idempotency_key, json[QString("idempotency_key")]);
+    m_idempotency_key_isSet = !json[QString("idempotency_key")].isNull() && m_idempotency_key_isValid;
 }
 
 QString OAIProductVariantUpdate::asJson() const {
@@ -575,6 +581,9 @@ QJsonObject OAIProductVariantUpdate::asJsonObject() const {
     }
     if (m_processing_profile_id_isSet) {
         obj.insert(QString("processing_profile_id"), ::OpenAPI::toJsonValue(m_processing_profile_id));
+    }
+    if (m_idempotency_key_isSet) {
+        obj.insert(QString("idempotency_key"), ::OpenAPI::toJsonValue(m_idempotency_key));
     }
     return obj;
 }
@@ -1507,6 +1516,22 @@ bool OAIProductVariantUpdate::is_processing_profile_id_Valid() const{
     return m_processing_profile_id_isValid;
 }
 
+QString OAIProductVariantUpdate::getIdempotencyKey() const {
+    return m_idempotency_key;
+}
+void OAIProductVariantUpdate::setIdempotencyKey(const QString &idempotency_key) {
+    m_idempotency_key = idempotency_key;
+    m_idempotency_key_isSet = true;
+}
+
+bool OAIProductVariantUpdate::is_idempotency_key_Set() const{
+    return m_idempotency_key_isSet;
+}
+
+bool OAIProductVariantUpdate::is_idempotency_key_Valid() const{
+    return m_idempotency_key_isValid;
+}
+
 bool OAIProductVariantUpdate::isSet() const {
     bool isObjectUpdated = false;
     do {
@@ -1796,6 +1821,11 @@ bool OAIProductVariantUpdate::isSet() const {
         }
 
         if (m_processing_profile_id_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_idempotency_key_isSet) {
             isObjectUpdated = true;
             break;
         }

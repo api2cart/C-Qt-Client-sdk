@@ -67,6 +67,9 @@ void OAIOrderReturnAdd::initializeModel() {
     m_reject_reason_isSet = false;
     m_reject_reason_isValid = false;
 
+    m_idempotency_key_isSet = false;
+    m_idempotency_key_isValid = false;
+
     m_order_products_isSet = false;
     m_order_products_isValid = false;
 }
@@ -113,6 +116,9 @@ void OAIOrderReturnAdd::fromJsonObject(QJsonObject json) {
     m_reject_reason_isValid = ::OpenAPI::fromJsonValue(m_reject_reason, json[QString("reject_reason")]);
     m_reject_reason_isSet = !json[QString("reject_reason")].isNull() && m_reject_reason_isValid;
 
+    m_idempotency_key_isValid = ::OpenAPI::fromJsonValue(m_idempotency_key, json[QString("idempotency_key")]);
+    m_idempotency_key_isSet = !json[QString("idempotency_key")].isNull() && m_idempotency_key_isValid;
+
     m_order_products_isValid = ::OpenAPI::fromJsonValue(m_order_products, json[QString("order_products")]);
     m_order_products_isSet = !json[QString("order_products")].isNull() && m_order_products_isValid;
 }
@@ -158,6 +164,9 @@ QJsonObject OAIOrderReturnAdd::asJsonObject() const {
     }
     if (m_reject_reason_isSet) {
         obj.insert(QString("reject_reason"), ::OpenAPI::toJsonValue(m_reject_reason));
+    }
+    if (m_idempotency_key_isSet) {
+        obj.insert(QString("idempotency_key"), ::OpenAPI::toJsonValue(m_idempotency_key));
     }
     if (m_order_products.size() > 0) {
         obj.insert(QString("order_products"), ::OpenAPI::toJsonValue(m_order_products));
@@ -341,6 +350,22 @@ bool OAIOrderReturnAdd::is_reject_reason_Valid() const{
     return m_reject_reason_isValid;
 }
 
+QString OAIOrderReturnAdd::getIdempotencyKey() const {
+    return m_idempotency_key;
+}
+void OAIOrderReturnAdd::setIdempotencyKey(const QString &idempotency_key) {
+    m_idempotency_key = idempotency_key;
+    m_idempotency_key_isSet = true;
+}
+
+bool OAIOrderReturnAdd::is_idempotency_key_Set() const{
+    return m_idempotency_key_isSet;
+}
+
+bool OAIOrderReturnAdd::is_idempotency_key_Valid() const{
+    return m_idempotency_key_isValid;
+}
+
 QList<OAIOrderReturnAdd_order_products_inner> OAIOrderReturnAdd::getOrderProducts() const {
     return m_order_products;
 }
@@ -411,6 +436,11 @@ bool OAIOrderReturnAdd::isSet() const {
         }
 
         if (m_reject_reason_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_idempotency_key_isSet) {
             isObjectUpdated = true;
             break;
         }

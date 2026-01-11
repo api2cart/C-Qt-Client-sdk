@@ -212,6 +212,10 @@ client/OAICategoryCount_200_response.cpp
 client/OAICategoryCount_200_response.h
 client/OAICategoryCount_200_response_result.cpp
 client/OAICategoryCount_200_response_result.h
+client/OAICategoryDeleteBatch.cpp
+client/OAICategoryDeleteBatch.h
+client/OAICategoryDeleteBatch_payload_inner.cpp
+client/OAICategoryDeleteBatch_payload_inner.h
 client/OAICategoryDelete_200_response.cpp
 client/OAICategoryDelete_200_response.h
 client/OAICategoryDelete_200_response_result.cpp

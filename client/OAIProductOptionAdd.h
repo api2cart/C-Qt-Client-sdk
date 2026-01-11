@@ -97,6 +97,11 @@ public:
     bool is_clear_cache_Set() const;
     bool is_clear_cache_Valid() const;
 
+    QString getIdempotencyKey() const;
+    void setIdempotencyKey(const QString &idempotency_key);
+    bool is_idempotency_key_Set() const;
+    bool is_idempotency_key_Valid() const;
+
     virtual bool isSet() const override;
     virtual bool isValid() const override;
 
@@ -146,6 +151,10 @@ private:
     bool m_clear_cache;
     bool m_clear_cache_isSet;
     bool m_clear_cache_isValid;
+
+    QString m_idempotency_key;
+    bool m_idempotency_key_isSet;
+    bool m_idempotency_key_isValid;
 };
 
 } // namespace OpenAPI

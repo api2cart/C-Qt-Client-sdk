@@ -100,6 +100,8 @@ HEADERS += \
     $${PWD}/OAICategoryAssign_200_response.h \
     $${PWD}/OAICategoryCount_200_response.h \
     $${PWD}/OAICategoryCount_200_response_result.h \
+    $${PWD}/OAICategoryDeleteBatch.h \
+    $${PWD}/OAICategoryDeleteBatch_payload_inner.h \
     $${PWD}/OAICategoryDelete_200_response.h \
     $${PWD}/OAICategoryDelete_200_response_result.h \
     $${PWD}/OAICategoryFind_200_response.h \
@@ -559,6 +561,8 @@ SOURCES += \
     $${PWD}/OAICategoryAssign_200_response.cpp \
     $${PWD}/OAICategoryCount_200_response.cpp \
     $${PWD}/OAICategoryCount_200_response_result.cpp \
+    $${PWD}/OAICategoryDeleteBatch.cpp \
+    $${PWD}/OAICategoryDeleteBatch_payload_inner.cpp \
     $${PWD}/OAICategoryDelete_200_response.cpp \
     $${PWD}/OAICategoryDelete_200_response_result.cpp \
     $${PWD}/OAICategoryFind_200_response.cpp \

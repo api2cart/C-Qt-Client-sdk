@@ -109,6 +109,8 @@ add_library(${PROJECT_NAME}
   OAICategoryAssign_200_response.h
   OAICategoryCount_200_response.h
   OAICategoryCount_200_response_result.h
+  OAICategoryDeleteBatch.h
+  OAICategoryDeleteBatch_payload_inner.h
   OAICategoryDelete_200_response.h
   OAICategoryDelete_200_response_result.h
   OAICategoryFind_200_response.h
@@ -563,6 +565,8 @@ add_library(${PROJECT_NAME}
   OAICategoryAssign_200_response.cpp
   OAICategoryCount_200_response.cpp
   OAICategoryCount_200_response_result.cpp
+  OAICategoryDeleteBatch.cpp
+  OAICategoryDeleteBatch_payload_inner.cpp
   OAICategoryDelete_200_response.cpp
   OAICategoryDelete_200_response_result.cpp
   OAICategoryFind_200_response.cpp

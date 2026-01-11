@@ -112,6 +112,9 @@ void OAIOrderCalculate::initializeModel() {
     m_response_fields_isSet = false;
     m_response_fields_isValid = false;
 
+    m_idempotency_key_isSet = false;
+    m_idempotency_key_isValid = false;
+
     m_order_item_isSet = false;
     m_order_item_isValid = false;
 }
@@ -203,6 +206,9 @@ void OAIOrderCalculate::fromJsonObject(QJsonObject json) {
     m_response_fields_isValid = ::OpenAPI::fromJsonValue(m_response_fields, json[QString("response_fields")]);
     m_response_fields_isSet = !json[QString("response_fields")].isNull() && m_response_fields_isValid;
 
+    m_idempotency_key_isValid = ::OpenAPI::fromJsonValue(m_idempotency_key, json[QString("idempotency_key")]);
+    m_idempotency_key_isSet = !json[QString("idempotency_key")].isNull() && m_idempotency_key_isValid;
+
     m_order_item_isValid = ::OpenAPI::fromJsonValue(m_order_item, json[QString("order_item")]);
     m_order_item_isSet = !json[QString("order_item")].isNull() && m_order_item_isValid;
 }
@@ -293,6 +299,9 @@ QJsonObject OAIOrderCalculate::asJsonObject() const {
     }
     if (m_response_fields_isSet) {
         obj.insert(QString("response_fields"), ::OpenAPI::toJsonValue(m_response_fields));
+    }
+    if (m_idempotency_key_isSet) {
+        obj.insert(QString("idempotency_key"), ::OpenAPI::toJsonValue(m_idempotency_key));
     }
     if (m_order_item.size() > 0) {
         obj.insert(QString("order_item"), ::OpenAPI::toJsonValue(m_order_item));
@@ -716,6 +725,22 @@ bool OAIOrderCalculate::is_response_fields_Valid() const{
     return m_response_fields_isValid;
 }
 
+QString OAIOrderCalculate::getIdempotencyKey() const {
+    return m_idempotency_key;
+}
+void OAIOrderCalculate::setIdempotencyKey(const QString &idempotency_key) {
+    m_idempotency_key = idempotency_key;
+    m_idempotency_key_isSet = true;
+}
+
+bool OAIOrderCalculate::is_idempotency_key_Set() const{
+    return m_idempotency_key_isSet;
+}
+
+bool OAIOrderCalculate::is_idempotency_key_Valid() const{
+    return m_idempotency_key_isValid;
+}
+
 QList<OAIOrderCalculate_order_item_inner> OAIOrderCalculate::getOrderItem() const {
     return m_order_item;
 }
@@ -861,6 +886,11 @@ bool OAIOrderCalculate::isSet() const {
         }
 
         if (m_response_fields_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_idempotency_key_isSet) {
             isObjectUpdated = true;
             break;
         }

@@ -25,6 +25,7 @@
 #include "OAICategoryAdd_200_response.h"
 #include "OAICategoryAssign_200_response.h"
 #include "OAICategoryCount_200_response.h"
+#include "OAICategoryDeleteBatch.h"
 #include "OAICategoryDelete_200_response.h"
 #include "OAICategoryFind_200_response.h"
 #include "OAICategoryImageAdd_200_response.h"
@@ -84,8 +85,9 @@ public:
     * @param[in]  store_id QString [optional]
     * @param[in]  stores_ids QString [optional]
     * @param[in]  lang_id QString [optional]
+    * @param[in]  idempotency_key QString [optional]
     */
-    virtual void categoryAdd(const QString &name, const ::OpenAPI::OptionalParam<QString> &description = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &short_description = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &parent_id = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<bool> &avail = ::OpenAPI::OptionalParam<bool>(), const ::OpenAPI::OptionalParam<QString> &created_time = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &modified_time = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<qint32> &sort_order = ::OpenAPI::OptionalParam<qint32>(), const ::OpenAPI::OptionalParam<QString> &meta_title = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &meta_description = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &meta_keywords = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &seo_url = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &store_id = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &stores_ids = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &lang_id = ::OpenAPI::OptionalParam<QString>());
+    virtual void categoryAdd(const QString &name, const ::OpenAPI::OptionalParam<QString> &description = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &short_description = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &parent_id = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<bool> &avail = ::OpenAPI::OptionalParam<bool>(), const ::OpenAPI::OptionalParam<QString> &created_time = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &modified_time = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<qint32> &sort_order = ::OpenAPI::OptionalParam<qint32>(), const ::OpenAPI::OptionalParam<QString> &meta_title = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &meta_description = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &meta_keywords = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &seo_url = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &store_id = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &stores_ids = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &lang_id = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &idempotency_key = ::OpenAPI::OptionalParam<QString>());
 
     /**
     * @param[in]  oai_category_add_batch OAICategoryAddBatch [required]
@@ -96,8 +98,9 @@ public:
     * @param[in]  category_id QString [required]
     * @param[in]  product_id QString [required]
     * @param[in]  store_id QString [optional]
+    * @param[in]  idempotency_key QString [optional]
     */
-    virtual void categoryAssign(const QString &category_id, const QString &product_id, const ::OpenAPI::OptionalParam<QString> &store_id = ::OpenAPI::OptionalParam<QString>());
+    virtual void categoryAssign(const QString &category_id, const QString &product_id, const ::OpenAPI::OptionalParam<QString> &store_id = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &idempotency_key = ::OpenAPI::OptionalParam<QString>());
 
     /**
     * @param[in]  parent_id QString [optional]
@@ -123,6 +126,11 @@ public:
     virtual void categoryDelete(const QString &id, const ::OpenAPI::OptionalParam<QString> &store_id = ::OpenAPI::OptionalParam<QString>());
 
     /**
+    * @param[in]  oai_category_delete_batch OAICategoryDeleteBatch [required]
+    */
+    virtual void categoryDeleteBatch(const OAICategoryDeleteBatch &oai_category_delete_batch);
+
+    /**
     * @param[in]  find_value QString [required]
     * @param[in]  find_where QString [optional]
     * @param[in]  find_params QString [optional]
@@ -140,8 +148,9 @@ public:
     * @param[in]  label QString [optional]
     * @param[in]  mime QString [optional]
     * @param[in]  position qint32 [optional]
+    * @param[in]  idempotency_key QString [optional]
     */
-    virtual void categoryImageAdd(const QString &category_id, const QString &image_name, const QString &url, const QString &type, const ::OpenAPI::OptionalParam<QString> &store_id = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &label = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &mime = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<qint32> &position = ::OpenAPI::OptionalParam<qint32>());
+    virtual void categoryImageAdd(const QString &category_id, const QString &image_name, const QString &url, const QString &type, const ::OpenAPI::OptionalParam<QString> &store_id = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &label = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &mime = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<qint32> &position = ::OpenAPI::OptionalParam<qint32>(), const ::OpenAPI::OptionalParam<QString> &idempotency_key = ::OpenAPI::OptionalParam<QString>());
 
     /**
     * @param[in]  category_id QString [required]
@@ -191,8 +200,9 @@ public:
     * @param[in]  category_id QString [required]
     * @param[in]  product_id QString [required]
     * @param[in]  store_id QString [optional]
+    * @param[in]  idempotency_key QString [optional]
     */
-    virtual void categoryUnassign(const QString &category_id, const QString &product_id, const ::OpenAPI::OptionalParam<QString> &store_id = ::OpenAPI::OptionalParam<QString>());
+    virtual void categoryUnassign(const QString &category_id, const QString &product_id, const ::OpenAPI::OptionalParam<QString> &store_id = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &idempotency_key = ::OpenAPI::OptionalParam<QString>());
 
     /**
     * @param[in]  id QString [required]
@@ -210,8 +220,9 @@ public:
     * @param[in]  store_id QString [optional]
     * @param[in]  stores_ids QString [optional]
     * @param[in]  lang_id QString [optional]
+    * @param[in]  idempotency_key QString [optional]
     */
-    virtual void categoryUpdate(const QString &id, const ::OpenAPI::OptionalParam<QString> &name = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &description = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &short_description = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &parent_id = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<bool> &avail = ::OpenAPI::OptionalParam<bool>(), const ::OpenAPI::OptionalParam<qint32> &sort_order = ::OpenAPI::OptionalParam<qint32>(), const ::OpenAPI::OptionalParam<QString> &modified_time = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &meta_title = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &meta_description = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &meta_keywords = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &seo_url = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &store_id = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &stores_ids = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &lang_id = ::OpenAPI::OptionalParam<QString>());
+    virtual void categoryUpdate(const QString &id, const ::OpenAPI::OptionalParam<QString> &name = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &description = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &short_description = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &parent_id = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<bool> &avail = ::OpenAPI::OptionalParam<bool>(), const ::OpenAPI::OptionalParam<qint32> &sort_order = ::OpenAPI::OptionalParam<qint32>(), const ::OpenAPI::OptionalParam<QString> &modified_time = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &meta_title = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &meta_description = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &meta_keywords = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &seo_url = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &store_id = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &stores_ids = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &lang_id = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &idempotency_key = ::OpenAPI::OptionalParam<QString>());
 
 
 private:
@@ -241,6 +252,7 @@ private:
     void categoryAssignCallback(OAIHttpRequestWorker *worker);
     void categoryCountCallback(OAIHttpRequestWorker *worker);
     void categoryDeleteCallback(OAIHttpRequestWorker *worker);
+    void categoryDeleteBatchCallback(OAIHttpRequestWorker *worker);
     void categoryFindCallback(OAIHttpRequestWorker *worker);
     void categoryImageAddCallback(OAIHttpRequestWorker *worker);
     void categoryImageDeleteCallback(OAIHttpRequestWorker *worker);
@@ -256,6 +268,7 @@ Q_SIGNALS:
     void categoryAssignSignal(OAICategoryAssign_200_response summary);
     void categoryCountSignal(OAICategoryCount_200_response summary);
     void categoryDeleteSignal(OAICategoryDelete_200_response summary);
+    void categoryDeleteBatchSignal(OAICategoryAddBatch_200_response summary);
     void categoryFindSignal(OAICategoryFind_200_response summary);
     void categoryImageAddSignal(OAICategoryImageAdd_200_response summary);
     void categoryImageDeleteSignal(OAIAttributeDelete_200_response summary);
@@ -270,6 +283,7 @@ Q_SIGNALS:
     void categoryAssignSignalFull(OAIHttpRequestWorker *worker, OAICategoryAssign_200_response summary);
     void categoryCountSignalFull(OAIHttpRequestWorker *worker, OAICategoryCount_200_response summary);
     void categoryDeleteSignalFull(OAIHttpRequestWorker *worker, OAICategoryDelete_200_response summary);
+    void categoryDeleteBatchSignalFull(OAIHttpRequestWorker *worker, OAICategoryAddBatch_200_response summary);
     void categoryFindSignalFull(OAIHttpRequestWorker *worker, OAICategoryFind_200_response summary);
     void categoryImageAddSignalFull(OAIHttpRequestWorker *worker, OAICategoryImageAdd_200_response summary);
     void categoryImageDeleteSignalFull(OAIHttpRequestWorker *worker, OAIAttributeDelete_200_response summary);
@@ -293,6 +307,9 @@ Q_SIGNALS:
     Q_DECL_DEPRECATED_X("Use categoryDeleteSignalError() instead")
     void categoryDeleteSignalE(OAICategoryDelete_200_response summary, QNetworkReply::NetworkError error_type, QString error_str);
     void categoryDeleteSignalError(OAICategoryDelete_200_response summary, QNetworkReply::NetworkError error_type, const QString &error_str);
+    Q_DECL_DEPRECATED_X("Use categoryDeleteBatchSignalError() instead")
+    void categoryDeleteBatchSignalE(OAICategoryAddBatch_200_response summary, QNetworkReply::NetworkError error_type, QString error_str);
+    void categoryDeleteBatchSignalError(OAICategoryAddBatch_200_response summary, QNetworkReply::NetworkError error_type, const QString &error_str);
     Q_DECL_DEPRECATED_X("Use categoryFindSignalError() instead")
     void categoryFindSignalE(OAICategoryFind_200_response summary, QNetworkReply::NetworkError error_type, QString error_str);
     void categoryFindSignalError(OAICategoryFind_200_response summary, QNetworkReply::NetworkError error_type, const QString &error_str);
@@ -330,6 +347,9 @@ Q_SIGNALS:
     Q_DECL_DEPRECATED_X("Use categoryDeleteSignalErrorFull() instead")
     void categoryDeleteSignalEFull(OAIHttpRequestWorker *worker, QNetworkReply::NetworkError error_type, QString error_str);
     void categoryDeleteSignalErrorFull(OAIHttpRequestWorker *worker, QNetworkReply::NetworkError error_type, const QString &error_str);
+    Q_DECL_DEPRECATED_X("Use categoryDeleteBatchSignalErrorFull() instead")
+    void categoryDeleteBatchSignalEFull(OAIHttpRequestWorker *worker, QNetworkReply::NetworkError error_type, QString error_str);
+    void categoryDeleteBatchSignalErrorFull(OAIHttpRequestWorker *worker, QNetworkReply::NetworkError error_type, const QString &error_str);
     Q_DECL_DEPRECATED_X("Use categoryFindSignalErrorFull() instead")
     void categoryFindSignalEFull(OAIHttpRequestWorker *worker, QNetworkReply::NetworkError error_type, QString error_str);
     void categoryFindSignalErrorFull(OAIHttpRequestWorker *worker, QNetworkReply::NetworkError error_type, const QString &error_str);
