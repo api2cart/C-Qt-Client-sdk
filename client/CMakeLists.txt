@@ -90,6 +90,7 @@ add_library(${PROJECT_NAME}
   OAICartValidate_200_response_result.h
   OAICart_Channel.h
   OAICart_MetaData.h
+  OAICart_PickupLocation.h
   OAICart_ShippingMethod.h
   OAICart_ShippingMethod_Rate.h
   OAICart_ShippingZone.h
@@ -546,6 +547,7 @@ add_library(${PROJECT_NAME}
   OAICartValidate_200_response_result.cpp
   OAICart_Channel.cpp
   OAICart_MetaData.cpp
+  OAICart_PickupLocation.cpp
   OAICart_ShippingMethod.cpp
   OAICart_ShippingMethod_Rate.cpp
   OAICart_ShippingZone.cpp

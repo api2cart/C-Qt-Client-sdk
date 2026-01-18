@@ -23,6 +23,7 @@
 
 #include "OAICarrier.h"
 #include "OAICart_Channel.h"
+#include "OAICart_PickupLocation.h"
 #include "OAICurrency.h"
 #include "OAIInfo.h"
 #include "OAILanguage.h"
@@ -39,6 +40,7 @@ class OAICurrency;
 class OAICarrier;
 class OAIInfo;
 class OAICart_Channel;
+class OAICart_PickupLocation;
 
 class OAICart_StoreInfo : public OAIObject {
 public:
@@ -141,6 +143,11 @@ public:
     bool is_channels_Set() const;
     bool is_channels_Valid() const;
 
+    QList<OAICart_PickupLocation> getPickupLocations() const;
+    void setPickupLocations(const QList<OAICart_PickupLocation> &pickup_locations);
+    bool is_pickup_locations_Set() const;
+    bool is_pickup_locations_Valid() const;
+
     OAIObject getAdditionalFields() const;
     void setAdditionalFields(const OAIObject &additional_fields);
     bool is_additional_fields_Set() const;
@@ -228,6 +235,10 @@ private:
     QList<OAICart_Channel> m_channels;
     bool m_channels_isSet;
     bool m_channels_isValid;
+
+    QList<OAICart_PickupLocation> m_pickup_locations;
+    bool m_pickup_locations_isSet;
+    bool m_pickup_locations_isValid;
 
     OAIObject m_additional_fields;
     bool m_additional_fields_isSet;

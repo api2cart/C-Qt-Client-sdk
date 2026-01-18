@@ -1730,7 +1730,7 @@ void OAICategoryApi::categoryImageDeleteCallback(OAIHttpRequestWorker *worker) {
     }
 }
 
-void OAICategoryApi::categoryInfo(const QString &id, const ::OpenAPI::OptionalParam<QString> &store_id, const ::OpenAPI::OptionalParam<QString> &lang_id, const ::OpenAPI::OptionalParam<QString> &schema_type, const ::OpenAPI::OptionalParam<QString> &response_fields, const ::OpenAPI::OptionalParam<QString> &params, const ::OpenAPI::OptionalParam<QString> &exclude, const ::OpenAPI::OptionalParam<QString> &report_request_id, const ::OpenAPI::OptionalParam<bool> &disable_report_cache) {
+void OAICategoryApi::categoryInfo(const QString &id, const ::OpenAPI::OptionalParam<QString> &store_id, const ::OpenAPI::OptionalParam<QString> &lang_id, const ::OpenAPI::OptionalParam<QString> &schema_type, const ::OpenAPI::OptionalParam<QString> &response_fields, const ::OpenAPI::OptionalParam<QString> &params, const ::OpenAPI::OptionalParam<QString> &exclude, const ::OpenAPI::OptionalParam<QString> &report_request_id, const ::OpenAPI::OptionalParam<bool> &disable_report_cache, const ::OpenAPI::OptionalParam<bool> &use_latest_api_version) {
     QString fullPath = QString(_serverConfigs["categoryInfo"][_serverIndices.value("categoryInfo")].URL()+"/category.info.json");
     
     if (_apiKeys.contains("StoreKeyAuth")) {
@@ -1877,6 +1877,21 @@ void OAICategoryApi::categoryInfo(const QString &id, const ::OpenAPI::OptionalPa
 
         fullPath.append(QUrl::toPercentEncoding("disable_report_cache")).append(querySuffix).append(QUrl::toPercentEncoding(::OpenAPI::toStringValue(disable_report_cache.stringValue())));
     }
+    if (use_latest_api_version.hasValue())
+    {
+        queryStyle = "form";
+        if (queryStyle == "")
+            queryStyle = "form";
+        queryPrefix = getParamStylePrefix(queryStyle);
+        querySuffix = getParamStyleSuffix(queryStyle);
+        queryDelimiter = getParamStyleDelimiter(queryStyle, "use_latest_api_version", true);
+        if (fullPath.indexOf("?") > 0)
+            fullPath.append(queryPrefix);
+        else
+            fullPath.append("?");
+
+        fullPath.append(QUrl::toPercentEncoding("use_latest_api_version")).append(querySuffix).append(QUrl::toPercentEncoding(::OpenAPI::toStringValue(use_latest_api_version.stringValue())));
+    }
     OAIHttpRequestWorker *worker = new OAIHttpRequestWorker(this, _manager);
     worker->setTimeOut(_timeOut);
     worker->setWorkingDirectory(_workingDirectory);
@@ -1944,7 +1959,7 @@ void OAICategoryApi::categoryInfoCallback(OAIHttpRequestWorker *worker) {
     }
 }
 
-void OAICategoryApi::categoryList(const ::OpenAPI::OptionalParam<qint32> &start, const ::OpenAPI::OptionalParam<qint32> &count, const ::OpenAPI::OptionalParam<QString> &page_cursor, const ::OpenAPI::OptionalParam<QString> &store_id, const ::OpenAPI::OptionalParam<QString> &lang_id, const ::OpenAPI::OptionalParam<QString> &parent_id, const ::OpenAPI::OptionalParam<bool> &avail, const ::OpenAPI::OptionalParam<QString> &product_type, const ::OpenAPI::OptionalParam<QString> &created_from, const ::OpenAPI::OptionalParam<QString> &created_to, const ::OpenAPI::OptionalParam<QString> &modified_from, const ::OpenAPI::OptionalParam<QString> &modified_to, const ::OpenAPI::OptionalParam<QString> &find_value, const ::OpenAPI::OptionalParam<QString> &find_where, const ::OpenAPI::OptionalParam<QString> &response_fields, const ::OpenAPI::OptionalParam<QString> &params, const ::OpenAPI::OptionalParam<QString> &exclude, const ::OpenAPI::OptionalParam<QString> &report_request_id, const ::OpenAPI::OptionalParam<bool> &disable_report_cache, const ::OpenAPI::OptionalParam<bool> &disable_cache) {
+void OAICategoryApi::categoryList(const ::OpenAPI::OptionalParam<qint32> &start, const ::OpenAPI::OptionalParam<qint32> &count, const ::OpenAPI::OptionalParam<QString> &page_cursor, const ::OpenAPI::OptionalParam<QString> &store_id, const ::OpenAPI::OptionalParam<QString> &lang_id, const ::OpenAPI::OptionalParam<QString> &parent_id, const ::OpenAPI::OptionalParam<bool> &avail, const ::OpenAPI::OptionalParam<QString> &product_type, const ::OpenAPI::OptionalParam<QString> &created_from, const ::OpenAPI::OptionalParam<QString> &created_to, const ::OpenAPI::OptionalParam<QString> &modified_from, const ::OpenAPI::OptionalParam<QString> &modified_to, const ::OpenAPI::OptionalParam<QString> &find_value, const ::OpenAPI::OptionalParam<QString> &find_where, const ::OpenAPI::OptionalParam<QString> &response_fields, const ::OpenAPI::OptionalParam<QString> &params, const ::OpenAPI::OptionalParam<QString> &exclude, const ::OpenAPI::OptionalParam<QString> &report_request_id, const ::OpenAPI::OptionalParam<bool> &disable_report_cache, const ::OpenAPI::OptionalParam<bool> &disable_cache, const ::OpenAPI::OptionalParam<bool> &use_latest_api_version) {
     QString fullPath = QString(_serverConfigs["categoryList"][_serverIndices.value("categoryList")].URL()+"/category.list.json");
     
     if (_apiKeys.contains("StoreKeyAuth")) {
@@ -2255,6 +2270,21 @@ void OAICategoryApi::categoryList(const ::OpenAPI::OptionalParam<qint32> &start,
             fullPath.append("?");
 
         fullPath.append(QUrl::toPercentEncoding("disable_cache")).append(querySuffix).append(QUrl::toPercentEncoding(::OpenAPI::toStringValue(disable_cache.stringValue())));
+    }
+    if (use_latest_api_version.hasValue())
+    {
+        queryStyle = "form";
+        if (queryStyle == "")
+            queryStyle = "form";
+        queryPrefix = getParamStylePrefix(queryStyle);
+        querySuffix = getParamStyleSuffix(queryStyle);
+        queryDelimiter = getParamStyleDelimiter(queryStyle, "use_latest_api_version", true);
+        if (fullPath.indexOf("?") > 0)
+            fullPath.append(queryPrefix);
+        else
+            fullPath.append("?");
+
+        fullPath.append(QUrl::toPercentEncoding("use_latest_api_version")).append(querySuffix).append(QUrl::toPercentEncoding(::OpenAPI::toStringValue(use_latest_api_version.stringValue())));
     }
     OAIHttpRequestWorker *worker = new OAIHttpRequestWorker(this, _manager);
     worker->setTimeOut(_timeOut);

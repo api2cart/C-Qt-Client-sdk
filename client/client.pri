@@ -81,6 +81,7 @@ HEADERS += \
     $${PWD}/OAICartValidate_200_response_result.h \
     $${PWD}/OAICart_Channel.h \
     $${PWD}/OAICart_MetaData.h \
+    $${PWD}/OAICart_PickupLocation.h \
     $${PWD}/OAICart_ShippingMethod.h \
     $${PWD}/OAICart_ShippingMethod_Rate.h \
     $${PWD}/OAICart_ShippingZone.h \
@@ -542,6 +543,7 @@ SOURCES += \
     $${PWD}/OAICartValidate_200_response_result.cpp \
     $${PWD}/OAICart_Channel.cpp \
     $${PWD}/OAICart_MetaData.cpp \
+    $${PWD}/OAICart_PickupLocation.cpp \
     $${PWD}/OAICart_ShippingMethod.cpp \
     $${PWD}/OAICart_ShippingMethod_Rate.cpp \
     $${PWD}/OAICart_ShippingZone.cpp \

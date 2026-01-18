@@ -172,6 +172,8 @@ client/OAICart_Channel.cpp
 client/OAICart_Channel.h
 client/OAICart_MetaData.cpp
 client/OAICart_MetaData.h
+client/OAICart_PickupLocation.cpp
+client/OAICart_PickupLocation.h
 client/OAICart_ShippingMethod.cpp
 client/OAICart_ShippingMethod.h
 client/OAICart_ShippingMethod_Rate.cpp

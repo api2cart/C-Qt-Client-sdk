@@ -88,6 +88,9 @@ void OAICart_StoreInfo::initializeModel() {
     m_channels_isSet = false;
     m_channels_isValid = false;
 
+    m_pickup_locations_isSet = false;
+    m_pickup_locations_isValid = false;
+
     m_additional_fields_isSet = false;
     m_additional_fields_isValid = false;
 
@@ -158,6 +161,9 @@ void OAICart_StoreInfo::fromJsonObject(QJsonObject json) {
     m_channels_isValid = ::OpenAPI::fromJsonValue(m_channels, json[QString("channels")]);
     m_channels_isSet = !json[QString("channels")].isNull() && m_channels_isValid;
 
+    m_pickup_locations_isValid = ::OpenAPI::fromJsonValue(m_pickup_locations, json[QString("pickup_locations")]);
+    m_pickup_locations_isSet = !json[QString("pickup_locations")].isNull() && m_pickup_locations_isValid;
+
     m_additional_fields_isValid = ::OpenAPI::fromJsonValue(m_additional_fields, json[QString("additional_fields")]);
     m_additional_fields_isSet = !json[QString("additional_fields")].isNull() && m_additional_fields_isValid;
 
@@ -227,6 +233,9 @@ QJsonObject OAICart_StoreInfo::asJsonObject() const {
     }
     if (m_channels.size() > 0) {
         obj.insert(QString("channels"), ::OpenAPI::toJsonValue(m_channels));
+    }
+    if (m_pickup_locations.size() > 0) {
+        obj.insert(QString("pickup_locations"), ::OpenAPI::toJsonValue(m_pickup_locations));
     }
     if (m_additional_fields_isSet) {
         obj.insert(QString("additional_fields"), ::OpenAPI::toJsonValue(m_additional_fields));
@@ -525,6 +534,22 @@ bool OAICart_StoreInfo::is_channels_Valid() const{
     return m_channels_isValid;
 }
 
+QList<OAICart_PickupLocation> OAICart_StoreInfo::getPickupLocations() const {
+    return m_pickup_locations;
+}
+void OAICart_StoreInfo::setPickupLocations(const QList<OAICart_PickupLocation> &pickup_locations) {
+    m_pickup_locations = pickup_locations;
+    m_pickup_locations_isSet = true;
+}
+
+bool OAICart_StoreInfo::is_pickup_locations_Set() const{
+    return m_pickup_locations_isSet;
+}
+
+bool OAICart_StoreInfo::is_pickup_locations_Valid() const{
+    return m_pickup_locations_isValid;
+}
+
 OAIObject OAICart_StoreInfo::getAdditionalFields() const {
     return m_additional_fields;
 }
@@ -646,6 +671,11 @@ bool OAICart_StoreInfo::isSet() const {
         }
 
         if (m_channels.size() > 0) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_pickup_locations.size() > 0) {
             isObjectUpdated = true;
             break;
         }
