@@ -59,6 +59,16 @@ public:
     bool is_cart_id_Set() const;
     bool is_cart_id_Valid() const;
 
+    QString getCustomLabel() const;
+    void setCustomLabel(const QString &custom_label);
+    bool is_custom_label_Set() const;
+    bool is_custom_label_Valid() const;
+
+    QString getBridgeVersion() const;
+    void setBridgeVersion(const QString &bridge_version);
+    bool is_bridge_version_Set() const;
+    bool is_bridge_version_Valid() const;
+
     QString getTotalCalls() const;
     void setTotalCalls(const QString &total_calls);
     bool is_total_calls_Set() const;
@@ -85,6 +95,14 @@ private:
     QString m_cart_id;
     bool m_cart_id_isSet;
     bool m_cart_id_isValid;
+
+    QString m_custom_label;
+    bool m_custom_label_isSet;
+    bool m_custom_label_isValid;
+
+    QString m_bridge_version;
+    bool m_bridge_version_isSet;
+    bool m_bridge_version_isValid;
 
     QString m_total_calls;
     bool m_total_calls_isSet;

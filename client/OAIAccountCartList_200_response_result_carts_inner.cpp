@@ -46,6 +46,12 @@ void OAIAccountCartList_200_response_result_carts_inner::initializeModel() {
     m_cart_id_isSet = false;
     m_cart_id_isValid = false;
 
+    m_custom_label_isSet = false;
+    m_custom_label_isValid = false;
+
+    m_bridge_version_isSet = false;
+    m_bridge_version_isValid = false;
+
     m_total_calls_isSet = false;
     m_total_calls_isValid = false;
 }
@@ -71,6 +77,12 @@ void OAIAccountCartList_200_response_result_carts_inner::fromJsonObject(QJsonObj
     m_cart_id_isValid = ::OpenAPI::fromJsonValue(m_cart_id, json[QString("cart_id")]);
     m_cart_id_isSet = !json[QString("cart_id")].isNull() && m_cart_id_isValid;
 
+    m_custom_label_isValid = ::OpenAPI::fromJsonValue(m_custom_label, json[QString("custom_label")]);
+    m_custom_label_isSet = !json[QString("custom_label")].isNull() && m_custom_label_isValid;
+
+    m_bridge_version_isValid = ::OpenAPI::fromJsonValue(m_bridge_version, json[QString("bridge_version")]);
+    m_bridge_version_isSet = !json[QString("bridge_version")].isNull() && m_bridge_version_isValid;
+
     m_total_calls_isValid = ::OpenAPI::fromJsonValue(m_total_calls, json[QString("total_calls")]);
     m_total_calls_isSet = !json[QString("total_calls")].isNull() && m_total_calls_isValid;
 }
@@ -95,6 +107,12 @@ QJsonObject OAIAccountCartList_200_response_result_carts_inner::asJsonObject() c
     }
     if (m_cart_id_isSet) {
         obj.insert(QString("cart_id"), ::OpenAPI::toJsonValue(m_cart_id));
+    }
+    if (m_custom_label_isSet) {
+        obj.insert(QString("custom_label"), ::OpenAPI::toJsonValue(m_custom_label));
+    }
+    if (m_bridge_version_isSet) {
+        obj.insert(QString("bridge_version"), ::OpenAPI::toJsonValue(m_bridge_version));
     }
     if (m_total_calls_isSet) {
         obj.insert(QString("total_calls"), ::OpenAPI::toJsonValue(m_total_calls));
@@ -166,6 +184,38 @@ bool OAIAccountCartList_200_response_result_carts_inner::is_cart_id_Valid() cons
     return m_cart_id_isValid;
 }
 
+QString OAIAccountCartList_200_response_result_carts_inner::getCustomLabel() const {
+    return m_custom_label;
+}
+void OAIAccountCartList_200_response_result_carts_inner::setCustomLabel(const QString &custom_label) {
+    m_custom_label = custom_label;
+    m_custom_label_isSet = true;
+}
+
+bool OAIAccountCartList_200_response_result_carts_inner::is_custom_label_Set() const{
+    return m_custom_label_isSet;
+}
+
+bool OAIAccountCartList_200_response_result_carts_inner::is_custom_label_Valid() const{
+    return m_custom_label_isValid;
+}
+
+QString OAIAccountCartList_200_response_result_carts_inner::getBridgeVersion() const {
+    return m_bridge_version;
+}
+void OAIAccountCartList_200_response_result_carts_inner::setBridgeVersion(const QString &bridge_version) {
+    m_bridge_version = bridge_version;
+    m_bridge_version_isSet = true;
+}
+
+bool OAIAccountCartList_200_response_result_carts_inner::is_bridge_version_Set() const{
+    return m_bridge_version_isSet;
+}
+
+bool OAIAccountCartList_200_response_result_carts_inner::is_bridge_version_Valid() const{
+    return m_bridge_version_isValid;
+}
+
 QString OAIAccountCartList_200_response_result_carts_inner::getTotalCalls() const {
     return m_total_calls;
 }
@@ -201,6 +251,16 @@ bool OAIAccountCartList_200_response_result_carts_inner::isSet() const {
         }
 
         if (m_cart_id_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_custom_label_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_bridge_version_isSet) {
             isObjectUpdated = true;
             break;
         }

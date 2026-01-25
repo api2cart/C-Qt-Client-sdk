@@ -49,6 +49,12 @@ void OAIAccountCartAdd::initializeModel() {
     m_store_key_isSet = false;
     m_store_key_isValid = false;
 
+    m_label_isSet = false;
+    m_label_isValid = false;
+
+    m_custom_label_isSet = false;
+    m_custom_label_isValid = false;
+
     m_validate_version_isSet = false;
     m_validate_version_isValid = false;
 
@@ -460,6 +466,21 @@ void OAIAccountCartAdd::initializeModel() {
     m_zid_refresh_token_isSet = false;
     m_zid_refresh_token_isValid = false;
 
+    m_jumpseller_client_id_isSet = false;
+    m_jumpseller_client_id_isValid = false;
+
+    m_jumpseller_client_secret_isSet = false;
+    m_jumpseller_client_secret_isValid = false;
+
+    m_jumpseller_refresh_token_isSet = false;
+    m_jumpseller_refresh_token_isValid = false;
+
+    m_jumpseller_login_isSet = false;
+    m_jumpseller_login_isValid = false;
+
+    m_jumpseller_authtoken_isSet = false;
+    m_jumpseller_authtoken_isValid = false;
+
     m_flipkart_client_id_isSet = false;
     m_flipkart_client_id_isValid = false;
 
@@ -586,6 +607,12 @@ void OAIAccountCartAdd::fromJsonObject(QJsonObject json) {
 
     m_store_key_isValid = ::OpenAPI::fromJsonValue(m_store_key, json[QString("store_key")]);
     m_store_key_isSet = !json[QString("store_key")].isNull() && m_store_key_isValid;
+
+    m_label_isValid = ::OpenAPI::fromJsonValue(m_label, json[QString("label")]);
+    m_label_isSet = !json[QString("label")].isNull() && m_label_isValid;
+
+    m_custom_label_isValid = ::OpenAPI::fromJsonValue(m_custom_label, json[QString("custom_label")]);
+    m_custom_label_isSet = !json[QString("custom_label")].isNull() && m_custom_label_isValid;
 
     m_validate_version_isValid = ::OpenAPI::fromJsonValue(m_validate_version, json[QString("validate_version")]);
     m_validate_version_isSet = !json[QString("validate_version")].isNull() && m_validate_version_isValid;
@@ -998,6 +1025,21 @@ void OAIAccountCartAdd::fromJsonObject(QJsonObject json) {
     m_zid_refresh_token_isValid = ::OpenAPI::fromJsonValue(m_zid_refresh_token, json[QString("zid_refresh_token")]);
     m_zid_refresh_token_isSet = !json[QString("zid_refresh_token")].isNull() && m_zid_refresh_token_isValid;
 
+    m_jumpseller_client_id_isValid = ::OpenAPI::fromJsonValue(m_jumpseller_client_id, json[QString("jumpseller_client_id")]);
+    m_jumpseller_client_id_isSet = !json[QString("jumpseller_client_id")].isNull() && m_jumpseller_client_id_isValid;
+
+    m_jumpseller_client_secret_isValid = ::OpenAPI::fromJsonValue(m_jumpseller_client_secret, json[QString("jumpseller_client_secret")]);
+    m_jumpseller_client_secret_isSet = !json[QString("jumpseller_client_secret")].isNull() && m_jumpseller_client_secret_isValid;
+
+    m_jumpseller_refresh_token_isValid = ::OpenAPI::fromJsonValue(m_jumpseller_refresh_token, json[QString("jumpseller_refresh_token")]);
+    m_jumpseller_refresh_token_isSet = !json[QString("jumpseller_refresh_token")].isNull() && m_jumpseller_refresh_token_isValid;
+
+    m_jumpseller_login_isValid = ::OpenAPI::fromJsonValue(m_jumpseller_login, json[QString("jumpseller_login")]);
+    m_jumpseller_login_isSet = !json[QString("jumpseller_login")].isNull() && m_jumpseller_login_isValid;
+
+    m_jumpseller_authtoken_isValid = ::OpenAPI::fromJsonValue(m_jumpseller_authtoken, json[QString("jumpseller_authtoken")]);
+    m_jumpseller_authtoken_isSet = !json[QString("jumpseller_authtoken")].isNull() && m_jumpseller_authtoken_isValid;
+
     m_flipkart_client_id_isValid = ::OpenAPI::fromJsonValue(m_flipkart_client_id, json[QString("flipkart_client_id")]);
     m_flipkart_client_id_isSet = !json[QString("flipkart_client_id")].isNull() && m_flipkart_client_id_isValid;
 
@@ -1124,6 +1166,12 @@ QJsonObject OAIAccountCartAdd::asJsonObject() const {
     }
     if (m_store_key_isSet) {
         obj.insert(QString("store_key"), ::OpenAPI::toJsonValue(m_store_key));
+    }
+    if (m_label_isSet) {
+        obj.insert(QString("label"), ::OpenAPI::toJsonValue(m_label));
+    }
+    if (m_custom_label_isSet) {
+        obj.insert(QString("custom_label"), ::OpenAPI::toJsonValue(m_custom_label));
     }
     if (m_validate_version_isSet) {
         obj.insert(QString("validate_version"), ::OpenAPI::toJsonValue(m_validate_version));
@@ -1536,6 +1584,21 @@ QJsonObject OAIAccountCartAdd::asJsonObject() const {
     if (m_zid_refresh_token_isSet) {
         obj.insert(QString("zid_refresh_token"), ::OpenAPI::toJsonValue(m_zid_refresh_token));
     }
+    if (m_jumpseller_client_id_isSet) {
+        obj.insert(QString("jumpseller_client_id"), ::OpenAPI::toJsonValue(m_jumpseller_client_id));
+    }
+    if (m_jumpseller_client_secret_isSet) {
+        obj.insert(QString("jumpseller_client_secret"), ::OpenAPI::toJsonValue(m_jumpseller_client_secret));
+    }
+    if (m_jumpseller_refresh_token_isSet) {
+        obj.insert(QString("jumpseller_refresh_token"), ::OpenAPI::toJsonValue(m_jumpseller_refresh_token));
+    }
+    if (m_jumpseller_login_isSet) {
+        obj.insert(QString("jumpseller_login"), ::OpenAPI::toJsonValue(m_jumpseller_login));
+    }
+    if (m_jumpseller_authtoken_isSet) {
+        obj.insert(QString("jumpseller_authtoken"), ::OpenAPI::toJsonValue(m_jumpseller_authtoken));
+    }
     if (m_flipkart_client_id_isSet) {
         obj.insert(QString("flipkart_client_id"), ::OpenAPI::toJsonValue(m_flipkart_client_id));
     }
@@ -1719,6 +1782,38 @@ bool OAIAccountCartAdd::is_store_key_Set() const{
 
 bool OAIAccountCartAdd::is_store_key_Valid() const{
     return m_store_key_isValid;
+}
+
+QString OAIAccountCartAdd::getLabel() const {
+    return m_label;
+}
+void OAIAccountCartAdd::setLabel(const QString &label) {
+    m_label = label;
+    m_label_isSet = true;
+}
+
+bool OAIAccountCartAdd::is_label_Set() const{
+    return m_label_isSet;
+}
+
+bool OAIAccountCartAdd::is_label_Valid() const{
+    return m_label_isValid;
+}
+
+QString OAIAccountCartAdd::getCustomLabel() const {
+    return m_custom_label;
+}
+void OAIAccountCartAdd::setCustomLabel(const QString &custom_label) {
+    m_custom_label = custom_label;
+    m_custom_label_isSet = true;
+}
+
+bool OAIAccountCartAdd::is_custom_label_Set() const{
+    return m_custom_label_isSet;
+}
+
+bool OAIAccountCartAdd::is_custom_label_Valid() const{
+    return m_custom_label_isValid;
 }
 
 bool OAIAccountCartAdd::isValidateVersion() const {
@@ -3913,6 +4008,86 @@ bool OAIAccountCartAdd::is_zid_refresh_token_Valid() const{
     return m_zid_refresh_token_isValid;
 }
 
+QString OAIAccountCartAdd::getJumpsellerClientId() const {
+    return m_jumpseller_client_id;
+}
+void OAIAccountCartAdd::setJumpsellerClientId(const QString &jumpseller_client_id) {
+    m_jumpseller_client_id = jumpseller_client_id;
+    m_jumpseller_client_id_isSet = true;
+}
+
+bool OAIAccountCartAdd::is_jumpseller_client_id_Set() const{
+    return m_jumpseller_client_id_isSet;
+}
+
+bool OAIAccountCartAdd::is_jumpseller_client_id_Valid() const{
+    return m_jumpseller_client_id_isValid;
+}
+
+QString OAIAccountCartAdd::getJumpsellerClientSecret() const {
+    return m_jumpseller_client_secret;
+}
+void OAIAccountCartAdd::setJumpsellerClientSecret(const QString &jumpseller_client_secret) {
+    m_jumpseller_client_secret = jumpseller_client_secret;
+    m_jumpseller_client_secret_isSet = true;
+}
+
+bool OAIAccountCartAdd::is_jumpseller_client_secret_Set() const{
+    return m_jumpseller_client_secret_isSet;
+}
+
+bool OAIAccountCartAdd::is_jumpseller_client_secret_Valid() const{
+    return m_jumpseller_client_secret_isValid;
+}
+
+QString OAIAccountCartAdd::getJumpsellerRefreshToken() const {
+    return m_jumpseller_refresh_token;
+}
+void OAIAccountCartAdd::setJumpsellerRefreshToken(const QString &jumpseller_refresh_token) {
+    m_jumpseller_refresh_token = jumpseller_refresh_token;
+    m_jumpseller_refresh_token_isSet = true;
+}
+
+bool OAIAccountCartAdd::is_jumpseller_refresh_token_Set() const{
+    return m_jumpseller_refresh_token_isSet;
+}
+
+bool OAIAccountCartAdd::is_jumpseller_refresh_token_Valid() const{
+    return m_jumpseller_refresh_token_isValid;
+}
+
+QString OAIAccountCartAdd::getJumpsellerLogin() const {
+    return m_jumpseller_login;
+}
+void OAIAccountCartAdd::setJumpsellerLogin(const QString &jumpseller_login) {
+    m_jumpseller_login = jumpseller_login;
+    m_jumpseller_login_isSet = true;
+}
+
+bool OAIAccountCartAdd::is_jumpseller_login_Set() const{
+    return m_jumpseller_login_isSet;
+}
+
+bool OAIAccountCartAdd::is_jumpseller_login_Valid() const{
+    return m_jumpseller_login_isValid;
+}
+
+QString OAIAccountCartAdd::getJumpsellerAuthtoken() const {
+    return m_jumpseller_authtoken;
+}
+void OAIAccountCartAdd::setJumpsellerAuthtoken(const QString &jumpseller_authtoken) {
+    m_jumpseller_authtoken = jumpseller_authtoken;
+    m_jumpseller_authtoken_isSet = true;
+}
+
+bool OAIAccountCartAdd::is_jumpseller_authtoken_Set() const{
+    return m_jumpseller_authtoken_isSet;
+}
+
+bool OAIAccountCartAdd::is_jumpseller_authtoken_Valid() const{
+    return m_jumpseller_authtoken_isValid;
+}
+
 QString OAIAccountCartAdd::getFlipkartClientId() const {
     return m_flipkart_client_id;
 }
@@ -4481,6 +4656,16 @@ bool OAIAccountCartAdd::isSet() const {
         }
 
         if (m_store_key_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_label_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_custom_label_isSet) {
             isObjectUpdated = true;
             break;
         }
@@ -5166,6 +5351,31 @@ bool OAIAccountCartAdd::isSet() const {
         }
 
         if (m_zid_refresh_token_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_jumpseller_client_id_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_jumpseller_client_secret_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_jumpseller_refresh_token_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_jumpseller_login_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_jumpseller_authtoken_isSet) {
             isObjectUpdated = true;
             break;
         }

@@ -67,6 +67,16 @@ public:
     bool is_store_key_Set() const;
     bool is_store_key_Valid() const;
 
+    QString getLabel() const;
+    void setLabel(const QString &label);
+    bool is_label_Set() const;
+    bool is_label_Valid() const;
+
+    QString getCustomLabel() const;
+    void setCustomLabel(const QString &custom_label);
+    bool is_custom_label_Set() const;
+    bool is_custom_label_Valid() const;
+
     bool isValidateVersion() const;
     void setValidateVersion(const bool &validate_version);
     bool is_validate_version_Set() const;
@@ -752,6 +762,31 @@ public:
     bool is_zid_refresh_token_Set() const;
     bool is_zid_refresh_token_Valid() const;
 
+    QString getJumpsellerClientId() const;
+    void setJumpsellerClientId(const QString &jumpseller_client_id);
+    bool is_jumpseller_client_id_Set() const;
+    bool is_jumpseller_client_id_Valid() const;
+
+    QString getJumpsellerClientSecret() const;
+    void setJumpsellerClientSecret(const QString &jumpseller_client_secret);
+    bool is_jumpseller_client_secret_Set() const;
+    bool is_jumpseller_client_secret_Valid() const;
+
+    QString getJumpsellerRefreshToken() const;
+    void setJumpsellerRefreshToken(const QString &jumpseller_refresh_token);
+    bool is_jumpseller_refresh_token_Set() const;
+    bool is_jumpseller_refresh_token_Valid() const;
+
+    QString getJumpsellerLogin() const;
+    void setJumpsellerLogin(const QString &jumpseller_login);
+    bool is_jumpseller_login_Set() const;
+    bool is_jumpseller_login_Valid() const;
+
+    QString getJumpsellerAuthtoken() const;
+    void setJumpsellerAuthtoken(const QString &jumpseller_authtoken);
+    bool is_jumpseller_authtoken_Set() const;
+    bool is_jumpseller_authtoken_Valid() const;
+
     QString getFlipkartClientId() const;
     void setFlipkartClientId(const QString &flipkart_client_id);
     bool is_flipkart_client_id_Set() const;
@@ -947,6 +982,14 @@ private:
     QString m_store_key;
     bool m_store_key_isSet;
     bool m_store_key_isValid;
+
+    QString m_label;
+    bool m_label_isSet;
+    bool m_label_isValid;
+
+    QString m_custom_label;
+    bool m_custom_label_isSet;
+    bool m_custom_label_isValid;
 
     bool m_validate_version;
     bool m_validate_version_isSet;
@@ -1495,6 +1538,26 @@ private:
     QString m_zid_refresh_token;
     bool m_zid_refresh_token_isSet;
     bool m_zid_refresh_token_isValid;
+
+    QString m_jumpseller_client_id;
+    bool m_jumpseller_client_id_isSet;
+    bool m_jumpseller_client_id_isValid;
+
+    QString m_jumpseller_client_secret;
+    bool m_jumpseller_client_secret_isSet;
+    bool m_jumpseller_client_secret_isValid;
+
+    QString m_jumpseller_refresh_token;
+    bool m_jumpseller_refresh_token_isSet;
+    bool m_jumpseller_refresh_token_isValid;
+
+    QString m_jumpseller_login;
+    bool m_jumpseller_login_isSet;
+    bool m_jumpseller_login_isValid;
+
+    QString m_jumpseller_authtoken;
+    bool m_jumpseller_authtoken_isSet;
+    bool m_jumpseller_authtoken_isValid;
 
     QString m_flipkart_client_id;
     bool m_flipkart_client_id_isSet;
