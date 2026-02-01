@@ -87,6 +87,16 @@ public:
     bool is_reject_reason_Set() const;
     bool is_reject_reason_Valid() const;
 
+    QString getReturnAction() const;
+    void setReturnAction(const QString &return_action);
+    bool is_return_action_Set() const;
+    bool is_return_action_Valid() const;
+
+    QString getReturnReason() const;
+    void setReturnReason(const QString &return_reason);
+    bool is_return_reason_Set() const;
+    bool is_return_reason_Valid() const;
+
     QString getIdempotencyKey() const;
     void setIdempotencyKey(const QString &idempotency_key);
     bool is_idempotency_key_Set() const;
@@ -138,6 +148,14 @@ private:
     QString m_reject_reason;
     bool m_reject_reason_isSet;
     bool m_reject_reason_isValid;
+
+    QString m_return_action;
+    bool m_return_action_isSet;
+    bool m_return_action_isValid;
+
+    QString m_return_reason;
+    bool m_return_reason_isSet;
+    bool m_return_reason_isValid;
 
     QString m_idempotency_key;
     bool m_idempotency_key_isSet;

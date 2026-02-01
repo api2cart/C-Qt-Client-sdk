@@ -61,6 +61,12 @@ void OAIOrderReturnUpdate::initializeModel() {
     m_reject_reason_isSet = false;
     m_reject_reason_isValid = false;
 
+    m_return_action_isSet = false;
+    m_return_action_isValid = false;
+
+    m_return_reason_isSet = false;
+    m_return_reason_isValid = false;
+
     m_idempotency_key_isSet = false;
     m_idempotency_key_isValid = false;
 
@@ -104,6 +110,12 @@ void OAIOrderReturnUpdate::fromJsonObject(QJsonObject json) {
     m_reject_reason_isValid = ::OpenAPI::fromJsonValue(m_reject_reason, json[QString("reject_reason")]);
     m_reject_reason_isSet = !json[QString("reject_reason")].isNull() && m_reject_reason_isValid;
 
+    m_return_action_isValid = ::OpenAPI::fromJsonValue(m_return_action, json[QString("return_action")]);
+    m_return_action_isSet = !json[QString("return_action")].isNull() && m_return_action_isValid;
+
+    m_return_reason_isValid = ::OpenAPI::fromJsonValue(m_return_reason, json[QString("return_reason")]);
+    m_return_reason_isSet = !json[QString("return_reason")].isNull() && m_return_reason_isValid;
+
     m_idempotency_key_isValid = ::OpenAPI::fromJsonValue(m_idempotency_key, json[QString("idempotency_key")]);
     m_idempotency_key_isSet = !json[QString("idempotency_key")].isNull() && m_idempotency_key_isValid;
 
@@ -146,6 +158,12 @@ QJsonObject OAIOrderReturnUpdate::asJsonObject() const {
     }
     if (m_reject_reason_isSet) {
         obj.insert(QString("reject_reason"), ::OpenAPI::toJsonValue(m_reject_reason));
+    }
+    if (m_return_action_isSet) {
+        obj.insert(QString("return_action"), ::OpenAPI::toJsonValue(m_return_action));
+    }
+    if (m_return_reason_isSet) {
+        obj.insert(QString("return_reason"), ::OpenAPI::toJsonValue(m_return_reason));
     }
     if (m_idempotency_key_isSet) {
         obj.insert(QString("idempotency_key"), ::OpenAPI::toJsonValue(m_idempotency_key));
@@ -300,6 +318,38 @@ bool OAIOrderReturnUpdate::is_reject_reason_Valid() const{
     return m_reject_reason_isValid;
 }
 
+QString OAIOrderReturnUpdate::getReturnAction() const {
+    return m_return_action;
+}
+void OAIOrderReturnUpdate::setReturnAction(const QString &return_action) {
+    m_return_action = return_action;
+    m_return_action_isSet = true;
+}
+
+bool OAIOrderReturnUpdate::is_return_action_Set() const{
+    return m_return_action_isSet;
+}
+
+bool OAIOrderReturnUpdate::is_return_action_Valid() const{
+    return m_return_action_isValid;
+}
+
+QString OAIOrderReturnUpdate::getReturnReason() const {
+    return m_return_reason;
+}
+void OAIOrderReturnUpdate::setReturnReason(const QString &return_reason) {
+    m_return_reason = return_reason;
+    m_return_reason_isSet = true;
+}
+
+bool OAIOrderReturnUpdate::is_return_reason_Set() const{
+    return m_return_reason_isSet;
+}
+
+bool OAIOrderReturnUpdate::is_return_reason_Valid() const{
+    return m_return_reason_isValid;
+}
+
 QString OAIOrderReturnUpdate::getIdempotencyKey() const {
     return m_idempotency_key;
 }
@@ -376,6 +426,16 @@ bool OAIOrderReturnUpdate::isSet() const {
         }
 
         if (m_reject_reason_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_return_action_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_return_reason_isSet) {
             isObjectUpdated = true;
             break;
         }

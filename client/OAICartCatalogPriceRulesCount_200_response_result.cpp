@@ -66,10 +66,10 @@ QJsonObject OAICartCatalogPriceRulesCount_200_response_result::asJsonObject() co
     return obj;
 }
 
-QString OAICartCatalogPriceRulesCount_200_response_result::getCatalogPriceRulesCount() const {
+qint32 OAICartCatalogPriceRulesCount_200_response_result::getCatalogPriceRulesCount() const {
     return m_catalog_price_rules_count;
 }
-void OAICartCatalogPriceRulesCount_200_response_result::setCatalogPriceRulesCount(const QString &catalog_price_rules_count) {
+void OAICartCatalogPriceRulesCount_200_response_result::setCatalogPriceRulesCount(const qint32 &catalog_price_rules_count) {
     m_catalog_price_rules_count = catalog_price_rules_count;
     m_catalog_price_rules_count_isSet = true;
 }

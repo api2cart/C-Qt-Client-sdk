@@ -21,7 +21,6 @@
 
 #include <QJsonObject>
 
-#include <QString>
 
 #include "OAIEnum.h"
 #include "OAIObject.h"
@@ -39,8 +38,8 @@ public:
     void fromJsonObject(QJsonObject json) override;
     void fromJson(QString jsonString) override;
 
-    QString getCatalogPriceRulesCount() const;
-    void setCatalogPriceRulesCount(const QString &catalog_price_rules_count);
+    qint32 getCatalogPriceRulesCount() const;
+    void setCatalogPriceRulesCount(const qint32 &catalog_price_rules_count);
     bool is_catalog_price_rules_count_Set() const;
     bool is_catalog_price_rules_count_Valid() const;
 
@@ -50,7 +49,7 @@ public:
 private:
     void initializeModel();
 
-    QString m_catalog_price_rules_count;
+    qint32 m_catalog_price_rules_count;
     bool m_catalog_price_rules_count_isSet;
     bool m_catalog_price_rules_count_isValid;
 };

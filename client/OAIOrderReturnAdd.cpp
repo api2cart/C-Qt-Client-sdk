@@ -49,6 +49,9 @@ void OAIOrderReturnAdd::initializeModel() {
     m_return_reason_id_isSet = false;
     m_return_reason_id_isValid = false;
 
+    m_return_action_isSet = false;
+    m_return_action_isValid = false;
+
     m_return_reason_isSet = false;
     m_return_reason_isValid = false;
 
@@ -98,6 +101,9 @@ void OAIOrderReturnAdd::fromJsonObject(QJsonObject json) {
     m_return_reason_id_isValid = ::OpenAPI::fromJsonValue(m_return_reason_id, json[QString("return_reason_id")]);
     m_return_reason_id_isSet = !json[QString("return_reason_id")].isNull() && m_return_reason_id_isValid;
 
+    m_return_action_isValid = ::OpenAPI::fromJsonValue(m_return_action, json[QString("return_action")]);
+    m_return_action_isSet = !json[QString("return_action")].isNull() && m_return_action_isValid;
+
     m_return_reason_isValid = ::OpenAPI::fromJsonValue(m_return_reason, json[QString("return_reason")]);
     m_return_reason_isSet = !json[QString("return_reason")].isNull() && m_return_reason_isValid;
 
@@ -146,6 +152,9 @@ QJsonObject OAIOrderReturnAdd::asJsonObject() const {
     }
     if (m_return_reason_id_isSet) {
         obj.insert(QString("return_reason_id"), ::OpenAPI::toJsonValue(m_return_reason_id));
+    }
+    if (m_return_action_isSet) {
+        obj.insert(QString("return_action"), ::OpenAPI::toJsonValue(m_return_action));
     }
     if (m_return_reason_isSet) {
         obj.insert(QString("return_reason"), ::OpenAPI::toJsonValue(m_return_reason));
@@ -252,6 +261,22 @@ bool OAIOrderReturnAdd::is_return_reason_id_Set() const{
 
 bool OAIOrderReturnAdd::is_return_reason_id_Valid() const{
     return m_return_reason_id_isValid;
+}
+
+QString OAIOrderReturnAdd::getReturnAction() const {
+    return m_return_action;
+}
+void OAIOrderReturnAdd::setReturnAction(const QString &return_action) {
+    m_return_action = return_action;
+    m_return_action_isSet = true;
+}
+
+bool OAIOrderReturnAdd::is_return_action_Set() const{
+    return m_return_action_isSet;
+}
+
+bool OAIOrderReturnAdd::is_return_action_Valid() const{
+    return m_return_action_isValid;
 }
 
 QString OAIOrderReturnAdd::getReturnReason() const {
@@ -406,6 +431,11 @@ bool OAIOrderReturnAdd::isSet() const {
         }
 
         if (m_return_reason_id_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_return_action_isSet) {
             isObjectUpdated = true;
             break;
         }

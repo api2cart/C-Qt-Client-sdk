@@ -67,6 +67,11 @@ public:
     bool is_return_reason_id_Set() const;
     bool is_return_reason_id_Valid() const;
 
+    QString getReturnAction() const;
+    void setReturnAction(const QString &return_action);
+    bool is_return_action_Set() const;
+    bool is_return_action_Valid() const;
+
     QString getReturnReason() const;
     void setReturnReason(const QString &return_reason);
     bool is_return_reason_Set() const;
@@ -132,6 +137,10 @@ private:
     QString m_return_reason_id;
     bool m_return_reason_id_isSet;
     bool m_return_reason_id_isValid;
+
+    QString m_return_action;
+    bool m_return_action_isSet;
+    bool m_return_action_isValid;
 
     QString m_return_reason;
     bool m_return_reason_isSet;

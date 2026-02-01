@@ -66,10 +66,10 @@ QJsonObject OAICartGiftcardCount_200_response_result::asJsonObject() const {
     return obj;
 }
 
-QString OAICartGiftcardCount_200_response_result::getGiftCardsCount() const {
+qint32 OAICartGiftcardCount_200_response_result::getGiftCardsCount() const {
     return m_gift_cards_count;
 }
-void OAICartGiftcardCount_200_response_result::setGiftCardsCount(const QString &gift_cards_count) {
+void OAICartGiftcardCount_200_response_result::setGiftCardsCount(const qint32 &gift_cards_count) {
     m_gift_cards_count = gift_cards_count;
     m_gift_cards_count_isSet = true;
 }

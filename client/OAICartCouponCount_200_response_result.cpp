@@ -66,10 +66,10 @@ QJsonObject OAICartCouponCount_200_response_result::asJsonObject() const {
     return obj;
 }
 
-QString OAICartCouponCount_200_response_result::getCouponsCount() const {
+qint32 OAICartCouponCount_200_response_result::getCouponsCount() const {
     return m_coupons_count;
 }
-void OAICartCouponCount_200_response_result::setCouponsCount(const QString &coupons_count) {
+void OAICartCouponCount_200_response_result::setCouponsCount(const qint32 &coupons_count) {
     m_coupons_count = coupons_count;
     m_coupons_count_isSet = true;
 }

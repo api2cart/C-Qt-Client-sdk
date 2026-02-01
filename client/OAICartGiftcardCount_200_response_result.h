@@ -21,7 +21,6 @@
 
 #include <QJsonObject>
 
-#include <QString>
 
 #include "OAIEnum.h"
 #include "OAIObject.h"
@@ -39,8 +38,8 @@ public:
     void fromJsonObject(QJsonObject json) override;
     void fromJson(QString jsonString) override;
 
-    QString getGiftCardsCount() const;
-    void setGiftCardsCount(const QString &gift_cards_count);
+    qint32 getGiftCardsCount() const;
+    void setGiftCardsCount(const qint32 &gift_cards_count);
     bool is_gift_cards_count_Set() const;
     bool is_gift_cards_count_Valid() const;
 
@@ -50,7 +49,7 @@ public:
 private:
     void initializeModel();
 
-    QString m_gift_cards_count;
+    qint32 m_gift_cards_count;
     bool m_gift_cards_count_isSet;
     bool m_gift_cards_count_isValid;
 };
