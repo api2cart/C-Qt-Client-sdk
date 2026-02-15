@@ -164,6 +164,11 @@ public:
     bool is_unit_price_Set() const;
     bool is_unit_price_Valid() const;
 
+    bool isPricesIncTax() const;
+    void setPricesIncTax(const bool &prices_inc_tax);
+    bool is_prices_inc_tax_Set() const;
+    bool is_prices_inc_tax_Valid() const;
+
     double getQuantity() const;
     void setQuantity(const double &quantity);
     bool is_quantity_Set() const;
@@ -440,6 +445,10 @@ private:
     double m_unit_price;
     bool m_unit_price_isSet;
     bool m_unit_price_isValid;
+
+    bool m_prices_inc_tax;
+    bool m_prices_inc_tax_isSet;
+    bool m_prices_inc_tax_isValid;
 
     double m_quantity;
     bool m_quantity_isSet;

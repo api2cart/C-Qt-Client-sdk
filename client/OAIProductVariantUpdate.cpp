@@ -118,6 +118,9 @@ void OAIProductVariantUpdate::initializeModel() {
     m_reduce_quantity_isSet = false;
     m_reduce_quantity_isValid = false;
 
+    m_prices_inc_tax_isSet = false;
+    m_prices_inc_tax_isValid = false;
+
     m_price_isSet = false;
     m_price_isValid = false;
 
@@ -305,6 +308,9 @@ void OAIProductVariantUpdate::fromJsonObject(QJsonObject json) {
     m_reduce_quantity_isValid = ::OpenAPI::fromJsonValue(m_reduce_quantity, json[QString("reduce_quantity")]);
     m_reduce_quantity_isSet = !json[QString("reduce_quantity")].isNull() && m_reduce_quantity_isValid;
 
+    m_prices_inc_tax_isValid = ::OpenAPI::fromJsonValue(m_prices_inc_tax, json[QString("prices_inc_tax")]);
+    m_prices_inc_tax_isSet = !json[QString("prices_inc_tax")].isNull() && m_prices_inc_tax_isValid;
+
     m_price_isValid = ::OpenAPI::fromJsonValue(m_price, json[QString("price")]);
     m_price_isSet = !json[QString("price")].isNull() && m_price_isValid;
 
@@ -491,6 +497,9 @@ QJsonObject OAIProductVariantUpdate::asJsonObject() const {
     }
     if (m_reduce_quantity_isSet) {
         obj.insert(QString("reduce_quantity"), ::OpenAPI::toJsonValue(m_reduce_quantity));
+    }
+    if (m_prices_inc_tax_isSet) {
+        obj.insert(QString("prices_inc_tax"), ::OpenAPI::toJsonValue(m_prices_inc_tax));
     }
     if (m_price_isSet) {
         obj.insert(QString("price"), ::OpenAPI::toJsonValue(m_price));
@@ -1034,6 +1043,22 @@ bool OAIProductVariantUpdate::is_reduce_quantity_Set() const{
 
 bool OAIProductVariantUpdate::is_reduce_quantity_Valid() const{
     return m_reduce_quantity_isValid;
+}
+
+bool OAIProductVariantUpdate::isPricesIncTax() const {
+    return m_prices_inc_tax;
+}
+void OAIProductVariantUpdate::setPricesIncTax(const bool &prices_inc_tax) {
+    m_prices_inc_tax = prices_inc_tax;
+    m_prices_inc_tax_isSet = true;
+}
+
+bool OAIProductVariantUpdate::is_prices_inc_tax_Set() const{
+    return m_prices_inc_tax_isSet;
+}
+
+bool OAIProductVariantUpdate::is_prices_inc_tax_Valid() const{
+    return m_prices_inc_tax_isValid;
 }
 
 double OAIProductVariantUpdate::getPrice() const {
@@ -1671,6 +1696,11 @@ bool OAIProductVariantUpdate::isSet() const {
         }
 
         if (m_reduce_quantity_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_prices_inc_tax_isSet) {
             isObjectUpdated = true;
             break;
         }

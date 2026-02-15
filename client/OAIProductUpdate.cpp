@@ -52,6 +52,9 @@ void OAIProductUpdate::initializeModel() {
     m_short_description_isSet = false;
     m_short_description_isValid = false;
 
+    m_prices_inc_tax_isSet = false;
+    m_prices_inc_tax_isValid = false;
+
     m_price_isSet = false;
     m_price_isValid = false;
 
@@ -344,6 +347,9 @@ void OAIProductUpdate::fromJsonObject(QJsonObject json) {
     m_short_description_isValid = ::OpenAPI::fromJsonValue(m_short_description, json[QString("short_description")]);
     m_short_description_isSet = !json[QString("short_description")].isNull() && m_short_description_isValid;
 
+    m_prices_inc_tax_isValid = ::OpenAPI::fromJsonValue(m_prices_inc_tax, json[QString("prices_inc_tax")]);
+    m_prices_inc_tax_isSet = !json[QString("prices_inc_tax")].isNull() && m_prices_inc_tax_isValid;
+
     m_price_isValid = ::OpenAPI::fromJsonValue(m_price, json[QString("price")]);
     m_price_isSet = !json[QString("price")].isNull() && m_price_isValid;
 
@@ -635,6 +641,9 @@ QJsonObject OAIProductUpdate::asJsonObject() const {
     }
     if (m_short_description_isSet) {
         obj.insert(QString("short_description"), ::OpenAPI::toJsonValue(m_short_description));
+    }
+    if (m_prices_inc_tax_isSet) {
+        obj.insert(QString("prices_inc_tax"), ::OpenAPI::toJsonValue(m_prices_inc_tax));
     }
     if (m_price_isSet) {
         obj.insert(QString("price"), ::OpenAPI::toJsonValue(m_price));
@@ -997,6 +1006,22 @@ bool OAIProductUpdate::is_short_description_Set() const{
 
 bool OAIProductUpdate::is_short_description_Valid() const{
     return m_short_description_isValid;
+}
+
+bool OAIProductUpdate::isPricesIncTax() const {
+    return m_prices_inc_tax;
+}
+void OAIProductUpdate::setPricesIncTax(const bool &prices_inc_tax) {
+    m_prices_inc_tax = prices_inc_tax;
+    m_prices_inc_tax_isSet = true;
+}
+
+bool OAIProductUpdate::is_prices_inc_tax_Set() const{
+    return m_prices_inc_tax_isSet;
+}
+
+bool OAIProductUpdate::is_prices_inc_tax_Valid() const{
+    return m_prices_inc_tax_isValid;
 }
 
 double OAIProductUpdate::getPrice() const {
@@ -2436,6 +2461,11 @@ bool OAIProductUpdate::isSet() const {
         }
 
         if (m_short_description_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_prices_inc_tax_isSet) {
             isObjectUpdated = true;
             break;
         }

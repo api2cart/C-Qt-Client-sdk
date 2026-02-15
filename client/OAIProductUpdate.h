@@ -80,6 +80,11 @@ public:
     bool is_short_description_Set() const;
     bool is_short_description_Valid() const;
 
+    bool isPricesIncTax() const;
+    void setPricesIncTax(const bool &prices_inc_tax);
+    bool is_prices_inc_tax_Set() const;
+    bool is_prices_inc_tax_Valid() const;
+
     double getPrice() const;
     void setPrice(const double &price);
     bool is_price_Set() const;
@@ -549,6 +554,10 @@ private:
     QString m_short_description;
     bool m_short_description_isSet;
     bool m_short_description_isValid;
+
+    bool m_prices_inc_tax;
+    bool m_prices_inc_tax_isSet;
+    bool m_prices_inc_tax_isValid;
 
     double m_price;
     bool m_price_isSet;
