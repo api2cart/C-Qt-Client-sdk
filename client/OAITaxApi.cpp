@@ -378,7 +378,7 @@ void OAITaxApi::taxClassInfoCallback(OAIHttpRequestWorker *worker) {
     }
 }
 
-void OAITaxApi::taxClassList(const ::OpenAPI::OptionalParam<qint32> &count, const ::OpenAPI::OptionalParam<QString> &page_cursor, const ::OpenAPI::OptionalParam<QString> &store_id, const ::OpenAPI::OptionalParam<QString> &find_value, const ::OpenAPI::OptionalParam<QString> &find_where, const ::OpenAPI::OptionalParam<QString> &created_to, const ::OpenAPI::OptionalParam<QString> &created_from, const ::OpenAPI::OptionalParam<QString> &modified_to, const ::OpenAPI::OptionalParam<QString> &modified_from, const ::OpenAPI::OptionalParam<QString> &response_fields) {
+void OAITaxApi::taxClassList(const ::OpenAPI::OptionalParam<qint32> &count, const ::OpenAPI::OptionalParam<qint32> &start, const ::OpenAPI::OptionalParam<QString> &page_cursor, const ::OpenAPI::OptionalParam<QString> &store_id, const ::OpenAPI::OptionalParam<QString> &find_value, const ::OpenAPI::OptionalParam<QString> &find_where, const ::OpenAPI::OptionalParam<QString> &created_to, const ::OpenAPI::OptionalParam<QString> &created_from, const ::OpenAPI::OptionalParam<QString> &modified_to, const ::OpenAPI::OptionalParam<QString> &modified_from, const ::OpenAPI::OptionalParam<QString> &response_fields) {
     QString fullPath = QString(_serverConfigs["taxClassList"][_serverIndices.value("taxClassList")].URL()+"/tax.class.list.json");
     
     if (_apiKeys.contains("StoreKeyAuth")) {
@@ -404,6 +404,21 @@ void OAITaxApi::taxClassList(const ::OpenAPI::OptionalParam<qint32> &count, cons
             fullPath.append("?");
 
         fullPath.append(QUrl::toPercentEncoding("count")).append(querySuffix).append(QUrl::toPercentEncoding(::OpenAPI::toStringValue(count.stringValue())));
+    }
+    if (start.hasValue())
+    {
+        queryStyle = "form";
+        if (queryStyle == "")
+            queryStyle = "form";
+        queryPrefix = getParamStylePrefix(queryStyle);
+        querySuffix = getParamStyleSuffix(queryStyle);
+        queryDelimiter = getParamStyleDelimiter(queryStyle, "start", true);
+        if (fullPath.indexOf("?") > 0)
+            fullPath.append(queryPrefix);
+        else
+            fullPath.append("?");
+
+        fullPath.append(QUrl::toPercentEncoding("start")).append(querySuffix).append(QUrl::toPercentEncoding(::OpenAPI::toStringValue(start.stringValue())));
     }
     if (page_cursor.hasValue())
     {

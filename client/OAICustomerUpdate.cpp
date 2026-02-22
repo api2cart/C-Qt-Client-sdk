@@ -79,6 +79,9 @@ void OAICustomerUpdate::initializeModel() {
     m_status_isSet = false;
     m_status_isValid = false;
 
+    m_password_isSet = false;
+    m_password_isValid = false;
+
     m_store_id_isSet = false;
     m_store_id_isValid = false;
 
@@ -143,6 +146,9 @@ void OAICustomerUpdate::fromJsonObject(QJsonObject json) {
     m_status_isValid = ::OpenAPI::fromJsonValue(m_status, json[QString("status")]);
     m_status_isSet = !json[QString("status")].isNull() && m_status_isValid;
 
+    m_password_isValid = ::OpenAPI::fromJsonValue(m_password, json[QString("password")]);
+    m_password_isSet = !json[QString("password")].isNull() && m_password_isValid;
+
     m_store_id_isValid = ::OpenAPI::fromJsonValue(m_store_id, json[QString("store_id")]);
     m_store_id_isSet = !json[QString("store_id")].isNull() && m_store_id_isValid;
 
@@ -206,6 +212,9 @@ QJsonObject OAICustomerUpdate::asJsonObject() const {
     }
     if (m_status_isSet) {
         obj.insert(QString("status"), ::OpenAPI::toJsonValue(m_status));
+    }
+    if (m_password_isSet) {
+        obj.insert(QString("password"), ::OpenAPI::toJsonValue(m_password));
     }
     if (m_store_id_isSet) {
         obj.insert(QString("store_id"), ::OpenAPI::toJsonValue(m_store_id));
@@ -459,6 +468,22 @@ bool OAICustomerUpdate::is_status_Valid() const{
     return m_status_isValid;
 }
 
+QString OAICustomerUpdate::getPassword() const {
+    return m_password;
+}
+void OAICustomerUpdate::setPassword(const QString &password) {
+    m_password = password;
+    m_password_isSet = true;
+}
+
+bool OAICustomerUpdate::is_password_Set() const{
+    return m_password_isSet;
+}
+
+bool OAICustomerUpdate::is_password_Valid() const{
+    return m_password_isValid;
+}
+
 QString OAICustomerUpdate::getStoreId() const {
     return m_store_id;
 }
@@ -581,6 +606,11 @@ bool OAICustomerUpdate::isSet() const {
         }
 
         if (m_status_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_password_isSet) {
             isObjectUpdated = true;
             break;
         }

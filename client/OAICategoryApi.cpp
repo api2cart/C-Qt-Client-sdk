@@ -1392,7 +1392,7 @@ void OAICategoryApi::categoryFindCallback(OAIHttpRequestWorker *worker) {
     }
 }
 
-void OAICategoryApi::categoryImageAdd(const QString &category_id, const QString &image_name, const QString &url, const QString &type, const ::OpenAPI::OptionalParam<QString> &store_id, const ::OpenAPI::OptionalParam<QString> &label, const ::OpenAPI::OptionalParam<QString> &mime, const ::OpenAPI::OptionalParam<qint32> &position, const ::OpenAPI::OptionalParam<QString> &idempotency_key) {
+void OAICategoryApi::categoryImageAdd(const QString &category_id, const QString &image_name, const QString &url, const QString &type, const ::OpenAPI::OptionalParam<QString> &store_id, const ::OpenAPI::OptionalParam<QString> &label, const ::OpenAPI::OptionalParam<QString> &mime, const ::OpenAPI::OptionalParam<qint32> &position, const ::OpenAPI::OptionalParam<bool> &apply_to_translations, const ::OpenAPI::OptionalParam<QString> &idempotency_key) {
     QString fullPath = QString(_serverConfigs["categoryImageAdd"][_serverIndices.value("categoryImageAdd")].URL()+"/category.image.add.json");
     
     if (_apiKeys.contains("StoreKeyAuth")) {
@@ -1524,6 +1524,21 @@ void OAICategoryApi::categoryImageAdd(const QString &category_id, const QString 
 
         fullPath.append(QUrl::toPercentEncoding("position")).append(querySuffix).append(QUrl::toPercentEncoding(::OpenAPI::toStringValue(position.stringValue())));
     }
+    if (apply_to_translations.hasValue())
+    {
+        queryStyle = "form";
+        if (queryStyle == "")
+            queryStyle = "form";
+        queryPrefix = getParamStylePrefix(queryStyle);
+        querySuffix = getParamStyleSuffix(queryStyle);
+        queryDelimiter = getParamStyleDelimiter(queryStyle, "apply_to_translations", true);
+        if (fullPath.indexOf("?") > 0)
+            fullPath.append(queryPrefix);
+        else
+            fullPath.append("?");
+
+        fullPath.append(QUrl::toPercentEncoding("apply_to_translations")).append(querySuffix).append(QUrl::toPercentEncoding(::OpenAPI::toStringValue(apply_to_translations.stringValue())));
+    }
     if (idempotency_key.hasValue())
     {
         queryStyle = "form";
@@ -1606,7 +1621,7 @@ void OAICategoryApi::categoryImageAddCallback(OAIHttpRequestWorker *worker) {
     }
 }
 
-void OAICategoryApi::categoryImageDelete(const QString &category_id, const QString &image_id, const ::OpenAPI::OptionalParam<QString> &store_id) {
+void OAICategoryApi::categoryImageDelete(const QString &category_id, const QString &image_id, const ::OpenAPI::OptionalParam<QString> &store_id, const ::OpenAPI::OptionalParam<bool> &apply_to_translations) {
     QString fullPath = QString(_serverConfigs["categoryImageDelete"][_serverIndices.value("categoryImageDelete")].URL()+"/category.image.delete.json");
     
     if (_apiKeys.contains("StoreKeyAuth")) {
@@ -1662,6 +1677,21 @@ void OAICategoryApi::categoryImageDelete(const QString &category_id, const QStri
             fullPath.append("?");
 
         fullPath.append(QUrl::toPercentEncoding("store_id")).append(querySuffix).append(QUrl::toPercentEncoding(::OpenAPI::toStringValue(store_id.stringValue())));
+    }
+    if (apply_to_translations.hasValue())
+    {
+        queryStyle = "form";
+        if (queryStyle == "")
+            queryStyle = "form";
+        queryPrefix = getParamStylePrefix(queryStyle);
+        querySuffix = getParamStyleSuffix(queryStyle);
+        queryDelimiter = getParamStyleDelimiter(queryStyle, "apply_to_translations", true);
+        if (fullPath.indexOf("?") > 0)
+            fullPath.append(queryPrefix);
+        else
+            fullPath.append("?");
+
+        fullPath.append(QUrl::toPercentEncoding("apply_to_translations")).append(querySuffix).append(QUrl::toPercentEncoding(::OpenAPI::toStringValue(apply_to_translations.stringValue())));
     }
     OAIHttpRequestWorker *worker = new OAIHttpRequestWorker(this, _manager);
     worker->setTimeOut(_timeOut);

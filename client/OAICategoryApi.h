@@ -148,16 +148,18 @@ public:
     * @param[in]  label QString [optional]
     * @param[in]  mime QString [optional]
     * @param[in]  position qint32 [optional]
+    * @param[in]  apply_to_translations bool [optional]
     * @param[in]  idempotency_key QString [optional]
     */
-    virtual void categoryImageAdd(const QString &category_id, const QString &image_name, const QString &url, const QString &type, const ::OpenAPI::OptionalParam<QString> &store_id = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &label = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &mime = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<qint32> &position = ::OpenAPI::OptionalParam<qint32>(), const ::OpenAPI::OptionalParam<QString> &idempotency_key = ::OpenAPI::OptionalParam<QString>());
+    virtual void categoryImageAdd(const QString &category_id, const QString &image_name, const QString &url, const QString &type, const ::OpenAPI::OptionalParam<QString> &store_id = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &label = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &mime = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<qint32> &position = ::OpenAPI::OptionalParam<qint32>(), const ::OpenAPI::OptionalParam<bool> &apply_to_translations = ::OpenAPI::OptionalParam<bool>(), const ::OpenAPI::OptionalParam<QString> &idempotency_key = ::OpenAPI::OptionalParam<QString>());
 
     /**
     * @param[in]  category_id QString [required]
     * @param[in]  image_id QString [required]
     * @param[in]  store_id QString [optional]
+    * @param[in]  apply_to_translations bool [optional]
     */
-    virtual void categoryImageDelete(const QString &category_id, const QString &image_id, const ::OpenAPI::OptionalParam<QString> &store_id = ::OpenAPI::OptionalParam<QString>());
+    virtual void categoryImageDelete(const QString &category_id, const QString &image_id, const ::OpenAPI::OptionalParam<QString> &store_id = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<bool> &apply_to_translations = ::OpenAPI::OptionalParam<bool>());
 
     /**
     * @param[in]  id QString [required]

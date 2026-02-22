@@ -70,6 +70,7 @@ public:
 
     /**
     * @param[in]  count qint32 [optional]
+    * @param[in]  start qint32 [optional]
     * @param[in]  page_cursor QString [optional]
     * @param[in]  store_id QString [optional]
     * @param[in]  find_value QString [optional]
@@ -80,7 +81,7 @@ public:
     * @param[in]  modified_from QString [optional]
     * @param[in]  response_fields QString [optional]
     */
-    virtual void taxClassList(const ::OpenAPI::OptionalParam<qint32> &count = ::OpenAPI::OptionalParam<qint32>(), const ::OpenAPI::OptionalParam<QString> &page_cursor = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &store_id = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &find_value = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &find_where = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &created_to = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &created_from = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &modified_to = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &modified_from = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &response_fields = ::OpenAPI::OptionalParam<QString>());
+    virtual void taxClassList(const ::OpenAPI::OptionalParam<qint32> &count = ::OpenAPI::OptionalParam<qint32>(), const ::OpenAPI::OptionalParam<qint32> &start = ::OpenAPI::OptionalParam<qint32>(), const ::OpenAPI::OptionalParam<QString> &page_cursor = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &store_id = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &find_value = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &find_where = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &created_to = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &created_from = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &modified_to = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &modified_from = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &response_fields = ::OpenAPI::OptionalParam<QString>());
 
 
 private:

@@ -395,7 +395,7 @@ void OAICustomerApi::customerAddressAddCallback(OAIHttpRequestWorker *worker) {
     }
 }
 
-void OAICustomerApi::customerAttributeList(const QString &customer_id, const ::OpenAPI::OptionalParam<qint32> &count, const ::OpenAPI::OptionalParam<QString> &page_cursor, const ::OpenAPI::OptionalParam<QString> &store_id, const ::OpenAPI::OptionalParam<QString> &lang_id, const ::OpenAPI::OptionalParam<QString> &response_fields, const ::OpenAPI::OptionalParam<QString> &params, const ::OpenAPI::OptionalParam<QString> &exclude) {
+void OAICustomerApi::customerAttributeList(const QString &customer_id, const ::OpenAPI::OptionalParam<qint32> &start, const ::OpenAPI::OptionalParam<qint32> &count, const ::OpenAPI::OptionalParam<QString> &page_cursor, const ::OpenAPI::OptionalParam<QString> &store_id, const ::OpenAPI::OptionalParam<QString> &lang_id, const ::OpenAPI::OptionalParam<QString> &response_fields, const ::OpenAPI::OptionalParam<QString> &params, const ::OpenAPI::OptionalParam<QString> &exclude) {
     QString fullPath = QString(_serverConfigs["customerAttributeList"][_serverIndices.value("customerAttributeList")].URL()+"/customer.attribute.list.json");
     
     if (_apiKeys.contains("StoreKeyAuth")) {
@@ -407,6 +407,21 @@ void OAICustomerApi::customerAttributeList(const QString &customer_id, const ::O
     }
     
     QString queryPrefix, querySuffix, queryDelimiter, queryStyle;
+    if (start.hasValue())
+    {
+        queryStyle = "form";
+        if (queryStyle == "")
+            queryStyle = "form";
+        queryPrefix = getParamStylePrefix(queryStyle);
+        querySuffix = getParamStyleSuffix(queryStyle);
+        queryDelimiter = getParamStyleDelimiter(queryStyle, "start", true);
+        if (fullPath.indexOf("?") > 0)
+            fullPath.append(queryPrefix);
+        else
+            fullPath.append("?");
+
+        fullPath.append(QUrl::toPercentEncoding("start")).append(querySuffix).append(QUrl::toPercentEncoding(::OpenAPI::toStringValue(start.stringValue())));
+    }
     if (count.hasValue())
     {
         queryStyle = "form";

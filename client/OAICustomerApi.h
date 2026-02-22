@@ -83,6 +83,7 @@ public:
 
     /**
     * @param[in]  customer_id QString [required]
+    * @param[in]  start qint32 [optional]
     * @param[in]  count qint32 [optional]
     * @param[in]  page_cursor QString [optional]
     * @param[in]  store_id QString [optional]
@@ -91,7 +92,7 @@ public:
     * @param[in]  params QString [optional]
     * @param[in]  exclude QString [optional]
     */
-    virtual void customerAttributeList(const QString &customer_id, const ::OpenAPI::OptionalParam<qint32> &count = ::OpenAPI::OptionalParam<qint32>(), const ::OpenAPI::OptionalParam<QString> &page_cursor = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &store_id = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &lang_id = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &response_fields = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &params = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &exclude = ::OpenAPI::OptionalParam<QString>());
+    virtual void customerAttributeList(const QString &customer_id, const ::OpenAPI::OptionalParam<qint32> &start = ::OpenAPI::OptionalParam<qint32>(), const ::OpenAPI::OptionalParam<qint32> &count = ::OpenAPI::OptionalParam<qint32>(), const ::OpenAPI::OptionalParam<QString> &page_cursor = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &store_id = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &lang_id = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &response_fields = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &params = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &exclude = ::OpenAPI::OptionalParam<QString>());
 
     /**
     * @param[in]  ids QString [optional]

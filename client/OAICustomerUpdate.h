@@ -119,6 +119,11 @@ public:
     bool is_status_Set() const;
     bool is_status_Valid() const;
 
+    QString getPassword() const;
+    void setPassword(const QString &password);
+    bool is_password_Set() const;
+    bool is_password_Valid() const;
+
     QString getStoreId() const;
     void setStoreId(const QString &store_id);
     bool is_store_id_Set() const;
@@ -199,6 +204,10 @@ private:
     QString m_status;
     bool m_status_isSet;
     bool m_status_isValid;
+
+    QString m_password;
+    bool m_password_isSet;
+    bool m_password_isValid;
 
     QString m_store_id;
     bool m_store_id_isSet;
