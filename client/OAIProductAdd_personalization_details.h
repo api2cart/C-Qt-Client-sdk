@@ -13,7 +13,7 @@
 /*
  * OAIProductAdd_personalization_details.h
  *
- * Defines personalization settings for the listing. To enable personalization, is_personalizable must be set to true. When enabled, additional fields may be used to configure the personalization experience, including whether it is required (personalization_is_required), the maximum character limit (personalization_char_count_max), and buyer instructions (personalization_instructions). All related fields are only applicable if personalization is enabled.
+ * &lt;strong&gt;Deprecated.&lt;/strong&gt; Use &lt;strong&gt;personalization_questions&lt;/strong&gt; instead for setting personalization questions. Defines legacy personalization settings for the listing. To enable personalization, is_personalizable must be set to true. When enabled, additional fields may be used to configure the personalization experience, including whether it is required (personalization_is_required), the maximum character limit (personalization_char_count_max), and buyer instructions (personalization_instructions). All related fields are only applicable if personalization is enabled.
  */
 
 #ifndef OAIProductAdd_personalization_details_H

@@ -307,6 +307,9 @@ void OAIProductUpdate::initializeModel() {
     m_personalization_details_isSet = false;
     m_personalization_details_isValid = false;
 
+    m_personalization_questions_isSet = false;
+    m_personalization_questions_isValid = false;
+
     m_external_product_link_isSet = false;
     m_external_product_link_isValid = false;
 
@@ -602,6 +605,9 @@ void OAIProductUpdate::fromJsonObject(QJsonObject json) {
     m_personalization_details_isValid = ::OpenAPI::fromJsonValue(m_personalization_details, json[QString("personalization_details")]);
     m_personalization_details_isSet = !json[QString("personalization_details")].isNull() && m_personalization_details_isValid;
 
+    m_personalization_questions_isValid = ::OpenAPI::fromJsonValue(m_personalization_questions, json[QString("personalization_questions")]);
+    m_personalization_questions_isSet = !json[QString("personalization_questions")].isNull() && m_personalization_questions_isValid;
+
     m_external_product_link_isValid = ::OpenAPI::fromJsonValue(m_external_product_link, json[QString("external_product_link")]);
     m_external_product_link_isSet = !json[QString("external_product_link")].isNull() && m_external_product_link_isValid;
 
@@ -896,6 +902,9 @@ QJsonObject OAIProductUpdate::asJsonObject() const {
     }
     if (m_personalization_details.isSet()) {
         obj.insert(QString("personalization_details"), ::OpenAPI::toJsonValue(m_personalization_details));
+    }
+    if (m_personalization_questions.size() > 0) {
+        obj.insert(QString("personalization_questions"), ::OpenAPI::toJsonValue(m_personalization_questions));
     }
     if (m_external_product_link_isSet) {
         obj.insert(QString("external_product_link"), ::OpenAPI::toJsonValue(m_external_product_link));
@@ -2368,6 +2377,22 @@ bool OAIProductUpdate::is_personalization_details_Valid() const{
     return m_personalization_details_isValid;
 }
 
+QList<OAIProductAdd_personalization_questions_inner> OAIProductUpdate::getPersonalizationQuestions() const {
+    return m_personalization_questions;
+}
+void OAIProductUpdate::setPersonalizationQuestions(const QList<OAIProductAdd_personalization_questions_inner> &personalization_questions) {
+    m_personalization_questions = personalization_questions;
+    m_personalization_questions_isSet = true;
+}
+
+bool OAIProductUpdate::is_personalization_questions_Set() const{
+    return m_personalization_questions_isSet;
+}
+
+bool OAIProductUpdate::is_personalization_questions_Valid() const{
+    return m_personalization_questions_isValid;
+}
+
 QString OAIProductUpdate::getExternalProductLink() const {
     return m_external_product_link;
 }
@@ -2886,6 +2911,11 @@ bool OAIProductUpdate::isSet() const {
         }
 
         if (m_personalization_details.isSet()) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_personalization_questions.size() > 0) {
             isObjectUpdated = true;
             break;
         }

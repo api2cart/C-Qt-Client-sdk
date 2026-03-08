@@ -29,6 +29,7 @@
 #include "OAIProductAdd_manufacturer_info.h"
 #include "OAIProductAdd_package_details.h"
 #include "OAIProductAdd_personalization_details.h"
+#include "OAIProductAdd_personalization_questions_inner.h"
 #include "OAIProductAdd_sales_tax.h"
 #include "OAIProductAdd_seller_profiles.h"
 #include "OAIProductAdd_shipping_details_inner.h"
@@ -56,6 +57,7 @@ class OAIProductAdd_logistic_info_inner;
 class OAIProductAdd_seller_profiles;
 class OAIProductAdd_best_offer;
 class OAIProductAdd_personalization_details;
+class OAIProductAdd_personalization_questions_inner;
 
 class OAIProductAdd : public OAIObject {
 public:
@@ -678,6 +680,11 @@ public:
     bool is_personalization_details_Set() const;
     bool is_personalization_details_Valid() const;
 
+    QList<OAIProductAdd_personalization_questions_inner> getPersonalizationQuestions() const;
+    void setPersonalizationQuestions(const QList<OAIProductAdd_personalization_questions_inner> &personalization_questions);
+    bool is_personalization_questions_Set() const;
+    bool is_personalization_questions_Valid() const;
+
     QString getIdempotencyKey() const;
     void setIdempotencyKey(const QString &idempotency_key);
     bool is_idempotency_key_Set() const;
@@ -1176,6 +1183,10 @@ private:
     OAIProductAdd_personalization_details m_personalization_details;
     bool m_personalization_details_isSet;
     bool m_personalization_details_isValid;
+
+    QList<OAIProductAdd_personalization_questions_inner> m_personalization_questions;
+    bool m_personalization_questions_isSet;
+    bool m_personalization_questions_isValid;
 
     QString m_idempotency_key;
     bool m_idempotency_key_isSet;

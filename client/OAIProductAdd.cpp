@@ -400,6 +400,9 @@ void OAIProductAdd::initializeModel() {
     m_personalization_details_isSet = false;
     m_personalization_details_isValid = false;
 
+    m_personalization_questions_isSet = false;
+    m_personalization_questions_isValid = false;
+
     m_idempotency_key_isSet = false;
     m_idempotency_key_isValid = false;
 }
@@ -779,6 +782,9 @@ void OAIProductAdd::fromJsonObject(QJsonObject json) {
     m_personalization_details_isValid = ::OpenAPI::fromJsonValue(m_personalization_details, json[QString("personalization_details")]);
     m_personalization_details_isSet = !json[QString("personalization_details")].isNull() && m_personalization_details_isValid;
 
+    m_personalization_questions_isValid = ::OpenAPI::fromJsonValue(m_personalization_questions, json[QString("personalization_questions")]);
+    m_personalization_questions_isSet = !json[QString("personalization_questions")].isNull() && m_personalization_questions_isValid;
+
     m_idempotency_key_isValid = ::OpenAPI::fromJsonValue(m_idempotency_key, json[QString("idempotency_key")]);
     m_idempotency_key_isSet = !json[QString("idempotency_key")].isNull() && m_idempotency_key_isValid;
 }
@@ -1157,6 +1163,9 @@ QJsonObject OAIProductAdd::asJsonObject() const {
     }
     if (m_personalization_details.isSet()) {
         obj.insert(QString("personalization_details"), ::OpenAPI::toJsonValue(m_personalization_details));
+    }
+    if (m_personalization_questions.size() > 0) {
+        obj.insert(QString("personalization_questions"), ::OpenAPI::toJsonValue(m_personalization_questions));
     }
     if (m_idempotency_key_isSet) {
         obj.insert(QString("idempotency_key"), ::OpenAPI::toJsonValue(m_idempotency_key));
@@ -3116,6 +3125,22 @@ bool OAIProductAdd::is_personalization_details_Valid() const{
     return m_personalization_details_isValid;
 }
 
+QList<OAIProductAdd_personalization_questions_inner> OAIProductAdd::getPersonalizationQuestions() const {
+    return m_personalization_questions;
+}
+void OAIProductAdd::setPersonalizationQuestions(const QList<OAIProductAdd_personalization_questions_inner> &personalization_questions) {
+    m_personalization_questions = personalization_questions;
+    m_personalization_questions_isSet = true;
+}
+
+bool OAIProductAdd::is_personalization_questions_Set() const{
+    return m_personalization_questions_isSet;
+}
+
+bool OAIProductAdd::is_personalization_questions_Valid() const{
+    return m_personalization_questions_isValid;
+}
+
 QString OAIProductAdd::getIdempotencyKey() const {
     return m_idempotency_key;
 }
@@ -3741,6 +3766,11 @@ bool OAIProductAdd::isSet() const {
         }
 
         if (m_personalization_details.isSet()) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_personalization_questions.size() > 0) {
             isObjectUpdated = true;
             break;
         }

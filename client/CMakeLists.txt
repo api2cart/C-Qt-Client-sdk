@@ -285,6 +285,7 @@ add_library(${PROJECT_NAME}
   OAIProductAdd_manufacturer_info.h
   OAIProductAdd_package_details.h
   OAIProductAdd_personalization_details.h
+  OAIProductAdd_personalization_questions_inner.h
   OAIProductAdd_sales_tax.h
   OAIProductAdd_seller_profiles.h
   OAIProductAdd_shipping_details_inner.h
@@ -742,6 +743,7 @@ add_library(${PROJECT_NAME}
   OAIProductAdd_manufacturer_info.cpp
   OAIProductAdd_package_details.cpp
   OAIProductAdd_personalization_details.cpp
+  OAIProductAdd_personalization_questions_inner.cpp
   OAIProductAdd_sales_tax.cpp
   OAIProductAdd_seller_profiles.cpp
   OAIProductAdd_shipping_details_inner.cpp
