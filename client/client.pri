@@ -255,6 +255,10 @@ HEADERS += \
     $${PWD}/OAIOrder_Totals_NewDiscount.h \
     $${PWD}/OAIOrder_Transaction.h \
     $${PWD}/OAIPagination.h \
+    $${PWD}/OAIParamDefinition_FilteringConditions_FilterCondition.h \
+    $${PWD}/OAIParamDefinition_FilteringConditions_FilterGroup.h \
+    $${PWD}/OAIParamDefinition_FilteringConditions_FilterRule.h \
+    $${PWD}/OAIParamDefinition_FilteringConditions_FilterRule_value.h \
     $${PWD}/OAIPlugin.h \
     $${PWD}/OAIPluginList.h \
     $${PWD}/OAIProduct.h \
@@ -432,11 +436,13 @@ HEADERS += \
     $${PWD}/OAIWebhook.h \
     $${PWD}/OAIWebhookCount_200_response.h \
     $${PWD}/OAIWebhookCount_200_response_result.h \
+    $${PWD}/OAIWebhookCreate.h \
     $${PWD}/OAIWebhookEvents_200_response.h \
     $${PWD}/OAIWebhookEvents_200_response_result.h \
     $${PWD}/OAIWebhookEvents_200_response_result_events_inner.h \
     $${PWD}/OAIWebhookList_200_response.h \
     $${PWD}/OAIWebhookList_200_response_result.h \
+    $${PWD}/OAIWebhookUpdate.h \
 # APIs
     $${PWD}/OAIAccountApi.h \
     $${PWD}/OAIAttributeApi.h \
@@ -718,6 +724,10 @@ SOURCES += \
     $${PWD}/OAIOrder_Totals_NewDiscount.cpp \
     $${PWD}/OAIOrder_Transaction.cpp \
     $${PWD}/OAIPagination.cpp \
+    $${PWD}/OAIParamDefinition_FilteringConditions_FilterCondition.cpp \
+    $${PWD}/OAIParamDefinition_FilteringConditions_FilterGroup.cpp \
+    $${PWD}/OAIParamDefinition_FilteringConditions_FilterRule.cpp \
+    $${PWD}/OAIParamDefinition_FilteringConditions_FilterRule_value.cpp \
     $${PWD}/OAIPlugin.cpp \
     $${PWD}/OAIPluginList.cpp \
     $${PWD}/OAIProduct.cpp \
@@ -895,11 +905,13 @@ SOURCES += \
     $${PWD}/OAIWebhook.cpp \
     $${PWD}/OAIWebhookCount_200_response.cpp \
     $${PWD}/OAIWebhookCount_200_response_result.cpp \
+    $${PWD}/OAIWebhookCreate.cpp \
     $${PWD}/OAIWebhookEvents_200_response.cpp \
     $${PWD}/OAIWebhookEvents_200_response_result.cpp \
     $${PWD}/OAIWebhookEvents_200_response_result_events_inner.cpp \
     $${PWD}/OAIWebhookList_200_response.cpp \
     $${PWD}/OAIWebhookList_200_response_result.cpp \
+    $${PWD}/OAIWebhookUpdate.cpp \
 # APIs
     $${PWD}/OAIAccountApi.cpp \
     $${PWD}/OAIAttributeApi.cpp \

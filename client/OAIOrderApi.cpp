@@ -706,7 +706,7 @@ void OAIOrderApi::orderCalculateCallback(OAIHttpRequestWorker *worker) {
     }
 }
 
-void OAIOrderApi::orderCount(const ::OpenAPI::OptionalParam<QString> &order_ids, const ::OpenAPI::OptionalParam<QString> &ids, const ::OpenAPI::OptionalParam<QString> &customer_id, const ::OpenAPI::OptionalParam<QString> &store_id, const ::OpenAPI::OptionalParam<QString> &customer_email, const ::OpenAPI::OptionalParam<QString> &order_status, const ::OpenAPI::OptionalParam<QList<QString>> &order_status_ids, const ::OpenAPI::OptionalParam<QString> &ebay_order_status, const ::OpenAPI::OptionalParam<QString> &financial_status, const ::OpenAPI::OptionalParam<QList<QString>> &financial_status_ids, const ::OpenAPI::OptionalParam<QString> &fulfillment_channel, const ::OpenAPI::OptionalParam<QString> &fulfillment_status, const ::OpenAPI::OptionalParam<QString> &shipping_method, const ::OpenAPI::OptionalParam<QString> &delivery_method, const ::OpenAPI::OptionalParam<QString> &tags, const ::OpenAPI::OptionalParam<QString> &ship_node_type, const ::OpenAPI::OptionalParam<QString> &created_from, const ::OpenAPI::OptionalParam<QString> &created_to, const ::OpenAPI::OptionalParam<QString> &modified_from, const ::OpenAPI::OptionalParam<QString> &modified_to) {
+void OAIOrderApi::orderCount(const ::OpenAPI::OptionalParam<QString> &order_ids, const ::OpenAPI::OptionalParam<QString> &ids, const ::OpenAPI::OptionalParam<QString> &customer_id, const ::OpenAPI::OptionalParam<QString> &store_id, const ::OpenAPI::OptionalParam<QString> &customer_email, const ::OpenAPI::OptionalParam<QString> &order_status, const ::OpenAPI::OptionalParam<QList<QString>> &order_status_ids, const ::OpenAPI::OptionalParam<QString> &ebay_order_status, const ::OpenAPI::OptionalParam<QString> &financial_status, const ::OpenAPI::OptionalParam<QList<QString>> &financial_status_ids, const ::OpenAPI::OptionalParam<QString> &fulfillment_channel, const ::OpenAPI::OptionalParam<QString> &fulfillment_status, const ::OpenAPI::OptionalParam<QString> &shipping_method, const ::OpenAPI::OptionalParam<QString> &delivery_method, const ::OpenAPI::OptionalParam<QString> &tags, const ::OpenAPI::OptionalParam<QString> &ship_node_type, const ::OpenAPI::OptionalParam<QString> &created_from, const ::OpenAPI::OptionalParam<QString> &created_to, const ::OpenAPI::OptionalParam<QString> &modified_from, const ::OpenAPI::OptionalParam<QString> &modified_to, const ::OpenAPI::OptionalParam<bool> &use_latest_api_version) {
     QString fullPath = QString(_serverConfigs["orderCount"][_serverIndices.value("orderCount")].URL()+"/order.count.json");
     
     if (_apiKeys.contains("StoreKeyAuth")) {
@@ -1157,6 +1157,21 @@ void OAIOrderApi::orderCount(const ::OpenAPI::OptionalParam<QString> &order_ids,
             fullPath.append("?");
 
         fullPath.append(QUrl::toPercentEncoding("modified_to")).append(querySuffix).append(QUrl::toPercentEncoding(::OpenAPI::toStringValue(modified_to.stringValue())));
+    }
+    if (use_latest_api_version.hasValue())
+    {
+        queryStyle = "form";
+        if (queryStyle == "")
+            queryStyle = "form";
+        queryPrefix = getParamStylePrefix(queryStyle);
+        querySuffix = getParamStyleSuffix(queryStyle);
+        queryDelimiter = getParamStyleDelimiter(queryStyle, "use_latest_api_version", true);
+        if (fullPath.indexOf("?") > 0)
+            fullPath.append(queryPrefix);
+        else
+            fullPath.append("?");
+
+        fullPath.append(QUrl::toPercentEncoding("use_latest_api_version")).append(querySuffix).append(QUrl::toPercentEncoding(::OpenAPI::toStringValue(use_latest_api_version.stringValue())));
     }
     OAIHttpRequestWorker *worker = new OAIHttpRequestWorker(this, _manager);
     worker->setTimeOut(_timeOut);

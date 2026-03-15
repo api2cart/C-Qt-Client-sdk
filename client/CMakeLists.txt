@@ -264,6 +264,10 @@ add_library(${PROJECT_NAME}
   OAIOrder_Totals_NewDiscount.h
   OAIOrder_Transaction.h
   OAIPagination.h
+  OAIParamDefinition_FilteringConditions_FilterCondition.h
+  OAIParamDefinition_FilteringConditions_FilterGroup.h
+  OAIParamDefinition_FilteringConditions_FilterRule.h
+  OAIParamDefinition_FilteringConditions_FilterRule_value.h
   OAIPlugin.h
   OAIPluginList.h
   OAIProduct.h
@@ -441,11 +445,13 @@ add_library(${PROJECT_NAME}
   OAIWebhook.h
   OAIWebhookCount_200_response.h
   OAIWebhookCount_200_response_result.h
+  OAIWebhookCreate.h
   OAIWebhookEvents_200_response.h
   OAIWebhookEvents_200_response_result.h
   OAIWebhookEvents_200_response_result_events_inner.h
   OAIWebhookList_200_response.h
   OAIWebhookList_200_response_result.h
+  OAIWebhookUpdate.h
   OAIAccountApi.h
   OAIAttributeApi.h
   OAIBasketApi.h
@@ -722,6 +728,10 @@ add_library(${PROJECT_NAME}
   OAIOrder_Totals_NewDiscount.cpp
   OAIOrder_Transaction.cpp
   OAIPagination.cpp
+  OAIParamDefinition_FilteringConditions_FilterCondition.cpp
+  OAIParamDefinition_FilteringConditions_FilterGroup.cpp
+  OAIParamDefinition_FilteringConditions_FilterRule.cpp
+  OAIParamDefinition_FilteringConditions_FilterRule_value.cpp
   OAIPlugin.cpp
   OAIPluginList.cpp
   OAIProduct.cpp
@@ -899,11 +909,13 @@ add_library(${PROJECT_NAME}
   OAIWebhook.cpp
   OAIWebhookCount_200_response.cpp
   OAIWebhookCount_200_response_result.cpp
+  OAIWebhookCreate.cpp
   OAIWebhookEvents_200_response.cpp
   OAIWebhookEvents_200_response_result.cpp
   OAIWebhookEvents_200_response_result_events_inner.cpp
   OAIWebhookList_200_response.cpp
   OAIWebhookList_200_response_result.cpp
+  OAIWebhookUpdate.cpp
   OAIAccountApi.cpp
   OAIAttributeApi.cpp
   OAIBasketApi.cpp

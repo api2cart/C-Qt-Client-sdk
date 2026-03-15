@@ -100,6 +100,11 @@ public:
     bool is_action_Set() const;
     bool is_action_Valid() const;
 
+    OAIObject getFilteringConditions() const;
+    void setFilteringConditions(const OAIObject &filtering_conditions);
+    bool is_filtering_conditions_Set() const;
+    bool is_filtering_conditions_Valid() const;
+
     OAIObject getAdditionalFields() const;
     void setAdditionalFields(const OAIObject &additional_fields);
     bool is_additional_fields_Set() const;
@@ -163,6 +168,10 @@ private:
     QString m_action;
     bool m_action_isSet;
     bool m_action_isValid;
+
+    OAIObject m_filtering_conditions;
+    bool m_filtering_conditions_isSet;
+    bool m_filtering_conditions_isValid;
 
     OAIObject m_additional_fields;
     bool m_additional_fields_isSet;

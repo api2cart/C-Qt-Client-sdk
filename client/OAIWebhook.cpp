@@ -70,6 +70,9 @@ void OAIWebhook::initializeModel() {
     m_action_isSet = false;
     m_action_isValid = false;
 
+    m_filtering_conditions_isSet = false;
+    m_filtering_conditions_isValid = false;
+
     m_additional_fields_isSet = false;
     m_additional_fields_isValid = false;
 
@@ -122,6 +125,9 @@ void OAIWebhook::fromJsonObject(QJsonObject json) {
     m_action_isValid = ::OpenAPI::fromJsonValue(m_action, json[QString("action")]);
     m_action_isSet = !json[QString("action")].isNull() && m_action_isValid;
 
+    m_filtering_conditions_isValid = ::OpenAPI::fromJsonValue(m_filtering_conditions, json[QString("filtering_conditions")]);
+    m_filtering_conditions_isSet = !json[QString("filtering_conditions")].isNull() && m_filtering_conditions_isValid;
+
     m_additional_fields_isValid = ::OpenAPI::fromJsonValue(m_additional_fields, json[QString("additional_fields")]);
     m_additional_fields_isSet = !json[QString("additional_fields")].isNull() && m_additional_fields_isValid;
 
@@ -173,6 +179,9 @@ QJsonObject OAIWebhook::asJsonObject() const {
     }
     if (m_action_isSet) {
         obj.insert(QString("action"), ::OpenAPI::toJsonValue(m_action));
+    }
+    if (m_filtering_conditions_isSet) {
+        obj.insert(QString("filtering_conditions"), ::OpenAPI::toJsonValue(m_filtering_conditions));
     }
     if (m_additional_fields_isSet) {
         obj.insert(QString("additional_fields"), ::OpenAPI::toJsonValue(m_additional_fields));
@@ -375,6 +384,22 @@ bool OAIWebhook::is_action_Valid() const{
     return m_action_isValid;
 }
 
+OAIObject OAIWebhook::getFilteringConditions() const {
+    return m_filtering_conditions;
+}
+void OAIWebhook::setFilteringConditions(const OAIObject &filtering_conditions) {
+    m_filtering_conditions = filtering_conditions;
+    m_filtering_conditions_isSet = true;
+}
+
+bool OAIWebhook::is_filtering_conditions_Set() const{
+    return m_filtering_conditions_isSet;
+}
+
+bool OAIWebhook::is_filtering_conditions_Valid() const{
+    return m_filtering_conditions_isValid;
+}
+
 OAIObject OAIWebhook::getAdditionalFields() const {
     return m_additional_fields;
 }
@@ -466,6 +491,11 @@ bool OAIWebhook::isSet() const {
         }
 
         if (m_action_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_filtering_conditions_isSet) {
             isObjectUpdated = true;
             break;
         }

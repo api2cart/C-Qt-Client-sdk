@@ -37,6 +37,9 @@ void OAIPlugin::initializeModel() {
     m_name_isSet = false;
     m_name_isValid = false;
 
+    m_code_isSet = false;
+    m_code_isValid = false;
+
     m_active_isSet = false;
     m_active_isValid = false;
 
@@ -59,6 +62,9 @@ void OAIPlugin::fromJsonObject(QJsonObject json) {
     m_name_isValid = ::OpenAPI::fromJsonValue(m_name, json[QString("name")]);
     m_name_isSet = !json[QString("name")].isNull() && m_name_isValid;
 
+    m_code_isValid = ::OpenAPI::fromJsonValue(m_code, json[QString("code")]);
+    m_code_isSet = !json[QString("code")].isNull() && m_code_isValid;
+
     m_active_isValid = ::OpenAPI::fromJsonValue(m_active, json[QString("active")]);
     m_active_isSet = !json[QString("active")].isNull() && m_active_isValid;
 
@@ -80,6 +86,9 @@ QJsonObject OAIPlugin::asJsonObject() const {
     QJsonObject obj;
     if (m_name_isSet) {
         obj.insert(QString("name"), ::OpenAPI::toJsonValue(m_name));
+    }
+    if (m_code_isSet) {
+        obj.insert(QString("code"), ::OpenAPI::toJsonValue(m_code));
     }
     if (m_active_isSet) {
         obj.insert(QString("active"), ::OpenAPI::toJsonValue(m_active));
@@ -107,6 +116,22 @@ bool OAIPlugin::is_name_Set() const{
 
 bool OAIPlugin::is_name_Valid() const{
     return m_name_isValid;
+}
+
+QString OAIPlugin::getCode() const {
+    return m_code;
+}
+void OAIPlugin::setCode(const QString &code) {
+    m_code = code;
+    m_code_isSet = true;
+}
+
+bool OAIPlugin::is_code_Set() const{
+    return m_code_isSet;
+}
+
+bool OAIPlugin::is_code_Valid() const{
+    return m_code_isValid;
 }
 
 bool OAIPlugin::isActive() const {
@@ -161,6 +186,11 @@ bool OAIPlugin::isSet() const {
     bool isObjectUpdated = false;
     do {
         if (m_name_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_code_isSet) {
             isObjectUpdated = true;
             break;
         }

@@ -45,6 +45,11 @@ public:
     bool is_name_Set() const;
     bool is_name_Valid() const;
 
+    QString getCode() const;
+    void setCode(const QString &code);
+    bool is_code_Set() const;
+    bool is_code_Valid() const;
+
     bool isActive() const;
     void setActive(const bool &active);
     bool is_active_Set() const;
@@ -69,6 +74,10 @@ private:
     QString m_name;
     bool m_name_isSet;
     bool m_name_isValid;
+
+    QString m_code;
+    bool m_code_isSet;
+    bool m_code_isValid;
 
     bool m_active;
     bool m_active_isSet;

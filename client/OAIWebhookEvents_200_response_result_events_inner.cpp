@@ -42,6 +42,9 @@ void OAIWebhookEvents_200_response_result_events_inner::initializeModel() {
 
     m_action_isSet = false;
     m_action_isValid = false;
+
+    m_filterable_fields_isSet = false;
+    m_filterable_fields_isValid = false;
 }
 
 void OAIWebhookEvents_200_response_result_events_inner::fromJson(QString jsonString) {
@@ -61,6 +64,9 @@ void OAIWebhookEvents_200_response_result_events_inner::fromJsonObject(QJsonObje
 
     m_action_isValid = ::OpenAPI::fromJsonValue(m_action, json[QString("action")]);
     m_action_isSet = !json[QString("action")].isNull() && m_action_isValid;
+
+    m_filterable_fields_isValid = ::OpenAPI::fromJsonValue(m_filterable_fields, json[QString("filterable_fields")]);
+    m_filterable_fields_isSet = !json[QString("filterable_fields")].isNull() && m_filterable_fields_isValid;
 }
 
 QString OAIWebhookEvents_200_response_result_events_inner::asJson() const {
@@ -80,6 +86,9 @@ QJsonObject OAIWebhookEvents_200_response_result_events_inner::asJsonObject() co
     }
     if (m_action_isSet) {
         obj.insert(QString("action"), ::OpenAPI::toJsonValue(m_action));
+    }
+    if (m_filterable_fields_isSet) {
+        obj.insert(QString("filterable_fields"), ::OpenAPI::toJsonValue(m_filterable_fields));
     }
     return obj;
 }
@@ -132,6 +141,22 @@ bool OAIWebhookEvents_200_response_result_events_inner::is_action_Valid() const{
     return m_action_isValid;
 }
 
+OAIObject OAIWebhookEvents_200_response_result_events_inner::getFilterableFields() const {
+    return m_filterable_fields;
+}
+void OAIWebhookEvents_200_response_result_events_inner::setFilterableFields(const OAIObject &filterable_fields) {
+    m_filterable_fields = filterable_fields;
+    m_filterable_fields_isSet = true;
+}
+
+bool OAIWebhookEvents_200_response_result_events_inner::is_filterable_fields_Set() const{
+    return m_filterable_fields_isSet;
+}
+
+bool OAIWebhookEvents_200_response_result_events_inner::is_filterable_fields_Valid() const{
+    return m_filterable_fields_isValid;
+}
+
 bool OAIWebhookEvents_200_response_result_events_inner::isSet() const {
     bool isObjectUpdated = false;
     do {
@@ -146,6 +171,11 @@ bool OAIWebhookEvents_200_response_result_events_inner::isSet() const {
         }
 
         if (m_action_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_filterable_fields_isSet) {
             isObjectUpdated = true;
             break;
         }

@@ -22,8 +22,10 @@
 #include "OAIBasketLiveShippingServiceCreate_200_response.h"
 #include "OAIProductImageUpdate_200_response.h"
 #include "OAIWebhookCount_200_response.h"
+#include "OAIWebhookCreate.h"
 #include "OAIWebhookEvents_200_response.h"
 #include "OAIWebhookList_200_response.h"
+#include "OAIWebhookUpdate.h"
 #include <QString>
 
 #include <QObject>
@@ -70,18 +72,9 @@ public:
     virtual void webhookCount(const ::OpenAPI::OptionalParam<QString> &entity = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &action = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<bool> &active = ::OpenAPI::OptionalParam<bool>());
 
     /**
-    * @param[in]  entity QString [required]
-    * @param[in]  action QString [required]
-    * @param[in]  callback QString [optional]
-    * @param[in]  label QString [optional]
-    * @param[in]  fields QString [optional]
-    * @param[in]  response_fields QString [optional]
-    * @param[in]  active bool [optional]
-    * @param[in]  lang_id QString [optional]
-    * @param[in]  store_id QString [optional]
-    * @param[in]  idempotency_key QString [optional]
+    * @param[in]  oai_webhook_create OAIWebhookCreate [required]
     */
-    virtual void webhookCreate(const QString &entity, const QString &action, const ::OpenAPI::OptionalParam<QString> &callback = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &label = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &fields = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &response_fields = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<bool> &active = ::OpenAPI::OptionalParam<bool>(), const ::OpenAPI::OptionalParam<QString> &lang_id = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &store_id = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &idempotency_key = ::OpenAPI::OptionalParam<QString>());
+    virtual void webhookCreate(const OAIWebhookCreate &oai_webhook_create);
 
     /**
     * @param[in]  id QString [required]
@@ -103,16 +96,9 @@ public:
     virtual void webhookList(const ::OpenAPI::OptionalParam<qint32> &start = ::OpenAPI::OptionalParam<qint32>(), const ::OpenAPI::OptionalParam<qint32> &count = ::OpenAPI::OptionalParam<qint32>(), const ::OpenAPI::OptionalParam<QString> &entity = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &action = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<bool> &active = ::OpenAPI::OptionalParam<bool>(), const ::OpenAPI::OptionalParam<QString> &ids = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &params = ::OpenAPI::OptionalParam<QString>());
 
     /**
-    * @param[in]  id QString [required]
-    * @param[in]  callback QString [optional]
-    * @param[in]  label QString [optional]
-    * @param[in]  fields QString [optional]
-    * @param[in]  response_fields QString [optional]
-    * @param[in]  active bool [optional]
-    * @param[in]  lang_id QString [optional]
-    * @param[in]  idempotency_key QString [optional]
+    * @param[in]  oai_webhook_update OAIWebhookUpdate [required]
     */
-    virtual void webhookUpdate(const QString &id, const ::OpenAPI::OptionalParam<QString> &callback = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &label = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &fields = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &response_fields = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<bool> &active = ::OpenAPI::OptionalParam<bool>(), const ::OpenAPI::OptionalParam<QString> &lang_id = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &idempotency_key = ::OpenAPI::OptionalParam<QString>());
+    virtual void webhookUpdate(const OAIWebhookUpdate &oai_webhook_update);
 
 
 private:

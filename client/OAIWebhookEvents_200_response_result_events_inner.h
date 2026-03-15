@@ -21,6 +21,7 @@
 
 #include <QJsonObject>
 
+#include "OAIObject.h"
 #include <QString>
 
 #include "OAIEnum.h"
@@ -54,6 +55,11 @@ public:
     bool is_action_Set() const;
     bool is_action_Valid() const;
 
+    OAIObject getFilterableFields() const;
+    void setFilterableFields(const OAIObject &filterable_fields);
+    bool is_filterable_fields_Set() const;
+    bool is_filterable_fields_Valid() const;
+
     virtual bool isSet() const override;
     virtual bool isValid() const override;
 
@@ -71,6 +77,10 @@ private:
     QString m_action;
     bool m_action_isSet;
     bool m_action_isValid;
+
+    OAIObject m_filterable_fields;
+    bool m_filterable_fields_isSet;
+    bool m_filterable_fields_isValid;
 };
 
 } // namespace OpenAPI

@@ -538,6 +538,14 @@ client/OAIOrder_Transaction.cpp
 client/OAIOrder_Transaction.h
 client/OAIPagination.cpp
 client/OAIPagination.h
+client/OAIParamDefinition_FilteringConditions_FilterCondition.cpp
+client/OAIParamDefinition_FilteringConditions_FilterCondition.h
+client/OAIParamDefinition_FilteringConditions_FilterGroup.cpp
+client/OAIParamDefinition_FilteringConditions_FilterGroup.h
+client/OAIParamDefinition_FilteringConditions_FilterRule.cpp
+client/OAIParamDefinition_FilteringConditions_FilterRule.h
+client/OAIParamDefinition_FilteringConditions_FilterRule_value.cpp
+client/OAIParamDefinition_FilteringConditions_FilterRule_value.h
 client/OAIPlugin.cpp
 client/OAIPlugin.h
 client/OAIPluginList.cpp
@@ -904,6 +912,8 @@ client/OAIWebhookCount_200_response.cpp
 client/OAIWebhookCount_200_response.h
 client/OAIWebhookCount_200_response_result.cpp
 client/OAIWebhookCount_200_response_result.h
+client/OAIWebhookCreate.cpp
+client/OAIWebhookCreate.h
 client/OAIWebhookEvents_200_response.cpp
 client/OAIWebhookEvents_200_response.h
 client/OAIWebhookEvents_200_response_result.cpp
@@ -914,4 +924,6 @@ client/OAIWebhookList_200_response.cpp
 client/OAIWebhookList_200_response.h
 client/OAIWebhookList_200_response_result.cpp
 client/OAIWebhookList_200_response_result.h
+client/OAIWebhookUpdate.cpp
+client/OAIWebhookUpdate.h
 client/client.pri
