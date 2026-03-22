@@ -272,6 +272,11 @@ public:
     bool is_bricklink_token_secret_Set() const;
     bool is_bricklink_token_secret_Valid() const;
 
+    QString getNopcommerceToken() const;
+    void setNopcommerceToken(const QString &nopcommerce_token);
+    bool is_nopcommerce_token_Set() const;
+    bool is_nopcommerce_token_Valid() const;
+
     QString getDemandwareClientId() const;
     void setDemandwareClientId(const QString &demandware_client_id);
     bool is_demandware_client_id_Set() const;
@@ -1146,6 +1151,10 @@ private:
     QString m_bricklink_token_secret;
     bool m_bricklink_token_secret_isSet;
     bool m_bricklink_token_secret_isValid;
+
+    QString m_nopcommerce_token;
+    bool m_nopcommerce_token_isSet;
+    bool m_nopcommerce_token_isValid;
 
     QString m_demandware_client_id;
     bool m_demandware_client_id_isSet;

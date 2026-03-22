@@ -403,6 +403,12 @@ void OAIProductAdd::initializeModel() {
     m_personalization_questions_isSet = false;
     m_personalization_questions_isValid = false;
 
+    m_manufacturer_ids_isSet = false;
+    m_manufacturer_ids_isValid = false;
+
+    m_responsible_person_ids_isSet = false;
+    m_responsible_person_ids_isValid = false;
+
     m_idempotency_key_isSet = false;
     m_idempotency_key_isValid = false;
 }
@@ -785,6 +791,12 @@ void OAIProductAdd::fromJsonObject(QJsonObject json) {
     m_personalization_questions_isValid = ::OpenAPI::fromJsonValue(m_personalization_questions, json[QString("personalization_questions")]);
     m_personalization_questions_isSet = !json[QString("personalization_questions")].isNull() && m_personalization_questions_isValid;
 
+    m_manufacturer_ids_isValid = ::OpenAPI::fromJsonValue(m_manufacturer_ids, json[QString("manufacturer_ids")]);
+    m_manufacturer_ids_isSet = !json[QString("manufacturer_ids")].isNull() && m_manufacturer_ids_isValid;
+
+    m_responsible_person_ids_isValid = ::OpenAPI::fromJsonValue(m_responsible_person_ids, json[QString("responsible_person_ids")]);
+    m_responsible_person_ids_isSet = !json[QString("responsible_person_ids")].isNull() && m_responsible_person_ids_isValid;
+
     m_idempotency_key_isValid = ::OpenAPI::fromJsonValue(m_idempotency_key, json[QString("idempotency_key")]);
     m_idempotency_key_isSet = !json[QString("idempotency_key")].isNull() && m_idempotency_key_isValid;
 }
@@ -1166,6 +1178,12 @@ QJsonObject OAIProductAdd::asJsonObject() const {
     }
     if (m_personalization_questions.size() > 0) {
         obj.insert(QString("personalization_questions"), ::OpenAPI::toJsonValue(m_personalization_questions));
+    }
+    if (m_manufacturer_ids_isSet) {
+        obj.insert(QString("manufacturer_ids"), ::OpenAPI::toJsonValue(m_manufacturer_ids));
+    }
+    if (m_responsible_person_ids_isSet) {
+        obj.insert(QString("responsible_person_ids"), ::OpenAPI::toJsonValue(m_responsible_person_ids));
     }
     if (m_idempotency_key_isSet) {
         obj.insert(QString("idempotency_key"), ::OpenAPI::toJsonValue(m_idempotency_key));
@@ -3141,6 +3159,38 @@ bool OAIProductAdd::is_personalization_questions_Valid() const{
     return m_personalization_questions_isValid;
 }
 
+QString OAIProductAdd::getManufacturerIds() const {
+    return m_manufacturer_ids;
+}
+void OAIProductAdd::setManufacturerIds(const QString &manufacturer_ids) {
+    m_manufacturer_ids = manufacturer_ids;
+    m_manufacturer_ids_isSet = true;
+}
+
+bool OAIProductAdd::is_manufacturer_ids_Set() const{
+    return m_manufacturer_ids_isSet;
+}
+
+bool OAIProductAdd::is_manufacturer_ids_Valid() const{
+    return m_manufacturer_ids_isValid;
+}
+
+QString OAIProductAdd::getResponsiblePersonIds() const {
+    return m_responsible_person_ids;
+}
+void OAIProductAdd::setResponsiblePersonIds(const QString &responsible_person_ids) {
+    m_responsible_person_ids = responsible_person_ids;
+    m_responsible_person_ids_isSet = true;
+}
+
+bool OAIProductAdd::is_responsible_person_ids_Set() const{
+    return m_responsible_person_ids_isSet;
+}
+
+bool OAIProductAdd::is_responsible_person_ids_Valid() const{
+    return m_responsible_person_ids_isValid;
+}
+
 QString OAIProductAdd::getIdempotencyKey() const {
     return m_idempotency_key;
 }
@@ -3771,6 +3821,16 @@ bool OAIProductAdd::isSet() const {
         }
 
         if (m_personalization_questions.size() > 0) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_manufacturer_ids_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_responsible_person_ids_isSet) {
             isObjectUpdated = true;
             break;
         }

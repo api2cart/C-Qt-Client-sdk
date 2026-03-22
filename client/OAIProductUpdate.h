@@ -527,6 +527,16 @@ public:
     bool is_min_order_quantity_Set() const;
     bool is_min_order_quantity_Valid() const;
 
+    QString getManufacturerIds() const;
+    void setManufacturerIds(const QString &manufacturer_ids);
+    bool is_manufacturer_ids_Set() const;
+    bool is_manufacturer_ids_Valid() const;
+
+    QString getResponsiblePersonIds() const;
+    void setResponsiblePersonIds(const QString &responsible_person_ids);
+    bool is_responsible_person_ids_Set() const;
+    bool is_responsible_person_ids_Valid() const;
+
     QString getIdempotencyKey() const;
     void setIdempotencyKey(const QString &idempotency_key);
     bool is_idempotency_key_Set() const;
@@ -917,6 +927,14 @@ private:
     double m_min_order_quantity;
     bool m_min_order_quantity_isSet;
     bool m_min_order_quantity_isValid;
+
+    QString m_manufacturer_ids;
+    bool m_manufacturer_ids_isSet;
+    bool m_manufacturer_ids_isValid;
+
+    QString m_responsible_person_ids;
+    bool m_responsible_person_ids_isSet;
+    bool m_responsible_person_ids_isValid;
 
     QString m_idempotency_key;
     bool m_idempotency_key_isSet;

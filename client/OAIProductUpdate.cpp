@@ -319,6 +319,12 @@ void OAIProductUpdate::initializeModel() {
     m_min_order_quantity_isSet = false;
     m_min_order_quantity_isValid = false;
 
+    m_manufacturer_ids_isSet = false;
+    m_manufacturer_ids_isValid = false;
+
+    m_responsible_person_ids_isSet = false;
+    m_responsible_person_ids_isValid = false;
+
     m_idempotency_key_isSet = false;
     m_idempotency_key_isValid = false;
 }
@@ -617,6 +623,12 @@ void OAIProductUpdate::fromJsonObject(QJsonObject json) {
     m_min_order_quantity_isValid = ::OpenAPI::fromJsonValue(m_min_order_quantity, json[QString("min_order_quantity")]);
     m_min_order_quantity_isSet = !json[QString("min_order_quantity")].isNull() && m_min_order_quantity_isValid;
 
+    m_manufacturer_ids_isValid = ::OpenAPI::fromJsonValue(m_manufacturer_ids, json[QString("manufacturer_ids")]);
+    m_manufacturer_ids_isSet = !json[QString("manufacturer_ids")].isNull() && m_manufacturer_ids_isValid;
+
+    m_responsible_person_ids_isValid = ::OpenAPI::fromJsonValue(m_responsible_person_ids, json[QString("responsible_person_ids")]);
+    m_responsible_person_ids_isSet = !json[QString("responsible_person_ids")].isNull() && m_responsible_person_ids_isValid;
+
     m_idempotency_key_isValid = ::OpenAPI::fromJsonValue(m_idempotency_key, json[QString("idempotency_key")]);
     m_idempotency_key_isSet = !json[QString("idempotency_key")].isNull() && m_idempotency_key_isValid;
 }
@@ -914,6 +926,12 @@ QJsonObject OAIProductUpdate::asJsonObject() const {
     }
     if (m_min_order_quantity_isSet) {
         obj.insert(QString("min_order_quantity"), ::OpenAPI::toJsonValue(m_min_order_quantity));
+    }
+    if (m_manufacturer_ids_isSet) {
+        obj.insert(QString("manufacturer_ids"), ::OpenAPI::toJsonValue(m_manufacturer_ids));
+    }
+    if (m_responsible_person_ids_isSet) {
+        obj.insert(QString("responsible_person_ids"), ::OpenAPI::toJsonValue(m_responsible_person_ids));
     }
     if (m_idempotency_key_isSet) {
         obj.insert(QString("idempotency_key"), ::OpenAPI::toJsonValue(m_idempotency_key));
@@ -2441,6 +2459,38 @@ bool OAIProductUpdate::is_min_order_quantity_Valid() const{
     return m_min_order_quantity_isValid;
 }
 
+QString OAIProductUpdate::getManufacturerIds() const {
+    return m_manufacturer_ids;
+}
+void OAIProductUpdate::setManufacturerIds(const QString &manufacturer_ids) {
+    m_manufacturer_ids = manufacturer_ids;
+    m_manufacturer_ids_isSet = true;
+}
+
+bool OAIProductUpdate::is_manufacturer_ids_Set() const{
+    return m_manufacturer_ids_isSet;
+}
+
+bool OAIProductUpdate::is_manufacturer_ids_Valid() const{
+    return m_manufacturer_ids_isValid;
+}
+
+QString OAIProductUpdate::getResponsiblePersonIds() const {
+    return m_responsible_person_ids;
+}
+void OAIProductUpdate::setResponsiblePersonIds(const QString &responsible_person_ids) {
+    m_responsible_person_ids = responsible_person_ids;
+    m_responsible_person_ids_isSet = true;
+}
+
+bool OAIProductUpdate::is_responsible_person_ids_Set() const{
+    return m_responsible_person_ids_isSet;
+}
+
+bool OAIProductUpdate::is_responsible_person_ids_Valid() const{
+    return m_responsible_person_ids_isValid;
+}
+
 QString OAIProductUpdate::getIdempotencyKey() const {
     return m_idempotency_key;
 }
@@ -2931,6 +2981,16 @@ bool OAIProductUpdate::isSet() const {
         }
 
         if (m_min_order_quantity_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_manufacturer_ids_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_responsible_person_ids_isSet) {
             isObjectUpdated = true;
             break;
         }
