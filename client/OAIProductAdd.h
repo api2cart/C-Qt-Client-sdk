@@ -235,6 +235,11 @@ public:
     bool is_prices_inc_tax_Set() const;
     bool is_prices_inc_tax_Valid() const;
 
+    double getRetailPrice() const;
+    void setRetailPrice(const double &retail_price);
+    bool is_retail_price_Set() const;
+    bool is_retail_price_Valid() const;
+
     double getQuantity() const;
     void setQuantity(const double &quantity);
     bool is_quantity_Set() const;
@@ -837,6 +842,10 @@ private:
     bool m_prices_inc_tax;
     bool m_prices_inc_tax_isSet;
     bool m_prices_inc_tax_isValid;
+
+    double m_retail_price;
+    bool m_retail_price_isSet;
+    bool m_retail_price_isValid;
 
     double m_quantity;
     bool m_quantity_isSet;

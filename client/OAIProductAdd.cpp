@@ -133,6 +133,9 @@ void OAIProductAdd::initializeModel() {
     m_prices_inc_tax_isSet = false;
     m_prices_inc_tax_isValid = false;
 
+    m_retail_price_isSet = false;
+    m_retail_price_isValid = false;
+
     m_quantity_isSet = false;
     m_quantity_isValid = false;
 
@@ -521,6 +524,9 @@ void OAIProductAdd::fromJsonObject(QJsonObject json) {
     m_prices_inc_tax_isValid = ::OpenAPI::fromJsonValue(m_prices_inc_tax, json[QString("prices_inc_tax")]);
     m_prices_inc_tax_isSet = !json[QString("prices_inc_tax")].isNull() && m_prices_inc_tax_isValid;
 
+    m_retail_price_isValid = ::OpenAPI::fromJsonValue(m_retail_price, json[QString("retail_price")]);
+    m_retail_price_isSet = !json[QString("retail_price")].isNull() && m_retail_price_isValid;
+
     m_quantity_isValid = ::OpenAPI::fromJsonValue(m_quantity, json[QString("quantity")]);
     m_quantity_isSet = !json[QString("quantity")].isNull() && m_quantity_isValid;
 
@@ -908,6 +914,9 @@ QJsonObject OAIProductAdd::asJsonObject() const {
     }
     if (m_prices_inc_tax_isSet) {
         obj.insert(QString("prices_inc_tax"), ::OpenAPI::toJsonValue(m_prices_inc_tax));
+    }
+    if (m_retail_price_isSet) {
+        obj.insert(QString("retail_price"), ::OpenAPI::toJsonValue(m_retail_price));
     }
     if (m_quantity_isSet) {
         obj.insert(QString("quantity"), ::OpenAPI::toJsonValue(m_quantity));
@@ -1717,6 +1726,22 @@ bool OAIProductAdd::is_prices_inc_tax_Set() const{
 
 bool OAIProductAdd::is_prices_inc_tax_Valid() const{
     return m_prices_inc_tax_isValid;
+}
+
+double OAIProductAdd::getRetailPrice() const {
+    return m_retail_price;
+}
+void OAIProductAdd::setRetailPrice(const double &retail_price) {
+    m_retail_price = retail_price;
+    m_retail_price_isSet = true;
+}
+
+bool OAIProductAdd::is_retail_price_Set() const{
+    return m_retail_price_isSet;
+}
+
+bool OAIProductAdd::is_retail_price_Valid() const{
+    return m_retail_price_isValid;
 }
 
 double OAIProductAdd::getQuantity() const {
@@ -3371,6 +3396,11 @@ bool OAIProductAdd::isSet() const {
         }
 
         if (m_prices_inc_tax_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_retail_price_isSet) {
             isObjectUpdated = true;
             break;
         }

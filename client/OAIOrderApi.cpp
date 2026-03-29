@@ -251,7 +251,7 @@ QString OAIOrderApi::getParamStyleDelimiter(const QString &style, const QString 
     }
 }
 
-void OAIOrderApi::orderAbandonedList(const ::OpenAPI::OptionalParam<qint32> &start, const ::OpenAPI::OptionalParam<qint32> &count, const ::OpenAPI::OptionalParam<QString> &page_cursor, const ::OpenAPI::OptionalParam<QString> &customer_id, const ::OpenAPI::OptionalParam<QString> &customer_email, const ::OpenAPI::OptionalParam<QString> &store_id, const ::OpenAPI::OptionalParam<QString> &created_from, const ::OpenAPI::OptionalParam<QString> &created_to, const ::OpenAPI::OptionalParam<QString> &modified_from, const ::OpenAPI::OptionalParam<QString> &modified_to, const ::OpenAPI::OptionalParam<bool> &skip_empty_email, const ::OpenAPI::OptionalParam<QString> &response_fields, const ::OpenAPI::OptionalParam<QString> &params, const ::OpenAPI::OptionalParam<QString> &exclude) {
+void OAIOrderApi::orderAbandonedList(const ::OpenAPI::OptionalParam<qint32> &start, const ::OpenAPI::OptionalParam<qint32> &count, const ::OpenAPI::OptionalParam<QString> &page_cursor, const ::OpenAPI::OptionalParam<QString> &customer_id, const ::OpenAPI::OptionalParam<QString> &customer_email, const ::OpenAPI::OptionalParam<QString> &store_id, const ::OpenAPI::OptionalParam<QString> &created_from, const ::OpenAPI::OptionalParam<QString> &created_to, const ::OpenAPI::OptionalParam<QString> &modified_from, const ::OpenAPI::OptionalParam<QString> &modified_to, const ::OpenAPI::OptionalParam<bool> &skip_empty_email, const ::OpenAPI::OptionalParam<qint32> &rounding_precision, const ::OpenAPI::OptionalParam<QString> &response_fields, const ::OpenAPI::OptionalParam<QString> &params, const ::OpenAPI::OptionalParam<QString> &exclude) {
     QString fullPath = QString(_serverConfigs["orderAbandonedList"][_serverIndices.value("orderAbandonedList")].URL()+"/order.abandoned.list.json");
     
     if (_apiKeys.contains("StoreKeyAuth")) {
@@ -427,6 +427,21 @@ void OAIOrderApi::orderAbandonedList(const ::OpenAPI::OptionalParam<qint32> &sta
             fullPath.append("?");
 
         fullPath.append(QUrl::toPercentEncoding("skip_empty_email")).append(querySuffix).append(QUrl::toPercentEncoding(::OpenAPI::toStringValue(skip_empty_email.stringValue())));
+    }
+    if (rounding_precision.hasValue())
+    {
+        queryStyle = "form";
+        if (queryStyle == "")
+            queryStyle = "form";
+        queryPrefix = getParamStylePrefix(queryStyle);
+        querySuffix = getParamStyleSuffix(queryStyle);
+        queryDelimiter = getParamStyleDelimiter(queryStyle, "rounding_precision", true);
+        if (fullPath.indexOf("?") > 0)
+            fullPath.append(queryPrefix);
+        else
+            fullPath.append("?");
+
+        fullPath.append(QUrl::toPercentEncoding("rounding_precision")).append(querySuffix).append(QUrl::toPercentEncoding(::OpenAPI::toStringValue(rounding_precision.stringValue())));
     }
     if (response_fields.hasValue())
     {
