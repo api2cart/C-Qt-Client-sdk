@@ -572,6 +572,11 @@ public:
     bool is_miva_signature_Set() const;
     bool is_miva_signature_Valid() const;
 
+    QString getMiraklApiKey() const;
+    void setMiraklApiKey(const QString &mirakl_api_key);
+    bool is_mirakl_api_key_Set() const;
+    bool is_mirakl_api_key_Valid() const;
+
     qint32 getTiendanubeUserId() const;
     void setTiendanubeUserId(const qint32 &tiendanube_user_id);
     bool is_tiendanube_user_id_Set() const;
@@ -1391,6 +1396,10 @@ private:
     QString m_miva_signature;
     bool m_miva_signature_isSet;
     bool m_miva_signature_isValid;
+
+    QString m_mirakl_api_key;
+    bool m_mirakl_api_key_isSet;
+    bool m_mirakl_api_key_isValid;
 
     qint32 m_tiendanube_user_id;
     bool m_tiendanube_user_id_isSet;

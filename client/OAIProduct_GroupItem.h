@@ -50,8 +50,8 @@ public:
     bool is_product_id_Set() const;
     bool is_product_id_Valid() const;
 
-    QString getDefaultQtyInPack() const;
-    void setDefaultQtyInPack(const QString &default_qty_in_pack);
+    double getDefaultQtyInPack() const;
+    void setDefaultQtyInPack(const double &default_qty_in_pack);
     bool is_default_qty_in_pack_Set() const;
     bool is_default_qty_in_pack_Valid() const;
 
@@ -89,7 +89,7 @@ private:
     bool m_product_id_isSet;
     bool m_product_id_isValid;
 
-    QString m_default_qty_in_pack;
+    double m_default_qty_in_pack;
     bool m_default_qty_in_pack_isSet;
     bool m_default_qty_in_pack_isValid;
 

@@ -152,10 +152,10 @@ bool OAIProduct_GroupItem::is_product_id_Valid() const{
     return m_product_id_isValid;
 }
 
-QString OAIProduct_GroupItem::getDefaultQtyInPack() const {
+double OAIProduct_GroupItem::getDefaultQtyInPack() const {
     return m_default_qty_in_pack;
 }
-void OAIProduct_GroupItem::setDefaultQtyInPack(const QString &default_qty_in_pack) {
+void OAIProduct_GroupItem::setDefaultQtyInPack(const double &default_qty_in_pack) {
     m_default_qty_in_pack = default_qty_in_pack;
     m_default_qty_in_pack_isSet = true;
 }

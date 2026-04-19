@@ -352,6 +352,9 @@ void OAIAccountCartAdd::initializeModel() {
     m_miva_signature_isSet = false;
     m_miva_signature_isValid = false;
 
+    m_mirakl_api_key_isSet = false;
+    m_mirakl_api_key_isValid = false;
+
     m_tiendanube_user_id_isSet = false;
     m_tiendanube_user_id_isValid = false;
 
@@ -914,6 +917,9 @@ void OAIAccountCartAdd::fromJsonObject(QJsonObject json) {
     m_miva_signature_isValid = ::OpenAPI::fromJsonValue(m_miva_signature, json[QString("miva_signature")]);
     m_miva_signature_isSet = !json[QString("miva_signature")].isNull() && m_miva_signature_isValid;
 
+    m_mirakl_api_key_isValid = ::OpenAPI::fromJsonValue(m_mirakl_api_key, json[QString("mirakl_api_key")]);
+    m_mirakl_api_key_isSet = !json[QString("mirakl_api_key")].isNull() && m_mirakl_api_key_isValid;
+
     m_tiendanube_user_id_isValid = ::OpenAPI::fromJsonValue(m_tiendanube_user_id, json[QString("tiendanube_user_id")]);
     m_tiendanube_user_id_isSet = !json[QString("tiendanube_user_id")].isNull() && m_tiendanube_user_id_isValid;
 
@@ -1475,6 +1481,9 @@ QJsonObject OAIAccountCartAdd::asJsonObject() const {
     }
     if (m_miva_signature_isSet) {
         obj.insert(QString("miva_signature"), ::OpenAPI::toJsonValue(m_miva_signature));
+    }
+    if (m_mirakl_api_key_isSet) {
+        obj.insert(QString("mirakl_api_key"), ::OpenAPI::toJsonValue(m_mirakl_api_key));
     }
     if (m_tiendanube_user_id_isSet) {
         obj.insert(QString("tiendanube_user_id"), ::OpenAPI::toJsonValue(m_tiendanube_user_id));
@@ -3409,6 +3418,22 @@ bool OAIAccountCartAdd::is_miva_signature_Valid() const{
     return m_miva_signature_isValid;
 }
 
+QString OAIAccountCartAdd::getMiraklApiKey() const {
+    return m_mirakl_api_key;
+}
+void OAIAccountCartAdd::setMiraklApiKey(const QString &mirakl_api_key) {
+    m_mirakl_api_key = mirakl_api_key;
+    m_mirakl_api_key_isSet = true;
+}
+
+bool OAIAccountCartAdd::is_mirakl_api_key_Set() const{
+    return m_mirakl_api_key_isSet;
+}
+
+bool OAIAccountCartAdd::is_mirakl_api_key_Valid() const{
+    return m_mirakl_api_key_isValid;
+}
+
 qint32 OAIAccountCartAdd::getTiendanubeUserId() const {
     return m_tiendanube_user_id;
 }
@@ -5186,6 +5211,11 @@ bool OAIAccountCartAdd::isSet() const {
         }
 
         if (m_miva_signature_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_mirakl_api_key_isSet) {
             isObjectUpdated = true;
             break;
         }

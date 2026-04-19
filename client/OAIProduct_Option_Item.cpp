@@ -229,10 +229,10 @@ bool OAIProduct_Option_Item::is_sort_order_Valid() const{
     return m_sort_order_isValid;
 }
 
-QString OAIProduct_Option_Item::getPrice() const {
+double OAIProduct_Option_Item::getPrice() const {
     return m_price;
 }
-void OAIProduct_Option_Item::setPrice(const QString &price) {
+void OAIProduct_Option_Item::setPrice(const double &price) {
     m_price = price;
     m_price_isSet = true;
 }
@@ -245,10 +245,10 @@ bool OAIProduct_Option_Item::is_price_Valid() const{
     return m_price_isValid;
 }
 
-QString OAIProduct_Option_Item::getWeight() const {
+double OAIProduct_Option_Item::getWeight() const {
     return m_weight;
 }
-void OAIProduct_Option_Item::setWeight(const QString &weight) {
+void OAIProduct_Option_Item::setWeight(const double &weight) {
     m_weight = weight;
     m_weight_isSet = true;
 }

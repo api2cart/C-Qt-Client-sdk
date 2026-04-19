@@ -60,13 +60,13 @@ public:
     bool is_sort_order_Set() const;
     bool is_sort_order_Valid() const;
 
-    QString getPrice() const;
-    void setPrice(const QString &price);
+    double getPrice() const;
+    void setPrice(const double &price);
     bool is_price_Set() const;
     bool is_price_Valid() const;
 
-    QString getWeight() const;
-    void setWeight(const QString &weight);
+    double getWeight() const;
+    void setWeight(const double &weight);
     bool is_weight_Set() const;
     bool is_weight_Valid() const;
 
@@ -122,11 +122,11 @@ private:
     bool m_sort_order_isSet;
     bool m_sort_order_isValid;
 
-    QString m_price;
+    double m_price;
     bool m_price_isSet;
     bool m_price_isValid;
 
-    QString m_weight;
+    double m_weight;
     bool m_weight_isSet;
     bool m_weight_isValid;
 
