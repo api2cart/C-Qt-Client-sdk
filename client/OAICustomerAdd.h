@@ -154,6 +154,21 @@ public:
     bool is_country_Set() const;
     bool is_country_Valid() const;
 
+    QString getCurrencyId() const;
+    void setCurrencyId(const QString &currency_id);
+    bool is_currency_id_Set() const;
+    bool is_currency_id_Valid() const;
+
+    bool isIsTaxExempt() const;
+    void setIsTaxExempt(const bool &is_tax_exempt);
+    bool is_is_tax_exempt_Set() const;
+    bool is_is_tax_exempt_Valid() const;
+
+    QString getVendorId() const;
+    void setVendorId(const QString &vendor_id);
+    bool is_vendor_id_Set() const;
+    bool is_vendor_id_Valid() const;
+
     QString getStoreId() const;
     void setStoreId(const QString &store_id);
     bool is_store_id_Set() const;
@@ -262,6 +277,18 @@ private:
     QString m_country;
     bool m_country_isSet;
     bool m_country_isValid;
+
+    QString m_currency_id;
+    bool m_currency_id_isSet;
+    bool m_currency_id_isValid;
+
+    bool m_is_tax_exempt;
+    bool m_is_tax_exempt_isSet;
+    bool m_is_tax_exempt_isValid;
+
+    QString m_vendor_id;
+    bool m_vendor_id_isSet;
+    bool m_vendor_id_isValid;
 
     QString m_store_id;
     bool m_store_id_isSet;

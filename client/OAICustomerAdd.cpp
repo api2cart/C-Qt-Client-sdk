@@ -100,6 +100,15 @@ void OAICustomerAdd::initializeModel() {
     m_country_isSet = false;
     m_country_isValid = false;
 
+    m_currency_id_isSet = false;
+    m_currency_id_isValid = false;
+
+    m_is_tax_exempt_isSet = false;
+    m_is_tax_exempt_isValid = false;
+
+    m_vendor_id_isSet = false;
+    m_vendor_id_isValid = false;
+
     m_store_id_isSet = false;
     m_store_id_isValid = false;
 
@@ -185,6 +194,15 @@ void OAICustomerAdd::fromJsonObject(QJsonObject json) {
     m_country_isValid = ::OpenAPI::fromJsonValue(m_country, json[QString("country")]);
     m_country_isSet = !json[QString("country")].isNull() && m_country_isValid;
 
+    m_currency_id_isValid = ::OpenAPI::fromJsonValue(m_currency_id, json[QString("currency_id")]);
+    m_currency_id_isSet = !json[QString("currency_id")].isNull() && m_currency_id_isValid;
+
+    m_is_tax_exempt_isValid = ::OpenAPI::fromJsonValue(m_is_tax_exempt, json[QString("is_tax_exempt")]);
+    m_is_tax_exempt_isSet = !json[QString("is_tax_exempt")].isNull() && m_is_tax_exempt_isValid;
+
+    m_vendor_id_isValid = ::OpenAPI::fromJsonValue(m_vendor_id, json[QString("vendor_id")]);
+    m_vendor_id_isSet = !json[QString("vendor_id")].isNull() && m_vendor_id_isValid;
+
     m_store_id_isValid = ::OpenAPI::fromJsonValue(m_store_id, json[QString("store_id")]);
     m_store_id_isSet = !json[QString("store_id")].isNull() && m_store_id_isValid;
 
@@ -269,6 +287,15 @@ QJsonObject OAICustomerAdd::asJsonObject() const {
     }
     if (m_country_isSet) {
         obj.insert(QString("country"), ::OpenAPI::toJsonValue(m_country));
+    }
+    if (m_currency_id_isSet) {
+        obj.insert(QString("currency_id"), ::OpenAPI::toJsonValue(m_currency_id));
+    }
+    if (m_is_tax_exempt_isSet) {
+        obj.insert(QString("is_tax_exempt"), ::OpenAPI::toJsonValue(m_is_tax_exempt));
+    }
+    if (m_vendor_id_isSet) {
+        obj.insert(QString("vendor_id"), ::OpenAPI::toJsonValue(m_vendor_id));
     }
     if (m_store_id_isSet) {
         obj.insert(QString("store_id"), ::OpenAPI::toJsonValue(m_store_id));
@@ -634,6 +661,54 @@ bool OAICustomerAdd::is_country_Valid() const{
     return m_country_isValid;
 }
 
+QString OAICustomerAdd::getCurrencyId() const {
+    return m_currency_id;
+}
+void OAICustomerAdd::setCurrencyId(const QString &currency_id) {
+    m_currency_id = currency_id;
+    m_currency_id_isSet = true;
+}
+
+bool OAICustomerAdd::is_currency_id_Set() const{
+    return m_currency_id_isSet;
+}
+
+bool OAICustomerAdd::is_currency_id_Valid() const{
+    return m_currency_id_isValid;
+}
+
+bool OAICustomerAdd::isIsTaxExempt() const {
+    return m_is_tax_exempt;
+}
+void OAICustomerAdd::setIsTaxExempt(const bool &is_tax_exempt) {
+    m_is_tax_exempt = is_tax_exempt;
+    m_is_tax_exempt_isSet = true;
+}
+
+bool OAICustomerAdd::is_is_tax_exempt_Set() const{
+    return m_is_tax_exempt_isSet;
+}
+
+bool OAICustomerAdd::is_is_tax_exempt_Valid() const{
+    return m_is_tax_exempt_isValid;
+}
+
+QString OAICustomerAdd::getVendorId() const {
+    return m_vendor_id;
+}
+void OAICustomerAdd::setVendorId(const QString &vendor_id) {
+    m_vendor_id = vendor_id;
+    m_vendor_id_isSet = true;
+}
+
+bool OAICustomerAdd::is_vendor_id_Set() const{
+    return m_vendor_id_isSet;
+}
+
+bool OAICustomerAdd::is_vendor_id_Valid() const{
+    return m_vendor_id_isValid;
+}
+
 QString OAICustomerAdd::getStoreId() const {
     return m_store_id;
 }
@@ -791,6 +866,21 @@ bool OAICustomerAdd::isSet() const {
         }
 
         if (m_country_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_currency_id_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_is_tax_exempt_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_vendor_id_isSet) {
             isObjectUpdated = true;
             break;
         }
