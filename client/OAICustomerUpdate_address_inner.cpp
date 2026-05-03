@@ -82,6 +82,9 @@ void OAICustomerUpdate_address_inner::initializeModel() {
     m_address_book_gender_isSet = false;
     m_address_book_gender_isValid = false;
 
+    m_address_book_region_isSet = false;
+    m_address_book_region_isValid = false;
+
     m_address_book_alias_isSet = false;
     m_address_book_alias_isValid = false;
 
@@ -149,6 +152,9 @@ void OAICustomerUpdate_address_inner::fromJsonObject(QJsonObject json) {
     m_address_book_gender_isValid = ::OpenAPI::fromJsonValue(m_address_book_gender, json[QString("address_book_gender")]);
     m_address_book_gender_isSet = !json[QString("address_book_gender")].isNull() && m_address_book_gender_isValid;
 
+    m_address_book_region_isValid = ::OpenAPI::fromJsonValue(m_address_book_region, json[QString("address_book_region")]);
+    m_address_book_region_isSet = !json[QString("address_book_region")].isNull() && m_address_book_region_isValid;
+
     m_address_book_alias_isValid = ::OpenAPI::fromJsonValue(m_address_book_alias, json[QString("address_book_alias")]);
     m_address_book_alias_isSet = !json[QString("address_book_alias")].isNull() && m_address_book_alias_isValid;
 
@@ -215,6 +221,9 @@ QJsonObject OAICustomerUpdate_address_inner::asJsonObject() const {
     }
     if (m_address_book_gender_isSet) {
         obj.insert(QString("address_book_gender"), ::OpenAPI::toJsonValue(m_address_book_gender));
+    }
+    if (m_address_book_region_isSet) {
+        obj.insert(QString("address_book_region"), ::OpenAPI::toJsonValue(m_address_book_region));
     }
     if (m_address_book_alias_isSet) {
         obj.insert(QString("address_book_alias"), ::OpenAPI::toJsonValue(m_address_book_alias));
@@ -484,6 +493,22 @@ bool OAICustomerUpdate_address_inner::is_address_book_gender_Valid() const{
     return m_address_book_gender_isValid;
 }
 
+QString OAICustomerUpdate_address_inner::getAddressBookRegion() const {
+    return m_address_book_region;
+}
+void OAICustomerUpdate_address_inner::setAddressBookRegion(const QString &address_book_region) {
+    m_address_book_region = address_book_region;
+    m_address_book_region_isSet = true;
+}
+
+bool OAICustomerUpdate_address_inner::is_address_book_region_Set() const{
+    return m_address_book_region_isSet;
+}
+
+bool OAICustomerUpdate_address_inner::is_address_book_region_Valid() const{
+    return m_address_book_region_isValid;
+}
+
 QString OAICustomerUpdate_address_inner::getAddressBookAlias() const {
     return m_address_book_alias;
 }
@@ -611,6 +636,11 @@ bool OAICustomerUpdate_address_inner::isSet() const {
         }
 
         if (m_address_book_gender_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_address_book_region_isSet) {
             isObjectUpdated = true;
             break;
         }

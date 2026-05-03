@@ -4992,7 +4992,7 @@ void OAIProductApi::productListCallback(OAIHttpRequestWorker *worker) {
     }
 }
 
-void OAIProductApi::productManufacturerAdd(const QString &product_id, const QString &manufacturer, const ::OpenAPI::OptionalParam<QString> &store_id, const ::OpenAPI::OptionalParam<QString> &meta_title, const ::OpenAPI::OptionalParam<QString> &meta_keywords, const ::OpenAPI::OptionalParam<QString> &meta_description, const ::OpenAPI::OptionalParam<QString> &search_keywords, const ::OpenAPI::OptionalParam<QString> &image_url, const ::OpenAPI::OptionalParam<QString> &seo_url, const ::OpenAPI::OptionalParam<QString> &idempotency_key) {
+void OAIProductApi::productManufacturerAdd(const QString &product_id, const QString &manufacturer, const ::OpenAPI::OptionalParam<QString> &store_id, const ::OpenAPI::OptionalParam<QString> &description, const ::OpenAPI::OptionalParam<QString> &meta_title, const ::OpenAPI::OptionalParam<QString> &meta_keywords, const ::OpenAPI::OptionalParam<QString> &meta_description, const ::OpenAPI::OptionalParam<QString> &search_keywords, const ::OpenAPI::OptionalParam<QString> &image_url, const ::OpenAPI::OptionalParam<QString> &seo_url, const ::OpenAPI::OptionalParam<QString> &idempotency_key) {
     QString fullPath = QString(_serverConfigs["productManufacturerAdd"][_serverIndices.value("productManufacturerAdd")].URL()+"/product.manufacturer.add.json");
     
     if (_apiKeys.contains("StoreKeyAuth")) {
@@ -5048,6 +5048,21 @@ void OAIProductApi::productManufacturerAdd(const QString &product_id, const QStr
             fullPath.append("?");
 
         fullPath.append(QUrl::toPercentEncoding("store_id")).append(querySuffix).append(QUrl::toPercentEncoding(::OpenAPI::toStringValue(store_id.stringValue())));
+    }
+    if (description.hasValue())
+    {
+        queryStyle = "form";
+        if (queryStyle == "")
+            queryStyle = "form";
+        queryPrefix = getParamStylePrefix(queryStyle);
+        querySuffix = getParamStyleSuffix(queryStyle);
+        queryDelimiter = getParamStyleDelimiter(queryStyle, "description", true);
+        if (fullPath.indexOf("?") > 0)
+            fullPath.append(queryPrefix);
+        else
+            fullPath.append("?");
+
+        fullPath.append(QUrl::toPercentEncoding("description")).append(querySuffix).append(QUrl::toPercentEncoding(::OpenAPI::toStringValue(description.stringValue())));
     }
     if (meta_title.hasValue())
     {

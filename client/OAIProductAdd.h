@@ -670,6 +670,11 @@ public:
     bool is_ordered_count_Set() const;
     bool is_ordered_count_Valid() const;
 
+    QString getVendorId() const;
+    void setVendorId(const QString &vendor_id);
+    bool is_vendor_id_Set() const;
+    bool is_vendor_id_Valid() const;
+
     qint32 getShopSectionId() const;
     void setShopSectionId(const qint32 &shop_section_id);
     bool is_shop_section_id_Set() const;
@@ -1190,6 +1195,10 @@ private:
     qint32 m_ordered_count;
     bool m_ordered_count_isSet;
     bool m_ordered_count_isValid;
+
+    QString m_vendor_id;
+    bool m_vendor_id_isSet;
+    bool m_vendor_id_isValid;
 
     qint32 m_shop_section_id;
     bool m_shop_section_id_isSet;

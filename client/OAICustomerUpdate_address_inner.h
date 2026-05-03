@@ -119,6 +119,11 @@ public:
     bool is_address_book_gender_Set() const;
     bool is_address_book_gender_Valid() const;
 
+    QString getAddressBookRegion() const;
+    void setAddressBookRegion(const QString &address_book_region);
+    bool is_address_book_region_Set() const;
+    bool is_address_book_region_Valid() const;
+
     QString getAddressBookAlias() const;
     void setAddressBookAlias(const QString &address_book_alias);
     bool is_address_book_alias_Set() const;
@@ -203,6 +208,10 @@ private:
     QString m_address_book_gender;
     bool m_address_book_gender_isSet;
     bool m_address_book_gender_isValid;
+
+    QString m_address_book_region;
+    bool m_address_book_region_isSet;
+    bool m_address_book_region_isValid;
 
     QString m_address_book_alias;
     bool m_address_book_alias_isSet;

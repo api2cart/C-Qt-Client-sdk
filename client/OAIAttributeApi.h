@@ -161,6 +161,7 @@ public:
     /**
     * @param[in]  start qint32 [optional]
     * @param[in]  count qint32 [optional]
+    * @param[in]  page_cursor QString [optional]
     * @param[in]  attribute_ids QString [optional]
     * @param[in]  attribute_set_id QString [optional]
     * @param[in]  store_id QString [optional]
@@ -173,7 +174,7 @@ public:
     * @param[in]  params QString [optional]
     * @param[in]  exclude QString [optional]
     */
-    virtual void attributeList(const ::OpenAPI::OptionalParam<qint32> &start = ::OpenAPI::OptionalParam<qint32>(), const ::OpenAPI::OptionalParam<qint32> &count = ::OpenAPI::OptionalParam<qint32>(), const ::OpenAPI::OptionalParam<QString> &attribute_ids = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &attribute_set_id = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &store_id = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &lang_id = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &type = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<bool> &visible = ::OpenAPI::OptionalParam<bool>(), const ::OpenAPI::OptionalParam<bool> &required = ::OpenAPI::OptionalParam<bool>(), const ::OpenAPI::OptionalParam<bool> &system = ::OpenAPI::OptionalParam<bool>(), const ::OpenAPI::OptionalParam<QString> &response_fields = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &params = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &exclude = ::OpenAPI::OptionalParam<QString>());
+    virtual void attributeList(const ::OpenAPI::OptionalParam<qint32> &start = ::OpenAPI::OptionalParam<qint32>(), const ::OpenAPI::OptionalParam<qint32> &count = ::OpenAPI::OptionalParam<qint32>(), const ::OpenAPI::OptionalParam<QString> &page_cursor = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &attribute_ids = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &attribute_set_id = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &store_id = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &lang_id = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &type = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<bool> &visible = ::OpenAPI::OptionalParam<bool>(), const ::OpenAPI::OptionalParam<bool> &required = ::OpenAPI::OptionalParam<bool>(), const ::OpenAPI::OptionalParam<bool> &system = ::OpenAPI::OptionalParam<bool>(), const ::OpenAPI::OptionalParam<QString> &response_fields = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &params = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &exclude = ::OpenAPI::OptionalParam<QString>());
 
 
     virtual void attributeTypeList();
@@ -194,12 +195,14 @@ public:
 
     /**
     * @param[in]  id QString [required]
-    * @param[in]  name QString [required]
+    * @param[in]  name QString [optional]
+    * @param[in]  visible bool [optional]
+    * @param[in]  position qint32 [optional]
     * @param[in]  store_id QString [optional]
     * @param[in]  lang_id QString [optional]
     * @param[in]  idempotency_key QString [optional]
     */
-    virtual void attributeUpdate(const QString &id, const QString &name, const ::OpenAPI::OptionalParam<QString> &store_id = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &lang_id = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &idempotency_key = ::OpenAPI::OptionalParam<QString>());
+    virtual void attributeUpdate(const QString &id, const ::OpenAPI::OptionalParam<QString> &name = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<bool> &visible = ::OpenAPI::OptionalParam<bool>(), const ::OpenAPI::OptionalParam<qint32> &position = ::OpenAPI::OptionalParam<qint32>(), const ::OpenAPI::OptionalParam<QString> &store_id = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &lang_id = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &idempotency_key = ::OpenAPI::OptionalParam<QString>());
 
     /**
     * @param[in]  attribute_id QString [required]

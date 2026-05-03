@@ -262,6 +262,16 @@ public:
     bool is_low_stock_threshold_Set() const;
     bool is_low_stock_threshold_Valid() const;
 
+    double getMinOrderQuantity() const;
+    void setMinOrderQuantity(const double &min_order_quantity);
+    bool is_min_order_quantity_Set() const;
+    bool is_min_order_quantity_Valid() const;
+
+    double getMaxOrderQuantity() const;
+    void setMaxOrderQuantity(const double &max_order_quantity);
+    bool is_max_order_quantity_Set() const;
+    bool is_max_order_quantity_Valid() const;
+
     QString getWarehouseId() const;
     void setWarehouseId(const QString &warehouse_id);
     bool is_warehouse_id_Set() const;
@@ -346,6 +356,11 @@ public:
     void setManufacturerId(const QString &manufacturer_id);
     bool is_manufacturer_id_Set() const;
     bool is_manufacturer_id_Valid() const;
+
+    QString getVendorId() const;
+    void setVendorId(const QString &vendor_id);
+    bool is_vendor_id_Set() const;
+    bool is_vendor_id_Valid() const;
 
     QString getCategoriesIds() const;
     void setCategoriesIds(const QString &categories_ids);
@@ -521,11 +536,6 @@ public:
     void setMarketplaceItemProperties(const QString &marketplace_item_properties);
     bool is_marketplace_item_properties_Set() const;
     bool is_marketplace_item_properties_Valid() const;
-
-    double getMinOrderQuantity() const;
-    void setMinOrderQuantity(const double &min_order_quantity);
-    bool is_min_order_quantity_Set() const;
-    bool is_min_order_quantity_Valid() const;
 
     QString getManufacturerIds() const;
     void setManufacturerIds(const QString &manufacturer_ids);
@@ -716,6 +726,14 @@ private:
     bool m_low_stock_threshold_isSet;
     bool m_low_stock_threshold_isValid;
 
+    double m_min_order_quantity;
+    bool m_min_order_quantity_isSet;
+    bool m_min_order_quantity_isValid;
+
+    double m_max_order_quantity;
+    bool m_max_order_quantity_isSet;
+    bool m_max_order_quantity_isValid;
+
     QString m_warehouse_id;
     bool m_warehouse_id_isSet;
     bool m_warehouse_id_isValid;
@@ -783,6 +801,10 @@ private:
     QString m_manufacturer_id;
     bool m_manufacturer_id_isSet;
     bool m_manufacturer_id_isValid;
+
+    QString m_vendor_id;
+    bool m_vendor_id_isSet;
+    bool m_vendor_id_isValid;
 
     QString m_categories_ids;
     bool m_categories_ids_isSet;
@@ -923,10 +945,6 @@ private:
     QString m_marketplace_item_properties;
     bool m_marketplace_item_properties_isSet;
     bool m_marketplace_item_properties_isValid;
-
-    double m_min_order_quantity;
-    bool m_min_order_quantity_isSet;
-    bool m_min_order_quantity_isValid;
 
     QString m_manufacturer_ids;
     bool m_manufacturer_ids_isSet;

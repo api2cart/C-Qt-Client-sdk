@@ -54,6 +54,11 @@ public:
     bool is_attribute_price_Set() const;
     bool is_attribute_price_Valid() const;
 
+    double getAttributeWeight() const;
+    void setAttributeWeight(const double &attribute_weight);
+    bool is_attribute_weight_Set() const;
+    bool is_attribute_weight_Valid() const;
+
     virtual bool isSet() const override;
     virtual bool isValid() const override;
 
@@ -71,6 +76,10 @@ private:
     double m_attribute_price;
     bool m_attribute_price_isSet;
     bool m_attribute_price_isValid;
+
+    double m_attribute_weight;
+    bool m_attribute_weight_isSet;
+    bool m_attribute_weight_isValid;
 };
 
 } // namespace OpenAPI

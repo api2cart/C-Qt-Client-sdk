@@ -394,6 +394,9 @@ void OAIProductAdd::initializeModel() {
     m_ordered_count_isSet = false;
     m_ordered_count_isValid = false;
 
+    m_vendor_id_isSet = false;
+    m_vendor_id_isValid = false;
+
     m_shop_section_id_isSet = false;
     m_shop_section_id_isValid = false;
 
@@ -785,6 +788,9 @@ void OAIProductAdd::fromJsonObject(QJsonObject json) {
     m_ordered_count_isValid = ::OpenAPI::fromJsonValue(m_ordered_count, json[QString("ordered_count")]);
     m_ordered_count_isSet = !json[QString("ordered_count")].isNull() && m_ordered_count_isValid;
 
+    m_vendor_id_isValid = ::OpenAPI::fromJsonValue(m_vendor_id, json[QString("vendor_id")]);
+    m_vendor_id_isSet = !json[QString("vendor_id")].isNull() && m_vendor_id_isValid;
+
     m_shop_section_id_isValid = ::OpenAPI::fromJsonValue(m_shop_section_id, json[QString("shop_section_id")]);
     m_shop_section_id_isSet = !json[QString("shop_section_id")].isNull() && m_shop_section_id_isValid;
 
@@ -1175,6 +1181,9 @@ QJsonObject OAIProductAdd::asJsonObject() const {
     }
     if (m_ordered_count_isSet) {
         obj.insert(QString("ordered_count"), ::OpenAPI::toJsonValue(m_ordered_count));
+    }
+    if (m_vendor_id_isSet) {
+        obj.insert(QString("vendor_id"), ::OpenAPI::toJsonValue(m_vendor_id));
     }
     if (m_shop_section_id_isSet) {
         obj.insert(QString("shop_section_id"), ::OpenAPI::toJsonValue(m_shop_section_id));
@@ -3120,6 +3129,22 @@ bool OAIProductAdd::is_ordered_count_Valid() const{
     return m_ordered_count_isValid;
 }
 
+QString OAIProductAdd::getVendorId() const {
+    return m_vendor_id;
+}
+void OAIProductAdd::setVendorId(const QString &vendor_id) {
+    m_vendor_id = vendor_id;
+    m_vendor_id_isSet = true;
+}
+
+bool OAIProductAdd::is_vendor_id_Set() const{
+    return m_vendor_id_isSet;
+}
+
+bool OAIProductAdd::is_vendor_id_Valid() const{
+    return m_vendor_id_isValid;
+}
+
 qint32 OAIProductAdd::getShopSectionId() const {
     return m_shop_section_id;
 }
@@ -3831,6 +3856,11 @@ bool OAIProductAdd::isSet() const {
         }
 
         if (m_ordered_count_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_vendor_id_isSet) {
             isObjectUpdated = true;
             break;
         }

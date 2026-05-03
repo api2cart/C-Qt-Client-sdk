@@ -391,6 +391,7 @@ public:
     * @param[in]  product_id QString [required]
     * @param[in]  manufacturer QString [required]
     * @param[in]  store_id QString [optional]
+    * @param[in]  description QString [optional]
     * @param[in]  meta_title QString [optional]
     * @param[in]  meta_keywords QString [optional]
     * @param[in]  meta_description QString [optional]
@@ -399,7 +400,7 @@ public:
     * @param[in]  seo_url QString [optional]
     * @param[in]  idempotency_key QString [optional]
     */
-    virtual void productManufacturerAdd(const QString &product_id, const QString &manufacturer, const ::OpenAPI::OptionalParam<QString> &store_id = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &meta_title = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &meta_keywords = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &meta_description = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &search_keywords = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &image_url = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &seo_url = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &idempotency_key = ::OpenAPI::OptionalParam<QString>());
+    virtual void productManufacturerAdd(const QString &product_id, const QString &manufacturer, const ::OpenAPI::OptionalParam<QString> &store_id = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &description = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &meta_title = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &meta_keywords = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &meta_description = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &search_keywords = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &image_url = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &seo_url = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &idempotency_key = ::OpenAPI::OptionalParam<QString>());
 
     /**
     * @param[in]  oai_product_option_add OAIProductOptionAdd [required]

@@ -129,6 +129,26 @@ public:
     bool is_currency_id_Set() const;
     bool is_currency_id_Valid() const;
 
+    QString getCompany() const;
+    void setCompany(const QString &company);
+    bool is_company_Set() const;
+    bool is_company_Valid() const;
+
+    QString getCountry() const;
+    void setCountry(const QString &country);
+    bool is_country_Set() const;
+    bool is_country_Valid() const;
+
+    QString getFax() const;
+    void setFax(const QString &fax);
+    bool is_fax_Set() const;
+    bool is_fax_Valid() const;
+
+    QString getTaxId() const;
+    void setTaxId(const QString &tax_id);
+    bool is_tax_id_Set() const;
+    bool is_tax_id_Valid() const;
+
     bool isIsTaxExempt() const;
     void setIsTaxExempt(const bool &is_tax_exempt);
     bool is_is_tax_exempt_Set() const;
@@ -227,6 +247,22 @@ private:
     QString m_currency_id;
     bool m_currency_id_isSet;
     bool m_currency_id_isValid;
+
+    QString m_company;
+    bool m_company_isSet;
+    bool m_company_isValid;
+
+    QString m_country;
+    bool m_country_isSet;
+    bool m_country_isValid;
+
+    QString m_fax;
+    bool m_fax_isSet;
+    bool m_fax_isValid;
+
+    QString m_tax_id;
+    bool m_tax_id_isSet;
+    bool m_tax_id_isValid;
 
     bool m_is_tax_exempt;
     bool m_is_tax_exempt_isSet;

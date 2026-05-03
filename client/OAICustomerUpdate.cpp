@@ -85,6 +85,18 @@ void OAICustomerUpdate::initializeModel() {
     m_currency_id_isSet = false;
     m_currency_id_isValid = false;
 
+    m_company_isSet = false;
+    m_company_isValid = false;
+
+    m_country_isSet = false;
+    m_country_isValid = false;
+
+    m_fax_isSet = false;
+    m_fax_isValid = false;
+
+    m_tax_id_isSet = false;
+    m_tax_id_isValid = false;
+
     m_is_tax_exempt_isSet = false;
     m_is_tax_exempt_isValid = false;
 
@@ -161,6 +173,18 @@ void OAICustomerUpdate::fromJsonObject(QJsonObject json) {
     m_currency_id_isValid = ::OpenAPI::fromJsonValue(m_currency_id, json[QString("currency_id")]);
     m_currency_id_isSet = !json[QString("currency_id")].isNull() && m_currency_id_isValid;
 
+    m_company_isValid = ::OpenAPI::fromJsonValue(m_company, json[QString("company")]);
+    m_company_isSet = !json[QString("company")].isNull() && m_company_isValid;
+
+    m_country_isValid = ::OpenAPI::fromJsonValue(m_country, json[QString("country")]);
+    m_country_isSet = !json[QString("country")].isNull() && m_country_isValid;
+
+    m_fax_isValid = ::OpenAPI::fromJsonValue(m_fax, json[QString("fax")]);
+    m_fax_isSet = !json[QString("fax")].isNull() && m_fax_isValid;
+
+    m_tax_id_isValid = ::OpenAPI::fromJsonValue(m_tax_id, json[QString("tax_id")]);
+    m_tax_id_isSet = !json[QString("tax_id")].isNull() && m_tax_id_isValid;
+
     m_is_tax_exempt_isValid = ::OpenAPI::fromJsonValue(m_is_tax_exempt, json[QString("is_tax_exempt")]);
     m_is_tax_exempt_isSet = !json[QString("is_tax_exempt")].isNull() && m_is_tax_exempt_isValid;
 
@@ -236,6 +260,18 @@ QJsonObject OAICustomerUpdate::asJsonObject() const {
     }
     if (m_currency_id_isSet) {
         obj.insert(QString("currency_id"), ::OpenAPI::toJsonValue(m_currency_id));
+    }
+    if (m_company_isSet) {
+        obj.insert(QString("company"), ::OpenAPI::toJsonValue(m_company));
+    }
+    if (m_country_isSet) {
+        obj.insert(QString("country"), ::OpenAPI::toJsonValue(m_country));
+    }
+    if (m_fax_isSet) {
+        obj.insert(QString("fax"), ::OpenAPI::toJsonValue(m_fax));
+    }
+    if (m_tax_id_isSet) {
+        obj.insert(QString("tax_id"), ::OpenAPI::toJsonValue(m_tax_id));
     }
     if (m_is_tax_exempt_isSet) {
         obj.insert(QString("is_tax_exempt"), ::OpenAPI::toJsonValue(m_is_tax_exempt));
@@ -527,6 +563,70 @@ bool OAICustomerUpdate::is_currency_id_Valid() const{
     return m_currency_id_isValid;
 }
 
+QString OAICustomerUpdate::getCompany() const {
+    return m_company;
+}
+void OAICustomerUpdate::setCompany(const QString &company) {
+    m_company = company;
+    m_company_isSet = true;
+}
+
+bool OAICustomerUpdate::is_company_Set() const{
+    return m_company_isSet;
+}
+
+bool OAICustomerUpdate::is_company_Valid() const{
+    return m_company_isValid;
+}
+
+QString OAICustomerUpdate::getCountry() const {
+    return m_country;
+}
+void OAICustomerUpdate::setCountry(const QString &country) {
+    m_country = country;
+    m_country_isSet = true;
+}
+
+bool OAICustomerUpdate::is_country_Set() const{
+    return m_country_isSet;
+}
+
+bool OAICustomerUpdate::is_country_Valid() const{
+    return m_country_isValid;
+}
+
+QString OAICustomerUpdate::getFax() const {
+    return m_fax;
+}
+void OAICustomerUpdate::setFax(const QString &fax) {
+    m_fax = fax;
+    m_fax_isSet = true;
+}
+
+bool OAICustomerUpdate::is_fax_Set() const{
+    return m_fax_isSet;
+}
+
+bool OAICustomerUpdate::is_fax_Valid() const{
+    return m_fax_isValid;
+}
+
+QString OAICustomerUpdate::getTaxId() const {
+    return m_tax_id;
+}
+void OAICustomerUpdate::setTaxId(const QString &tax_id) {
+    m_tax_id = tax_id;
+    m_tax_id_isSet = true;
+}
+
+bool OAICustomerUpdate::is_tax_id_Set() const{
+    return m_tax_id_isSet;
+}
+
+bool OAICustomerUpdate::is_tax_id_Valid() const{
+    return m_tax_id_isValid;
+}
+
 bool OAICustomerUpdate::isIsTaxExempt() const {
     return m_is_tax_exempt;
 }
@@ -691,6 +791,26 @@ bool OAICustomerUpdate::isSet() const {
         }
 
         if (m_currency_id_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_company_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_country_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_fax_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_tax_id_isSet) {
             isObjectUpdated = true;
             break;
         }

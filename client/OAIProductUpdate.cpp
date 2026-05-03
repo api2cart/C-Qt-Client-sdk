@@ -160,6 +160,12 @@ void OAIProductUpdate::initializeModel() {
     m_low_stock_threshold_isSet = false;
     m_low_stock_threshold_isValid = false;
 
+    m_min_order_quantity_isSet = false;
+    m_min_order_quantity_isValid = false;
+
+    m_max_order_quantity_isSet = false;
+    m_max_order_quantity_isValid = false;
+
     m_warehouse_id_isSet = false;
     m_warehouse_id_isValid = false;
 
@@ -210,6 +216,9 @@ void OAIProductUpdate::initializeModel() {
 
     m_manufacturer_id_isSet = false;
     m_manufacturer_id_isValid = false;
+
+    m_vendor_id_isSet = false;
+    m_vendor_id_isValid = false;
 
     m_categories_ids_isSet = false;
     m_categories_ids_isValid = false;
@@ -315,9 +324,6 @@ void OAIProductUpdate::initializeModel() {
 
     m_marketplace_item_properties_isSet = false;
     m_marketplace_item_properties_isValid = false;
-
-    m_min_order_quantity_isSet = false;
-    m_min_order_quantity_isValid = false;
 
     m_manufacturer_ids_isSet = false;
     m_manufacturer_ids_isValid = false;
@@ -464,6 +470,12 @@ void OAIProductUpdate::fromJsonObject(QJsonObject json) {
     m_low_stock_threshold_isValid = ::OpenAPI::fromJsonValue(m_low_stock_threshold, json[QString("low_stock_threshold")]);
     m_low_stock_threshold_isSet = !json[QString("low_stock_threshold")].isNull() && m_low_stock_threshold_isValid;
 
+    m_min_order_quantity_isValid = ::OpenAPI::fromJsonValue(m_min_order_quantity, json[QString("min_order_quantity")]);
+    m_min_order_quantity_isSet = !json[QString("min_order_quantity")].isNull() && m_min_order_quantity_isValid;
+
+    m_max_order_quantity_isValid = ::OpenAPI::fromJsonValue(m_max_order_quantity, json[QString("max_order_quantity")]);
+    m_max_order_quantity_isSet = !json[QString("max_order_quantity")].isNull() && m_max_order_quantity_isValid;
+
     m_warehouse_id_isValid = ::OpenAPI::fromJsonValue(m_warehouse_id, json[QString("warehouse_id")]);
     m_warehouse_id_isSet = !json[QString("warehouse_id")].isNull() && m_warehouse_id_isValid;
 
@@ -514,6 +526,9 @@ void OAIProductUpdate::fromJsonObject(QJsonObject json) {
 
     m_manufacturer_id_isValid = ::OpenAPI::fromJsonValue(m_manufacturer_id, json[QString("manufacturer_id")]);
     m_manufacturer_id_isSet = !json[QString("manufacturer_id")].isNull() && m_manufacturer_id_isValid;
+
+    m_vendor_id_isValid = ::OpenAPI::fromJsonValue(m_vendor_id, json[QString("vendor_id")]);
+    m_vendor_id_isSet = !json[QString("vendor_id")].isNull() && m_vendor_id_isValid;
 
     m_categories_ids_isValid = ::OpenAPI::fromJsonValue(m_categories_ids, json[QString("categories_ids")]);
     m_categories_ids_isSet = !json[QString("categories_ids")].isNull() && m_categories_ids_isValid;
@@ -619,9 +634,6 @@ void OAIProductUpdate::fromJsonObject(QJsonObject json) {
 
     m_marketplace_item_properties_isValid = ::OpenAPI::fromJsonValue(m_marketplace_item_properties, json[QString("marketplace_item_properties")]);
     m_marketplace_item_properties_isSet = !json[QString("marketplace_item_properties")].isNull() && m_marketplace_item_properties_isValid;
-
-    m_min_order_quantity_isValid = ::OpenAPI::fromJsonValue(m_min_order_quantity, json[QString("min_order_quantity")]);
-    m_min_order_quantity_isSet = !json[QString("min_order_quantity")].isNull() && m_min_order_quantity_isValid;
 
     m_manufacturer_ids_isValid = ::OpenAPI::fromJsonValue(m_manufacturer_ids, json[QString("manufacturer_ids")]);
     m_manufacturer_ids_isSet = !json[QString("manufacturer_ids")].isNull() && m_manufacturer_ids_isValid;
@@ -768,6 +780,12 @@ QJsonObject OAIProductUpdate::asJsonObject() const {
     if (m_low_stock_threshold_isSet) {
         obj.insert(QString("low_stock_threshold"), ::OpenAPI::toJsonValue(m_low_stock_threshold));
     }
+    if (m_min_order_quantity_isSet) {
+        obj.insert(QString("min_order_quantity"), ::OpenAPI::toJsonValue(m_min_order_quantity));
+    }
+    if (m_max_order_quantity_isSet) {
+        obj.insert(QString("max_order_quantity"), ::OpenAPI::toJsonValue(m_max_order_quantity));
+    }
     if (m_warehouse_id_isSet) {
         obj.insert(QString("warehouse_id"), ::OpenAPI::toJsonValue(m_warehouse_id));
     }
@@ -818,6 +836,9 @@ QJsonObject OAIProductUpdate::asJsonObject() const {
     }
     if (m_manufacturer_id_isSet) {
         obj.insert(QString("manufacturer_id"), ::OpenAPI::toJsonValue(m_manufacturer_id));
+    }
+    if (m_vendor_id_isSet) {
+        obj.insert(QString("vendor_id"), ::OpenAPI::toJsonValue(m_vendor_id));
     }
     if (m_categories_ids_isSet) {
         obj.insert(QString("categories_ids"), ::OpenAPI::toJsonValue(m_categories_ids));
@@ -923,9 +944,6 @@ QJsonObject OAIProductUpdate::asJsonObject() const {
     }
     if (m_marketplace_item_properties_isSet) {
         obj.insert(QString("marketplace_item_properties"), ::OpenAPI::toJsonValue(m_marketplace_item_properties));
-    }
-    if (m_min_order_quantity_isSet) {
-        obj.insert(QString("min_order_quantity"), ::OpenAPI::toJsonValue(m_min_order_quantity));
     }
     if (m_manufacturer_ids_isSet) {
         obj.insert(QString("manufacturer_ids"), ::OpenAPI::toJsonValue(m_manufacturer_ids));
@@ -1611,6 +1629,38 @@ bool OAIProductUpdate::is_low_stock_threshold_Valid() const{
     return m_low_stock_threshold_isValid;
 }
 
+double OAIProductUpdate::getMinOrderQuantity() const {
+    return m_min_order_quantity;
+}
+void OAIProductUpdate::setMinOrderQuantity(const double &min_order_quantity) {
+    m_min_order_quantity = min_order_quantity;
+    m_min_order_quantity_isSet = true;
+}
+
+bool OAIProductUpdate::is_min_order_quantity_Set() const{
+    return m_min_order_quantity_isSet;
+}
+
+bool OAIProductUpdate::is_min_order_quantity_Valid() const{
+    return m_min_order_quantity_isValid;
+}
+
+double OAIProductUpdate::getMaxOrderQuantity() const {
+    return m_max_order_quantity;
+}
+void OAIProductUpdate::setMaxOrderQuantity(const double &max_order_quantity) {
+    m_max_order_quantity = max_order_quantity;
+    m_max_order_quantity_isSet = true;
+}
+
+bool OAIProductUpdate::is_max_order_quantity_Set() const{
+    return m_max_order_quantity_isSet;
+}
+
+bool OAIProductUpdate::is_max_order_quantity_Valid() const{
+    return m_max_order_quantity_isValid;
+}
+
 QString OAIProductUpdate::getWarehouseId() const {
     return m_warehouse_id;
 }
@@ -1881,6 +1931,22 @@ bool OAIProductUpdate::is_manufacturer_id_Set() const{
 
 bool OAIProductUpdate::is_manufacturer_id_Valid() const{
     return m_manufacturer_id_isValid;
+}
+
+QString OAIProductUpdate::getVendorId() const {
+    return m_vendor_id;
+}
+void OAIProductUpdate::setVendorId(const QString &vendor_id) {
+    m_vendor_id = vendor_id;
+    m_vendor_id_isSet = true;
+}
+
+bool OAIProductUpdate::is_vendor_id_Set() const{
+    return m_vendor_id_isSet;
+}
+
+bool OAIProductUpdate::is_vendor_id_Valid() const{
+    return m_vendor_id_isValid;
 }
 
 QString OAIProductUpdate::getCategoriesIds() const {
@@ -2443,22 +2509,6 @@ bool OAIProductUpdate::is_marketplace_item_properties_Valid() const{
     return m_marketplace_item_properties_isValid;
 }
 
-double OAIProductUpdate::getMinOrderQuantity() const {
-    return m_min_order_quantity;
-}
-void OAIProductUpdate::setMinOrderQuantity(const double &min_order_quantity) {
-    m_min_order_quantity = min_order_quantity;
-    m_min_order_quantity_isSet = true;
-}
-
-bool OAIProductUpdate::is_min_order_quantity_Set() const{
-    return m_min_order_quantity_isSet;
-}
-
-bool OAIProductUpdate::is_min_order_quantity_Valid() const{
-    return m_min_order_quantity_isValid;
-}
-
 QString OAIProductUpdate::getManufacturerIds() const {
     return m_manufacturer_ids;
 }
@@ -2720,6 +2770,16 @@ bool OAIProductUpdate::isSet() const {
             break;
         }
 
+        if (m_min_order_quantity_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_max_order_quantity_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
         if (m_warehouse_id_isSet) {
             isObjectUpdated = true;
             break;
@@ -2801,6 +2861,11 @@ bool OAIProductUpdate::isSet() const {
         }
 
         if (m_manufacturer_id_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_vendor_id_isSet) {
             isObjectUpdated = true;
             break;
         }
@@ -2976,11 +3041,6 @@ bool OAIProductUpdate::isSet() const {
         }
 
         if (m_marketplace_item_properties_isSet) {
-            isObjectUpdated = true;
-            break;
-        }
-
-        if (m_min_order_quantity_isSet) {
             isObjectUpdated = true;
             break;
         }
