@@ -363,6 +363,8 @@ client/OAIModel_Response_Order_List.cpp
 client/OAIModel_Response_Order_List.h
 client/OAIModel_Response_Order_PreestimateShipping_List.cpp
 client/OAIModel_Response_Order_PreestimateShipping_List.h
+client/OAIModel_Response_Order_Shipment_Event_List.cpp
+client/OAIModel_Response_Order_Shipment_Event_List.h
 client/OAIModel_Response_Order_Shipment_List.cpp
 client/OAIModel_Response_Order_Shipment_List.h
 client/OAIModel_Response_Order_Status_List.cpp
@@ -484,6 +486,8 @@ client/OAIOrderShipmentDelete_200_response.cpp
 client/OAIOrderShipmentDelete_200_response.h
 client/OAIOrderShipmentDelete_200_response_result.cpp
 client/OAIOrderShipmentDelete_200_response_result.h
+client/OAIOrderShipmentEventAdd.cpp
+client/OAIOrderShipmentEventAdd.h
 client/OAIOrderShipmentInfo_200_response.cpp
 client/OAIOrderShipmentInfo_200_response.h
 client/OAIOrderShipmentTrackingAdd.cpp
@@ -806,6 +810,8 @@ client/OAIResponse_Order_List_Result.cpp
 client/OAIResponse_Order_List_Result.h
 client/OAIResponse_Order_PreestimateShipping_List_Result.cpp
 client/OAIResponse_Order_PreestimateShipping_List_Result.h
+client/OAIResponse_Order_Shipment_Event_List_Result.cpp
+client/OAIResponse_Order_Shipment_Event_List_Result.h
 client/OAIResponse_Order_Shipment_List_Result.cpp
 client/OAIResponse_Order_Shipment_List_Result.h
 client/OAIResponse_Order_Status_List_Result.cpp
@@ -870,6 +876,8 @@ client/OAIServerConfiguration.h
 client/OAIServerVariable.h
 client/OAIShipment.cpp
 client/OAIShipment.h
+client/OAIShipment_Event.cpp
+client/OAIShipment_Event.h
 client/OAIShipment_Item.cpp
 client/OAIShipment_Item.h
 client/OAIShipment_TrackingNumber.cpp

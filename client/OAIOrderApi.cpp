@@ -68,6 +68,10 @@ void OAIOrderApi::initializeServerConfigs() {
     _serverIndices.insert("orderShipmentAddBatch", 0);
     _serverConfigs.insert("orderShipmentDelete", defaultConf);
     _serverIndices.insert("orderShipmentDelete", 0);
+    _serverConfigs.insert("orderShipmentEventAdd", defaultConf);
+    _serverIndices.insert("orderShipmentEventAdd", 0);
+    _serverConfigs.insert("orderShipmentEventList", defaultConf);
+    _serverIndices.insert("orderShipmentEventList", 0);
     _serverConfigs.insert("orderShipmentInfo", defaultConf);
     _serverIndices.insert("orderShipmentInfo", 0);
     _serverConfigs.insert("orderShipmentList", defaultConf);
@@ -3248,6 +3252,273 @@ void OAIOrderApi::orderShipmentDeleteCallback(OAIHttpRequestWorker *worker) {
 
         Q_EMIT orderShipmentDeleteSignalError(output, error_type, error_str);
         Q_EMIT orderShipmentDeleteSignalErrorFull(worker, error_type, error_str);
+    }
+}
+
+void OAIOrderApi::orderShipmentEventAdd(const OAIOrderShipmentEventAdd &oai_order_shipment_event_add) {
+    QString fullPath = QString(_serverConfigs["orderShipmentEventAdd"][_serverIndices.value("orderShipmentEventAdd")].URL()+"/order.shipment.event.add.json");
+    
+    if (_apiKeys.contains("StoreKeyAuth")) {
+        addHeaders("StoreKeyAuth",_apiKeys.find("StoreKeyAuth").value());
+    }
+    
+    if (_apiKeys.contains("ApiKeyAuth")) {
+        addHeaders("ApiKeyAuth",_apiKeys.find("ApiKeyAuth").value());
+    }
+    
+    OAIHttpRequestWorker *worker = new OAIHttpRequestWorker(this, _manager);
+    worker->setTimeOut(_timeOut);
+    worker->setWorkingDirectory(_workingDirectory);
+    OAIHttpRequestInput input(fullPath, "POST");
+
+    {
+
+        
+        QByteArray output = oai_order_shipment_event_add.asJson().toUtf8();
+        input.request_body.append(output);
+    }
+    for (auto keyValueIt = _defaultHeaders.keyValueBegin(); keyValueIt != _defaultHeaders.keyValueEnd(); keyValueIt++) {
+        input.headers.insert(keyValueIt->first, keyValueIt->second);
+    }
+
+
+    connect(worker, &OAIHttpRequestWorker::on_execution_finished, this, &OAIOrderApi::orderShipmentEventAddCallback);
+    connect(this, &OAIOrderApi::abortRequestsSignal, worker, &QObject::deleteLater);
+    connect(worker, &QObject::destroyed, this, [this] {
+        if (findChildren<OAIHttpRequestWorker*>().count() == 0) {
+            Q_EMIT allPendingRequestsCompleted();
+        }
+    });
+
+    worker->execute(&input);
+}
+
+void OAIOrderApi::orderShipmentEventAddCallback(OAIHttpRequestWorker *worker) {
+    QString error_str = worker->error_str;
+    QNetworkReply::NetworkError error_type = worker->error_type;
+
+    if (worker->error_type != QNetworkReply::NoError) {
+        error_str = QString("%1, %2").arg(worker->error_str, QString(worker->response));
+    }
+    OAIAttributeAdd_200_response output(QString(worker->response));
+    worker->deleteLater();
+
+    if (worker->error_type == QNetworkReply::NoError) {
+        Q_EMIT orderShipmentEventAddSignal(output);
+        Q_EMIT orderShipmentEventAddSignalFull(worker, output);
+    } else {
+
+#if defined(_MSC_VER)
+// For MSVC
+#pragma warning(push)
+#pragma warning(disable : 4996)
+#elif defined(__clang__)
+// For Clang
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
+#elif defined(__GNUC__)
+// For GCC
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wdeprecated-declarations"
+#endif
+
+        Q_EMIT orderShipmentEventAddSignalE(output, error_type, error_str);
+        Q_EMIT orderShipmentEventAddSignalEFull(worker, error_type, error_str);
+
+#if defined(_MSC_VER)
+#pragma warning(pop)
+#elif defined(__clang__)
+#pragma clang diagnostic pop
+#elif defined(__GNUC__)
+#pragma GCC diagnostic pop
+#endif
+
+        Q_EMIT orderShipmentEventAddSignalError(output, error_type, error_str);
+        Q_EMIT orderShipmentEventAddSignalErrorFull(worker, error_type, error_str);
+    }
+}
+
+void OAIOrderApi::orderShipmentEventList(const QString &shipment_id, const ::OpenAPI::OptionalParam<QString> &order_id, const ::OpenAPI::OptionalParam<QString> &store_id, const ::OpenAPI::OptionalParam<qint32> &start, const ::OpenAPI::OptionalParam<qint32> &count, const ::OpenAPI::OptionalParam<QString> &page_cursor, const ::OpenAPI::OptionalParam<QString> &response_fields) {
+    QString fullPath = QString(_serverConfigs["orderShipmentEventList"][_serverIndices.value("orderShipmentEventList")].URL()+"/order.shipment.event.list.json");
+    
+    if (_apiKeys.contains("StoreKeyAuth")) {
+        addHeaders("StoreKeyAuth",_apiKeys.find("StoreKeyAuth").value());
+    }
+    
+    if (_apiKeys.contains("ApiKeyAuth")) {
+        addHeaders("ApiKeyAuth",_apiKeys.find("ApiKeyAuth").value());
+    }
+    
+    QString queryPrefix, querySuffix, queryDelimiter, queryStyle;
+    
+    {
+        queryStyle = "form";
+        if (queryStyle == "")
+            queryStyle = "form";
+        queryPrefix = getParamStylePrefix(queryStyle);
+        querySuffix = getParamStyleSuffix(queryStyle);
+        queryDelimiter = getParamStyleDelimiter(queryStyle, "shipment_id", true);
+        if (fullPath.indexOf("?") > 0)
+            fullPath.append(queryPrefix);
+        else
+            fullPath.append("?");
+
+        fullPath.append(QUrl::toPercentEncoding("shipment_id")).append(querySuffix).append(QUrl::toPercentEncoding(::OpenAPI::toStringValue(shipment_id)));
+    }
+    if (order_id.hasValue())
+    {
+        queryStyle = "form";
+        if (queryStyle == "")
+            queryStyle = "form";
+        queryPrefix = getParamStylePrefix(queryStyle);
+        querySuffix = getParamStyleSuffix(queryStyle);
+        queryDelimiter = getParamStyleDelimiter(queryStyle, "order_id", true);
+        if (fullPath.indexOf("?") > 0)
+            fullPath.append(queryPrefix);
+        else
+            fullPath.append("?");
+
+        fullPath.append(QUrl::toPercentEncoding("order_id")).append(querySuffix).append(QUrl::toPercentEncoding(::OpenAPI::toStringValue(order_id.stringValue())));
+    }
+    if (store_id.hasValue())
+    {
+        queryStyle = "form";
+        if (queryStyle == "")
+            queryStyle = "form";
+        queryPrefix = getParamStylePrefix(queryStyle);
+        querySuffix = getParamStyleSuffix(queryStyle);
+        queryDelimiter = getParamStyleDelimiter(queryStyle, "store_id", true);
+        if (fullPath.indexOf("?") > 0)
+            fullPath.append(queryPrefix);
+        else
+            fullPath.append("?");
+
+        fullPath.append(QUrl::toPercentEncoding("store_id")).append(querySuffix).append(QUrl::toPercentEncoding(::OpenAPI::toStringValue(store_id.stringValue())));
+    }
+    if (start.hasValue())
+    {
+        queryStyle = "form";
+        if (queryStyle == "")
+            queryStyle = "form";
+        queryPrefix = getParamStylePrefix(queryStyle);
+        querySuffix = getParamStyleSuffix(queryStyle);
+        queryDelimiter = getParamStyleDelimiter(queryStyle, "start", true);
+        if (fullPath.indexOf("?") > 0)
+            fullPath.append(queryPrefix);
+        else
+            fullPath.append("?");
+
+        fullPath.append(QUrl::toPercentEncoding("start")).append(querySuffix).append(QUrl::toPercentEncoding(::OpenAPI::toStringValue(start.stringValue())));
+    }
+    if (count.hasValue())
+    {
+        queryStyle = "form";
+        if (queryStyle == "")
+            queryStyle = "form";
+        queryPrefix = getParamStylePrefix(queryStyle);
+        querySuffix = getParamStyleSuffix(queryStyle);
+        queryDelimiter = getParamStyleDelimiter(queryStyle, "count", true);
+        if (fullPath.indexOf("?") > 0)
+            fullPath.append(queryPrefix);
+        else
+            fullPath.append("?");
+
+        fullPath.append(QUrl::toPercentEncoding("count")).append(querySuffix).append(QUrl::toPercentEncoding(::OpenAPI::toStringValue(count.stringValue())));
+    }
+    if (page_cursor.hasValue())
+    {
+        queryStyle = "form";
+        if (queryStyle == "")
+            queryStyle = "form";
+        queryPrefix = getParamStylePrefix(queryStyle);
+        querySuffix = getParamStyleSuffix(queryStyle);
+        queryDelimiter = getParamStyleDelimiter(queryStyle, "page_cursor", true);
+        if (fullPath.indexOf("?") > 0)
+            fullPath.append(queryPrefix);
+        else
+            fullPath.append("?");
+
+        fullPath.append(QUrl::toPercentEncoding("page_cursor")).append(querySuffix).append(QUrl::toPercentEncoding(::OpenAPI::toStringValue(page_cursor.stringValue())));
+    }
+    if (response_fields.hasValue())
+    {
+        queryStyle = "form";
+        if (queryStyle == "")
+            queryStyle = "form";
+        queryPrefix = getParamStylePrefix(queryStyle);
+        querySuffix = getParamStyleSuffix(queryStyle);
+        queryDelimiter = getParamStyleDelimiter(queryStyle, "response_fields", true);
+        if (fullPath.indexOf("?") > 0)
+            fullPath.append(queryPrefix);
+        else
+            fullPath.append("?");
+
+        fullPath.append(QUrl::toPercentEncoding("response_fields")).append(querySuffix).append(QUrl::toPercentEncoding(::OpenAPI::toStringValue(response_fields.stringValue())));
+    }
+    OAIHttpRequestWorker *worker = new OAIHttpRequestWorker(this, _manager);
+    worker->setTimeOut(_timeOut);
+    worker->setWorkingDirectory(_workingDirectory);
+    OAIHttpRequestInput input(fullPath, "GET");
+
+
+    for (auto keyValueIt = _defaultHeaders.keyValueBegin(); keyValueIt != _defaultHeaders.keyValueEnd(); keyValueIt++) {
+        input.headers.insert(keyValueIt->first, keyValueIt->second);
+    }
+
+
+    connect(worker, &OAIHttpRequestWorker::on_execution_finished, this, &OAIOrderApi::orderShipmentEventListCallback);
+    connect(this, &OAIOrderApi::abortRequestsSignal, worker, &QObject::deleteLater);
+    connect(worker, &QObject::destroyed, this, [this] {
+        if (findChildren<OAIHttpRequestWorker*>().count() == 0) {
+            Q_EMIT allPendingRequestsCompleted();
+        }
+    });
+
+    worker->execute(&input);
+}
+
+void OAIOrderApi::orderShipmentEventListCallback(OAIHttpRequestWorker *worker) {
+    QString error_str = worker->error_str;
+    QNetworkReply::NetworkError error_type = worker->error_type;
+
+    if (worker->error_type != QNetworkReply::NoError) {
+        error_str = QString("%1, %2").arg(worker->error_str, QString(worker->response));
+    }
+    OAIModel_Response_Order_Shipment_Event_List output(QString(worker->response));
+    worker->deleteLater();
+
+    if (worker->error_type == QNetworkReply::NoError) {
+        Q_EMIT orderShipmentEventListSignal(output);
+        Q_EMIT orderShipmentEventListSignalFull(worker, output);
+    } else {
+
+#if defined(_MSC_VER)
+// For MSVC
+#pragma warning(push)
+#pragma warning(disable : 4996)
+#elif defined(__clang__)
+// For Clang
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
+#elif defined(__GNUC__)
+// For GCC
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wdeprecated-declarations"
+#endif
+
+        Q_EMIT orderShipmentEventListSignalE(output, error_type, error_str);
+        Q_EMIT orderShipmentEventListSignalEFull(worker, error_type, error_str);
+
+#if defined(_MSC_VER)
+#pragma warning(pop)
+#elif defined(__clang__)
+#pragma clang diagnostic pop
+#elif defined(__GNUC__)
+#pragma GCC diagnostic pop
+#endif
+
+        Q_EMIT orderShipmentEventListSignalError(output, error_type, error_str);
+        Q_EMIT orderShipmentEventListSignalErrorFull(worker, error_type, error_str);
     }
 }
 

@@ -179,6 +179,7 @@ add_library(${PROJECT_NAME}
   OAIModel_Response_Order_Abandoned_List.h
   OAIModel_Response_Order_List.h
   OAIModel_Response_Order_PreestimateShipping_List.h
+  OAIModel_Response_Order_Shipment_Event_List.h
   OAIModel_Response_Order_Shipment_List.h
   OAIModel_Response_Order_Status_List.h
   OAIModel_Response_Order_Transaction_List.h
@@ -237,6 +238,7 @@ add_library(${PROJECT_NAME}
   OAIOrderShipmentAdd_tracking_numbers_inner.h
   OAIOrderShipmentDelete_200_response.h
   OAIOrderShipmentDelete_200_response_result.h
+  OAIOrderShipmentEventAdd.h
   OAIOrderShipmentInfo_200_response.h
   OAIOrderShipmentTrackingAdd.h
   OAIOrderShipmentTrackingAdd_200_response.h
@@ -397,6 +399,7 @@ add_library(${PROJECT_NAME}
   OAIResponse_Order_Abandoned_List_Result.h
   OAIResponse_Order_List_Result.h
   OAIResponse_Order_PreestimateShipping_List_Result.h
+  OAIResponse_Order_Shipment_Event_List_Result.h
   OAIResponse_Order_Shipment_List_Result.h
   OAIResponse_Order_Status_List_Result.h
   OAIResponse_Order_Transaction_List_Result.h
@@ -427,6 +430,7 @@ add_library(${PROJECT_NAME}
   OAIReturn_Status.h
   OAIScript.h
   OAIShipment.h
+  OAIShipment_Event.h
   OAIShipment_Item.h
   OAIShipment_TrackingNumber.h
   OAISpecialPrice.h
@@ -643,6 +647,7 @@ add_library(${PROJECT_NAME}
   OAIModel_Response_Order_Abandoned_List.cpp
   OAIModel_Response_Order_List.cpp
   OAIModel_Response_Order_PreestimateShipping_List.cpp
+  OAIModel_Response_Order_Shipment_Event_List.cpp
   OAIModel_Response_Order_Shipment_List.cpp
   OAIModel_Response_Order_Status_List.cpp
   OAIModel_Response_Order_Transaction_List.cpp
@@ -701,6 +706,7 @@ add_library(${PROJECT_NAME}
   OAIOrderShipmentAdd_tracking_numbers_inner.cpp
   OAIOrderShipmentDelete_200_response.cpp
   OAIOrderShipmentDelete_200_response_result.cpp
+  OAIOrderShipmentEventAdd.cpp
   OAIOrderShipmentInfo_200_response.cpp
   OAIOrderShipmentTrackingAdd.cpp
   OAIOrderShipmentTrackingAdd_200_response.cpp
@@ -861,6 +867,7 @@ add_library(${PROJECT_NAME}
   OAIResponse_Order_Abandoned_List_Result.cpp
   OAIResponse_Order_List_Result.cpp
   OAIResponse_Order_PreestimateShipping_List_Result.cpp
+  OAIResponse_Order_Shipment_Event_List_Result.cpp
   OAIResponse_Order_Shipment_List_Result.cpp
   OAIResponse_Order_Status_List_Result.cpp
   OAIResponse_Order_Transaction_List_Result.cpp
@@ -891,6 +898,7 @@ add_library(${PROJECT_NAME}
   OAIReturn_Status.cpp
   OAIScript.cpp
   OAIShipment.cpp
+  OAIShipment_Event.cpp
   OAIShipment_Item.cpp
   OAIShipment_TrackingNumber.cpp
   OAISpecialPrice.cpp

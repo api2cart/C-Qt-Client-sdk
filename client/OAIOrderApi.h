@@ -19,11 +19,13 @@
 #include "OAIOauth.h"
 
 #include "OAIAccountConfigUpdate_200_response.h"
+#include "OAIAttributeAdd_200_response.h"
 #include "OAIAttributeValueDelete_200_response.h"
 #include "OAICategoryAddBatch_200_response.h"
 #include "OAIModel_Response_Order_Abandoned_List.h"
 #include "OAIModel_Response_Order_List.h"
 #include "OAIModel_Response_Order_PreestimateShipping_List.h"
+#include "OAIModel_Response_Order_Shipment_Event_List.h"
 #include "OAIModel_Response_Order_Shipment_List.h"
 #include "OAIModel_Response_Order_Status_List.h"
 #include "OAIModel_Response_Order_Transaction_List.h"
@@ -45,6 +47,7 @@
 #include "OAIOrderShipmentAddBatch.h"
 #include "OAIOrderShipmentAdd_200_response.h"
 #include "OAIOrderShipmentDelete_200_response.h"
+#include "OAIOrderShipmentEventAdd.h"
 #include "OAIOrderShipmentInfo_200_response.h"
 #include "OAIOrderShipmentTrackingAdd.h"
 #include "OAIOrderShipmentTrackingAdd_200_response.h"
@@ -254,6 +257,22 @@ public:
     virtual void orderShipmentDelete(const QString &shipment_id, const QString &order_id, const ::OpenAPI::OptionalParam<QString> &store_id = ::OpenAPI::OptionalParam<QString>());
 
     /**
+    * @param[in]  oai_order_shipment_event_add OAIOrderShipmentEventAdd [required]
+    */
+    virtual void orderShipmentEventAdd(const OAIOrderShipmentEventAdd &oai_order_shipment_event_add);
+
+    /**
+    * @param[in]  shipment_id QString [required]
+    * @param[in]  order_id QString [optional]
+    * @param[in]  store_id QString [optional]
+    * @param[in]  start qint32 [optional]
+    * @param[in]  count qint32 [optional]
+    * @param[in]  page_cursor QString [optional]
+    * @param[in]  response_fields QString [optional]
+    */
+    virtual void orderShipmentEventList(const QString &shipment_id, const ::OpenAPI::OptionalParam<QString> &order_id = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &store_id = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<qint32> &start = ::OpenAPI::OptionalParam<qint32>(), const ::OpenAPI::OptionalParam<qint32> &count = ::OpenAPI::OptionalParam<qint32>(), const ::OpenAPI::OptionalParam<QString> &page_cursor = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &response_fields = ::OpenAPI::OptionalParam<QString>());
+
+    /**
     * @param[in]  id QString [required]
     * @param[in]  order_id QString [required]
     * @param[in]  start qint32 [optional]
@@ -370,6 +389,8 @@ private:
     void orderShipmentAddCallback(OAIHttpRequestWorker *worker);
     void orderShipmentAddBatchCallback(OAIHttpRequestWorker *worker);
     void orderShipmentDeleteCallback(OAIHttpRequestWorker *worker);
+    void orderShipmentEventAddCallback(OAIHttpRequestWorker *worker);
+    void orderShipmentEventListCallback(OAIHttpRequestWorker *worker);
     void orderShipmentInfoCallback(OAIHttpRequestWorker *worker);
     void orderShipmentListCallback(OAIHttpRequestWorker *worker);
     void orderShipmentTrackingAddCallback(OAIHttpRequestWorker *worker);
@@ -396,6 +417,8 @@ Q_SIGNALS:
     void orderShipmentAddSignal(OAIOrderShipmentAdd_200_response summary);
     void orderShipmentAddBatchSignal(OAICategoryAddBatch_200_response summary);
     void orderShipmentDeleteSignal(OAIOrderShipmentDelete_200_response summary);
+    void orderShipmentEventAddSignal(OAIAttributeAdd_200_response summary);
+    void orderShipmentEventListSignal(OAIModel_Response_Order_Shipment_Event_List summary);
     void orderShipmentInfoSignal(OAIOrderShipmentInfo_200_response summary);
     void orderShipmentListSignal(OAIModel_Response_Order_Shipment_List summary);
     void orderShipmentTrackingAddSignal(OAIOrderShipmentTrackingAdd_200_response summary);
@@ -421,6 +444,8 @@ Q_SIGNALS:
     void orderShipmentAddSignalFull(OAIHttpRequestWorker *worker, OAIOrderShipmentAdd_200_response summary);
     void orderShipmentAddBatchSignalFull(OAIHttpRequestWorker *worker, OAICategoryAddBatch_200_response summary);
     void orderShipmentDeleteSignalFull(OAIHttpRequestWorker *worker, OAIOrderShipmentDelete_200_response summary);
+    void orderShipmentEventAddSignalFull(OAIHttpRequestWorker *worker, OAIAttributeAdd_200_response summary);
+    void orderShipmentEventListSignalFull(OAIHttpRequestWorker *worker, OAIModel_Response_Order_Shipment_Event_List summary);
     void orderShipmentInfoSignalFull(OAIHttpRequestWorker *worker, OAIOrderShipmentInfo_200_response summary);
     void orderShipmentListSignalFull(OAIHttpRequestWorker *worker, OAIModel_Response_Order_Shipment_List summary);
     void orderShipmentTrackingAddSignalFull(OAIHttpRequestWorker *worker, OAIOrderShipmentTrackingAdd_200_response summary);
@@ -477,6 +502,12 @@ Q_SIGNALS:
     Q_DECL_DEPRECATED_X("Use orderShipmentDeleteSignalError() instead")
     void orderShipmentDeleteSignalE(OAIOrderShipmentDelete_200_response summary, QNetworkReply::NetworkError error_type, QString error_str);
     void orderShipmentDeleteSignalError(OAIOrderShipmentDelete_200_response summary, QNetworkReply::NetworkError error_type, const QString &error_str);
+    Q_DECL_DEPRECATED_X("Use orderShipmentEventAddSignalError() instead")
+    void orderShipmentEventAddSignalE(OAIAttributeAdd_200_response summary, QNetworkReply::NetworkError error_type, QString error_str);
+    void orderShipmentEventAddSignalError(OAIAttributeAdd_200_response summary, QNetworkReply::NetworkError error_type, const QString &error_str);
+    Q_DECL_DEPRECATED_X("Use orderShipmentEventListSignalError() instead")
+    void orderShipmentEventListSignalE(OAIModel_Response_Order_Shipment_Event_List summary, QNetworkReply::NetworkError error_type, QString error_str);
+    void orderShipmentEventListSignalError(OAIModel_Response_Order_Shipment_Event_List summary, QNetworkReply::NetworkError error_type, const QString &error_str);
     Q_DECL_DEPRECATED_X("Use orderShipmentInfoSignalError() instead")
     void orderShipmentInfoSignalE(OAIOrderShipmentInfo_200_response summary, QNetworkReply::NetworkError error_type, QString error_str);
     void orderShipmentInfoSignalError(OAIOrderShipmentInfo_200_response summary, QNetworkReply::NetworkError error_type, const QString &error_str);
@@ -547,6 +578,12 @@ Q_SIGNALS:
     Q_DECL_DEPRECATED_X("Use orderShipmentDeleteSignalErrorFull() instead")
     void orderShipmentDeleteSignalEFull(OAIHttpRequestWorker *worker, QNetworkReply::NetworkError error_type, QString error_str);
     void orderShipmentDeleteSignalErrorFull(OAIHttpRequestWorker *worker, QNetworkReply::NetworkError error_type, const QString &error_str);
+    Q_DECL_DEPRECATED_X("Use orderShipmentEventAddSignalErrorFull() instead")
+    void orderShipmentEventAddSignalEFull(OAIHttpRequestWorker *worker, QNetworkReply::NetworkError error_type, QString error_str);
+    void orderShipmentEventAddSignalErrorFull(OAIHttpRequestWorker *worker, QNetworkReply::NetworkError error_type, const QString &error_str);
+    Q_DECL_DEPRECATED_X("Use orderShipmentEventListSignalErrorFull() instead")
+    void orderShipmentEventListSignalEFull(OAIHttpRequestWorker *worker, QNetworkReply::NetworkError error_type, QString error_str);
+    void orderShipmentEventListSignalErrorFull(OAIHttpRequestWorker *worker, QNetworkReply::NetworkError error_type, const QString &error_str);
     Q_DECL_DEPRECATED_X("Use orderShipmentInfoSignalErrorFull() instead")
     void orderShipmentInfoSignalEFull(OAIHttpRequestWorker *worker, QNetworkReply::NetworkError error_type, QString error_str);
     void orderShipmentInfoSignalErrorFull(OAIHttpRequestWorker *worker, QNetworkReply::NetworkError error_type, const QString &error_str);

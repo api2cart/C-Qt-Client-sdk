@@ -170,6 +170,7 @@ HEADERS += \
     $${PWD}/OAIModel_Response_Order_Abandoned_List.h \
     $${PWD}/OAIModel_Response_Order_List.h \
     $${PWD}/OAIModel_Response_Order_PreestimateShipping_List.h \
+    $${PWD}/OAIModel_Response_Order_Shipment_Event_List.h \
     $${PWD}/OAIModel_Response_Order_Shipment_List.h \
     $${PWD}/OAIModel_Response_Order_Status_List.h \
     $${PWD}/OAIModel_Response_Order_Transaction_List.h \
@@ -228,6 +229,7 @@ HEADERS += \
     $${PWD}/OAIOrderShipmentAdd_tracking_numbers_inner.h \
     $${PWD}/OAIOrderShipmentDelete_200_response.h \
     $${PWD}/OAIOrderShipmentDelete_200_response_result.h \
+    $${PWD}/OAIOrderShipmentEventAdd.h \
     $${PWD}/OAIOrderShipmentInfo_200_response.h \
     $${PWD}/OAIOrderShipmentTrackingAdd.h \
     $${PWD}/OAIOrderShipmentTrackingAdd_200_response.h \
@@ -388,6 +390,7 @@ HEADERS += \
     $${PWD}/OAIResponse_Order_Abandoned_List_Result.h \
     $${PWD}/OAIResponse_Order_List_Result.h \
     $${PWD}/OAIResponse_Order_PreestimateShipping_List_Result.h \
+    $${PWD}/OAIResponse_Order_Shipment_Event_List_Result.h \
     $${PWD}/OAIResponse_Order_Shipment_List_Result.h \
     $${PWD}/OAIResponse_Order_Status_List_Result.h \
     $${PWD}/OAIResponse_Order_Transaction_List_Result.h \
@@ -418,6 +421,7 @@ HEADERS += \
     $${PWD}/OAIReturn_Status.h \
     $${PWD}/OAIScript.h \
     $${PWD}/OAIShipment.h \
+    $${PWD}/OAIShipment_Event.h \
     $${PWD}/OAIShipment_Item.h \
     $${PWD}/OAIShipment_TrackingNumber.h \
     $${PWD}/OAISpecialPrice.h \
@@ -639,6 +643,7 @@ SOURCES += \
     $${PWD}/OAIModel_Response_Order_Abandoned_List.cpp \
     $${PWD}/OAIModel_Response_Order_List.cpp \
     $${PWD}/OAIModel_Response_Order_PreestimateShipping_List.cpp \
+    $${PWD}/OAIModel_Response_Order_Shipment_Event_List.cpp \
     $${PWD}/OAIModel_Response_Order_Shipment_List.cpp \
     $${PWD}/OAIModel_Response_Order_Status_List.cpp \
     $${PWD}/OAIModel_Response_Order_Transaction_List.cpp \
@@ -697,6 +702,7 @@ SOURCES += \
     $${PWD}/OAIOrderShipmentAdd_tracking_numbers_inner.cpp \
     $${PWD}/OAIOrderShipmentDelete_200_response.cpp \
     $${PWD}/OAIOrderShipmentDelete_200_response_result.cpp \
+    $${PWD}/OAIOrderShipmentEventAdd.cpp \
     $${PWD}/OAIOrderShipmentInfo_200_response.cpp \
     $${PWD}/OAIOrderShipmentTrackingAdd.cpp \
     $${PWD}/OAIOrderShipmentTrackingAdd_200_response.cpp \
@@ -857,6 +863,7 @@ SOURCES += \
     $${PWD}/OAIResponse_Order_Abandoned_List_Result.cpp \
     $${PWD}/OAIResponse_Order_List_Result.cpp \
     $${PWD}/OAIResponse_Order_PreestimateShipping_List_Result.cpp \
+    $${PWD}/OAIResponse_Order_Shipment_Event_List_Result.cpp \
     $${PWD}/OAIResponse_Order_Shipment_List_Result.cpp \
     $${PWD}/OAIResponse_Order_Status_List_Result.cpp \
     $${PWD}/OAIResponse_Order_Transaction_List_Result.cpp \
@@ -887,6 +894,7 @@ SOURCES += \
     $${PWD}/OAIReturn_Status.cpp \
     $${PWD}/OAIScript.cpp \
     $${PWD}/OAIShipment.cpp \
+    $${PWD}/OAIShipment_Event.cpp \
     $${PWD}/OAIShipment_Item.cpp \
     $${PWD}/OAIShipment_TrackingNumber.cpp \
     $${PWD}/OAISpecialPrice.cpp \
