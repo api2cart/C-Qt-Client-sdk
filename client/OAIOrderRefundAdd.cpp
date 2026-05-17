@@ -61,6 +61,9 @@ void OAIOrderRefundAdd::initializeModel() {
     m_date_isSet = false;
     m_date_isValid = false;
 
+    m_store_id_isSet = false;
+    m_store_id_isValid = false;
+
     m_is_online_isSet = false;
     m_is_online_isValid = false;
 
@@ -104,6 +107,9 @@ void OAIOrderRefundAdd::fromJsonObject(QJsonObject json) {
     m_date_isValid = ::OpenAPI::fromJsonValue(m_date, json[QString("date")]);
     m_date_isSet = !json[QString("date")].isNull() && m_date_isValid;
 
+    m_store_id_isValid = ::OpenAPI::fromJsonValue(m_store_id, json[QString("store_id")]);
+    m_store_id_isSet = !json[QString("store_id")].isNull() && m_store_id_isValid;
+
     m_is_online_isValid = ::OpenAPI::fromJsonValue(m_is_online, json[QString("is_online")]);
     m_is_online_isSet = !json[QString("is_online")].isNull() && m_is_online_isValid;
 
@@ -146,6 +152,9 @@ QJsonObject OAIOrderRefundAdd::asJsonObject() const {
     }
     if (m_date_isSet) {
         obj.insert(QString("date"), ::OpenAPI::toJsonValue(m_date));
+    }
+    if (m_store_id_isSet) {
+        obj.insert(QString("store_id"), ::OpenAPI::toJsonValue(m_store_id));
     }
     if (m_is_online_isSet) {
         obj.insert(QString("is_online"), ::OpenAPI::toJsonValue(m_is_online));
@@ -300,6 +309,22 @@ bool OAIOrderRefundAdd::is_date_Valid() const{
     return m_date_isValid;
 }
 
+QString OAIOrderRefundAdd::getStoreId() const {
+    return m_store_id;
+}
+void OAIOrderRefundAdd::setStoreId(const QString &store_id) {
+    m_store_id = store_id;
+    m_store_id_isSet = true;
+}
+
+bool OAIOrderRefundAdd::is_store_id_Set() const{
+    return m_store_id_isSet;
+}
+
+bool OAIOrderRefundAdd::is_store_id_Valid() const{
+    return m_store_id_isValid;
+}
+
 bool OAIOrderRefundAdd::isIsOnline() const {
     return m_is_online;
 }
@@ -376,6 +401,11 @@ bool OAIOrderRefundAdd::isSet() const {
         }
 
         if (m_date_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_store_id_isSet) {
             isObjectUpdated = true;
             break;
         }

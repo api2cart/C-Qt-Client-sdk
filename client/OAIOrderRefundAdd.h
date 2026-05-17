@@ -87,6 +87,11 @@ public:
     bool is_date_Set() const;
     bool is_date_Valid() const;
 
+    QString getStoreId() const;
+    void setStoreId(const QString &store_id);
+    bool is_store_id_Set() const;
+    bool is_store_id_Valid() const;
+
     bool isIsOnline() const;
     void setIsOnline(const bool &is_online);
     bool is_is_online_Set() const;
@@ -138,6 +143,10 @@ private:
     QString m_date;
     bool m_date_isSet;
     bool m_date_isValid;
+
+    QString m_store_id;
+    bool m_store_id_isSet;
+    bool m_store_id_isValid;
 
     bool m_is_online;
     bool m_is_online_isSet;
