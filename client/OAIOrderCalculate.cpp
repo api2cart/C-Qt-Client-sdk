@@ -37,6 +37,9 @@ void OAIOrderCalculate::initializeModel() {
     m_customer_email_isSet = false;
     m_customer_email_isValid = false;
 
+    m_currency_isSet = false;
+    m_currency_isValid = false;
+
     m_currency_id_isSet = false;
     m_currency_id_isValid = false;
 
@@ -131,6 +134,9 @@ void OAIOrderCalculate::fromJsonObject(QJsonObject json) {
     m_customer_email_isValid = ::OpenAPI::fromJsonValue(m_customer_email, json[QString("customer_email")]);
     m_customer_email_isSet = !json[QString("customer_email")].isNull() && m_customer_email_isValid;
 
+    m_currency_isValid = ::OpenAPI::fromJsonValue(m_currency, json[QString("currency")]);
+    m_currency_isSet = !json[QString("currency")].isNull() && m_currency_isValid;
+
     m_currency_id_isValid = ::OpenAPI::fromJsonValue(m_currency_id, json[QString("currency_id")]);
     m_currency_id_isSet = !json[QString("currency_id")].isNull() && m_currency_id_isValid;
 
@@ -224,6 +230,9 @@ QJsonObject OAIOrderCalculate::asJsonObject() const {
     QJsonObject obj;
     if (m_customer_email_isSet) {
         obj.insert(QString("customer_email"), ::OpenAPI::toJsonValue(m_customer_email));
+    }
+    if (m_currency_isSet) {
+        obj.insert(QString("currency"), ::OpenAPI::toJsonValue(m_currency));
     }
     if (m_currency_id_isSet) {
         obj.insert(QString("currency_id"), ::OpenAPI::toJsonValue(m_currency_id));
@@ -323,6 +332,22 @@ bool OAIOrderCalculate::is_customer_email_Set() const{
 
 bool OAIOrderCalculate::is_customer_email_Valid() const{
     return m_customer_email_isValid;
+}
+
+QString OAIOrderCalculate::getCurrency() const {
+    return m_currency;
+}
+void OAIOrderCalculate::setCurrency(const QString &currency) {
+    m_currency = currency;
+    m_currency_isSet = true;
+}
+
+bool OAIOrderCalculate::is_currency_Set() const{
+    return m_currency_isSet;
+}
+
+bool OAIOrderCalculate::is_currency_Valid() const{
+    return m_currency_isValid;
 }
 
 QString OAIOrderCalculate::getCurrencyId() const {
@@ -761,6 +786,11 @@ bool OAIOrderCalculate::isSet() const {
     bool isObjectUpdated = false;
     do {
         if (m_customer_email_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_currency_isSet) {
             isObjectUpdated = true;
             break;
         }

@@ -49,11 +49,20 @@ void OAIOrderReturnUpdate::initializeModel() {
     m_return_status_id_isSet = false;
     m_return_status_id_isValid = false;
 
+    m_return_reason_id_isSet = false;
+    m_return_reason_id_isValid = false;
+
+    m_return_action_id_isSet = false;
+    m_return_action_id_isValid = false;
+
     m_staff_note_isSet = false;
     m_staff_note_isValid = false;
 
     m_comment_isSet = false;
     m_comment_isValid = false;
+
+    m_message_isSet = false;
+    m_message_isValid = false;
 
     m_send_notifications_isSet = false;
     m_send_notifications_isValid = false;
@@ -66,6 +75,15 @@ void OAIOrderReturnUpdate::initializeModel() {
 
     m_return_reason_isSet = false;
     m_return_reason_isValid = false;
+
+    m_is_online_isSet = false;
+    m_is_online_isValid = false;
+
+    m_fee_price_isSet = false;
+    m_fee_price_isValid = false;
+
+    m_shipping_price_isSet = false;
+    m_shipping_price_isValid = false;
 
     m_idempotency_key_isSet = false;
     m_idempotency_key_isValid = false;
@@ -98,11 +116,20 @@ void OAIOrderReturnUpdate::fromJsonObject(QJsonObject json) {
     m_return_status_id_isValid = ::OpenAPI::fromJsonValue(m_return_status_id, json[QString("return_status_id")]);
     m_return_status_id_isSet = !json[QString("return_status_id")].isNull() && m_return_status_id_isValid;
 
+    m_return_reason_id_isValid = ::OpenAPI::fromJsonValue(m_return_reason_id, json[QString("return_reason_id")]);
+    m_return_reason_id_isSet = !json[QString("return_reason_id")].isNull() && m_return_reason_id_isValid;
+
+    m_return_action_id_isValid = ::OpenAPI::fromJsonValue(m_return_action_id, json[QString("return_action_id")]);
+    m_return_action_id_isSet = !json[QString("return_action_id")].isNull() && m_return_action_id_isValid;
+
     m_staff_note_isValid = ::OpenAPI::fromJsonValue(m_staff_note, json[QString("staff_note")]);
     m_staff_note_isSet = !json[QString("staff_note")].isNull() && m_staff_note_isValid;
 
     m_comment_isValid = ::OpenAPI::fromJsonValue(m_comment, json[QString("comment")]);
     m_comment_isSet = !json[QString("comment")].isNull() && m_comment_isValid;
+
+    m_message_isValid = ::OpenAPI::fromJsonValue(m_message, json[QString("message")]);
+    m_message_isSet = !json[QString("message")].isNull() && m_message_isValid;
 
     m_send_notifications_isValid = ::OpenAPI::fromJsonValue(m_send_notifications, json[QString("send_notifications")]);
     m_send_notifications_isSet = !json[QString("send_notifications")].isNull() && m_send_notifications_isValid;
@@ -115,6 +142,15 @@ void OAIOrderReturnUpdate::fromJsonObject(QJsonObject json) {
 
     m_return_reason_isValid = ::OpenAPI::fromJsonValue(m_return_reason, json[QString("return_reason")]);
     m_return_reason_isSet = !json[QString("return_reason")].isNull() && m_return_reason_isValid;
+
+    m_is_online_isValid = ::OpenAPI::fromJsonValue(m_is_online, json[QString("is_online")]);
+    m_is_online_isSet = !json[QString("is_online")].isNull() && m_is_online_isValid;
+
+    m_fee_price_isValid = ::OpenAPI::fromJsonValue(m_fee_price, json[QString("fee_price")]);
+    m_fee_price_isSet = !json[QString("fee_price")].isNull() && m_fee_price_isValid;
+
+    m_shipping_price_isValid = ::OpenAPI::fromJsonValue(m_shipping_price, json[QString("shipping_price")]);
+    m_shipping_price_isSet = !json[QString("shipping_price")].isNull() && m_shipping_price_isValid;
 
     m_idempotency_key_isValid = ::OpenAPI::fromJsonValue(m_idempotency_key, json[QString("idempotency_key")]);
     m_idempotency_key_isSet = !json[QString("idempotency_key")].isNull() && m_idempotency_key_isValid;
@@ -147,11 +183,20 @@ QJsonObject OAIOrderReturnUpdate::asJsonObject() const {
     if (m_return_status_id_isSet) {
         obj.insert(QString("return_status_id"), ::OpenAPI::toJsonValue(m_return_status_id));
     }
+    if (m_return_reason_id_isSet) {
+        obj.insert(QString("return_reason_id"), ::OpenAPI::toJsonValue(m_return_reason_id));
+    }
+    if (m_return_action_id_isSet) {
+        obj.insert(QString("return_action_id"), ::OpenAPI::toJsonValue(m_return_action_id));
+    }
     if (m_staff_note_isSet) {
         obj.insert(QString("staff_note"), ::OpenAPI::toJsonValue(m_staff_note));
     }
     if (m_comment_isSet) {
         obj.insert(QString("comment"), ::OpenAPI::toJsonValue(m_comment));
+    }
+    if (m_message_isSet) {
+        obj.insert(QString("message"), ::OpenAPI::toJsonValue(m_message));
     }
     if (m_send_notifications_isSet) {
         obj.insert(QString("send_notifications"), ::OpenAPI::toJsonValue(m_send_notifications));
@@ -164,6 +209,15 @@ QJsonObject OAIOrderReturnUpdate::asJsonObject() const {
     }
     if (m_return_reason_isSet) {
         obj.insert(QString("return_reason"), ::OpenAPI::toJsonValue(m_return_reason));
+    }
+    if (m_is_online_isSet) {
+        obj.insert(QString("is_online"), ::OpenAPI::toJsonValue(m_is_online));
+    }
+    if (m_fee_price_isSet) {
+        obj.insert(QString("fee_price"), ::OpenAPI::toJsonValue(m_fee_price));
+    }
+    if (m_shipping_price_isSet) {
+        obj.insert(QString("shipping_price"), ::OpenAPI::toJsonValue(m_shipping_price));
     }
     if (m_idempotency_key_isSet) {
         obj.insert(QString("idempotency_key"), ::OpenAPI::toJsonValue(m_idempotency_key));
@@ -254,6 +308,38 @@ bool OAIOrderReturnUpdate::is_return_status_id_Valid() const{
     return m_return_status_id_isValid;
 }
 
+QString OAIOrderReturnUpdate::getReturnReasonId() const {
+    return m_return_reason_id;
+}
+void OAIOrderReturnUpdate::setReturnReasonId(const QString &return_reason_id) {
+    m_return_reason_id = return_reason_id;
+    m_return_reason_id_isSet = true;
+}
+
+bool OAIOrderReturnUpdate::is_return_reason_id_Set() const{
+    return m_return_reason_id_isSet;
+}
+
+bool OAIOrderReturnUpdate::is_return_reason_id_Valid() const{
+    return m_return_reason_id_isValid;
+}
+
+QString OAIOrderReturnUpdate::getReturnActionId() const {
+    return m_return_action_id;
+}
+void OAIOrderReturnUpdate::setReturnActionId(const QString &return_action_id) {
+    m_return_action_id = return_action_id;
+    m_return_action_id_isSet = true;
+}
+
+bool OAIOrderReturnUpdate::is_return_action_id_Set() const{
+    return m_return_action_id_isSet;
+}
+
+bool OAIOrderReturnUpdate::is_return_action_id_Valid() const{
+    return m_return_action_id_isValid;
+}
+
 QString OAIOrderReturnUpdate::getStaffNote() const {
     return m_staff_note;
 }
@@ -284,6 +370,22 @@ bool OAIOrderReturnUpdate::is_comment_Set() const{
 
 bool OAIOrderReturnUpdate::is_comment_Valid() const{
     return m_comment_isValid;
+}
+
+QString OAIOrderReturnUpdate::getMessage() const {
+    return m_message;
+}
+void OAIOrderReturnUpdate::setMessage(const QString &message) {
+    m_message = message;
+    m_message_isSet = true;
+}
+
+bool OAIOrderReturnUpdate::is_message_Set() const{
+    return m_message_isSet;
+}
+
+bool OAIOrderReturnUpdate::is_message_Valid() const{
+    return m_message_isValid;
 }
 
 bool OAIOrderReturnUpdate::isSendNotifications() const {
@@ -350,6 +452,54 @@ bool OAIOrderReturnUpdate::is_return_reason_Valid() const{
     return m_return_reason_isValid;
 }
 
+bool OAIOrderReturnUpdate::isIsOnline() const {
+    return m_is_online;
+}
+void OAIOrderReturnUpdate::setIsOnline(const bool &is_online) {
+    m_is_online = is_online;
+    m_is_online_isSet = true;
+}
+
+bool OAIOrderReturnUpdate::is_is_online_Set() const{
+    return m_is_online_isSet;
+}
+
+bool OAIOrderReturnUpdate::is_is_online_Valid() const{
+    return m_is_online_isValid;
+}
+
+double OAIOrderReturnUpdate::getFeePrice() const {
+    return m_fee_price;
+}
+void OAIOrderReturnUpdate::setFeePrice(const double &fee_price) {
+    m_fee_price = fee_price;
+    m_fee_price_isSet = true;
+}
+
+bool OAIOrderReturnUpdate::is_fee_price_Set() const{
+    return m_fee_price_isSet;
+}
+
+bool OAIOrderReturnUpdate::is_fee_price_Valid() const{
+    return m_fee_price_isValid;
+}
+
+double OAIOrderReturnUpdate::getShippingPrice() const {
+    return m_shipping_price;
+}
+void OAIOrderReturnUpdate::setShippingPrice(const double &shipping_price) {
+    m_shipping_price = shipping_price;
+    m_shipping_price_isSet = true;
+}
+
+bool OAIOrderReturnUpdate::is_shipping_price_Set() const{
+    return m_shipping_price_isSet;
+}
+
+bool OAIOrderReturnUpdate::is_shipping_price_Valid() const{
+    return m_shipping_price_isValid;
+}
+
 QString OAIOrderReturnUpdate::getIdempotencyKey() const {
     return m_idempotency_key;
 }
@@ -410,12 +560,27 @@ bool OAIOrderReturnUpdate::isSet() const {
             break;
         }
 
+        if (m_return_reason_id_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_return_action_id_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
         if (m_staff_note_isSet) {
             isObjectUpdated = true;
             break;
         }
 
         if (m_comment_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_message_isSet) {
             isObjectUpdated = true;
             break;
         }
@@ -436,6 +601,21 @@ bool OAIOrderReturnUpdate::isSet() const {
         }
 
         if (m_return_reason_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_is_online_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_fee_price_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_shipping_price_isSet) {
             isObjectUpdated = true;
             break;
         }

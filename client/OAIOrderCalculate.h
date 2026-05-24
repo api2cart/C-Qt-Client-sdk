@@ -47,6 +47,11 @@ public:
     bool is_customer_email_Set() const;
     bool is_customer_email_Valid() const;
 
+    QString getCurrency() const;
+    void setCurrency(const QString &currency);
+    bool is_currency_Set() const;
+    bool is_currency_Valid() const;
+
     QString getCurrencyId() const;
     void setCurrencyId(const QString &currency_id);
     bool is_currency_id_Set() const;
@@ -191,6 +196,10 @@ private:
     QString m_customer_email;
     bool m_customer_email_isSet;
     bool m_customer_email_isValid;
+
+    QString m_currency;
+    bool m_currency_isSet;
+    bool m_currency_isValid;
 
     QString m_currency_id;
     bool m_currency_id_isSet;

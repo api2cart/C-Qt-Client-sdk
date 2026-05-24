@@ -119,6 +119,11 @@ public:
     bool is_use_latest_api_version_Set() const;
     bool is_use_latest_api_version_Valid() const;
 
+    QString getAdminComment() const;
+    void setAdminComment(const QString &admin_comment);
+    bool is_admin_comment_Set() const;
+    bool is_admin_comment_Valid() const;
+
     QString getIdempotencyKey() const;
     void setIdempotencyKey(const QString &idempotency_key);
     bool is_idempotency_key_Set() const;
@@ -189,6 +194,10 @@ private:
     bool m_use_latest_api_version;
     bool m_use_latest_api_version_isSet;
     bool m_use_latest_api_version_isValid;
+
+    QString m_admin_comment;
+    bool m_admin_comment_isSet;
+    bool m_admin_comment_isValid;
 
     QString m_idempotency_key;
     bool m_idempotency_key_isSet;

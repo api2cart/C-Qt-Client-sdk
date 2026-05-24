@@ -235,6 +235,9 @@ void OAIOrderAdd::initializeModel() {
     m_create_invoice_isSet = false;
     m_create_invoice_isValid = false;
 
+    m_invoice_admin_comment_isSet = false;
+    m_invoice_admin_comment_isValid = false;
+
     m_note_attributes_isSet = false;
     m_note_attributes_isValid = false;
 
@@ -464,6 +467,9 @@ void OAIOrderAdd::fromJsonObject(QJsonObject json) {
     m_create_invoice_isValid = ::OpenAPI::fromJsonValue(m_create_invoice, json[QString("create_invoice")]);
     m_create_invoice_isSet = !json[QString("create_invoice")].isNull() && m_create_invoice_isValid;
 
+    m_invoice_admin_comment_isValid = ::OpenAPI::fromJsonValue(m_invoice_admin_comment, json[QString("invoice_admin_comment")]);
+    m_invoice_admin_comment_isSet = !json[QString("invoice_admin_comment")].isNull() && m_invoice_admin_comment_isValid;
+
     m_note_attributes_isValid = ::OpenAPI::fromJsonValue(m_note_attributes, json[QString("note_attributes")]);
     m_note_attributes_isSet = !json[QString("note_attributes")].isNull() && m_note_attributes_isValid;
 
@@ -692,6 +698,9 @@ QJsonObject OAIOrderAdd::asJsonObject() const {
     }
     if (m_create_invoice_isSet) {
         obj.insert(QString("create_invoice"), ::OpenAPI::toJsonValue(m_create_invoice));
+    }
+    if (m_invoice_admin_comment_isSet) {
+        obj.insert(QString("invoice_admin_comment"), ::OpenAPI::toJsonValue(m_invoice_admin_comment));
     }
     if (m_note_attributes.size() > 0) {
         obj.insert(QString("note_attributes"), ::OpenAPI::toJsonValue(m_note_attributes));
@@ -1786,6 +1795,22 @@ bool OAIOrderAdd::is_create_invoice_Valid() const{
     return m_create_invoice_isValid;
 }
 
+QString OAIOrderAdd::getInvoiceAdminComment() const {
+    return m_invoice_admin_comment;
+}
+void OAIOrderAdd::setInvoiceAdminComment(const QString &invoice_admin_comment) {
+    m_invoice_admin_comment = invoice_admin_comment;
+    m_invoice_admin_comment_isSet = true;
+}
+
+bool OAIOrderAdd::is_invoice_admin_comment_Set() const{
+    return m_invoice_admin_comment_isSet;
+}
+
+bool OAIOrderAdd::is_invoice_admin_comment_Valid() const{
+    return m_invoice_admin_comment_isValid;
+}
+
 QList<OAIOrderAdd_note_attributes_inner> OAIOrderAdd::getNoteAttributes() const {
     return m_note_attributes;
 }
@@ -2216,6 +2241,11 @@ bool OAIOrderAdd::isSet() const {
         }
 
         if (m_create_invoice_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_invoice_admin_comment_isSet) {
             isObjectUpdated = true;
             break;
         }

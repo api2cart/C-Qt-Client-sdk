@@ -379,6 +379,11 @@ public:
     bool is_create_invoice_Set() const;
     bool is_create_invoice_Valid() const;
 
+    QString getInvoiceAdminComment() const;
+    void setInvoiceAdminComment(const QString &invoice_admin_comment);
+    bool is_invoice_admin_comment_Set() const;
+    bool is_invoice_admin_comment_Valid() const;
+
     QList<OAIOrderAdd_note_attributes_inner> getNoteAttributes() const;
     void setNoteAttributes(const QList<OAIOrderAdd_note_attributes_inner> &note_attributes);
     bool is_note_attributes_Set() const;
@@ -682,6 +687,10 @@ private:
     bool m_create_invoice;
     bool m_create_invoice_isSet;
     bool m_create_invoice_isValid;
+
+    QString m_invoice_admin_comment;
+    bool m_invoice_admin_comment_isSet;
+    bool m_invoice_admin_comment_isValid;
 
     QList<OAIOrderAdd_note_attributes_inner> m_note_attributes;
     bool m_note_attributes_isSet;

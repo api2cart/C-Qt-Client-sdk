@@ -42,9 +42,6 @@ void OAIProductVariantAdd_attributes_inner::initializeModel() {
 
     m_attribute_price_isSet = false;
     m_attribute_price_isValid = false;
-
-    m_attribute_weight_isSet = false;
-    m_attribute_weight_isValid = false;
 }
 
 void OAIProductVariantAdd_attributes_inner::fromJson(QString jsonString) {
@@ -64,9 +61,6 @@ void OAIProductVariantAdd_attributes_inner::fromJsonObject(QJsonObject json) {
 
     m_attribute_price_isValid = ::OpenAPI::fromJsonValue(m_attribute_price, json[QString("attribute_price")]);
     m_attribute_price_isSet = !json[QString("attribute_price")].isNull() && m_attribute_price_isValid;
-
-    m_attribute_weight_isValid = ::OpenAPI::fromJsonValue(m_attribute_weight, json[QString("attribute_weight")]);
-    m_attribute_weight_isSet = !json[QString("attribute_weight")].isNull() && m_attribute_weight_isValid;
 }
 
 QString OAIProductVariantAdd_attributes_inner::asJson() const {
@@ -86,9 +80,6 @@ QJsonObject OAIProductVariantAdd_attributes_inner::asJsonObject() const {
     }
     if (m_attribute_price_isSet) {
         obj.insert(QString("attribute_price"), ::OpenAPI::toJsonValue(m_attribute_price));
-    }
-    if (m_attribute_weight_isSet) {
-        obj.insert(QString("attribute_weight"), ::OpenAPI::toJsonValue(m_attribute_weight));
     }
     return obj;
 }
@@ -141,22 +132,6 @@ bool OAIProductVariantAdd_attributes_inner::is_attribute_price_Valid() const{
     return m_attribute_price_isValid;
 }
 
-double OAIProductVariantAdd_attributes_inner::getAttributeWeight() const {
-    return m_attribute_weight;
-}
-void OAIProductVariantAdd_attributes_inner::setAttributeWeight(const double &attribute_weight) {
-    m_attribute_weight = attribute_weight;
-    m_attribute_weight_isSet = true;
-}
-
-bool OAIProductVariantAdd_attributes_inner::is_attribute_weight_Set() const{
-    return m_attribute_weight_isSet;
-}
-
-bool OAIProductVariantAdd_attributes_inner::is_attribute_weight_Valid() const{
-    return m_attribute_weight_isValid;
-}
-
 bool OAIProductVariantAdd_attributes_inner::isSet() const {
     bool isObjectUpdated = false;
     do {
@@ -171,11 +146,6 @@ bool OAIProductVariantAdd_attributes_inner::isSet() const {
         }
 
         if (m_attribute_price_isSet) {
-            isObjectUpdated = true;
-            break;
-        }
-
-        if (m_attribute_weight_isSet) {
             isObjectUpdated = true;
             break;
         }

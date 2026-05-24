@@ -92,6 +92,11 @@ public:
     bool is_comment_Set() const;
     bool is_comment_Valid() const;
 
+    QString getMessage() const;
+    void setMessage(const QString &message);
+    bool is_message_Set() const;
+    bool is_message_Valid() const;
+
     bool isSendNotifications() const;
     void setSendNotifications(const bool &send_notifications);
     bool is_send_notifications_Set() const;
@@ -101,6 +106,21 @@ public:
     void setRejectReason(const QString &reject_reason);
     bool is_reject_reason_Set() const;
     bool is_reject_reason_Valid() const;
+
+    bool isIsOnline() const;
+    void setIsOnline(const bool &is_online);
+    bool is_is_online_Set() const;
+    bool is_is_online_Valid() const;
+
+    double getFeePrice() const;
+    void setFeePrice(const double &fee_price);
+    bool is_fee_price_Set() const;
+    bool is_fee_price_Valid() const;
+
+    double getShippingPrice() const;
+    void setShippingPrice(const double &shipping_price);
+    bool is_shipping_price_Set() const;
+    bool is_shipping_price_Valid() const;
 
     QString getIdempotencyKey() const;
     void setIdempotencyKey(const QString &idempotency_key);
@@ -158,6 +178,10 @@ private:
     bool m_comment_isSet;
     bool m_comment_isValid;
 
+    QString m_message;
+    bool m_message_isSet;
+    bool m_message_isValid;
+
     bool m_send_notifications;
     bool m_send_notifications_isSet;
     bool m_send_notifications_isValid;
@@ -165,6 +189,18 @@ private:
     QString m_reject_reason;
     bool m_reject_reason_isSet;
     bool m_reject_reason_isValid;
+
+    bool m_is_online;
+    bool m_is_online_isSet;
+    bool m_is_online_isValid;
+
+    double m_fee_price;
+    bool m_fee_price_isSet;
+    bool m_fee_price_isValid;
+
+    double m_shipping_price;
+    bool m_shipping_price_isSet;
+    bool m_shipping_price_isValid;
 
     QString m_idempotency_key;
     bool m_idempotency_key_isSet;

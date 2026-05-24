@@ -70,6 +70,9 @@ void OAIOrderShipmentUpdate::initializeModel() {
     m_items_isSet = false;
     m_items_isValid = false;
 
+    m_admin_comment_isSet = false;
+    m_admin_comment_isValid = false;
+
     m_idempotency_key_isSet = false;
     m_idempotency_key_isValid = false;
 }
@@ -119,6 +122,9 @@ void OAIOrderShipmentUpdate::fromJsonObject(QJsonObject json) {
     m_items_isValid = ::OpenAPI::fromJsonValue(m_items, json[QString("items")]);
     m_items_isSet = !json[QString("items")].isNull() && m_items_isValid;
 
+    m_admin_comment_isValid = ::OpenAPI::fromJsonValue(m_admin_comment, json[QString("admin_comment")]);
+    m_admin_comment_isSet = !json[QString("admin_comment")].isNull() && m_admin_comment_isValid;
+
     m_idempotency_key_isValid = ::OpenAPI::fromJsonValue(m_idempotency_key, json[QString("idempotency_key")]);
     m_idempotency_key_isSet = !json[QString("idempotency_key")].isNull() && m_idempotency_key_isValid;
 }
@@ -167,6 +173,9 @@ QJsonObject OAIOrderShipmentUpdate::asJsonObject() const {
     }
     if (m_items.size() > 0) {
         obj.insert(QString("items"), ::OpenAPI::toJsonValue(m_items));
+    }
+    if (m_admin_comment_isSet) {
+        obj.insert(QString("admin_comment"), ::OpenAPI::toJsonValue(m_admin_comment));
     }
     if (m_idempotency_key_isSet) {
         obj.insert(QString("idempotency_key"), ::OpenAPI::toJsonValue(m_idempotency_key));
@@ -366,6 +375,22 @@ bool OAIOrderShipmentUpdate::is_items_Valid() const{
     return m_items_isValid;
 }
 
+QString OAIOrderShipmentUpdate::getAdminComment() const {
+    return m_admin_comment;
+}
+void OAIOrderShipmentUpdate::setAdminComment(const QString &admin_comment) {
+    m_admin_comment = admin_comment;
+    m_admin_comment_isSet = true;
+}
+
+bool OAIOrderShipmentUpdate::is_admin_comment_Set() const{
+    return m_admin_comment_isSet;
+}
+
+bool OAIOrderShipmentUpdate::is_admin_comment_Valid() const{
+    return m_admin_comment_isValid;
+}
+
 QString OAIOrderShipmentUpdate::getIdempotencyKey() const {
     return m_idempotency_key;
 }
@@ -441,6 +466,11 @@ bool OAIOrderShipmentUpdate::isSet() const {
         }
 
         if (m_items.size() > 0) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_admin_comment_isSet) {
             isObjectUpdated = true;
             break;
         }

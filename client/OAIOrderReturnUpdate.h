@@ -67,6 +67,16 @@ public:
     bool is_return_status_id_Set() const;
     bool is_return_status_id_Valid() const;
 
+    QString getReturnReasonId() const;
+    void setReturnReasonId(const QString &return_reason_id);
+    bool is_return_reason_id_Set() const;
+    bool is_return_reason_id_Valid() const;
+
+    QString getReturnActionId() const;
+    void setReturnActionId(const QString &return_action_id);
+    bool is_return_action_id_Set() const;
+    bool is_return_action_id_Valid() const;
+
     QString getStaffNote() const;
     void setStaffNote(const QString &staff_note);
     bool is_staff_note_Set() const;
@@ -76,6 +86,11 @@ public:
     void setComment(const QString &comment);
     bool is_comment_Set() const;
     bool is_comment_Valid() const;
+
+    QString getMessage() const;
+    void setMessage(const QString &message);
+    bool is_message_Set() const;
+    bool is_message_Valid() const;
 
     bool isSendNotifications() const;
     void setSendNotifications(const bool &send_notifications);
@@ -96,6 +111,21 @@ public:
     void setReturnReason(const QString &return_reason);
     bool is_return_reason_Set() const;
     bool is_return_reason_Valid() const;
+
+    bool isIsOnline() const;
+    void setIsOnline(const bool &is_online);
+    bool is_is_online_Set() const;
+    bool is_is_online_Valid() const;
+
+    double getFeePrice() const;
+    void setFeePrice(const double &fee_price);
+    bool is_fee_price_Set() const;
+    bool is_fee_price_Valid() const;
+
+    double getShippingPrice() const;
+    void setShippingPrice(const double &shipping_price);
+    bool is_shipping_price_Set() const;
+    bool is_shipping_price_Valid() const;
 
     QString getIdempotencyKey() const;
     void setIdempotencyKey(const QString &idempotency_key);
@@ -133,6 +163,14 @@ private:
     bool m_return_status_id_isSet;
     bool m_return_status_id_isValid;
 
+    QString m_return_reason_id;
+    bool m_return_reason_id_isSet;
+    bool m_return_reason_id_isValid;
+
+    QString m_return_action_id;
+    bool m_return_action_id_isSet;
+    bool m_return_action_id_isValid;
+
     QString m_staff_note;
     bool m_staff_note_isSet;
     bool m_staff_note_isValid;
@@ -140,6 +178,10 @@ private:
     QString m_comment;
     bool m_comment_isSet;
     bool m_comment_isValid;
+
+    QString m_message;
+    bool m_message_isSet;
+    bool m_message_isValid;
 
     bool m_send_notifications;
     bool m_send_notifications_isSet;
@@ -156,6 +198,18 @@ private:
     QString m_return_reason;
     bool m_return_reason_isSet;
     bool m_return_reason_isValid;
+
+    bool m_is_online;
+    bool m_is_online_isSet;
+    bool m_is_online_isValid;
+
+    double m_fee_price;
+    bool m_fee_price_isSet;
+    bool m_fee_price_isValid;
+
+    double m_shipping_price;
+    bool m_shipping_price_isSet;
+    bool m_shipping_price_isValid;
 
     QString m_idempotency_key;
     bool m_idempotency_key_isSet;

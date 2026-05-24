@@ -79,6 +79,9 @@ void OAIOrderShipmentAdd::initializeModel() {
     m_use_latest_api_version_isSet = false;
     m_use_latest_api_version_isValid = false;
 
+    m_admin_comment_isSet = false;
+    m_admin_comment_isValid = false;
+
     m_idempotency_key_isSet = false;
     m_idempotency_key_isValid = false;
 }
@@ -137,6 +140,9 @@ void OAIOrderShipmentAdd::fromJsonObject(QJsonObject json) {
     m_use_latest_api_version_isValid = ::OpenAPI::fromJsonValue(m_use_latest_api_version, json[QString("use_latest_api_version")]);
     m_use_latest_api_version_isSet = !json[QString("use_latest_api_version")].isNull() && m_use_latest_api_version_isValid;
 
+    m_admin_comment_isValid = ::OpenAPI::fromJsonValue(m_admin_comment, json[QString("admin_comment")]);
+    m_admin_comment_isSet = !json[QString("admin_comment")].isNull() && m_admin_comment_isValid;
+
     m_idempotency_key_isValid = ::OpenAPI::fromJsonValue(m_idempotency_key, json[QString("idempotency_key")]);
     m_idempotency_key_isSet = !json[QString("idempotency_key")].isNull() && m_idempotency_key_isValid;
 }
@@ -194,6 +200,9 @@ QJsonObject OAIOrderShipmentAdd::asJsonObject() const {
     }
     if (m_use_latest_api_version_isSet) {
         obj.insert(QString("use_latest_api_version"), ::OpenAPI::toJsonValue(m_use_latest_api_version));
+    }
+    if (m_admin_comment_isSet) {
+        obj.insert(QString("admin_comment"), ::OpenAPI::toJsonValue(m_admin_comment));
     }
     if (m_idempotency_key_isSet) {
         obj.insert(QString("idempotency_key"), ::OpenAPI::toJsonValue(m_idempotency_key));
@@ -441,6 +450,22 @@ bool OAIOrderShipmentAdd::is_use_latest_api_version_Valid() const{
     return m_use_latest_api_version_isValid;
 }
 
+QString OAIOrderShipmentAdd::getAdminComment() const {
+    return m_admin_comment;
+}
+void OAIOrderShipmentAdd::setAdminComment(const QString &admin_comment) {
+    m_admin_comment = admin_comment;
+    m_admin_comment_isSet = true;
+}
+
+bool OAIOrderShipmentAdd::is_admin_comment_Set() const{
+    return m_admin_comment_isSet;
+}
+
+bool OAIOrderShipmentAdd::is_admin_comment_Valid() const{
+    return m_admin_comment_isValid;
+}
+
 QString OAIOrderShipmentAdd::getIdempotencyKey() const {
     return m_idempotency_key;
 }
@@ -531,6 +556,11 @@ bool OAIOrderShipmentAdd::isSet() const {
         }
 
         if (m_use_latest_api_version_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_admin_comment_isSet) {
             isObjectUpdated = true;
             break;
         }
