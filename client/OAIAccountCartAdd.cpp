@@ -175,6 +175,9 @@ void OAIAccountCartAdd::initializeModel() {
     m_nopcommerce_token_isSet = false;
     m_nopcommerce_token_isValid = false;
 
+    m_nopcommerce_secret_isSet = false;
+    m_nopcommerce_secret_isValid = false;
+
     m_demandware_client_id_isSet = false;
     m_demandware_client_id_isValid = false;
 
@@ -740,6 +743,9 @@ void OAIAccountCartAdd::fromJsonObject(QJsonObject json) {
     m_nopcommerce_token_isValid = ::OpenAPI::fromJsonValue(m_nopcommerce_token, json[QString("nopcommerce_token")]);
     m_nopcommerce_token_isSet = !json[QString("nopcommerce_token")].isNull() && m_nopcommerce_token_isValid;
 
+    m_nopcommerce_secret_isValid = ::OpenAPI::fromJsonValue(m_nopcommerce_secret, json[QString("nopcommerce_secret")]);
+    m_nopcommerce_secret_isSet = !json[QString("nopcommerce_secret")].isNull() && m_nopcommerce_secret_isValid;
+
     m_demandware_client_id_isValid = ::OpenAPI::fromJsonValue(m_demandware_client_id, json[QString("demandware_client_id")]);
     m_demandware_client_id_isSet = !json[QString("demandware_client_id")].isNull() && m_demandware_client_id_isValid;
 
@@ -1304,6 +1310,9 @@ QJsonObject OAIAccountCartAdd::asJsonObject() const {
     }
     if (m_nopcommerce_token_isSet) {
         obj.insert(QString("nopcommerce_token"), ::OpenAPI::toJsonValue(m_nopcommerce_token));
+    }
+    if (m_nopcommerce_secret_isSet) {
+        obj.insert(QString("nopcommerce_secret"), ::OpenAPI::toJsonValue(m_nopcommerce_secret));
     }
     if (m_demandware_client_id_isSet) {
         obj.insert(QString("demandware_client_id"), ::OpenAPI::toJsonValue(m_demandware_client_id));
@@ -2472,6 +2481,22 @@ bool OAIAccountCartAdd::is_nopcommerce_token_Set() const{
 
 bool OAIAccountCartAdd::is_nopcommerce_token_Valid() const{
     return m_nopcommerce_token_isValid;
+}
+
+QString OAIAccountCartAdd::getNopcommerceSecret() const {
+    return m_nopcommerce_secret;
+}
+void OAIAccountCartAdd::setNopcommerceSecret(const QString &nopcommerce_secret) {
+    m_nopcommerce_secret = nopcommerce_secret;
+    m_nopcommerce_secret_isSet = true;
+}
+
+bool OAIAccountCartAdd::is_nopcommerce_secret_Set() const{
+    return m_nopcommerce_secret_isSet;
+}
+
+bool OAIAccountCartAdd::is_nopcommerce_secret_Valid() const{
+    return m_nopcommerce_secret_isValid;
 }
 
 QString OAIAccountCartAdd::getDemandwareClientId() const {
@@ -4916,6 +4941,11 @@ bool OAIAccountCartAdd::isSet() const {
         }
 
         if (m_nopcommerce_token_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_nopcommerce_secret_isSet) {
             isObjectUpdated = true;
             break;
         }

@@ -94,6 +94,11 @@ public:
     bool is_news_letter_subscription_Set() const;
     bool is_news_letter_subscription_Valid() const;
 
+    bool isPartnerOffersSubscription() const;
+    void setPartnerOffersSubscription(const bool &partner_offers_subscription);
+    bool is_partner_offers_subscription_Set() const;
+    bool is_partner_offers_subscription_Valid() const;
+
     QList<OAICustomerAdd_consents_inner> getConsents() const;
     void setConsents(const QList<OAICustomerAdd_consents_inner> &consents);
     bool is_consents_Set() const;
@@ -133,6 +138,11 @@ public:
     void setCompany(const QString &company);
     bool is_company_Set() const;
     bool is_company_Valid() const;
+
+    QString getWebsite() const;
+    void setWebsite(const QString &website);
+    bool is_website_Set() const;
+    bool is_website_Valid() const;
 
     QString getCountry() const;
     void setCountry(const QString &country);
@@ -220,6 +230,10 @@ private:
     bool m_news_letter_subscription_isSet;
     bool m_news_letter_subscription_isValid;
 
+    bool m_partner_offers_subscription;
+    bool m_partner_offers_subscription_isSet;
+    bool m_partner_offers_subscription_isValid;
+
     QList<OAICustomerAdd_consents_inner> m_consents;
     bool m_consents_isSet;
     bool m_consents_isValid;
@@ -251,6 +265,10 @@ private:
     QString m_company;
     bool m_company_isSet;
     bool m_company_isValid;
+
+    QString m_website;
+    bool m_website_isSet;
+    bool m_website_isValid;
 
     QString m_country;
     bool m_country_isSet;

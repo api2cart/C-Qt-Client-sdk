@@ -277,6 +277,11 @@ public:
     bool is_nopcommerce_token_Set() const;
     bool is_nopcommerce_token_Valid() const;
 
+    QString getNopcommerceSecret() const;
+    void setNopcommerceSecret(const QString &nopcommerce_secret);
+    bool is_nopcommerce_secret_Set() const;
+    bool is_nopcommerce_secret_Valid() const;
+
     QString getDemandwareClientId() const;
     void setDemandwareClientId(const QString &demandware_client_id);
     bool is_demandware_client_id_Set() const;
@@ -1160,6 +1165,10 @@ private:
     QString m_nopcommerce_token;
     bool m_nopcommerce_token_isSet;
     bool m_nopcommerce_token_isValid;
+
+    QString m_nopcommerce_secret;
+    bool m_nopcommerce_secret_isSet;
+    bool m_nopcommerce_secret_isValid;
 
     QString m_demandware_client_id;
     bool m_demandware_client_id_isSet;

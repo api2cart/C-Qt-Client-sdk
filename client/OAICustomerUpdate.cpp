@@ -64,6 +64,9 @@ void OAICustomerUpdate::initializeModel() {
     m_news_letter_subscription_isSet = false;
     m_news_letter_subscription_isValid = false;
 
+    m_partner_offers_subscription_isSet = false;
+    m_partner_offers_subscription_isValid = false;
+
     m_consents_isSet = false;
     m_consents_isValid = false;
 
@@ -87,6 +90,9 @@ void OAICustomerUpdate::initializeModel() {
 
     m_company_isSet = false;
     m_company_isValid = false;
+
+    m_website_isSet = false;
+    m_website_isValid = false;
 
     m_country_isSet = false;
     m_country_isValid = false;
@@ -152,6 +158,9 @@ void OAICustomerUpdate::fromJsonObject(QJsonObject json) {
     m_news_letter_subscription_isValid = ::OpenAPI::fromJsonValue(m_news_letter_subscription, json[QString("news_letter_subscription")]);
     m_news_letter_subscription_isSet = !json[QString("news_letter_subscription")].isNull() && m_news_letter_subscription_isValid;
 
+    m_partner_offers_subscription_isValid = ::OpenAPI::fromJsonValue(m_partner_offers_subscription, json[QString("partner_offers_subscription")]);
+    m_partner_offers_subscription_isSet = !json[QString("partner_offers_subscription")].isNull() && m_partner_offers_subscription_isValid;
+
     m_consents_isValid = ::OpenAPI::fromJsonValue(m_consents, json[QString("consents")]);
     m_consents_isSet = !json[QString("consents")].isNull() && m_consents_isValid;
 
@@ -175,6 +184,9 @@ void OAICustomerUpdate::fromJsonObject(QJsonObject json) {
 
     m_company_isValid = ::OpenAPI::fromJsonValue(m_company, json[QString("company")]);
     m_company_isSet = !json[QString("company")].isNull() && m_company_isValid;
+
+    m_website_isValid = ::OpenAPI::fromJsonValue(m_website, json[QString("website")]);
+    m_website_isSet = !json[QString("website")].isNull() && m_website_isValid;
 
     m_country_isValid = ::OpenAPI::fromJsonValue(m_country, json[QString("country")]);
     m_country_isSet = !json[QString("country")].isNull() && m_country_isValid;
@@ -240,6 +252,9 @@ QJsonObject OAICustomerUpdate::asJsonObject() const {
     if (m_news_letter_subscription_isSet) {
         obj.insert(QString("news_letter_subscription"), ::OpenAPI::toJsonValue(m_news_letter_subscription));
     }
+    if (m_partner_offers_subscription_isSet) {
+        obj.insert(QString("partner_offers_subscription"), ::OpenAPI::toJsonValue(m_partner_offers_subscription));
+    }
     if (m_consents.size() > 0) {
         obj.insert(QString("consents"), ::OpenAPI::toJsonValue(m_consents));
     }
@@ -263,6 +278,9 @@ QJsonObject OAICustomerUpdate::asJsonObject() const {
     }
     if (m_company_isSet) {
         obj.insert(QString("company"), ::OpenAPI::toJsonValue(m_company));
+    }
+    if (m_website_isSet) {
+        obj.insert(QString("website"), ::OpenAPI::toJsonValue(m_website));
     }
     if (m_country_isSet) {
         obj.insert(QString("country"), ::OpenAPI::toJsonValue(m_country));
@@ -451,6 +469,22 @@ bool OAICustomerUpdate::is_news_letter_subscription_Valid() const{
     return m_news_letter_subscription_isValid;
 }
 
+bool OAICustomerUpdate::isPartnerOffersSubscription() const {
+    return m_partner_offers_subscription;
+}
+void OAICustomerUpdate::setPartnerOffersSubscription(const bool &partner_offers_subscription) {
+    m_partner_offers_subscription = partner_offers_subscription;
+    m_partner_offers_subscription_isSet = true;
+}
+
+bool OAICustomerUpdate::is_partner_offers_subscription_Set() const{
+    return m_partner_offers_subscription_isSet;
+}
+
+bool OAICustomerUpdate::is_partner_offers_subscription_Valid() const{
+    return m_partner_offers_subscription_isValid;
+}
+
 QList<OAICustomerAdd_consents_inner> OAICustomerUpdate::getConsents() const {
     return m_consents;
 }
@@ -577,6 +611,22 @@ bool OAICustomerUpdate::is_company_Set() const{
 
 bool OAICustomerUpdate::is_company_Valid() const{
     return m_company_isValid;
+}
+
+QString OAICustomerUpdate::getWebsite() const {
+    return m_website;
+}
+void OAICustomerUpdate::setWebsite(const QString &website) {
+    m_website = website;
+    m_website_isSet = true;
+}
+
+bool OAICustomerUpdate::is_website_Set() const{
+    return m_website_isSet;
+}
+
+bool OAICustomerUpdate::is_website_Valid() const{
+    return m_website_isValid;
 }
 
 QString OAICustomerUpdate::getCountry() const {
@@ -760,6 +810,11 @@ bool OAICustomerUpdate::isSet() const {
             break;
         }
 
+        if (m_partner_offers_subscription_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
         if (m_consents.size() > 0) {
             isObjectUpdated = true;
             break;
@@ -796,6 +851,11 @@ bool OAICustomerUpdate::isSet() const {
         }
 
         if (m_company_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_website_isSet) {
             isObjectUpdated = true;
             break;
         }

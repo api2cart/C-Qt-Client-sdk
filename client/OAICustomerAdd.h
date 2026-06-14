@@ -114,6 +114,11 @@ public:
     bool is_news_letter_subscription_Set() const;
     bool is_news_letter_subscription_Valid() const;
 
+    bool isPartnerOffersSubscription() const;
+    void setPartnerOffersSubscription(const bool &partner_offers_subscription);
+    bool is_partner_offers_subscription_Set() const;
+    bool is_partner_offers_subscription_Valid() const;
+
     QList<OAICustomerAdd_consents_inner> getConsents() const;
     void setConsents(const QList<OAICustomerAdd_consents_inner> &consents);
     bool is_consents_Set() const;
@@ -245,6 +250,10 @@ private:
     bool m_news_letter_subscription;
     bool m_news_letter_subscription_isSet;
     bool m_news_letter_subscription_isValid;
+
+    bool m_partner_offers_subscription;
+    bool m_partner_offers_subscription_isSet;
+    bool m_partner_offers_subscription_isValid;
 
     QList<OAICustomerAdd_consents_inner> m_consents;
     bool m_consents_isSet;
