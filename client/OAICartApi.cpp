@@ -291,7 +291,7 @@ void OAICartApi::cartCatalogPriceRulesCountCallback(OAIHttpRequestWorker *worker
     if (worker->error_type != QNetworkReply::NoError) {
         error_str = QString("%1, %2").arg(worker->error_str, QString(worker->response));
     }
-    OAICartCatalogPriceRulesCount_200_response output(QString(worker->response));
+    OAIModel_Response_Cart_CatalogPriceRules_Count output(QString(worker->response));
     worker->deleteLater();
 
     if (worker->error_type == QNetworkReply::NoError) {
@@ -956,7 +956,7 @@ void OAICartApi::cartCouponCountCallback(OAIHttpRequestWorker *worker) {
     if (worker->error_type != QNetworkReply::NoError) {
         error_str = QString("%1, %2").arg(worker->error_str, QString(worker->response));
     }
-    OAICartCouponCount_200_response output(QString(worker->response));
+    OAIModel_Response_Cart_Coupon_Count output(QString(worker->response));
     worker->deleteLater();
 
     if (worker->error_type == QNetworkReply::NoError) {
@@ -1501,7 +1501,7 @@ void OAICartApi::cartDeleteCallback(OAIHttpRequestWorker *worker) {
     }
 }
 
-void OAICartApi::cartGiftcardAdd(const double &amount, const ::OpenAPI::OptionalParam<QString> &code, const ::OpenAPI::OptionalParam<QString> &owner_email, const ::OpenAPI::OptionalParam<QString> &recipient_email, const ::OpenAPI::OptionalParam<QString> &recipient_name, const ::OpenAPI::OptionalParam<QString> &owner_name, const ::OpenAPI::OptionalParam<QString> &idempotency_key) {
+void OAICartApi::cartGiftcardAdd(const double &amount, const ::OpenAPI::OptionalParam<QString> &currency, const ::OpenAPI::OptionalParam<QString> &store_id, const ::OpenAPI::OptionalParam<QString> &code, const ::OpenAPI::OptionalParam<QString> &name, const ::OpenAPI::OptionalParam<QString> &owner_email, const ::OpenAPI::OptionalParam<QString> &owner_name, const ::OpenAPI::OptionalParam<QString> &recipient_email, const ::OpenAPI::OptionalParam<QString> &recipient_name, const ::OpenAPI::OptionalParam<QString> &message, const ::OpenAPI::OptionalParam<QString> &idempotency_key) {
     QString fullPath = QString(_serverConfigs["cartGiftcardAdd"][_serverIndices.value("cartGiftcardAdd")].URL()+"/cart.giftcard.add.json");
     
     if (_apiKeys.contains("StoreKeyAuth")) {
@@ -1528,6 +1528,36 @@ void OAICartApi::cartGiftcardAdd(const double &amount, const ::OpenAPI::Optional
 
         fullPath.append(QUrl::toPercentEncoding("amount")).append(querySuffix).append(QUrl::toPercentEncoding(::OpenAPI::toStringValue(amount)));
     }
+    if (currency.hasValue())
+    {
+        queryStyle = "form";
+        if (queryStyle == "")
+            queryStyle = "form";
+        queryPrefix = getParamStylePrefix(queryStyle);
+        querySuffix = getParamStyleSuffix(queryStyle);
+        queryDelimiter = getParamStyleDelimiter(queryStyle, "currency", true);
+        if (fullPath.indexOf("?") > 0)
+            fullPath.append(queryPrefix);
+        else
+            fullPath.append("?");
+
+        fullPath.append(QUrl::toPercentEncoding("currency")).append(querySuffix).append(QUrl::toPercentEncoding(::OpenAPI::toStringValue(currency.stringValue())));
+    }
+    if (store_id.hasValue())
+    {
+        queryStyle = "form";
+        if (queryStyle == "")
+            queryStyle = "form";
+        queryPrefix = getParamStylePrefix(queryStyle);
+        querySuffix = getParamStyleSuffix(queryStyle);
+        queryDelimiter = getParamStyleDelimiter(queryStyle, "store_id", true);
+        if (fullPath.indexOf("?") > 0)
+            fullPath.append(queryPrefix);
+        else
+            fullPath.append("?");
+
+        fullPath.append(QUrl::toPercentEncoding("store_id")).append(querySuffix).append(QUrl::toPercentEncoding(::OpenAPI::toStringValue(store_id.stringValue())));
+    }
     if (code.hasValue())
     {
         queryStyle = "form";
@@ -1543,6 +1573,21 @@ void OAICartApi::cartGiftcardAdd(const double &amount, const ::OpenAPI::Optional
 
         fullPath.append(QUrl::toPercentEncoding("code")).append(querySuffix).append(QUrl::toPercentEncoding(::OpenAPI::toStringValue(code.stringValue())));
     }
+    if (name.hasValue())
+    {
+        queryStyle = "form";
+        if (queryStyle == "")
+            queryStyle = "form";
+        queryPrefix = getParamStylePrefix(queryStyle);
+        querySuffix = getParamStyleSuffix(queryStyle);
+        queryDelimiter = getParamStyleDelimiter(queryStyle, "name", true);
+        if (fullPath.indexOf("?") > 0)
+            fullPath.append(queryPrefix);
+        else
+            fullPath.append("?");
+
+        fullPath.append(QUrl::toPercentEncoding("name")).append(querySuffix).append(QUrl::toPercentEncoding(::OpenAPI::toStringValue(name.stringValue())));
+    }
     if (owner_email.hasValue())
     {
         queryStyle = "form";
@@ -1557,6 +1602,21 @@ void OAICartApi::cartGiftcardAdd(const double &amount, const ::OpenAPI::Optional
             fullPath.append("?");
 
         fullPath.append(QUrl::toPercentEncoding("owner_email")).append(querySuffix).append(QUrl::toPercentEncoding(::OpenAPI::toStringValue(owner_email.stringValue())));
+    }
+    if (owner_name.hasValue())
+    {
+        queryStyle = "form";
+        if (queryStyle == "")
+            queryStyle = "form";
+        queryPrefix = getParamStylePrefix(queryStyle);
+        querySuffix = getParamStyleSuffix(queryStyle);
+        queryDelimiter = getParamStyleDelimiter(queryStyle, "owner_name", true);
+        if (fullPath.indexOf("?") > 0)
+            fullPath.append(queryPrefix);
+        else
+            fullPath.append("?");
+
+        fullPath.append(QUrl::toPercentEncoding("owner_name")).append(querySuffix).append(QUrl::toPercentEncoding(::OpenAPI::toStringValue(owner_name.stringValue())));
     }
     if (recipient_email.hasValue())
     {
@@ -1588,20 +1648,20 @@ void OAICartApi::cartGiftcardAdd(const double &amount, const ::OpenAPI::Optional
 
         fullPath.append(QUrl::toPercentEncoding("recipient_name")).append(querySuffix).append(QUrl::toPercentEncoding(::OpenAPI::toStringValue(recipient_name.stringValue())));
     }
-    if (owner_name.hasValue())
+    if (message.hasValue())
     {
         queryStyle = "form";
         if (queryStyle == "")
             queryStyle = "form";
         queryPrefix = getParamStylePrefix(queryStyle);
         querySuffix = getParamStyleSuffix(queryStyle);
-        queryDelimiter = getParamStyleDelimiter(queryStyle, "owner_name", true);
+        queryDelimiter = getParamStyleDelimiter(queryStyle, "message", true);
         if (fullPath.indexOf("?") > 0)
             fullPath.append(queryPrefix);
         else
             fullPath.append("?");
 
-        fullPath.append(QUrl::toPercentEncoding("owner_name")).append(querySuffix).append(QUrl::toPercentEncoding(::OpenAPI::toStringValue(owner_name.stringValue())));
+        fullPath.append(QUrl::toPercentEncoding("message")).append(querySuffix).append(QUrl::toPercentEncoding(::OpenAPI::toStringValue(message.stringValue())));
     }
     if (idempotency_key.hasValue())
     {
@@ -1741,7 +1801,7 @@ void OAICartApi::cartGiftcardCountCallback(OAIHttpRequestWorker *worker) {
     if (worker->error_type != QNetworkReply::NoError) {
         error_str = QString("%1, %2").arg(worker->error_str, QString(worker->response));
     }
-    OAICartGiftcardCount_200_response output(QString(worker->response));
+    OAIModel_Response_Cart_Giftcard_Count output(QString(worker->response));
     worker->deleteLater();
 
     if (worker->error_type == QNetworkReply::NoError) {
@@ -1779,7 +1839,7 @@ void OAICartApi::cartGiftcardCountCallback(OAIHttpRequestWorker *worker) {
     }
 }
 
-void OAICartApi::cartGiftcardDelete(const QString &id) {
+void OAICartApi::cartGiftcardDelete(const QString &id, const ::OpenAPI::OptionalParam<QString> &store_id) {
     QString fullPath = QString(_serverConfigs["cartGiftcardDelete"][_serverIndices.value("cartGiftcardDelete")].URL()+"/cart.giftcard.delete.json");
     
     if (_apiKeys.contains("StoreKeyAuth")) {
@@ -1805,6 +1865,21 @@ void OAICartApi::cartGiftcardDelete(const QString &id) {
             fullPath.append("?");
 
         fullPath.append(QUrl::toPercentEncoding("id")).append(querySuffix).append(QUrl::toPercentEncoding(::OpenAPI::toStringValue(id)));
+    }
+    if (store_id.hasValue())
+    {
+        queryStyle = "form";
+        if (queryStyle == "")
+            queryStyle = "form";
+        queryPrefix = getParamStylePrefix(queryStyle);
+        querySuffix = getParamStyleSuffix(queryStyle);
+        queryDelimiter = getParamStyleDelimiter(queryStyle, "store_id", true);
+        if (fullPath.indexOf("?") > 0)
+            fullPath.append(queryPrefix);
+        else
+            fullPath.append("?");
+
+        fullPath.append(QUrl::toPercentEncoding("store_id")).append(querySuffix).append(QUrl::toPercentEncoding(::OpenAPI::toStringValue(store_id.stringValue())));
     }
     OAIHttpRequestWorker *worker = new OAIHttpRequestWorker(this, _manager);
     worker->setTimeOut(_timeOut);
@@ -1873,7 +1948,7 @@ void OAICartApi::cartGiftcardDeleteCallback(OAIHttpRequestWorker *worker) {
     }
 }
 
-void OAICartApi::cartGiftcardList(const ::OpenAPI::OptionalParam<qint32> &start, const ::OpenAPI::OptionalParam<qint32> &count, const ::OpenAPI::OptionalParam<QString> &page_cursor, const ::OpenAPI::OptionalParam<QString> &store_id, const ::OpenAPI::OptionalParam<QString> &response_fields, const ::OpenAPI::OptionalParam<QString> &params, const ::OpenAPI::OptionalParam<QString> &exclude) {
+void OAICartApi::cartGiftcardList(const ::OpenAPI::OptionalParam<QString> &ids, const ::OpenAPI::OptionalParam<qint32> &start, const ::OpenAPI::OptionalParam<qint32> &count, const ::OpenAPI::OptionalParam<QString> &page_cursor, const ::OpenAPI::OptionalParam<QString> &store_id, const ::OpenAPI::OptionalParam<QString> &response_fields, const ::OpenAPI::OptionalParam<QString> &params, const ::OpenAPI::OptionalParam<QString> &exclude) {
     QString fullPath = QString(_serverConfigs["cartGiftcardList"][_serverIndices.value("cartGiftcardList")].URL()+"/cart.giftcard.list.json");
     
     if (_apiKeys.contains("StoreKeyAuth")) {
@@ -1885,6 +1960,21 @@ void OAICartApi::cartGiftcardList(const ::OpenAPI::OptionalParam<qint32> &start,
     }
     
     QString queryPrefix, querySuffix, queryDelimiter, queryStyle;
+    if (ids.hasValue())
+    {
+        queryStyle = "form";
+        if (queryStyle == "")
+            queryStyle = "form";
+        queryPrefix = getParamStylePrefix(queryStyle);
+        querySuffix = getParamStyleSuffix(queryStyle);
+        queryDelimiter = getParamStyleDelimiter(queryStyle, "ids", true);
+        if (fullPath.indexOf("?") > 0)
+            fullPath.append(queryPrefix);
+        else
+            fullPath.append("?");
+
+        fullPath.append(QUrl::toPercentEncoding("ids")).append(querySuffix).append(QUrl::toPercentEncoding(::OpenAPI::toStringValue(ids.stringValue())));
+    }
     if (start.hasValue())
     {
         queryStyle = "form";
@@ -2818,7 +2908,7 @@ void OAICartApi::cartMethodsCallback(OAIHttpRequestWorker *worker) {
     if (worker->error_type != QNetworkReply::NoError) {
         error_str = QString("%1, %2").arg(worker->error_str, QString(worker->response));
     }
-    OAICartMethods_200_response output(QString(worker->response));
+    OAIModel_Response_Cart_Methods output(QString(worker->response));
     worker->deleteLater();
 
     if (worker->error_type == QNetworkReply::NoError) {

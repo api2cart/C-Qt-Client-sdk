@@ -3464,7 +3464,7 @@ void OAIAccountApi::accountSupportedPlatformsCallback(OAIHttpRequestWorker *work
     if (worker->error_type != QNetworkReply::NoError) {
         error_str = QString("%1, %2").arg(worker->error_str, QString(worker->response));
     }
-    OAIAccountSupportedPlatforms_200_response output(QString(worker->response));
+    OAIModel_Response_Account_SupportedPlatforms output(QString(worker->response));
     worker->deleteLater();
 
     if (worker->error_type == QNetworkReply::NoError) {

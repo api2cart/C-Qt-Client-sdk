@@ -18,12 +18,12 @@
 #include "OAIServerConfiguration.h"
 #include "OAIOauth.h"
 
+#include "OAIModel_Response_Return_Action_List.h"
+#include "OAIModel_Response_Return_Count.h"
 #include "OAIModel_Response_Return_List.h"
-#include "OAIReturnActionList_200_response.h"
-#include "OAIReturnCount_200_response.h"
+#include "OAIModel_Response_Return_Reason_List.h"
+#include "OAIModel_Response_Return_Status_List.h"
 #include "OAIReturnInfo_200_response.h"
-#include "OAIReturnReasonList_200_response.h"
-#include "OAIReturnStatusList_200_response.h"
 #include <QString>
 
 #include <QObject>
@@ -152,27 +152,27 @@ private:
 
 Q_SIGNALS:
 
-    void returnActionListSignal(OAIReturnActionList_200_response summary);
-    void returnCountSignal(OAIReturnCount_200_response summary);
+    void returnActionListSignal(OAIModel_Response_Return_Action_List summary);
+    void returnCountSignal(OAIModel_Response_Return_Count summary);
     void returnInfoSignal(OAIReturnInfo_200_response summary);
     void returnListSignal(OAIModel_Response_Return_List summary);
-    void returnReasonListSignal(OAIReturnReasonList_200_response summary);
-    void returnStatusListSignal(OAIReturnStatusList_200_response summary);
+    void returnReasonListSignal(OAIModel_Response_Return_Reason_List summary);
+    void returnStatusListSignal(OAIModel_Response_Return_Status_List summary);
 
 
-    void returnActionListSignalFull(OAIHttpRequestWorker *worker, OAIReturnActionList_200_response summary);
-    void returnCountSignalFull(OAIHttpRequestWorker *worker, OAIReturnCount_200_response summary);
+    void returnActionListSignalFull(OAIHttpRequestWorker *worker, OAIModel_Response_Return_Action_List summary);
+    void returnCountSignalFull(OAIHttpRequestWorker *worker, OAIModel_Response_Return_Count summary);
     void returnInfoSignalFull(OAIHttpRequestWorker *worker, OAIReturnInfo_200_response summary);
     void returnListSignalFull(OAIHttpRequestWorker *worker, OAIModel_Response_Return_List summary);
-    void returnReasonListSignalFull(OAIHttpRequestWorker *worker, OAIReturnReasonList_200_response summary);
-    void returnStatusListSignalFull(OAIHttpRequestWorker *worker, OAIReturnStatusList_200_response summary);
+    void returnReasonListSignalFull(OAIHttpRequestWorker *worker, OAIModel_Response_Return_Reason_List summary);
+    void returnStatusListSignalFull(OAIHttpRequestWorker *worker, OAIModel_Response_Return_Status_List summary);
 
     Q_DECL_DEPRECATED_X("Use returnActionListSignalError() instead")
-    void returnActionListSignalE(OAIReturnActionList_200_response summary, QNetworkReply::NetworkError error_type, QString error_str);
-    void returnActionListSignalError(OAIReturnActionList_200_response summary, QNetworkReply::NetworkError error_type, const QString &error_str);
+    void returnActionListSignalE(OAIModel_Response_Return_Action_List summary, QNetworkReply::NetworkError error_type, QString error_str);
+    void returnActionListSignalError(OAIModel_Response_Return_Action_List summary, QNetworkReply::NetworkError error_type, const QString &error_str);
     Q_DECL_DEPRECATED_X("Use returnCountSignalError() instead")
-    void returnCountSignalE(OAIReturnCount_200_response summary, QNetworkReply::NetworkError error_type, QString error_str);
-    void returnCountSignalError(OAIReturnCount_200_response summary, QNetworkReply::NetworkError error_type, const QString &error_str);
+    void returnCountSignalE(OAIModel_Response_Return_Count summary, QNetworkReply::NetworkError error_type, QString error_str);
+    void returnCountSignalError(OAIModel_Response_Return_Count summary, QNetworkReply::NetworkError error_type, const QString &error_str);
     Q_DECL_DEPRECATED_X("Use returnInfoSignalError() instead")
     void returnInfoSignalE(OAIReturnInfo_200_response summary, QNetworkReply::NetworkError error_type, QString error_str);
     void returnInfoSignalError(OAIReturnInfo_200_response summary, QNetworkReply::NetworkError error_type, const QString &error_str);
@@ -180,11 +180,11 @@ Q_SIGNALS:
     void returnListSignalE(OAIModel_Response_Return_List summary, QNetworkReply::NetworkError error_type, QString error_str);
     void returnListSignalError(OAIModel_Response_Return_List summary, QNetworkReply::NetworkError error_type, const QString &error_str);
     Q_DECL_DEPRECATED_X("Use returnReasonListSignalError() instead")
-    void returnReasonListSignalE(OAIReturnReasonList_200_response summary, QNetworkReply::NetworkError error_type, QString error_str);
-    void returnReasonListSignalError(OAIReturnReasonList_200_response summary, QNetworkReply::NetworkError error_type, const QString &error_str);
+    void returnReasonListSignalE(OAIModel_Response_Return_Reason_List summary, QNetworkReply::NetworkError error_type, QString error_str);
+    void returnReasonListSignalError(OAIModel_Response_Return_Reason_List summary, QNetworkReply::NetworkError error_type, const QString &error_str);
     Q_DECL_DEPRECATED_X("Use returnStatusListSignalError() instead")
-    void returnStatusListSignalE(OAIReturnStatusList_200_response summary, QNetworkReply::NetworkError error_type, QString error_str);
-    void returnStatusListSignalError(OAIReturnStatusList_200_response summary, QNetworkReply::NetworkError error_type, const QString &error_str);
+    void returnStatusListSignalE(OAIModel_Response_Return_Status_List summary, QNetworkReply::NetworkError error_type, QString error_str);
+    void returnStatusListSignalError(OAIModel_Response_Return_Status_List summary, QNetworkReply::NetworkError error_type, const QString &error_str);
 
     Q_DECL_DEPRECATED_X("Use returnActionListSignalErrorFull() instead")
     void returnActionListSignalEFull(OAIHttpRequestWorker *worker, QNetworkReply::NetworkError error_type, QString error_str);

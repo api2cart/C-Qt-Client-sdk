@@ -15,22 +15,16 @@ HEADERS += \
     $${PWD}/OAIAccountFailedWebhooks_200_response.h \
     $${PWD}/OAIAccountFailedWebhooks_200_response_result.h \
     $${PWD}/OAIAccountFailedWebhooks_200_response_result_webhook_inner.h \
-    $${PWD}/OAIAccountSupportedPlatforms_200_response.h \
-    $${PWD}/OAIAccountSupportedPlatforms_200_response_result.h \
-    $${PWD}/OAIAccountSupportedPlatforms_200_response_result_supported_platforms_inner.h \
-    $${PWD}/OAIAccountSupportedPlatforms_200_response_result_supported_platforms_inner_params.h \
-    $${PWD}/OAIAccountSupportedPlatforms_200_response_result_supported_platforms_inner_params_required_inner_inner.h \
+    $${PWD}/OAIAccount_SupportedPlatform.h \
+    $${PWD}/OAIAccount_SupportedPlatform_params.h \
+    $${PWD}/OAIAccount_SupportedPlatform_params_required_inner_inner.h \
     $${PWD}/OAIAttributeAdd_200_response.h \
     $${PWD}/OAIAttributeAdd_200_response_result.h \
     $${PWD}/OAIAttributeAssignGroup_200_response.h \
     $${PWD}/OAIAttributeAssignGroup_200_response_result.h \
-    $${PWD}/OAIAttributeCount_200_response.h \
-    $${PWD}/OAIAttributeCount_200_response_result.h \
     $${PWD}/OAIAttributeDelete_200_response.h \
     $${PWD}/OAIAttributeDelete_200_response_result.h \
     $${PWD}/OAIAttributeInfo_200_response.h \
-    $${PWD}/OAIAttributeTypeList_200_response.h \
-    $${PWD}/OAIAttributeTypeList_200_response_result.h \
     $${PWD}/OAIAttributeUnassignGroup_200_response.h \
     $${PWD}/OAIAttributeUnassignGroup_200_response_result.h \
     $${PWD}/OAIAttributeUpdate_200_response.h \
@@ -57,22 +51,14 @@ HEADERS += \
     $${PWD}/OAIBrand.h \
     $${PWD}/OAICarrier.h \
     $${PWD}/OAICart.h \
-    $${PWD}/OAICartCatalogPriceRulesCount_200_response.h \
-    $${PWD}/OAICartCatalogPriceRulesCount_200_response_result.h \
     $${PWD}/OAICartCouponAdd.h \
     $${PWD}/OAICartCouponAdd_200_response.h \
     $${PWD}/OAICartCouponAdd_200_response_result.h \
-    $${PWD}/OAICartCouponCount_200_response.h \
-    $${PWD}/OAICartCouponCount_200_response_result.h \
     $${PWD}/OAICartDelete_200_response.h \
     $${PWD}/OAICartDelete_200_response_result.h \
     $${PWD}/OAICartGiftcardAdd_200_response.h \
     $${PWD}/OAICartGiftcardAdd_200_response_result.h \
-    $${PWD}/OAICartGiftcardCount_200_response.h \
-    $${PWD}/OAICartGiftcardCount_200_response_result.h \
     $${PWD}/OAICartInfo_200_response.h \
-    $${PWD}/OAICartMethods_200_response.h \
-    $${PWD}/OAICartMethods_200_response_result.h \
     $${PWD}/OAICartPluginList_200_response.h \
     $${PWD}/OAICartPluginList_200_response_result.h \
     $${PWD}/OAICartScriptAdd_200_response.h \
@@ -98,16 +84,10 @@ HEADERS += \
     $${PWD}/OAICategoryAddBatch_payload_inner_images_inner.h \
     $${PWD}/OAICategoryAdd_200_response.h \
     $${PWD}/OAICategoryAdd_200_response_result.h \
-    $${PWD}/OAICategoryAssign_200_response.h \
-    $${PWD}/OAICategoryCount_200_response.h \
-    $${PWD}/OAICategoryCount_200_response_result.h \
     $${PWD}/OAICategoryDeleteBatch.h \
     $${PWD}/OAICategoryDeleteBatch_payload_inner.h \
     $${PWD}/OAICategoryDelete_200_response.h \
     $${PWD}/OAICategoryDelete_200_response_result.h \
-    $${PWD}/OAICategoryFind_200_response.h \
-    $${PWD}/OAICategoryFind_200_response_result.h \
-    $${PWD}/OAICategoryFind_200_response_result_category_inner.h \
     $${PWD}/OAICategoryImageAdd_200_response.h \
     $${PWD}/OAICategoryImageAdd_200_response_result.h \
     $${PWD}/OAICategoryInfo_200_response.h \
@@ -126,12 +106,8 @@ HEADERS += \
     $${PWD}/OAICustomerAdd_address_inner.h \
     $${PWD}/OAICustomerAdd_consents_inner.h \
     $${PWD}/OAICustomerAddressAdd.h \
-    $${PWD}/OAICustomerCount_200_response.h \
-    $${PWD}/OAICustomerCount_200_response_result.h \
     $${PWD}/OAICustomerDelete_200_response.h \
     $${PWD}/OAICustomerDelete_200_response_result.h \
-    $${PWD}/OAICustomerFind_200_response.h \
-    $${PWD}/OAICustomerFind_200_response_result.h \
     $${PWD}/OAICustomerGroupAdd_200_response.h \
     $${PWD}/OAICustomerGroupAdd_200_response_result.h \
     $${PWD}/OAICustomerInfo_200_response.h \
@@ -151,23 +127,39 @@ HEADERS += \
     $${PWD}/OAILanguage.h \
     $${PWD}/OAIMarketplace_Product.h \
     $${PWD}/OAIMedia.h \
+    $${PWD}/OAIModel_Response_Account_SupportedPlatforms.h \
     $${PWD}/OAIModel_Response_Attribute_Attributeset_List.h \
+    $${PWD}/OAIModel_Response_Attribute_Count.h \
     $${PWD}/OAIModel_Response_Attribute_Group_List.h \
     $${PWD}/OAIModel_Response_Attribute_List.h \
+    $${PWD}/OAIModel_Response_Attribute_Type_List.h \
     $${PWD}/OAIModel_Response_Batch_Job_List.h \
+    $${PWD}/OAIModel_Response_Cart_CatalogPriceRules_Count.h \
     $${PWD}/OAIModel_Response_Cart_Catalog_PriceRules_List.h \
+    $${PWD}/OAIModel_Response_Cart_Coupon_Count.h \
     $${PWD}/OAIModel_Response_Cart_Coupon_List.h \
     $${PWD}/OAIModel_Response_Cart_GiftCard_List.h \
+    $${PWD}/OAIModel_Response_Cart_Giftcard_Count.h \
     $${PWD}/OAIModel_Response_Cart_MetaData_List.h \
+    $${PWD}/OAIModel_Response_Cart_Methods.h \
     $${PWD}/OAIModel_Response_Cart_Script_List.h \
     $${PWD}/OAIModel_Response_Cart_ShippingZones_List.h \
+    $${PWD}/OAIModel_Response_Category_Assign.h \
+    $${PWD}/OAIModel_Response_Category_Count.h \
+    $${PWD}/OAIModel_Response_Category_Find.h \
     $${PWD}/OAIModel_Response_Category_List.h \
+    $${PWD}/OAIModel_Response_Category_Unassign.h \
     $${PWD}/OAIModel_Response_Customer_Attribute_List.h \
+    $${PWD}/OAIModel_Response_Customer_Count.h \
+    $${PWD}/OAIModel_Response_Customer_Find.h \
     $${PWD}/OAIModel_Response_Customer_Group_List.h \
     $${PWD}/OAIModel_Response_Customer_List.h \
     $${PWD}/OAIModel_Response_Customer_Wishlist_List.h \
     $${PWD}/OAIModel_Response_Marketplace_Product_Find.h \
     $${PWD}/OAIModel_Response_Order_Abandoned_List.h \
+    $${PWD}/OAIModel_Response_Order_Count.h \
+    $${PWD}/OAIModel_Response_Order_FinancialStatus_List.h \
+    $${PWD}/OAIModel_Response_Order_FulfillmentStatus_List.h \
     $${PWD}/OAIModel_Response_Order_List.h \
     $${PWD}/OAIModel_Response_Order_PreestimateShipping_List.h \
     $${PWD}/OAIModel_Response_Order_Shipment_Event_List.h \
@@ -176,15 +168,24 @@ HEADERS += \
     $${PWD}/OAIModel_Response_Order_Transaction_List.h \
     $${PWD}/OAIModel_Response_Product_Attribute_List.h \
     $${PWD}/OAIModel_Response_Product_Brand_List.h \
+    $${PWD}/OAIModel_Response_Product_ChildItem_Find.h \
     $${PWD}/OAIModel_Response_Product_ChildItem_List.h \
+    $${PWD}/OAIModel_Response_Product_Count.h \
     $${PWD}/OAIModel_Response_Product_Currency_List.h \
+    $${PWD}/OAIModel_Response_Product_Find.h \
     $${PWD}/OAIModel_Response_Product_List.h \
     $${PWD}/OAIModel_Response_Product_Option_List.h \
     $${PWD}/OAIModel_Response_Product_Review_List.h \
+    $${PWD}/OAIModel_Response_Return_Action_List.h \
+    $${PWD}/OAIModel_Response_Return_Count.h \
     $${PWD}/OAIModel_Response_Return_List.h \
+    $${PWD}/OAIModel_Response_Return_Reason_List.h \
+    $${PWD}/OAIModel_Response_Return_Status_List.h \
     $${PWD}/OAIModel_Response_Subscriber_List.h \
     $${PWD}/OAIModel_Response_Tax_Class_Info.h \
     $${PWD}/OAIModel_Response_Tax_Class_List.h \
+    $${PWD}/OAIModel_Response_Webhook_Count.h \
+    $${PWD}/OAIModel_Response_Webhook_Events.h \
     $${PWD}/OAIOrder.h \
     $${PWD}/OAIOrderAbandoned.h \
     $${PWD}/OAIOrderAdd.h \
@@ -198,13 +199,6 @@ HEADERS += \
     $${PWD}/OAIOrderCalculate_200_response.h \
     $${PWD}/OAIOrderCalculate_order_item_inner.h \
     $${PWD}/OAIOrderCalculate_order_item_inner_order_item_option_inner.h \
-    $${PWD}/OAIOrderCount_200_response.h \
-    $${PWD}/OAIOrderCount_200_response_result.h \
-    $${PWD}/OAIOrderFinancialStatusList_200_response.h \
-    $${PWD}/OAIOrderFinancialStatusList_200_response_result.h \
-    $${PWD}/OAIOrderFinancialStatusList_200_response_result_order_financial_statuses_inner.h \
-    $${PWD}/OAIOrderFulfillmentStatusList_200_response.h \
-    $${PWD}/OAIOrderFulfillmentStatusList_200_response_result.h \
     $${PWD}/OAIOrderInfo_200_response.h \
     $${PWD}/OAIOrderPreestimateShippingList.h \
     $${PWD}/OAIOrderPreestimateShippingList_order_item_inner.h \
@@ -299,18 +293,11 @@ HEADERS += \
     $${PWD}/OAIProductAttributeValueSet_200_response_result.h \
     $${PWD}/OAIProductAttributeValueUnset_200_response.h \
     $${PWD}/OAIProductAttributeValueUnset_200_response_result.h \
-    $${PWD}/OAIProductChildItemFind_200_response.h \
-    $${PWD}/OAIProductChildItemFind_200_response_result.h \
     $${PWD}/OAIProductChildItemInfo_200_response.h \
-    $${PWD}/OAIProductCount_200_response.h \
-    $${PWD}/OAIProductCount_200_response_result.h \
     $${PWD}/OAIProductCurrencyAdd_200_response.h \
     $${PWD}/OAIProductCurrencyAdd_200_response_result.h \
     $${PWD}/OAIProductDeleteBatch.h \
     $${PWD}/OAIProductDeleteBatch_payload_inner.h \
-    $${PWD}/OAIProductFind_200_response.h \
-    $${PWD}/OAIProductFind_200_response_result.h \
-    $${PWD}/OAIProductFind_200_response_result_product_inner.h \
     $${PWD}/OAIProductImageAdd.h \
     $${PWD}/OAIProductImageAdd_200_response.h \
     $${PWD}/OAIProductImageAdd_200_response_result.h \
@@ -370,24 +357,40 @@ HEADERS += \
     $${PWD}/OAIProduct_Review.h \
     $${PWD}/OAIProduct_Review_Rating.h \
     $${PWD}/OAIProduct_TierPrice.h \
+    $${PWD}/OAIResponse_Account_SupportedPlatforms_Result.h \
     $${PWD}/OAIResponse_Attribute_Attributeset_List_Result.h \
+    $${PWD}/OAIResponse_Attribute_Count_Result.h \
     $${PWD}/OAIResponse_Attribute_Group_List_Result.h \
     $${PWD}/OAIResponse_Attribute_List_Result.h \
+    $${PWD}/OAIResponse_Attribute_Type_List_Result.h \
     $${PWD}/OAIResponse_Batch_Job_List_Result.h \
     $${PWD}/OAIResponse_Batch_Job_Result.h \
+    $${PWD}/OAIResponse_Cart_CatalogPriceRules_Count_Result.h \
     $${PWD}/OAIResponse_Cart_CatalogPriceRules_List_Result.h \
+    $${PWD}/OAIResponse_Cart_Coupon_Count_Result.h \
     $${PWD}/OAIResponse_Cart_Coupon_List_Result.h \
+    $${PWD}/OAIResponse_Cart_Giftcard_Count_Result.h \
     $${PWD}/OAIResponse_Cart_Giftcard_List_Result.h \
     $${PWD}/OAIResponse_Cart_MetaData_List_Result.h \
+    $${PWD}/OAIResponse_Cart_Methods_Result.h \
     $${PWD}/OAIResponse_Cart_Script_List_Result.h \
     $${PWD}/OAIResponse_Cart_ShippingZones_List_Result.h \
+    $${PWD}/OAIResponse_Category_Assign_Result.h \
+    $${PWD}/OAIResponse_Category_Count_Result.h \
+    $${PWD}/OAIResponse_Category_Find_Result.h \
     $${PWD}/OAIResponse_Category_List_Result.h \
+    $${PWD}/OAIResponse_Category_Unassign_Result.h \
     $${PWD}/OAIResponse_Customer_Attribute_List_Result.h \
+    $${PWD}/OAIResponse_Customer_Count_Result.h \
+    $${PWD}/OAIResponse_Customer_Find_Result.h \
     $${PWD}/OAIResponse_Customer_Group_List_Result.h \
     $${PWD}/OAIResponse_Customer_List_Result.h \
     $${PWD}/OAIResponse_Customer_Wishlist_List_Result.h \
     $${PWD}/OAIResponse_Marketplace_Product_Find_Result.h \
     $${PWD}/OAIResponse_Order_Abandoned_List_Result.h \
+    $${PWD}/OAIResponse_Order_Count_Result.h \
+    $${PWD}/OAIResponse_Order_FinancialStatus_List_Result.h \
+    $${PWD}/OAIResponse_Order_FulfillmentStatus_List_Result.h \
     $${PWD}/OAIResponse_Order_List_Result.h \
     $${PWD}/OAIResponse_Order_PreestimateShipping_List_Result.h \
     $${PWD}/OAIResponse_Order_Shipment_Event_List_Result.h \
@@ -396,25 +399,26 @@ HEADERS += \
     $${PWD}/OAIResponse_Order_Transaction_List_Result.h \
     $${PWD}/OAIResponse_Product_Attribute_List_Result.h \
     $${PWD}/OAIResponse_Product_Brand_List_Result.h \
+    $${PWD}/OAIResponse_Product_ChildItem_Find_Result.h \
     $${PWD}/OAIResponse_Product_ChildItem_List_Result.h \
+    $${PWD}/OAIResponse_Product_Count_Result.h \
     $${PWD}/OAIResponse_Product_Currency_List_Result.h \
+    $${PWD}/OAIResponse_Product_Find_Result.h \
     $${PWD}/OAIResponse_Product_List_Result.h \
     $${PWD}/OAIResponse_Product_Option_List_Result.h \
     $${PWD}/OAIResponse_Product_Review_List_Result.h \
+    $${PWD}/OAIResponse_Return_Action_List_Result.h \
+    $${PWD}/OAIResponse_Return_Count_Result.h \
     $${PWD}/OAIResponse_Return_List_Result.h \
+    $${PWD}/OAIResponse_Return_Reason_List_Result.h \
+    $${PWD}/OAIResponse_Return_Status_List_Result.h \
     $${PWD}/OAIResponse_Subscriber_List_Result.h \
     $${PWD}/OAIResponse_Tax_Class_Info_Result.h \
     $${PWD}/OAIResponse_Tax_Class_List_Result.h \
+    $${PWD}/OAIResponse_Webhook_Count_Result.h \
+    $${PWD}/OAIResponse_Webhook_Events_Result.h \
     $${PWD}/OAIReturn.h \
-    $${PWD}/OAIReturnActionList_200_response.h \
-    $${PWD}/OAIReturnActionList_200_response_result.h \
-    $${PWD}/OAIReturnCount_200_response.h \
-    $${PWD}/OAIReturnCount_200_response_result.h \
     $${PWD}/OAIReturnInfo_200_response.h \
-    $${PWD}/OAIReturnReasonList_200_response.h \
-    $${PWD}/OAIReturnReasonList_200_response_result.h \
-    $${PWD}/OAIReturnStatusList_200_response.h \
-    $${PWD}/OAIReturnStatusList_200_response_result.h \
     $${PWD}/OAIReturn_Action.h \
     $${PWD}/OAIReturn_OrderProduct.h \
     $${PWD}/OAIReturn_Reason.h \
@@ -438,15 +442,11 @@ HEADERS += \
     $${PWD}/OAITaxClass_ZipCodes.h \
     $${PWD}/OAITaxClass_ZipCodes_Range.h \
     $${PWD}/OAIWebhook.h \
-    $${PWD}/OAIWebhookCount_200_response.h \
-    $${PWD}/OAIWebhookCount_200_response_result.h \
     $${PWD}/OAIWebhookCreate.h \
-    $${PWD}/OAIWebhookEvents_200_response.h \
-    $${PWD}/OAIWebhookEvents_200_response_result.h \
-    $${PWD}/OAIWebhookEvents_200_response_result_events_inner.h \
     $${PWD}/OAIWebhookList_200_response.h \
     $${PWD}/OAIWebhookList_200_response_result.h \
     $${PWD}/OAIWebhookUpdate.h \
+    $${PWD}/OAIWebhook_Event.h \
 # APIs
     $${PWD}/OAIAccountApi.h \
     $${PWD}/OAIAttributeApi.h \
@@ -488,22 +488,16 @@ SOURCES += \
     $${PWD}/OAIAccountFailedWebhooks_200_response.cpp \
     $${PWD}/OAIAccountFailedWebhooks_200_response_result.cpp \
     $${PWD}/OAIAccountFailedWebhooks_200_response_result_webhook_inner.cpp \
-    $${PWD}/OAIAccountSupportedPlatforms_200_response.cpp \
-    $${PWD}/OAIAccountSupportedPlatforms_200_response_result.cpp \
-    $${PWD}/OAIAccountSupportedPlatforms_200_response_result_supported_platforms_inner.cpp \
-    $${PWD}/OAIAccountSupportedPlatforms_200_response_result_supported_platforms_inner_params.cpp \
-    $${PWD}/OAIAccountSupportedPlatforms_200_response_result_supported_platforms_inner_params_required_inner_inner.cpp \
+    $${PWD}/OAIAccount_SupportedPlatform.cpp \
+    $${PWD}/OAIAccount_SupportedPlatform_params.cpp \
+    $${PWD}/OAIAccount_SupportedPlatform_params_required_inner_inner.cpp \
     $${PWD}/OAIAttributeAdd_200_response.cpp \
     $${PWD}/OAIAttributeAdd_200_response_result.cpp \
     $${PWD}/OAIAttributeAssignGroup_200_response.cpp \
     $${PWD}/OAIAttributeAssignGroup_200_response_result.cpp \
-    $${PWD}/OAIAttributeCount_200_response.cpp \
-    $${PWD}/OAIAttributeCount_200_response_result.cpp \
     $${PWD}/OAIAttributeDelete_200_response.cpp \
     $${PWD}/OAIAttributeDelete_200_response_result.cpp \
     $${PWD}/OAIAttributeInfo_200_response.cpp \
-    $${PWD}/OAIAttributeTypeList_200_response.cpp \
-    $${PWD}/OAIAttributeTypeList_200_response_result.cpp \
     $${PWD}/OAIAttributeUnassignGroup_200_response.cpp \
     $${PWD}/OAIAttributeUnassignGroup_200_response_result.cpp \
     $${PWD}/OAIAttributeUpdate_200_response.cpp \
@@ -530,22 +524,14 @@ SOURCES += \
     $${PWD}/OAIBrand.cpp \
     $${PWD}/OAICarrier.cpp \
     $${PWD}/OAICart.cpp \
-    $${PWD}/OAICartCatalogPriceRulesCount_200_response.cpp \
-    $${PWD}/OAICartCatalogPriceRulesCount_200_response_result.cpp \
     $${PWD}/OAICartCouponAdd.cpp \
     $${PWD}/OAICartCouponAdd_200_response.cpp \
     $${PWD}/OAICartCouponAdd_200_response_result.cpp \
-    $${PWD}/OAICartCouponCount_200_response.cpp \
-    $${PWD}/OAICartCouponCount_200_response_result.cpp \
     $${PWD}/OAICartDelete_200_response.cpp \
     $${PWD}/OAICartDelete_200_response_result.cpp \
     $${PWD}/OAICartGiftcardAdd_200_response.cpp \
     $${PWD}/OAICartGiftcardAdd_200_response_result.cpp \
-    $${PWD}/OAICartGiftcardCount_200_response.cpp \
-    $${PWD}/OAICartGiftcardCount_200_response_result.cpp \
     $${PWD}/OAICartInfo_200_response.cpp \
-    $${PWD}/OAICartMethods_200_response.cpp \
-    $${PWD}/OAICartMethods_200_response_result.cpp \
     $${PWD}/OAICartPluginList_200_response.cpp \
     $${PWD}/OAICartPluginList_200_response_result.cpp \
     $${PWD}/OAICartScriptAdd_200_response.cpp \
@@ -571,16 +557,10 @@ SOURCES += \
     $${PWD}/OAICategoryAddBatch_payload_inner_images_inner.cpp \
     $${PWD}/OAICategoryAdd_200_response.cpp \
     $${PWD}/OAICategoryAdd_200_response_result.cpp \
-    $${PWD}/OAICategoryAssign_200_response.cpp \
-    $${PWD}/OAICategoryCount_200_response.cpp \
-    $${PWD}/OAICategoryCount_200_response_result.cpp \
     $${PWD}/OAICategoryDeleteBatch.cpp \
     $${PWD}/OAICategoryDeleteBatch_payload_inner.cpp \
     $${PWD}/OAICategoryDelete_200_response.cpp \
     $${PWD}/OAICategoryDelete_200_response_result.cpp \
-    $${PWD}/OAICategoryFind_200_response.cpp \
-    $${PWD}/OAICategoryFind_200_response_result.cpp \
-    $${PWD}/OAICategoryFind_200_response_result_category_inner.cpp \
     $${PWD}/OAICategoryImageAdd_200_response.cpp \
     $${PWD}/OAICategoryImageAdd_200_response_result.cpp \
     $${PWD}/OAICategoryInfo_200_response.cpp \
@@ -599,12 +579,8 @@ SOURCES += \
     $${PWD}/OAICustomerAdd_address_inner.cpp \
     $${PWD}/OAICustomerAdd_consents_inner.cpp \
     $${PWD}/OAICustomerAddressAdd.cpp \
-    $${PWD}/OAICustomerCount_200_response.cpp \
-    $${PWD}/OAICustomerCount_200_response_result.cpp \
     $${PWD}/OAICustomerDelete_200_response.cpp \
     $${PWD}/OAICustomerDelete_200_response_result.cpp \
-    $${PWD}/OAICustomerFind_200_response.cpp \
-    $${PWD}/OAICustomerFind_200_response_result.cpp \
     $${PWD}/OAICustomerGroupAdd_200_response.cpp \
     $${PWD}/OAICustomerGroupAdd_200_response_result.cpp \
     $${PWD}/OAICustomerInfo_200_response.cpp \
@@ -624,23 +600,39 @@ SOURCES += \
     $${PWD}/OAILanguage.cpp \
     $${PWD}/OAIMarketplace_Product.cpp \
     $${PWD}/OAIMedia.cpp \
+    $${PWD}/OAIModel_Response_Account_SupportedPlatforms.cpp \
     $${PWD}/OAIModel_Response_Attribute_Attributeset_List.cpp \
+    $${PWD}/OAIModel_Response_Attribute_Count.cpp \
     $${PWD}/OAIModel_Response_Attribute_Group_List.cpp \
     $${PWD}/OAIModel_Response_Attribute_List.cpp \
+    $${PWD}/OAIModel_Response_Attribute_Type_List.cpp \
     $${PWD}/OAIModel_Response_Batch_Job_List.cpp \
+    $${PWD}/OAIModel_Response_Cart_CatalogPriceRules_Count.cpp \
     $${PWD}/OAIModel_Response_Cart_Catalog_PriceRules_List.cpp \
+    $${PWD}/OAIModel_Response_Cart_Coupon_Count.cpp \
     $${PWD}/OAIModel_Response_Cart_Coupon_List.cpp \
     $${PWD}/OAIModel_Response_Cart_GiftCard_List.cpp \
+    $${PWD}/OAIModel_Response_Cart_Giftcard_Count.cpp \
     $${PWD}/OAIModel_Response_Cart_MetaData_List.cpp \
+    $${PWD}/OAIModel_Response_Cart_Methods.cpp \
     $${PWD}/OAIModel_Response_Cart_Script_List.cpp \
     $${PWD}/OAIModel_Response_Cart_ShippingZones_List.cpp \
+    $${PWD}/OAIModel_Response_Category_Assign.cpp \
+    $${PWD}/OAIModel_Response_Category_Count.cpp \
+    $${PWD}/OAIModel_Response_Category_Find.cpp \
     $${PWD}/OAIModel_Response_Category_List.cpp \
+    $${PWD}/OAIModel_Response_Category_Unassign.cpp \
     $${PWD}/OAIModel_Response_Customer_Attribute_List.cpp \
+    $${PWD}/OAIModel_Response_Customer_Count.cpp \
+    $${PWD}/OAIModel_Response_Customer_Find.cpp \
     $${PWD}/OAIModel_Response_Customer_Group_List.cpp \
     $${PWD}/OAIModel_Response_Customer_List.cpp \
     $${PWD}/OAIModel_Response_Customer_Wishlist_List.cpp \
     $${PWD}/OAIModel_Response_Marketplace_Product_Find.cpp \
     $${PWD}/OAIModel_Response_Order_Abandoned_List.cpp \
+    $${PWD}/OAIModel_Response_Order_Count.cpp \
+    $${PWD}/OAIModel_Response_Order_FinancialStatus_List.cpp \
+    $${PWD}/OAIModel_Response_Order_FulfillmentStatus_List.cpp \
     $${PWD}/OAIModel_Response_Order_List.cpp \
     $${PWD}/OAIModel_Response_Order_PreestimateShipping_List.cpp \
     $${PWD}/OAIModel_Response_Order_Shipment_Event_List.cpp \
@@ -649,15 +641,24 @@ SOURCES += \
     $${PWD}/OAIModel_Response_Order_Transaction_List.cpp \
     $${PWD}/OAIModel_Response_Product_Attribute_List.cpp \
     $${PWD}/OAIModel_Response_Product_Brand_List.cpp \
+    $${PWD}/OAIModel_Response_Product_ChildItem_Find.cpp \
     $${PWD}/OAIModel_Response_Product_ChildItem_List.cpp \
+    $${PWD}/OAIModel_Response_Product_Count.cpp \
     $${PWD}/OAIModel_Response_Product_Currency_List.cpp \
+    $${PWD}/OAIModel_Response_Product_Find.cpp \
     $${PWD}/OAIModel_Response_Product_List.cpp \
     $${PWD}/OAIModel_Response_Product_Option_List.cpp \
     $${PWD}/OAIModel_Response_Product_Review_List.cpp \
+    $${PWD}/OAIModel_Response_Return_Action_List.cpp \
+    $${PWD}/OAIModel_Response_Return_Count.cpp \
     $${PWD}/OAIModel_Response_Return_List.cpp \
+    $${PWD}/OAIModel_Response_Return_Reason_List.cpp \
+    $${PWD}/OAIModel_Response_Return_Status_List.cpp \
     $${PWD}/OAIModel_Response_Subscriber_List.cpp \
     $${PWD}/OAIModel_Response_Tax_Class_Info.cpp \
     $${PWD}/OAIModel_Response_Tax_Class_List.cpp \
+    $${PWD}/OAIModel_Response_Webhook_Count.cpp \
+    $${PWD}/OAIModel_Response_Webhook_Events.cpp \
     $${PWD}/OAIOrder.cpp \
     $${PWD}/OAIOrderAbandoned.cpp \
     $${PWD}/OAIOrderAdd.cpp \
@@ -671,13 +672,6 @@ SOURCES += \
     $${PWD}/OAIOrderCalculate_200_response.cpp \
     $${PWD}/OAIOrderCalculate_order_item_inner.cpp \
     $${PWD}/OAIOrderCalculate_order_item_inner_order_item_option_inner.cpp \
-    $${PWD}/OAIOrderCount_200_response.cpp \
-    $${PWD}/OAIOrderCount_200_response_result.cpp \
-    $${PWD}/OAIOrderFinancialStatusList_200_response.cpp \
-    $${PWD}/OAIOrderFinancialStatusList_200_response_result.cpp \
-    $${PWD}/OAIOrderFinancialStatusList_200_response_result_order_financial_statuses_inner.cpp \
-    $${PWD}/OAIOrderFulfillmentStatusList_200_response.cpp \
-    $${PWD}/OAIOrderFulfillmentStatusList_200_response_result.cpp \
     $${PWD}/OAIOrderInfo_200_response.cpp \
     $${PWD}/OAIOrderPreestimateShippingList.cpp \
     $${PWD}/OAIOrderPreestimateShippingList_order_item_inner.cpp \
@@ -772,18 +766,11 @@ SOURCES += \
     $${PWD}/OAIProductAttributeValueSet_200_response_result.cpp \
     $${PWD}/OAIProductAttributeValueUnset_200_response.cpp \
     $${PWD}/OAIProductAttributeValueUnset_200_response_result.cpp \
-    $${PWD}/OAIProductChildItemFind_200_response.cpp \
-    $${PWD}/OAIProductChildItemFind_200_response_result.cpp \
     $${PWD}/OAIProductChildItemInfo_200_response.cpp \
-    $${PWD}/OAIProductCount_200_response.cpp \
-    $${PWD}/OAIProductCount_200_response_result.cpp \
     $${PWD}/OAIProductCurrencyAdd_200_response.cpp \
     $${PWD}/OAIProductCurrencyAdd_200_response_result.cpp \
     $${PWD}/OAIProductDeleteBatch.cpp \
     $${PWD}/OAIProductDeleteBatch_payload_inner.cpp \
-    $${PWD}/OAIProductFind_200_response.cpp \
-    $${PWD}/OAIProductFind_200_response_result.cpp \
-    $${PWD}/OAIProductFind_200_response_result_product_inner.cpp \
     $${PWD}/OAIProductImageAdd.cpp \
     $${PWD}/OAIProductImageAdd_200_response.cpp \
     $${PWD}/OAIProductImageAdd_200_response_result.cpp \
@@ -843,24 +830,40 @@ SOURCES += \
     $${PWD}/OAIProduct_Review.cpp \
     $${PWD}/OAIProduct_Review_Rating.cpp \
     $${PWD}/OAIProduct_TierPrice.cpp \
+    $${PWD}/OAIResponse_Account_SupportedPlatforms_Result.cpp \
     $${PWD}/OAIResponse_Attribute_Attributeset_List_Result.cpp \
+    $${PWD}/OAIResponse_Attribute_Count_Result.cpp \
     $${PWD}/OAIResponse_Attribute_Group_List_Result.cpp \
     $${PWD}/OAIResponse_Attribute_List_Result.cpp \
+    $${PWD}/OAIResponse_Attribute_Type_List_Result.cpp \
     $${PWD}/OAIResponse_Batch_Job_List_Result.cpp \
     $${PWD}/OAIResponse_Batch_Job_Result.cpp \
+    $${PWD}/OAIResponse_Cart_CatalogPriceRules_Count_Result.cpp \
     $${PWD}/OAIResponse_Cart_CatalogPriceRules_List_Result.cpp \
+    $${PWD}/OAIResponse_Cart_Coupon_Count_Result.cpp \
     $${PWD}/OAIResponse_Cart_Coupon_List_Result.cpp \
+    $${PWD}/OAIResponse_Cart_Giftcard_Count_Result.cpp \
     $${PWD}/OAIResponse_Cart_Giftcard_List_Result.cpp \
     $${PWD}/OAIResponse_Cart_MetaData_List_Result.cpp \
+    $${PWD}/OAIResponse_Cart_Methods_Result.cpp \
     $${PWD}/OAIResponse_Cart_Script_List_Result.cpp \
     $${PWD}/OAIResponse_Cart_ShippingZones_List_Result.cpp \
+    $${PWD}/OAIResponse_Category_Assign_Result.cpp \
+    $${PWD}/OAIResponse_Category_Count_Result.cpp \
+    $${PWD}/OAIResponse_Category_Find_Result.cpp \
     $${PWD}/OAIResponse_Category_List_Result.cpp \
+    $${PWD}/OAIResponse_Category_Unassign_Result.cpp \
     $${PWD}/OAIResponse_Customer_Attribute_List_Result.cpp \
+    $${PWD}/OAIResponse_Customer_Count_Result.cpp \
+    $${PWD}/OAIResponse_Customer_Find_Result.cpp \
     $${PWD}/OAIResponse_Customer_Group_List_Result.cpp \
     $${PWD}/OAIResponse_Customer_List_Result.cpp \
     $${PWD}/OAIResponse_Customer_Wishlist_List_Result.cpp \
     $${PWD}/OAIResponse_Marketplace_Product_Find_Result.cpp \
     $${PWD}/OAIResponse_Order_Abandoned_List_Result.cpp \
+    $${PWD}/OAIResponse_Order_Count_Result.cpp \
+    $${PWD}/OAIResponse_Order_FinancialStatus_List_Result.cpp \
+    $${PWD}/OAIResponse_Order_FulfillmentStatus_List_Result.cpp \
     $${PWD}/OAIResponse_Order_List_Result.cpp \
     $${PWD}/OAIResponse_Order_PreestimateShipping_List_Result.cpp \
     $${PWD}/OAIResponse_Order_Shipment_Event_List_Result.cpp \
@@ -869,25 +872,26 @@ SOURCES += \
     $${PWD}/OAIResponse_Order_Transaction_List_Result.cpp \
     $${PWD}/OAIResponse_Product_Attribute_List_Result.cpp \
     $${PWD}/OAIResponse_Product_Brand_List_Result.cpp \
+    $${PWD}/OAIResponse_Product_ChildItem_Find_Result.cpp \
     $${PWD}/OAIResponse_Product_ChildItem_List_Result.cpp \
+    $${PWD}/OAIResponse_Product_Count_Result.cpp \
     $${PWD}/OAIResponse_Product_Currency_List_Result.cpp \
+    $${PWD}/OAIResponse_Product_Find_Result.cpp \
     $${PWD}/OAIResponse_Product_List_Result.cpp \
     $${PWD}/OAIResponse_Product_Option_List_Result.cpp \
     $${PWD}/OAIResponse_Product_Review_List_Result.cpp \
+    $${PWD}/OAIResponse_Return_Action_List_Result.cpp \
+    $${PWD}/OAIResponse_Return_Count_Result.cpp \
     $${PWD}/OAIResponse_Return_List_Result.cpp \
+    $${PWD}/OAIResponse_Return_Reason_List_Result.cpp \
+    $${PWD}/OAIResponse_Return_Status_List_Result.cpp \
     $${PWD}/OAIResponse_Subscriber_List_Result.cpp \
     $${PWD}/OAIResponse_Tax_Class_Info_Result.cpp \
     $${PWD}/OAIResponse_Tax_Class_List_Result.cpp \
+    $${PWD}/OAIResponse_Webhook_Count_Result.cpp \
+    $${PWD}/OAIResponse_Webhook_Events_Result.cpp \
     $${PWD}/OAIReturn.cpp \
-    $${PWD}/OAIReturnActionList_200_response.cpp \
-    $${PWD}/OAIReturnActionList_200_response_result.cpp \
-    $${PWD}/OAIReturnCount_200_response.cpp \
-    $${PWD}/OAIReturnCount_200_response_result.cpp \
     $${PWD}/OAIReturnInfo_200_response.cpp \
-    $${PWD}/OAIReturnReasonList_200_response.cpp \
-    $${PWD}/OAIReturnReasonList_200_response_result.cpp \
-    $${PWD}/OAIReturnStatusList_200_response.cpp \
-    $${PWD}/OAIReturnStatusList_200_response_result.cpp \
     $${PWD}/OAIReturn_Action.cpp \
     $${PWD}/OAIReturn_OrderProduct.cpp \
     $${PWD}/OAIReturn_Reason.cpp \
@@ -911,15 +915,11 @@ SOURCES += \
     $${PWD}/OAITaxClass_ZipCodes.cpp \
     $${PWD}/OAITaxClass_ZipCodes_Range.cpp \
     $${PWD}/OAIWebhook.cpp \
-    $${PWD}/OAIWebhookCount_200_response.cpp \
-    $${PWD}/OAIWebhookCount_200_response_result.cpp \
     $${PWD}/OAIWebhookCreate.cpp \
-    $${PWD}/OAIWebhookEvents_200_response.cpp \
-    $${PWD}/OAIWebhookEvents_200_response_result.cpp \
-    $${PWD}/OAIWebhookEvents_200_response_result_events_inner.cpp \
     $${PWD}/OAIWebhookList_200_response.cpp \
     $${PWD}/OAIWebhookList_200_response_result.cpp \
     $${PWD}/OAIWebhookUpdate.cpp \
+    $${PWD}/OAIWebhook_Event.cpp \
 # APIs
     $${PWD}/OAIAccountApi.cpp \
     $${PWD}/OAIAttributeApi.cpp \

@@ -23,13 +23,13 @@
 #include "OAICustomerAdd.h"
 #include "OAICustomerAdd_200_response.h"
 #include "OAICustomerAddressAdd.h"
-#include "OAICustomerCount_200_response.h"
 #include "OAICustomerDelete_200_response.h"
-#include "OAICustomerFind_200_response.h"
 #include "OAICustomerGroupAdd_200_response.h"
 #include "OAICustomerInfo_200_response.h"
 #include "OAICustomerUpdate.h"
 #include "OAIModel_Response_Customer_Attribute_List.h"
+#include "OAIModel_Response_Customer_Count.h"
+#include "OAIModel_Response_Customer_Find.h"
 #include "OAIModel_Response_Customer_Group_List.h"
 #include "OAIModel_Response_Customer_List.h"
 #include "OAIModel_Response_Customer_Wishlist_List.h"
@@ -239,9 +239,9 @@ Q_SIGNALS:
     void customerAddSignal(OAICustomerAdd_200_response summary);
     void customerAddressAddSignal(OAIAttributeAdd_200_response summary);
     void customerAttributeListSignal(OAIModel_Response_Customer_Attribute_List summary);
-    void customerCountSignal(OAICustomerCount_200_response summary);
+    void customerCountSignal(OAIModel_Response_Customer_Count summary);
     void customerDeleteSignal(OAICustomerDelete_200_response summary);
-    void customerFindSignal(OAICustomerFind_200_response summary);
+    void customerFindSignal(OAIModel_Response_Customer_Find summary);
     void customerGroupAddSignal(OAICustomerGroupAdd_200_response summary);
     void customerGroupListSignal(OAIModel_Response_Customer_Group_List summary);
     void customerInfoSignal(OAICustomerInfo_200_response summary);
@@ -253,9 +253,9 @@ Q_SIGNALS:
     void customerAddSignalFull(OAIHttpRequestWorker *worker, OAICustomerAdd_200_response summary);
     void customerAddressAddSignalFull(OAIHttpRequestWorker *worker, OAIAttributeAdd_200_response summary);
     void customerAttributeListSignalFull(OAIHttpRequestWorker *worker, OAIModel_Response_Customer_Attribute_List summary);
-    void customerCountSignalFull(OAIHttpRequestWorker *worker, OAICustomerCount_200_response summary);
+    void customerCountSignalFull(OAIHttpRequestWorker *worker, OAIModel_Response_Customer_Count summary);
     void customerDeleteSignalFull(OAIHttpRequestWorker *worker, OAICustomerDelete_200_response summary);
-    void customerFindSignalFull(OAIHttpRequestWorker *worker, OAICustomerFind_200_response summary);
+    void customerFindSignalFull(OAIHttpRequestWorker *worker, OAIModel_Response_Customer_Find summary);
     void customerGroupAddSignalFull(OAIHttpRequestWorker *worker, OAICustomerGroupAdd_200_response summary);
     void customerGroupListSignalFull(OAIHttpRequestWorker *worker, OAIModel_Response_Customer_Group_List summary);
     void customerInfoSignalFull(OAIHttpRequestWorker *worker, OAICustomerInfo_200_response summary);
@@ -273,14 +273,14 @@ Q_SIGNALS:
     void customerAttributeListSignalE(OAIModel_Response_Customer_Attribute_List summary, QNetworkReply::NetworkError error_type, QString error_str);
     void customerAttributeListSignalError(OAIModel_Response_Customer_Attribute_List summary, QNetworkReply::NetworkError error_type, const QString &error_str);
     Q_DECL_DEPRECATED_X("Use customerCountSignalError() instead")
-    void customerCountSignalE(OAICustomerCount_200_response summary, QNetworkReply::NetworkError error_type, QString error_str);
-    void customerCountSignalError(OAICustomerCount_200_response summary, QNetworkReply::NetworkError error_type, const QString &error_str);
+    void customerCountSignalE(OAIModel_Response_Customer_Count summary, QNetworkReply::NetworkError error_type, QString error_str);
+    void customerCountSignalError(OAIModel_Response_Customer_Count summary, QNetworkReply::NetworkError error_type, const QString &error_str);
     Q_DECL_DEPRECATED_X("Use customerDeleteSignalError() instead")
     void customerDeleteSignalE(OAICustomerDelete_200_response summary, QNetworkReply::NetworkError error_type, QString error_str);
     void customerDeleteSignalError(OAICustomerDelete_200_response summary, QNetworkReply::NetworkError error_type, const QString &error_str);
     Q_DECL_DEPRECATED_X("Use customerFindSignalError() instead")
-    void customerFindSignalE(OAICustomerFind_200_response summary, QNetworkReply::NetworkError error_type, QString error_str);
-    void customerFindSignalError(OAICustomerFind_200_response summary, QNetworkReply::NetworkError error_type, const QString &error_str);
+    void customerFindSignalE(OAIModel_Response_Customer_Find summary, QNetworkReply::NetworkError error_type, QString error_str);
+    void customerFindSignalError(OAIModel_Response_Customer_Find summary, QNetworkReply::NetworkError error_type, const QString &error_str);
     Q_DECL_DEPRECATED_X("Use customerGroupAddSignalError() instead")
     void customerGroupAddSignalE(OAICustomerGroupAdd_200_response summary, QNetworkReply::NetworkError error_type, QString error_str);
     void customerGroupAddSignalError(OAICustomerGroupAdd_200_response summary, QNetworkReply::NetworkError error_type, const QString &error_str);

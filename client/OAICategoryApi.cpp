@@ -734,7 +734,7 @@ void OAICategoryApi::categoryAssignCallback(OAIHttpRequestWorker *worker) {
     if (worker->error_type != QNetworkReply::NoError) {
         error_str = QString("%1, %2").arg(worker->error_str, QString(worker->response));
     }
-    OAICategoryAssign_200_response output(QString(worker->response));
+    OAIModel_Response_Category_Assign output(QString(worker->response));
     worker->deleteLater();
 
     if (worker->error_type == QNetworkReply::NoError) {
@@ -1008,7 +1008,7 @@ void OAICategoryApi::categoryCountCallback(OAIHttpRequestWorker *worker) {
     if (worker->error_type != QNetworkReply::NoError) {
         error_str = QString("%1, %2").arg(worker->error_str, QString(worker->response));
     }
-    OAICategoryCount_200_response output(QString(worker->response));
+    OAIModel_Response_Category_Count output(QString(worker->response));
     worker->deleteLater();
 
     if (worker->error_type == QNetworkReply::NoError) {
@@ -1354,7 +1354,7 @@ void OAICategoryApi::categoryFindCallback(OAIHttpRequestWorker *worker) {
     if (worker->error_type != QNetworkReply::NoError) {
         error_str = QString("%1, %2").arg(worker->error_str, QString(worker->response));
     }
-    OAICategoryFind_200_response output(QString(worker->response));
+    OAIModel_Response_Category_Find output(QString(worker->response));
     worker->deleteLater();
 
     if (worker->error_type == QNetworkReply::NoError) {
@@ -2484,7 +2484,7 @@ void OAICategoryApi::categoryUnassignCallback(OAIHttpRequestWorker *worker) {
     if (worker->error_type != QNetworkReply::NoError) {
         error_str = QString("%1, %2").arg(worker->error_str, QString(worker->response));
     }
-    OAICategoryAssign_200_response output(QString(worker->response));
+    OAIModel_Response_Category_Unassign output(QString(worker->response));
     worker->deleteLater();
 
     if (worker->error_type == QNetworkReply::NoError) {

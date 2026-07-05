@@ -23,7 +23,7 @@
 #include "OAIAccountCartList_200_response.h"
 #include "OAIAccountConfigUpdate_200_response.h"
 #include "OAIAccountFailedWebhooks_200_response.h"
-#include "OAIAccountSupportedPlatforms_200_response.h"
+#include "OAIModel_Response_Account_SupportedPlatforms.h"
 #include <QString>
 
 #include <QObject>
@@ -306,14 +306,14 @@ Q_SIGNALS:
     void accountCartListSignal(OAIAccountCartList_200_response summary);
     void accountConfigUpdateSignal(OAIAccountConfigUpdate_200_response summary);
     void accountFailedWebhooksSignal(OAIAccountFailedWebhooks_200_response summary);
-    void accountSupportedPlatformsSignal(OAIAccountSupportedPlatforms_200_response summary);
+    void accountSupportedPlatformsSignal(OAIModel_Response_Account_SupportedPlatforms summary);
 
 
     void accountCartAddSignalFull(OAIHttpRequestWorker *worker, OAIAccountCartAdd_200_response summary);
     void accountCartListSignalFull(OAIHttpRequestWorker *worker, OAIAccountCartList_200_response summary);
     void accountConfigUpdateSignalFull(OAIHttpRequestWorker *worker, OAIAccountConfigUpdate_200_response summary);
     void accountFailedWebhooksSignalFull(OAIHttpRequestWorker *worker, OAIAccountFailedWebhooks_200_response summary);
-    void accountSupportedPlatformsSignalFull(OAIHttpRequestWorker *worker, OAIAccountSupportedPlatforms_200_response summary);
+    void accountSupportedPlatformsSignalFull(OAIHttpRequestWorker *worker, OAIModel_Response_Account_SupportedPlatforms summary);
 
     Q_DECL_DEPRECATED_X("Use accountCartAddSignalError() instead")
     void accountCartAddSignalE(OAIAccountCartAdd_200_response summary, QNetworkReply::NetworkError error_type, QString error_str);
@@ -328,8 +328,8 @@ Q_SIGNALS:
     void accountFailedWebhooksSignalE(OAIAccountFailedWebhooks_200_response summary, QNetworkReply::NetworkError error_type, QString error_str);
     void accountFailedWebhooksSignalError(OAIAccountFailedWebhooks_200_response summary, QNetworkReply::NetworkError error_type, const QString &error_str);
     Q_DECL_DEPRECATED_X("Use accountSupportedPlatformsSignalError() instead")
-    void accountSupportedPlatformsSignalE(OAIAccountSupportedPlatforms_200_response summary, QNetworkReply::NetworkError error_type, QString error_str);
-    void accountSupportedPlatformsSignalError(OAIAccountSupportedPlatforms_200_response summary, QNetworkReply::NetworkError error_type, const QString &error_str);
+    void accountSupportedPlatformsSignalE(OAIModel_Response_Account_SupportedPlatforms summary, QNetworkReply::NetworkError error_type, QString error_str);
+    void accountSupportedPlatformsSignalError(OAIModel_Response_Account_SupportedPlatforms summary, QNetworkReply::NetworkError error_type, const QString &error_str);
 
     Q_DECL_DEPRECATED_X("Use accountCartAddSignalErrorFull() instead")
     void accountCartAddSignalEFull(OAIHttpRequestWorker *worker, QNetworkReply::NetworkError error_type, QString error_str);

@@ -26,8 +26,11 @@
 #include "OAICustomerDelete_200_response.h"
 #include "OAIModel_Response_Product_Attribute_List.h"
 #include "OAIModel_Response_Product_Brand_List.h"
+#include "OAIModel_Response_Product_ChildItem_Find.h"
 #include "OAIModel_Response_Product_ChildItem_List.h"
+#include "OAIModel_Response_Product_Count.h"
 #include "OAIModel_Response_Product_Currency_List.h"
+#include "OAIModel_Response_Product_Find.h"
 #include "OAIModel_Response_Product_List.h"
 #include "OAIModel_Response_Product_Option_List.h"
 #include "OAIModel_Response_Product_Review_List.h"
@@ -36,12 +39,9 @@
 #include "OAIProductAdd_200_response.h"
 #include "OAIProductAttributeValueSet_200_response.h"
 #include "OAIProductAttributeValueUnset_200_response.h"
-#include "OAIProductChildItemFind_200_response.h"
 #include "OAIProductChildItemInfo_200_response.h"
-#include "OAIProductCount_200_response.h"
 #include "OAIProductCurrencyAdd_200_response.h"
 #include "OAIProductDeleteBatch.h"
-#include "OAIProductFind_200_response.h"
 #include "OAIProductImageAdd.h"
 #include "OAIProductImageAdd_200_response.h"
 #include "OAIProductImageUpdate_200_response.h"
@@ -680,15 +680,15 @@ Q_SIGNALS:
     void productAttributeValueSetSignal(OAIProductAttributeValueSet_200_response summary);
     void productAttributeValueUnsetSignal(OAIProductAttributeValueUnset_200_response summary);
     void productBrandListSignal(OAIModel_Response_Product_Brand_List summary);
-    void productChildItemFindSignal(OAIProductChildItemFind_200_response summary);
+    void productChildItemFindSignal(OAIModel_Response_Product_ChildItem_Find summary);
     void productChildItemInfoSignal(OAIProductChildItemInfo_200_response summary);
     void productChildItemListSignal(OAIModel_Response_Product_ChildItem_List summary);
-    void productCountSignal(OAIProductCount_200_response summary);
+    void productCountSignal(OAIModel_Response_Product_Count summary);
     void productCurrencyAddSignal(OAIProductCurrencyAdd_200_response summary);
     void productCurrencyListSignal(OAIModel_Response_Product_Currency_List summary);
     void productDeleteSignal(OAICustomerDelete_200_response summary);
     void productDeleteBatchSignal(OAICategoryAddBatch_200_response summary);
-    void productFindSignal(OAIProductFind_200_response summary);
+    void productFindSignal(OAIModel_Response_Product_Find summary);
     void productImageAddSignal(OAIProductImageAdd_200_response summary);
     void productImageDeleteSignal(OAIAttributeDelete_200_response summary);
     void productImageUpdateSignal(OAIProductImageUpdate_200_response summary);
@@ -730,15 +730,15 @@ Q_SIGNALS:
     void productAttributeValueSetSignalFull(OAIHttpRequestWorker *worker, OAIProductAttributeValueSet_200_response summary);
     void productAttributeValueUnsetSignalFull(OAIHttpRequestWorker *worker, OAIProductAttributeValueUnset_200_response summary);
     void productBrandListSignalFull(OAIHttpRequestWorker *worker, OAIModel_Response_Product_Brand_List summary);
-    void productChildItemFindSignalFull(OAIHttpRequestWorker *worker, OAIProductChildItemFind_200_response summary);
+    void productChildItemFindSignalFull(OAIHttpRequestWorker *worker, OAIModel_Response_Product_ChildItem_Find summary);
     void productChildItemInfoSignalFull(OAIHttpRequestWorker *worker, OAIProductChildItemInfo_200_response summary);
     void productChildItemListSignalFull(OAIHttpRequestWorker *worker, OAIModel_Response_Product_ChildItem_List summary);
-    void productCountSignalFull(OAIHttpRequestWorker *worker, OAIProductCount_200_response summary);
+    void productCountSignalFull(OAIHttpRequestWorker *worker, OAIModel_Response_Product_Count summary);
     void productCurrencyAddSignalFull(OAIHttpRequestWorker *worker, OAIProductCurrencyAdd_200_response summary);
     void productCurrencyListSignalFull(OAIHttpRequestWorker *worker, OAIModel_Response_Product_Currency_List summary);
     void productDeleteSignalFull(OAIHttpRequestWorker *worker, OAICustomerDelete_200_response summary);
     void productDeleteBatchSignalFull(OAIHttpRequestWorker *worker, OAICategoryAddBatch_200_response summary);
-    void productFindSignalFull(OAIHttpRequestWorker *worker, OAIProductFind_200_response summary);
+    void productFindSignalFull(OAIHttpRequestWorker *worker, OAIModel_Response_Product_Find summary);
     void productImageAddSignalFull(OAIHttpRequestWorker *worker, OAIProductImageAdd_200_response summary);
     void productImageDeleteSignalFull(OAIHttpRequestWorker *worker, OAIAttributeDelete_200_response summary);
     void productImageUpdateSignalFull(OAIHttpRequestWorker *worker, OAIProductImageUpdate_200_response summary);
@@ -792,8 +792,8 @@ Q_SIGNALS:
     void productBrandListSignalE(OAIModel_Response_Product_Brand_List summary, QNetworkReply::NetworkError error_type, QString error_str);
     void productBrandListSignalError(OAIModel_Response_Product_Brand_List summary, QNetworkReply::NetworkError error_type, const QString &error_str);
     Q_DECL_DEPRECATED_X("Use productChildItemFindSignalError() instead")
-    void productChildItemFindSignalE(OAIProductChildItemFind_200_response summary, QNetworkReply::NetworkError error_type, QString error_str);
-    void productChildItemFindSignalError(OAIProductChildItemFind_200_response summary, QNetworkReply::NetworkError error_type, const QString &error_str);
+    void productChildItemFindSignalE(OAIModel_Response_Product_ChildItem_Find summary, QNetworkReply::NetworkError error_type, QString error_str);
+    void productChildItemFindSignalError(OAIModel_Response_Product_ChildItem_Find summary, QNetworkReply::NetworkError error_type, const QString &error_str);
     Q_DECL_DEPRECATED_X("Use productChildItemInfoSignalError() instead")
     void productChildItemInfoSignalE(OAIProductChildItemInfo_200_response summary, QNetworkReply::NetworkError error_type, QString error_str);
     void productChildItemInfoSignalError(OAIProductChildItemInfo_200_response summary, QNetworkReply::NetworkError error_type, const QString &error_str);
@@ -801,8 +801,8 @@ Q_SIGNALS:
     void productChildItemListSignalE(OAIModel_Response_Product_ChildItem_List summary, QNetworkReply::NetworkError error_type, QString error_str);
     void productChildItemListSignalError(OAIModel_Response_Product_ChildItem_List summary, QNetworkReply::NetworkError error_type, const QString &error_str);
     Q_DECL_DEPRECATED_X("Use productCountSignalError() instead")
-    void productCountSignalE(OAIProductCount_200_response summary, QNetworkReply::NetworkError error_type, QString error_str);
-    void productCountSignalError(OAIProductCount_200_response summary, QNetworkReply::NetworkError error_type, const QString &error_str);
+    void productCountSignalE(OAIModel_Response_Product_Count summary, QNetworkReply::NetworkError error_type, QString error_str);
+    void productCountSignalError(OAIModel_Response_Product_Count summary, QNetworkReply::NetworkError error_type, const QString &error_str);
     Q_DECL_DEPRECATED_X("Use productCurrencyAddSignalError() instead")
     void productCurrencyAddSignalE(OAIProductCurrencyAdd_200_response summary, QNetworkReply::NetworkError error_type, QString error_str);
     void productCurrencyAddSignalError(OAIProductCurrencyAdd_200_response summary, QNetworkReply::NetworkError error_type, const QString &error_str);
@@ -816,8 +816,8 @@ Q_SIGNALS:
     void productDeleteBatchSignalE(OAICategoryAddBatch_200_response summary, QNetworkReply::NetworkError error_type, QString error_str);
     void productDeleteBatchSignalError(OAICategoryAddBatch_200_response summary, QNetworkReply::NetworkError error_type, const QString &error_str);
     Q_DECL_DEPRECATED_X("Use productFindSignalError() instead")
-    void productFindSignalE(OAIProductFind_200_response summary, QNetworkReply::NetworkError error_type, QString error_str);
-    void productFindSignalError(OAIProductFind_200_response summary, QNetworkReply::NetworkError error_type, const QString &error_str);
+    void productFindSignalE(OAIModel_Response_Product_Find summary, QNetworkReply::NetworkError error_type, QString error_str);
+    void productFindSignalError(OAIModel_Response_Product_Find summary, QNetworkReply::NetworkError error_type, const QString &error_str);
     Q_DECL_DEPRECATED_X("Use productImageAddSignalError() instead")
     void productImageAddSignalE(OAIProductImageAdd_200_response summary, QNetworkReply::NetworkError error_type, QString error_str);
     void productImageAddSignalError(OAIProductImageAdd_200_response summary, QNetworkReply::NetworkError error_type, const QString &error_str);

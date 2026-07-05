@@ -20,10 +20,10 @@
 
 #include "OAIAttributeDelete_200_response.h"
 #include "OAIBasketLiveShippingServiceCreate_200_response.h"
+#include "OAIModel_Response_Webhook_Count.h"
+#include "OAIModel_Response_Webhook_Events.h"
 #include "OAIProductImageUpdate_200_response.h"
-#include "OAIWebhookCount_200_response.h"
 #include "OAIWebhookCreate.h"
-#include "OAIWebhookEvents_200_response.h"
 #include "OAIWebhookList_200_response.h"
 #include "OAIWebhookUpdate.h"
 #include <QString>
@@ -132,24 +132,24 @@ private:
 
 Q_SIGNALS:
 
-    void webhookCountSignal(OAIWebhookCount_200_response summary);
+    void webhookCountSignal(OAIModel_Response_Webhook_Count summary);
     void webhookCreateSignal(OAIBasketLiveShippingServiceCreate_200_response summary);
     void webhookDeleteSignal(OAIAttributeDelete_200_response summary);
-    void webhookEventsSignal(OAIWebhookEvents_200_response summary);
+    void webhookEventsSignal(OAIModel_Response_Webhook_Events summary);
     void webhookListSignal(OAIWebhookList_200_response summary);
     void webhookUpdateSignal(OAIProductImageUpdate_200_response summary);
 
 
-    void webhookCountSignalFull(OAIHttpRequestWorker *worker, OAIWebhookCount_200_response summary);
+    void webhookCountSignalFull(OAIHttpRequestWorker *worker, OAIModel_Response_Webhook_Count summary);
     void webhookCreateSignalFull(OAIHttpRequestWorker *worker, OAIBasketLiveShippingServiceCreate_200_response summary);
     void webhookDeleteSignalFull(OAIHttpRequestWorker *worker, OAIAttributeDelete_200_response summary);
-    void webhookEventsSignalFull(OAIHttpRequestWorker *worker, OAIWebhookEvents_200_response summary);
+    void webhookEventsSignalFull(OAIHttpRequestWorker *worker, OAIModel_Response_Webhook_Events summary);
     void webhookListSignalFull(OAIHttpRequestWorker *worker, OAIWebhookList_200_response summary);
     void webhookUpdateSignalFull(OAIHttpRequestWorker *worker, OAIProductImageUpdate_200_response summary);
 
     Q_DECL_DEPRECATED_X("Use webhookCountSignalError() instead")
-    void webhookCountSignalE(OAIWebhookCount_200_response summary, QNetworkReply::NetworkError error_type, QString error_str);
-    void webhookCountSignalError(OAIWebhookCount_200_response summary, QNetworkReply::NetworkError error_type, const QString &error_str);
+    void webhookCountSignalE(OAIModel_Response_Webhook_Count summary, QNetworkReply::NetworkError error_type, QString error_str);
+    void webhookCountSignalError(OAIModel_Response_Webhook_Count summary, QNetworkReply::NetworkError error_type, const QString &error_str);
     Q_DECL_DEPRECATED_X("Use webhookCreateSignalError() instead")
     void webhookCreateSignalE(OAIBasketLiveShippingServiceCreate_200_response summary, QNetworkReply::NetworkError error_type, QString error_str);
     void webhookCreateSignalError(OAIBasketLiveShippingServiceCreate_200_response summary, QNetworkReply::NetworkError error_type, const QString &error_str);
@@ -157,8 +157,8 @@ Q_SIGNALS:
     void webhookDeleteSignalE(OAIAttributeDelete_200_response summary, QNetworkReply::NetworkError error_type, QString error_str);
     void webhookDeleteSignalError(OAIAttributeDelete_200_response summary, QNetworkReply::NetworkError error_type, const QString &error_str);
     Q_DECL_DEPRECATED_X("Use webhookEventsSignalError() instead")
-    void webhookEventsSignalE(OAIWebhookEvents_200_response summary, QNetworkReply::NetworkError error_type, QString error_str);
-    void webhookEventsSignalError(OAIWebhookEvents_200_response summary, QNetworkReply::NetworkError error_type, const QString &error_str);
+    void webhookEventsSignalE(OAIModel_Response_Webhook_Events summary, QNetworkReply::NetworkError error_type, QString error_str);
+    void webhookEventsSignalError(OAIModel_Response_Webhook_Events summary, QNetworkReply::NetworkError error_type, const QString &error_str);
     Q_DECL_DEPRECATED_X("Use webhookListSignalError() instead")
     void webhookListSignalE(OAIWebhookList_200_response summary, QNetworkReply::NetworkError error_type, QString error_str);
     void webhookListSignalError(OAIWebhookList_200_response summary, QNetworkReply::NetworkError error_type, const QString &error_str);

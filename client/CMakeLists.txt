@@ -24,22 +24,16 @@ add_library(${PROJECT_NAME}
   OAIAccountFailedWebhooks_200_response.h
   OAIAccountFailedWebhooks_200_response_result.h
   OAIAccountFailedWebhooks_200_response_result_webhook_inner.h
-  OAIAccountSupportedPlatforms_200_response.h
-  OAIAccountSupportedPlatforms_200_response_result.h
-  OAIAccountSupportedPlatforms_200_response_result_supported_platforms_inner.h
-  OAIAccountSupportedPlatforms_200_response_result_supported_platforms_inner_params.h
-  OAIAccountSupportedPlatforms_200_response_result_supported_platforms_inner_params_required_inner_inner.h
+  OAIAccount_SupportedPlatform.h
+  OAIAccount_SupportedPlatform_params.h
+  OAIAccount_SupportedPlatform_params_required_inner_inner.h
   OAIAttributeAdd_200_response.h
   OAIAttributeAdd_200_response_result.h
   OAIAttributeAssignGroup_200_response.h
   OAIAttributeAssignGroup_200_response_result.h
-  OAIAttributeCount_200_response.h
-  OAIAttributeCount_200_response_result.h
   OAIAttributeDelete_200_response.h
   OAIAttributeDelete_200_response_result.h
   OAIAttributeInfo_200_response.h
-  OAIAttributeTypeList_200_response.h
-  OAIAttributeTypeList_200_response_result.h
   OAIAttributeUnassignGroup_200_response.h
   OAIAttributeUnassignGroup_200_response_result.h
   OAIAttributeUpdate_200_response.h
@@ -66,22 +60,14 @@ add_library(${PROJECT_NAME}
   OAIBrand.h
   OAICarrier.h
   OAICart.h
-  OAICartCatalogPriceRulesCount_200_response.h
-  OAICartCatalogPriceRulesCount_200_response_result.h
   OAICartCouponAdd.h
   OAICartCouponAdd_200_response.h
   OAICartCouponAdd_200_response_result.h
-  OAICartCouponCount_200_response.h
-  OAICartCouponCount_200_response_result.h
   OAICartDelete_200_response.h
   OAICartDelete_200_response_result.h
   OAICartGiftcardAdd_200_response.h
   OAICartGiftcardAdd_200_response_result.h
-  OAICartGiftcardCount_200_response.h
-  OAICartGiftcardCount_200_response_result.h
   OAICartInfo_200_response.h
-  OAICartMethods_200_response.h
-  OAICartMethods_200_response_result.h
   OAICartPluginList_200_response.h
   OAICartPluginList_200_response_result.h
   OAICartScriptAdd_200_response.h
@@ -107,16 +93,10 @@ add_library(${PROJECT_NAME}
   OAICategoryAddBatch_payload_inner_images_inner.h
   OAICategoryAdd_200_response.h
   OAICategoryAdd_200_response_result.h
-  OAICategoryAssign_200_response.h
-  OAICategoryCount_200_response.h
-  OAICategoryCount_200_response_result.h
   OAICategoryDeleteBatch.h
   OAICategoryDeleteBatch_payload_inner.h
   OAICategoryDelete_200_response.h
   OAICategoryDelete_200_response_result.h
-  OAICategoryFind_200_response.h
-  OAICategoryFind_200_response_result.h
-  OAICategoryFind_200_response_result_category_inner.h
   OAICategoryImageAdd_200_response.h
   OAICategoryImageAdd_200_response_result.h
   OAICategoryInfo_200_response.h
@@ -135,12 +115,8 @@ add_library(${PROJECT_NAME}
   OAICustomerAdd_address_inner.h
   OAICustomerAdd_consents_inner.h
   OAICustomerAddressAdd.h
-  OAICustomerCount_200_response.h
-  OAICustomerCount_200_response_result.h
   OAICustomerDelete_200_response.h
   OAICustomerDelete_200_response_result.h
-  OAICustomerFind_200_response.h
-  OAICustomerFind_200_response_result.h
   OAICustomerGroupAdd_200_response.h
   OAICustomerGroupAdd_200_response_result.h
   OAICustomerInfo_200_response.h
@@ -160,23 +136,39 @@ add_library(${PROJECT_NAME}
   OAILanguage.h
   OAIMarketplace_Product.h
   OAIMedia.h
+  OAIModel_Response_Account_SupportedPlatforms.h
   OAIModel_Response_Attribute_Attributeset_List.h
+  OAIModel_Response_Attribute_Count.h
   OAIModel_Response_Attribute_Group_List.h
   OAIModel_Response_Attribute_List.h
+  OAIModel_Response_Attribute_Type_List.h
   OAIModel_Response_Batch_Job_List.h
+  OAIModel_Response_Cart_CatalogPriceRules_Count.h
   OAIModel_Response_Cart_Catalog_PriceRules_List.h
+  OAIModel_Response_Cart_Coupon_Count.h
   OAIModel_Response_Cart_Coupon_List.h
   OAIModel_Response_Cart_GiftCard_List.h
+  OAIModel_Response_Cart_Giftcard_Count.h
   OAIModel_Response_Cart_MetaData_List.h
+  OAIModel_Response_Cart_Methods.h
   OAIModel_Response_Cart_Script_List.h
   OAIModel_Response_Cart_ShippingZones_List.h
+  OAIModel_Response_Category_Assign.h
+  OAIModel_Response_Category_Count.h
+  OAIModel_Response_Category_Find.h
   OAIModel_Response_Category_List.h
+  OAIModel_Response_Category_Unassign.h
   OAIModel_Response_Customer_Attribute_List.h
+  OAIModel_Response_Customer_Count.h
+  OAIModel_Response_Customer_Find.h
   OAIModel_Response_Customer_Group_List.h
   OAIModel_Response_Customer_List.h
   OAIModel_Response_Customer_Wishlist_List.h
   OAIModel_Response_Marketplace_Product_Find.h
   OAIModel_Response_Order_Abandoned_List.h
+  OAIModel_Response_Order_Count.h
+  OAIModel_Response_Order_FinancialStatus_List.h
+  OAIModel_Response_Order_FulfillmentStatus_List.h
   OAIModel_Response_Order_List.h
   OAIModel_Response_Order_PreestimateShipping_List.h
   OAIModel_Response_Order_Shipment_Event_List.h
@@ -185,15 +177,24 @@ add_library(${PROJECT_NAME}
   OAIModel_Response_Order_Transaction_List.h
   OAIModel_Response_Product_Attribute_List.h
   OAIModel_Response_Product_Brand_List.h
+  OAIModel_Response_Product_ChildItem_Find.h
   OAIModel_Response_Product_ChildItem_List.h
+  OAIModel_Response_Product_Count.h
   OAIModel_Response_Product_Currency_List.h
+  OAIModel_Response_Product_Find.h
   OAIModel_Response_Product_List.h
   OAIModel_Response_Product_Option_List.h
   OAIModel_Response_Product_Review_List.h
+  OAIModel_Response_Return_Action_List.h
+  OAIModel_Response_Return_Count.h
   OAIModel_Response_Return_List.h
+  OAIModel_Response_Return_Reason_List.h
+  OAIModel_Response_Return_Status_List.h
   OAIModel_Response_Subscriber_List.h
   OAIModel_Response_Tax_Class_Info.h
   OAIModel_Response_Tax_Class_List.h
+  OAIModel_Response_Webhook_Count.h
+  OAIModel_Response_Webhook_Events.h
   OAIOrder.h
   OAIOrderAbandoned.h
   OAIOrderAdd.h
@@ -207,13 +208,6 @@ add_library(${PROJECT_NAME}
   OAIOrderCalculate_200_response.h
   OAIOrderCalculate_order_item_inner.h
   OAIOrderCalculate_order_item_inner_order_item_option_inner.h
-  OAIOrderCount_200_response.h
-  OAIOrderCount_200_response_result.h
-  OAIOrderFinancialStatusList_200_response.h
-  OAIOrderFinancialStatusList_200_response_result.h
-  OAIOrderFinancialStatusList_200_response_result_order_financial_statuses_inner.h
-  OAIOrderFulfillmentStatusList_200_response.h
-  OAIOrderFulfillmentStatusList_200_response_result.h
   OAIOrderInfo_200_response.h
   OAIOrderPreestimateShippingList.h
   OAIOrderPreestimateShippingList_order_item_inner.h
@@ -308,18 +302,11 @@ add_library(${PROJECT_NAME}
   OAIProductAttributeValueSet_200_response_result.h
   OAIProductAttributeValueUnset_200_response.h
   OAIProductAttributeValueUnset_200_response_result.h
-  OAIProductChildItemFind_200_response.h
-  OAIProductChildItemFind_200_response_result.h
   OAIProductChildItemInfo_200_response.h
-  OAIProductCount_200_response.h
-  OAIProductCount_200_response_result.h
   OAIProductCurrencyAdd_200_response.h
   OAIProductCurrencyAdd_200_response_result.h
   OAIProductDeleteBatch.h
   OAIProductDeleteBatch_payload_inner.h
-  OAIProductFind_200_response.h
-  OAIProductFind_200_response_result.h
-  OAIProductFind_200_response_result_product_inner.h
   OAIProductImageAdd.h
   OAIProductImageAdd_200_response.h
   OAIProductImageAdd_200_response_result.h
@@ -379,24 +366,40 @@ add_library(${PROJECT_NAME}
   OAIProduct_Review.h
   OAIProduct_Review_Rating.h
   OAIProduct_TierPrice.h
+  OAIResponse_Account_SupportedPlatforms_Result.h
   OAIResponse_Attribute_Attributeset_List_Result.h
+  OAIResponse_Attribute_Count_Result.h
   OAIResponse_Attribute_Group_List_Result.h
   OAIResponse_Attribute_List_Result.h
+  OAIResponse_Attribute_Type_List_Result.h
   OAIResponse_Batch_Job_List_Result.h
   OAIResponse_Batch_Job_Result.h
+  OAIResponse_Cart_CatalogPriceRules_Count_Result.h
   OAIResponse_Cart_CatalogPriceRules_List_Result.h
+  OAIResponse_Cart_Coupon_Count_Result.h
   OAIResponse_Cart_Coupon_List_Result.h
+  OAIResponse_Cart_Giftcard_Count_Result.h
   OAIResponse_Cart_Giftcard_List_Result.h
   OAIResponse_Cart_MetaData_List_Result.h
+  OAIResponse_Cart_Methods_Result.h
   OAIResponse_Cart_Script_List_Result.h
   OAIResponse_Cart_ShippingZones_List_Result.h
+  OAIResponse_Category_Assign_Result.h
+  OAIResponse_Category_Count_Result.h
+  OAIResponse_Category_Find_Result.h
   OAIResponse_Category_List_Result.h
+  OAIResponse_Category_Unassign_Result.h
   OAIResponse_Customer_Attribute_List_Result.h
+  OAIResponse_Customer_Count_Result.h
+  OAIResponse_Customer_Find_Result.h
   OAIResponse_Customer_Group_List_Result.h
   OAIResponse_Customer_List_Result.h
   OAIResponse_Customer_Wishlist_List_Result.h
   OAIResponse_Marketplace_Product_Find_Result.h
   OAIResponse_Order_Abandoned_List_Result.h
+  OAIResponse_Order_Count_Result.h
+  OAIResponse_Order_FinancialStatus_List_Result.h
+  OAIResponse_Order_FulfillmentStatus_List_Result.h
   OAIResponse_Order_List_Result.h
   OAIResponse_Order_PreestimateShipping_List_Result.h
   OAIResponse_Order_Shipment_Event_List_Result.h
@@ -405,25 +408,26 @@ add_library(${PROJECT_NAME}
   OAIResponse_Order_Transaction_List_Result.h
   OAIResponse_Product_Attribute_List_Result.h
   OAIResponse_Product_Brand_List_Result.h
+  OAIResponse_Product_ChildItem_Find_Result.h
   OAIResponse_Product_ChildItem_List_Result.h
+  OAIResponse_Product_Count_Result.h
   OAIResponse_Product_Currency_List_Result.h
+  OAIResponse_Product_Find_Result.h
   OAIResponse_Product_List_Result.h
   OAIResponse_Product_Option_List_Result.h
   OAIResponse_Product_Review_List_Result.h
+  OAIResponse_Return_Action_List_Result.h
+  OAIResponse_Return_Count_Result.h
   OAIResponse_Return_List_Result.h
+  OAIResponse_Return_Reason_List_Result.h
+  OAIResponse_Return_Status_List_Result.h
   OAIResponse_Subscriber_List_Result.h
   OAIResponse_Tax_Class_Info_Result.h
   OAIResponse_Tax_Class_List_Result.h
+  OAIResponse_Webhook_Count_Result.h
+  OAIResponse_Webhook_Events_Result.h
   OAIReturn.h
-  OAIReturnActionList_200_response.h
-  OAIReturnActionList_200_response_result.h
-  OAIReturnCount_200_response.h
-  OAIReturnCount_200_response_result.h
   OAIReturnInfo_200_response.h
-  OAIReturnReasonList_200_response.h
-  OAIReturnReasonList_200_response_result.h
-  OAIReturnStatusList_200_response.h
-  OAIReturnStatusList_200_response_result.h
   OAIReturn_Action.h
   OAIReturn_OrderProduct.h
   OAIReturn_Reason.h
@@ -447,15 +451,11 @@ add_library(${PROJECT_NAME}
   OAITaxClass_ZipCodes.h
   OAITaxClass_ZipCodes_Range.h
   OAIWebhook.h
-  OAIWebhookCount_200_response.h
-  OAIWebhookCount_200_response_result.h
   OAIWebhookCreate.h
-  OAIWebhookEvents_200_response.h
-  OAIWebhookEvents_200_response_result.h
-  OAIWebhookEvents_200_response_result_events_inner.h
   OAIWebhookList_200_response.h
   OAIWebhookList_200_response_result.h
   OAIWebhookUpdate.h
+  OAIWebhook_Event.h
   OAIAccountApi.h
   OAIAttributeApi.h
   OAIBasketApi.h
@@ -492,22 +492,16 @@ add_library(${PROJECT_NAME}
   OAIAccountFailedWebhooks_200_response.cpp
   OAIAccountFailedWebhooks_200_response_result.cpp
   OAIAccountFailedWebhooks_200_response_result_webhook_inner.cpp
-  OAIAccountSupportedPlatforms_200_response.cpp
-  OAIAccountSupportedPlatforms_200_response_result.cpp
-  OAIAccountSupportedPlatforms_200_response_result_supported_platforms_inner.cpp
-  OAIAccountSupportedPlatforms_200_response_result_supported_platforms_inner_params.cpp
-  OAIAccountSupportedPlatforms_200_response_result_supported_platforms_inner_params_required_inner_inner.cpp
+  OAIAccount_SupportedPlatform.cpp
+  OAIAccount_SupportedPlatform_params.cpp
+  OAIAccount_SupportedPlatform_params_required_inner_inner.cpp
   OAIAttributeAdd_200_response.cpp
   OAIAttributeAdd_200_response_result.cpp
   OAIAttributeAssignGroup_200_response.cpp
   OAIAttributeAssignGroup_200_response_result.cpp
-  OAIAttributeCount_200_response.cpp
-  OAIAttributeCount_200_response_result.cpp
   OAIAttributeDelete_200_response.cpp
   OAIAttributeDelete_200_response_result.cpp
   OAIAttributeInfo_200_response.cpp
-  OAIAttributeTypeList_200_response.cpp
-  OAIAttributeTypeList_200_response_result.cpp
   OAIAttributeUnassignGroup_200_response.cpp
   OAIAttributeUnassignGroup_200_response_result.cpp
   OAIAttributeUpdate_200_response.cpp
@@ -534,22 +528,14 @@ add_library(${PROJECT_NAME}
   OAIBrand.cpp
   OAICarrier.cpp
   OAICart.cpp
-  OAICartCatalogPriceRulesCount_200_response.cpp
-  OAICartCatalogPriceRulesCount_200_response_result.cpp
   OAICartCouponAdd.cpp
   OAICartCouponAdd_200_response.cpp
   OAICartCouponAdd_200_response_result.cpp
-  OAICartCouponCount_200_response.cpp
-  OAICartCouponCount_200_response_result.cpp
   OAICartDelete_200_response.cpp
   OAICartDelete_200_response_result.cpp
   OAICartGiftcardAdd_200_response.cpp
   OAICartGiftcardAdd_200_response_result.cpp
-  OAICartGiftcardCount_200_response.cpp
-  OAICartGiftcardCount_200_response_result.cpp
   OAICartInfo_200_response.cpp
-  OAICartMethods_200_response.cpp
-  OAICartMethods_200_response_result.cpp
   OAICartPluginList_200_response.cpp
   OAICartPluginList_200_response_result.cpp
   OAICartScriptAdd_200_response.cpp
@@ -575,16 +561,10 @@ add_library(${PROJECT_NAME}
   OAICategoryAddBatch_payload_inner_images_inner.cpp
   OAICategoryAdd_200_response.cpp
   OAICategoryAdd_200_response_result.cpp
-  OAICategoryAssign_200_response.cpp
-  OAICategoryCount_200_response.cpp
-  OAICategoryCount_200_response_result.cpp
   OAICategoryDeleteBatch.cpp
   OAICategoryDeleteBatch_payload_inner.cpp
   OAICategoryDelete_200_response.cpp
   OAICategoryDelete_200_response_result.cpp
-  OAICategoryFind_200_response.cpp
-  OAICategoryFind_200_response_result.cpp
-  OAICategoryFind_200_response_result_category_inner.cpp
   OAICategoryImageAdd_200_response.cpp
   OAICategoryImageAdd_200_response_result.cpp
   OAICategoryInfo_200_response.cpp
@@ -603,12 +583,8 @@ add_library(${PROJECT_NAME}
   OAICustomerAdd_address_inner.cpp
   OAICustomerAdd_consents_inner.cpp
   OAICustomerAddressAdd.cpp
-  OAICustomerCount_200_response.cpp
-  OAICustomerCount_200_response_result.cpp
   OAICustomerDelete_200_response.cpp
   OAICustomerDelete_200_response_result.cpp
-  OAICustomerFind_200_response.cpp
-  OAICustomerFind_200_response_result.cpp
   OAICustomerGroupAdd_200_response.cpp
   OAICustomerGroupAdd_200_response_result.cpp
   OAICustomerInfo_200_response.cpp
@@ -628,23 +604,39 @@ add_library(${PROJECT_NAME}
   OAILanguage.cpp
   OAIMarketplace_Product.cpp
   OAIMedia.cpp
+  OAIModel_Response_Account_SupportedPlatforms.cpp
   OAIModel_Response_Attribute_Attributeset_List.cpp
+  OAIModel_Response_Attribute_Count.cpp
   OAIModel_Response_Attribute_Group_List.cpp
   OAIModel_Response_Attribute_List.cpp
+  OAIModel_Response_Attribute_Type_List.cpp
   OAIModel_Response_Batch_Job_List.cpp
+  OAIModel_Response_Cart_CatalogPriceRules_Count.cpp
   OAIModel_Response_Cart_Catalog_PriceRules_List.cpp
+  OAIModel_Response_Cart_Coupon_Count.cpp
   OAIModel_Response_Cart_Coupon_List.cpp
   OAIModel_Response_Cart_GiftCard_List.cpp
+  OAIModel_Response_Cart_Giftcard_Count.cpp
   OAIModel_Response_Cart_MetaData_List.cpp
+  OAIModel_Response_Cart_Methods.cpp
   OAIModel_Response_Cart_Script_List.cpp
   OAIModel_Response_Cart_ShippingZones_List.cpp
+  OAIModel_Response_Category_Assign.cpp
+  OAIModel_Response_Category_Count.cpp
+  OAIModel_Response_Category_Find.cpp
   OAIModel_Response_Category_List.cpp
+  OAIModel_Response_Category_Unassign.cpp
   OAIModel_Response_Customer_Attribute_List.cpp
+  OAIModel_Response_Customer_Count.cpp
+  OAIModel_Response_Customer_Find.cpp
   OAIModel_Response_Customer_Group_List.cpp
   OAIModel_Response_Customer_List.cpp
   OAIModel_Response_Customer_Wishlist_List.cpp
   OAIModel_Response_Marketplace_Product_Find.cpp
   OAIModel_Response_Order_Abandoned_List.cpp
+  OAIModel_Response_Order_Count.cpp
+  OAIModel_Response_Order_FinancialStatus_List.cpp
+  OAIModel_Response_Order_FulfillmentStatus_List.cpp
   OAIModel_Response_Order_List.cpp
   OAIModel_Response_Order_PreestimateShipping_List.cpp
   OAIModel_Response_Order_Shipment_Event_List.cpp
@@ -653,15 +645,24 @@ add_library(${PROJECT_NAME}
   OAIModel_Response_Order_Transaction_List.cpp
   OAIModel_Response_Product_Attribute_List.cpp
   OAIModel_Response_Product_Brand_List.cpp
+  OAIModel_Response_Product_ChildItem_Find.cpp
   OAIModel_Response_Product_ChildItem_List.cpp
+  OAIModel_Response_Product_Count.cpp
   OAIModel_Response_Product_Currency_List.cpp
+  OAIModel_Response_Product_Find.cpp
   OAIModel_Response_Product_List.cpp
   OAIModel_Response_Product_Option_List.cpp
   OAIModel_Response_Product_Review_List.cpp
+  OAIModel_Response_Return_Action_List.cpp
+  OAIModel_Response_Return_Count.cpp
   OAIModel_Response_Return_List.cpp
+  OAIModel_Response_Return_Reason_List.cpp
+  OAIModel_Response_Return_Status_List.cpp
   OAIModel_Response_Subscriber_List.cpp
   OAIModel_Response_Tax_Class_Info.cpp
   OAIModel_Response_Tax_Class_List.cpp
+  OAIModel_Response_Webhook_Count.cpp
+  OAIModel_Response_Webhook_Events.cpp
   OAIOrder.cpp
   OAIOrderAbandoned.cpp
   OAIOrderAdd.cpp
@@ -675,13 +676,6 @@ add_library(${PROJECT_NAME}
   OAIOrderCalculate_200_response.cpp
   OAIOrderCalculate_order_item_inner.cpp
   OAIOrderCalculate_order_item_inner_order_item_option_inner.cpp
-  OAIOrderCount_200_response.cpp
-  OAIOrderCount_200_response_result.cpp
-  OAIOrderFinancialStatusList_200_response.cpp
-  OAIOrderFinancialStatusList_200_response_result.cpp
-  OAIOrderFinancialStatusList_200_response_result_order_financial_statuses_inner.cpp
-  OAIOrderFulfillmentStatusList_200_response.cpp
-  OAIOrderFulfillmentStatusList_200_response_result.cpp
   OAIOrderInfo_200_response.cpp
   OAIOrderPreestimateShippingList.cpp
   OAIOrderPreestimateShippingList_order_item_inner.cpp
@@ -776,18 +770,11 @@ add_library(${PROJECT_NAME}
   OAIProductAttributeValueSet_200_response_result.cpp
   OAIProductAttributeValueUnset_200_response.cpp
   OAIProductAttributeValueUnset_200_response_result.cpp
-  OAIProductChildItemFind_200_response.cpp
-  OAIProductChildItemFind_200_response_result.cpp
   OAIProductChildItemInfo_200_response.cpp
-  OAIProductCount_200_response.cpp
-  OAIProductCount_200_response_result.cpp
   OAIProductCurrencyAdd_200_response.cpp
   OAIProductCurrencyAdd_200_response_result.cpp
   OAIProductDeleteBatch.cpp
   OAIProductDeleteBatch_payload_inner.cpp
-  OAIProductFind_200_response.cpp
-  OAIProductFind_200_response_result.cpp
-  OAIProductFind_200_response_result_product_inner.cpp
   OAIProductImageAdd.cpp
   OAIProductImageAdd_200_response.cpp
   OAIProductImageAdd_200_response_result.cpp
@@ -847,24 +834,40 @@ add_library(${PROJECT_NAME}
   OAIProduct_Review.cpp
   OAIProduct_Review_Rating.cpp
   OAIProduct_TierPrice.cpp
+  OAIResponse_Account_SupportedPlatforms_Result.cpp
   OAIResponse_Attribute_Attributeset_List_Result.cpp
+  OAIResponse_Attribute_Count_Result.cpp
   OAIResponse_Attribute_Group_List_Result.cpp
   OAIResponse_Attribute_List_Result.cpp
+  OAIResponse_Attribute_Type_List_Result.cpp
   OAIResponse_Batch_Job_List_Result.cpp
   OAIResponse_Batch_Job_Result.cpp
+  OAIResponse_Cart_CatalogPriceRules_Count_Result.cpp
   OAIResponse_Cart_CatalogPriceRules_List_Result.cpp
+  OAIResponse_Cart_Coupon_Count_Result.cpp
   OAIResponse_Cart_Coupon_List_Result.cpp
+  OAIResponse_Cart_Giftcard_Count_Result.cpp
   OAIResponse_Cart_Giftcard_List_Result.cpp
   OAIResponse_Cart_MetaData_List_Result.cpp
+  OAIResponse_Cart_Methods_Result.cpp
   OAIResponse_Cart_Script_List_Result.cpp
   OAIResponse_Cart_ShippingZones_List_Result.cpp
+  OAIResponse_Category_Assign_Result.cpp
+  OAIResponse_Category_Count_Result.cpp
+  OAIResponse_Category_Find_Result.cpp
   OAIResponse_Category_List_Result.cpp
+  OAIResponse_Category_Unassign_Result.cpp
   OAIResponse_Customer_Attribute_List_Result.cpp
+  OAIResponse_Customer_Count_Result.cpp
+  OAIResponse_Customer_Find_Result.cpp
   OAIResponse_Customer_Group_List_Result.cpp
   OAIResponse_Customer_List_Result.cpp
   OAIResponse_Customer_Wishlist_List_Result.cpp
   OAIResponse_Marketplace_Product_Find_Result.cpp
   OAIResponse_Order_Abandoned_List_Result.cpp
+  OAIResponse_Order_Count_Result.cpp
+  OAIResponse_Order_FinancialStatus_List_Result.cpp
+  OAIResponse_Order_FulfillmentStatus_List_Result.cpp
   OAIResponse_Order_List_Result.cpp
   OAIResponse_Order_PreestimateShipping_List_Result.cpp
   OAIResponse_Order_Shipment_Event_List_Result.cpp
@@ -873,25 +876,26 @@ add_library(${PROJECT_NAME}
   OAIResponse_Order_Transaction_List_Result.cpp
   OAIResponse_Product_Attribute_List_Result.cpp
   OAIResponse_Product_Brand_List_Result.cpp
+  OAIResponse_Product_ChildItem_Find_Result.cpp
   OAIResponse_Product_ChildItem_List_Result.cpp
+  OAIResponse_Product_Count_Result.cpp
   OAIResponse_Product_Currency_List_Result.cpp
+  OAIResponse_Product_Find_Result.cpp
   OAIResponse_Product_List_Result.cpp
   OAIResponse_Product_Option_List_Result.cpp
   OAIResponse_Product_Review_List_Result.cpp
+  OAIResponse_Return_Action_List_Result.cpp
+  OAIResponse_Return_Count_Result.cpp
   OAIResponse_Return_List_Result.cpp
+  OAIResponse_Return_Reason_List_Result.cpp
+  OAIResponse_Return_Status_List_Result.cpp
   OAIResponse_Subscriber_List_Result.cpp
   OAIResponse_Tax_Class_Info_Result.cpp
   OAIResponse_Tax_Class_List_Result.cpp
+  OAIResponse_Webhook_Count_Result.cpp
+  OAIResponse_Webhook_Events_Result.cpp
   OAIReturn.cpp
-  OAIReturnActionList_200_response.cpp
-  OAIReturnActionList_200_response_result.cpp
-  OAIReturnCount_200_response.cpp
-  OAIReturnCount_200_response_result.cpp
   OAIReturnInfo_200_response.cpp
-  OAIReturnReasonList_200_response.cpp
-  OAIReturnReasonList_200_response_result.cpp
-  OAIReturnStatusList_200_response.cpp
-  OAIReturnStatusList_200_response_result.cpp
   OAIReturn_Action.cpp
   OAIReturn_OrderProduct.cpp
   OAIReturn_Reason.cpp
@@ -915,15 +919,11 @@ add_library(${PROJECT_NAME}
   OAITaxClass_ZipCodes.cpp
   OAITaxClass_ZipCodes_Range.cpp
   OAIWebhook.cpp
-  OAIWebhookCount_200_response.cpp
-  OAIWebhookCount_200_response_result.cpp
   OAIWebhookCreate.cpp
-  OAIWebhookEvents_200_response.cpp
-  OAIWebhookEvents_200_response_result.cpp
-  OAIWebhookEvents_200_response_result_events_inner.cpp
   OAIWebhookList_200_response.cpp
   OAIWebhookList_200_response_result.cpp
   OAIWebhookUpdate.cpp
+  OAIWebhook_Event.cpp
   OAIAccountApi.cpp
   OAIAttributeApi.cpp
   OAIBasketApi.cpp

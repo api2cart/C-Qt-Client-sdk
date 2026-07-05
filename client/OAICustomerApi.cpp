@@ -845,7 +845,7 @@ void OAICustomerApi::customerCountCallback(OAIHttpRequestWorker *worker) {
     if (worker->error_type != QNetworkReply::NoError) {
         error_str = QString("%1, %2").arg(worker->error_str, QString(worker->response));
     }
-    OAICustomerCount_200_response output(QString(worker->response));
+    OAIModel_Response_Customer_Count output(QString(worker->response));
     worker->deleteLater();
 
     if (worker->error_type == QNetworkReply::NoError) {
@@ -1108,7 +1108,7 @@ void OAICustomerApi::customerFindCallback(OAIHttpRequestWorker *worker) {
     if (worker->error_type != QNetworkReply::NoError) {
         error_str = QString("%1, %2").arg(worker->error_str, QString(worker->response));
     }
-    OAICustomerFind_200_response output(QString(worker->response));
+    OAIModel_Response_Customer_Find output(QString(worker->response));
     worker->deleteLater();
 
     if (worker->error_type == QNetworkReply::NoError) {

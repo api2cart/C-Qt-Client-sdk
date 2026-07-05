@@ -257,7 +257,7 @@ void OAIReturnApi::returnActionListCallback(OAIHttpRequestWorker *worker) {
     if (worker->error_type != QNetworkReply::NoError) {
         error_str = QString("%1, %2").arg(worker->error_str, QString(worker->response));
     }
-    OAIReturnActionList_200_response output(QString(worker->response));
+    OAIModel_Response_Return_Action_List output(QString(worker->response));
     worker->deleteLater();
 
     if (worker->error_type == QNetworkReply::NoError) {
@@ -501,7 +501,7 @@ void OAIReturnApi::returnCountCallback(OAIHttpRequestWorker *worker) {
     if (worker->error_type != QNetworkReply::NoError) {
         error_str = QString("%1, %2").arg(worker->error_str, QString(worker->response));
     }
-    OAIReturnCount_200_response output(QString(worker->response));
+    OAIModel_Response_Return_Count output(QString(worker->response));
     worker->deleteLater();
 
     if (worker->error_type == QNetworkReply::NoError) {
@@ -1113,7 +1113,7 @@ void OAIReturnApi::returnReasonListCallback(OAIHttpRequestWorker *worker) {
     if (worker->error_type != QNetworkReply::NoError) {
         error_str = QString("%1, %2").arg(worker->error_str, QString(worker->response));
     }
-    OAIReturnReasonList_200_response output(QString(worker->response));
+    OAIModel_Response_Return_Reason_List output(QString(worker->response));
     worker->deleteLater();
 
     if (worker->error_type == QNetworkReply::NoError) {
@@ -1191,7 +1191,7 @@ void OAIReturnApi::returnStatusListCallback(OAIHttpRequestWorker *worker) {
     if (worker->error_type != QNetworkReply::NoError) {
         error_str = QString("%1, %2").arg(worker->error_str, QString(worker->response));
     }
-    OAIReturnStatusList_200_response output(QString(worker->response));
+    OAIModel_Response_Return_Status_List output(QString(worker->response));
     worker->deleteLater();
 
     if (worker->error_type == QNetworkReply::NoError) {

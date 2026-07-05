@@ -1236,7 +1236,7 @@ void OAIOrderApi::orderCountCallback(OAIHttpRequestWorker *worker) {
     if (worker->error_type != QNetworkReply::NoError) {
         error_str = QString("%1, %2").arg(worker->error_str, QString(worker->response));
     }
-    OAIOrderCount_200_response output(QString(worker->response));
+    OAIModel_Response_Order_Count output(QString(worker->response));
     worker->deleteLater();
 
     if (worker->error_type == QNetworkReply::NoError) {
@@ -1314,7 +1314,7 @@ void OAIOrderApi::orderFinancialStatusListCallback(OAIHttpRequestWorker *worker)
     if (worker->error_type != QNetworkReply::NoError) {
         error_str = QString("%1, %2").arg(worker->error_str, QString(worker->response));
     }
-    OAIOrderFinancialStatusList_200_response output(QString(worker->response));
+    OAIModel_Response_Order_FinancialStatus_List output(QString(worker->response));
     worker->deleteLater();
 
     if (worker->error_type == QNetworkReply::NoError) {
@@ -1408,7 +1408,7 @@ void OAIOrderApi::orderFulfillmentStatusListCallback(OAIHttpRequestWorker *worke
     if (worker->error_type != QNetworkReply::NoError) {
         error_str = QString("%1, %2").arg(worker->error_str, QString(worker->response));
     }
-    OAIOrderFulfillmentStatusList_200_response output(QString(worker->response));
+    OAIModel_Response_Order_FulfillmentStatus_List output(QString(worker->response));
     worker->deleteLater();
 
     if (worker->error_type == QNetworkReply::NoError) {

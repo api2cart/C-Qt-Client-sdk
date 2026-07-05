@@ -23,6 +23,9 @@
 #include "OAIAttributeValueDelete_200_response.h"
 #include "OAICategoryAddBatch_200_response.h"
 #include "OAIModel_Response_Order_Abandoned_List.h"
+#include "OAIModel_Response_Order_Count.h"
+#include "OAIModel_Response_Order_FinancialStatus_List.h"
+#include "OAIModel_Response_Order_FulfillmentStatus_List.h"
 #include "OAIModel_Response_Order_List.h"
 #include "OAIModel_Response_Order_PreestimateShipping_List.h"
 #include "OAIModel_Response_Order_Shipment_Event_List.h"
@@ -33,9 +36,6 @@
 #include "OAIOrderAdd_200_response.h"
 #include "OAIOrderCalculate.h"
 #include "OAIOrderCalculate_200_response.h"
-#include "OAIOrderCount_200_response.h"
-#include "OAIOrderFinancialStatusList_200_response.h"
-#include "OAIOrderFulfillmentStatusList_200_response.h"
 #include "OAIOrderInfo_200_response.h"
 #include "OAIOrderPreestimateShippingList.h"
 #include "OAIOrderRefundAdd.h"
@@ -404,9 +404,9 @@ Q_SIGNALS:
     void orderAbandonedListSignal(OAIModel_Response_Order_Abandoned_List summary);
     void orderAddSignal(OAIOrderAdd_200_response summary);
     void orderCalculateSignal(OAIOrderCalculate_200_response summary);
-    void orderCountSignal(OAIOrderCount_200_response summary);
-    void orderFinancialStatusListSignal(OAIOrderFinancialStatusList_200_response summary);
-    void orderFulfillmentStatusListSignal(OAIOrderFulfillmentStatusList_200_response summary);
+    void orderCountSignal(OAIModel_Response_Order_Count summary);
+    void orderFinancialStatusListSignal(OAIModel_Response_Order_FinancialStatus_List summary);
+    void orderFulfillmentStatusListSignal(OAIModel_Response_Order_FulfillmentStatus_List summary);
     void orderInfoSignal(OAIOrderInfo_200_response summary);
     void orderListSignal(OAIModel_Response_Order_List summary);
     void orderPreestimateShippingListSignal(OAIModel_Response_Order_PreestimateShipping_List summary);
@@ -431,9 +431,9 @@ Q_SIGNALS:
     void orderAbandonedListSignalFull(OAIHttpRequestWorker *worker, OAIModel_Response_Order_Abandoned_List summary);
     void orderAddSignalFull(OAIHttpRequestWorker *worker, OAIOrderAdd_200_response summary);
     void orderCalculateSignalFull(OAIHttpRequestWorker *worker, OAIOrderCalculate_200_response summary);
-    void orderCountSignalFull(OAIHttpRequestWorker *worker, OAIOrderCount_200_response summary);
-    void orderFinancialStatusListSignalFull(OAIHttpRequestWorker *worker, OAIOrderFinancialStatusList_200_response summary);
-    void orderFulfillmentStatusListSignalFull(OAIHttpRequestWorker *worker, OAIOrderFulfillmentStatusList_200_response summary);
+    void orderCountSignalFull(OAIHttpRequestWorker *worker, OAIModel_Response_Order_Count summary);
+    void orderFinancialStatusListSignalFull(OAIHttpRequestWorker *worker, OAIModel_Response_Order_FinancialStatus_List summary);
+    void orderFulfillmentStatusListSignalFull(OAIHttpRequestWorker *worker, OAIModel_Response_Order_FulfillmentStatus_List summary);
     void orderInfoSignalFull(OAIHttpRequestWorker *worker, OAIOrderInfo_200_response summary);
     void orderListSignalFull(OAIHttpRequestWorker *worker, OAIModel_Response_Order_List summary);
     void orderPreestimateShippingListSignalFull(OAIHttpRequestWorker *worker, OAIModel_Response_Order_PreestimateShipping_List summary);
@@ -464,14 +464,14 @@ Q_SIGNALS:
     void orderCalculateSignalE(OAIOrderCalculate_200_response summary, QNetworkReply::NetworkError error_type, QString error_str);
     void orderCalculateSignalError(OAIOrderCalculate_200_response summary, QNetworkReply::NetworkError error_type, const QString &error_str);
     Q_DECL_DEPRECATED_X("Use orderCountSignalError() instead")
-    void orderCountSignalE(OAIOrderCount_200_response summary, QNetworkReply::NetworkError error_type, QString error_str);
-    void orderCountSignalError(OAIOrderCount_200_response summary, QNetworkReply::NetworkError error_type, const QString &error_str);
+    void orderCountSignalE(OAIModel_Response_Order_Count summary, QNetworkReply::NetworkError error_type, QString error_str);
+    void orderCountSignalError(OAIModel_Response_Order_Count summary, QNetworkReply::NetworkError error_type, const QString &error_str);
     Q_DECL_DEPRECATED_X("Use orderFinancialStatusListSignalError() instead")
-    void orderFinancialStatusListSignalE(OAIOrderFinancialStatusList_200_response summary, QNetworkReply::NetworkError error_type, QString error_str);
-    void orderFinancialStatusListSignalError(OAIOrderFinancialStatusList_200_response summary, QNetworkReply::NetworkError error_type, const QString &error_str);
+    void orderFinancialStatusListSignalE(OAIModel_Response_Order_FinancialStatus_List summary, QNetworkReply::NetworkError error_type, QString error_str);
+    void orderFinancialStatusListSignalError(OAIModel_Response_Order_FinancialStatus_List summary, QNetworkReply::NetworkError error_type, const QString &error_str);
     Q_DECL_DEPRECATED_X("Use orderFulfillmentStatusListSignalError() instead")
-    void orderFulfillmentStatusListSignalE(OAIOrderFulfillmentStatusList_200_response summary, QNetworkReply::NetworkError error_type, QString error_str);
-    void orderFulfillmentStatusListSignalError(OAIOrderFulfillmentStatusList_200_response summary, QNetworkReply::NetworkError error_type, const QString &error_str);
+    void orderFulfillmentStatusListSignalE(OAIModel_Response_Order_FulfillmentStatus_List summary, QNetworkReply::NetworkError error_type, QString error_str);
+    void orderFulfillmentStatusListSignalError(OAIModel_Response_Order_FulfillmentStatus_List summary, QNetworkReply::NetworkError error_type, const QString &error_str);
     Q_DECL_DEPRECATED_X("Use orderInfoSignalError() instead")
     void orderInfoSignalE(OAIOrderInfo_200_response summary, QNetworkReply::NetworkError error_type, QString error_str);
     void orderInfoSignalError(OAIOrderInfo_200_response summary, QNetworkReply::NetworkError error_type, const QString &error_str);

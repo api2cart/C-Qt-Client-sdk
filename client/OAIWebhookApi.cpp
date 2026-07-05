@@ -303,7 +303,7 @@ void OAIWebhookApi::webhookCountCallback(OAIHttpRequestWorker *worker) {
     if (worker->error_type != QNetworkReply::NoError) {
         error_str = QString("%1, %2").arg(worker->error_str, QString(worker->response));
     }
-    OAIWebhookCount_200_response output(QString(worker->response));
+    OAIModel_Response_Webhook_Count output(QString(worker->response));
     worker->deleteLater();
 
     if (worker->error_type == QNetworkReply::NoError) {
@@ -558,7 +558,7 @@ void OAIWebhookApi::webhookEventsCallback(OAIHttpRequestWorker *worker) {
     if (worker->error_type != QNetworkReply::NoError) {
         error_str = QString("%1, %2").arg(worker->error_str, QString(worker->response));
     }
-    OAIWebhookEvents_200_response output(QString(worker->response));
+    OAIModel_Response_Webhook_Events output(QString(worker->response));
     worker->deleteLater();
 
     if (worker->error_type == QNetworkReply::NoError) {

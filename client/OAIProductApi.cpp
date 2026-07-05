@@ -1619,7 +1619,7 @@ void OAIProductApi::productChildItemFindCallback(OAIHttpRequestWorker *worker) {
     if (worker->error_type != QNetworkReply::NoError) {
         error_str = QString("%1, %2").arg(worker->error_str, QString(worker->response));
     }
-    OAIProductChildItemFind_200_response output(QString(worker->response));
+    OAIModel_Response_Product_ChildItem_Find output(QString(worker->response));
     worker->deleteLater();
 
     if (worker->error_type == QNetworkReply::NoError) {
@@ -2796,7 +2796,7 @@ void OAIProductApi::productCountCallback(OAIHttpRequestWorker *worker) {
     if (worker->error_type != QNetworkReply::NoError) {
         error_str = QString("%1, %2").arg(worker->error_str, QString(worker->response));
     }
-    OAIProductCount_200_response output(QString(worker->response));
+    OAIModel_Response_Product_Count output(QString(worker->response));
     worker->deleteLater();
 
     if (worker->error_type == QNetworkReply::NoError) {
@@ -3555,7 +3555,7 @@ void OAIProductApi::productFindCallback(OAIHttpRequestWorker *worker) {
     if (worker->error_type != QNetworkReply::NoError) {
         error_str = QString("%1, %2").arg(worker->error_str, QString(worker->response));
     }
-    OAIProductFind_200_response output(QString(worker->response));
+    OAIModel_Response_Product_Find output(QString(worker->response));
     worker->deleteLater();
 
     if (worker->error_type == QNetworkReply::NoError) {

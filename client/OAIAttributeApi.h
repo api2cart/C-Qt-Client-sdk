@@ -20,16 +20,16 @@
 
 #include "OAIAttributeAdd_200_response.h"
 #include "OAIAttributeAssignGroup_200_response.h"
-#include "OAIAttributeCount_200_response.h"
 #include "OAIAttributeDelete_200_response.h"
 #include "OAIAttributeInfo_200_response.h"
-#include "OAIAttributeTypeList_200_response.h"
 #include "OAIAttributeUnassignGroup_200_response.h"
 #include "OAIAttributeUpdate_200_response.h"
 #include "OAIAttributeValueDelete_200_response.h"
 #include "OAIModel_Response_Attribute_Attributeset_List.h"
+#include "OAIModel_Response_Attribute_Count.h"
 #include "OAIModel_Response_Attribute_Group_List.h"
 #include "OAIModel_Response_Attribute_List.h"
+#include "OAIModel_Response_Attribute_Type_List.h"
 #include <QString>
 
 #include <QObject>
@@ -280,12 +280,12 @@ Q_SIGNALS:
     void attributeAssignGroupSignal(OAIAttributeAssignGroup_200_response summary);
     void attributeAssignSetSignal(OAIAttributeAssignGroup_200_response summary);
     void attributeAttributesetListSignal(OAIModel_Response_Attribute_Attributeset_List summary);
-    void attributeCountSignal(OAIAttributeCount_200_response summary);
+    void attributeCountSignal(OAIModel_Response_Attribute_Count summary);
     void attributeDeleteSignal(OAIAttributeDelete_200_response summary);
     void attributeGroupListSignal(OAIModel_Response_Attribute_Group_List summary);
     void attributeInfoSignal(OAIAttributeInfo_200_response summary);
     void attributeListSignal(OAIModel_Response_Attribute_List summary);
-    void attributeTypeListSignal(OAIAttributeTypeList_200_response summary);
+    void attributeTypeListSignal(OAIModel_Response_Attribute_Type_List summary);
     void attributeUnassignGroupSignal(OAIAttributeUnassignGroup_200_response summary);
     void attributeUnassignSetSignal(OAIAttributeUnassignGroup_200_response summary);
     void attributeUpdateSignal(OAIAttributeUpdate_200_response summary);
@@ -298,12 +298,12 @@ Q_SIGNALS:
     void attributeAssignGroupSignalFull(OAIHttpRequestWorker *worker, OAIAttributeAssignGroup_200_response summary);
     void attributeAssignSetSignalFull(OAIHttpRequestWorker *worker, OAIAttributeAssignGroup_200_response summary);
     void attributeAttributesetListSignalFull(OAIHttpRequestWorker *worker, OAIModel_Response_Attribute_Attributeset_List summary);
-    void attributeCountSignalFull(OAIHttpRequestWorker *worker, OAIAttributeCount_200_response summary);
+    void attributeCountSignalFull(OAIHttpRequestWorker *worker, OAIModel_Response_Attribute_Count summary);
     void attributeDeleteSignalFull(OAIHttpRequestWorker *worker, OAIAttributeDelete_200_response summary);
     void attributeGroupListSignalFull(OAIHttpRequestWorker *worker, OAIModel_Response_Attribute_Group_List summary);
     void attributeInfoSignalFull(OAIHttpRequestWorker *worker, OAIAttributeInfo_200_response summary);
     void attributeListSignalFull(OAIHttpRequestWorker *worker, OAIModel_Response_Attribute_List summary);
-    void attributeTypeListSignalFull(OAIHttpRequestWorker *worker, OAIAttributeTypeList_200_response summary);
+    void attributeTypeListSignalFull(OAIHttpRequestWorker *worker, OAIModel_Response_Attribute_Type_List summary);
     void attributeUnassignGroupSignalFull(OAIHttpRequestWorker *worker, OAIAttributeUnassignGroup_200_response summary);
     void attributeUnassignSetSignalFull(OAIHttpRequestWorker *worker, OAIAttributeUnassignGroup_200_response summary);
     void attributeUpdateSignalFull(OAIHttpRequestWorker *worker, OAIAttributeUpdate_200_response summary);
@@ -324,8 +324,8 @@ Q_SIGNALS:
     void attributeAttributesetListSignalE(OAIModel_Response_Attribute_Attributeset_List summary, QNetworkReply::NetworkError error_type, QString error_str);
     void attributeAttributesetListSignalError(OAIModel_Response_Attribute_Attributeset_List summary, QNetworkReply::NetworkError error_type, const QString &error_str);
     Q_DECL_DEPRECATED_X("Use attributeCountSignalError() instead")
-    void attributeCountSignalE(OAIAttributeCount_200_response summary, QNetworkReply::NetworkError error_type, QString error_str);
-    void attributeCountSignalError(OAIAttributeCount_200_response summary, QNetworkReply::NetworkError error_type, const QString &error_str);
+    void attributeCountSignalE(OAIModel_Response_Attribute_Count summary, QNetworkReply::NetworkError error_type, QString error_str);
+    void attributeCountSignalError(OAIModel_Response_Attribute_Count summary, QNetworkReply::NetworkError error_type, const QString &error_str);
     Q_DECL_DEPRECATED_X("Use attributeDeleteSignalError() instead")
     void attributeDeleteSignalE(OAIAttributeDelete_200_response summary, QNetworkReply::NetworkError error_type, QString error_str);
     void attributeDeleteSignalError(OAIAttributeDelete_200_response summary, QNetworkReply::NetworkError error_type, const QString &error_str);
@@ -339,8 +339,8 @@ Q_SIGNALS:
     void attributeListSignalE(OAIModel_Response_Attribute_List summary, QNetworkReply::NetworkError error_type, QString error_str);
     void attributeListSignalError(OAIModel_Response_Attribute_List summary, QNetworkReply::NetworkError error_type, const QString &error_str);
     Q_DECL_DEPRECATED_X("Use attributeTypeListSignalError() instead")
-    void attributeTypeListSignalE(OAIAttributeTypeList_200_response summary, QNetworkReply::NetworkError error_type, QString error_str);
-    void attributeTypeListSignalError(OAIAttributeTypeList_200_response summary, QNetworkReply::NetworkError error_type, const QString &error_str);
+    void attributeTypeListSignalE(OAIModel_Response_Attribute_Type_List summary, QNetworkReply::NetworkError error_type, QString error_str);
+    void attributeTypeListSignalError(OAIModel_Response_Attribute_Type_List summary, QNetworkReply::NetworkError error_type, const QString &error_str);
     Q_DECL_DEPRECATED_X("Use attributeUnassignGroupSignalError() instead")
     void attributeUnassignGroupSignalE(OAIAttributeUnassignGroup_200_response summary, QNetworkReply::NetworkError error_type, QString error_str);
     void attributeUnassignGroupSignalError(OAIAttributeUnassignGroup_200_response summary, QNetworkReply::NetworkError error_type, const QString &error_str);

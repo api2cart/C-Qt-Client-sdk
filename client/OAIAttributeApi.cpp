@@ -1224,7 +1224,7 @@ void OAIAttributeApi::attributeCountCallback(OAIHttpRequestWorker *worker) {
     if (worker->error_type != QNetworkReply::NoError) {
         error_str = QString("%1, %2").arg(worker->error_str, QString(worker->response));
     }
-    OAIAttributeCount_200_response output(QString(worker->response));
+    OAIModel_Response_Attribute_Count output(QString(worker->response));
     worker->deleteLater();
 
     if (worker->error_type == QNetworkReply::NoError) {
@@ -2068,7 +2068,7 @@ void OAIAttributeApi::attributeTypeListCallback(OAIHttpRequestWorker *worker) {
     if (worker->error_type != QNetworkReply::NoError) {
         error_str = QString("%1, %2").arg(worker->error_str, QString(worker->response));
     }
-    OAIAttributeTypeList_200_response output(QString(worker->response));
+    OAIModel_Response_Attribute_Type_List output(QString(worker->response));
     worker->deleteLater();
 
     if (worker->error_type == QNetworkReply::NoError) {

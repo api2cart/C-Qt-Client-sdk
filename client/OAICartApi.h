@@ -21,22 +21,22 @@
 #include "OAIAttributeAdd_200_response.h"
 #include "OAIAttributeDelete_200_response.h"
 #include "OAIBasketLiveShippingServiceDelete_200_response.h"
-#include "OAICartCatalogPriceRulesCount_200_response.h"
 #include "OAICartCouponAdd.h"
 #include "OAICartCouponAdd_200_response.h"
-#include "OAICartCouponCount_200_response.h"
 #include "OAICartDelete_200_response.h"
 #include "OAICartGiftcardAdd_200_response.h"
-#include "OAICartGiftcardCount_200_response.h"
 #include "OAICartInfo_200_response.h"
-#include "OAICartMethods_200_response.h"
 #include "OAICartPluginList_200_response.h"
 #include "OAICartScriptAdd_200_response.h"
 #include "OAICartValidate_200_response.h"
+#include "OAIModel_Response_Cart_CatalogPriceRules_Count.h"
 #include "OAIModel_Response_Cart_Catalog_PriceRules_List.h"
+#include "OAIModel_Response_Cart_Coupon_Count.h"
 #include "OAIModel_Response_Cart_Coupon_List.h"
 #include "OAIModel_Response_Cart_GiftCard_List.h"
+#include "OAIModel_Response_Cart_Giftcard_Count.h"
 #include "OAIModel_Response_Cart_MetaData_List.h"
+#include "OAIModel_Response_Cart_Methods.h"
 #include "OAIModel_Response_Cart_Script_List.h"
 #include "OAIModel_Response_Cart_ShippingZones_List.h"
 #include <QString>
@@ -152,14 +152,18 @@ public:
 
     /**
     * @param[in]  amount double [required]
+    * @param[in]  currency QString [optional]
+    * @param[in]  store_id QString [optional]
     * @param[in]  code QString [optional]
+    * @param[in]  name QString [optional]
     * @param[in]  owner_email QString [optional]
+    * @param[in]  owner_name QString [optional]
     * @param[in]  recipient_email QString [optional]
     * @param[in]  recipient_name QString [optional]
-    * @param[in]  owner_name QString [optional]
+    * @param[in]  message QString [optional]
     * @param[in]  idempotency_key QString [optional]
     */
-    virtual void cartGiftcardAdd(const double &amount, const ::OpenAPI::OptionalParam<QString> &code = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &owner_email = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &recipient_email = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &recipient_name = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &owner_name = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &idempotency_key = ::OpenAPI::OptionalParam<QString>());
+    virtual void cartGiftcardAdd(const double &amount, const ::OpenAPI::OptionalParam<QString> &currency = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &store_id = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &code = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &name = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &owner_email = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &owner_name = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &recipient_email = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &recipient_name = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &message = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &idempotency_key = ::OpenAPI::OptionalParam<QString>());
 
     /**
     * @param[in]  store_id QString [optional]
@@ -168,10 +172,12 @@ public:
 
     /**
     * @param[in]  id QString [required]
+    * @param[in]  store_id QString [optional]
     */
-    virtual void cartGiftcardDelete(const QString &id);
+    virtual void cartGiftcardDelete(const QString &id, const ::OpenAPI::OptionalParam<QString> &store_id = ::OpenAPI::OptionalParam<QString>());
 
     /**
+    * @param[in]  ids QString [optional]
     * @param[in]  start qint32 [optional]
     * @param[in]  count qint32 [optional]
     * @param[in]  page_cursor QString [optional]
@@ -180,7 +186,7 @@ public:
     * @param[in]  params QString [optional]
     * @param[in]  exclude QString [optional]
     */
-    virtual void cartGiftcardList(const ::OpenAPI::OptionalParam<qint32> &start = ::OpenAPI::OptionalParam<qint32>(), const ::OpenAPI::OptionalParam<qint32> &count = ::OpenAPI::OptionalParam<qint32>(), const ::OpenAPI::OptionalParam<QString> &page_cursor = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &store_id = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &response_fields = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &params = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &exclude = ::OpenAPI::OptionalParam<QString>());
+    virtual void cartGiftcardList(const ::OpenAPI::OptionalParam<QString> &ids = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<qint32> &start = ::OpenAPI::OptionalParam<qint32>(), const ::OpenAPI::OptionalParam<qint32> &count = ::OpenAPI::OptionalParam<qint32>(), const ::OpenAPI::OptionalParam<QString> &page_cursor = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &store_id = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &response_fields = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &params = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &exclude = ::OpenAPI::OptionalParam<QString>());
 
     /**
     * @param[in]  store_id QString [optional]
@@ -334,23 +340,23 @@ private:
 
 Q_SIGNALS:
 
-    void cartCatalogPriceRulesCountSignal(OAICartCatalogPriceRulesCount_200_response summary);
+    void cartCatalogPriceRulesCountSignal(OAIModel_Response_Cart_CatalogPriceRules_Count summary);
     void cartCatalogPriceRulesListSignal(OAIModel_Response_Cart_Catalog_PriceRules_List summary);
     void cartCouponAddSignal(OAICartCouponAdd_200_response summary);
     void cartCouponConditionAddSignal(OAIBasketLiveShippingServiceDelete_200_response summary);
-    void cartCouponCountSignal(OAICartCouponCount_200_response summary);
+    void cartCouponCountSignal(OAIModel_Response_Cart_Coupon_Count summary);
     void cartCouponDeleteSignal(OAIAttributeDelete_200_response summary);
     void cartCouponListSignal(OAIModel_Response_Cart_Coupon_List summary);
     void cartDeleteSignal(OAICartDelete_200_response summary);
     void cartGiftcardAddSignal(OAICartGiftcardAdd_200_response summary);
-    void cartGiftcardCountSignal(OAICartGiftcardCount_200_response summary);
+    void cartGiftcardCountSignal(OAIModel_Response_Cart_Giftcard_Count summary);
     void cartGiftcardDeleteSignal(OAIAttributeDelete_200_response summary);
     void cartGiftcardListSignal(OAIModel_Response_Cart_GiftCard_List summary);
     void cartInfoSignal(OAICartInfo_200_response summary);
     void cartMetaDataListSignal(OAIModel_Response_Cart_MetaData_List summary);
     void cartMetaDataSetSignal(OAIAttributeAdd_200_response summary);
     void cartMetaDataUnsetSignal(OAIBasketLiveShippingServiceDelete_200_response summary);
-    void cartMethodsSignal(OAICartMethods_200_response summary);
+    void cartMethodsSignal(OAIModel_Response_Cart_Methods summary);
     void cartPluginListSignal(OAICartPluginList_200_response summary);
     void cartScriptAddSignal(OAICartScriptAdd_200_response summary);
     void cartScriptDeleteSignal(OAIAttributeDelete_200_response summary);
@@ -359,23 +365,23 @@ Q_SIGNALS:
     void cartValidateSignal(OAICartValidate_200_response summary);
 
 
-    void cartCatalogPriceRulesCountSignalFull(OAIHttpRequestWorker *worker, OAICartCatalogPriceRulesCount_200_response summary);
+    void cartCatalogPriceRulesCountSignalFull(OAIHttpRequestWorker *worker, OAIModel_Response_Cart_CatalogPriceRules_Count summary);
     void cartCatalogPriceRulesListSignalFull(OAIHttpRequestWorker *worker, OAIModel_Response_Cart_Catalog_PriceRules_List summary);
     void cartCouponAddSignalFull(OAIHttpRequestWorker *worker, OAICartCouponAdd_200_response summary);
     void cartCouponConditionAddSignalFull(OAIHttpRequestWorker *worker, OAIBasketLiveShippingServiceDelete_200_response summary);
-    void cartCouponCountSignalFull(OAIHttpRequestWorker *worker, OAICartCouponCount_200_response summary);
+    void cartCouponCountSignalFull(OAIHttpRequestWorker *worker, OAIModel_Response_Cart_Coupon_Count summary);
     void cartCouponDeleteSignalFull(OAIHttpRequestWorker *worker, OAIAttributeDelete_200_response summary);
     void cartCouponListSignalFull(OAIHttpRequestWorker *worker, OAIModel_Response_Cart_Coupon_List summary);
     void cartDeleteSignalFull(OAIHttpRequestWorker *worker, OAICartDelete_200_response summary);
     void cartGiftcardAddSignalFull(OAIHttpRequestWorker *worker, OAICartGiftcardAdd_200_response summary);
-    void cartGiftcardCountSignalFull(OAIHttpRequestWorker *worker, OAICartGiftcardCount_200_response summary);
+    void cartGiftcardCountSignalFull(OAIHttpRequestWorker *worker, OAIModel_Response_Cart_Giftcard_Count summary);
     void cartGiftcardDeleteSignalFull(OAIHttpRequestWorker *worker, OAIAttributeDelete_200_response summary);
     void cartGiftcardListSignalFull(OAIHttpRequestWorker *worker, OAIModel_Response_Cart_GiftCard_List summary);
     void cartInfoSignalFull(OAIHttpRequestWorker *worker, OAICartInfo_200_response summary);
     void cartMetaDataListSignalFull(OAIHttpRequestWorker *worker, OAIModel_Response_Cart_MetaData_List summary);
     void cartMetaDataSetSignalFull(OAIHttpRequestWorker *worker, OAIAttributeAdd_200_response summary);
     void cartMetaDataUnsetSignalFull(OAIHttpRequestWorker *worker, OAIBasketLiveShippingServiceDelete_200_response summary);
-    void cartMethodsSignalFull(OAIHttpRequestWorker *worker, OAICartMethods_200_response summary);
+    void cartMethodsSignalFull(OAIHttpRequestWorker *worker, OAIModel_Response_Cart_Methods summary);
     void cartPluginListSignalFull(OAIHttpRequestWorker *worker, OAICartPluginList_200_response summary);
     void cartScriptAddSignalFull(OAIHttpRequestWorker *worker, OAICartScriptAdd_200_response summary);
     void cartScriptDeleteSignalFull(OAIHttpRequestWorker *worker, OAIAttributeDelete_200_response summary);
@@ -384,8 +390,8 @@ Q_SIGNALS:
     void cartValidateSignalFull(OAIHttpRequestWorker *worker, OAICartValidate_200_response summary);
 
     Q_DECL_DEPRECATED_X("Use cartCatalogPriceRulesCountSignalError() instead")
-    void cartCatalogPriceRulesCountSignalE(OAICartCatalogPriceRulesCount_200_response summary, QNetworkReply::NetworkError error_type, QString error_str);
-    void cartCatalogPriceRulesCountSignalError(OAICartCatalogPriceRulesCount_200_response summary, QNetworkReply::NetworkError error_type, const QString &error_str);
+    void cartCatalogPriceRulesCountSignalE(OAIModel_Response_Cart_CatalogPriceRules_Count summary, QNetworkReply::NetworkError error_type, QString error_str);
+    void cartCatalogPriceRulesCountSignalError(OAIModel_Response_Cart_CatalogPriceRules_Count summary, QNetworkReply::NetworkError error_type, const QString &error_str);
     Q_DECL_DEPRECATED_X("Use cartCatalogPriceRulesListSignalError() instead")
     void cartCatalogPriceRulesListSignalE(OAIModel_Response_Cart_Catalog_PriceRules_List summary, QNetworkReply::NetworkError error_type, QString error_str);
     void cartCatalogPriceRulesListSignalError(OAIModel_Response_Cart_Catalog_PriceRules_List summary, QNetworkReply::NetworkError error_type, const QString &error_str);
@@ -396,8 +402,8 @@ Q_SIGNALS:
     void cartCouponConditionAddSignalE(OAIBasketLiveShippingServiceDelete_200_response summary, QNetworkReply::NetworkError error_type, QString error_str);
     void cartCouponConditionAddSignalError(OAIBasketLiveShippingServiceDelete_200_response summary, QNetworkReply::NetworkError error_type, const QString &error_str);
     Q_DECL_DEPRECATED_X("Use cartCouponCountSignalError() instead")
-    void cartCouponCountSignalE(OAICartCouponCount_200_response summary, QNetworkReply::NetworkError error_type, QString error_str);
-    void cartCouponCountSignalError(OAICartCouponCount_200_response summary, QNetworkReply::NetworkError error_type, const QString &error_str);
+    void cartCouponCountSignalE(OAIModel_Response_Cart_Coupon_Count summary, QNetworkReply::NetworkError error_type, QString error_str);
+    void cartCouponCountSignalError(OAIModel_Response_Cart_Coupon_Count summary, QNetworkReply::NetworkError error_type, const QString &error_str);
     Q_DECL_DEPRECATED_X("Use cartCouponDeleteSignalError() instead")
     void cartCouponDeleteSignalE(OAIAttributeDelete_200_response summary, QNetworkReply::NetworkError error_type, QString error_str);
     void cartCouponDeleteSignalError(OAIAttributeDelete_200_response summary, QNetworkReply::NetworkError error_type, const QString &error_str);
@@ -411,8 +417,8 @@ Q_SIGNALS:
     void cartGiftcardAddSignalE(OAICartGiftcardAdd_200_response summary, QNetworkReply::NetworkError error_type, QString error_str);
     void cartGiftcardAddSignalError(OAICartGiftcardAdd_200_response summary, QNetworkReply::NetworkError error_type, const QString &error_str);
     Q_DECL_DEPRECATED_X("Use cartGiftcardCountSignalError() instead")
-    void cartGiftcardCountSignalE(OAICartGiftcardCount_200_response summary, QNetworkReply::NetworkError error_type, QString error_str);
-    void cartGiftcardCountSignalError(OAICartGiftcardCount_200_response summary, QNetworkReply::NetworkError error_type, const QString &error_str);
+    void cartGiftcardCountSignalE(OAIModel_Response_Cart_Giftcard_Count summary, QNetworkReply::NetworkError error_type, QString error_str);
+    void cartGiftcardCountSignalError(OAIModel_Response_Cart_Giftcard_Count summary, QNetworkReply::NetworkError error_type, const QString &error_str);
     Q_DECL_DEPRECATED_X("Use cartGiftcardDeleteSignalError() instead")
     void cartGiftcardDeleteSignalE(OAIAttributeDelete_200_response summary, QNetworkReply::NetworkError error_type, QString error_str);
     void cartGiftcardDeleteSignalError(OAIAttributeDelete_200_response summary, QNetworkReply::NetworkError error_type, const QString &error_str);
@@ -432,8 +438,8 @@ Q_SIGNALS:
     void cartMetaDataUnsetSignalE(OAIBasketLiveShippingServiceDelete_200_response summary, QNetworkReply::NetworkError error_type, QString error_str);
     void cartMetaDataUnsetSignalError(OAIBasketLiveShippingServiceDelete_200_response summary, QNetworkReply::NetworkError error_type, const QString &error_str);
     Q_DECL_DEPRECATED_X("Use cartMethodsSignalError() instead")
-    void cartMethodsSignalE(OAICartMethods_200_response summary, QNetworkReply::NetworkError error_type, QString error_str);
-    void cartMethodsSignalError(OAICartMethods_200_response summary, QNetworkReply::NetworkError error_type, const QString &error_str);
+    void cartMethodsSignalE(OAIModel_Response_Cart_Methods summary, QNetworkReply::NetworkError error_type, QString error_str);
+    void cartMethodsSignalError(OAIModel_Response_Cart_Methods summary, QNetworkReply::NetworkError error_type, const QString &error_str);
     Q_DECL_DEPRECATED_X("Use cartPluginListSignalError() instead")
     void cartPluginListSignalE(OAICartPluginList_200_response summary, QNetworkReply::NetworkError error_type, QString error_str);
     void cartPluginListSignalError(OAICartPluginList_200_response summary, QNetworkReply::NetworkError error_type, const QString &error_str);
