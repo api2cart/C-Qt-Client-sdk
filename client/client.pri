@@ -18,6 +18,13 @@ HEADERS += \
     $${PWD}/OAIAccount_SupportedPlatform.h \
     $${PWD}/OAIAccount_SupportedPlatform_params.h \
     $${PWD}/OAIAccount_SupportedPlatform_params_required_inner_inner.h \
+    $${PWD}/OAIAnalytics_Customer.h \
+    $${PWD}/OAIAnalytics_CustomerMetric.h \
+    $${PWD}/OAIAnalytics_Interval.h \
+    $${PWD}/OAIAnalytics_Metric.h \
+    $${PWD}/OAIAnalytics_Period.h \
+    $${PWD}/OAIAnalytics_Product.h \
+    $${PWD}/OAIAnalytics_ProductMetric.h \
     $${PWD}/OAIAttributeAdd_200_response.h \
     $${PWD}/OAIAttributeAdd_200_response_result.h \
     $${PWD}/OAIAttributeAssignGroup_200_response.h \
@@ -358,6 +365,9 @@ HEADERS += \
     $${PWD}/OAIProduct_Review_Rating.h \
     $${PWD}/OAIProduct_TierPrice.h \
     $${PWD}/OAIResponse_Account_SupportedPlatforms_Result.h \
+    $${PWD}/OAIResponse_Analytics_CustomerReport_Result.h \
+    $${PWD}/OAIResponse_Analytics_ProductReport_Result.h \
+    $${PWD}/OAIResponse_Analytics_Report_Result.h \
     $${PWD}/OAIResponse_Attribute_Attributeset_List_Result.h \
     $${PWD}/OAIResponse_Attribute_Count_Result.h \
     $${PWD}/OAIResponse_Attribute_Group_List_Result.h \
@@ -449,6 +459,7 @@ HEADERS += \
     $${PWD}/OAIWebhook_Event.h \
 # APIs
     $${PWD}/OAIAccountApi.h \
+    $${PWD}/OAIAnalyticsApi.h \
     $${PWD}/OAIAttributeApi.h \
     $${PWD}/OAIBasketApi.h \
     $${PWD}/OAIBatchApi.h \
@@ -491,6 +502,13 @@ SOURCES += \
     $${PWD}/OAIAccount_SupportedPlatform.cpp \
     $${PWD}/OAIAccount_SupportedPlatform_params.cpp \
     $${PWD}/OAIAccount_SupportedPlatform_params_required_inner_inner.cpp \
+    $${PWD}/OAIAnalytics_Customer.cpp \
+    $${PWD}/OAIAnalytics_CustomerMetric.cpp \
+    $${PWD}/OAIAnalytics_Interval.cpp \
+    $${PWD}/OAIAnalytics_Metric.cpp \
+    $${PWD}/OAIAnalytics_Period.cpp \
+    $${PWD}/OAIAnalytics_Product.cpp \
+    $${PWD}/OAIAnalytics_ProductMetric.cpp \
     $${PWD}/OAIAttributeAdd_200_response.cpp \
     $${PWD}/OAIAttributeAdd_200_response_result.cpp \
     $${PWD}/OAIAttributeAssignGroup_200_response.cpp \
@@ -831,6 +849,9 @@ SOURCES += \
     $${PWD}/OAIProduct_Review_Rating.cpp \
     $${PWD}/OAIProduct_TierPrice.cpp \
     $${PWD}/OAIResponse_Account_SupportedPlatforms_Result.cpp \
+    $${PWD}/OAIResponse_Analytics_CustomerReport_Result.cpp \
+    $${PWD}/OAIResponse_Analytics_ProductReport_Result.cpp \
+    $${PWD}/OAIResponse_Analytics_Report_Result.cpp \
     $${PWD}/OAIResponse_Attribute_Attributeset_List_Result.cpp \
     $${PWD}/OAIResponse_Attribute_Count_Result.cpp \
     $${PWD}/OAIResponse_Attribute_Group_List_Result.cpp \
@@ -922,6 +943,7 @@ SOURCES += \
     $${PWD}/OAIWebhook_Event.cpp \
 # APIs
     $${PWD}/OAIAccountApi.cpp \
+    $${PWD}/OAIAnalyticsApi.cpp \
     $${PWD}/OAIAttributeApi.cpp \
     $${PWD}/OAIBasketApi.cpp \
     $${PWD}/OAIBatchApi.cpp \

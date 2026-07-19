@@ -27,6 +27,13 @@ add_library(${PROJECT_NAME}
   OAIAccount_SupportedPlatform.h
   OAIAccount_SupportedPlatform_params.h
   OAIAccount_SupportedPlatform_params_required_inner_inner.h
+  OAIAnalytics_Customer.h
+  OAIAnalytics_CustomerMetric.h
+  OAIAnalytics_Interval.h
+  OAIAnalytics_Metric.h
+  OAIAnalytics_Period.h
+  OAIAnalytics_Product.h
+  OAIAnalytics_ProductMetric.h
   OAIAttributeAdd_200_response.h
   OAIAttributeAdd_200_response_result.h
   OAIAttributeAssignGroup_200_response.h
@@ -367,6 +374,9 @@ add_library(${PROJECT_NAME}
   OAIProduct_Review_Rating.h
   OAIProduct_TierPrice.h
   OAIResponse_Account_SupportedPlatforms_Result.h
+  OAIResponse_Analytics_CustomerReport_Result.h
+  OAIResponse_Analytics_ProductReport_Result.h
+  OAIResponse_Analytics_Report_Result.h
   OAIResponse_Attribute_Attributeset_List_Result.h
   OAIResponse_Attribute_Count_Result.h
   OAIResponse_Attribute_Group_List_Result.h
@@ -457,6 +467,7 @@ add_library(${PROJECT_NAME}
   OAIWebhookUpdate.h
   OAIWebhook_Event.h
   OAIAccountApi.h
+  OAIAnalyticsApi.h
   OAIAttributeApi.h
   OAIBasketApi.h
   OAIBatchApi.h
@@ -495,6 +506,13 @@ add_library(${PROJECT_NAME}
   OAIAccount_SupportedPlatform.cpp
   OAIAccount_SupportedPlatform_params.cpp
   OAIAccount_SupportedPlatform_params_required_inner_inner.cpp
+  OAIAnalytics_Customer.cpp
+  OAIAnalytics_CustomerMetric.cpp
+  OAIAnalytics_Interval.cpp
+  OAIAnalytics_Metric.cpp
+  OAIAnalytics_Period.cpp
+  OAIAnalytics_Product.cpp
+  OAIAnalytics_ProductMetric.cpp
   OAIAttributeAdd_200_response.cpp
   OAIAttributeAdd_200_response_result.cpp
   OAIAttributeAssignGroup_200_response.cpp
@@ -835,6 +853,9 @@ add_library(${PROJECT_NAME}
   OAIProduct_Review_Rating.cpp
   OAIProduct_TierPrice.cpp
   OAIResponse_Account_SupportedPlatforms_Result.cpp
+  OAIResponse_Analytics_CustomerReport_Result.cpp
+  OAIResponse_Analytics_ProductReport_Result.cpp
+  OAIResponse_Analytics_Report_Result.cpp
   OAIResponse_Attribute_Attributeset_List_Result.cpp
   OAIResponse_Attribute_Count_Result.cpp
   OAIResponse_Attribute_Group_List_Result.cpp
@@ -925,6 +946,7 @@ add_library(${PROJECT_NAME}
   OAIWebhookUpdate.cpp
   OAIWebhook_Event.cpp
   OAIAccountApi.cpp
+  OAIAnalyticsApi.cpp
   OAIAttributeApi.cpp
   OAIBasketApi.cpp
   OAIBatchApi.cpp
