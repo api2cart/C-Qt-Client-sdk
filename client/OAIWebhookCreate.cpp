@@ -395,7 +395,7 @@ bool OAIWebhookCreate::isSet() const {
 
 bool OAIWebhookCreate::isValid() const {
     // only required properties are required for the object to be considered valid
-    return m_entity_isValid && m_action_isValid && true;
+    return m_entity_isValid && m_action_isValid && m_callback_isValid && true;
 }
 
 } // namespace OpenAPI

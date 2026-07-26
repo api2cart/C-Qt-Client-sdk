@@ -67,20 +67,68 @@ void OAIOrderShipmentAdd::initializeModel() {
     m_adjust_stock_isSet = false;
     m_adjust_stock_isValid = false;
 
-    m_enable_cache_isSet = false;
-    m_enable_cache_isValid = false;
-
     m_check_process_status_isSet = false;
     m_check_process_status_isValid = false;
 
     m_tracking_provider_isSet = false;
     m_tracking_provider_isValid = false;
 
-    m_use_latest_api_version_isSet = false;
-    m_use_latest_api_version_isValid = false;
-
     m_admin_comment_isSet = false;
     m_admin_comment_isValid = false;
+
+    m_mail_class_isSet = false;
+    m_mail_class_isValid = false;
+
+    m_ship_date_isSet = false;
+    m_ship_date_isValid = false;
+
+    m_weight_isSet = false;
+    m_weight_isValid = false;
+
+    m_weight_unit_isSet = false;
+    m_weight_unit_isValid = false;
+
+    m_length_isSet = false;
+    m_length_isValid = false;
+
+    m_width_isSet = false;
+    m_width_isValid = false;
+
+    m_height_isSet = false;
+    m_height_isValid = false;
+
+    m_dimensions_unit_isSet = false;
+    m_dimensions_unit_isValid = false;
+
+    m_shipping_label_cost_isSet = false;
+    m_shipping_label_cost_isValid = false;
+
+    m_shipping_label_currency_isSet = false;
+    m_shipping_label_currency_isValid = false;
+
+    m_revenue_eligibility_isSet = false;
+    m_revenue_eligibility_isValid = false;
+
+    m_ship_from_country_isSet = false;
+    m_ship_from_country_isValid = false;
+
+    m_ship_to_country_isSet = false;
+    m_ship_to_country_isValid = false;
+
+    m_incoterm_isSet = false;
+    m_incoterm_isValid = false;
+
+    m_duty_amount_isSet = false;
+    m_duty_amount_isValid = false;
+
+    m_duty_currency_isSet = false;
+    m_duty_currency_isValid = false;
+
+    m_enable_cache_isSet = false;
+    m_enable_cache_isValid = false;
+
+    m_use_latest_api_version_isSet = false;
+    m_use_latest_api_version_isValid = false;
 
     m_idempotency_key_isSet = false;
     m_idempotency_key_isValid = false;
@@ -128,20 +176,68 @@ void OAIOrderShipmentAdd::fromJsonObject(QJsonObject json) {
     m_adjust_stock_isValid = ::OpenAPI::fromJsonValue(m_adjust_stock, json[QString("adjust_stock")]);
     m_adjust_stock_isSet = !json[QString("adjust_stock")].isNull() && m_adjust_stock_isValid;
 
-    m_enable_cache_isValid = ::OpenAPI::fromJsonValue(m_enable_cache, json[QString("enable_cache")]);
-    m_enable_cache_isSet = !json[QString("enable_cache")].isNull() && m_enable_cache_isValid;
-
     m_check_process_status_isValid = ::OpenAPI::fromJsonValue(m_check_process_status, json[QString("check_process_status")]);
     m_check_process_status_isSet = !json[QString("check_process_status")].isNull() && m_check_process_status_isValid;
 
     m_tracking_provider_isValid = ::OpenAPI::fromJsonValue(m_tracking_provider, json[QString("tracking_provider")]);
     m_tracking_provider_isSet = !json[QString("tracking_provider")].isNull() && m_tracking_provider_isValid;
 
-    m_use_latest_api_version_isValid = ::OpenAPI::fromJsonValue(m_use_latest_api_version, json[QString("use_latest_api_version")]);
-    m_use_latest_api_version_isSet = !json[QString("use_latest_api_version")].isNull() && m_use_latest_api_version_isValid;
-
     m_admin_comment_isValid = ::OpenAPI::fromJsonValue(m_admin_comment, json[QString("admin_comment")]);
     m_admin_comment_isSet = !json[QString("admin_comment")].isNull() && m_admin_comment_isValid;
+
+    m_mail_class_isValid = ::OpenAPI::fromJsonValue(m_mail_class, json[QString("mail_class")]);
+    m_mail_class_isSet = !json[QString("mail_class")].isNull() && m_mail_class_isValid;
+
+    m_ship_date_isValid = ::OpenAPI::fromJsonValue(m_ship_date, json[QString("ship_date")]);
+    m_ship_date_isSet = !json[QString("ship_date")].isNull() && m_ship_date_isValid;
+
+    m_weight_isValid = ::OpenAPI::fromJsonValue(m_weight, json[QString("weight")]);
+    m_weight_isSet = !json[QString("weight")].isNull() && m_weight_isValid;
+
+    m_weight_unit_isValid = ::OpenAPI::fromJsonValue(m_weight_unit, json[QString("weight_unit")]);
+    m_weight_unit_isSet = !json[QString("weight_unit")].isNull() && m_weight_unit_isValid;
+
+    m_length_isValid = ::OpenAPI::fromJsonValue(m_length, json[QString("length")]);
+    m_length_isSet = !json[QString("length")].isNull() && m_length_isValid;
+
+    m_width_isValid = ::OpenAPI::fromJsonValue(m_width, json[QString("width")]);
+    m_width_isSet = !json[QString("width")].isNull() && m_width_isValid;
+
+    m_height_isValid = ::OpenAPI::fromJsonValue(m_height, json[QString("height")]);
+    m_height_isSet = !json[QString("height")].isNull() && m_height_isValid;
+
+    m_dimensions_unit_isValid = ::OpenAPI::fromJsonValue(m_dimensions_unit, json[QString("dimensions_unit")]);
+    m_dimensions_unit_isSet = !json[QString("dimensions_unit")].isNull() && m_dimensions_unit_isValid;
+
+    m_shipping_label_cost_isValid = ::OpenAPI::fromJsonValue(m_shipping_label_cost, json[QString("shipping_label_cost")]);
+    m_shipping_label_cost_isSet = !json[QString("shipping_label_cost")].isNull() && m_shipping_label_cost_isValid;
+
+    m_shipping_label_currency_isValid = ::OpenAPI::fromJsonValue(m_shipping_label_currency, json[QString("shipping_label_currency")]);
+    m_shipping_label_currency_isSet = !json[QString("shipping_label_currency")].isNull() && m_shipping_label_currency_isValid;
+
+    m_revenue_eligibility_isValid = ::OpenAPI::fromJsonValue(m_revenue_eligibility, json[QString("revenue_eligibility")]);
+    m_revenue_eligibility_isSet = !json[QString("revenue_eligibility")].isNull() && m_revenue_eligibility_isValid;
+
+    m_ship_from_country_isValid = ::OpenAPI::fromJsonValue(m_ship_from_country, json[QString("ship_from_country")]);
+    m_ship_from_country_isSet = !json[QString("ship_from_country")].isNull() && m_ship_from_country_isValid;
+
+    m_ship_to_country_isValid = ::OpenAPI::fromJsonValue(m_ship_to_country, json[QString("ship_to_country")]);
+    m_ship_to_country_isSet = !json[QString("ship_to_country")].isNull() && m_ship_to_country_isValid;
+
+    m_incoterm_isValid = ::OpenAPI::fromJsonValue(m_incoterm, json[QString("incoterm")]);
+    m_incoterm_isSet = !json[QString("incoterm")].isNull() && m_incoterm_isValid;
+
+    m_duty_amount_isValid = ::OpenAPI::fromJsonValue(m_duty_amount, json[QString("duty_amount")]);
+    m_duty_amount_isSet = !json[QString("duty_amount")].isNull() && m_duty_amount_isValid;
+
+    m_duty_currency_isValid = ::OpenAPI::fromJsonValue(m_duty_currency, json[QString("duty_currency")]);
+    m_duty_currency_isSet = !json[QString("duty_currency")].isNull() && m_duty_currency_isValid;
+
+    m_enable_cache_isValid = ::OpenAPI::fromJsonValue(m_enable_cache, json[QString("enable_cache")]);
+    m_enable_cache_isSet = !json[QString("enable_cache")].isNull() && m_enable_cache_isValid;
+
+    m_use_latest_api_version_isValid = ::OpenAPI::fromJsonValue(m_use_latest_api_version, json[QString("use_latest_api_version")]);
+    m_use_latest_api_version_isSet = !json[QString("use_latest_api_version")].isNull() && m_use_latest_api_version_isValid;
 
     m_idempotency_key_isValid = ::OpenAPI::fromJsonValue(m_idempotency_key, json[QString("idempotency_key")]);
     m_idempotency_key_isSet = !json[QString("idempotency_key")].isNull() && m_idempotency_key_isValid;
@@ -189,20 +285,68 @@ QJsonObject OAIOrderShipmentAdd::asJsonObject() const {
     if (m_adjust_stock_isSet) {
         obj.insert(QString("adjust_stock"), ::OpenAPI::toJsonValue(m_adjust_stock));
     }
-    if (m_enable_cache_isSet) {
-        obj.insert(QString("enable_cache"), ::OpenAPI::toJsonValue(m_enable_cache));
-    }
     if (m_check_process_status_isSet) {
         obj.insert(QString("check_process_status"), ::OpenAPI::toJsonValue(m_check_process_status));
     }
     if (m_tracking_provider_isSet) {
         obj.insert(QString("tracking_provider"), ::OpenAPI::toJsonValue(m_tracking_provider));
     }
-    if (m_use_latest_api_version_isSet) {
-        obj.insert(QString("use_latest_api_version"), ::OpenAPI::toJsonValue(m_use_latest_api_version));
-    }
     if (m_admin_comment_isSet) {
         obj.insert(QString("admin_comment"), ::OpenAPI::toJsonValue(m_admin_comment));
+    }
+    if (m_mail_class_isSet) {
+        obj.insert(QString("mail_class"), ::OpenAPI::toJsonValue(m_mail_class));
+    }
+    if (m_ship_date_isSet) {
+        obj.insert(QString("ship_date"), ::OpenAPI::toJsonValue(m_ship_date));
+    }
+    if (m_weight_isSet) {
+        obj.insert(QString("weight"), ::OpenAPI::toJsonValue(m_weight));
+    }
+    if (m_weight_unit_isSet) {
+        obj.insert(QString("weight_unit"), ::OpenAPI::toJsonValue(m_weight_unit));
+    }
+    if (m_length_isSet) {
+        obj.insert(QString("length"), ::OpenAPI::toJsonValue(m_length));
+    }
+    if (m_width_isSet) {
+        obj.insert(QString("width"), ::OpenAPI::toJsonValue(m_width));
+    }
+    if (m_height_isSet) {
+        obj.insert(QString("height"), ::OpenAPI::toJsonValue(m_height));
+    }
+    if (m_dimensions_unit_isSet) {
+        obj.insert(QString("dimensions_unit"), ::OpenAPI::toJsonValue(m_dimensions_unit));
+    }
+    if (m_shipping_label_cost_isSet) {
+        obj.insert(QString("shipping_label_cost"), ::OpenAPI::toJsonValue(m_shipping_label_cost));
+    }
+    if (m_shipping_label_currency_isSet) {
+        obj.insert(QString("shipping_label_currency"), ::OpenAPI::toJsonValue(m_shipping_label_currency));
+    }
+    if (m_revenue_eligibility_isSet) {
+        obj.insert(QString("revenue_eligibility"), ::OpenAPI::toJsonValue(m_revenue_eligibility));
+    }
+    if (m_ship_from_country_isSet) {
+        obj.insert(QString("ship_from_country"), ::OpenAPI::toJsonValue(m_ship_from_country));
+    }
+    if (m_ship_to_country_isSet) {
+        obj.insert(QString("ship_to_country"), ::OpenAPI::toJsonValue(m_ship_to_country));
+    }
+    if (m_incoterm_isSet) {
+        obj.insert(QString("incoterm"), ::OpenAPI::toJsonValue(m_incoterm));
+    }
+    if (m_duty_amount_isSet) {
+        obj.insert(QString("duty_amount"), ::OpenAPI::toJsonValue(m_duty_amount));
+    }
+    if (m_duty_currency_isSet) {
+        obj.insert(QString("duty_currency"), ::OpenAPI::toJsonValue(m_duty_currency));
+    }
+    if (m_enable_cache_isSet) {
+        obj.insert(QString("enable_cache"), ::OpenAPI::toJsonValue(m_enable_cache));
+    }
+    if (m_use_latest_api_version_isSet) {
+        obj.insert(QString("use_latest_api_version"), ::OpenAPI::toJsonValue(m_use_latest_api_version));
     }
     if (m_idempotency_key_isSet) {
         obj.insert(QString("idempotency_key"), ::OpenAPI::toJsonValue(m_idempotency_key));
@@ -386,22 +530,6 @@ bool OAIOrderShipmentAdd::is_adjust_stock_Valid() const{
     return m_adjust_stock_isValid;
 }
 
-bool OAIOrderShipmentAdd::isEnableCache() const {
-    return m_enable_cache;
-}
-void OAIOrderShipmentAdd::setEnableCache(const bool &enable_cache) {
-    m_enable_cache = enable_cache;
-    m_enable_cache_isSet = true;
-}
-
-bool OAIOrderShipmentAdd::is_enable_cache_Set() const{
-    return m_enable_cache_isSet;
-}
-
-bool OAIOrderShipmentAdd::is_enable_cache_Valid() const{
-    return m_enable_cache_isValid;
-}
-
 bool OAIOrderShipmentAdd::isCheckProcessStatus() const {
     return m_check_process_status;
 }
@@ -434,22 +562,6 @@ bool OAIOrderShipmentAdd::is_tracking_provider_Valid() const{
     return m_tracking_provider_isValid;
 }
 
-bool OAIOrderShipmentAdd::isUseLatestApiVersion() const {
-    return m_use_latest_api_version;
-}
-void OAIOrderShipmentAdd::setUseLatestApiVersion(const bool &use_latest_api_version) {
-    m_use_latest_api_version = use_latest_api_version;
-    m_use_latest_api_version_isSet = true;
-}
-
-bool OAIOrderShipmentAdd::is_use_latest_api_version_Set() const{
-    return m_use_latest_api_version_isSet;
-}
-
-bool OAIOrderShipmentAdd::is_use_latest_api_version_Valid() const{
-    return m_use_latest_api_version_isValid;
-}
-
 QString OAIOrderShipmentAdd::getAdminComment() const {
     return m_admin_comment;
 }
@@ -464,6 +576,294 @@ bool OAIOrderShipmentAdd::is_admin_comment_Set() const{
 
 bool OAIOrderShipmentAdd::is_admin_comment_Valid() const{
     return m_admin_comment_isValid;
+}
+
+QString OAIOrderShipmentAdd::getMailClass() const {
+    return m_mail_class;
+}
+void OAIOrderShipmentAdd::setMailClass(const QString &mail_class) {
+    m_mail_class = mail_class;
+    m_mail_class_isSet = true;
+}
+
+bool OAIOrderShipmentAdd::is_mail_class_Set() const{
+    return m_mail_class_isSet;
+}
+
+bool OAIOrderShipmentAdd::is_mail_class_Valid() const{
+    return m_mail_class_isValid;
+}
+
+QString OAIOrderShipmentAdd::getShipDate() const {
+    return m_ship_date;
+}
+void OAIOrderShipmentAdd::setShipDate(const QString &ship_date) {
+    m_ship_date = ship_date;
+    m_ship_date_isSet = true;
+}
+
+bool OAIOrderShipmentAdd::is_ship_date_Set() const{
+    return m_ship_date_isSet;
+}
+
+bool OAIOrderShipmentAdd::is_ship_date_Valid() const{
+    return m_ship_date_isValid;
+}
+
+double OAIOrderShipmentAdd::getWeight() const {
+    return m_weight;
+}
+void OAIOrderShipmentAdd::setWeight(const double &weight) {
+    m_weight = weight;
+    m_weight_isSet = true;
+}
+
+bool OAIOrderShipmentAdd::is_weight_Set() const{
+    return m_weight_isSet;
+}
+
+bool OAIOrderShipmentAdd::is_weight_Valid() const{
+    return m_weight_isValid;
+}
+
+QString OAIOrderShipmentAdd::getWeightUnit() const {
+    return m_weight_unit;
+}
+void OAIOrderShipmentAdd::setWeightUnit(const QString &weight_unit) {
+    m_weight_unit = weight_unit;
+    m_weight_unit_isSet = true;
+}
+
+bool OAIOrderShipmentAdd::is_weight_unit_Set() const{
+    return m_weight_unit_isSet;
+}
+
+bool OAIOrderShipmentAdd::is_weight_unit_Valid() const{
+    return m_weight_unit_isValid;
+}
+
+double OAIOrderShipmentAdd::getLength() const {
+    return m_length;
+}
+void OAIOrderShipmentAdd::setLength(const double &length) {
+    m_length = length;
+    m_length_isSet = true;
+}
+
+bool OAIOrderShipmentAdd::is_length_Set() const{
+    return m_length_isSet;
+}
+
+bool OAIOrderShipmentAdd::is_length_Valid() const{
+    return m_length_isValid;
+}
+
+double OAIOrderShipmentAdd::getWidth() const {
+    return m_width;
+}
+void OAIOrderShipmentAdd::setWidth(const double &width) {
+    m_width = width;
+    m_width_isSet = true;
+}
+
+bool OAIOrderShipmentAdd::is_width_Set() const{
+    return m_width_isSet;
+}
+
+bool OAIOrderShipmentAdd::is_width_Valid() const{
+    return m_width_isValid;
+}
+
+double OAIOrderShipmentAdd::getHeight() const {
+    return m_height;
+}
+void OAIOrderShipmentAdd::setHeight(const double &height) {
+    m_height = height;
+    m_height_isSet = true;
+}
+
+bool OAIOrderShipmentAdd::is_height_Set() const{
+    return m_height_isSet;
+}
+
+bool OAIOrderShipmentAdd::is_height_Valid() const{
+    return m_height_isValid;
+}
+
+QString OAIOrderShipmentAdd::getDimensionsUnit() const {
+    return m_dimensions_unit;
+}
+void OAIOrderShipmentAdd::setDimensionsUnit(const QString &dimensions_unit) {
+    m_dimensions_unit = dimensions_unit;
+    m_dimensions_unit_isSet = true;
+}
+
+bool OAIOrderShipmentAdd::is_dimensions_unit_Set() const{
+    return m_dimensions_unit_isSet;
+}
+
+bool OAIOrderShipmentAdd::is_dimensions_unit_Valid() const{
+    return m_dimensions_unit_isValid;
+}
+
+double OAIOrderShipmentAdd::getShippingLabelCost() const {
+    return m_shipping_label_cost;
+}
+void OAIOrderShipmentAdd::setShippingLabelCost(const double &shipping_label_cost) {
+    m_shipping_label_cost = shipping_label_cost;
+    m_shipping_label_cost_isSet = true;
+}
+
+bool OAIOrderShipmentAdd::is_shipping_label_cost_Set() const{
+    return m_shipping_label_cost_isSet;
+}
+
+bool OAIOrderShipmentAdd::is_shipping_label_cost_Valid() const{
+    return m_shipping_label_cost_isValid;
+}
+
+QString OAIOrderShipmentAdd::getShippingLabelCurrency() const {
+    return m_shipping_label_currency;
+}
+void OAIOrderShipmentAdd::setShippingLabelCurrency(const QString &shipping_label_currency) {
+    m_shipping_label_currency = shipping_label_currency;
+    m_shipping_label_currency_isSet = true;
+}
+
+bool OAIOrderShipmentAdd::is_shipping_label_currency_Set() const{
+    return m_shipping_label_currency_isSet;
+}
+
+bool OAIOrderShipmentAdd::is_shipping_label_currency_Valid() const{
+    return m_shipping_label_currency_isValid;
+}
+
+bool OAIOrderShipmentAdd::isRevenueEligibility() const {
+    return m_revenue_eligibility;
+}
+void OAIOrderShipmentAdd::setRevenueEligibility(const bool &revenue_eligibility) {
+    m_revenue_eligibility = revenue_eligibility;
+    m_revenue_eligibility_isSet = true;
+}
+
+bool OAIOrderShipmentAdd::is_revenue_eligibility_Set() const{
+    return m_revenue_eligibility_isSet;
+}
+
+bool OAIOrderShipmentAdd::is_revenue_eligibility_Valid() const{
+    return m_revenue_eligibility_isValid;
+}
+
+QString OAIOrderShipmentAdd::getShipFromCountry() const {
+    return m_ship_from_country;
+}
+void OAIOrderShipmentAdd::setShipFromCountry(const QString &ship_from_country) {
+    m_ship_from_country = ship_from_country;
+    m_ship_from_country_isSet = true;
+}
+
+bool OAIOrderShipmentAdd::is_ship_from_country_Set() const{
+    return m_ship_from_country_isSet;
+}
+
+bool OAIOrderShipmentAdd::is_ship_from_country_Valid() const{
+    return m_ship_from_country_isValid;
+}
+
+QString OAIOrderShipmentAdd::getShipToCountry() const {
+    return m_ship_to_country;
+}
+void OAIOrderShipmentAdd::setShipToCountry(const QString &ship_to_country) {
+    m_ship_to_country = ship_to_country;
+    m_ship_to_country_isSet = true;
+}
+
+bool OAIOrderShipmentAdd::is_ship_to_country_Set() const{
+    return m_ship_to_country_isSet;
+}
+
+bool OAIOrderShipmentAdd::is_ship_to_country_Valid() const{
+    return m_ship_to_country_isValid;
+}
+
+QString OAIOrderShipmentAdd::getIncoterm() const {
+    return m_incoterm;
+}
+void OAIOrderShipmentAdd::setIncoterm(const QString &incoterm) {
+    m_incoterm = incoterm;
+    m_incoterm_isSet = true;
+}
+
+bool OAIOrderShipmentAdd::is_incoterm_Set() const{
+    return m_incoterm_isSet;
+}
+
+bool OAIOrderShipmentAdd::is_incoterm_Valid() const{
+    return m_incoterm_isValid;
+}
+
+double OAIOrderShipmentAdd::getDutyAmount() const {
+    return m_duty_amount;
+}
+void OAIOrderShipmentAdd::setDutyAmount(const double &duty_amount) {
+    m_duty_amount = duty_amount;
+    m_duty_amount_isSet = true;
+}
+
+bool OAIOrderShipmentAdd::is_duty_amount_Set() const{
+    return m_duty_amount_isSet;
+}
+
+bool OAIOrderShipmentAdd::is_duty_amount_Valid() const{
+    return m_duty_amount_isValid;
+}
+
+QString OAIOrderShipmentAdd::getDutyCurrency() const {
+    return m_duty_currency;
+}
+void OAIOrderShipmentAdd::setDutyCurrency(const QString &duty_currency) {
+    m_duty_currency = duty_currency;
+    m_duty_currency_isSet = true;
+}
+
+bool OAIOrderShipmentAdd::is_duty_currency_Set() const{
+    return m_duty_currency_isSet;
+}
+
+bool OAIOrderShipmentAdd::is_duty_currency_Valid() const{
+    return m_duty_currency_isValid;
+}
+
+bool OAIOrderShipmentAdd::isEnableCache() const {
+    return m_enable_cache;
+}
+void OAIOrderShipmentAdd::setEnableCache(const bool &enable_cache) {
+    m_enable_cache = enable_cache;
+    m_enable_cache_isSet = true;
+}
+
+bool OAIOrderShipmentAdd::is_enable_cache_Set() const{
+    return m_enable_cache_isSet;
+}
+
+bool OAIOrderShipmentAdd::is_enable_cache_Valid() const{
+    return m_enable_cache_isValid;
+}
+
+bool OAIOrderShipmentAdd::isUseLatestApiVersion() const {
+    return m_use_latest_api_version;
+}
+void OAIOrderShipmentAdd::setUseLatestApiVersion(const bool &use_latest_api_version) {
+    m_use_latest_api_version = use_latest_api_version;
+    m_use_latest_api_version_isSet = true;
+}
+
+bool OAIOrderShipmentAdd::is_use_latest_api_version_Set() const{
+    return m_use_latest_api_version_isSet;
+}
+
+bool OAIOrderShipmentAdd::is_use_latest_api_version_Valid() const{
+    return m_use_latest_api_version_isValid;
 }
 
 QString OAIOrderShipmentAdd::getIdempotencyKey() const {
@@ -540,11 +940,6 @@ bool OAIOrderShipmentAdd::isSet() const {
             break;
         }
 
-        if (m_enable_cache_isSet) {
-            isObjectUpdated = true;
-            break;
-        }
-
         if (m_check_process_status_isSet) {
             isObjectUpdated = true;
             break;
@@ -555,12 +950,97 @@ bool OAIOrderShipmentAdd::isSet() const {
             break;
         }
 
-        if (m_use_latest_api_version_isSet) {
+        if (m_admin_comment_isSet) {
             isObjectUpdated = true;
             break;
         }
 
-        if (m_admin_comment_isSet) {
+        if (m_mail_class_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_ship_date_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_weight_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_weight_unit_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_length_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_width_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_height_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_dimensions_unit_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_shipping_label_cost_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_shipping_label_currency_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_revenue_eligibility_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_ship_from_country_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_ship_to_country_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_incoterm_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_duty_amount_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_duty_currency_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_enable_cache_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_use_latest_api_version_isSet) {
             isObjectUpdated = true;
             break;
         }

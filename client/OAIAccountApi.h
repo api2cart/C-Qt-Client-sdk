@@ -268,8 +268,10 @@ public:
     */
     virtual void accountFailedWebhooks(const ::OpenAPI::OptionalParam<qint32> &start = ::OpenAPI::OptionalParam<qint32>(), const ::OpenAPI::OptionalParam<qint32> &count = ::OpenAPI::OptionalParam<qint32>(), const ::OpenAPI::OptionalParam<QString> &ids = ::OpenAPI::OptionalParam<QString>());
 
-
-    virtual void accountSupportedPlatforms();
+    /**
+    * @param[in]  cart_id QString [optional]
+    */
+    virtual void accountSupportedPlatforms(const ::OpenAPI::OptionalParam<QString> &cart_id = ::OpenAPI::OptionalParam<QString>());
 
 
 private:

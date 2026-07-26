@@ -3428,13 +3428,29 @@ void OAIAccountApi::accountFailedWebhooksCallback(OAIHttpRequestWorker *worker) 
     }
 }
 
-void OAIAccountApi::accountSupportedPlatforms() {
+void OAIAccountApi::accountSupportedPlatforms(const ::OpenAPI::OptionalParam<QString> &cart_id) {
     QString fullPath = QString(_serverConfigs["accountSupportedPlatforms"][_serverIndices.value("accountSupportedPlatforms")].URL()+"/account.supported_platforms.json");
     
     if (_apiKeys.contains("ApiKeyAuth")) {
         addHeaders("ApiKeyAuth",_apiKeys.find("ApiKeyAuth").value());
     }
     
+    QString queryPrefix, querySuffix, queryDelimiter, queryStyle;
+    if (cart_id.hasValue())
+    {
+        queryStyle = "form";
+        if (queryStyle == "")
+            queryStyle = "form";
+        queryPrefix = getParamStylePrefix(queryStyle);
+        querySuffix = getParamStyleSuffix(queryStyle);
+        queryDelimiter = getParamStyleDelimiter(queryStyle, "cart_id", true);
+        if (fullPath.indexOf("?") > 0)
+            fullPath.append(queryPrefix);
+        else
+            fullPath.append("?");
+
+        fullPath.append(QUrl::toPercentEncoding("cart_id")).append(querySuffix).append(QUrl::toPercentEncoding(::OpenAPI::toStringValue(cart_id.stringValue())));
+    }
     OAIHttpRequestWorker *worker = new OAIHttpRequestWorker(this, _manager);
     worker->setTimeOut(_timeOut);
     worker->setWorkingDirectory(_workingDirectory);

@@ -2147,7 +2147,7 @@ void OAICartApi::cartGiftcardListCallback(OAIHttpRequestWorker *worker) {
     }
 }
 
-void OAICartApi::cartInfo(const ::OpenAPI::OptionalParam<QString> &store_id, const ::OpenAPI::OptionalParam<QString> &response_fields, const ::OpenAPI::OptionalParam<QString> &params, const ::OpenAPI::OptionalParam<QString> &exclude) {
+void OAICartApi::cartInfo(const ::OpenAPI::OptionalParam<QString> &response_fields, const ::OpenAPI::OptionalParam<QString> &params, const ::OpenAPI::OptionalParam<QString> &exclude) {
     QString fullPath = QString(_serverConfigs["cartInfo"][_serverIndices.value("cartInfo")].URL()+"/cart.info.json");
     
     if (_apiKeys.contains("StoreKeyAuth")) {
@@ -2159,21 +2159,6 @@ void OAICartApi::cartInfo(const ::OpenAPI::OptionalParam<QString> &store_id, con
     }
     
     QString queryPrefix, querySuffix, queryDelimiter, queryStyle;
-    if (store_id.hasValue())
-    {
-        queryStyle = "form";
-        if (queryStyle == "")
-            queryStyle = "form";
-        queryPrefix = getParamStylePrefix(queryStyle);
-        querySuffix = getParamStyleSuffix(queryStyle);
-        queryDelimiter = getParamStyleDelimiter(queryStyle, "store_id", true);
-        if (fullPath.indexOf("?") > 0)
-            fullPath.append(queryPrefix);
-        else
-            fullPath.append("?");
-
-        fullPath.append(QUrl::toPercentEncoding("store_id")).append(querySuffix).append(QUrl::toPercentEncoding(::OpenAPI::toStringValue(store_id.stringValue())));
-    }
     if (response_fields.hasValue())
     {
         queryStyle = "form";

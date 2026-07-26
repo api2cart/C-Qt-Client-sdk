@@ -99,11 +99,6 @@ public:
     bool is_adjust_stock_Set() const;
     bool is_adjust_stock_Valid() const;
 
-    bool isEnableCache() const;
-    void setEnableCache(const bool &enable_cache);
-    bool is_enable_cache_Set() const;
-    bool is_enable_cache_Valid() const;
-
     bool isCheckProcessStatus() const;
     void setCheckProcessStatus(const bool &check_process_status);
     bool is_check_process_status_Set() const;
@@ -114,15 +109,100 @@ public:
     bool is_tracking_provider_Set() const;
     bool is_tracking_provider_Valid() const;
 
-    bool isUseLatestApiVersion() const;
-    void setUseLatestApiVersion(const bool &use_latest_api_version);
-    bool is_use_latest_api_version_Set() const;
-    bool is_use_latest_api_version_Valid() const;
-
     QString getAdminComment() const;
     void setAdminComment(const QString &admin_comment);
     bool is_admin_comment_Set() const;
     bool is_admin_comment_Valid() const;
+
+    QString getMailClass() const;
+    void setMailClass(const QString &mail_class);
+    bool is_mail_class_Set() const;
+    bool is_mail_class_Valid() const;
+
+    QString getShipDate() const;
+    void setShipDate(const QString &ship_date);
+    bool is_ship_date_Set() const;
+    bool is_ship_date_Valid() const;
+
+    double getWeight() const;
+    void setWeight(const double &weight);
+    bool is_weight_Set() const;
+    bool is_weight_Valid() const;
+
+    QString getWeightUnit() const;
+    void setWeightUnit(const QString &weight_unit);
+    bool is_weight_unit_Set() const;
+    bool is_weight_unit_Valid() const;
+
+    double getLength() const;
+    void setLength(const double &length);
+    bool is_length_Set() const;
+    bool is_length_Valid() const;
+
+    double getWidth() const;
+    void setWidth(const double &width);
+    bool is_width_Set() const;
+    bool is_width_Valid() const;
+
+    double getHeight() const;
+    void setHeight(const double &height);
+    bool is_height_Set() const;
+    bool is_height_Valid() const;
+
+    QString getDimensionsUnit() const;
+    void setDimensionsUnit(const QString &dimensions_unit);
+    bool is_dimensions_unit_Set() const;
+    bool is_dimensions_unit_Valid() const;
+
+    double getShippingLabelCost() const;
+    void setShippingLabelCost(const double &shipping_label_cost);
+    bool is_shipping_label_cost_Set() const;
+    bool is_shipping_label_cost_Valid() const;
+
+    QString getShippingLabelCurrency() const;
+    void setShippingLabelCurrency(const QString &shipping_label_currency);
+    bool is_shipping_label_currency_Set() const;
+    bool is_shipping_label_currency_Valid() const;
+
+    bool isRevenueEligibility() const;
+    void setRevenueEligibility(const bool &revenue_eligibility);
+    bool is_revenue_eligibility_Set() const;
+    bool is_revenue_eligibility_Valid() const;
+
+    QString getShipFromCountry() const;
+    void setShipFromCountry(const QString &ship_from_country);
+    bool is_ship_from_country_Set() const;
+    bool is_ship_from_country_Valid() const;
+
+    QString getShipToCountry() const;
+    void setShipToCountry(const QString &ship_to_country);
+    bool is_ship_to_country_Set() const;
+    bool is_ship_to_country_Valid() const;
+
+    QString getIncoterm() const;
+    void setIncoterm(const QString &incoterm);
+    bool is_incoterm_Set() const;
+    bool is_incoterm_Valid() const;
+
+    double getDutyAmount() const;
+    void setDutyAmount(const double &duty_amount);
+    bool is_duty_amount_Set() const;
+    bool is_duty_amount_Valid() const;
+
+    QString getDutyCurrency() const;
+    void setDutyCurrency(const QString &duty_currency);
+    bool is_duty_currency_Set() const;
+    bool is_duty_currency_Valid() const;
+
+    bool isEnableCache() const;
+    void setEnableCache(const bool &enable_cache);
+    bool is_enable_cache_Set() const;
+    bool is_enable_cache_Valid() const;
+
+    bool isUseLatestApiVersion() const;
+    void setUseLatestApiVersion(const bool &use_latest_api_version);
+    bool is_use_latest_api_version_Set() const;
+    bool is_use_latest_api_version_Valid() const;
 
     QString getIdempotencyKey() const;
     void setIdempotencyKey(const QString &idempotency_key);
@@ -179,10 +259,6 @@ private:
     bool m_adjust_stock_isSet;
     bool m_adjust_stock_isValid;
 
-    bool m_enable_cache;
-    bool m_enable_cache_isSet;
-    bool m_enable_cache_isValid;
-
     bool m_check_process_status;
     bool m_check_process_status_isSet;
     bool m_check_process_status_isValid;
@@ -191,13 +267,81 @@ private:
     bool m_tracking_provider_isSet;
     bool m_tracking_provider_isValid;
 
-    bool m_use_latest_api_version;
-    bool m_use_latest_api_version_isSet;
-    bool m_use_latest_api_version_isValid;
-
     QString m_admin_comment;
     bool m_admin_comment_isSet;
     bool m_admin_comment_isValid;
+
+    QString m_mail_class;
+    bool m_mail_class_isSet;
+    bool m_mail_class_isValid;
+
+    QString m_ship_date;
+    bool m_ship_date_isSet;
+    bool m_ship_date_isValid;
+
+    double m_weight;
+    bool m_weight_isSet;
+    bool m_weight_isValid;
+
+    QString m_weight_unit;
+    bool m_weight_unit_isSet;
+    bool m_weight_unit_isValid;
+
+    double m_length;
+    bool m_length_isSet;
+    bool m_length_isValid;
+
+    double m_width;
+    bool m_width_isSet;
+    bool m_width_isValid;
+
+    double m_height;
+    bool m_height_isSet;
+    bool m_height_isValid;
+
+    QString m_dimensions_unit;
+    bool m_dimensions_unit_isSet;
+    bool m_dimensions_unit_isValid;
+
+    double m_shipping_label_cost;
+    bool m_shipping_label_cost_isSet;
+    bool m_shipping_label_cost_isValid;
+
+    QString m_shipping_label_currency;
+    bool m_shipping_label_currency_isSet;
+    bool m_shipping_label_currency_isValid;
+
+    bool m_revenue_eligibility;
+    bool m_revenue_eligibility_isSet;
+    bool m_revenue_eligibility_isValid;
+
+    QString m_ship_from_country;
+    bool m_ship_from_country_isSet;
+    bool m_ship_from_country_isValid;
+
+    QString m_ship_to_country;
+    bool m_ship_to_country_isSet;
+    bool m_ship_to_country_isValid;
+
+    QString m_incoterm;
+    bool m_incoterm_isSet;
+    bool m_incoterm_isValid;
+
+    double m_duty_amount;
+    bool m_duty_amount_isSet;
+    bool m_duty_amount_isValid;
+
+    QString m_duty_currency;
+    bool m_duty_currency_isSet;
+    bool m_duty_currency_isValid;
+
+    bool m_enable_cache;
+    bool m_enable_cache_isSet;
+    bool m_enable_cache_isValid;
+
+    bool m_use_latest_api_version;
+    bool m_use_latest_api_version_isSet;
+    bool m_use_latest_api_version_isValid;
 
     QString m_idempotency_key;
     bool m_idempotency_key_isSet;
