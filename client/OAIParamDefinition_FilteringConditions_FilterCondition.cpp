@@ -51,6 +51,9 @@ void OAIParamDefinition_FilteringConditions_FilterCondition::initializeModel() {
 
     m_value_isSet = false;
     m_value_isValid = false;
+
+    m_match_items_isSet = false;
+    m_match_items_isValid = false;
 }
 
 void OAIParamDefinition_FilteringConditions_FilterCondition::fromJson(QString jsonString) {
@@ -79,6 +82,9 @@ void OAIParamDefinition_FilteringConditions_FilterCondition::fromJsonObject(QJso
 
     m_value_isValid = ::OpenAPI::fromJsonValue(m_value, json[QString("value")]);
     m_value_isSet = !json[QString("value")].isNull() && m_value_isValid;
+
+    m_match_items_isValid = ::OpenAPI::fromJsonValue(m_match_items, json[QString("match_items")]);
+    m_match_items_isSet = !json[QString("match_items")].isNull() && m_match_items_isValid;
 }
 
 QString OAIParamDefinition_FilteringConditions_FilterCondition::asJson() const {
@@ -107,6 +113,9 @@ QJsonObject OAIParamDefinition_FilteringConditions_FilterCondition::asJsonObject
     }
     if (m_value.isSet()) {
         obj.insert(QString("value"), ::OpenAPI::toJsonValue(m_value));
+    }
+    if (m_match_items_isSet) {
+        obj.insert(QString("match_items"), ::OpenAPI::toJsonValue(m_match_items));
     }
     return obj;
 }
@@ -207,6 +216,22 @@ bool OAIParamDefinition_FilteringConditions_FilterCondition::is_value_Valid() co
     return m_value_isValid;
 }
 
+QString OAIParamDefinition_FilteringConditions_FilterCondition::getMatchItems() const {
+    return m_match_items;
+}
+void OAIParamDefinition_FilteringConditions_FilterCondition::setMatchItems(const QString &match_items) {
+    m_match_items = match_items;
+    m_match_items_isSet = true;
+}
+
+bool OAIParamDefinition_FilteringConditions_FilterCondition::is_match_items_Set() const{
+    return m_match_items_isSet;
+}
+
+bool OAIParamDefinition_FilteringConditions_FilterCondition::is_match_items_Valid() const{
+    return m_match_items_isValid;
+}
+
 bool OAIParamDefinition_FilteringConditions_FilterCondition::isSet() const {
     bool isObjectUpdated = false;
     do {
@@ -236,6 +261,11 @@ bool OAIParamDefinition_FilteringConditions_FilterCondition::isSet() const {
         }
 
         if (m_value.isSet()) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_match_items_isSet) {
             isObjectUpdated = true;
             break;
         }

@@ -226,6 +226,12 @@ void OAIAccountCartAdd::initializeModel() {
     m_walmart_region_isSet = false;
     m_walmart_region_isValid = false;
 
+    m_walmart_refresh_token_isSet = false;
+    m_walmart_refresh_token_isValid = false;
+
+    m_walmart_seller_id_isSet = false;
+    m_walmart_seller_id_isValid = false;
+
     m_ecwid_acess_token_isSet = false;
     m_ecwid_acess_token_isValid = false;
 
@@ -794,6 +800,12 @@ void OAIAccountCartAdd::fromJsonObject(QJsonObject json) {
     m_walmart_region_isValid = ::OpenAPI::fromJsonValue(m_walmart_region, json[QString("walmart_region")]);
     m_walmart_region_isSet = !json[QString("walmart_region")].isNull() && m_walmart_region_isValid;
 
+    m_walmart_refresh_token_isValid = ::OpenAPI::fromJsonValue(m_walmart_refresh_token, json[QString("walmart_refresh_token")]);
+    m_walmart_refresh_token_isSet = !json[QString("walmart_refresh_token")].isNull() && m_walmart_refresh_token_isValid;
+
+    m_walmart_seller_id_isValid = ::OpenAPI::fromJsonValue(m_walmart_seller_id, json[QString("walmart_seller_id")]);
+    m_walmart_seller_id_isSet = !json[QString("walmart_seller_id")].isNull() && m_walmart_seller_id_isValid;
+
     m_ecwid_acess_token_isValid = ::OpenAPI::fromJsonValue(m_ecwid_acess_token, json[QString("ecwid_acess_token")]);
     m_ecwid_acess_token_isSet = !json[QString("ecwid_acess_token")].isNull() && m_ecwid_acess_token_isValid;
 
@@ -1361,6 +1373,12 @@ QJsonObject OAIAccountCartAdd::asJsonObject() const {
     }
     if (m_walmart_region_isSet) {
         obj.insert(QString("walmart_region"), ::OpenAPI::toJsonValue(m_walmart_region));
+    }
+    if (m_walmart_refresh_token_isSet) {
+        obj.insert(QString("walmart_refresh_token"), ::OpenAPI::toJsonValue(m_walmart_refresh_token));
+    }
+    if (m_walmart_seller_id_isSet) {
+        obj.insert(QString("walmart_seller_id"), ::OpenAPI::toJsonValue(m_walmart_seller_id));
     }
     if (m_ecwid_acess_token_isSet) {
         obj.insert(QString("ecwid_acess_token"), ::OpenAPI::toJsonValue(m_ecwid_acess_token));
@@ -2753,6 +2771,38 @@ bool OAIAccountCartAdd::is_walmart_region_Set() const{
 
 bool OAIAccountCartAdd::is_walmart_region_Valid() const{
     return m_walmart_region_isValid;
+}
+
+QString OAIAccountCartAdd::getWalmartRefreshToken() const {
+    return m_walmart_refresh_token;
+}
+void OAIAccountCartAdd::setWalmartRefreshToken(const QString &walmart_refresh_token) {
+    m_walmart_refresh_token = walmart_refresh_token;
+    m_walmart_refresh_token_isSet = true;
+}
+
+bool OAIAccountCartAdd::is_walmart_refresh_token_Set() const{
+    return m_walmart_refresh_token_isSet;
+}
+
+bool OAIAccountCartAdd::is_walmart_refresh_token_Valid() const{
+    return m_walmart_refresh_token_isValid;
+}
+
+QString OAIAccountCartAdd::getWalmartSellerId() const {
+    return m_walmart_seller_id;
+}
+void OAIAccountCartAdd::setWalmartSellerId(const QString &walmart_seller_id) {
+    m_walmart_seller_id = walmart_seller_id;
+    m_walmart_seller_id_isSet = true;
+}
+
+bool OAIAccountCartAdd::is_walmart_seller_id_Set() const{
+    return m_walmart_seller_id_isSet;
+}
+
+bool OAIAccountCartAdd::is_walmart_seller_id_Valid() const{
+    return m_walmart_seller_id_isValid;
 }
 
 QString OAIAccountCartAdd::getEcwidAcessToken() const {
@@ -5026,6 +5076,16 @@ bool OAIAccountCartAdd::isSet() const {
         }
 
         if (m_walmart_region_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_walmart_refresh_token_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_walmart_seller_id_isSet) {
             isObjectUpdated = true;
             break;
         }

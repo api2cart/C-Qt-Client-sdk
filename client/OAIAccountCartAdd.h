@@ -362,6 +362,16 @@ public:
     bool is_walmart_region_Set() const;
     bool is_walmart_region_Valid() const;
 
+    QString getWalmartRefreshToken() const;
+    void setWalmartRefreshToken(const QString &walmart_refresh_token);
+    bool is_walmart_refresh_token_Set() const;
+    bool is_walmart_refresh_token_Valid() const;
+
+    QString getWalmartSellerId() const;
+    void setWalmartSellerId(const QString &walmart_seller_id);
+    bool is_walmart_seller_id_Set() const;
+    bool is_walmart_seller_id_Valid() const;
+
     QString getEcwidAcessToken() const;
     void setEcwidAcessToken(const QString &ecwid_acess_token);
     bool is_ecwid_acess_token_Set() const;
@@ -1233,6 +1243,14 @@ private:
     QString m_walmart_region;
     bool m_walmart_region_isSet;
     bool m_walmart_region_isValid;
+
+    QString m_walmart_refresh_token;
+    bool m_walmart_refresh_token_isSet;
+    bool m_walmart_refresh_token_isValid;
+
+    QString m_walmart_seller_id;
+    bool m_walmart_seller_id_isSet;
+    bool m_walmart_seller_id_isValid;
 
     QString m_ecwid_acess_token;
     bool m_ecwid_acess_token_isSet;

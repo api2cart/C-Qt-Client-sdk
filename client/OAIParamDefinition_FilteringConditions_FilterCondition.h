@@ -74,6 +74,11 @@ public:
     bool is_value_Set() const;
     bool is_value_Valid() const;
 
+    QString getMatchItems() const;
+    void setMatchItems(const QString &match_items);
+    bool is_match_items_Set() const;
+    bool is_match_items_Valid() const;
+
     virtual bool isSet() const override;
     virtual bool isValid() const override;
 
@@ -103,6 +108,10 @@ private:
     OAIParamDefinition_FilteringConditions_FilterRule_value m_value;
     bool m_value_isSet;
     bool m_value_isValid;
+
+    QString m_match_items;
+    bool m_match_items_isSet;
+    bool m_match_items_isValid;
 };
 
 } // namespace OpenAPI
