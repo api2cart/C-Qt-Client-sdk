@@ -192,8 +192,9 @@ public:
     * @param[in]  response_fields QString [optional]
     * @param[in]  params QString [optional]
     * @param[in]  exclude QString [optional]
+    * @param[in]  use_latest_api_version bool [optional]
     */
-    virtual void cartInfo(const ::OpenAPI::OptionalParam<QString> &response_fields = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &params = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &exclude = ::OpenAPI::OptionalParam<QString>());
+    virtual void cartInfo(const ::OpenAPI::OptionalParam<QString> &response_fields = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &params = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &exclude = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<bool> &use_latest_api_version = ::OpenAPI::OptionalParam<bool>());
 
     /**
     * @param[in]  entity_id QString [required]
