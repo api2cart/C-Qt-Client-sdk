@@ -59,16 +59,20 @@ public:
     QString getParamStyleSuffix(const QString &style);
     QString getParamStyleDelimiter(const QString &style, const QString &name, bool isExplode);
 
-
-    virtual void bridgeDelete();
+    /**
+    * @param[in]  idempotency_key QString [optional]
+    */
+    virtual void bridgeDelete(const ::OpenAPI::OptionalParam<QString> &idempotency_key = ::OpenAPI::OptionalParam<QString>());
 
     /**
     * @param[in]  whitelabel bool [optional]
     */
     virtual void bridgeDownload(const ::OpenAPI::OptionalParam<bool> &whitelabel = ::OpenAPI::OptionalParam<bool>());
 
-
-    virtual void bridgeUpdate();
+    /**
+    * @param[in]  idempotency_key QString [optional]
+    */
+    virtual void bridgeUpdate(const ::OpenAPI::OptionalParam<QString> &idempotency_key = ::OpenAPI::OptionalParam<QString>());
 
 
 private:

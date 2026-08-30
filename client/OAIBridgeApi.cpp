@@ -211,7 +211,7 @@ QString OAIBridgeApi::getParamStyleDelimiter(const QString &style, const QString
     }
 }
 
-void OAIBridgeApi::bridgeDelete() {
+void OAIBridgeApi::bridgeDelete(const ::OpenAPI::OptionalParam<QString> &idempotency_key) {
     QString fullPath = QString(_serverConfigs["bridgeDelete"][_serverIndices.value("bridgeDelete")].URL()+"/bridge.delete.json");
     
     if (_apiKeys.contains("StoreKeyAuth")) {
@@ -222,6 +222,22 @@ void OAIBridgeApi::bridgeDelete() {
         addHeaders("ApiKeyAuth",_apiKeys.find("ApiKeyAuth").value());
     }
     
+    QString queryPrefix, querySuffix, queryDelimiter, queryStyle;
+    if (idempotency_key.hasValue())
+    {
+        queryStyle = "form";
+        if (queryStyle == "")
+            queryStyle = "form";
+        queryPrefix = getParamStylePrefix(queryStyle);
+        querySuffix = getParamStyleSuffix(queryStyle);
+        queryDelimiter = getParamStyleDelimiter(queryStyle, "idempotency_key", true);
+        if (fullPath.indexOf("?") > 0)
+            fullPath.append(queryPrefix);
+        else
+            fullPath.append("?");
+
+        fullPath.append(QUrl::toPercentEncoding("idempotency_key")).append(querySuffix).append(QUrl::toPercentEncoding(::OpenAPI::toStringValue(idempotency_key.stringValue())));
+    }
     OAIHttpRequestWorker *worker = new OAIHttpRequestWorker(this, _manager);
     worker->setTimeOut(_timeOut);
     worker->setWorkingDirectory(_workingDirectory);
@@ -383,7 +399,7 @@ void OAIBridgeApi::bridgeDownloadCallback(OAIHttpRequestWorker *worker) {
     }
 }
 
-void OAIBridgeApi::bridgeUpdate() {
+void OAIBridgeApi::bridgeUpdate(const ::OpenAPI::OptionalParam<QString> &idempotency_key) {
     QString fullPath = QString(_serverConfigs["bridgeUpdate"][_serverIndices.value("bridgeUpdate")].URL()+"/bridge.update.json");
     
     if (_apiKeys.contains("StoreKeyAuth")) {
@@ -394,6 +410,22 @@ void OAIBridgeApi::bridgeUpdate() {
         addHeaders("ApiKeyAuth",_apiKeys.find("ApiKeyAuth").value());
     }
     
+    QString queryPrefix, querySuffix, queryDelimiter, queryStyle;
+    if (idempotency_key.hasValue())
+    {
+        queryStyle = "form";
+        if (queryStyle == "")
+            queryStyle = "form";
+        queryPrefix = getParamStylePrefix(queryStyle);
+        querySuffix = getParamStyleSuffix(queryStyle);
+        queryDelimiter = getParamStyleDelimiter(queryStyle, "idempotency_key", true);
+        if (fullPath.indexOf("?") > 0)
+            fullPath.append(queryPrefix);
+        else
+            fullPath.append("?");
+
+        fullPath.append(QUrl::toPercentEncoding("idempotency_key")).append(querySuffix).append(QUrl::toPercentEncoding(::OpenAPI::toStringValue(idempotency_key.stringValue())));
+    }
     OAIHttpRequestWorker *worker = new OAIHttpRequestWorker(this, _manager);
     worker->setTimeOut(_timeOut);
     worker->setWorkingDirectory(_workingDirectory);
