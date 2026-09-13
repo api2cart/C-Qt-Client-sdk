@@ -250,6 +250,15 @@ void OAIOrderAdd::initializeModel() {
     m_fee_price_isSet = false;
     m_fee_price_isValid = false;
 
+    m_shipp_national_address_isSet = false;
+    m_shipp_national_address_isValid = false;
+
+    m_shipp_building_number_isSet = false;
+    m_shipp_building_number_isValid = false;
+
+    m_shipp_additional_number_isSet = false;
+    m_shipp_additional_number_isValid = false;
+
     m_idempotency_key_isSet = false;
     m_idempotency_key_isValid = false;
 
@@ -482,6 +491,15 @@ void OAIOrderAdd::fromJsonObject(QJsonObject json) {
     m_fee_price_isValid = ::OpenAPI::fromJsonValue(m_fee_price, json[QString("fee_price")]);
     m_fee_price_isSet = !json[QString("fee_price")].isNull() && m_fee_price_isValid;
 
+    m_shipp_national_address_isValid = ::OpenAPI::fromJsonValue(m_shipp_national_address, json[QString("shipp_national_address")]);
+    m_shipp_national_address_isSet = !json[QString("shipp_national_address")].isNull() && m_shipp_national_address_isValid;
+
+    m_shipp_building_number_isValid = ::OpenAPI::fromJsonValue(m_shipp_building_number, json[QString("shipp_building_number")]);
+    m_shipp_building_number_isSet = !json[QString("shipp_building_number")].isNull() && m_shipp_building_number_isValid;
+
+    m_shipp_additional_number_isValid = ::OpenAPI::fromJsonValue(m_shipp_additional_number, json[QString("shipp_additional_number")]);
+    m_shipp_additional_number_isSet = !json[QString("shipp_additional_number")].isNull() && m_shipp_additional_number_isValid;
+
     m_idempotency_key_isValid = ::OpenAPI::fromJsonValue(m_idempotency_key, json[QString("idempotency_key")]);
     m_idempotency_key_isSet = !json[QString("idempotency_key")].isNull() && m_idempotency_key_isValid;
 
@@ -713,6 +731,15 @@ QJsonObject OAIOrderAdd::asJsonObject() const {
     }
     if (m_fee_price_isSet) {
         obj.insert(QString("fee_price"), ::OpenAPI::toJsonValue(m_fee_price));
+    }
+    if (m_shipp_national_address_isSet) {
+        obj.insert(QString("shipp_national_address"), ::OpenAPI::toJsonValue(m_shipp_national_address));
+    }
+    if (m_shipp_building_number_isSet) {
+        obj.insert(QString("shipp_building_number"), ::OpenAPI::toJsonValue(m_shipp_building_number));
+    }
+    if (m_shipp_additional_number_isSet) {
+        obj.insert(QString("shipp_additional_number"), ::OpenAPI::toJsonValue(m_shipp_additional_number));
     }
     if (m_idempotency_key_isSet) {
         obj.insert(QString("idempotency_key"), ::OpenAPI::toJsonValue(m_idempotency_key));
@@ -1875,6 +1902,54 @@ bool OAIOrderAdd::is_fee_price_Valid() const{
     return m_fee_price_isValid;
 }
 
+QString OAIOrderAdd::getShippNationalAddress() const {
+    return m_shipp_national_address;
+}
+void OAIOrderAdd::setShippNationalAddress(const QString &shipp_national_address) {
+    m_shipp_national_address = shipp_national_address;
+    m_shipp_national_address_isSet = true;
+}
+
+bool OAIOrderAdd::is_shipp_national_address_Set() const{
+    return m_shipp_national_address_isSet;
+}
+
+bool OAIOrderAdd::is_shipp_national_address_Valid() const{
+    return m_shipp_national_address_isValid;
+}
+
+QString OAIOrderAdd::getShippBuildingNumber() const {
+    return m_shipp_building_number;
+}
+void OAIOrderAdd::setShippBuildingNumber(const QString &shipp_building_number) {
+    m_shipp_building_number = shipp_building_number;
+    m_shipp_building_number_isSet = true;
+}
+
+bool OAIOrderAdd::is_shipp_building_number_Set() const{
+    return m_shipp_building_number_isSet;
+}
+
+bool OAIOrderAdd::is_shipp_building_number_Valid() const{
+    return m_shipp_building_number_isValid;
+}
+
+QString OAIOrderAdd::getShippAdditionalNumber() const {
+    return m_shipp_additional_number;
+}
+void OAIOrderAdd::setShippAdditionalNumber(const QString &shipp_additional_number) {
+    m_shipp_additional_number = shipp_additional_number;
+    m_shipp_additional_number_isSet = true;
+}
+
+bool OAIOrderAdd::is_shipp_additional_number_Set() const{
+    return m_shipp_additional_number_isSet;
+}
+
+bool OAIOrderAdd::is_shipp_additional_number_Valid() const{
+    return m_shipp_additional_number_isValid;
+}
+
 QString OAIOrderAdd::getIdempotencyKey() const {
     return m_idempotency_key;
 }
@@ -2266,6 +2341,21 @@ bool OAIOrderAdd::isSet() const {
         }
 
         if (m_fee_price_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_shipp_national_address_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_shipp_building_number_isSet) {
+            isObjectUpdated = true;
+            break;
+        }
+
+        if (m_shipp_additional_number_isSet) {
             isObjectUpdated = true;
             break;
         }

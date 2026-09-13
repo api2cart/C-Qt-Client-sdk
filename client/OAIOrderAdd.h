@@ -404,6 +404,21 @@ public:
     bool is_fee_price_Set() const;
     bool is_fee_price_Valid() const;
 
+    QString getShippNationalAddress() const;
+    void setShippNationalAddress(const QString &shipp_national_address);
+    bool is_shipp_national_address_Set() const;
+    bool is_shipp_national_address_Valid() const;
+
+    QString getShippBuildingNumber() const;
+    void setShippBuildingNumber(const QString &shipp_building_number);
+    bool is_shipp_building_number_Set() const;
+    bool is_shipp_building_number_Valid() const;
+
+    QString getShippAdditionalNumber() const;
+    void setShippAdditionalNumber(const QString &shipp_additional_number);
+    bool is_shipp_additional_number_Set() const;
+    bool is_shipp_additional_number_Valid() const;
+
     QString getIdempotencyKey() const;
     void setIdempotencyKey(const QString &idempotency_key);
     bool is_idempotency_key_Set() const;
@@ -707,6 +722,18 @@ private:
     double m_fee_price;
     bool m_fee_price_isSet;
     bool m_fee_price_isValid;
+
+    QString m_shipp_national_address;
+    bool m_shipp_national_address_isSet;
+    bool m_shipp_national_address_isValid;
+
+    QString m_shipp_building_number;
+    bool m_shipp_building_number_isSet;
+    bool m_shipp_building_number_isValid;
+
+    QString m_shipp_additional_number;
+    bool m_shipp_additional_number_isSet;
+    bool m_shipp_additional_number_isValid;
 
     QString m_idempotency_key;
     bool m_idempotency_key_isSet;
