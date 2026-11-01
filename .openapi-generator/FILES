@@ -444,6 +444,8 @@ client/OAIOrderCalculate_order_item_inner_order_item_option_inner.cpp
 client/OAIOrderCalculate_order_item_inner_order_item_option_inner.h
 client/OAIOrderInfo_200_response.cpp
 client/OAIOrderInfo_200_response.h
+client/OAIOrderInvoiceAdd.cpp
+client/OAIOrderInvoiceAdd.h
 client/OAIOrderPreestimateShippingList.cpp
 client/OAIOrderPreestimateShippingList.h
 client/OAIOrderPreestimateShippingList_order_item_inner.cpp

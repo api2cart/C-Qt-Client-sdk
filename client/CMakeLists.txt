@@ -216,6 +216,7 @@ add_library(${PROJECT_NAME}
   OAIOrderCalculate_order_item_inner.h
   OAIOrderCalculate_order_item_inner_order_item_option_inner.h
   OAIOrderInfo_200_response.h
+  OAIOrderInvoiceAdd.h
   OAIOrderPreestimateShippingList.h
   OAIOrderPreestimateShippingList_order_item_inner.h
   OAIOrderPreestimateShippingList_order_item_inner_order_item_option_inner.h
@@ -695,6 +696,7 @@ add_library(${PROJECT_NAME}
   OAIOrderCalculate_order_item_inner.cpp
   OAIOrderCalculate_order_item_inner_order_item_option_inner.cpp
   OAIOrderInfo_200_response.cpp
+  OAIOrderInvoiceAdd.cpp
   OAIOrderPreestimateShippingList.cpp
   OAIOrderPreestimateShippingList_order_item_inner.cpp
   OAIOrderPreestimateShippingList_order_item_inner_order_item_option_inner.cpp

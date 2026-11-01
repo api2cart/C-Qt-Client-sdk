@@ -207,6 +207,7 @@ HEADERS += \
     $${PWD}/OAIOrderCalculate_order_item_inner.h \
     $${PWD}/OAIOrderCalculate_order_item_inner_order_item_option_inner.h \
     $${PWD}/OAIOrderInfo_200_response.h \
+    $${PWD}/OAIOrderInvoiceAdd.h \
     $${PWD}/OAIOrderPreestimateShippingList.h \
     $${PWD}/OAIOrderPreestimateShippingList_order_item_inner.h \
     $${PWD}/OAIOrderPreestimateShippingList_order_item_inner_order_item_option_inner.h \
@@ -691,6 +692,7 @@ SOURCES += \
     $${PWD}/OAIOrderCalculate_order_item_inner.cpp \
     $${PWD}/OAIOrderCalculate_order_item_inner_order_item_option_inner.cpp \
     $${PWD}/OAIOrderInfo_200_response.cpp \
+    $${PWD}/OAIOrderInvoiceAdd.cpp \
     $${PWD}/OAIOrderPreestimateShippingList.cpp \
     $${PWD}/OAIOrderPreestimateShippingList_order_item_inner.cpp \
     $${PWD}/OAIOrderPreestimateShippingList_order_item_inner_order_item_option_inner.cpp \

@@ -37,6 +37,7 @@
 #include "OAIOrderCalculate.h"
 #include "OAIOrderCalculate_200_response.h"
 #include "OAIOrderInfo_200_response.h"
+#include "OAIOrderInvoiceAdd.h"
 #include "OAIOrderPreestimateShippingList.h"
 #include "OAIOrderRefundAdd.h"
 #include "OAIOrderRefundAdd_200_response.h"
@@ -166,6 +167,11 @@ public:
     * @param[in]  allow_user_defined_order_statuses bool [optional]
     */
     virtual void orderInfo(const ::OpenAPI::OptionalParam<QString> &id = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &order_id = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &store_id = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &params = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &response_fields = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<QString> &exclude = ::OpenAPI::OptionalParam<QString>(), const ::OpenAPI::OptionalParam<bool> &enable_cache = ::OpenAPI::OptionalParam<bool>(), const ::OpenAPI::OptionalParam<bool> &use_latest_api_version = ::OpenAPI::OptionalParam<bool>(), const ::OpenAPI::OptionalParam<qint32> &rounding_precision = ::OpenAPI::OptionalParam<qint32>(), const ::OpenAPI::OptionalParam<bool> &allow_user_defined_order_statuses = ::OpenAPI::OptionalParam<bool>());
+
+    /**
+    * @param[in]  oai_order_invoice_add OAIOrderInvoiceAdd [required]
+    */
+    virtual void orderInvoiceAdd(const OAIOrderInvoiceAdd &oai_order_invoice_add);
 
     /**
     * @param[in]  start qint32 [optional]
@@ -380,6 +386,7 @@ private:
     void orderFinancialStatusListCallback(OAIHttpRequestWorker *worker);
     void orderFulfillmentStatusListCallback(OAIHttpRequestWorker *worker);
     void orderInfoCallback(OAIHttpRequestWorker *worker);
+    void orderInvoiceAddCallback(OAIHttpRequestWorker *worker);
     void orderListCallback(OAIHttpRequestWorker *worker);
     void orderPreestimateShippingListCallback(OAIHttpRequestWorker *worker);
     void orderRefundAddCallback(OAIHttpRequestWorker *worker);
@@ -408,6 +415,7 @@ Q_SIGNALS:
     void orderFinancialStatusListSignal(OAIModel_Response_Order_FinancialStatus_List summary);
     void orderFulfillmentStatusListSignal(OAIModel_Response_Order_FulfillmentStatus_List summary);
     void orderInfoSignal(OAIOrderInfo_200_response summary);
+    void orderInvoiceAddSignal(OAIAttributeAdd_200_response summary);
     void orderListSignal(OAIModel_Response_Order_List summary);
     void orderPreestimateShippingListSignal(OAIModel_Response_Order_PreestimateShipping_List summary);
     void orderRefundAddSignal(OAIOrderRefundAdd_200_response summary);
@@ -435,6 +443,7 @@ Q_SIGNALS:
     void orderFinancialStatusListSignalFull(OAIHttpRequestWorker *worker, OAIModel_Response_Order_FinancialStatus_List summary);
     void orderFulfillmentStatusListSignalFull(OAIHttpRequestWorker *worker, OAIModel_Response_Order_FulfillmentStatus_List summary);
     void orderInfoSignalFull(OAIHttpRequestWorker *worker, OAIOrderInfo_200_response summary);
+    void orderInvoiceAddSignalFull(OAIHttpRequestWorker *worker, OAIAttributeAdd_200_response summary);
     void orderListSignalFull(OAIHttpRequestWorker *worker, OAIModel_Response_Order_List summary);
     void orderPreestimateShippingListSignalFull(OAIHttpRequestWorker *worker, OAIModel_Response_Order_PreestimateShipping_List summary);
     void orderRefundAddSignalFull(OAIHttpRequestWorker *worker, OAIOrderRefundAdd_200_response summary);
@@ -475,6 +484,9 @@ Q_SIGNALS:
     Q_DECL_DEPRECATED_X("Use orderInfoSignalError() instead")
     void orderInfoSignalE(OAIOrderInfo_200_response summary, QNetworkReply::NetworkError error_type, QString error_str);
     void orderInfoSignalError(OAIOrderInfo_200_response summary, QNetworkReply::NetworkError error_type, const QString &error_str);
+    Q_DECL_DEPRECATED_X("Use orderInvoiceAddSignalError() instead")
+    void orderInvoiceAddSignalE(OAIAttributeAdd_200_response summary, QNetworkReply::NetworkError error_type, QString error_str);
+    void orderInvoiceAddSignalError(OAIAttributeAdd_200_response summary, QNetworkReply::NetworkError error_type, const QString &error_str);
     Q_DECL_DEPRECATED_X("Use orderListSignalError() instead")
     void orderListSignalE(OAIModel_Response_Order_List summary, QNetworkReply::NetworkError error_type, QString error_str);
     void orderListSignalError(OAIModel_Response_Order_List summary, QNetworkReply::NetworkError error_type, const QString &error_str);
@@ -551,6 +563,9 @@ Q_SIGNALS:
     Q_DECL_DEPRECATED_X("Use orderInfoSignalErrorFull() instead")
     void orderInfoSignalEFull(OAIHttpRequestWorker *worker, QNetworkReply::NetworkError error_type, QString error_str);
     void orderInfoSignalErrorFull(OAIHttpRequestWorker *worker, QNetworkReply::NetworkError error_type, const QString &error_str);
+    Q_DECL_DEPRECATED_X("Use orderInvoiceAddSignalErrorFull() instead")
+    void orderInvoiceAddSignalEFull(OAIHttpRequestWorker *worker, QNetworkReply::NetworkError error_type, QString error_str);
+    void orderInvoiceAddSignalErrorFull(OAIHttpRequestWorker *worker, QNetworkReply::NetworkError error_type, const QString &error_str);
     Q_DECL_DEPRECATED_X("Use orderListSignalErrorFull() instead")
     void orderListSignalEFull(OAIHttpRequestWorker *worker, QNetworkReply::NetworkError error_type, QString error_str);
     void orderListSignalErrorFull(OAIHttpRequestWorker *worker, QNetworkReply::NetworkError error_type, const QString &error_str);

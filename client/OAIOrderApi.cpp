@@ -50,6 +50,8 @@ void OAIOrderApi::initializeServerConfigs() {
     _serverIndices.insert("orderFulfillmentStatusList", 0);
     _serverConfigs.insert("orderInfo", defaultConf);
     _serverIndices.insert("orderInfo", 0);
+    _serverConfigs.insert("orderInvoiceAdd", defaultConf);
+    _serverIndices.insert("orderInvoiceAdd", 0);
     _serverConfigs.insert("orderList", defaultConf);
     _serverIndices.insert("orderList", 0);
     _serverConfigs.insert("orderPreestimateShippingList", defaultConf);
@@ -1672,6 +1674,89 @@ void OAIOrderApi::orderInfoCallback(OAIHttpRequestWorker *worker) {
 
         Q_EMIT orderInfoSignalError(output, error_type, error_str);
         Q_EMIT orderInfoSignalErrorFull(worker, error_type, error_str);
+    }
+}
+
+void OAIOrderApi::orderInvoiceAdd(const OAIOrderInvoiceAdd &oai_order_invoice_add) {
+    QString fullPath = QString(_serverConfigs["orderInvoiceAdd"][_serverIndices.value("orderInvoiceAdd")].URL()+"/order.invoice.add.json");
+    
+    if (_apiKeys.contains("StoreKeyAuth")) {
+        addHeaders("StoreKeyAuth",_apiKeys.find("StoreKeyAuth").value());
+    }
+    
+    if (_apiKeys.contains("ApiKeyAuth")) {
+        addHeaders("ApiKeyAuth",_apiKeys.find("ApiKeyAuth").value());
+    }
+    
+    OAIHttpRequestWorker *worker = new OAIHttpRequestWorker(this, _manager);
+    worker->setTimeOut(_timeOut);
+    worker->setWorkingDirectory(_workingDirectory);
+    OAIHttpRequestInput input(fullPath, "POST");
+
+    {
+
+        
+        QByteArray output = oai_order_invoice_add.asJson().toUtf8();
+        input.request_body.append(output);
+    }
+    for (auto keyValueIt = _defaultHeaders.keyValueBegin(); keyValueIt != _defaultHeaders.keyValueEnd(); keyValueIt++) {
+        input.headers.insert(keyValueIt->first, keyValueIt->second);
+    }
+
+
+    connect(worker, &OAIHttpRequestWorker::on_execution_finished, this, &OAIOrderApi::orderInvoiceAddCallback);
+    connect(this, &OAIOrderApi::abortRequestsSignal, worker, &QObject::deleteLater);
+    connect(worker, &QObject::destroyed, this, [this] {
+        if (findChildren<OAIHttpRequestWorker*>().count() == 0) {
+            Q_EMIT allPendingRequestsCompleted();
+        }
+    });
+
+    worker->execute(&input);
+}
+
+void OAIOrderApi::orderInvoiceAddCallback(OAIHttpRequestWorker *worker) {
+    QString error_str = worker->error_str;
+    QNetworkReply::NetworkError error_type = worker->error_type;
+
+    if (worker->error_type != QNetworkReply::NoError) {
+        error_str = QString("%1, %2").arg(worker->error_str, QString(worker->response));
+    }
+    OAIAttributeAdd_200_response output(QString(worker->response));
+    worker->deleteLater();
+
+    if (worker->error_type == QNetworkReply::NoError) {
+        Q_EMIT orderInvoiceAddSignal(output);
+        Q_EMIT orderInvoiceAddSignalFull(worker, output);
+    } else {
+
+#if defined(_MSC_VER)
+// For MSVC
+#pragma warning(push)
+#pragma warning(disable : 4996)
+#elif defined(__clang__)
+// For Clang
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
+#elif defined(__GNUC__)
+// For GCC
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wdeprecated-declarations"
+#endif
+
+        Q_EMIT orderInvoiceAddSignalE(output, error_type, error_str);
+        Q_EMIT orderInvoiceAddSignalEFull(worker, error_type, error_str);
+
+#if defined(_MSC_VER)
+#pragma warning(pop)
+#elif defined(__clang__)
+#pragma clang diagnostic pop
+#elif defined(__GNUC__)
+#pragma GCC diagnostic pop
+#endif
+
+        Q_EMIT orderInvoiceAddSignalError(output, error_type, error_str);
+        Q_EMIT orderInvoiceAddSignalErrorFull(worker, error_type, error_str);
     }
 }
 
